@@ -1,6 +1,6 @@
 ---
 title: Instalowanie i konfigurowanie programu Azure PowerShell | Microsoft Docs
-description: "Jak zainstalować i skonfigurować program Azure PowerShell do pierwszego użycia."
+description: Jak zainstalować i skonfigurować program Azure PowerShell do pierwszego użycia.
 services: azure
 author: sdwheeler
 ms.author: sewhee
@@ -11,10 +11,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/17/2017
 ms.openlocfilehash: 0c1500a8748a3aa4546c6ce1e8d16a635b056edb
-ms.sourcegitcommit: b256bf48e15ee98865de0fae50e7b81878b03a54
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="install-and-configure-azure-powershell"></a>Instalowanie i konfigurowanie programu Azure PowerShell
 
@@ -105,7 +105,7 @@ Get-Module AzureRM -list | Select-Object Name,Version,Path
 
 ### <a name="support-for-classic-deployment-methods"></a>Obsługa klasycznych metod wdrażania
 
-Jeśli masz wdrożenia korzystające z klasycznego modelu wdrażania, możesz zainstalować wersję zarządzania usługą programu Azure PowerShell. Aby uzyskać więcej informacji, zobacz [Instalowanie modułu zarządzania usługami programu Azure PowerShell](/powershell/azure/servicemanagement/install-azure-ps). Moduły Azure i AzureRM mają wspólne zależności. Jeśli korzystasz z modułów Azure i AzureRM, należy zainstalować tę samą wersję każdego pakietu.
+Jeśli masz wdrożenia korzystające z klasycznego modelu wdrażania, możesz zainstalować wersję zarządzania usługą programu Azure PowerShell. Aby uzyskać więcej informacji, zobacz [Instalowanie modułu Azure PowerShell Service Management](/powershell/azure/servicemanagement/install-azure-ps). Moduły Azure i AzureRM mają wspólne zależności. Jeśli korzystasz z modułów Azure i AzureRM, należy zainstalować tę samą wersję każdego pakietu.
 
 ### <a id="update-azps"></a>Aktualizowanie do nowej wersji programu Azure PowerShell
 

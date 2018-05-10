@@ -6,7 +6,7 @@
       items:
         - name: Inne metody instalacji
           href: other-install.md
-    - name: Rozpoczynanie pracy
+    - name: Rozpoczęcie pracy
       href: get-started-azureps.md
     - name: Logowanie
       href: authenticate-azureps.md

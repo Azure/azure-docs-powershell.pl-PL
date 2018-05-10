@@ -11,10 +11,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 01/12/2018
 ms.openlocfilehash: eed7a35fcf20a17c83d9e5e3272be4b77fa12c34
-ms.sourcegitcommit: 8376e0bc5f862d382d7283ba72990e3707591e7b
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/30/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="install-and-configure-azure-powershell-on-macos-and-linux"></a>Instalowanie i konfigurowanie programu Azure PowerShell w systemach macOS i Linux
 
