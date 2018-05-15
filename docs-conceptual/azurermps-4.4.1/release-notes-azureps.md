@@ -9,13 +9,13 @@ ms.service: azure-powershell
 ms.product: azure
 ms.devlang: powershell
 ms.topic: conceptual
-ms.workload: 
+ms.workload: ''
 ms.date: 07/26/2017
 ms.openlocfilehash: d8a891673df343551cbd805016c2d25ee4e31c8c
-ms.sourcegitcommit: e6b7e20bbd04eda51416c56b13f867102b602d1a
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/07/2017
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="release-notes"></a>Informacje o wersji
 
@@ -53,9 +53,9 @@ To jest lista zmian wprowadzonych w programie Azure PowerShell w tym wydaniu.
     - Nowy parametr: parametr „AssignIdentity” został dodany do poleceń New-AzureRmVMConfig, New-AzureRmVmssConfig i Update-AzureRmVM
   * Funkcja szyfrowania dysku Vmss:
     - Nowe polecenie cmdlet: polecenie „Set-AzureRmVmssDiskEncryptionExtension” umożliwia szyfrowanie dysków w zestawie skalowania maszyn wirtualnych
-    - Nowe polecenie cmdlet: polecenie „Disable-AzureRmVmssDiskEncryption” wyłącza szyfrowanie dysku na zestawie skalowania maszyn wirtualnych
+    - Nowe polecenie cmdlet: polecenie „Disable-AzureRmVmssDiskEncryption” wyłącza szyfrowanie dysku w zestawie skalowania maszyn wirtualnych
     - Nowe polecenie cmdlet: polecenie „Set-AzureRmVmssDiskEncryptionExtension” powoduje pokazanie stanu szyfrowania dysków w zestawie skalowania maszyn wirtualnych
-    - Nowe polecenie cmdlet: polecenie „Get-AzureRmVmssVMDiskEncryptionStatus” powoduje pokazanie stanu szyfrowania maszyn wirtualnych w zestawie skalowania maszyn wirtualnych
+    - Nowe polecenie cmdlet: polecenie „Get-AzureRmVmssVMDiskEncryptionStatus” powoduje pokazanie stanu szyfrowania dysków maszyn wirtualnych w zestawie skalowania maszyn wirtualnych
 * ContainerInstance
   * Dodano polecenia cmdlet programu PowerShell dla wystąpienia kontenera platformy Azure
     - New-AzureRmContainerGroup
@@ -64,11 +64,11 @@ To jest lista zmian wprowadzonych w programie Azure PowerShell w tym wydaniu.
     - Get-AzureRmContainerInstanceLog
 * Insights
   * Nowe polecenie cmdlet Disable-AzureRmActivityLogAlert
-    - Nowe polecenia cmdlet do wyłączania istniejącego alertu dziennika aktywności.
-    - Opcjonalnie tagi też można ustawić za pomocą tego polecenia cmdlet.
+    - Nowe polecenie cmdlet do wyłączania istniejącego alertu dziennika aktywności.
+    - Opcjonalnie za pomocą tego polecenia cmdlet można też ustawić tagi.
   * Nowe polecenie cmdlet Enable-AzureRmActivityLogAlert
     - Nowe polecenie cmdlet do włączania istniejącego alertu dziennika aktywności.
-    - Opcjonalnie tagi też można ustawić za pomocą tego polecenia cmdlet.
+    - Opcjonalnie za pomocą tego polecenia cmdlet można też ustawić tagi.
   * Nowe polecenie cmdlet Get-AzureRmActivityLogAlert
     - Nowe polecenie cmdlet do pobierania co najmniej jednego alertu dziennika aktywności.
     - Alerty mogą być pobierane według nazw, grup zasobów lub subskrypcji.
@@ -99,7 +99,7 @@ To jest lista zmian wprowadzonych w programie Azure PowerShell w tym wydaniu.
     - Zaktualizowano polecenie Add-AzureRmVirtualSubnetConfig: dodano parametr opcjonalny -ServiceEndpoint
     - Zaktualizowano polecenie New-AzureRmVirtualSubnetConfig: dodano parametr opcjonalny -ServiceEndpoint
     - Zaktualizowano polecenie Set-AzureRmVirtualSubnetConfig: dodano parametr opcjonalny -ServiceEndpoint
-  * Dodano polecenie cmdlet do dostępnych w lokalizacji usług punktu końcowego listy
+  * Dodano polecenie cmdlet do wyświetlania listy dostępnych usług punktów końcowych w danej lokalizacji
     - Get-AzureRmVirtualNetworkAvailableEndpointService
   * Do następujących poleceń cmdlet dano możliwość konfigurowania zewnętrznego uwierzytelniania P2S opartego na usłudze Radius
     - New-AzureVirtualNetworkGateway
@@ -118,7 +118,7 @@ To jest lista zmian wprowadzonych w programie Azure PowerShell w tym wydaniu.
   * Dodano obsługę dla uwierzytelniania P2S protokołu IkeV2
     - Zaktualizowano polecenie New-AzureRmVirtualNetworkGateway: dodano opcjonalny parametr -VpnClientProtocol, który domyślnie przyjmuje wartość [ "SSTP", "IkeV2" ]
     - Zaktualizowano polecenie Set-AzureRmVirtualNetworkGateway: dodano opcjonalny parametr -VpnClientProtocol
-  * Dodano obsługę reguł wielowartościowych w regułach zabezpieczeń sieci oraz regułach i obowiązujących regułach zabezpieczeń sieci
+  * Dodano obsługę reguł wielowartościowych w regułach zabezpieczeń sieci oraz w obowiązujących regułach zabezpieczeń sieci
     - Zaktualizowano polecenie Add-AzureRmNetworkSecurityRuleConfig: zaktualizowano parametry SourcePortRange, DestinationPortRange i SourceAddressPrefix, aby akceptowały listę ciągów
     - Zaktualizowano polecenie New-AzureRmNetworkSecurityRuleConfig: zaktualizowano parametry SourcePortRange, DestinationPortRange i SourceAddressPrefix, aby akceptowały listę ciągów
     - Zaktualizowano polecenie Set-AzureRmNetworkSecurityRuleConfig: zaktualizowano parametry SourcePortRange, DestinationPortRange i SourceAddressPrefix, aby akceptowały listę ciągów
@@ -230,7 +230,7 @@ To jest lista zmian wprowadzonych w programie Azure PowerShell w tym wydaniu.
   * Udostępniono parametr MaintenanceRedeployStatus w danych wyjściowych polecenia Get-AzureRmVM -Status
   * Udostępniono parametry Restriction i Capability w formacie tabeli polecenia Get-AzureRmComputeResourceSku
 * DataLakeStore
-  * Rozwiązanie problemu: https://github.com/Azure/azure-powershell/issues/4323
+  * Rozwiązano problem: https://github.com/Azure/azure-powershell/issues/4323
 * EventHub
   * Dodano właściwość ResourceGroup do parametru NamespaceAttributes
     - Do właściwości „ResourceGroup” jest pobierana nazwa grupy zasobów, w której znajduje się przestrzeń nazw
@@ -299,15 +299,15 @@ To jest lista zmian wprowadzonych w programie Azure PowerShell w tym wydaniu.
 
 ## <a name="20170717---version-421"></a>2017.07.17 — wersja 4.2.1
 * Wystąpienia obliczeniowe
-    - Rozwiązanie problemu z poleceniami cmdlet tworzenia oraz aktualizowania dysku maszyny wirtualnej i migawki dysku maszyny wirtualnej (link) [https://github.com/azure/azure-powershell/issues/4309]
+    - Rozwiązano problem z poleceniami cmdlet służącymi do tworzenia oraz aktualizowania dysku maszyny wirtualnej i migawki dysku maszyny wirtualnej (link) [https://github.com/azure/azure-powershell/issues/4309]
       - New-AzureRmDisk
       - New-AzureRmSnapshot
       - Update-AzureRmDisk
       - Update-AzureRmSnapshot
 * Profil
-    - Rozwiązanie problemu z uwierzytelnianiem użytkowników nieinterakcyjnych we frontonie RedDog (link) [https://github.com/Azure/azure-powershell/issues/4299]
+    - Rozwiązano problem z uwierzytelnianiem użytkowników nieinterakcyjnych we frontonie RDFE (link) [https://github.com/Azure/azure-powershell/issues/4299]
 * ServiceManagement
-    - Rozwiązanie problemu z uwierzytelnianiem użytkowników nieinterakcyjnych (link) [https://github.com/Azure/azure-powershell/issues/4299]
+    - Rozwiązano problem z uwierzytelnianiem użytkowników nieinterakcyjnych (link) [https://github.com/Azure/azure-powershell/issues/4299]
 
 ## <a name="2017711---version-420"></a>2017.7.11 — wersja 4.2.0
 * AnalysisServices
@@ -315,7 +315,7 @@ To jest lista zmian wprowadzonych w programie Azure PowerShell w tym wydaniu.
         - Wprowadzono interfejs API umożliwiający pobranie dziennika serwera usług AS, Export-AzureAnalysisServicesInstanceLog
 * Automatyzacja
     * Odpowiednie ustawienie wartości strefy czasowej harmonogramu tygodniowego i miesięcznego dla polecenia New-AzureRmAutomationSchedule
-        - Więcej informacji można znaleźć na stronie dotyczącej tego problemu: https://github.com/Azure/azure-powershell/issues/3043
+        - Więcej informacji można znaleźć w ramach następującego problemu: https://github.com/Azure/azure-powershell/issues/3043
 * AzureBatch
     - Dodano nowe polecenie cmdlet Get-AzureBatchJobPreparationAndReleaseTaskStatu.
     - Dodano początek i koniec zakresu bajtów do parametrów polecenia Get-AzureBatchNodeFileContent.
@@ -437,7 +437,7 @@ To jest lista zmian wprowadzonych w programie Azure PowerShell w tym wydaniu.
         - Get-AzureRmVirtualNetworkUsageList
 * Profil
     * Usunięto błąd występujący w przypadku używania polecenia Import-AzureRmContext lub Save-AzureRmContext
-        - Więcej informacji można znaleźć na stronie dotyczącej tego problemu: https://github.com/Azure/azure-powershell/issues/3954
+        - Więcej informacji można znaleźć w ramach następującego problemu: https://github.com/Azure/azure-powershell/issues/3954
 * RecoveryServices.SiteRecovery
     * Wprowadzono nowy moduł operacji usługi Azure Site Recovery.
         - Wszystkie polecenia cmdlet rozpoczynają się od ciągu AzureRmRecoveryServicesAsr*
@@ -447,7 +447,7 @@ To jest lista zmian wprowadzonych w programie Azure PowerShell w tym wydaniu.
     * Wycofano polecenia cmdlet uaktualniania serwera, ponieważ stara wersja serwera (2.0) już nie istnieje.
     * Dodanie nowego opcjonalnego parametru przełącznika „AssignIdentity” do poleceń cmdlet New-AzureRmSqlServer i Set-AzureRmSqlServer w celu obsługi aprowizacji tożsamości zasobu serwera SQL
     * Parametr ResourceGroupName jest teraz opcjonalny w przypadku polecenia Get-AzureRmSqlServer
-        - Więcej informacji można znaleźć na stronie dotyczącej następującego problemu: https://github.com/Azure/azure-powershell/issues/635
+        - Więcej informacji można znaleźć w ramach następującego problemu: https://github.com/Azure/azure-powershell/issues/635
 * ServiceManagement dla usługi ExpressRoute:
     * Zaktualizowano polecenie cmdlet New-AzureBgpPeering przez dodanie następujących nowych opcji:
         - PeerAddressType: można określić wartość „IPv4” lub „IPv6” w celu utworzenia komunikacji równorzędnej BGP odpowiedniego typu rodziny adresów
@@ -533,7 +533,7 @@ To jest lista zmian wprowadzonych w programie Azure PowerShell w tym wydaniu.
       * Dodano alias parametru `-EnvironmentName` na potrzeby zachowania zgodności z poprzednimi wersjami 2.x elementu AzureRM.profile
 
 ## <a name="20170512---version-401"></a>2017.05.12 — wersja 4.0.1
- * Rozwiązanie problemu z poleceniem New-AzureStorageContext w scenariuszach w trybie offline: https://github.com/Azure/azure-powershell/issues/3939
+ * Rozwiązano problem z poleceniem New-AzureStorageContext w scenariuszach w trybie offline: https://github.com/Azure/azure-powershell/issues/3939
 
 ## <a name="20170510---version-400"></a>2017.05.10 — wersja 4.0.0
 
@@ -554,7 +554,7 @@ To jest lista zmian wprowadzonych w programie Azure PowerShell w tym wydaniu.
   - Usunięto zduplikowane właściwości DataDiskNames i NetworkInterfaceIDs z obiektu maszyny wirtualnej w programie PowerShell.
   - Zmieniono parametry DataDiskNames i NetworkInterfaceIDs odpowiednio w poleceniach Remove-AzureRmVMDataDisk i Remove-AzureRmVMNetworkInterface na opcjonalne.
   - Naprawiono problem z potokami poleceń cmdlet zawierających wartość Get, który występował, gdy polecenia cmdlet zwracały obiekt listy.
-  - Zmieniono nazwy poleceń cmdlet powodujących konflikt z poleceniami cmdlet frontonu RedDog. Aby uzyskać szczegółowe informacje, zobacz opis problemu na stronie https://github.com/Azure/azure-powershell/issues/2917
+  - Zmieniono nazwy poleceń cmdlet powodujących konflikt z poleceniami cmdlet frontonu RedDog. Aby uzyskać więcej informacji, zobacz problem https://github.com/Azure/azure-powershell/issues/2917
     + Zmieniono nazwę polecenia `New-AzureVMSqlServerAutoBackupConfig` na `New-AzureRmVMSqlServerAutoBackupConfig`
     + Zmieniono nazwę polecenia `New-AzureVMSqlServerAutoPatchingConfig` na `New-AzureRmVMSqlServerAutoPatchingConfig`
     + Zmieniono nazwę polecenia `New-AzureVMSqlServerKeyVaultCredentialConfig` na `New-AzureRmVMSqlServerKeyVaultCredentialConfig`

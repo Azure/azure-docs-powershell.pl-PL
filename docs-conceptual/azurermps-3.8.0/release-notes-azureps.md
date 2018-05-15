@@ -9,20 +9,20 @@ ms.service: azure-powershell
 ms.product: azure
 ms.devlang: powershell
 ms.topic: conceptual
-ms.workload: 
+ms.workload: ''
 ms.date: 05/18/2017
 ms.openlocfilehash: 04f89e8d47d0825d46cb1b8817efbcc0cafa0acd
-ms.sourcegitcommit: b256bf48e15ee98865de0fae50e7b81878b03a54
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="release-notes"></a>Informacje o wersji
 
 To jest lista zmian wprowadzonych w programie Azure PowerShell w tym wydaniu.
 
 ## <a name="version-380"></a>Wersja 3.8.0
-* Compute
+* Wystąpienia obliczeniowe
   - Naprawiono błąd w poleceniach cmdlet Get-*, aby zezwolić na pobieranie wielu stron danych (więcej niż 120 elementów)
 * DataLakeAnalytics
   - Naprawiono pomoc dla niektórych poleceń tak, aby zawierała właściwe sformułowania i przykłady.
@@ -34,7 +34,7 @@ To jest lista zmian wprowadzonych w programie Azure PowerShell w tym wydaniu.
     + Program RServer jest teraz opcją konfiguracji w poleceniu Add-AzureRmHDInsightConfigValues. Umożliwia on ustawienie flagi RStudio w celu wskazania, że należy przeprowadzić instalację programu R Studio.
 * LogicApp
   - Polecenia cmdlet Set-AzureRmIntegrationAccountSchema i Set-AzureRmIntegrationAccountMap zostały naprawione dla problemu z elementem contentlink (ustawienie elementów content i contentlink powodowało niepowodzenie aktualizacji).
-* Network
+* Sieć
   - Do bram Application Gateway dodano obsługę nowych funkcji zapory aplikacji sieci Web
     + Dodano polecenie New-AzureRmApplicationGatewayFirewallDisabledRuleGroupConfig
     + Dodano polecenie Get-AzureRmApplicationGatewayAvailableWafRuleSets (Alias: List-AzureRmApplicationGatewayAvailableWafRuleSets)
