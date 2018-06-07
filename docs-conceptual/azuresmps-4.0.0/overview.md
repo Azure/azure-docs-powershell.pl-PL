@@ -3,17 +3,16 @@ title: Omówienie modułu zarządzania usługami programu Azure PowerShell | Mic
 description: Ten temat zawiera omówienie programu Azure PowerShell oraz linki prowadzące do informacji dotyczących instalacji i konfiguracji.
 author: sptramer
 manager: carmonm
-ms.product: azure
-ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: conceptual
 ms.author: sttramer
 ms.manager: carmonm
-ms.openlocfilehash: df3308239b377a9c3b29e056c291f26a7f9adbcc
-ms.sourcegitcommit: 5971c92cb023bdd1d71fa2ad0a3b378abfbd092a
+ms.openlocfilehash: bcd46ca6fc81e6f6e87fe547fbf856d3e0082318
+ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/23/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34820837"
 ---
 # <a name="overview-of-the-azure-powershell-service-management-module"></a>Omówienie modułu zarządzania usługami programu Azure PowerShell
 

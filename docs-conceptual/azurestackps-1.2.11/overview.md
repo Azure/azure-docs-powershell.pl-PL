@@ -4,16 +4,16 @@ description: Omówienie instalacji i konfiguracji programu Azure Stack PowerShel
 author: SnehaGunda
 manager: Byronr
 ms.product: azure-stack
-ms.service: powershell
 ms.devlang: powershell
 ms.topic: reference
 ms.author: sngun
 ms.manager: byronr
-ms.openlocfilehash: f895992b4200f260189b3dbc541452e73a377b00
-ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
+ms.openlocfilehash: 3f55ff613004f0726e20255126b29bf7f64662b8
+ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/08/2018
+ms.lasthandoff: 06/06/2018
+ms.locfileid: "34820205"
 ---
 # <a name="azure-stack-powershell"></a>Azure Stack PowerShell
 
