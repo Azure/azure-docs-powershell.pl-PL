@@ -1,7 +1,6 @@
 ---
 title: Dziennik zmian w programie Azure PowerShell | Microsoft Docs
 description: Jest to historia zmian wprowadzonych w programie Azure PowerShell w jego najnowszej wersji.
-services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
@@ -9,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 2/20/2018
-ms.openlocfilehash: 7eacc351bcccf7001e61244212b726cd868bb11d
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: f69a0b79ac17c3a6502abfa9bbc5370693ad508e
+ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34821738"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "34854277"
 ---
 # <a name="release-notes"></a>Informacje o wersji
 

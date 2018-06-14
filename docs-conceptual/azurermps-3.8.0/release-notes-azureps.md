@@ -1,7 +1,6 @@
 ---
 title: Dziennik zmian w programie Azure PowerShell | Microsoft Docs
 description: Jest to historia zmian wprowadzonych w programie Azure PowerShell w jego najnowszej wersji.
-services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
@@ -9,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 05/18/2017
-ms.openlocfilehash: 2e17b6f7f62f25d8d91c4d32a4a1ae5c45b8665d
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: b777a5fe036cda58a930ac0f5aaef3b9a7c2b420
+ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34821806"
+ms.lasthandoff: 06/08/2018
+ms.locfileid: "34853444"
 ---
 # <a name="release-notes"></a>Informacje o wersji
 
@@ -34,7 +33,7 @@ To jest lista zmian wprowadzonych w programie Azure PowerShell w tym wydaniu.
 * LogicApp
   - Polecenia cmdlet Set-AzureRmIntegrationAccountSchema i Set-AzureRmIntegrationAccountMap zostały naprawione dla problemu z elementem contentlink (ustawienie elementów content i contentlink powodowało niepowodzenie aktualizacji).
 * Sieć
-  - Do bram Application Gateway dodano obsługę nowych funkcji zapory aplikacji sieci Web
+  - Do bram Application Gateway dodano obsługę nowych funkcji zapory aplikacji internetowej
     + Dodano polecenie New-AzureRmApplicationGatewayFirewallDisabledRuleGroupConfig
     + Dodano polecenie Get-AzureRmApplicationGatewayAvailableWafRuleSets (Alias: List-AzureRmApplicationGatewayAvailableWafRuleSets)
     + Zaktualizowano polecenie New-AzureRmApplicationGatewayWebApplicationFirewallConfiguration: dodano parametr -RuleSetType -RuleSetVersion i -DisabledRuleGroups
