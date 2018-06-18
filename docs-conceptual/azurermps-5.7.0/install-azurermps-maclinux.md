@@ -1,85 +1,80 @@
 ---
-title: Instalowanie i konfigurowanie programu Azure PowerShell w systemach macOS i Linux | Microsoft Docs
-description: Jak zainstalować i skonfigurować program Azure PowerShell do pierwszego użycia w systemach macOS i Linux.
-services: azure
+title: Instalowanie programu Azure PowerShell w systemie macOS lub Linux
+description: Jak zainstalować program Azure PowerShell w systemie macOS lub Linux.
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 01/12/2018
-ms.openlocfilehash: 4dae78779758f240668db5a809b4c1bc1cfc34c7
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.date: 06/06/2018
+ms.openlocfilehash: 17912c155255b6fdfd3cfb9242163b67d405dc03
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34819919"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323258"
 ---
-# <a name="install-and-configure-azure-powershell-on-macos-and-linux"></a><span data-ttu-id="2ba44-103">Instalowanie i konfigurowanie programu Azure PowerShell w systemach macOS i Linux</span><span class="sxs-lookup"><span data-stu-id="2ba44-103">Install and configure Azure PowerShell on macOS and Linux</span></span>
+# <a name="install-azure-powershell-on-macos-or-linux"></a><span data-ttu-id="8c223-103">Instalowanie programu Azure PowerShell w systemie macOS lub Linux</span><span class="sxs-lookup"><span data-stu-id="8c223-103">Install Azure PowerShell on macOS or Linux</span></span>
 
-<span data-ttu-id="2ba44-104">Teraz jest możliwa instalacja programów PowerShell Core w wersji 6 i Azure PowerShell na platformach innych niż Windows.</span><span class="sxs-lookup"><span data-stu-id="2ba44-104">It is now possible to install PowerShell Core v6 and Azure PowerShell on non-Windows platforms.</span></span>
-<span data-ttu-id="2ba44-105">Proces instalowania programu Azure PowerShell w systemach macOS i Linux nie różni się zbytnio od instalowania w systemie Windows, należy jednak najpierw zainstalować program PowerShell Core w wersji 6.</span><span class="sxs-lookup"><span data-stu-id="2ba44-105">The process of installing Azure PowerShell on macOS and Linux is not that different from Windows, however, you must first install PowerShell Core v6.</span></span>
+<span data-ttu-id="8c223-104">W przypadku platform innych niż Windows program Azure PowerShell można uruchomić, bazując na programie PowerShell Core w wersji 6.</span><span class="sxs-lookup"><span data-stu-id="8c223-104">For non-Windows platforms, it's possible to run Azure PowerShell on top of PowerShell Core v6.</span></span> <span data-ttu-id="8c223-105">W przeciwieństwie do standardowego programu Azure PowerShell utworzonego na podstawie programu .NET Framework dla systemu Windows ten produkt jest utworzony pod kątem platformy .NET Core i może działać na dowolnej platformie, która obsługuje środowisko uruchomieniowe .Net Core.</span><span class="sxs-lookup"><span data-stu-id="8c223-105">Rather than the standard Azure PowerShell built on .NET Framework for Windows, this product is built for .NET Core and can run on any platform which supports the .Net Core runtime.</span></span>
 
 > [!NOTE]
-
-> <span data-ttu-id="2ba44-106">W tej chwili oba programy, PowerShell Core w wersji 6 i Azure PowerShell for .NET Core, są wciąż w wersji beta.</span><span class="sxs-lookup"><span data-stu-id="2ba44-106">At this time, both PowerShell Core v6 and Azure PowerShell for .NET Core are still in beta.</span></span>
-> <span data-ttu-id="2ba44-107">Wsparcie dla tych produktów jest ograniczone.</span><span class="sxs-lookup"><span data-stu-id="2ba44-107">Support for these products is limited.</span></span> <span data-ttu-id="2ba44-108">Jeśli napotkasz problemy lub odkryjesz usterkę, zarejestruj problemy w witrynie GitHub.</span><span class="sxs-lookup"><span data-stu-id="2ba44-108">If you have problems or discover bugs, please file Issues in GitHub.</span></span>
+> <span data-ttu-id="8c223-106">W tej chwili oba programy, PowerShell Core w wersji 6 i Azure PowerShell for .NET Core, są wciąż w wersji beta.</span><span class="sxs-lookup"><span data-stu-id="8c223-106">At this time, both PowerShell Core v6 and Azure PowerShell for .NET Core are still in beta.</span></span>
+> <span data-ttu-id="8c223-107">Wsparcie dla tych produktów jest ograniczone.</span><span class="sxs-lookup"><span data-stu-id="8c223-107">Support for these products is limited.</span></span> <span data-ttu-id="8c223-108">Jeśli napotkasz problemy lub odkryjesz usterkę, prześlij zgłoszenie w witrynie GitHub.</span><span class="sxs-lookup"><span data-stu-id="8c223-108">If you have problems or discover bugs, please file an issue on GitHub.</span></span>
 >
-> * [<span data-ttu-id="2ba44-109">Problemy z programem PowerShell Core w wersji 6</span><span class="sxs-lookup"><span data-stu-id="2ba44-109">Issues for PowerShell Core v6</span></span>](https://github.com/PowerShell/PowerShell/issues)
-> * [<span data-ttu-id="2ba44-110">Problemy z programem Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="2ba44-110">Issues for Azure PowerShell</span></span>](https://github.com/azure/azure-docs-powershell/issues)
+> * [<span data-ttu-id="8c223-109">Problemy z programem PowerShell Core w wersji 6</span><span class="sxs-lookup"><span data-stu-id="8c223-109">Issues for PowerShell Core v6</span></span>](https://github.com/PowerShell/PowerShell/issues)
+> * [<span data-ttu-id="8c223-110">Problemy z programem Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="8c223-110">Issues for Azure PowerShell</span></span>](https://github.com/azure/azure-docs-powershell/issues)
 
-## <a name="step-1-install-powershell-core-v6"></a><span data-ttu-id="2ba44-111">Krok 1. Instalowanie programu PowerShell Core w wersji 6</span><span class="sxs-lookup"><span data-stu-id="2ba44-111">Step 1: Install PowerShell Core v6</span></span>
+## <a name="install-powershell-core-v6"></a><span data-ttu-id="8c223-111">Instalowanie programu PowerShell Core w wersji 6</span><span class="sxs-lookup"><span data-stu-id="8c223-111">Install PowerShell Core v6</span></span>
 
-<span data-ttu-id="2ba44-112">Proces instalowania programu PowerShell Core w wersji 6 różni się zależnie od docelowego systemu operacyjnego.</span><span class="sxs-lookup"><span data-stu-id="2ba44-112">The process of installing PowerShell Core v6 varies depending on the target operating system.</span></span>
-<span data-ttu-id="2ba44-113">Chociaż istnieje możliwość zainstalowania programu PowerShell Core w wersji 6 w systemie Windows, ten artykuł koncentruje się na systemach macOS i Linux.</span><span class="sxs-lookup"><span data-stu-id="2ba44-113">While it is possible to install PowerShell Core v6 on Windows, this article focuses on macOS and Linux.</span></span> <span data-ttu-id="2ba44-114">Jeśli chcesz korzystać z programu Azure PowerShell w systemie Windows, zobacz artykuł poświęcony [instalacji](./install-azurerm-ps.md) w systemie Windows.</span><span class="sxs-lookup"><span data-stu-id="2ba44-114">If you want to use Azure PowerShell on Windows, see the [install](./install-azurerm-ps.md) article for Windows.</span></span>
+<span data-ttu-id="8c223-112">Proces instalowania programu PowerShell Core w wersji 6 w systemie Linux lub macOS różni się zależnie od dystrybucji systemu Linux i wersji systemu operacyjnego.</span><span class="sxs-lookup"><span data-stu-id="8c223-112">Installing PowerShell Core v6 on Linux or macOS varies depending on the Linux distribution and OS version.</span></span>
+<span data-ttu-id="8c223-113">Szczegółowe instrukcje można znaleźć w następujących artykułach:</span><span class="sxs-lookup"><span data-stu-id="8c223-113">Detailed instructions can be found in the following articles:</span></span>
 
-<span data-ttu-id="2ba44-115">Proces instalowania programu **PowerShell Core w wersji 6** w systemie Linux lub macOS różni się zależnie od dystrybucji systemu Linux i wersji systemu operacyjnego.</span><span class="sxs-lookup"><span data-stu-id="2ba44-115">Installing **PowerShell Core v6** on Linux or macOS varies depending on the Linux distribution and OS version.</span></span>
-<span data-ttu-id="2ba44-116">Szczegółowe instrukcje można znaleźć w następującym artykule:</span><span class="sxs-lookup"><span data-stu-id="2ba44-116">Detailed instructions can be found in the following article:</span></span>
+- [<span data-ttu-id="8c223-114">Instalowanie programu PowerShell Core w systemie macOS</span><span class="sxs-lookup"><span data-stu-id="8c223-114">Install PowerShell Core on macOS</span></span>](/powershell/scripting/setup/installing-powershell-core-on-macos)
+- [<span data-ttu-id="8c223-115">Instalowanie programu PowerShell Core w systemie Linux</span><span class="sxs-lookup"><span data-stu-id="8c223-115">Install PowerShell Core on Linux</span></span>](/powershell/scripting/setup/installing-powershell-core-on-linux)
 
-- [<span data-ttu-id="2ba44-117">Instalowanie programu PowerShell Core w systemach macOS i Linux</span><span class="sxs-lookup"><span data-stu-id="2ba44-117">Installing PowerShell Core on macOS and Linux</span></span>](/powershell/scripting/setup/installing-powershell-core-on-macos-and-linux)
+## <a name="install-azure-powershell-for-net-core"></a><span data-ttu-id="8c223-116">Instalowanie programu Azure PowerShell dla platformy .NET Core</span><span class="sxs-lookup"><span data-stu-id="8c223-116">Install Azure PowerShell for .NET Core</span></span>
 
-## <a name="step-2-install-azure-powershell-for-net-core"></a><span data-ttu-id="2ba44-118">Krok 2. Instalowanie programu Azure PowerShell dla platformy .NET Core</span><span class="sxs-lookup"><span data-stu-id="2ba44-118">Step 2: Install Azure PowerShell for .NET Core</span></span>
-
-<span data-ttu-id="2ba44-119">Program PowerShell Core w wersji 6 jest dostarczany z już zainstalowanym modułem PowerShellGet.</span><span class="sxs-lookup"><span data-stu-id="2ba44-119">PowerShell Core v6 comes with the PowerShellGet module already installed.</span></span> <span data-ttu-id="2ba44-120">Ułatwia to instalację modułów opublikowanych w galerii programu PowerShell.</span><span class="sxs-lookup"><span data-stu-id="2ba44-120">This makes it easy to install any module that is published to the PowerShell Gallery.</span></span> <span data-ttu-id="2ba44-121">Aby zainstalować program Azure PowerShell, otwórz nową sesję programu PowerShell i uruchom następujące polecenie:</span><span class="sxs-lookup"><span data-stu-id="2ba44-121">To install Azure PowerShell, open a new PowerShell session and run the following command:</span></span>
+<span data-ttu-id="8c223-117">Program PowerShell Core w wersji 6 jest dostarczany z już zainstalowanym modułem PowerShellGet.</span><span class="sxs-lookup"><span data-stu-id="8c223-117">PowerShell Core v6 comes with the PowerShellGet module already installed.</span></span> <span data-ttu-id="8c223-118">Ułatwia to instalację modułów opublikowanych w galerii programu PowerShell.</span><span class="sxs-lookup"><span data-stu-id="8c223-118">This makes it easy to install any module that is published to the PowerShell Gallery.</span></span> <span data-ttu-id="8c223-119">Aby zainstalować program Azure PowerShell, otwórz nową sesję programu PowerShell i uruchom następujące polecenie:</span><span class="sxs-lookup"><span data-stu-id="8c223-119">To install Azure PowerShell, open a new PowerShell session and run the following command:</span></span>
 
 ```powershell
 Install-Module AzureRM.NetCore
 ```
 
-## <a name="step-3-load-the-azurermnetcore-module"></a><span data-ttu-id="2ba44-122">Krok 3. Ładowanie modułu AzureRM.Netcore</span><span class="sxs-lookup"><span data-stu-id="2ba44-122">Step 3: Load the AzureRM.Netcore module</span></span>
+## <a name="load-the-azurermnetcore-module"></a><span data-ttu-id="8c223-120">Ładowanie modułu AzureRM.Netcore</span><span class="sxs-lookup"><span data-stu-id="8c223-120">Load the AzureRM.Netcore module</span></span>
 
-<span data-ttu-id="2ba44-123">Gdy moduł jest zainstalowany, musisz załadować moduł do swojej sesji programu PowerShell.</span><span class="sxs-lookup"><span data-stu-id="2ba44-123">Once the module is installed, you need to load the module into your PowerShell session.</span></span> <span data-ttu-id="2ba44-124">Moduły są w następujący sposób ładowane przy użyciu polecenia cmdlet `Import-Module`:</span><span class="sxs-lookup"><span data-stu-id="2ba44-124">Modules are loaded using the `Import-Module` cmdlet, as follows:</span></span>
+<span data-ttu-id="8c223-121">Gdy moduł jest zainstalowany, musisz załadować moduł do swojej sesji programu PowerShell.</span><span class="sxs-lookup"><span data-stu-id="8c223-121">Once the module is installed, you need to load the module into your PowerShell session.</span></span> <span data-ttu-id="8c223-122">Moduły są w następujący sposób ładowane przy użyciu polecenia cmdlet `Import-Module`:</span><span class="sxs-lookup"><span data-stu-id="8c223-122">Modules are loaded using the `Import-Module` cmdlet, as follows:</span></span>
 
 ```powershell
 Import-Module AzureRM.Netcore
 Import-Module AzureRM.Profile.Netcore
 ```
 
-<span data-ttu-id="2ba44-125">Po zakończeniu importowania można przetestować nowo zainstalowany moduł, próbując zalogować się do platformy Azure przy użyciu następującego polecenia:</span><span class="sxs-lookup"><span data-stu-id="2ba44-125">After the import completes, you can test your newly installed and module by attempting to sign into Azure using the following command:</span></span>
+<span data-ttu-id="8c223-123">Po zakończeniu importowania można przetestować nowo zainstalowany moduł, próbując zalogować się do platformy Azure przy użyciu następującego polecenia:</span><span class="sxs-lookup"><span data-stu-id="8c223-123">After the import completes, you can test your newly installed and module by attempting to sign into Azure using the following command:</span></span>
 
 ```powershell
 Connect-AzureRmAccount
 ```
 
-<span data-ttu-id="2ba44-126">Powyższe polecenie powinno poprosić o przejście na stronę `https://aka.ms/devicelogin` i wprowadzenie udostępnionego kodu.</span><span class="sxs-lookup"><span data-stu-id="2ba44-126">The above command should prompt you to go to `https://aka.ms/devicelogin` and enter the provided code.</span></span>
+<span data-ttu-id="8c223-124">Powyższe polecenie powinno poprosić o przejście na stronę `https://aka.ms/devicelogin` i wprowadzenie udostępnionego kodu.</span><span class="sxs-lookup"><span data-stu-id="8c223-124">The above command should prompt you to go to `https://aka.ms/devicelogin` and enter the provided code.</span></span>
 
-## <a name="available-cmdlets"></a><span data-ttu-id="2ba44-127">Dostępne polecenia cmdlet</span><span class="sxs-lookup"><span data-stu-id="2ba44-127">Available cmdlets</span></span>
+## <a name="available-cmdlets"></a><span data-ttu-id="8c223-125">Dostępne polecenia cmdlet</span><span class="sxs-lookup"><span data-stu-id="8c223-125">Available cmdlets</span></span>
 
-<span data-ttu-id="2ba44-128">Moduły programu Azure PowerShell dla platformy .NET Standard są ciągle w fazie opracowywania.</span><span class="sxs-lookup"><span data-stu-id="2ba44-128">The Azure PowerShell modules for .NET Standard are still in development.</span></span> <span data-ttu-id="2ba44-129">Nie oferują one pełnego zestawu poleceń cmdlet dostępnych w modułach w wersji dla systemu Windows.</span><span class="sxs-lookup"><span data-stu-id="2ba44-129">These modules do not provide the full set of cmdlets that are available for the Windows version of the modules.</span></span> <span data-ttu-id="2ba44-130">Następujące funkcje są implementowane w modułach AzureRM.Netcore:</span><span class="sxs-lookup"><span data-stu-id="2ba44-130">The following functions are implemented in AzureRM.Netcore modules:</span></span>
+<span data-ttu-id="8c223-126">Moduły programu Azure PowerShell dla platformy .NET Standard są ciągle w fazie opracowywania.</span><span class="sxs-lookup"><span data-stu-id="8c223-126">The Azure PowerShell modules for .NET Standard are still in development.</span></span> <span data-ttu-id="8c223-127">Nie oferują one pełnego zestawu poleceń cmdlet dostępnych w modułach w wersji dla systemu Windows.</span><span class="sxs-lookup"><span data-stu-id="8c223-127">These modules do not provide the full set of cmdlets that are available for the Windows version of the modules.</span></span> <span data-ttu-id="8c223-128">Następujące funkcje są implementowane w modułach AzureRM.Netcore:</span><span class="sxs-lookup"><span data-stu-id="8c223-128">The following functions are implemented in AzureRM.Netcore modules:</span></span>
 
-* <span data-ttu-id="2ba44-131">Zarządzanie kontami</span><span class="sxs-lookup"><span data-stu-id="2ba44-131">Account management</span></span>
-  - <span data-ttu-id="2ba44-132">Logowanie się przy użyciu konta Microsoft, konta organizacji lub jednostki usługi za pośrednictwem usługi Microsoft Azure Active Directory</span><span class="sxs-lookup"><span data-stu-id="2ba44-132">Login with Microsoft account, Organizational account, or Service Principal through Microsoft Azure Active Directory</span></span>
-  - <span data-ttu-id="2ba44-133">Zapisywanie poświadczeń na dysku poleceniem Save-AzureRmContext i ładowanie zapisanych poświadczeń poleceniem Import-AzureRmContext</span><span class="sxs-lookup"><span data-stu-id="2ba44-133">Save Credentials to disk with Save-AzureRmContext and load saved credentials using Import-AzureRmContext</span></span>
-* <span data-ttu-id="2ba44-134">Środowisko</span><span class="sxs-lookup"><span data-stu-id="2ba44-134">Environment</span></span>
-  - <span data-ttu-id="2ba44-135">Pobieranie różnych gotowych środowisk platformy Microsoft Azure</span><span class="sxs-lookup"><span data-stu-id="2ba44-135">Get the different out-of-box Microsoft Azure environments</span></span>
-  - <span data-ttu-id="2ba44-136">Dodawanie/ustawianie/usuwanie dostosowanych środowisk (takich jak środowiska Azure Stack lub Windows Azure Pack)</span><span class="sxs-lookup"><span data-stu-id="2ba44-136">Add/Set/Remove customized environments (like your Azure Stack or Windows Azure Pack environments)</span></span>
-* <span data-ttu-id="2ba44-137">Polecenia cmdlet płaszczyzny zarządzania dla usług platformy Azure korzystających z interfejsów menedżera zasobów i zarządzania usługami.</span><span class="sxs-lookup"><span data-stu-id="2ba44-137">Management plane cmdlets for Azure services using Resource Manager and Service Management interfaces.</span></span>
-  - <span data-ttu-id="2ba44-138">Maszyna wirtualna</span><span class="sxs-lookup"><span data-stu-id="2ba44-138">Virtual Machine</span></span>
-  - <span data-ttu-id="2ba44-139">App Service (Websites)</span><span class="sxs-lookup"><span data-stu-id="2ba44-139">App Service (Websites)</span></span>
-  - <span data-ttu-id="2ba44-140">SQL Database</span><span class="sxs-lookup"><span data-stu-id="2ba44-140">SQL Database</span></span>
-  - <span data-ttu-id="2ba44-141">Magazyn</span><span class="sxs-lookup"><span data-stu-id="2ba44-141">Storage</span></span>
-  - <span data-ttu-id="2ba44-142">Sieć</span><span class="sxs-lookup"><span data-stu-id="2ba44-142">Network</span></span>
+* <span data-ttu-id="8c223-129">Zarządzanie kontami</span><span class="sxs-lookup"><span data-stu-id="8c223-129">Account management</span></span>
+  - <span data-ttu-id="8c223-130">Logowanie się przy użyciu konta Microsoft, konta organizacji lub jednostki usługi za pośrednictwem usługi Microsoft Azure Active Directory</span><span class="sxs-lookup"><span data-stu-id="8c223-130">Login with Microsoft account, Organizational account, or Service Principal through Microsoft Azure Active Directory</span></span>
+  - <span data-ttu-id="8c223-131">Zapisywanie poświadczeń na dysku poleceniem Save-AzureRmContext i ładowanie zapisanych poświadczeń poleceniem Import-AzureRmContext</span><span class="sxs-lookup"><span data-stu-id="8c223-131">Save Credentials to disk with Save-AzureRmContext and load saved credentials using Import-AzureRmContext</span></span>
+* <span data-ttu-id="8c223-132">Środowisko</span><span class="sxs-lookup"><span data-stu-id="8c223-132">Environment</span></span>
+  - <span data-ttu-id="8c223-133">Pobieranie różnych gotowych środowisk platformy Microsoft Azure</span><span class="sxs-lookup"><span data-stu-id="8c223-133">Get the different out-of-box Microsoft Azure environments</span></span>
+  - <span data-ttu-id="8c223-134">Dodawanie/ustawianie/usuwanie dostosowanych środowisk (takich jak środowiska Azure Stack lub Windows Azure Pack)</span><span class="sxs-lookup"><span data-stu-id="8c223-134">Add/Set/Remove customized environments (like your Azure Stack or Windows Azure Pack environments)</span></span>
+* <span data-ttu-id="8c223-135">Polecenia cmdlet płaszczyzny zarządzania dla usług platformy Azure korzystających z interfejsów menedżera zasobów i zarządzania usługami.</span><span class="sxs-lookup"><span data-stu-id="8c223-135">Management plane cmdlets for Azure services using Resource Manager and Service Management interfaces.</span></span>
+  - <span data-ttu-id="8c223-136">Maszyna wirtualna</span><span class="sxs-lookup"><span data-stu-id="8c223-136">Virtual Machine</span></span>
+  - <span data-ttu-id="8c223-137">App Service (Websites)</span><span class="sxs-lookup"><span data-stu-id="8c223-137">App Service (Websites)</span></span>
+  - <span data-ttu-id="8c223-138">SQL Database</span><span class="sxs-lookup"><span data-stu-id="8c223-138">SQL Database</span></span>
+  - <span data-ttu-id="8c223-139">Magazyn</span><span class="sxs-lookup"><span data-stu-id="8c223-139">Storage</span></span>
+  - <span data-ttu-id="8c223-140">Sieć</span><span class="sxs-lookup"><span data-stu-id="8c223-140">Network</span></span>
 
-## <a name="next-steps"></a><span data-ttu-id="2ba44-143">Następne kroki</span><span class="sxs-lookup"><span data-stu-id="2ba44-143">Next Steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="8c223-141">Następne kroki</span><span class="sxs-lookup"><span data-stu-id="8c223-141">Next Steps</span></span>
 
-<span data-ttu-id="2ba44-144">Aby uzyskać więcej informacji o korzystaniu z programu Azure PowerShell, zobacz artykuł [Rozpoczynanie pracy z programem Azure PowerShell](get-started-azureps.md).</span><span class="sxs-lookup"><span data-stu-id="2ba44-144">For more information about using Azure PowerShell, see the [Get started with Azure PowerShell](get-started-azureps.md) article.</span></span>
+<span data-ttu-id="8c223-142">Aby uzyskać więcej informacji o korzystaniu z programu Azure PowerShell, zobacz artykuł [Rozpoczynanie pracy z programem Azure PowerShell](get-started-azureps.md).</span><span class="sxs-lookup"><span data-stu-id="8c223-142">For more information about using Azure PowerShell, see the [Get started with Azure PowerShell](get-started-azureps.md) article.</span></span>

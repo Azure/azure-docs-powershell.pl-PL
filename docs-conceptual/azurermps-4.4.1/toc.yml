@@ -17,25 +17,25 @@
       items:
         - name: Tworzenie nazwy głównej usługi
           href: create-azure-service-principal-azureps.md
-        - name: Używanie poświadczeń trwałych
+        - name: Poświadczenia trwałe
           href: context-persistence.md
     - name: Zapytania
       href: queries-azureps.md
-    - name: Formatowanie
+    - name: Formatowanie danych wyjściowych
       href: formatting-output.md
-    - name: Subskrypcje
+    - name: Zarządzanie subskrypcjami
       href: manage-subscriptions-azureps.md
     - name: Wdrażanie
       items:
-        - name: Wdrażanie przy użyciu szablonów usługi Resource Manager
+        - name: Wdrażanie szablonów usługi Resource Manager
           href: /azure/azure-resource-manager/resource-group-template-deploy
         - name: Eksportowanie szablonów usługi Resource Manager
           href: /azure/azure-resource-manager/resource-manager-export-template-powershell
-        - name: Wdrażanie prywatnego szablonu usługi Resource Manager przy użyciu tokenu sygnatury dostępu współdzielonego
+        - name: Wdrażanie prywatnych szablonów usługi Resource Manager
           href: /azure/azure-resource-manager/resource-manager-powershell-sas-token
     - name: Pojęcia
       items:
-        - name: Korzystanie z modułów eksperymentalnych
+        - name: Moduły eksperymentalne
           href: using-experimental-modules.md
     - name: Informacje o wersji
       href: release-notes-azureps.md
