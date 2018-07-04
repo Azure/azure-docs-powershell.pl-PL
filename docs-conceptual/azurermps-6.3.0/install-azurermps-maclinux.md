@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/06/2018
-ms.openlocfilehash: a779f402fb2b3fccc8269aa30a6fe98a949251d6
+ms.openlocfilehash: a54af4b28642fe7b8623550fb05dff33e5c4a7f6
 ms.sourcegitcommit: 4c775721461210431bd913f28d1f1e6f1976880a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 06/28/2018
-ms.locfileid: "37091507"
+ms.locfileid: "37091337"
 ---
 # <a name="install-azure-powershell-on-macos-or-linux"></a>Instalowanie programu Azure PowerShell w systemie macOS lub Linux
 
@@ -59,7 +59,7 @@ You are installing the modules from an untrusted repository. If you trust this r
 its InstallationPolicy value by running the Set-PSRepository cmdlet.
 
 Are you sure you want to install the modules from 'PSGallery'?
-[Y] Yes� [A] Yes to All� [N] No� [L] No to All� [S] Suspend� [?] Help (default is "N"):
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
 Wybierz odpowiedź `Yes` lub `Yes to All`, aby kontynuować instalację.
@@ -76,7 +76,7 @@ Connect-AzureRmAccount
 ```
 
 Musisz powtórzyć te kroki dla każdej nowej sesji programu PowerShell, którą rozpoczniesz. Automatyczne zaimportowanie modułu `AzureRM` wymaga skonfigurowania profilu programu PowerShell — więcej informacji na ten temat można znaleźć na stronie [About Profiles (Informacje o profilach)](/powershell/module/microsoft.powershell.core/about/about_profiles).
-W systemach macOS i Linux należy pracować z profilem, używając zmiennej środowiskowej `$Profile`. Aby dowiedzieć się, jak można utrwalić swojego konta platformy Azure w wielu sesjach, zobacz [Utrwalanie poświadczeń użytkownika między sesjami programu PowerShell](context-persistence.md).
+W systemach macOS i Linux należy pracować z profilem, używając zmiennej środowiskowej `$Profile`. Aby dowiedzieć się, jak można utrwalić swojego konta platformy Azure w wielu sesjach, zobacz [Persist user credentials across PowerShell sessions (Utrwalanie poświadczeń użytkownika między sesjami programu PowerShell)](context-persistence.md).
 
 ## <a name="available-cmdlets"></a>Dostępne polecenia cmdlet
 
