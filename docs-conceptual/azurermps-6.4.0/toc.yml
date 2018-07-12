@@ -16,7 +16,7 @@
       href: get-started-azureps.md
     - name: Cloud Shell
       href: 'https://docs.microsoft.com/azure/cloud-shell/overview'
-    - name: Logowanie się
+    - name: Logowanie
       href: authenticate-azureps.md
       items:
         - name: Tworzenie nazwy głównej usługi
