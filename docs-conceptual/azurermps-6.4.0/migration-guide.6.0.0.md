@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 5/1/2018
-ms.openlocfilehash: 830afb067ea22999c09c1b894b72097bb8ebfa3b
-ms.sourcegitcommit: de0e60800df1add9f3400166faacca202ef567d9
+ms.openlocfilehash: 4f9c99152fd6ddc23aec005c8e8957e545e65246
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37406433"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100209"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-600"></a>Zmiany powodujące niezgodność dotyczące programu Microsoft Azure PowerShell 6.0.0.
 
@@ -45,9 +45,9 @@ Wcześniej w usłudze Azure PowerShell wymagany był program PowerShell w wersji
 
 ### <a name="context-autosave-enabled-by-default"></a>Automatyczne zapisywanie kontekstu jest domyślnie włączone
 
-Automatyczne zapisywanie kontekstu służy do zapisywania informacji o logowaniu do platformy Azure, których można użyć między nowymi i różnymi sesjami programu PowerShell. Więcej informacji na temat automatycznego zapisywania kontekstu zawiera [ten dokument](https://docs.microsoft.com/en-us/powershell/azure/context-persistence).
+Automatyczne zapisywanie kontekstu służy do zapisywania na platformie Azure informacji logowania, których można użyć między nowymi i różnymi sesjami programu PowerShell. Więcej informacji na temat automatycznego zapisywania kontekstu zawiera [ten dokument](https://docs.microsoft.com/en-us/powershell/azure/context-persistence).
 
-Wcześniej automatyczne zapisywanie kontekstu było domyślnie wyłączone, co oznacza, że informacje użytkownika dotyczące logowania do platformy Azure nie były przechowywane między sesjami, dopóki użytkownik nie uruchomił polecenia cmdlet `Enable-AzureRmContextAutosave` w celu włączenia trwałości kontekstu. W przyszłości automatyczne zapisywanie kontekstu będzie domyślnie włączone, co oznacza, że dla użytkowników _bez zapisanych ustawień automatycznego zapisywania kontekstu_ kontekst będzie przechowywany do czasu ich następnego zalogowania się. Użytkownicy mogą zrezygnować z tej funkcji przy użyciu polecenia cmdlet `Disable-AzureRmContextAutosave`.
+Wcześniej automatyczne zapisywanie kontekstu było domyślnie wyłączone, co oznacza, że informacje użytkownika dotyczące uwierzytelniania na platformie Azure nie były przechowywane między sesjami, dopóki użytkownik nie uruchomił polecenia cmdlet `Enable-AzureRmContextAutosave` w celu włączenia trwałości kontekstu. W przyszłości automatyczne zapisywanie kontekstu będzie domyślnie włączone, co oznacza, że dla użytkowników _bez zapisanych ustawień automatycznego zapisywania kontekstu_ kontekst będzie przechowywany do czasu ich następnego zalogowania się. Użytkownicy mogą zrezygnować z tej funkcji przy użyciu polecenia cmdlet `Disable-AzureRmContextAutosave`.
 
 _Uwaga_: ta zmiana nie będzie dotyczyła użytkowników, którzy wcześniej wyłączyli automatyczne zapisywanie kontekstu, użytkowników z włączonym automatycznym zapisywaniem kontekstu ani istniejących kontekstów
 
@@ -249,7 +249,7 @@ Remove-AzureRmDataLakeStoreItem -Account "ContosoADL" -path /myFolder -Recurse
 ## <a name="breaking-changes-to-azurermkeyvault-cmdlets"></a>Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.KeyVault
 
 **Add-AzureKeyVaultCertificate**
-- Parametr `Certificate` stał się obowiązkowy.
+- Parametr `CertificatePolicy` stał się obowiązkowy.
 
 **Set-AzureKeyVaultManagedStorageSasDefinition**
 - W poleceniu cmdlet nie są już akceptowane pojedyncze parametry, które tworzą token dostępu. Zamiast tego w poleceniach cmdlet jawne parametry tokenu, takie jak `Service` lub `Permissions`, zostały zastąpione ogólnym parametrem `TemplateUri` odpowiadającym przykładowemu tokenowi dostępu zdefiniowanemu w innym miejscu (prawdopodobnie za pomocą poleceń cmdlet programu PowerShell lub utworzonemu ręcznie zgodnie z dokumentacją usługi Storage) W poleceniu cmdlet zachowano parametr `ValidityPeriod`.

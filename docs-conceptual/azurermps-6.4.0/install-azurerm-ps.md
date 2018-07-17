@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/15/2018
-ms.openlocfilehash: 0d8019a7acaf2ba3baaa0772a76285ec497c991c
-ms.sourcegitcommit: de0e60800df1add9f3400166faacca202ef567d9
+ms.openlocfilehash: 99c102340e430dbca94538f3bd0e810c79266cd9
+ms.sourcegitcommit: f08f501b75a97ceef59c21f42158bf135a354eaa
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37406563"
+ms.lasthandoff: 07/09/2018
+ms.locfileid: "37926165"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>Instalowanie programu Azure PowerShell w systemie Windows za pomocą modułu PowerShellGet
 
@@ -24,13 +24,16 @@ Klasyczny model wdrażania platformy Azure nie jest obsługiwany przez tę wersj
 
 ## <a name="requirements"></a>Wymagania
 
-Począwszy od wersji 6.0, program Azure PowerShell wymaga programu PowerShell w wersji 5.0 lub nowszej w systemie Windows. Aby sprawdzić wersję programu PowerShell na maszynie, uruchom następujące polecenie:
+Począwszy od programu Azure PowerShell w wersji 6.0, jest wymagany program PowerShell w wersji 5.0. Aby sprawdzić wersję programu PowerShell na maszynie, uruchom następujące polecenie:
 
 ```powershell
 $PSVersionTable.PSVersion
 ```
 
 Jeśli masz nieaktualną wersję, zobacz [Upgrading existing Windows PowerShell (Uaktualnianie istniejącego programu Windows PowerShell)](/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell).
+
+> [!IMPORTANT]
+> Moduł opisany w tym dokumencie (AzureRM) korzysta z programu .NET Framework. Dlatego jest on niezgodny z programem PowerShell 6.0, który korzysta z platformy .NET Core. Jeśli korzystasz z programu PowerShell 6.0, postępuj zgodnie z [instrukcjami dotyczącymi instalacji dla systemów macOS i Linux](install-azurermps-maclinux.md). 
 
 ## <a name="install-the-azure-powershell-module"></a>Instalacja modułu Azure PowerShell
 

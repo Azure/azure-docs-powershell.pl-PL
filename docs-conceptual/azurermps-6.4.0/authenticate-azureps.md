@@ -7,16 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: e2eb6767d16dd15529b35b7a4134f4dcdd257d60
-ms.sourcegitcommit: de0e60800df1add9f3400166faacca202ef567d9
+ms.openlocfilehash: 20194ac2282d602ba61bf130791edac9f4ffae6c
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37406461"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100226"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Logowanie się w programie Azure PowerShell
 
-Program Azure PowerShell obsługuje wiele metod logowania. Najprostszym sposobem rozpoczęcia pracy jest interaktywne zalogowanie się w wierszu polecenia.
+Program Azure PowerShell obsługuje wiele metod uwierzytelniania. Najprostszym sposobem rozpoczęcia pracy jest interaktywne zalogowanie się w wierszu polecenia.
 
 ## <a name="sign-in-interactively"></a>Logowanie interakcyjne
 
@@ -29,7 +29,7 @@ Connect-AzureRmAccount
 Po uruchomieniu to polecenie cmdlet spowoduje otworzenie okna dialogowego z monitem o podanie adresu e-mail i hasła skojarzonego z kontem platformy Azure. Po uwierzytelnieniu te informacje są zapisywane dla bieżącej sesji programu PowerShell, okno dialogowe jest zamykane i zapewniany jest dostęp do wszystkich poleceń cmdlet programu Azure PowerShell.
 
 > [!IMPORTANT]
-> Logowanie obowiązuje _tylko_ w ramach bieżącej sesji programu PowerShell. Aby utrwalić logowanie na wiele sesji, zapoznaj się z artykułem [Poświadczenia trwałe](context-persistence.md).
+> Począwszy od programu Azure PowerShell w wersji 6.3.0, poświadczenia są współużytkowane w ramach wielu sesji programu PowerShell, dopóki użytkownik jest zalogowany w systemie Windows. Aby uzyskać więcej informacji, zobacz artykuł dotyczący [poświadczeń trwałych](context-persistence.md).
 
 ## <a name="sign-in-with-a-service-principal"></a>Logowanie za pomocą jednostki usługi
 

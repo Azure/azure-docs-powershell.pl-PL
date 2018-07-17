@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
-ms.openlocfilehash: 2f37df114b620566a663eb12c7e739975bc1f8bf
-ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
+ms.openlocfilehash: 0897e8fc3a50a58ac8945bd95722736526f63e19
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34854583"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100158"
 ---
 # <a name="getting-started-with-azure-powershell"></a>Rozpoczynanie pracy z programem Azure PowerShell
 
@@ -44,11 +44,11 @@ Pierwszym krokiem jest upewnienie się, że jest zainstalowana najnowsza wersja 
 
 2. Aby sprawdzić, czy instalacja się powiodła, uruchom polecenie `Get-Module AzureRM -ListAvailable` w wierszu polecenia.
 
-## <a name="log-in-to-azure"></a>Zaloguj się do platformy Azure.
+## <a name="sign-in-to-azure"></a>Logowanie do platformy Azure
 
 Logowanie interaktywne:
 
-1. Wpisz polecenie `Login-AzureRmAccount`. Zostanie wyświetlone okno dialogowe z monitem o podanie poświadczeń platformy Azure. Opcja „-EnvironmentName” pozwala zalogować się na platformie Azure (Chiny) lub Azure (Niemcy).
+1. Wpisz polecenie `Login-AzureRmAccount`. Zostanie wyświetlone okno dialogowe z monitem o podanie poświadczeń platformy Azure. Opcja „-EnvironmentName” pozwala uwierzytelnić się na platformie Azure (Chiny) lub Azure (Niemcy).
 
    np. Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 
@@ -164,7 +164,7 @@ Jeśli korzystasz z komputera z systemem Windows, możesz to zrobić w wierszu p
 mstsc /v:xx.xxx.xx.xxx
 ```
 
-Aby się zalogować, podaj tę samą kombinację nazwy użytkownika/hasła, którą podano podczas tworzenia maszyny wirtualnej.
+Aby się zalogować, podaj tę samą kombinację nazwy użytkownika/hasła, której użyto podczas tworzenia maszyny wirtualnej.
 
 ## <a name="create-a-linux-virtual-machine"></a>Tworzenie maszyny wirtualnej z systemem Linux
 
@@ -362,7 +362,7 @@ Aby dowiedzieć się więcej o sposobach używania programu Azure PowerShell, za
 
 ## <a name="next-steps"></a>Następne kroki
 
-* [Logowanie za pomocą programu Azure PowerShell](authenticate-azureps.md)
+* [Logowanie się w programie Azure PowerShell](authenticate-azureps.md)
 * [Zarządzanie subskrypcjami platformy Azure za pomocą programu Azure PowerShell](manage-subscriptions-azureps.md)
 * [Tworzenie jednostek usługi na platformie Azure przy użyciu programu Azure PowerShell](create-azure-service-principal-azureps.md)
 * Przeczytaj informacje o wersji dotyczące migracji ze starszej wersji: [https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes).

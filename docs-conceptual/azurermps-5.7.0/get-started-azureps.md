@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
-ms.openlocfilehash: cfb7ff30b442bb345931728dab131e1b80e58989
-ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
+ms.openlocfilehash: a036bb78ddb084dceb3668ab5751951dedd85e15
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35323377"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100474"
 ---
 # <a name="get-started-with-azure-powershell"></a>Rozpoczynanie pracy z programem Azure PowerShell
 
@@ -365,7 +365,7 @@ Aby dowiedzieć się więcej o sposobach używania programu Azure PowerShell, za
 
 ## <a name="next-steps"></a>Następne kroki
 
-* [Logowanie za pomocą programu Azure PowerShell](authenticate-azureps.md)
+* [Logowanie się w programie Azure PowerShell](authenticate-azureps.md)
 * [Zarządzanie subskrypcjami platformy Azure za pomocą programu Azure PowerShell](manage-subscriptions-azureps.md)
 * [Tworzenie jednostek usługi na platformie Azure przy użyciu programu Azure PowerShell](create-azure-service-principal-azureps.md)
 * Przeczytaj informacje o wersji dotyczące migracji ze starszej wersji: [https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes).

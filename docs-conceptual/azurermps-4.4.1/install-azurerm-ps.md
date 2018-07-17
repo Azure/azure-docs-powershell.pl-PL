@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
-ms.openlocfilehash: 05dd023b407a46ea9133493a000ad9ff75b08dee
-ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
+ms.openlocfilehash: 2444abc6f6f2280645c77c3effcd02db74f4f997
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34854447"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100243"
 ---
 # <a name="install-and-configure-azure-powershell"></a>Instalowanie i konfigurowanie programu Azure PowerShell
 
@@ -50,6 +50,9 @@ Jeśli nie masz zainstalowanego modułu PowerShellGet, zobacz sekcję [Jak uzysk
 
 > [!NOTE]
 > Korzystanie z modułu PowerShellGet wymaga zasad wykonania pozwalających uruchamiać skrypty. Aby uzyskać więcej informacji na temat zasad wykonania programu PowerShell, zobacz [Informacje o zasadach wykonania](/powershell/module/microsoft.powershell.core/about/about_execution_policies).
+
+> [!IMPORTANT]
+> Moduł opisany w tym dokumencie (AzureRM) korzysta z programu .NET Framework. Dlatego jest on niezgodny z programem PowerShell 6.0, który korzysta z platformy .NET Core. Jeśli korzystasz z programu PowerShell 6.0, postępuj zgodnie z [instrukcjami dotyczącymi instalacji dla systemów macOS i Linux](install-azurermps-maclinux.md). 
 
 ## <a name="step-2-install-azure-powershell"></a>Krok 2. Zainstaluj program Azure PowerShell
 

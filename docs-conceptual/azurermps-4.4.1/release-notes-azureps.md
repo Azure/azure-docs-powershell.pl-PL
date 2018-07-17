@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 07/26/2017
-ms.openlocfilehash: 5c8d9fd2e79dd18ee26493343e038c2a5ed24b26
-ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
+ms.openlocfilehash: 6f0e304c499fc8bf4909e2825d52cd63b1fcbf5d
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34854430"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100495"
 ---
 # <a name="release-notes"></a>Informacje o wersji
 
@@ -151,8 +151,8 @@ To jest lista zmian wprowadzonych w programie Azure PowerShell w tym wydaniu.
       - Typowy wzorzec dla zadań z WYŁĄCZONĄ trwałością kontekstu: `Start-Job {param ($context) New-AzureRmVM -AzureRmContext $context [... other parameters]} -ArgumentList (Get-AzureRmContext)`
       - Typowy wzorzec dla zadań z WŁĄCZONĄ trwałością kontekstu:`Start-Job {New-AzureRmVM [... other parameters]}`
   * Trwałe dane logowania między sesjami — nowe polecenia cmdlet:
-    - Enable-AzureRmContextAutosave — włączenie trwałości logowania między sesjami.
-    - Disable-AzureRmContextAutosave — wyłączenie trwałości logowania między sesjami.
+    - Enable-AzureRmContextAutosave — włączenie trwałości poświadczeń między sesjami.
+    - Disable-AzureRmContextAutosave — wyłączenie trwałości poświadczeń między sesjami.
   * Zarządzanie informacjami kontekstu — nowe polecenia cmdlet
     - Select-AzureRmContext — wybór aktywnego nazwanego kontekstu.
     - Rename-AzureRmContext — zmiana nazwy istniejącego kontekstu celem łatwiejszego odwoływania się.

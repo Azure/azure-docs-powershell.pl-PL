@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
-ms.openlocfilehash: 102dfb7476a4964af541a29416b10bc880c53adb
-ms.sourcegitcommit: de0e60800df1add9f3400166faacca202ef567d9
+ms.openlocfilehash: 5aa3b3fdeff20ea4c6f830f834e61f37d81da07d
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37406502"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100379"
 ---
 # <a name="get-started-with-azure-powershell"></a>Rozpoczynanie pracy z programem Azure PowerShell
 
@@ -48,7 +48,7 @@ Program Azure PowerShell można również zainstalować i używać lokalnie w se
 
 Logowanie interaktywne:
 
-1. Wpisz polecenie `Connect-AzureRmAccount`. Zostanie wyświetlone okno dialogowe z monitem o podanie poświadczeń platformy Azure. Opcja „-Environment” pozwala zalogować się na platformie Azure — Chiny lub Azure — Niemcy.
+1. Wpisz polecenie `Connect-AzureRmAccount`. Zostanie wyświetlone okno dialogowe z monitem o podanie poświadczeń platformy Azure. Opcja „-Environment” pozwala uwierzytelnić się na platformie Azure (Chiny) lub Azure (Niemcy).
 
    np. Connect-AzureRmAccount -Environment AzureChinaCloud
 
@@ -365,7 +365,7 @@ Aby dowiedzieć się więcej o sposobach używania programu Azure PowerShell, za
 
 ## <a name="next-steps"></a>Następne kroki
 
-* [Logowanie za pomocą programu Azure PowerShell](authenticate-azureps.md)
+* [Logowanie się w programie Azure PowerShell](authenticate-azureps.md)
 * [Zarządzanie subskrypcjami platformy Azure za pomocą programu Azure PowerShell](manage-subscriptions-azureps.md)
 * [Tworzenie jednostek usługi na platformie Azure przy użyciu programu Azure PowerShell](create-azure-service-principal-azureps.md)
 * Przeczytaj informacje o wersji dotyczące migracji ze starszej wersji: [https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes).

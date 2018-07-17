@@ -1,24 +1,24 @@
 ---
-title: Zachowywanie danych logowania użytkownika między sesjami programu PowerShell
-description: W niniejszym artykule wyjaśniono nowe funkcje programu Azure PowerShell, które umożliwiają ponowne korzystanie z poświadczeń i innych danych użytkownika między wieloma sesjami programu PowerShell.
+title: Utrwalanie poświadczeń użytkownika między sesjami programu PowerShell
+description: Dowiedz się, jak używać ponownie poświadczeń platformy Azure i innych informacji w wielu sesjach programu PowerShell.
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
-ms.openlocfilehash: 5ae4f03207b74df06a2cb81ea1cd0516a4abd2dd
-ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
+ms.openlocfilehash: 3107f77987745faa7ec57ea4811c62a38a7b2aa2
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35323122"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100260"
 ---
-# <a name="persisting-user-logins-across-powershell-sessions"></a>Zachowywanie danych logowania użytkownika między sesjami programu PowerShell
+# <a name="persisting-user-credentials-across-powershell-sessions"></a>Utrwalanie poświadczeń użytkownika między sesjami programu PowerShell
 
-W wersji z września 2017 r. programu Azure PowerShell polecenia cmdlet usługi Azure Resource Manager wprowadzają nową funkcję — **automatyczny zapis kontekstu platformy Azure**. Ta funkcja umożliwia korzystanie z kilku nowych scenariuszy dotyczących użytkowników:
+Program Azure PowerShell oferuje funkcję **automatycznego zapisywania kontekstu platformy Azure**, która udostępnia następujące funkcje:
 
-- Przechowywanie danych logowania do ponownego wykorzystania w nowych sesjach programu PowerShell.
+- Przechowywanie informacji logowania do ponownego użycia w nowych sesjach programu PowerShell.
 - Łatwiejsze korzystanie z zadań w tle w celu wykonywania długotrwałych poleceń cmdlet.
 - Możliwość przełączania kont, subskrypcji i środowisk bez konieczności osobnego logowania się.
 - Możliwość wykonywania zadań z użyciem różnych poświadczeń i subskrypcji jednocześnie w tej samej sesji programu PowerShell.
@@ -36,7 +36,7 @@ W wersji z września 2017 r. programu Azure PowerShell polecenia cmdlet usługi 
 
 W poprzednich wersjach kontekst platformy Azure musiał być tworzony każdorazowo po otwarciu nowej sesji programu PowerShell. Począwszy od wersji 4.4.0 programu Azure PowerShell można włączyć automatyczne zapisywanie i ponowne użycie kontekstów platformy Azure przy każdym otwarciu nowej sesji programu PowerShell.
 
-## <a name="automatically-saving-the-context-for-the-next-login"></a>Automatyczne zapisywanie kontekstu na potrzeby następnego logowania
+## <a name="automatically-saving-the-context-for-the-next-sign-in"></a>Automatyczne zapisywanie kontekstu na potrzeby następnego logowania
 
 Domyślnie program Azure PowerShell odrzuca informacje o kontekście przy każdym zamknięciu sesji programu PowerShell.
 
@@ -71,7 +71,7 @@ Jeśli chcesz poznać wynik zadania w tle, użyj polecenia `Get-Job`, aby sprawd
 
 ## <a name="creating-selecting-renaming-and-removing-contexts"></a>Tworzenie, wybieranie i usuwanie kontekstów oraz zmiana ich nazw
 
-Aby utworzyć kontekst, musisz zalogować się do platformy Azure. Polecenie cmdlet `Connect-AzureRmAccount` (lub jego alias — `Login-AzureRmAccount`) ustawia domyślny kontekst używany przez następujące po nim polecenia cmdlet programu Azure PowerShell i pozwala użytkownikowi na dostęp do dowolnych dzierżaw lub subskrypcji, na które pozwalają poświadczenia logowania.
+Aby utworzyć kontekst, musisz zalogować się do platformy Azure. Polecenie cmdlet `Connect-AzureRmAccount` (lub jego alias — `Login-AzureRmAccount`) ustawia domyślny kontekst używany przez następujące po nim polecenia cmdlet programu Azure PowerShell i pozwala użytkownikowi na dostęp do dowolnych dzierżaw lub subskrypcji, na które pozwalają poświadczenia.
 
 Aby dodać nowy kontekst po zalogowaniu, użyj polecenia `Set-AzureRmContext` (lub jego aliasu — `Select-AzureRmSubscription`).
 
@@ -140,7 +140,7 @@ Nowe polecenia cmdlet do zarządzania kontekstem
 Zmiany istniejących poleceń cmdlet dotyczących profilu
 
 - [Add-AzureRmAccount][login] — umożliwia określenie zakresu logowania do procesu lub bieżącego użytkownika.
-  Pozwala na nazwanie domyślnego kontekstu po zalogowaniu się.
+  Pozwala na nazwanie domyślnego kontekstu po uwierzytelnieniu się.
 - [Import-AzureRmContext][import] — umożliwia określenie zakresu logowania do procesu lub bieżącego użytkownika.
 - [Set-AzureRmContext][set-context] — umożliwia wybór istniejących nazwanych kontekstów oraz określenie zakresu zmian kontekstu do procesu lub bieżącego użytkownika.
 
