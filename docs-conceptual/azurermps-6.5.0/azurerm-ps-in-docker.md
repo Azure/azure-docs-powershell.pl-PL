@@ -8,11 +8,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/20/2018
 ms.openlocfilehash: 656c58fbb7cafb539736a0083d6aed1f46b7b98d
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.sourcegitcommit: 8b882d1c27d9e323447ff85f56d11bbf5e244d7f
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39024617"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39110334"
 ---
 # <a name="run-azure-powershell-in-a-docker-container"></a>Uruchamianie programu Azure PowerShell w kontenerze platformy Docker
 

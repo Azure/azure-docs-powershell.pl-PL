@@ -8,12 +8,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: 73b5ccee27b0a6d1049bdedb3af79f45329ec8c1
-ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
+ms.openlocfilehash: 1b4e71ba9662b28cadd1686e95e4dcd11cb9c1ad
+ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34853257"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39025263"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Tworzenie jednostki usługi platformy Azure za pomocą programu Azure PowerShell
 
@@ -47,7 +47,7 @@ Aby znaleźć informacje o aplikacji, można użyć polecenia cmdlet `Get-AzureR
 Get-AzureRmADApplication -DisplayNameStartWith MyDemoWebApp
 ```
 
-```
+```output
 DisplayName             : MyDemoWebApp
 ObjectId                : 775f64cd-0ec8-4b9b-b69a-8b8946022d9f
 IdentifierUris          : {http://MyDemoWebApp}
@@ -69,7 +69,7 @@ $password = [System.Web.Security.Membership]::GeneratePassword(16,3)
 New-AzureRmADServicePrincipal -ApplicationId 00c01aaa-1603-49fc-b6df-b78c4e5138b4 -Password $password
 ```
 
-```
+```output
 DisplayName                    Type                           ObjectId
 -----------                    ----                           --------
 MyDemoWebApp                   ServicePrincipal               698138e7-d7b6-4738-a866-b4e3081a69e4
@@ -82,7 +82,7 @@ $svcprincipal = Get-AzureRmADServicePrincipal -ObjectId 698138e7-d7b6-4738-a866-
 $svcprincipal | Select-Object *
 ```
 
-```
+```output
 ServicePrincipalNames : {http://MyDemoWebApp, 00c01aaa-1603-49fc-b6df-b78c4e5138b4}
 ApplicationId         : 00c01aaa-1603-49fc-b6df-b78c4e5138b4
 DisplayName           : MyDemoWebApp
@@ -101,7 +101,7 @@ Login-AzureRmAccount -Credential $cred -ServicePrincipal -TenantId XXXXXXXX-XXXX
 
 Uruchom to polecenie w nowej sesji programu PowerShell. Po pomyślnym zalogowaniu zostaną wyświetlone dane wyjściowe, wyglądające mniej więcej tak:
 
-```
+```output
 Environment           : AzureCloud
 Account               : 00c01aaa-1603-49fc-b6df-b78c4e5138b4
 TenantId              : XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
@@ -132,7 +132,7 @@ Zmienimy teraz poprzedni przykład — dodamy rolę **Czytelnik** i usuniemy rol
 New-AzureRmRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4 -RoleDefinitionName Reader
 ```
 
-```
+```output
 RoleAssignmentId   : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/myRG/providers/Microsoft.Authorization/roleAssignments/818892f2-d075-46a1-a3a2-3a4e1a12fcd5
 Scope              : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/myRG
 DisplayName        : MyDemoWebApp
@@ -153,7 +153,7 @@ Aby wyświetlić obecnie przypisane role:
 Get-AzureRmRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4
 ```
 
-```
+```output
 RoleAssignmentId   : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/myRG/providers/Microsoft.Authorization/roleAssignments/0906bbd8-9982-4c03-8dae-aeaae8b13f9e
 Scope              : /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/myRG
 DisplayName        : MyDemoWebApp
@@ -182,7 +182,7 @@ $password = [System.Web.Security.Membership]::GeneratePassword(16,3)
 New-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp -Password $password
 ```
 
-```
+```output
 StartDate           EndDate             KeyId                                Type
 ---------           -------             -----                                ----
 3/8/2017 5:58:24 PM 3/8/2018 5:58:24 PM 6f801c3e-6fcd-42b9-be8e-320b17ba1d36 Password
@@ -194,7 +194,7 @@ StartDate           EndDate             KeyId                                Typ
 Get-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp
 ```
 
-```
+```output
 StartDate           EndDate             KeyId                                Type
 ---------           -------             -----                                ----
 3/8/2017 5:58:24 PM 3/8/2018 5:58:24 PM 6f801c3e-6fcd-42b9-be8e-320b17ba1d36 Password
@@ -207,7 +207,7 @@ StartDate           EndDate             KeyId                                Typ
 Remove-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp -KeyId ca9d4846-4972-4c70-b6f5-a4effa60b9bc
 ```
 
-```
+```output
 Confirm
 Are you sure you want to remove credential with keyId '6f801c3e-6fcd-42b9-be8e-320b17ba1d36' for
 service principal objectId '698138e7-d7b6-4738-a866-b4e3081a69e4'.
@@ -220,7 +220,7 @@ service principal objectId '698138e7-d7b6-4738-a866-b4e3081a69e4'.
 Get-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp
 ```
 
-```
+```output
 StartDate           EndDate             KeyId                                Type
 ---------           -------             -----                                ----
 3/8/2017 5:58:24 PM 3/8/2018 5:58:24 PM 6f801c3e-6fcd-42b9-be8e-320b17ba1d36 Password
