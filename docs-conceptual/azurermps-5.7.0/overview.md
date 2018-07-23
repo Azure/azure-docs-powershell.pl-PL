@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: carmonm
 ms.date: 08/31/2017
-ms.openlocfilehash: a3481f17bd87e271a107e1373c86c60c62dfadb2
-ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
+ms.openlocfilehash: fd7d291683269ac9647abe67663a08fc7e0b4881
+ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/11/2018
-ms.locfileid: "35323411"
+ms.lasthandoff: 07/13/2018
+ms.locfileid: "39025365"
 ---
 # <a name="overview-of-azure-powershell"></a>Omówienie programu Azure PowerShell
 
@@ -25,14 +25,13 @@ Poniższe przykłady mogą pomóc nauczyć się, jak realizować typowe scenariu
 
 * [Maszyny wirtualne z systemem Linux](/azure/virtual-machines/virtual-machines-linux-powershell-samples?toc=/powershell/azure/toc.json)
 * [Maszyny wirtualne z systemem Windows](/azure/virtual-machines/virtual-machines-windows-powershell-samples?toc=/powershell/azure/toc.json)
-* 
-  [Web Apps](/azure/app-service-web/app-service-powershell-samples?toc=/powershell/azure/toc.json)
+* [Web Apps](/azure/app-service-web/app-service-powershell-samples?toc=/powershell/azure/toc.json)
 * [Bazy danych SQL](/azure/sql-database/sql-database-powershell-samples?toc=/powershell/azure/toc.json)
 
 > [!NOTE]
 > Jeśli masz wdrożenia korzystające z klasycznego modelu wdrażania, których nie można przekonwertować, możesz zainstalować wersję zarządzania usługą programu Azure PowerShell. Aby uzyskać więcej informacji, zobacz [Instalowanie modułu Azure PowerShell Service Management](/powershell/azure/servicemanagement/install-azure-ps).
 
-### <a name="need-help-with-powershell"></a>Potrzebujesz pomocy z programem PowerShell?
+## <a name="learn-powershell-basics"></a>Podstawy programu PowerShell
 
 Jeśli nie znasz programu PowerShell, pomocne może być wprowadzenie do programu PowerShell.
 

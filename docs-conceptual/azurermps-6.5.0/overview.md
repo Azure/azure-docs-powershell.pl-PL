@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: carmonm
 ms.date: 08/31/2017
-ms.openlocfilehash: ff5ee02b11b6f0649e20b056c14fc8a9b3ba6276
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.openlocfilehash: ef4f9b416454471f8c9476f0bbccbcca20a22000
+ms.sourcegitcommit: 8b882d1c27d9e323447ff85f56d11bbf5e244d7f
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39024702"
+ms.lasthandoff: 07/18/2018
+ms.locfileid: "39110861"
 ---
 # <a name="overview-of-azure-powershell"></a>Omówienie programu Azure PowerShell
 
