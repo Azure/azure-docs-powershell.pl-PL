@@ -8,11 +8,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/11/2017
 ms.openlocfilehash: a986824d952ccf6cd52dc86418899f3805a38973
-ms.sourcegitcommit: dca906e73e943aac207cee23b79915773419c673
+ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43250330"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43383604"
 ---
 # <a name="running-cmdlets-in-parallel-using-powershell-jobs"></a>Równoczesne uruchamianie poleceń cmdlet przy użyciu zadań programu PowerShell
 

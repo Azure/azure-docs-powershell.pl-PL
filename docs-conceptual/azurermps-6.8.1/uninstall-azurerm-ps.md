@@ -8,11 +8,11 @@ ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.openlocfilehash: 92af0fdd8db451e2f0f092d66a3e296ad8d6a09e
-ms.sourcegitcommit: dca906e73e943aac207cee23b79915773419c673
+ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43250111"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43383672"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>Odinstalowywanie modułu programu Azure PowerShell
 

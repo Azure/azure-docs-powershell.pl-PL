@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 5/1/2018
-ms.openlocfilehash: 4f9c99152fd6ddc23aec005c8e8957e545e65246
-ms.sourcegitcommit: dca906e73e943aac207cee23b79915773419c673
+ms.date: 05/01/2018
+ms.openlocfilehash: 72a0e9ca8562dc06a1fe2718658172ce9ee20f0e
+ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43250024"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43383944"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-600"></a>Zmiany powodujące niezgodność dotyczące programu Microsoft Azure PowerShell 6.0.0.
 
@@ -22,7 +22,7 @@ Ten dokument służy jako przewodnik zarówno po powiadomieniach o istotnych zmi
 
 - [Ogólne zmiany powodujące niezgodność](#general-breaking-changes)
     - [Minimalna wymagana wersja programu PowerShell została podniesiona do wersji 5.0](#minimum-powershell-version-required-bumped-to-50)
-    - [Automatyczne zapisywanie kontekstu jest domyślnie włączone](#context-autosaved-enabled-by-default)
+    - [Automatyczne zapisywanie kontekstu jest domyślnie włączone](#context-autosave-enabled-by-default)
     - [Usunięcie aliasów Tags](#removal-of-tags-alias)
 - [Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.Compute](#breaking-changes-to-azurermcompute-cmdlets)
 - [Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.Compute AzureRM.DataLakeStore](#breaking-changes-to-azurermdatalakestore-cmdlets)

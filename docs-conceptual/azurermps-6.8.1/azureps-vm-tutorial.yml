@@ -8,20 +8,20 @@ metadata:
   displayType: two-column
   interactive: azurepowershell
   ms.date: 02/08/2018
-  ms.author: sewhee
-  author: sdwheeler
+  ms.author: sttramer
+  author: sptramer
   manager: carmonm
   ms.devlang: azure-powershell
   ms.prod: powershell
   ms.technology: azure-powershell
-  ms.service: virtual-machines
+  ms.topic: tutorial
   clicktale: true
-  ms.openlocfilehash: e6d585d76f507a7959e6e6227aff1effad8fa336
-  ms.sourcegitcommit: dca906e73e943aac207cee23b79915773419c673
+  ms.openlocfilehash: 902613ab544472932affed980b7e602925544a8b
+  ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
   ms.translationtype: HT
   ms.contentlocale: pl-PL
-  ms.lasthandoff: 08/30/2018
-  ms.locfileid: "43250277"
+  ms.lasthandoff: 09/06/2018
+  ms.locfileid: "43383536"
 items:
 - durationInMinutes: 1
   content: >-
