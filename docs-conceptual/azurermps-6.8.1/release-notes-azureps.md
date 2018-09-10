@@ -7,19 +7,68 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
-ms.date: 5/1/2018
-ms.openlocfilehash: 6043d17df1b5e91521bad31e65372c10ee6a5c6a
-ms.sourcegitcommit: dca906e73e943aac207cee23b79915773419c673
+ms.date: 08/28/2018
+ms.openlocfilehash: f4f3141998be14f0b5b223aed1af283534bf061d
+ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43250017"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43383842"
 ---
 # <a name="release-notes"></a>Informacje o wersji
 
 To jest lista zmian wprowadzonych w programie Azure PowerShell w tym wydaniu.
 
 ---
+## <a name="681---august-2018"></a>6.8.1 — sierpień 2018 r.
+#### <a name="general"></a>Ogólne
+* Rozwiązano problem z nieustawionymi domyślnymi grupami zasobów.
+* Zaktualizowano wspólne zestawy środowiska uruchomieniowego
+
+#### <a name="azurermapimanagement"></a>AzureRM.ApiManagement
+* Rozwiązano problem z nieustawionymi domyślnymi grupami zasobów.
+* Rozwiązano problem https://github.com/Azure/azure-powershell/issues/6603
+    - Polecenia cmdlet Import-AzureRmApiManagementApi i *-AzureRmApiManagementCertificate teraz obsługują ścieżki względne
+* Rozwiązano problem https://github.com/Azure/azure-powershell/issues/6879
+    - CertificateInformation to możliwa do ustawienia właściwość pozwalająca poleceniu cmdlet Set-AzureRmApiManagement poprawnie działać. Rozwiązano przez aktualizację do pakietu nuget 4.0.4-preview
+* Rozwiązano problem https://github.com/Azure/azure-powershell/issues/6853
+    - W filtrze Odata naprawiono wyszukiwanie według nazwy dla produktu
+* Rozwiązano problem https://github.com/Azure/azure-powershell/issues/6814
+    - W filtrze Odata naprawiono wyszukiwanie według nazwy dla interfejsu API
+* Dodano obsługę rejestratora AzureMonitor
+
+
+#### <a name="azurermcompute"></a>AzureRM.Compute
+* Naprawiono problem polegający na braku elementu docelowego w danych wyjściowych błędu.
+* Rozwiązano problem z typem konta magazynu dla maszyny wirtualnej z dyskiem zarządzanym
+* Rozwiązano problem z nieustawionymi domyślnymi grupami zasobów.
+* Naprawiono polecenia cmdlet rozszerzenia AEM dla innych środowisk, na przykład Azure — Chiny
+
+#### <a name="azurermnetwork"></a>AzureRM.Network
+* Zmieniono domyślną prezentację danych wyjściowych polecenia cmdlet na widok tabeli
+
+#### <a name="azurermpowerbiembedded"></a>AzureRM.PowerBIEmbedded
+* Naprawiono błąd w poleceniu Update-AzureRmPowerBIEmbeddedCapacity występujący podczas próby skalowania wstrzymanej pojemności
+
+
+#### <a name="azurermresources"></a>AzureRM.Resources
+* Rozwiązano problem z tworzeniem aplikacji zarządzanych z witryny MarketPlace.
+
+#### <a name="azurermservicebus"></a>AzureRM.ServiceBus
+* Rozwiązane problemy
+    - https://github.com/Azure/azure-powershell/issues/5058
+    - https://github.com/Azure/azure-powershell/issues/5055
+    - https://github.com/Azure/azure-powershell/issues/6891
+
+#### <a name="azurermtrafficmanager"></a>AzureRM.TrafficManager
+* Dodano obsługę metody routingu MultiValue
+    - Nowy parametr „MaxReturn” dla routingu MultiValue
+* Dodano obsługę metody routingu Subnet
+    - Obsługa zakresów adresów IP (podsieci) w punktach końcowych
+* Dodano obsługę nagłówków niestandardowych w profilach
+* Dodano obsługę zakresów kodów oczekiwanego stanu w profilach
+* Dodano obsługę nagłówków niestandardowych w punktach końcowych
+
 ## <a name="680---august-2018"></a>6.8.0 — sierpień 2018 r.
 #### <a name="general"></a>Ogólne
 * Rozwiązano problem z nieustawionymi domyślnymi grupami zasobów.
