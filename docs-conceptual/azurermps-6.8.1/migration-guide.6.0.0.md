@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
-ms.openlocfilehash: 72a0e9ca8562dc06a1fe2718658172ce9ee20f0e
-ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
+ms.openlocfilehash: 227bec0f7eb24b0941e9e21d37524b290c4b83a5
+ms.sourcegitcommit: bc88e64c494337821274d6a66c1edad656c119c5
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43383944"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46304169"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-600"></a>Zmiany powodujące niezgodność dotyczące programu Microsoft Azure PowerShell 6.0.0.
 
@@ -41,11 +41,11 @@ Ten dokument służy jako przewodnik zarówno po powiadomieniach o istotnych zmi
 
 ### <a name="minimum-powershell-version-required-bumped-to-50"></a>Minimalna wymagana wersja programu PowerShell została podniesiona do wersji 5.0
 
-Wcześniej w usłudze Azure PowerShell wymagany był program PowerShell w wersji _co najmniej_ 3.0, aby możliwe było uruchamianie jakichkolwiek poleceń cmdlet. W przyszłości to wymaganie zostanie podniesione do wersji 5.0 programu PowerShell. Informacje o uaktualnianiu programu PowerShell 5.0 znajdują się w [tej tabeli](https://docs.microsoft.com/en-us/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell).
+Wcześniej w usłudze Azure PowerShell wymagany był program PowerShell w wersji _co najmniej_ 3.0, aby możliwe było uruchamianie jakichkolwiek poleceń cmdlet. W przyszłości to wymaganie zostanie podniesione do wersji 5.0 programu PowerShell. Informacje o uaktualnianiu programu PowerShell 5.0 znajdują się w [tej tabeli](https://docs.microsoft.com/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell).
 
 ### <a name="context-autosave-enabled-by-default"></a>Automatyczne zapisywanie kontekstu jest domyślnie włączone
 
-Automatyczne zapisywanie kontekstu służy do zapisywania na platformie Azure informacji logowania, których można użyć między nowymi i różnymi sesjami programu PowerShell. Więcej informacji na temat automatycznego zapisywania kontekstu zawiera [ten dokument](https://docs.microsoft.com/en-us/powershell/azure/context-persistence).
+Automatyczne zapisywanie kontekstu służy do zapisywania na platformie Azure informacji logowania, których można użyć między nowymi i różnymi sesjami programu PowerShell. Więcej informacji na temat automatycznego zapisywania kontekstu zawiera [ten dokument](https://docs.microsoft.com/powershell/azure/context-persistence).
 
 Wcześniej automatyczne zapisywanie kontekstu było domyślnie wyłączone, co oznacza, że informacje użytkownika dotyczące uwierzytelniania na platformie Azure nie były przechowywane między sesjami, dopóki użytkownik nie uruchomił polecenia cmdlet `Enable-AzureRmContextAutosave` w celu włączenia trwałości kontekstu. W przyszłości automatyczne zapisywanie kontekstu będzie domyślnie włączone, co oznacza, że dla użytkowników _bez zapisanych ustawień automatycznego zapisywania kontekstu_ kontekst będzie przechowywany do czasu ich następnego zalogowania się. Użytkownicy mogą zrezygnować z tej funkcji przy użyciu polecenia cmdlet `Disable-AzureRmContextAutosave`.
 
@@ -255,8 +255,8 @@ Remove-AzureRmDataLakeStoreItem -Account "ContosoADL" -path /myFolder -Recurse
 - W poleceniu cmdlet nie są już akceptowane pojedyncze parametry, które tworzą token dostępu. Zamiast tego w poleceniach cmdlet jawne parametry tokenu, takie jak `Service` lub `Permissions`, zostały zastąpione ogólnym parametrem `TemplateUri` odpowiadającym przykładowemu tokenowi dostępu zdefiniowanemu w innym miejscu (prawdopodobnie za pomocą poleceń cmdlet programu PowerShell lub utworzonemu ręcznie zgodnie z dokumentacją usługi Storage) W poleceniu cmdlet zachowano parametr `ValidityPeriod`.
 
 Więcej informacji dotyczących tworzenia tokenów dostępu współdzielonego dla usługi Azure Storage można znaleźć na stronach dokumentacji, czyli odpowiednio:
-- [Tworzenie sygnatury dostępu współdzielonego usługi] (https://docs.microsoft.com/en-us/rest/api/storageservices/Constructing-a-Service-SAS)
-- [Tworzenia sygnatury dostępu współdzielonego konta] (https://docs.microsoft.com/en-us/rest/api/storageservices/constructing-an-account-sas)
+- [Tworzenie sygnatury dostępu współdzielonego usługi] (https://docs.microsoft.com/rest/api/storageservices/Constructing-a-Service-SAS)
+- [Tworzenia sygnatury dostępu współdzielonego konta] (https://docs.microsoft.com/rest/api/storageservices/constructing-an-account-sas)
 
 ```powershell
 # Old
