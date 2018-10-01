@@ -8,47 +8,63 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
-ms.openlocfilehash: fb892daeafb1365ea62324392ac806cf9f3d39cf
+ms.openlocfilehash: 18861f0e5232e0b505767aa9609099afe88f9477
 ms.sourcegitcommit: 19dffee617477001f98d43e39a50ce1fad087b74
 ms.translationtype: HT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 09/27/2018
-ms.locfileid: "47179143"
+ms.locfileid: "47178633"
 ---
-# <a name="azure-stack-module-130"></a>Moduł usługi Azure Stack w wersji 1.3.0
+# <a name="azure-stack-module-150"></a>Moduł usługi Azure Stack w wersji 1.5.0
 
 ## <a name="requirements"></a>Wymagania:
-Minimalna obsługiwana wersja usługi Azure Stack to 1804.
+Minimalna obsługiwana wersja usługi Azure Stack to 1808.
 
-Uwaga: jeśli używasz starszej wersji, zainstaluj wersję 1.2.11
+Uwaga: jeśli używasz starszej wersji, zainstaluj wersję 1.4.0
 
 ## <a name="known-issues"></a>Znane problemy:
 
-- Alert dotyczący zamknięcia wymaga usługi Azure Stack w wersji 1803.
-- Niektóre polecenia cmdlet modułu Storage wymagają usługi Azure Stack w wersji 1804.
 - Polecenie New-AzsOffer nie pozwala na utworzenie oferty ze stanem publicznym. Po jego wykonaniu należy wywołać polecenie cmdlet Set-AzsOffer, aby zmienić stan.
 - Nie można usunąć puli adresów IP bez ponownego wdrożenia.
 
-## <a name="breaking-changes"></a>Zmiany powodujące niezgodność
-Wszystkie zmiany powodujące niezgodność spowodowane migracją z wersji 1.2.11 są udokumentowane tutaj: https://aka.ms/azspowershellmigration
-
 ## <a name="install"></a>Instalowanie
 ```
-# Remove previous Versions
+# Remove previous versions of AzureStack modules
+Uninstall-Module -Name AzureStack -Force 
 Uninstall-Module AzureRM.AzureStackAdmin -Force
 Uninstall-Module AzureRM.AzureStackStorage -Force
-Uninstall-Module -Name AzureStack -Force 
+Get-Module Azs.* -ListAvailable | Uninstall-Module -Force
 
 
 # Install the AzureRM.Bootstrapper module. Select Yes when prompted to install NuGet
 Install-Module -Name AzureRm.BootStrapper
 
 # Install and import the API Version Profile required by Azure Stack into the current PowerShell session.
-Use-AzureRmProfile -Profile 2017-03-09-profile -Force
+Use-AzureRmProfile -Profile 2018-03-01-hybrid -Force
 
 # Install Azure Stack Admin Module
-Install-Module -Name AzureStack -RequiredVersion 1.3.0
+Install-Module -Name AzureStack -RequiredVersion 1.5.0
 ```
+
+##<a name="release-notes"></a>Informacje o wersji
+* Wszystkie moduły administratora usługi Azure Stack zostały zaktualizowane pod kątem uzyskania takiej samej lub większej zależności od modułu AzureRm.Profile
+* Obsługa zarządzania nazwami zasobów zagnieżdżonych we wszystkich modułach
+* We wszystkich modułach naprawiono usterkę polegającą na tym, że element ErrorActionPreference jest zastępowany w celu zatrzymania
+* Moduł Azs.Compute.Admin
+    * Dodano nowe właściwości limitu przydziału na potrzeby obsługi dysku zarządzanego
+    * Dodano polecenia cmdlet powiązane z migracją dysku
+    * Dodatkowe właściwości w obiektach rozszerzeń maszyny wirtualnej i obrazu platformy
+* Azs.Fabric.Admin 
+    * Nowe polecenie cmdlet umożliwiające dodawanie węzła jednostki skalowania
+* Azs.Backup.Admin
+    * Polecenie Set-AzsBackupShare jest teraz aliasem polecenia cmdlet Set-AzsBackupConfiguration
+    * Polecenie Get-AzsBackupLocation jest teraz aliasem polecenia cmdlet Get-AzsBackupConfiguration
+    * Set-AzsBackupConfiguration, parametr BackupShare jest teraz aliasem ścieżki parametru
+* Azs.Subscriptions
+    * Get-AzsDelegatedProviderOffer, parametr OfferName jest teraz aliasem parametru Offer
+* Azs.Subscriptions.Admin
+    * Get-AzsDelegatedProviderOffer, parametr OfferName jest teraz aliasem parametru Offer
+
 ## <a name="content"></a>Zawartość:
 ### <a name="azure-bridge"></a>Azure Bridge
 Wersja zapoznawcza modułu administratora Azure Bridge usługi Azure Stack, dzięki któremu można przeprowadzać syndykację obrazów z platformy Azure.
@@ -63,7 +79,7 @@ Wersja zapoznawcza modułu administratora Backup, który pozwala administratorom
 Wersja zapoznawcza modułu administratora Commerce usługi Azure Stack, który umożliwia wyświetlanie zagregowanego użycia danych w całym systemie usługi Azure Stack.
 
 ### <a name="compute"></a>Wystąpienia obliczeniowe
-Wersja zapoznawcza modułu administratora Compute usługi Azure Stack, który udostępnia funkcje zarządzania limitami przydziału zasobów obliczeniowych, obrazami platformy oraz rozszerzeniami maszyn wirtualnych.
+Wersja zapoznawcza modułu administratora Compute usługi Azure Stack, który udostępnia funkcje zarządzania limitami przydziału zasobów obliczeniowych, obrazami platformy, dyskami zarządzanymi oraz rozszerzeniami maszyn wirtualnych.
 
 ### <a name="fabric"></a>Fabric
 Wersja zapoznawcza modułu administratora Fabric usługi Azure Stack, który pozwala administratorom na wyświetlanie składników infrastruktury i zarządzanie nimi:
