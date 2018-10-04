@@ -1,22 +1,32 @@
+items:
 - name: Azure
   tocHref: /azure/
   topicHref: /azure/index
   items:
-    - name: Azure PowerShell
-      tocHref: /powershell/azure/aip/
-      topicHref: /powershell/azure/aip/overview
-    - name: Azure PowerShell
-      tocHref: /powershell/azure/active-directory/
-      topicHref: /powershell/azure/active-directory/overview
-    - name: Azure PowerShell
-      tocHref: /powershell/azure/elasticdbjobs/
-      topicHref: /powershell/azure/elasticdbjobs/overview
-    - name: Azure PowerShell
-      tocHref: /powershell/azure/service-fabric/
-      topicHref: /powershell/azure/service-fabric/overview
-    - name: Azure PowerShell
-      tocHref: /powershell/azure/
-      topicHref: /powershell/azure/overview
-    - name: Azure PowerShell
-      tocHref: /powershell/module/
-      topicHref: /powershell/module/
+  - name: Azure PowerShell
+    tocHref: /powershell/azure/aip/
+    topicHref: /powershell/azure/aip/overview
+  - name: Azure PowerShell
+    tocHref: /powershell/azure/active-directory/
+    topicHref: /powershell/azure/active-directory/overview
+  - name: Azure PowerShell
+    tocHref: /powershell/azure/elasticdbjobs/
+    topicHref: /powershell/azure/elasticdbjobs/overview
+  - name: Azure PowerShell
+    tocHref: /powershell/azure/service-fabric/
+    topicHref: /powershell/azure/service-fabric/overview
+  - name: Azure PowerShell
+    tocHref: /powershell/azure/
+    topicHref: /powershell/azure/overview
+  - name: Azure PowerShell
+    tocHref: /powershell/module/
+    topicHref: /powershell/module/
+  - name: Azure/PowerShell
+    tocHref: /powershell/azure/deploymentmanager
+    topicHref: /powershell/azure/deploymentmanager/overview
+ms.openlocfilehash: 8fa17b8f1a1c222cd58c610afa47a67a6abdaa20
+ms.sourcegitcommit: 6c38e86e16da99f65cd183c63e34f7176b121ab8
+ms.translationtype: HT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "47425044"
