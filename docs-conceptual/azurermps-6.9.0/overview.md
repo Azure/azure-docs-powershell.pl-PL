@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.manager: carmonm
 ms.date: 09/11/2018
 ms.openlocfilehash: f03243f6f560407b63aff154494cf164d670d810
-ms.sourcegitcommit: 19dffee617477001f98d43e39a50ce1fad087b74
+ms.sourcegitcommit: 6c38e86e16da99f65cd183c63e34f7176b121ab8
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47178667"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "47425163"
 ---
 # <a name="overview-of-azure-powershell"></a>Omówienie programu Azure PowerShell
 
