@@ -7,16 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/06/2017
-ms.openlocfilehash: abf6aad6a04ffcf15b8fc38b47477caa1a04e015
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.openlocfilehash: b23d8071c3c91bee1387c54cce1a34004ecdd9ad
+ms.sourcegitcommit: f6f5e256143aa6c097de3e57e930d8badea49f30
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39025399"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49399165"
 ---
 # <a name="other-installation-methods"></a>Inne metody instalacji
 
-Program Azure PowerShell można zainstalować na wiele sposobów. Preferowaną metodą jest użycie modułu PowerShellGet z galerią programu PowerShell. Program Azure PowerShell można zainstalować w systemie Windows za pomocą Instalatora platformy internetowej (WebPI) lub pliku MSI dostępnego w witrynie GitHub. Program Azure PowerShell można również zainstalować w kontenerze Docker.
+Program Azure PowerShell można zainstalować na wiele sposobów. Preferowaną metodą jest użycie modułu PowerShellGet z galerią programu PowerShell. Program Azure PowerShell można zainstalować w systemie Windows za pomocą Instalatora platformy internetowej (WebPI) lub pliku MSI dostępnego w witrynie GitHub.
 
 ## <a name="install-on-windows-using-the-web-platform-installer"></a>Instalowanie w systemie Windows za pomocą Instalatora platformy internetowej
 
@@ -64,28 +64,3 @@ Import-Module "$env:ProgramFiles(x86)\Microsoft SDKs\Azure\PowerShell\AzureRM.ps
 
 Program Azure PowerShell można zainstalować za pomocą pliku MSI dostępnego w witrynie [GitHub](https://github.com/Azure/azure-powershell/releases/latest). Jeśli są zainstalowane wcześniejsze wersje modułów platformy Azure, instalator automatycznie je usuwa. Pakiet MSI instaluje moduły w katalogu `$env:ProgramFiles\WindowsPowerShell\Modules`, ale nie tworzy folderów odpowiadających poszczególnym wersjom.
 
-## <a name="install-in-a-docker-container"></a>Instalowanie w kontenerze Docker
-
-Utrzymujemy obraz Docker wstępnie skonfigurowany z programem Azure PowerShell.
-
-Uruchom kontener za pomocą polecenia `docker run`.
-
-```powershell
-docker run azuresdk/azure-powershell
-```
-
-Ponadto utrzymujemy podzestaw poleceń cmdlet jako kontener programu PowerShell Core.
-
-Dla systemu Mac/Linux użyj obrazu `latest`.
-
-```bash
-docker run azuresdk/azure-powershell-core:latest
-```
-
-Dla systemu Windows użyj obrazu `nanoserver`.
-
-```powershell
-docker run azuresdk/azure-powershell-core:nanoserver
-```
-
-Program Azure PowerShell jest instalowany w obrazie za pośrednictwem polecenia `Install-Module` z [galerii programu PowerShell](https://www.powershellgallery.com/).

@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
 ms.openlocfilehash: 18861f0e5232e0b505767aa9609099afe88f9477
-ms.sourcegitcommit: a749eb729f583c9d0dd86141bbd04984d77ae9ab
+ms.sourcegitcommit: f6f5e256143aa6c097de3e57e930d8badea49f30
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "48882643"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49399437"
 ---
 # <a name="azure-stack-module-150"></a>Moduł usługi Azure Stack w wersji 1.5.0
 
