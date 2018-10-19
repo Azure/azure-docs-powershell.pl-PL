@@ -56,7 +56,8 @@
     {
     "path_to_root": "_themes.pdf",
     "url": "https://github.com/Microsoft/templates.docs.msft.pdf",
-    "branch": "master"
+    "branch": "master",
+    "branch_mapping": {}
     }
   ],
 "branch_target_mapping": {
