@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/20/2018
-ms.openlocfilehash: 2fcd2307667d1f810fbcb3fe4d14e3b0def537ed
-ms.sourcegitcommit: ff44dec6418a449757bded3c6ebe0a7d4c05ee6e
+ms.openlocfilehash: f9293d2715b36161c3e6d0d9469b6f18ab35d6c8
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50737496"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51212186"
 ---
 # <a name="install-azure-powershell-on-windows-with-msi-or-web-platform-installer"></a>Instalowanie programu Azure PowerShell w systemie Windows za pomocą instalatora MSI lub Instalatora platformy internetowej
 
@@ -30,7 +30,7 @@ Program Azure PowerShell można zainstalować za pomocą pliku MSI dostępnego w
 
 Aby rozpocząć pracę z programem Azure PowerShell, musisz załadować moduł `AzureRM` w bieżącej sesji programu PowerShell przy użyciu polecenia cmdlet [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module), a następnie zaloguj się przy użyciu swoich poświadczeń platformy Azure.
 
-```powershell
+```powershell-interactive
 # Import the module into the PowerShell session
 Import-Module AzureRM
 # Connect to Azure with an interactive dialog for sign-in
@@ -49,7 +49,7 @@ Pobierz [pakiet WebPI programu Azure PowerShell](http://aka.ms/webpi-azps) i uru
 
 Aby rozpocząć pracę z programem Azure PowerShell, musisz załadować moduł `AzureRM` w bieżącej sesji programu PowerShell przy użyciu polecenia cmdlet [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module), a następnie zaloguj się przy użyciu swoich poświadczeń platformy Azure.
 
-```powershell
+```powershell-interactive
 # Import the module into the PowerShell session
 Import-Module AzureRM
 # Connect to Azure with an interactive dialog for sign-in

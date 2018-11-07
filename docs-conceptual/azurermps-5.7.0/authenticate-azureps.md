@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: 530eafcd0d14dbfd790a22d80c5922f304f4e0b2
-ms.sourcegitcommit: ff44dec6418a449757bded3c6ebe0a7d4c05ee6e
+ms.openlocfilehash: 9a93145f2abeea466a739775ca8ae7e337e78166
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50737564"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51212118"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Logowanie się w programie Azure PowerShell
 
@@ -22,7 +22,7 @@ Program Azure PowerShell obsługuje wiele metod uwierzytelniania. Najprostszym s
 
 Aby zalogować się interakcyjnie, skorzystaj z polecenia cmdlet [Connect-AzureRmAccount](/powershell/module/azurerm.profile/connect-azurermaccount).
 
-```azurepowershell
+```azurepowershell-interactive
 Connect-AzureRmAccount
 ```
 

@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
-ms.openlocfilehash: 3107f77987745faa7ec57ea4811c62a38a7b2aa2
-ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
+ms.openlocfilehash: 164444b7bacbef202513bfafe2f75bdcd6d027c4
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100260"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211302"
 ---
 # <a name="persisting-user-credentials-across-powershell-sessions"></a>Utrwalanie poświadczeń użytkownika między sesjami programu PowerShell
 
@@ -55,7 +55,7 @@ Funkcja **automatycznego zapisywania kontekstu platformy Azure** umożliwia udos
 
   Większość poleceń cmdlet usługi AzureRM umożliwia przekazanie kontekstu w postaci parametru do polecenia cmdlet. Kontekst można przekazać do zadania w tle w sposób przedstawiony w poniższym przykładzie:
 
-  ```powershell
+  ```powershell-interactive
   PS C:\> $job = Start-Job { param ($ctx) New-AzureRmVm -AzureRmContext $ctx [... Additional parameters ...]} -ArgumentList (Get-AzureRmContext)
   ```
 
@@ -63,7 +63,7 @@ Funkcja **automatycznego zapisywania kontekstu platformy Azure** umożliwia udos
 
   Jeśli włączono funkcję **automatycznego zapisywania kontekstu**, wówczas zadania w tle automatycznie używają domyślnego zapisanego kontekstu.
 
-  ```powershell
+  ```powershell-interactive
   PS C:\> $job = Start-Job { New-AzureRmVm [... Additional parameters ...]}
   ```
 

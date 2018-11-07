@@ -8,11 +8,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/11/2018
 ms.openlocfilehash: 6bd1bea43303e9f5a2b46d63a3ac51b4c4031b9f
-ms.sourcegitcommit: 1f699b72bf544d92459da9d888cc0091f9415b65
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "50971843"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51212914"
 ---
 # <a name="query-output-of-azure-powershell-cmdlets"></a>Wykonywanie zapytań względem danych wyjściowych poleceń cmdlet programu Azure PowerShell
 

@@ -8,12 +8,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: 156ef9c9c7dbb0beda4098cac597b88091ac57d3
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.openlocfilehash: 12e304f32f585c1af40d20579cd46999e0a12395
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39025110"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51212993"
 ---
 # <a name="manage-multiple-azure-subscriptions"></a>Zarządzanie wieloma subskrypcjami platformy Azure
 
@@ -21,7 +21,7 @@ Jeśli dopiero zaczynasz korzystać z platformy Azure, najprawdopodobniej masz t
 
 1. Pobierz listę wszystkich subskrypcji na swoim koncie.
 
-    ```powershell
+    ```powershell-interactive
     Get-AzureRmSubscription
     ```
 
@@ -50,13 +50,13 @@ Jeśli dopiero zaczynasz korzystać z platformy Azure, najprawdopodobniej masz t
 
 2. Ustaw domyślną.
 
-    ```powershell
+    ```powershell-interactive
     Select-AzureRmSubscription -SubscriptionName "My Demos"
     ```
 
 3. Sprawdź zmiany, uruchamiając polecenie cmdlet `Get-AzureRmContext`.
 
-    ```powershell
+    ```powershell-interactive
     Get-AzureRmContext
     ```
 

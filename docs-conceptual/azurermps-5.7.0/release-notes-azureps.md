@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 2/20/2018
-ms.openlocfilehash: f69a0b79ac17c3a6502abfa9bbc5370693ad508e
-ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
+ms.openlocfilehash: 1a9d38cd60ba596c085e5ee9f8d815e238362b1f
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34854277"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211948"
 ---
 # <a name="release-notes"></a>Informacje o wersji
 
@@ -29,13 +29,13 @@ Moduł galerii dla poleceń cmdlet ARM: [link](https://www.powershellgallery.com
 
 Aby zainstalować program `AzureRM` z galerii programu PowerShell, uruchom następujące polecenie:
 
-```powershell
+```powershell-interactive
 Install-Module -Name AzureRM -Repository PSGallery -Force
 ```
 
 Aby zaktualizować starszą wersję programu `AzureRM`, uruchom następujące polecenie:
 
-```powershell
+```powershell-interactive
 Update-Module -Name AzureRM
 ```
 

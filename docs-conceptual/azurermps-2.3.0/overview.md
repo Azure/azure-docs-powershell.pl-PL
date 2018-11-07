@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
-ms.openlocfilehash: d514e43d82bcb51f65831dc506e58e8747db0381
-ms.sourcegitcommit: ff44dec6418a449757bded3c6ebe0a7d4c05ee6e
+ms.openlocfilehash: 0cb2fe38ef43657fb02627f9b5bc728eacb3062a
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50737326"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211699"
 ---
 # <a name="azurerm-module-230"></a>Moduł AzureRM 2.3.0
 
@@ -24,7 +24,7 @@ Uwaga: jeśli używasz starszej wersji, zainstaluj wersję 1.2.11
 
 
 ## <a name="install"></a>Instalowanie
-```powershell
+```powershell-interactive
 # Remove previous versions of AzureStack modules
 Uninstall-Module -Name AzureStack -Force 
 Uninstall-Module -Name AzureRM -Force 

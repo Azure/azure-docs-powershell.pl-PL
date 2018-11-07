@@ -7,12 +7,12 @@ ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: f19f9fc9fb9afabdddcbfc98864c63762753e6f0
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.openlocfilehash: 3828a6f9d60a68c2837cc201a50d8707324f4f0a
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39024668"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211234"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>Odinstalowywanie modułu programu Azure PowerShell
 
@@ -36,7 +36,7 @@ Jeśli zainstalowano program Azure PowerShell za pomocą modułu PowerShellGet, 
 
 Poniżej przedstawiono skrypt, za pomocą którego można całkowicie usunąć jedną wersję programu Azure PowerShell. Skrypt wysyła zapytanie do galerii programu PowerShell w celu uzyskania listy zależnych modułów podrzędnych. Następnie skrypt odinstalowuje odpowiednią wersję każdego modułu podrzędnego.
 
-```powershell
+```powershell-interactive
 function Uninstall-AllModules {
   param(
     [Parameter(Mandatory=$true)]
@@ -70,7 +70,7 @@ function Uninstall-AllModules {
 
 Aby użyć tej funkcji, skopiuj kod i wklej go do sesji programu PowerShell. W poniższym przykładzie pokazano, jak uruchomić funkcję, aby usunąć starszą wersję programu Azure PowerShell.
 
-```powershell
+```powershell-interactive
 Uninstall-AllModules -TargetModule AzureRM -Version 4.4.1 -Force
 ```
 

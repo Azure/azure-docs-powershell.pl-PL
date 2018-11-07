@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/06/2018
-ms.openlocfilehash: 6e7d447ea9672c174e3f1d103bc56c11a7f37192
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.openlocfilehash: 47611281f67d68c9fc2686e0c6156b060a225158
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39024923"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51210962"
 ---
 # <a name="install-azure-powershell-on-macos-or-linux"></a>Instalowanie programu Azure PowerShell w systemie macOS lub Linux
 
@@ -43,7 +43,7 @@ sudo pwsh
 
 Aby zainstalować program Azure PowerShell, uruchom następujące polecenie:
 
-```powershell
+```powershell-interactive
 Install-Module AzureRM.NetCore
 ```
 
@@ -59,7 +59,7 @@ You are installing the modules from an untrusted repository. If you trust this r
 its InstallationPolicy value by running the Set-PSRepository cmdlet.
 
 Are you sure you want to install the modules from 'PSGallery'?
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
 Wybierz odpowiedź `Yes` lub `Yes to All`, aby kontynuować instalację.
@@ -68,7 +68,7 @@ Wybierz odpowiedź `Yes` lub `Yes to All`, aby kontynuować instalację.
 
 Aby rozpocząć pracę z programem Azure PowerShell, musisz załadować moduł `AzureRM.Netcore` w sesji programu PowerShell przy użyciu polecenia cmdlet [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module), a następnie zaloguj się przy użyciu swoich poświadczeń platformy Azure. Zaimportowanie modułu __nie__ wymaga podwyższonego poziomu uprawnień.
 
-```powershell
+```powershell-interactive
 # Import the module into the PowerShell session
 Import-Module AzureRM.Netcore
 # Connect to Azure with an interactive dialog for sign-in

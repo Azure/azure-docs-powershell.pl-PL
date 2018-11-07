@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
-ms.openlocfilehash: 3a0d3d1d970f4458e66167fb55c840598ce59e13
-ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
+ms.openlocfilehash: 3114f9e9b36dc374f9fb2d402c448cff7fef0aa3
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100430"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211455"
 ---
 # <a name="getting-started-with-azure-powershell"></a>Rozpoczynanie pracy z programem Azure PowerShell
 
@@ -64,7 +64,7 @@ Najpierw utwórz grupę zasobów. Grupy zasobów na platformie Azure umożliwiaj
 
 Utworzymy grupę zasobów o nazwie „MyResourceGroup” w regionie westeurope świadczenia usługi Azure. W tym celu wpisz następujące polecenie:
 
-```powershell
+```powershell-interactive
 New-AzureRmResourceGroup -Name 'myResourceGroup' -Location 'westeurope'
 ```
 
@@ -84,7 +84,7 @@ Teraz gdy mamy grupę zasobów, utwórzmy w niej maszynę wirtualną z systemem 
 
 Najpierw musimy utworzyć konfigurację podsieci, która będzie używana w procesie tworzenia sieci wirtualnej. Musimy również utworzyć publiczny adres IP umożliwiający nawiązywanie połączeń z tą maszyną wirtualną. Dostęp do publicznego adresu zostanie zabezpieczony przy użyciu sieciowej grupy zabezpieczeń. Na koniec za pomocą wszystkich wymienionych zasobów utworzymy wirtualną kartę sieciową.
 
-```powershell
+```powershell-interactive
 # Variables for common values
 $resourceGroup = "myResourceGroup"
 $location = "westeurope"
@@ -120,14 +120,14 @@ $nic = New-AzureRmNetworkInterface -Name myNic1 -ResourceGroupName $resourceGrou
 
 Potrzebujemy zestawu poświadczeń dla systemu operacyjnego.
 
-```powershell
+```powershell-interactive
 # Create user object
 $cred = Get-Credential -Message "Enter a username and password for the virtual machine."
 ```
 
 Teraz gdy mamy potrzebne zasoby, możemy utworzyć maszynę wirtualną. W tym kroku utworzymy obiekt konfiguracji maszyny wirtualnej, a następnie użyjemy tej konfiguracji do utworzenia maszyny wirtualnej.
 
-```powershell
+```powershell-interactive
 # Create a virtual machine configuration
 $vmConfig = New-AzureRmVMConfig -VMName $vmName -VMSize Standard_D1 |
   Set-AzureRmVMOperatingSystem -Windows -ComputerName $vmName -Credential $cred |
@@ -148,7 +148,7 @@ RequestId IsSuccessStatusCode StatusCode ReasonPhrase
 
 Teraz zaloguj się do nowo utworzonej maszyny wirtualnej z systemem Windows Server za pomocą pulpitu zdalnego i publicznego adresu IP maszyny wirtualnej. Następujące polecenie umożliwia wyświetlenie publicznego adresu IP utworzonego w poprzednim skrypcie.
 
-```powershell
+```powershell-interactive
 $publicIp | Select-Object Name,IpAddress
 ```
 
@@ -160,7 +160,7 @@ mypublicdns1400512543 xx.xx.xx.xx
 
 Jeśli korzystasz z komputera z systemem Windows, możesz to zrobić w wierszu polecenia przy użyciu polecenia mstsc:
 
-```powershell
+```powershell-interactive
 mstsc /v:xx.xxx.xx.xxx
 ```
 
@@ -174,7 +174,7 @@ Aby utworzyć nową maszynę wirtualną z systemem Linux, musimy najpierw utworz
 
 Najpierw musimy utworzyć konfigurację podsieci, która będzie używana w procesie tworzenia sieci wirtualnej. Musimy również utworzyć publiczny adres IP umożliwiający nawiązywanie połączeń z tą maszyną wirtualną. Dostęp do publicznego adresu zostanie zabezpieczony przy użyciu sieciowej grupy zabezpieczeń. Na koniec za pomocą wszystkich wymienionych zasobów utworzymy wirtualną kartę sieciową.
 
-```powershell
+```powershell-interactive
 # Variables for common values
 $resourceGroup = "myResourceGroup"
 $location = "westeurope"
@@ -214,7 +214,7 @@ $nic = New-AzureRmNetworkInterface -Name myNic2 -ResourceGroupName $resourceGrou
 
 Teraz gdy mamy potrzebne zasoby, możemy utworzyć maszynę wirtualną. W tym kroku utworzymy obiekt konfiguracji maszyny wirtualnej, a następnie użyjemy tej konfiguracji do utworzenia maszyny wirtualnej.
 
-```powershell
+```powershell-interactive
 # Create a virtual machine configuration
 $vmConfig = New-AzureRmVMConfig -VMName $vmName -VMSize Standard_D1 |
   Set-AzureRmVMOperatingSystem -Linux -ComputerName $vmName -Credential $cred -DisablePasswordAuthentication |
@@ -272,13 +272,13 @@ Omówiliśmy sposób tworzenia grupy zasobów, maszyny wirtualnej z systemem Lin
 
 Aby na przykład utworzyć moduł równoważenia obciążenia sieci platformy Azure, który można będzie potem skojarzyć z nowo utworzonymi maszynami wirtualnymi, możemy użyć następującego polecenia create:
 
-```powershell
+```powershell-interactive
 New-AzureRmLoadBalancer -Name MyLoadBalancer -ResourceGroupName myResourceGroup -Location westeurope
 ```
 
 Możemy także utworzyć nową prywatną sieć wirtualną (nazywaną „VNet” na platformie Azure) dla naszej infrastruktury, korzystając z następującego polecenia:
 
-```powershell
+```powershell-interactive
 $subnetConfig = New-AzureRmVirtualNetworkSubnetConfig -Name mySubnet2 -AddressPrefix 10.0.0.0/16
 $vnet = New-AzureRmVirtualNetwork -ResourceGroupName myResourceGroup -Location westeurope `
   -Name MYvNET3 -AddressPrefix 10.0.0.0/16 -Subnet $subnetConfig
@@ -288,7 +288,7 @@ Tym, co sprawia, że platforma Azure i program Azure PowerShell są tak przydatn
 
 Możesz na przykład użyć programu Azure PowerShell do utworzenia usługi Azure App Service. Usługa Azure App Service to zarządzana usługa platformy, która zapewnia doskonały sposób hostowania aplikacji internetowych bez konieczności troszczenia się o infrastrukturę. Po utworzeniu usługi Azure App Service możesz utworzyć dwie nowe aplikacje Azure Web Apps w ramach usługi App Service, korzystając z następujących poleceń:
 
-```powershell
+```powershell-interactive
 # Create an Azure AppService that we can host any number of web apps within
 New-AzureRmAppServicePlan -Name MyAppServicePlan -Tier Basic -NumberofWorkers 2 -WorkerSize Small -ResourceGroupName myResourceGroup -Location westeurope
 
@@ -301,7 +301,7 @@ New-AzureRmWebApp -Name MyWebApp43433 -AppServicePlan MyAppServicePlan -Resource
 
 Listę zasobów uruchomionych na platformie Azure można wyświetlić za pomocą polecenia cmdlet `Get-AzureRmResource`. W poniższym przykładzie zostaną wyświetlone zasoby utworzone w nowej grupie zasobów.
 
-```powershell
+```powershell-interactive
 Get-AzureRmResource |
   Where-Object ResourceGroupName -eq myResourceGroup |
     Select-Object Name,Location,ResourceType
@@ -330,7 +330,7 @@ micromyresomywi032907510                              westeurope Microsoft.Stora
 
 Wyczyszczenie konta platformy Azure polega na usunięciu zasobów utworzonych w tym przykładzie. Aby usunąć zasoby, które nie są już potrzebne, możesz użyć poleceń cmdlet `Remove-AzureRm*`. Aby usunąć utworzoną maszynę wirtualną z systemem Windows, użyj następującego polecenia:
 
-```powershell
+```powershell-interactive
 Remove-AzureRmVM -Name myWindowsVM -ResourceGroupName myResourceGroup
 ```
 
@@ -344,7 +344,7 @@ Are you sure you want to remove resource group 'myResourceGroup'
 
 Można także usuwać wiele zasobów jednocześnie. Na przykład następujące polecenie pozwala usunąć całą grupę zasobów „MyResourceGroup”, która była używana we wszystkich przykładach w tym samouczku wprowadzającym. Usunięta zostanie grupa zasobów i wszystkie zasoby w niej zawarte.
 
-```powershell
+```powershell-interactive
 Remove-AzureRmResourceGroup -Name myResourceGroup
 ```
 

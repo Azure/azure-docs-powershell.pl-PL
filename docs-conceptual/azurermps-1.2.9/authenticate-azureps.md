@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: 71a2554052f5a25ea86fe44b6dcf5d9343c81f3e
-ms.sourcegitcommit: ff44dec6418a449757bded3c6ebe0a7d4c05ee6e
+ms.openlocfilehash: edbf17141cac4ea6e41282c8e1dd07c5b738351c
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50737938"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211608"
 ---
 # <a name="log-in-with-azure-powershell"></a>Logowanie za pomocą programu Azure PowerShell
 
@@ -32,13 +32,13 @@ Jednostki usługi zapewniają możliwość tworzenia nieinteraktywnych kont, kt�
 
 2. Zaloguj się za pomocą jednostki usługi.
 
-    ```powershell
+    ```powershell-interactive
     Login-AzureRmAccount -ServicePrincipal -ApplicationId  "http://my-app" -Credential $pscredential -TenantId $tenantid
     ```
 
     Aby uzyskać identyfikator TenantId, zaloguj się interaktywnie i uzyskaj identyfikator dzierżawy ze swojej subskrypcji.
 
-    ```powershell
+    ```powershell-interactive
     Get-AzureRmSubscription
     ```
 
@@ -61,13 +61,13 @@ Aby uzyskać więcej informacji na temat tożsamości zarządzanych dla zasobów
 
 Usługi w chmurze platformy Azure udostępniają różne środowiska zgodne z przepisami dotyczącymi obsługi danych określonymi przez administrację rządową poszczególnych krajów. Jeśli dane konto Azure znajduje się w chmurze administracji rządowej, podczas logowania należy określić środowisko. Jeśli na przykład konto należy do chmury chińskiej, rejestracja odbywa się za pomocą następującego polecenia:
 
-```powershell
+```powershell-interactive
 Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 ```
 
 Użyj następującego polecenia, aby uzyskać listę dostępnych środowisk:
 
-```powershell
+```powershell-interactive
 Get-AzureRmEnvironment | Select-Object Name
 ```
 

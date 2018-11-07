@@ -1,19 +1,18 @@
 ---
-title: Zarządzanie subskrypcjami platformy Azure za pomocą programu Azure PowerShell | Microsoft Docs
+title: Zarządzanie subskrypcjami platformy Azure za pomocą programu Azure PowerShell
 description: Zarządzanie subskrypcjami platformy Azure za pomocą programu Azure PowerShell
-keywords: Azure PowerShell, subskrypcja
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 03/30/2017
-ms.openlocfilehash: 8869b700e513d6fc07e69de1dbfe852bd2a52df1
+ms.date: 09/11/2018
+ms.openlocfilehash: a93461af1dafbf8f2c85ef127ecaefadf3be2f52
 ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 11/07/2018
-ms.locfileid: "51211064"
+ms.locfileid: "51212937"
 ---
 # <a name="manage-multiple-azure-subscriptions"></a>Zarządzanie wieloma subskrypcjami platformy Azure
 
@@ -21,7 +20,7 @@ Jeśli dopiero zaczynasz korzystać z platformy Azure, najprawdopodobniej masz t
 
 1. Pobierz listę wszystkich subskrypcji na swoim koncie.
 
-    ```powershell-interactive
+    ```azurepowershell-interactive
     Get-AzureRmSubscription
     ```
 
@@ -50,13 +49,13 @@ Jeśli dopiero zaczynasz korzystać z platformy Azure, najprawdopodobniej masz t
 
 2. Ustaw domyślną.
 
-    ```powershell-interactive
-    Select-AzureRmSubscription -SubscriptionName "My Demos"
+    ```azurepowershell-interactive
+    Select-AzureRmSubscription -Subscription "My Demos"
     ```
 
 3. Sprawdź zmiany, uruchamiając polecenie cmdlet `Get-AzureRmContext`.
 
-    ```powershell-interactive
+    ```azurepowershell-interactive
     Get-AzureRmContext
     ```
 
@@ -69,4 +68,4 @@ Jeśli dopiero zaczynasz korzystać z platformy Azure, najprawdopodobniej masz t
     CurrentStorageAccount :
     ```
 
-Po ustawieniu domyślnej subskrypcji wszystkie kolejne polecenia programu Azure PowerShell będą uruchamiane dla tej subskrypcji.
+Po ustawieniu domyślnej subskrypcji wszystkie polecenia programu Azure PowerShell będą uruchamiane dla tej subskrypcji.

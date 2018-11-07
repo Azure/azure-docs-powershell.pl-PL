@@ -7,28 +7,28 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 05/15/2017
-ms.openlocfilehash: 19379a57e2ed369f75b2f02c73c00c1fbe02213e
+ms.date: 09/09/2018
+ms.openlocfilehash: 433a638187f024883c177457e420a759968fed9a
 ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 11/07/2018
-ms.locfileid: "51210996"
+ms.locfileid: "51213029"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Tworzenie jednostki usługi platformy Azure za pomocą programu Azure PowerShell
 
-Jeśli planujesz zarządzanie swoją aplikacją lub usługą za pomocą programu Azure PowerShell, musisz uruchomić go w ramach jednostki usługi Azure Active Directory (AAD), a nie przy użyciu własnych poświadczeń. W tym temacie przedstawiono kroki umożliwiające utworzenie podmiotu zabezpieczeń za pomocą programu Azure PowerShell.
+Jeśli planujesz zarządzanie swoją aplikacją lub usługą za pomocą programu Azure PowerShell, musisz uruchomić go w ramach jednostki usługi Azure Active Directory (AAD), a nie przy użyciu własnych poświadczeń. W tym artykule przedstawiono kroki umożliwiające utworzenie podmiotu zabezpieczeń za pomocą programu Azure PowerShell.
 
 > [!NOTE]
 > Za pośrednictwem witryny Azure Portal możesz również utworzyć jednostkę usługi. Aby uzyskać więcej szczegółów, przeczytaj artykuł [Use portal to create Active Directory application and service principal that can access resources](/azure/azure-resource-manager/resource-group-create-service-principal-portal) (Używanie portalu do tworzenia aplikacji usługi Active Directory i jednostki usługi używanej do uzyskiwania dostępu do zasobów).
 
 ## <a name="what-is-a-service-principal"></a>Co to jest „jednostka usługi”?
 
-Jednostka usługi platformy Azure to tożsamość zabezpieczeń używana przez aplikacje, usługi i narzędzia automatyzacji utworzone przez użytkownika w celu uzyskania dostępu do określonych zasobów platformy Azure. Można ją traktować jako „tożsamość użytkownika” (nazwa logowania i hasło lub certyfikat) z określoną rolą i ściśle kontrolowanymi uprawnieniami. Musi ona mieć możliwość wykonywania tylko konkretnych czynności w odróżnieniu od ogólnej tożsamości użytkownika. Nazwa główna usługi pozwala poprawić bezpieczeństwo, jeśli przyznasz jej tylko minimalny poziom uprawnień potrzebny do wykonywania zadań zarządzania.
+Jednostka usługi platformy Azure to tożsamość zabezpieczeń używana przez aplikacje, usługi i narzędzia automatyzacji utworzone przez użytkownika w celu uzyskania dostępu do określonych zasobów platformy Azure. Można ją traktować jako „tożsamość użytkownika” (nazwa logowania i hasło lub certyfikat) z określoną rolą i ściśle kontrolowanymi uprawnieniami. W odróżnieniu od ogólnej tożsamości użytkownika, jednostka usługi powinna wykonywać tylko określone czynności. Nazwa główna usługi pozwala poprawić bezpieczeństwo, jeśli przyznasz jej tylko minimalny poziom uprawnień potrzebny do wykonywania zadań zarządzania.
 
 ## <a name="verify-your-own-permission-level"></a>Sprawdzenie własnego poziomu uprawnień
 
-Po pierwsze, musisz mieć wystarczające uprawnienia zarówno w usłudze Azure Active Directory, jak i subskrypcji platformy Azure. W szczególności musisz mieć możliwość tworzenia aplikacji w usłudze Active Directory i przypisywania roli do jednostki usługi.
+Po pierwsze, musisz mieć wystarczające uprawnienia zarówno w usłudze Azure Active Directory, jak i subskrypcji platformy Azure. Musisz mieć możliwość tworzenia aplikacji w usłudze Active Directory i przypisywania roli do jednostki usługi.
 
 Najłatwiejszym sposobem sprawdzenia, czy Twoje konto ma odpowiednie uprawnienia, jest skorzystanie z portalu. Zobacz [Sprawdzanie wymaganego uprawnienia w portalu](/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions).
 
@@ -41,9 +41,9 @@ Po zalogowaniu się na koncie platformy Azure można utworzyć jednostkę usług
 
 ### <a name="get-information-about-your-application"></a>Pobieranie informacji o aplikacji
 
-Aby znaleźć informacje o aplikacji, można użyć polecenia cmdlet `Get-AzureRmADApplication`.
+Aby uzyskać informacje o aplikacji, można użyć polecenia cmdlet `Get-AzureRmADApplication`.
 
-```powershell-interactive
+```azurepowershell-interactive
 Get-AzureRmADApplication -DisplayNameStartWith MyDemoWebApp
 ```
 
@@ -63,10 +63,11 @@ ReplyUrls               : {}
 
 Do utworzenia jednostki usługi służy polecenie cmdlet `New-AzureRmADServicePrincipal`.
 
-```powershell-interactive
+```azurepowershell-interactive
 Add-Type -Assembly System.Web
 $password = [System.Web.Security.Membership]::GeneratePassword(16,3)
-New-AzureRmADServicePrincipal -ApplicationId 00c01aaa-1603-49fc-b6df-b78c4e5138b4 -Password $password
+$securePassword = ConvertTo-SecureString -Force -AsPlainText -String $password
+New-AzureRmADServicePrincipal -ApplicationId 00c01aaa-1603-49fc-b6df-b78c4e5138b4 -Password $securePassword
 ```
 
 ```output
@@ -77,7 +78,7 @@ MyDemoWebApp                   ServicePrincipal               698138e7-d7b6-4738
 
 ### <a name="get-information-about-the-service-principal"></a>Pobieranie informacji o jednostce usługi
 
-```powershell-interactive
+```azurepowershell-interactive
 $svcprincipal = Get-AzureRmADServicePrincipal -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4
 $svcprincipal | Select-Object *
 ```
@@ -92,14 +93,14 @@ Type                  : ServicePrincipal
 
 ### <a name="sign-in-using-the-service-principal"></a>Logowanie za pomocą jednostki usługi
 
-Możesz teraz zalogować się w ramach nowej jednostki usługi dla aplikacji przy użyciu podanych opcji *appId* i *password*. Musisz podać identyfikator dzierżawy dla swojego konta. Identyfikator dzierżawy jest wyświetlany po zalogowaniu się do platformy Azure przy użyciu osobistych poświadczeń.
+Możesz teraz zalogować się w ramach nowej jednostki usługi dla aplikacji przy użyciu podanych opcji *appId* i *password*. Potrzebujesz także identyfikatora dzierżawy dla jednostki usługi. Identyfikator dzierżawy jest wyświetlany po zalogowaniu się do platformy Azure przy użyciu osobistych poświadczeń. Aby zalogować się przy użyciu jednostki usługi, użyj następujących poleceń:
 
-```powershell-interactive
+```azurepowershell-interactive
 $cred = Get-Credential -UserName $svcprincipal.ApplicationId -Message "Enter Password"
-Login-AzureRmAccount -Credential $cred -ServicePrincipal -TenantId XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+Connect-AzureRmAccount -Credential $cred -ServicePrincipal -TenantId XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
 ```
 
-Uruchom to polecenie w nowej sesji programu PowerShell. Po pomyślnym zalogowaniu zostaną wyświetlone dane wyjściowe, wyglądające mniej więcej tak:
+Po pomyślnym zalogowaniu się zostaną wyświetlone dane wyjściowe, takie jak:
 
 ```output
 Environment           : AzureCloud
@@ -128,7 +129,7 @@ Rola **Czytelnik** jest bardziej restrykcyjna i jest dobrym wyborem dla aplikacj
 
 Zmienimy teraz poprzedni przykład — dodamy rolę **Czytelnik** i usuniemy rolę **Współautor**:
 
-```powershell-interactive
+```azurepowershell-interactive
 New-AzureRmRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4 -RoleDefinitionName Reader
 ```
 
@@ -143,13 +144,13 @@ ObjectId           : 698138e7-d7b6-4738-a866-b4e3081a69e4
 ObjectType         : ServicePrincipal
 ```
 
-```powershell-interactive
+```azurepowershell-interactive
 Remove-AzureRmRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4 -RoleDefinitionName Contributor
 ```
 
 Aby wyświetlić obecnie przypisane role:
 
-```powershell-interactive
+```azurepowershell-interactive
 Get-AzureRmRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4
 ```
 
@@ -177,7 +178,7 @@ Dobrą praktyką w zakresie zabezpieczeń jest regularne sprawdzanie uprawnień 
 
 ### <a name="add-a-new-password-for-the-service-principal"></a>Dodawanie nowego hasła dla jednostki usługi
 
-```powershell-interactive
+```azurepowershell-interactive
 $password = [System.Web.Security.Membership]::GeneratePassword(16,3)
 New-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp -Password $password
 ```
@@ -190,7 +191,7 @@ StartDate           EndDate             KeyId                                Typ
 
 ### <a name="get-a-list-of-credentials-for-the-service-principal"></a>Pobieranie listy poświadczeń dla jednostki usługi
 
-```powershell-interactive
+```azurepowershell-interactive
 Get-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp
 ```
 
@@ -203,7 +204,7 @@ StartDate           EndDate             KeyId                                Typ
 
 ### <a name="remove-the-old-password-from-the-service-principal"></a>Usuwanie starego hasła dla jednostki usługi
 
-```powershell-interactive
+```azurepowershell-interactive
 Remove-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp -KeyId ca9d4846-4972-4c70-b6f5-a4effa60b9bc
 ```
 
@@ -216,7 +217,7 @@ service principal objectId '698138e7-d7b6-4738-a866-b4e3081a69e4'.
 
 ### <a name="verify-the-list-of-credentials-for-the-service-principal"></a>Sprawdzanie listy poświadczeń dla jednostki usługi
 
-```powershell-interactive
+```azurepowershell-interactive
 Get-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp
 ```
 

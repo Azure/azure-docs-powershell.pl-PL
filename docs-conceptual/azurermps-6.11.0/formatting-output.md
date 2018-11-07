@@ -8,11 +8,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/09/2018
 ms.openlocfilehash: 390285bcf483e75b7a2b77d345ccb108669f66e5
-ms.sourcegitcommit: ff44dec6418a449757bded3c6ebe0a7d4c05ee6e
+ms.sourcegitcommit: 1f699b72bf544d92459da9d888cc0091f9415b65
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50737462"
+ms.lasthandoff: 11/06/2018
+ms.locfileid: "50971588"
 ---
 # <a name="format-azurepowershell-cmdlet-output"></a>Formatowanie danych wyjściowych polecenia cmdlet programu Azure PowerShell
 

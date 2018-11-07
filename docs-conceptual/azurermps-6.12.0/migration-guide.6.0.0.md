@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
-ms.openlocfilehash: 8b7b1422ba2881ca172e65dba61d4c4808cca7de
-ms.sourcegitcommit: 1f699b72bf544d92459da9d888cc0091f9415b65
+ms.openlocfilehash: a9cd0667e098e6b2c8577d11218b842548bee9d3
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "50972540"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51212845"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-600"></a>Zmiany powodujące niezgodność dotyczące programu Microsoft Azure PowerShell 6.0.0.
 
@@ -99,7 +99,7 @@ Alias `Tags` dla parametru `Tag` został usunięty z wielu poleceń cmdlet. Poni
 **Różne**
 - Właściwość nazwy jednostki SKU zagnieżdżona w typach `PSDisk` i `PSSnapshot` została zmieniona z wartości `StandardLRS` i `PremiumLRS` odpowiednio na wartości `Standard_LRS` i `Premium_LRS`
 
-```powershell
+```powershell-interactive
 $disk = Get-AzureRmDisk -ResourceGroupName "MyResourceGroup" -DiskName "MyDiskName"
 $disk.Sku.Name       # This will now return Standard_LRS or Premium_LRS
 
@@ -109,7 +109,7 @@ $snapshot.Sku.Name   # This will now return Standard_LRS or Premium_LRS
 
 - Właściwość typu konta magazynu zagnieżdżona w typach `PSVirtualMachine`, `PSVirtualMachineScaleSet` i `PSImage` została zmieniona z wartości `StandardLRS` i `PremiumLRS` odpowiednio na wartości `Standard_LRS` i `Premium_LRS`
 
-```powershell
+```powershell-interactive
 $vm = Get-AzureRmVM -ResourceGroupName "MyResourceGroup" -Name "MyVM"
 $vm.StorageProfile.DataDisks[0].ManagedDisk.StorageAccountType   # This will now return Standard_LRS or Premium_LRS
 ```
@@ -126,7 +126,7 @@ $vm.StorageProfile.DataDisks[0].ManagedDisk.StorageAccountType   # This will now
 **New-AzureRmAvailabilitySet**
 - Parametr `Managed` został usunięty i wprowadzono parametr `Sku`
 
-```powershell
+```powershell-interactive
 # Old
 New-AzureRmAvailabilitySet -ResourceGroupName "MyRG" -Name "MyAvailabilitySet" -Location "West US" -Managed
 
@@ -170,7 +170,7 @@ New-AzureRmAvailabilitySet -ResourceGroupName "MyRG" -Name "MyAvailabilitySet" -
 **Export-AzureRmDataLakeStoreItem**
 - Parametry `PerFileThreadCount` i `ConcurrentFileCount` zostały usunięte. W przyszłości użyj parametru `Concurrency`
 
-```powershell
+```powershell-interactive
 # Old
 Export-AzureRmDataLakeStoreItem -Account contoso -Path /test -Destination C:\test -Recurse -Resume -PerFileThreadCount 2 -ConcurrentFileCount 80
 
@@ -181,7 +181,7 @@ Export-AzureRmDataLakeStoreItem -Account contoso -Path /test -Destination C:\tes
 **Import-AzureRmDataLakeStoreItem**
 - Parametry `PerFileThreadCount` i `ConcurrentFileCount` zostały usunięte. W przyszłości użyj parametru `Concurrency`
 
-```powershell
+```powershell-interactive
 # Old
 Import-AzureRmDataLakeStoreItem -Account contoso -Path C:\test -Destination /test -Recurse -Resume -ForceBinary -PerFileThreadCount 2 -ConcurrentFileCount 80
 
@@ -192,7 +192,7 @@ Import-AzureRmDataLakeStoreItem -Account contoso -Path C:\test -Destination /tes
 **Remove-AzureRmDataLakeStoreItem**
 - Parametr `Clean` został usunięty
 
-```powershell
+```powershell-interactive
 # Old
 Remove-AzureRmDataLakeStoreItem -Account "ContosoADL" -path /myFolder -Recurse -Clean
 
@@ -258,7 +258,7 @@ Więcej informacji dotyczących tworzenia tokenów dostępu współdzielonego dl
 - [Tworzenie sygnatury dostępu współdzielonego usługi] (https://docs.microsoft.com/rest/api/storageservices/Constructing-a-Service-SAS)
 - [Tworzenia sygnatury dostępu współdzielonego konta] (https://docs.microsoft.com/rest/api/storageservices/constructing-an-account-sas)
 
-```powershell
+```powershell-interactive
 # Old
 $sas = Set-AzureKeyVaultManagedStorageSasDefinition -VaultName myVault -Name myKey -Service Blob -Permissions 'rcw' -ValidityPeriod 180d
 
@@ -380,7 +380,7 @@ $sas=Set-AzureKeyVaultManagedStorageSasDefinition -AccountName $sa.StorageAccoun
 - Parametr `RedisVersion` został usunięty
 - Parametr `MaxMemoryPolicy` został usunięty i wprowadzono parametr `RedisConfiguration`
 
-```powershell
+```powershell-interactive
 # Old
 New-AzureRmRedisCache -ResourceGroupName "MyRG" -Name "MyRedisCache" -Location "North Central US" -MaxMemoryPolicy "allkeys-lru"
 
@@ -391,7 +391,7 @@ New-AzureRmRedisCache -ResourceGroupName "MyRG" -Name "MyRedisCache" -Location "
 **Set-AzureRmRedisCache**
 - Parametr `MaxMemoryPolicy` został usunięty i wprowadzono parametr `RedisConfiguration`
 
-```powershell
+```powershell-interactive
 # Old
 Set-AzureRmRedisCache -ResourceGroupName "MyRG" -Name "MyRedisCache" -MaxMemoryPolicy "allkeys-lru"
 
@@ -404,7 +404,7 @@ Set-AzureRmRedisCache -ResourceGroupName "MyRG" -Name "MyRedisCache" -RedisConfi
 **Find-AzureRmResource**
 - To polecenie cmdlet zostało usunięte, a jego funkcjonalność została przeniesiona do polecenia `Get-AzureRmResource`
 
-```powershell
+```powershell-interactive
 # Old
 Find-AzureRmResource -ResourceType "Microsoft.Web/sites" -ResourceGroupNameContains "ResourceGroup"
 Find-AzureRmResource -ResourceType "Microsoft.Web/sites" -ResourceNameContains "test"
@@ -417,7 +417,7 @@ Get-AzureRmResource -ResourceType "Microsoft.Web/sites" -Name "*test*"
 **Find-AzureRmResourceGroup**
 - To polecenie cmdlet zostało usunięte, a jego funkcjonalność została przeniesiona do polecenia `Get-AzureRmResourceGroup`
 
-```powershell
+```powershell-interactive
 # Old
 Find-AzureRmResourceGroup
 Find-AzureRmResourceGroup -Tag @{ "testtag" = $null }
@@ -432,7 +432,7 @@ Get-AzureRmResourceGroup -Tag @{ "testtag" = "testval" }
 **Get-AzureRmRoleDefinition**
 - Parametr `AtScopeAndBelow` został usunięty.
 
-```powershell
+```powershell-interactive
 
 # Old
 Get-AzureRmRoleDefinition [other required parameters] -AtScopeAndBelow

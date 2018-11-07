@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: 37305943c272d61953c7c4765a72125088b2d805
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.openlocfilehash: 37f240d371150928f10cb2811c4bb5f1b585c2f3
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39024566"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51210928"
 ---
 # <a name="formatting-query-results"></a>Formatowanie wyników zapytania
 
@@ -29,7 +29,7 @@ Domyślnie dane wyjściowe każdego polecenia cmdlet programu PowerShell są wst
 
 W tym przykładzie zostanie pobrana lista maszyn wirtualnych platformy Azure w domyślnej subskrypcji.  Domyślnie dane wyjściowe polecenia Get-AzureRmVM mają format tabeli.
 
-```powershell
+```powershell-interactive
 Get-AzureRmVM
 ```
 
@@ -42,7 +42,7 @@ MYWESTEURG          MyWin2016VM westeurope Standard_DS1_v2 Windows   mywin2016vm
 
 Jeśli chcesz ograniczyć zwracane kolumny, możesz użyć polecenia cmdlet `Format-Table`. W kolejnym przykładzie zostanie pobrana ta sama lista maszyn wirtualnych, ale dane wyjściowe zostaną ograniczone tylko do nazwy i lokalizacji maszyny wirtualnej oraz grupy zasobów.  Parametr `-Autosize` umożliwia zmienianie rozmiaru kolumn na podstawie rozmiaru danych.
 
-```powershell
+```powershell-interactive
 Get-AzureRmVM | Format-Table Name,ResourceGroupName,Location -AutoSize
 ```
 
@@ -55,7 +55,7 @@ MyWin2016VM   MYWESTEURG        westeurope
 
 Jeśli chcesz, możesz jednak wyświetlić informacje w formacie listy. Pokazano to w poniższym przykładzie, korzystającym z polecenia cmdlet `Format-List`.
 
-```powershell
+```powershell-interactive
 Get-AzureVM | Format-List Name,VmId,Location,ResourceGroupName
 ```
 
@@ -75,7 +75,7 @@ ResourceGroupName : MYWESTEURG
 
 Program PowerShell udostępnia też wiele formatów danych wyjściowych, które spełniają różne potrzeby.  W poniższym przykładzie polecenie cmdlet `Select-Object` zostanie użyte do pobrania atrybutów maszyn wirtualnych w subskrypcji i przekształcenia danych wyjściowych na format CSV w celu ich łatwego zaimportowania do bazy danych lub arkusza kalkulacyjnego.
 
-```powershell
+```powershell-interactive
 Get-AzureRmVM | Select-Object ResourceGroupName,Id,VmId,Name,Location,ProvisioningState | ConvertTo-Csv -NoTypeInformation
 ```
 
@@ -87,7 +87,7 @@ Get-AzureRmVM | Select-Object ResourceGroupName,Id,VmId,Name,Location,Provisioni
 
 Dane wyjściowe można także przekształcić na format JSON.  W poniższym przykładzie zostanie utworzona ta sama lista maszyn wirtualnych, ale format danych wyjściowych zostanie zmieniony na JSON.
 
-```powershell
+```powershell-interactive
 Get-AzureRmVM | Select-Object ResourceGroupName,Id,VmId,Name,Location,ProvisioningState | ConvertTo-Json
 ```
 

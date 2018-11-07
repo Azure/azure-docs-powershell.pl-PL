@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: eb359710efde6b5969ac721e395725a0ce87fddd
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.openlocfilehash: 9a7627a25f9bbd196b1d615229e45a6e1ce7a7d9
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39024600"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51213005"
 ---
 # <a name="querying-for-azure-resources"></a>Wykonywanie zapytań dotyczących zasobów platformy Azure
 
@@ -24,7 +24,7 @@ Każde polecenie cmdlet programu Azure PowerShell ma zdefiniowane formatowanie d
 
 Przy użyciu polecenia cmdlet `Get-AzureRmVM` wykonaj zapytanie dotyczące listy maszyn wirtualnych na Twoim koncie.
 
-```powershell
+```powershell-interactive
 Get-AzureRmVM
 ```
 
@@ -39,7 +39,7 @@ MYWESTEURG          MyWin2016VM westeurope Standard_DS1_v2 Windows   mywin2016vm
 
 Za pomocą polecenia cmdlet `Select-Object` można wybrać poszczególne, interesujące właściwości.
 
-```powershell
+```powershell-interactive
 Get-AzureRmVM | Select Name,ResourceGroupName,Location
 ```
 
@@ -54,7 +54,7 @@ MyWin2016VM   MYWESTEURG        westeurope
 
 Jeśli właściwość, którą chcesz wybrać, jest zagnieżdżona głęboko w danych wyjściowych JSON, musisz podać pełną ścieżkę do niej. W poniższym przykładzie pokazano, jak wybrać nazwę maszyny wirtualnej i typ systemu operacyjnego z polecenia cmdlet `Get-AzureRmVM`.
 
-```powershell
+```powershell-interactive
 Get-AzureRmVM | Select Name,@{Name='OSType'; Expression={$_.StorageProfile.OSDisk.OSType}}
 ```
 
@@ -69,7 +69,7 @@ MyWin2016VM   Windows
 
 Polecenie cmdlet `Where-Object` pozwala filtrować wyniki na podstawie dowolnej wartości właściwości. Poniższy filtr wybiera tylko te maszyny wirtualne, których nazwy zawierają tekst „RGD”.
 
-```powershell
+```powershell-interactive
 Get-AzureRmVM | Where ResourceGroupName -like RGD* | Select ResourceGroupName,Name
 ```
 
@@ -82,7 +82,7 @@ RGDEMO001          KBDemo020
 
 W następnym przykładzie wyniki będą zawierać maszyny wirtualne, których właściwość vmSize ma wartość „Standard_DS1_V2”.
 
-```powershell
+```powershell-interactive
 Get-AzureRmVM | Where vmSize -eq Standard_DS1_V2
 ```
 

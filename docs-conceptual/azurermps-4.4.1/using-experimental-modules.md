@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/05/2017
-ms.openlocfilehash: f3fcfb84a4c0e775653fb65dc33e30d84cca5646
-ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
+ms.openlocfilehash: 09858da9981c1136e2a39a079962c5b8fc39bde9
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34854668"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211914"
 ---
 # <a name="using-experimental-azure-powershell-modules"></a>Korzystanie z eksperymentalnych modułów programu Azure PowerShell
 
@@ -30,7 +30,7 @@ W przypadku modułów eksperymentalnych obowiązuje następująca konwencja naze
 
 Moduły eksperymentalne są publikowane w galerii programu PowerShell tak samo, jak istniejące moduły programu Azure PowerShell. Aby wyświetlić listę modułów eksperymentalnych, uruchom następujące polecenie:
 
-```powershell
+```powershell-interactive
 Find-Module AzureRM.*.Experiments
 ```
 
@@ -43,7 +43,7 @@ Version Name                         Repository Description
 
 Aby zainstalować moduł eksperymentalny, użyj następujących poleceń w sesji programu PowerShell z podwyższonym poziomem uprawnień:
 
-```powershell
+```powershell-interactive
 Install-Module AzureRM.Compute.Experiments
 Install-Module AzureRM.Websites.Experiments
 ```
