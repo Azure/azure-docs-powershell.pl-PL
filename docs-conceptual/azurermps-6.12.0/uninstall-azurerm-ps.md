@@ -1,27 +1,27 @@
 ---
 title: Odinstalowywanie programu Azure PowerShell
 description: Jak w pełni odinstalować program Azure PowerShell
-ms.date: 06/20/2018
+ms.date: 09/11/2018
 author: sptramer
 ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: 3828a6f9d60a68c2837cc201a50d8707324f4f0a
-ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
+ms.openlocfilehash: 5f51683896fffe56332ac0a43179ad1f894d8d75
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51274045"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51212809"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>Odinstalowywanie modułu programu Azure PowerShell
 
 W tym artykule wyjaśniono, jak odinstalować starszą wersję programu Azure PowerShell lub całkowicie usunąć go z systemu. Jeśli chcesz całkowicie odinstalować program Azure PowerShell, przekaż nam opinię za pomocą polecenia cmdlet [Send-Feedback](/powershell/module/azurerm.profile/send-feedback).
 Jeśli trafisz na usterkę, będziemy wdzięczni za [zgłoszenie problemu w usłudze GitHub](https://github.com/azure/azure-powershell/issues).
 
-## <a name="uninstall-msi-or-web-platform-installer"></a>Odinstalowywanie instalatora MSI lub instalatora platformy internetowej
+## <a name="uninstall-msi"></a>Odinstalowywanie pakietu MSI
 
-Jeśli zainstalowano program Azure PowerShell przy użyciu pakietu MSI lub instalatora platformy internetowej, musisz odinstalować go za pośrednictwem systemu Windows, a nie programu PowerShell.
+Jeśli zainstalowano program Azure PowerShell przy użyciu pakietu MSI, musisz odinstalować go za pośrednictwem systemu Windows, a nie programu PowerShell.
 
 | Platforma | Instrukcje |
 |----------|--------------|
@@ -32,9 +32,9 @@ Na tym ekranie na liście programów powinna być wyświetlana pozycja „Azure 
 
 ## <a name="uninstall-from-powershell"></a>Dezinstalacja z poziomu programu PowerShell
 
-Jeśli zainstalowano program Azure PowerShell za pomocą modułu PowerShellGet, można użyć polecenia cmdlet [Uninstall-Module](/powershell/module/powershellget/uninstall-module). Jednak polecenie `Uninstall-Module` umożliwia odinstalowanie tylko jednego modułu. Aby całkowicie usunąć program Azure PowerShell, musisz odinstalować każdy moduł osobno. Dezinstalacja może być skomplikowana, jeśli masz wiele zainstalowanych wersji programu Azure PowerShell.
+Jeśli zainstalowano program Azure PowerShell za pomocą modułu PowerShellGet, można użyć polecenia cmdlet [Uninstall-Module](/powershell/module/powershellget/uninstall-module). Jednak polecenie `Uninstall-Module` umożliwia odinstalowanie tylko jednego modułu. Aby całkowicie usunąć program Azure PowerShell, musisz odinstalować każdy moduł osobno. Dezinstalacja może być skomplikowana, jeśli masz zainstalowaną więcej niż jedną wersję programu Azure PowerShell.
 
-Poniżej przedstawiono skrypt, za pomocą którego można całkowicie usunąć jedną wersję programu Azure PowerShell. Skrypt wysyła zapytanie do galerii programu PowerShell w celu uzyskania listy zależnych modułów podrzędnych. Następnie skrypt odinstalowuje odpowiednią wersję każdego modułu podrzędnego.
+Poniższy skrypt wysyła zapytanie do galerii programu PowerShell w celu uzyskania listy zależnych modułów podrzędnych. Następnie skrypt odinstalowuje odpowiednią wersję każdego modułu podrzędnego.
 
 ```powershell-interactive
 function Uninstall-AllModules {
@@ -85,4 +85,9 @@ Uninstalling Azure.AnalysisServices version 0.4.7
 ...
 ```
 
-Uruchom to polecenie dla każdej wersji programu Azure PowerShell, która ma zostać odinstalowana.
+Uruchom to polecenie dla każdej wersji programu Azure PowerShell, która ma zostać odinstalowana. Dla ułatwienia poniższy skrypt zainstaluje wszystkie wersje usługi AzureRM __oprócz__ najnowszej wersji.
+
+```powershell-interactive
+$versions = (get-installedmodule AzureRM -AllVersions | Select-Object Version)
+$versions[1..($versions.Length-1)]  | foreach { Uninstall-AllModules -TargetModule AzureRM -Version ($_.Version) -Force }
+```

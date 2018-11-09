@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 07/26/2017
-ms.openlocfilehash: 6f0e304c499fc8bf4909e2825d52cd63b1fcbf5d
-ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
+ms.openlocfilehash: 563f84c3af98de066611dd80102e552b31f12883
+ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100495"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51274929"
 ---
 # <a name="release-notes"></a>Informacje o wersji
 
@@ -262,14 +262,15 @@ To jest lista zmian wprowadzonych w programie Azure PowerShell w tym wydaniu.
       - Remove-AzureRMRoleDefinition
       - Set-AzureRMRoleDefinition
 * ServiceBus
-    * Dodano poniższe nowe polecenia cmdlet dotyczące reguł autoryzacji dla przestrzeni nazw, kolejki i tematu. Wykonywane są operacje reguł autoryzacji zgodnie z zestawem parametrów.
-     - Polecenie New-AzureRmServiceBusAuthorizationRule — dodaje nową regułę autoryzacji do istniejącej przestrzeni nazw, kolejki lub tematu magistrali usług.
-     - Polecenie Get-AzureRmServiceBusAuthorizationRule — pobiera regułę autoryzacji albo listę reguł autoryzacji dla istniejącej przestrzeni nazw, kolejki lub tematu magistrali usług.
-     - Polecenie Set-AzureRmServiceBusAuthorizationRule — aktualizuje właściwości istniejącej reguły autoryzacji dla przestrzeni nazw, kolejki lub tematu magistrali usług.
-     - Polecenie New-AzureRmServiceBusKey — generuje nowy klucz podstawowy/pomocniczy dla reguły autoryzacji istniejącej przestrzeni nazw, kolejki lub tematu magistrali usług.
-     - Polecenie Get-AzureRmServiceBusKey — pobiera klucz podstawowy/pomocniczy dla reguły autoryzacji istniejącej przestrzeni nazw, kolejki lub tematu magistrali usług.
-     - Polecenie Remove-AzureRmServiceBusNamespaceAuthorizationRule — usuwa istniejącą regułę autoryzacji przestrzeni nazw, kolejki lub tematu magistrali usług.
-    * Dodano właściwość grupy zasobów do atrybutów obszaru nazw
+  * Dodano poniższe nowe polecenia cmdlet dotyczące reguł autoryzacji dla przestrzeni nazw, kolejki i tematu. Wykonywane są operacje reguł autoryzacji zgodnie z zestawem parametrów.
+    - Polecenie New-AzureRmServiceBusAuthorizationRule — dodaje nową regułę autoryzacji do istniejącej przestrzeni nazw, kolejki lub tematu magistrali usług.
+    - Polecenie Get-AzureRmServiceBusAuthorizationRule — pobiera regułę autoryzacji albo listę reguł autoryzacji dla istniejącej przestrzeni nazw, kolejki lub tematu magistrali usług.
+    - Polecenie Set-AzureRmServiceBusAuthorizationRule — aktualizuje właściwości istniejącej reguły autoryzacji dla przestrzeni nazw, kolejki lub tematu magistrali usług.
+    - Polecenie New-AzureRmServiceBusKey — generuje nowy klucz podstawowy/pomocniczy dla reguły autoryzacji istniejącej przestrzeni nazw, kolejki lub tematu magistrali usług.
+    - Polecenie Get-AzureRmServiceBusKey — pobiera klucz podstawowy/pomocniczy dla reguły autoryzacji istniejącej przestrzeni nazw, kolejki lub tematu magistrali usług.
+    - Polecenie Remove-AzureRmServiceBusNamespaceAuthorizationRule — usuwa istniejącą regułę autoryzacji przestrzeni nazw, kolejki lub tematu magistrali usług.
+  * Dodano właściwość grupy zasobów do atrybutów obszaru nazw
+
 * Sql
     * Zaktualizowano polecenie Set-AzureRmSqlServerTransparentDataEncryptionProtector w celu wyświetlania ostrzeżenia i wymagania potwierdzenia, jeśli jako typ funkcji ochrony szyfrowania zostanie ustawiona wartość AzureKeyVault
     * Dodano nowe/zaktualizowane polecenia cmdlet dla ustawień inspekcji
@@ -297,15 +298,16 @@ To jest lista zmian wprowadzonych w programie Azure PowerShell w tym wydaniu.
 
 ## <a name="20170717---version-421"></a>2017.07.17 — wersja 4.2.1
 * Wystąpienia obliczeniowe
-    - Rozwiązano problem z poleceniami cmdlet służącymi do tworzenia oraz aktualizowania dysku maszyny wirtualnej i migawki dysku maszyny wirtualnej (link) [https://github.com/azure/azure-powershell/issues/4309]
-      - New-AzureRmDisk
-      - New-AzureRmSnapshot
-      - Update-AzureRmDisk
-      - Update-AzureRmSnapshot
+  - Rozwiązano problem z poleceniami cmdlet służącymi do tworzenia oraz aktualizowania dysku maszyny wirtualnej i migawki dysku maszyny wirtualnej (link) [<https://github.com/azure/azure-powershell/issues/4309>]
+    - New-AzureRmDisk
+    - New-AzureRmSnapshot
+    - Update-AzureRmDisk
+    - Update-AzureRmSnapshot
 * Profil
-    - Rozwiązano problem z uwierzytelnianiem użytkowników nieinterakcyjnych we frontonie RDFE (link) [https://github.com/Azure/azure-powershell/issues/4299]
+  - Rozwiązano problem z uwierzytelnianiem użytkowników nieinterakcyjnych we frontonie RDFE (link) [<https://github.com/Azure/azure-powershell/issues/4299>]
+
 * ServiceManagement
-    - Rozwiązano problem z uwierzytelnianiem użytkowników nieinterakcyjnych (link) [https://github.com/Azure/azure-powershell/issues/4299]
+  - Rozwiązano problem z uwierzytelnianiem użytkowników nieinterakcyjnych (link) [<https://github.com/Azure/azure-powershell/issues/4299>]
 
 ## <a name="2017711---version-420"></a>2017.7.11 — wersja 4.2.0
 * AnalysisServices
@@ -660,7 +662,7 @@ To jest lista zmian wprowadzonych w programie Azure PowerShell w tym wydaniu.
 * ServiceBus
 
   - Poprawka usterki: wartości właściwości obiektu kolejki ServiceBus zostały ustawione na null, obiekt jest używany jako parametr wejściowy w poleceniu cmdlet Set-AzureRmServiceBusQueue w celu zaktualizowania kolejki.
-   - Właściwości, których to dotyczy, to: LockDuration, EntityAvailabilityStatus, DuplicateDetectionHistoryTimeWindow, MaxDeliveryCount i MessageCount
+    - Właściwości, których to dotyczy, to: LockDuration, EntityAvailabilityStatus, DuplicateDetectionHistoryTimeWindow, MaxDeliveryCount i MessageCount
 * ServiceFabric
 
   - Dodano polecenia cmdlet dla usługi Service Fabric
