@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 08/28/2018
-ms.openlocfilehash: 8a7b184ed06eb078956229fa67d02840014e3aaf
-ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
+ms.openlocfilehash: c60bc9197266cc1da37cc9af7baf03e7ba8fb7ac
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51275524"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51212881"
 ---
 # <a name="release-notes"></a>Informacje o wersji
 
@@ -164,7 +164,7 @@ To jest lista zmian wprowadzonych w programie Azure PowerShell w tym wydaniu.
 #### <a name="azurermprofile"></a>AzureRM.Profile
 * Drobne zmiany wspólnego kodu magazynu
 * Zaktualizowano pliki pomocy w celu uwzględnienia pełnych typów parametrów.
-* Zmieniono opcję -ServicePrincipal na nieobowiązkową w zestawie parametrów ServicePrincipalCertificateWithSubscriptionId 
+- Zmieniono opcję -ServicePrincipal na nieobowiązkową w zestawie parametrów ServicePrincipalCertificateWithSubscriptionId 
 
 #### <a name="azurestorage"></a>Azure.Storage
 * Obsługa tworzenia kontekstu magazynu przy użyciu protokołu OAuth. 
@@ -403,7 +403,7 @@ To jest lista zmian wprowadzonych w programie Azure PowerShell w tym wydaniu.
 
 #### <a name="azurestorage"></a>Azure.Storage
 * Usunięcie ograniczenia limitu przydziału udziału plików platformy Azure do 5 TB
-* Set-AzureStorageShareQuota
+- Set-AzureStorageShareQuota
 
 #### <a name="azurermanalysisservices"></a>AzureRM.AnalysisServices
 * Zaktualizowano do najnowszej wersji środowiska Azure ClientRuntime.
@@ -680,8 +680,8 @@ To jest lista zmian wprowadzonych w programie Azure PowerShell w tym wydaniu.
 
 #### <a name="azurestorage"></a>Azure.Storage
 * Dodano obsługę przekazywania obiektu blob lub pliku z tokenem sygnatury dostępu współdzielonego tylko do odczytu
-* Set-AzureStorageBlobContent
-* Set-AzureStorageFileContent
+- Set-AzureStorageBlobContent
+- Set-AzureStorageFileContent
 
 #### <a name="azurermanalysisservices"></a>AzureRM.AnalysisServices
 * Dodano wymaganą właściwość ResourceGroupName do usługi AS.
