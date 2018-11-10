@@ -7,28 +7,17 @@ ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: 5f51683896fffe56332ac0a43179ad1f894d8d75
-ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
+ms.openlocfilehash: 3543dbb692a41bd3b417bb3d771e67c52d57c340
+ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51212809"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51274657"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>Odinstalowywanie modułu programu Azure PowerShell
 
 W tym artykule wyjaśniono, jak odinstalować starszą wersję programu Azure PowerShell lub całkowicie usunąć go z systemu. Jeśli chcesz całkowicie odinstalować program Azure PowerShell, przekaż nam opinię za pomocą polecenia cmdlet [Send-Feedback](/powershell/module/azurerm.profile/send-feedback).
 Jeśli trafisz na usterkę, będziemy wdzięczni za [zgłoszenie problemu w usłudze GitHub](https://github.com/azure/azure-powershell/issues).
-
-## <a name="uninstall-msi"></a>Odinstalowywanie pakietu MSI
-
-Jeśli zainstalowano program Azure PowerShell przy użyciu pakietu MSI, musisz odinstalować go za pośrednictwem systemu Windows, a nie programu PowerShell.
-
-| Platforma | Instrukcje |
-|----------|--------------|
-| Windows 10 | Start > Ustawienia > Aplikacje |
-| Windows 7 </br>Windows 8 | Start > Panel sterowania > Programy > Odinstaluj program |
-
-Na tym ekranie na liście programów powinna być wyświetlana pozycja „Azure PowerShell” — w tym miejscu można odinstalować program.
 
 ## <a name="uninstall-from-powershell"></a>Dezinstalacja z poziomu programu PowerShell
 
@@ -91,3 +80,14 @@ Uruchom to polecenie dla każdej wersji programu Azure PowerShell, która ma zos
 $versions = (get-installedmodule AzureRM -AllVersions | Select-Object Version)
 $versions[1..($versions.Length-1)]  | foreach { Uninstall-AllModules -TargetModule AzureRM -Version ($_.Version) -Force }
 ```
+
+## <a name="uninstall-msi"></a>Odinstalowywanie pakietu MSI
+
+Jeśli zainstalowano program Azure PowerShell przy użyciu pakietu MSI, musisz odinstalować go za pośrednictwem systemu Windows, a nie programu PowerShell.
+
+| Platforma | Instrukcje |
+|----------|--------------|
+| Windows 10 | Start > Ustawienia > Aplikacje |
+| Windows 7 </br>Windows 8 | Start > Panel sterowania > Programy > Odinstaluj program |
+
+Na tym ekranie na liście programów powinna być wyświetlana pozycja „Azure PowerShell” — w tym miejscu można odinstalować program.
