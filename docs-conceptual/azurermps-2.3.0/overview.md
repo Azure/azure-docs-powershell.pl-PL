@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
-ms.openlocfilehash: cd415e862bfaa2b767cce108689ebaf34ef74305
-ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
+ms.openlocfilehash: 0cb2fe38ef43657fb02627f9b5bc728eacb3062a
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51274402"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211699"
 ---
 # <a name="azurerm-module-230"></a>Moduł AzureRM 2.3.0
 
@@ -42,7 +42,7 @@ Use-AzureRmProfile -Profile 2018-03-01-hybrid -Force
 
 ```
 
-## <a name="release-notes"></a>Informacje o wersji
+##<a name="release-notes"></a>Informacje o wersji
 * Wersja 2.3.0 zawiera listę zmian powodujących niezgodność. Aby uaktualnić z wersji 1.2.11, skorzystaj z przygotowanego przez nas przewodnika po migracji dostępnego pod adresem https://aka.ms/azspowershellmigration
 * Ta wersja odpowiada specyficznemu dla usługi Azure Stack profilowi interfejsu API o nazwie 2018-03-01-hybrid
 * Wszystkie moduły mają taką samą lub większą zależność od modułu AzureRm.Profile.
