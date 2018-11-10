@@ -8,11 +8,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
 ms.openlocfilehash: 9a7627a25f9bbd196b1d615229e45a6e1ce7a7d9
-ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
+ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51213005"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51274946"
 ---
 # <a name="querying-for-azure-resources"></a>Wykonywanie zapytań dotyczących zasobów platformy Azure
 
