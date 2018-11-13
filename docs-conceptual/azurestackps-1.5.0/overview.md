@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
-ms.openlocfilehash: 18861f0e5232e0b505767aa9609099afe88f9477
-ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
+ms.openlocfilehash: afa83a6258e57e961576b328e67fad634704dddf
+ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51211166"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51275320"
 ---
 # <a name="azure-stack-module-150"></a>Moduł usługi Azure Stack w wersji 1.5.0
 
@@ -46,7 +46,7 @@ Use-AzureRmProfile -Profile 2018-03-01-hybrid -Force
 Install-Module -Name AzureStack -RequiredVersion 1.5.0
 ```
 
-##<a name="release-notes"></a>Informacje o wersji
+## <a name="release-notes"></a>Informacje o wersji
 * Wszystkie moduły administratora usługi Azure Stack zostały zaktualizowane pod kątem uzyskania takiej samej lub większej zależności od modułu AzureRm.Profile
 * Obsługa zarządzania nazwami zasobów zagnieżdżonych we wszystkich modułach
 * We wszystkich modułach naprawiono usterkę polegającą na tym, że element ErrorActionPreference jest zastępowany w celu zatrzymania

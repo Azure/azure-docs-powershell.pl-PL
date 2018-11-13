@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/05/2017
-ms.openlocfilehash: 09858da9981c1136e2a39a079962c5b8fc39bde9
-ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
+ms.openlocfilehash: 30e57805dd59bd60d10c52422fcb68686563fadf
+ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51211914"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51274674"
 ---
 # <a name="using-experimental-azure-powershell-modules"></a>Korzystanie z eksperymentalnych modułów programu Azure PowerShell
 
@@ -63,7 +63,7 @@ W interfejsie wiersza polecenia platformy Azure w wersji 2.0 używana jest pewna
 
 Ulepszenia funkcji podstawowych są traktowane jako zdroworozsądkowe, a w celu wdrożenia tych aktualizacji potrzebne jest eksperymentowanie tylko w ograniczonym zakresie.
 
-- Polecenia cmdlet oparte na scenariuszach — **wszystkie* polecenia cmdlet powinny być projektowane wokół scenariuszy, a nie w oparciu o usługę Azure REST.
+- Polecenia cmdlet oparte na scenariuszach — <em>*wszystkie</em> polecenia cmdlet powinny być projektowane wokół scenariuszy, a nie w oparciu o usługę Azure REST.
 
 - Krótsze nazwy — obejmują nazwy poleceń cmdlet (na przykład `New-AzureRmVM` => `New-AzVm`) oraz nazwy parametrów (na przykład `-ResourceGroupName` => `-Rg`). W celu zapewniania zgodności ze „starymi” poleceniami cmdlet należy stosować aliasy. Wymagane jest udostępnianie zestawów parametrów _zgodnych z poprzednimi wersjami_.
 
