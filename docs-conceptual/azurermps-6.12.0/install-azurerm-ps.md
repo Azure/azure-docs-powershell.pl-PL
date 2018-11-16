@@ -8,11 +8,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/08/2018
 ms.openlocfilehash: 49f1f0ef1051d8f1a72423d288d94d1ecae49fae
-ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
+ms.sourcegitcommit: 4afdba3cd7e1d348876ce59f3503fdcd258f79ab
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51274028"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51574842"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>Instalowanie programu Azure PowerShell w systemie Windows za pomocą modułu PowerShellGet
 

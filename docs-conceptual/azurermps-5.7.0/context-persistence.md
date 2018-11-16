@@ -8,11 +8,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
 ms.openlocfilehash: 164444b7bacbef202513bfafe2f75bdcd6d027c4
-ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
+ms.sourcegitcommit: 4afdba3cd7e1d348876ce59f3503fdcd258f79ab
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51274436"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51576100"
 ---
 # <a name="persisting-user-credentials-across-powershell-sessions"></a>Utrwalanie poświadczeń użytkownika między sesjami programu PowerShell
 

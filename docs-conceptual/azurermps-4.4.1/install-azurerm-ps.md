@@ -8,11 +8,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
 ms.openlocfilehash: 5092440515f8c8fae8baefa6e3c5c856e48bb62c
-ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
+ms.sourcegitcommit: 4afdba3cd7e1d348876ce59f3503fdcd258f79ab
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51275490"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51575012"
 ---
 # <a name="install-and-configure-azure-powershell"></a>Instalowanie i konfigurowanie programu Azure PowerShell
 

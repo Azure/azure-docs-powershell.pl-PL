@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.workload: ''
 ms.date: 2/20/2018
 ms.openlocfilehash: 1a9d38cd60ba596c085e5ee9f8d815e238362b1f
-ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
+ms.sourcegitcommit: 4afdba3cd7e1d348876ce59f3503fdcd258f79ab
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51274215"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51576236"
 ---
 # <a name="release-notes"></a>Informacje o wersji
 
