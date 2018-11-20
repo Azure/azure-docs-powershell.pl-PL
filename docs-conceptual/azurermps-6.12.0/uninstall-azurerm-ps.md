@@ -7,12 +7,12 @@ ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: 3543dbb692a41bd3b417bb3d771e67c52d57c340
-ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
+ms.openlocfilehash: bf1f81b4929ec066eeb888da4ba1303430f026b4
+ms.sourcegitcommit: 4afdba3cd7e1d348876ce59f3503fdcd258f79ab
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51274657"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51574706"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>Odinstalowywanie modułu programu Azure PowerShell
 
@@ -42,7 +42,7 @@ function Uninstall-AllModules {
   'Creating list of dependencies...'
   $target = Find-Module $TargetModule -RequiredVersion $version
   $target.Dependencies | ForEach-Object {
-    $AllModules += New-Object -TypeName psobject -Property @{name=$_.name; version=$_.requiredversion}
+    $AllModules += New-Object -TypeName psobject -Property @{name=$_.name; version=$_.minimumVersion}
   }
   $AllModules += New-Object -TypeName psobject -Property @{name=$TargetModule; version=$Version}
 
