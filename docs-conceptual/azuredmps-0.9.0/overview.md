@@ -10,11 +10,11 @@ ms.topic: conceptual
 ms.workload: ''
 ms.date: 09/26/2018
 ms.openlocfilehash: f69dc1455cac18d46acff6588755198b97f4dec1
-ms.sourcegitcommit: 4afdba3cd7e1d348876ce59f3503fdcd258f79ab
+ms.sourcegitcommit: 80a3da199954d0ab78765715fb49793e89a30f12
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51576032"
+ms.lasthandoff: 11/22/2018
+ms.locfileid: "52257894"
 ---
 # <a name="overview-of-azure-deployment-manager"></a>Omówienie usługi Azure Deployment Manager
 

@@ -6,15 +6,15 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 09/05/2017
-ms.openlocfilehash: ff58693c8ec21b7e50e37bd85975a9ae3980a5e7
+ms.date: 09/11/2018
+ms.openlocfilehash: 77d0ce36ae3ab7c7bddd3febef4600fc9652850f
 ms.sourcegitcommit: 80a3da199954d0ab78765715fb49793e89a30f12
 ms.translationtype: HT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 11/22/2018
-ms.locfileid: "52259135"
+ms.locfileid: "52259618"
 ---
-# <a name="using-experimental-azure-powershell-modules"></a>Korzystanie z eksperymentalnych modułów programu Azure PowerShell
+# <a name="use-experimental-azure-powershell-modules"></a>Korzystanie z eksperymentalnych modułów programu Azure PowerShell
 
 Zespół programu Azure PowerShell eksperymentuje z wieloma udoskonaleniami w zakresie korzystania z tego programu, ze szczególnym uwzględnieniem narzędzi dla deweloperów (w szczególności interfejsów wiersza polecenia).
 
@@ -89,8 +89,8 @@ Ulepszenia eksperymentalne stanowią istotną zmianę, którą zespół chce zwe
 
 Na przykład scenariusz „Tworzenie aplikacji internetowej” może zawierać przełącznik `-Git` lub `-AddRemote`, który automatycznie dodaje zdalne środowisko platformy „azure” do istniejącego repozytorium Git.
 
-- Wartości domyślne dostępne do konfigurowania — użytkownicy powinni mieć możliwość ustawiania wartości domyślnych dla niektórych parametrów wszechobecnych, takich jak `-ResourceGroupName` i `-Location`.
+- Wartości domyślne dostępne do konfigurowania — użytkownicy powinni mieć możliwość ustawiania wartości domyślnych dla typowych parametrów, takich jak `-ResourceGroupName` i `-Location`.
 
-- Rozmiary domyślne — „rozmiary” zasobów mogą być mylące dla użytkowników, ponieważ wielu dostawców zasobów używa różnych nazw (na przykład „Standardowa\_DS1\_v2” lub „S1”). Jednak większość użytkowników najbardziej martwi się o koszty. Z tego względu warto zdefiniować „uniwersalne” rozmiary oparte na harmonogramie cen. Użytkownicy mogą wybrać konkretny rozmiar albo pozwolić programowi Azure PowerShell wybrać _najlepszą opcję_ w oparciu o budżet na zasoby.
+- Rozmiary domyślne — „rozmiary” zasobów mogą być mylące dla użytkowników, ponieważ wielu dostawców zasobów używa różnych nazw (na przykład „Standardowa\_DS1\_v2” lub „S1”). Jednak większość użytkowników najbardziej martwi się o koszty. Dlatego warto zdefiniować „uniwersalne” rozmiary oparte na harmonogramie cen. Użytkownicy mogą wybrać konkretny rozmiar albo pozwolić programowi Azure PowerShell wybrać _najlepszą opcję_ w oparciu o budżet na zasoby.
 
 - Format wyjściowy — program Azure PowerShell aktualnie zwraca obiekty `PSObject`, a ilość danych wyjściowych konsoli jest niewielka. Program Azure PowerShell może wymagać wyświetlenia pewnych informacji dla użytkownika w odniesieniu do używanych „domyślnych ustawień inteligentnych”.
