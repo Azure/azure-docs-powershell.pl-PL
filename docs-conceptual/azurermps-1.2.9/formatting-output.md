@@ -8,11 +8,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
 ms.openlocfilehash: 37f240d371150928f10cb2811c4bb5f1b585c2f3
-ms.sourcegitcommit: 4afdba3cd7e1d348876ce59f3503fdcd258f79ab
+ms.sourcegitcommit: 80a3da199954d0ab78765715fb49793e89a30f12
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/15/2018
-ms.locfileid: "51580582"
+ms.lasthandoff: 11/22/2018
+ms.locfileid: "52258370"
 ---
 # <a name="formatting-query-results"></a>Formatowanie wyników zapytania
 
