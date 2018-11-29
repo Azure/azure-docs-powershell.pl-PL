@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
-ms.openlocfilehash: 5092440515f8c8fae8baefa6e3c5c856e48bb62c
-ms.sourcegitcommit: 80a3da199954d0ab78765715fb49793e89a30f12
+ms.openlocfilehash: ef796bcb81e24b1942c644aad2b4ec7705916b02
+ms.sourcegitcommit: 558436c824d9b59731aa9b963cdc8df4dea932e7
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "52257707"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52588149"
 ---
 # <a name="install-and-configure-azure-powershell"></a>Instalowanie i konfigurowanie programu Azure PowerShell
 
@@ -155,13 +155,13 @@ Metoda instalacji PowerShellGet jest jedyną metodą, która obsługuje instalow
 
 ```powershell-interactive
 Install-Module -Name AzureRM -RequiredVersion 3.7.0
-Install-Module -Name AzureRM -RequiredVersion 1.2.9
+Install-Module -Name AzureRM -RequiredVersion 2.3.0
 ```
 
 Tylko jedna wersja modułu może zostać załadowana w sesji programu PowerShell. Musisz otworzyć nowe okno programu PowerShell i użyć polecenia `Import-Module`, aby zaimportować określoną wersję poleceń cmdlet modułu AzureRM:
 
 ```powershell-interactive
-Import-Module -Name AzureRM -RequiredVersion 1.2.9
+Import-Module -Name AzureRM -RequiredVersion 2.3.0
 ```
 
 > [!NOTE]
