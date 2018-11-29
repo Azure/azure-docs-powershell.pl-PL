@@ -438,7 +438,6 @@
                 "azurestackps-1.3.0/**/*.md": "05/16/2018",
                 "azurestackps-1.4.0/**/*.md": "08/18/2018",
                 "azurestackps-1.5.0/**/*.md": "09/19/2018",
-                "azurermps-1.2.9/**/*.md": "11/02/2017",
                 "azurermps-2.3.0/**/*.md": "11/02/2017",
                 "azurermps-4.4.1/**/*.md": "06/20/2018",
                 "azurermps-5.7.0/**/*.md": "07/26/2018",
@@ -464,7 +463,7 @@
         },
         "globalMetadata": {
             "apiPlatform": "powershell",
-	        "bilingual_type": "hover over",
+	    "bilingual_type": "hover over",
             "brand": "azure",
             "searchScope": [
                 "Azure"
@@ -472,7 +471,7 @@
             "breadcrumb_path": "/powershell/bread/toc.json",
             "ms.devlang": "powershell",
             "feedback_system": "GitHub",
-            "feedback_github_repo": "azure/azure-docs-powershell.pl-pl",
+            "feedback_github_repo": "azure/azure-docs-powershell.pl-PL",
             "feedback_product_url": "https://github.com/Azure/azure-powershell/issues/new"
         },
         "dest": "azureps",
