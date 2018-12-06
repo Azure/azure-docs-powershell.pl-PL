@@ -7,8 +7,8 @@ items:
   - name: Konfigurowanie
     href: https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-powershell-configure-admin
 ms.openlocfilehash: d38268a19aa5468c8a127282c5ed100ffa76eb4f
-ms.sourcegitcommit: 558436c824d9b59731aa9b963cdc8df4dea932e7
+ms.sourcegitcommit: 93f93b90ef88c2659be95f3acaba514fe9639169
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52586517"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52827177"
