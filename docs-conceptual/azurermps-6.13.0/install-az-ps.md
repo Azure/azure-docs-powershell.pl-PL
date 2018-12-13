@@ -8,11 +8,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 11/26/2018
 ms.openlocfilehash: 3d52b18750341f220dc8e10d6bf89796457c5a10
-ms.sourcegitcommit: 93f93b90ef88c2659be95f3acaba514fe9639169
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52826786"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53217001"
 ---
 # <a name="install-the-azure-powershell-az-module"></a>Instalowanie modułu „Az” programu Azure PowerShell
 

@@ -5,14 +5,14 @@ author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
-ms.topic: get-started-article
+ms.topic: conceptual
 ms.date: 11/15/2017
-ms.openlocfilehash: 7eb5e3fad31b5a92be1cfb36aefdaa7b920bae5f
-ms.sourcegitcommit: 93f93b90ef88c2659be95f3acaba514fe9639169
+ms.openlocfilehash: 838a50627e1d51221724515dfacd58ab9469b005
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52826905"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53217613"
 ---
 # <a name="getting-started-with-azure-powershell"></a>Rozpoczynanie pracy z programem Azure PowerShell
 
