@@ -24,9 +24,9 @@ items:
   - name: Azure/PowerShell
     tocHref: /powershell/azure/deploymentmanager
     topicHref: /powershell/azure/deploymentmanager/overview
-ms.openlocfilehash: 8fa17b8f1a1c222cd58c610afa47a67a6abdaa20
-ms.sourcegitcommit: 93f93b90ef88c2659be95f3acaba514fe9639169
+ms.openlocfilehash: 854e95f1f9ef8c383b68888f23b139ef80d43ce5
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52826973"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53217477"
