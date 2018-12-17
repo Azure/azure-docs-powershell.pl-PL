@@ -8,19 +8,19 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
-ms.openlocfilehash: 72d147f5bc9c882083dda6b33b1c89663fd2eb34
-ms.sourcegitcommit: 93f93b90ef88c2659be95f3acaba514fe9639169
+ms.openlocfilehash: c87e53a9befe20a664b73fd86a52033ff5841e29
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52826658"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53216385"
 ---
 # <a name="azure-stack-module-140"></a>Moduł usługi Azure Stack w wersji 1.4.0
 
 ## <a name="requirements"></a>Wymagania:
 Minimalna obsługiwana wersja usługi Azure Stack to 1804.
 
-Uwaga: jeśli używasz starszej wersji, zainstaluj wersję 1.2.11
+Uwaga: Jeśli używasz starszej wersji, zainstaluj wersję 1.2.11
 
 ## <a name="known-issues"></a>Znane problemy:
 

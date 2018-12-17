@@ -8,16 +8,16 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
 ms.openlocfilehash: ef796bcb81e24b1942c644aad2b4ec7705916b02
-ms.sourcegitcommit: 93f93b90ef88c2659be95f3acaba514fe9639169
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52826548"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53217749"
 ---
 # <a name="install-and-configure-azure-powershell"></a>Instalowanie i konfigurowanie programu Azure PowerShell
 
 W tym artykule opisano kroki instalowania modułów programu Azure PowerShell w środowisku systemu Windows.
-Jeśli chcesz korzystać z programu Azure PowerShell w systemie macOS lub Linux, zobacz następujący artykuł: [Instalowanie i konfigurowanie programu Azure PowerShell w systemach macOS i Linux](install-azurermps-maclinux.md).
+Informacje dotyczące korzystania z programu Azure PowerShell w systemie macOS lub Linux znajdują się w następującym artykule: [Instalowanie i konfigurowanie programu Azure PowerShell w systemach macOS i Linux](install-azurermps-maclinux.md).
 
 Instalowanie programu Azure PowerShell z Galerii programu PowerShell jest preferowaną metodą instalacji.
 
@@ -54,7 +54,7 @@ Jeśli nie masz zainstalowanego modułu PowerShellGet, zobacz sekcję [Jak uzysk
 > [!IMPORTANT]
 > Moduł opisany w tym dokumencie (AzureRM) korzysta z programu .NET Framework. Dlatego jest on niezgodny z programem PowerShell 6.0, który korzysta z platformy .NET Core. Jeśli korzystasz z programu PowerShell 6.0, postępuj zgodnie z [instrukcjami dotyczącymi instalacji dla systemów macOS i Linux](install-azurermps-maclinux.md).
 
-## <a name="step-2-install-azure-powershell"></a>Krok 2. Zainstaluj program Azure PowerShell
+## <a name="step-2-install-azure-powershell"></a>Krok 2. Instalowanie programu Azure PowerShell
 
 Instalacja programu Azure PowerShell z Galerii programu PowerShell wymaga podniesionych uprawnień. Uruchom następujące polecenie z sesji programu PowerShell z podwyższonym poziomem uprawnień:
 

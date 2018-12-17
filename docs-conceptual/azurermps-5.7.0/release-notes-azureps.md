@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.workload: ''
 ms.date: 2/20/2018
 ms.openlocfilehash: 1a9d38cd60ba596c085e5ee9f8d815e238362b1f
-ms.sourcegitcommit: 93f93b90ef88c2659be95f3acaba514fe9639169
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52828080"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53218106"
 ---
 # <a name="release-notes"></a>Informacje o wersji
 
@@ -183,8 +183,8 @@ Zmiany od ostatniego wydania: https://github.com/Azure/azure-powershell/compare/
 * Polecenie „New-AzureRmVmss” obsługuje publiczny adres IP, reguły równoważenia obciążenia i reguły NAT dla ruchu przychodzącego.
 * Funkcja WriteAccelerator
     - Dodano parametr przełącznika WriteAccelerator do następujących poleceń cmdlet: Set-AzureRmVMOSDisk, Set-AzureRmVMDataDisk, Add-AzureRmVMDataDisk i Add-AzureRmVmssDataDisk
-    - Dodano parametr przełącznika OsDiskWriteAccelerator do następującego polecenia cmdlet: Set-AzureRmVmssStorageProfile.
-    - Dodano parametr logiczny OsDiskWriteAccelerator do następujących poleceń cmdlet: Update-AzureRmVM i Update-AzureRmVmss
+    - Dodano parametr przełącznika OsDiskWriteAccelerator do następujących poleceń cmdlet:     Set-AzureRmVmssStorageProfile.
+    - Dodano parametr logiczny OsDiskWriteAccelerator do następujących poleceń cmdlet:     Update-AzureRmVM i Update-AzureRmVmss
 
 #### <a name="azurermdatafactories"></a>AzureRM.DataFactories
 * Rozwiązano problem z szyfrowaniem poświadczeń, który powodował brak zrozumiałego błędu w przypadku niektórych operacji szyfrowania
@@ -273,15 +273,15 @@ Zmiany od ostatniego wydania: https://github.com/Azure/azure-powershell/compare/
     - Remove-AzureRmNetworkWatcherConnectionMonitor
 * Zaktualizowano dokumentację elementu AzureRmApplicationGatewayBackendAddressPool, usuwając przestarzały przykład
 * Dodano flagę EnableHttp2 do usługi Application Gateway
-    - Zaktualizowano element New-AzureRmApplicationGateway: dodano opcjonalny parametr -EnableHttp2
+    - Zaktualizowano polecenie New-AzureRmApplicationGateway: Dodano opcjonalny parametr -EnableHttp2
 * Dodano elementy IpTag do elementu PublicIpAddress
-    - Zaktualizowano element New-AzureRmPublicIpAddress: dodano elementy IpTag
+    - Zaktualizowano polecenie New-AzureRmPublicIpAddress: Dodano elementy Iptag
     - Element New-AzureRmPublicIpTag do dodawania elementu Iptag
 * Dodano właściwość DisableBgpRoutePropagation do elementów RouteTable i effectiveRoute.
 
 #### <a name="azurermresources"></a>AzureRM.Resources
-* Element Register-AzureRmProviderFeature: dodano brakujący przykład w dokumentacji
-* Element Register-AzureRmResourceProvider: dodano brakujący przykład w dokumentacji
+* Register-AzureRmProviderFeature: Dodano brakujący przykład w dokumentacji
+* Register-AzureRmResourceProvider: Dodano brakujący przykład w dokumentacji
 
 #### <a name="azurermstorage"></a>AzureRM.Storage
 * Następujące parametry w poleceniach cmdlet do tworzenia i ustawiania dla konta usługi Storage zostały oznaczone jak przestarzałe: EnableEncryptionService i DisableEncryptionService, ponieważ szyfrowanie przechowywanych danych jest włączone domyślnie i nie można go wyłączyć.
@@ -623,7 +623,7 @@ Zmiany od ostatniego wydania: https://github.com/Azure/azure-powershell/compare/
   - Polecenie Get-AzureRmComputeResourceSku umożliwia wyświetlanie informacji o strefach.
   - Zaktualizowano polecenie Disable-AzureRmVmssDiskEncryption, aby rozwiązać problem https://github.com/Azure/azure-powershell/issues/5038
   - Dodano obsługę parametru -AsJob dla długotrwałych poleceń cmdlet obliczeń. Umożliwia on działanie wybranych poleceń cmdlet w tle i zwrócenie zadania w celu śledzenia i kontrolowania postępu.
-    - Dotyczy to m.in. następujących poleceń cmdlet usług Virtual Machines i Virtual Machine Scale Sets: New-, Update-, Set-, Remove-, Start-, Restart-, Stop-
+    - Polecenia cmdlet, których to dotyczy: Polecenia cmdlet usług Virtual Machines i Virtual Machine Scale Sets — New-, Update-, Set-, Remove-, Start-, Restart- i Stop-
     - Dodano uproszczony zestaw parametrów do polecenia New-AzureRmVM, który umożliwia utworzenie maszyny wirtualnej i wszystkich wymaganych zasobów przy użyciu inteligentnych wartości domyślnych
 * ContainerInstance
   - Zastosowano zestaw SDK wystąpienia kontenera platformy Azure (2017-10-01)
@@ -721,7 +721,7 @@ Zmiany od ostatniego wydania: https://github.com/Azure/azure-powershell/compare/
   - AzureRM.StreamAnalytics
 
 ## <a name="2017118---version-500"></a>2017.11.08 — wersja 5.0.0
-* UWAGA: To jest wersja zawierająca przełomowe zmiany. Aby uzyskać pełną listę zmian powodujących niezgodność, które zostały wprowadzone, zobacz przewodnik migracji (https://aka.ms/azps-migration-guide).
+* UWAGA: To jest wersja zawierająca zmiany powodujące niezgodność. Aby uzyskać pełną listę zmian powodujących niezgodność, które zostały wprowadzone, zobacz przewodnik migracji (https://aka.ms/azps-migration-guide).
 * Wszystkie polecenia cmdlet w usłudze AzureRM obsługują teraz pomoc online
   - Uruchom polecenie Get-Help z parametrem -Online, aby otworzyć pomoc online w domyślnej przeglądarce internetowej
 * AnalysisServices
@@ -751,8 +751,8 @@ Zmiany od ostatniego wydania: https://github.com/Azure/azure-powershell/compare/
 * AzureBatch
   * Dodano nowe parametry do polecenia `New-AzureRmBatchAccount`.
     - `PoolAllocationMode`: Tryb alokacji na potrzeby tworzenia pul w ramach konta usługi Batch. Aby utworzyć konto usługi Batch, które przydziela węzły pul w subskrypcji użytkownika, ustaw tę wartość na `UserSubscription`.
-    - `KeyVaultId`: Identyfikator zasobu magazynu kluczy Azure skojarzonego z kontem usługi Batch.
-    - `KeyVaultUrl`: Adres URL magazynu kluczy Azure skojarzonego z kontem usługi Batch.
+    - `KeyVaultId`: Identyfikator zasobu usługi Azure Key Vault skojarzonego z kontem usługi Batch.
+    - `KeyVaultUrl`: Adres URL usługi Azure Key Vault skojarzonego z kontem usługi Batch.
   * Zaktualizowano parametry polecenia `New-AzureBatchTask`.
     - Usunięto przełącznik `RunElevated`. Dodano parametr `UserIdentity` w celu zastąpienia przełącznika `RunElevated`, a równoważne zachowanie można uzyskać, konstruując parametr `PSUserIdentity` w sposób pokazany poniżej:
       - $autoUser = New-Object Microsoft.Azure.Commands.Batch.Models.PSAutoUserSpecification -ArgumentList @("Zadanie", "Administrator")
