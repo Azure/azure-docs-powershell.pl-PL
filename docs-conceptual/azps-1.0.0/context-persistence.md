@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/13/2018
-ms.openlocfilehash: 8777662b7cfd3948f0e4bd91b0a85cc25bc97285
-ms.sourcegitcommit: 797c18f93aaa495ef005993b2e202d7378588dfa
+ms.openlocfilehash: 8702de48429482748939fb1a43ff911bed15f6c0
+ms.sourcegitcommit: c0f1ef7fd165e5f57dd2b753265510f111356c5f
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53595023"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54071917"
 ---
 # <a name="persist-user-credentials-across-powershell-sessions"></a>Utrwalanie poświadczeń użytkownika między sesjami programu PowerShell
 

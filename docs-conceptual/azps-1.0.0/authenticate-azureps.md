@@ -7,16 +7,23 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/29/2018
-ms.openlocfilehash: 8b085720aeabe26c1293ece193e050b31f99a693
-ms.sourcegitcommit: ae81b08a45d8729fc8d40156422e3eb2e94de8c7
+ms.openlocfilehash: 80c59a10666c6e3a01e6c33716fce40094fb14be
+ms.sourcegitcommit: b5635e291cdc324e66c936aa16c5772507fc78e8
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/27/2018
-ms.locfileid: "53786683"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54055680"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Logowanie się w programie Azure PowerShell
 
-Program Azure PowerShell obsługuje kilka metod uwierzytelniania. Najprostszym sposobem rozpoczęcia pracy jest interaktywne zalogowanie się w wierszu polecenia.
+Program Azure PowerShell obsługuje kilka metod uwierzytelniania. Najprostszym sposobem na rozpoczęcie pracy jest usługa [Azure Cloud Shell](/azure/cloud-shell/overview), która loguje Cię automatycznie. W przypadku instalacji lokalnej możesz logować się interaktywnie za pośrednictwem przeglądarki. Podczas pisania skryptów automatyzacji zalecanym rozwiązaniem jest użycie [jednostki usługi](create-azure-service-principal-azureps.md) z odpowiednimi uprawnieniami. Możliwie największe ograniczenie uprawnień logowania w danym przypadku użycia pomaga w zabezpieczeniu zasobów platformy Azure.
+
+Po zalogowaniu się polecenia są uruchamiane względem subskrypcji domyślnej. Aby zmienić aktywną subskrypcję dla sesji, użyj polecenia cmdlet [Set-AzContext](/powershell/module/az.accounts/set-azcontext). Aby zmienić domyślną subskrypcję używaną podczas logowania się przy użyciu programu Azure PowerShell, użyj polecenia [Set-AzDefault](/powershell/module/az.accounts/set-azdefault).
+
+> [!IMPORTANT]
+>
+> Poświadczenia są współdzielone w ramach wielu sesji programu PowerShell, dopóki użytkownik pozostanie zalogowany.
+> Aby uzyskać więcej informacji, zobacz artykuł dotyczący [poświadczeń trwałych](context-persistence.md).
 
 ## <a name="sign-in-interactively"></a>Logowanie interakcyjne
 
@@ -26,12 +33,20 @@ Aby zalogować się interakcyjnie, skorzystaj z polecenia cmdlet [Connect-AzAcco
 Connect-AzAccount
 ```
 
-Po uruchomieniu to polecenie cmdlet spowoduje wyświetlenie ciągu tokenu. Aby się zalogować, skopiuj ten ciąg i wklej go w witrynie https://microsoft.com/devicelogin w przeglądarce. Sesja programu PowerShell zostanie uwierzytelniona na potrzeby połączenia z platformą Azure. To uwierzytelnienie obowiązuje dla bieżącej sesji programu PowerShell.
+Po uruchomieniu to polecenie cmdlet spowoduje wyświetlenie ciągu tokenu. Aby się zalogować, skopiuj ten ciąg i wklej go w witrynie https://microsoft.com/devicelogin w przeglądarce. Sesja programu PowerShell zostanie uwierzytelniona na potrzeby połączenia z platformą Azure.
 
-> [!IMPORTANT]
->
-> Poświadczenia są współdzielone w ramach wielu sesji programu PowerShell, dopóki użytkownik pozostanie zalogowany.
-> Aby uzyskać więcej informacji, zobacz artykuł dotyczący [poświadczeń trwałych](context-persistence.md).
+## <a name="sign-in-with-credentials"></a>Logowanie przy użyciu poświadczeń
+
+Możesz też zalogować się przy użyciu obiektu `PSCredential` autoryzowanego do połączenia z platformą Azure.
+Najprostszym sposobem na pobranie obiektu poświadczeń jest użycie polecenia cmdlet [Get-Credential](/powershell/module/Microsoft.PowerShell.Security/Get-Credential). Po uruchomieniu tego polecenia cmdlet zostanie wyświetlony monit o podanie pary poświadczeń nazwa użytkownika/hasło.
+
+> [!Note]
+> To podejście nie działa dla kont Microsoft ani kont mających włączone uwierzytelnianie dwuskładnikowe.
+
+```azurepowershell-interactive
+$creds = Get-Credential
+Connect-AzAccount -Credential $creds
+```
 
 ## <a name="sign-in-with-a-service-principal"></a>Logowanie za pomocą jednostki usługi
 
@@ -46,15 +61,17 @@ $pscredential = Get-Credential
 Connect-AzAccount -ServicePrincipal -ApplicationId  "http://my-app" -Credential $pscredential -TenantId $tenantid
 ```
 
-## <a name="sign-in-using-an-azure-managed-service-identity"></a>Logowanie się za pomocą tożsamości usługi zarządzanej platformy Azure
+## <a name="sign-in-using-a-managed-identity"></a>Logowanie się przy użyciu tożsamości zarządzanej 
 
-Zarządzane tożsamości dla zasobów platformy Azure to funkcja usługi Azure Active Directory. Jednostki usługi tożsamości zarządzanej można używać do logowania się i uzyskiwania aplikacyjnego tokenu dostępu do uzyskania dostępu do innych zasobów. Tożsamości zarządzane są dostępne tylko w przypadku maszyn wirtualnych działających w chmurze platformy Azure.
+Tożsamości zarządzane to funkcja w usłudze Azure Active Directory. Tożsamości zarządzane to jednostki usługi przypisane do zasobów, które działają na platformie Azure. Jednostki usługi tożsamości zarządzanej można używać do logowania się i uzyskiwania aplikacyjnego tokenu dostępu do uzyskania dostępu do innych zasobów. Tożsamości zarządzane są dostępne tylko w przypadku zasobów działających w chmurze platformy Azure.
 
 Aby uzyskać więcej informacji na temat tożsamości zarządzanych dla zasobów platformy Azure, zobacz [Jak używać tożsamości zarządzanych dla zasobów platformy Azure na maszynie wirtualnej platformy Azure w celu uzyskania tokenu dostępu](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token).
 
-## <a name="sign-in-as-a-cloud-solution-provider-csp"></a>Logowanie się jako dostawca rozwiązań w chmurze
+## <a name="sign-in-with-a-non-default-tenant-or-as-a-cloud-solution-provider-csp"></a>Logowanie się przy użyciu innej niż domyślnej dzierżawy lub jako dostawca rozwiązań w chmurze (CSP, Cloud Solution Provider)
 
-Do zalogowania [dostawcy rozwiązań w chmurze](https://azure.microsoft.com/en-us/offers/ms-azr-0145p/) wymagane jest użycie parametru `-TenantId`. Zazwyczaj ten parametr można podać jako identyfikator dzierżawy lub nazwę domeny. Jednak w przypadku logowania dostawcy rozwiązań w chmurze trzeba podać **identyfikator dzierżawy**.
+Jeśli konto jest skojarzone z więcej niż jedną dzierżawą, logowanie wymaga użycia parametru `-TenantId` podczas nawiązywania połączenia. Ten parametr będzie współdziałać z każdą inną metodą logowania. Podczas logowania się wartość tego parametru może być identyfikatorem obiektu platformy Azure dzierżawy (identyfikatorem dzierżawy) lub w pełni kwalifikowaną nazwą domeny dzierżawy.
+
+Jeśli jesteś [dostawcą rozwiązań w chmurze (CSP)](https://azure.microsoft.com/en-us/offers/ms-azr-0145p/), wartość `-TenantId` **musi** być identyfikatorem dzierżawy.
 
 ```azurepowershell-interactive
 Connect-AzAccount -TenantId 'xxxx-xxxx-xxxx-xxxx'
@@ -75,17 +92,3 @@ Następujące polecenie pozwala uzyskać listę dostępnych środowisk:
 ```azurepowershell-interactive
 Get-AzEnvironment | Select-Object Name
 ```
-
-## <a name="learn-more-about-managing-azure-role-based-access"></a>Dowiedz się więcej o zarządzaniu dostępem opartym na rolach na platformie Azure
-
-Aby uzyskać więcej informacji o zarządzaniu uwierzytelnianiem i subskrypcjami platformy Azure, zobacz [Zarządzanie kontami, subskrypcjami i rolami administracyjnymi](/azure/active-directory/role-based-access-control-configure).
-
-Polecenia cmdlet programu Azure PowerShell umożliwiające zarządzanie rolami:
-
-* [Get-AzRoleAssignment](/powershell/module/az.Resources/Get-azRoleAssignment)
-* [Get-AzRoleDefinition](/powershell/module/az.Resources/Get-azRoleDefinition)
-* [New-AzRoleAssignment](/powershell/module/az.Resources/New-azRoleAssignment)
-* [New-AzRoleDefinition](/powershell/module/az.Resources/New-azRoleDefinition)
-* [Remove-AzRoleAssignment](/powershell/module/az.Resources/Remove-azRoleAssignment)
-* [Remove-AzRoleDefinition](/powershell/module/az.Resources/Remove-azRoleDefinition)
-* [Set-AzRoleDefinition](/powershell/module/az.Resources/Set-azRoleDefinition)
