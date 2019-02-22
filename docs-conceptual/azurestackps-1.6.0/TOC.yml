@@ -9,8 +9,8 @@ items:
   - name: Łączenie — użytkownik
     href: https://docs.microsoft.com/en-us/azure/azure-stack/user/azure-stack-powershell-configure-user
 ms.openlocfilehash: 4c7843ba9e219de49a2b75560d24aad73ce6fecb
-ms.sourcegitcommit: 4e1174236796e7da929ff276addb32e42c18b707
+ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/12/2019
-ms.locfileid: "54240105"
+ms.lasthandoff: 02/12/2019
+ms.locfileid: "56144592"
