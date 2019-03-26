@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/20/2019
-ms.openlocfilehash: ae8bb8341209fedc3fadf8137f4faaf1ad3fe686
-ms.sourcegitcommit: 447276d46ffeeb37f0c07a570536665e36c5ddb8
+ms.openlocfilehash: 3ce1135cc81d11ce6faa62c790cb4358b5fceda4
+ms.sourcegitcommit: 32dad89878c7e728f740936f5f338b8ae878a6a1
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57882406"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58192926"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Tworzenie jednostki usługi platformy Azure za pomocą programu Azure PowerShell
 
@@ -88,7 +88,7 @@ Obiekt zwrócony przez polecenie `New-AzADServicePrincipal` zawiera elementy cz�
 
 ## <a name="get-an-existing-service-principal"></a>Uzyskiwanie istniejącej jednostki usługi
 
-Listę jednostek usługi dla aktualnie aktywnej dzierżawy można pobrać przy użyciu polecenia [Get AzADServicePrincipal](/module/az.resources/get-azadserviceprincipal). Domyślnie to polecenie zwraca __wszystkie__ jednostki usługi w dzierżawie, dlatego w przypadku dużych organizacji zwracanie wyników może potrwać dłużej. Zamiast tego zaleca się użycie jednego z opcjonalnych argumentów filtrowania po stronie serwera:
+Listę jednostek usługi dla aktualnie aktywnej dzierżawy można pobrać przy użyciu polecenia [Get AzADServicePrincipal](/powershell/module/az.resources/get-azadserviceprincipal). Domyślnie to polecenie zwraca __wszystkie__ jednostki usługi w dzierżawie, dlatego w przypadku dużych organizacji zwracanie wyników może potrwać dłużej. Zamiast tego zaleca się użycie jednego z opcjonalnych argumentów filtrowania po stronie serwera:
 
 * `-DisplayNameBeginsWith` żąda jednostek usługi, które mają _prefiks_ odpowiadający podanej wartości. Nazwa wyświetlana jednostki usługi jest wartością ustawioną przy użyciu opcji `-DisplayName` podczas tworzenia.
 * `-DisplayName` żąda _dokładnego dopasowania_ nazwy jednostki usługi.
@@ -121,7 +121,7 @@ Dodanie roli _nie_ ogranicza wcześniej przypisanych uprawnień. Po ograniczeniu
 Zmiany można zweryfikować przez wyświetlenie listy przypisanych ról:
 
 ```azurepowershell-interactive
-Get-AzRoleAssignment -ServicePrinicpalName ServicePrincipalName
+Get-AzRoleAssignment -ServicePrincipalName ServicePrincipalName
 ```
 
 ## <a name="sign-in-using-a-service-principal"></a>Logowanie za pomocą jednostki usługi

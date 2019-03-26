@@ -7,12 +7,12 @@ ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: fcec2c713d1967a5a70df9b13aa30d9ff4625e9d
-ms.sourcegitcommit: 447276d46ffeeb37f0c07a570536665e36c5ddb8
+ms.openlocfilehash: 6a34ac1821c3cec359d0d64664d3f1689621b304
+ms.sourcegitcommit: e736293cbc7b813b6b133781c88c7978fb22122a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57882364"
+ms.lasthandoff: 03/20/2019
+ms.locfileid: "58215274"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>Odinstalowywanie modułu programu Azure PowerShell
 
@@ -111,8 +111,8 @@ $versions[1..($versions.Length-1)]  | foreach { Uninstall-AllModules -TargetModu
 
 ## <a name="uninstall-the-azurerm-module"></a>Odinstalowywanie modułu AzureRM
 
-Jeśli w systemie masz zainstalowany moduł Az i chcesz odinstalować moduł AzureRM, możesz skorzystać z jednej z dwóch prostych opcji, które nie wymagają uruchamiania powyższego skryptu `Uninstall-AllModules`. Metoda, której należy użyć, zależy od sposobu instalacji modułu AzureRM.
-Jeśli nie masz pewności, najpierw zobacz kroki służące do odinstalowania pakietu MSI.
+Jeśli w systemie masz zainstalowany moduł Az i chcesz odinstalować moduł AzureRM, możesz skorzystać z jednej z dwóch opcji, które nie wymagają uruchamiania powyższego skryptu `Uninstall-AllModules`. Metoda, której należy użyć, zależy od sposobu instalacji modułu AzureRM.
+Jeśli nie masz pewności, najpierw wykonaj kroki służące do odinstalowania pakietu MSI.
 
 ### <a name="uninstall-azure-powershell-msi"></a>Odinstalowywanie pakietu MSI programu Azure PowerShell
 
@@ -123,11 +123,11 @@ Jeśli moduły AzureRM programu Azure PowerShell zainstalowano przy użyciu paki
 | Windows 10 | Start > Ustawienia > Aplikacje |
 | Windows 7 </br>Windows 8 | Start > Panel sterowania > Programy > Odinstaluj program |
 
-Na tym ekranie na liście programów powinna być wyświetlana pozycja __Azure PowerShell__. To jest aplikacja do odinstalowania.
+Na tym ekranie na liście programów powinna być wyświetlana pozycja __Azure PowerShell__. To jest aplikacja do odinstalowania. Jeśli nie widzisz tego programu na liście, oznacza to, że został on zainstalowany za pośrednictwem modułu PowerShellGet i musisz wykonać następny zestaw instrukcji.
 
 ### <a name="uninstall-from-powershell"></a>Dezinstalacja z poziomu programu PowerShell
 
-Jeśli moduł AzureRM zainstalowano z poziomu modułu PowerShellGet, moduły możesz usunąć przy użyciu nowego polecenia `Uninstall-AzureRM`. Spowoduje to usunięcie _wszystkich_ modułów AzureRM z Twojej maszyny, ale wymaga uprawnień administratora.
+Jeśli moduł AzureRM został zainstalowany przy użyciu modułu PowerShellGet, możesz usunąć moduły za pomocą polecenia [Uninstall-AzureRM](/powershell/module/az.accounts/uninstall-azurerm) dostępnego w module `Az.Accounts`. Spowoduje to usunięcie _wszystkich_ modułów AzureRM z Twojej maszyny, ale wymaga uprawnień administratora.
 
 ```powershell-interactive
 Uninstall-AzureRm
