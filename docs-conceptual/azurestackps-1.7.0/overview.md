@@ -8,43 +8,40 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 02/06/2019
-ms.openlocfilehash: af34497f243ce8f4f718e88312f6ad54eb6ad848
-ms.sourcegitcommit: 993db64e68b222acbcfdeef2e81eb3316b160858
+ms.openlocfilehash: 3daf7746dfc0e06c62209be0ffa164d657d91935
+ms.sourcegitcommit: 4153218b2b51e42d6c3315bb7f0fcbcfac7d1f86
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56240535"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58616990"
 ---
-# <a name="azure-stack-module-170"></a><span data-ttu-id="a1422-103">Moduł usługi Azure Stack w wersji 1.7.0</span><span class="sxs-lookup"><span data-stu-id="a1422-103">Azure Stack Module 1.7.0</span></span>
+# <a name="azure-stack-module-170"></a><span data-ttu-id="874ea-103">Moduł usługi Azure Stack w wersji 1.7.0</span><span class="sxs-lookup"><span data-stu-id="874ea-103">Azure Stack Module 1.7.0</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="a1422-104">Wymagania:</span><span class="sxs-lookup"><span data-stu-id="a1422-104">Requirements:</span></span>
-<span data-ttu-id="a1422-105">Minimalna obsługiwana wersja usługi Azure Stack to 1901.</span><span class="sxs-lookup"><span data-stu-id="a1422-105">Minimum supported Azure Stack version is 1901.</span></span>
+## <a name="requirements"></a><span data-ttu-id="874ea-104">Wymagania:</span><span class="sxs-lookup"><span data-stu-id="874ea-104">Requirements:</span></span>
 
-<span data-ttu-id="a1422-106">Uwaga: Jeśli używasz starszej wersji, zainstaluj wersję 1.7.0</span><span class="sxs-lookup"><span data-stu-id="a1422-106">Note: If you are using an earlier version install version 1.7.0</span></span>
+<span data-ttu-id="874ea-105">Minimalna obsługiwana wersja usługi Azure Stack to 1901.</span><span class="sxs-lookup"><span data-stu-id="874ea-105">Minimum supported Azure Stack version is 1901.</span></span>
 
-## <a name="install"></a><span data-ttu-id="a1422-107">Instalowanie</span><span class="sxs-lookup"><span data-stu-id="a1422-107">Install</span></span>
-```
+<span data-ttu-id="874ea-106">Uwaga: Aby użyć starszych wersji usługi Azure Stack, zobacz [Instalowanie programu Azure Stack PowerShell](https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-powershell-install#install-azure-stack-powershell)</span><span class="sxs-lookup"><span data-stu-id="874ea-106">Note: For earlier versions of Azure Stack check [Install Azure Stack Powershell](https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-powershell-install#install-azure-stack-powershell)</span></span>
+
+## <a name="install"></a><span data-ttu-id="874ea-107">Instalowanie</span><span class="sxs-lookup"><span data-stu-id="874ea-107">Install</span></span>
+
+```powershell
 # Remove previous versions of AzureStack and AzureRM modules
-Uninstall-Module -Name AzureRM -Force
-Uninstall-Module -Name Azure.Storage -Force
-Uninstall-Module -Name AzureStack -Force
-Get-Module -Name "Azs*" -ListAvailable | Uninstall-Module  -Force 
-Get-Module -Name "AzureRm*" -ListAvailable | Uninstall-Module  -Force
-
-# Install the AzureRM.Bootstrapper module. Select Yes when prompted to install NuGet
-Install-Module -Name AzureRm.BootStrapper
+Get-Module -Name Azs.* -ListAvailable | Uninstall-Module -Force -Verbose
+Get-Module -Name Azure* -ListAvailable | Uninstall-Module -Force -Verbose
 
 # Install and import the API Version Modules required by Azure Stack into the current PowerShell session.
-Install-Module AzureRM -RequiredVersion 2.4.0
+Install-Module -Name AzureRM -RequiredVersion 2.4.0
 
 # Install Azure Stack Admin Module
 Install-Module -Name AzureStack -RequiredVersion 1.7.0
 ```
-## <a name="release-notes"></a><span data-ttu-id="a1422-108">Informacje o wersji</span><span class="sxs-lookup"><span data-stu-id="a1422-108">Release Notes</span></span>
-* <span data-ttu-id="a1422-109">Obsługiwane z aktualizacją 1901</span><span class="sxs-lookup"><span data-stu-id="a1422-109">Supported with 1901 update</span></span>
-* <span data-ttu-id="a1422-110">To jest wersja zawierająca zmiany powodujące niezgodność.</span><span class="sxs-lookup"><span data-stu-id="a1422-110">This a breaking change release.</span></span> <span data-ttu-id="a1422-111">Aby uzyskać szczegółowe informacje na temat istotnych zmian, zobacz https://aka.ms/azspshmigration170</span><span class="sxs-lookup"><span data-stu-id="a1422-111">For details on the breaking changes, refer to https://aka.ms/azspshmigration170</span></span>
-* <span data-ttu-id="a1422-112">Moduł Azs.Backup.Admin \* Zmiana powodująca niezgodność: Kopia zapasowa zmienia się na tryb szyfrowania opartego na certyfikacie.</span><span class="sxs-lookup"><span data-stu-id="a1422-112">Azs.Backup.Admin Module \* Breaking change: Backup changes to cert-based encryption mode.</span></span> <span data-ttu-id="a1422-113">Obsługa kluczy symetrycznych jest przestarzała.</span><span class="sxs-lookup"><span data-stu-id="a1422-113">Support for symmetric keys is deprecated.</span></span>
-* <span data-ttu-id="a1422-114">Moduł Azs.Fabric.Admin       \* Wycofanie           \* Polecenie Get-AzsInfrastructureVolume jest przestarzałe, udostępniamy nowe polecenie cmdlet Get-AzsVolume \* Polecenie Get AzsStorageSystem jest przestarzałe, udostępniamy nowe polecenie cmdlet Get-AzsStorageSubSystem           \* Polecenie Get AzsStoragePool jest przestarzałe, obiekt StorageSubSystem ma właściwość pojemności</span><span class="sxs-lookup"><span data-stu-id="a1422-114">Azs.Fabric.Admin Module       \* Deprecation           \* Get-AzsInfrastructureVolume has been deprecated, we provide new cmdlet Get-AzsVolume           \* Get-AzsStorageSystem has been deprecated, we provide new cmdlet Get-AzsStorageSubSystem           \* Get-AzsStoragePool has been deprecated, the StorageSubSystem object has the capacity property</span></span>
-* <span data-ttu-id="a1422-115">Moduł Azs.Compute.Admin           \* Poprawka usterki: Add-AzsPlatformImage, Get-AzsPlatformImage: Wywoływanie polecenia ConvertTo-PlatformImageObject tylko w ścieżce powodzenia           \* Poprawka usterki: Add-AzsVmExtension, Get-AzsVmExtension: Wywoływanie polecenia ConvertTo-VmExtensionObject tylko w ścieżce powodzenia</span><span class="sxs-lookup"><span data-stu-id="a1422-115">Azs.Compute.Admin Module           \* BugFix: Add-AzsPlatformImage, Get-AzsPlatformImage : Calling ConvertTo-PlatformImageObject only in the success path           \* BugFix: Add-AzsVmExtension, Get-AzsVmExtension : Calling ConvertTo-VmExtensionObject only in the success path</span></span>
-* <span data-ttu-id="a1422-116">Moduł Azs.Storage.Admin           \* Poprawka usterki — nowy limit przydziału magazynu używa wartości domyślnych, jeśli żadne wartości nie zostaną podane.'</span><span class="sxs-lookup"><span data-stu-id="a1422-116">Azs.Storage.Admin Module           \* Bug fix - New Storage Quota uses defaults if none provided.'</span></span>
 
+## <a name="release-notes"></a><span data-ttu-id="874ea-108">Informacje o wersji</span><span class="sxs-lookup"><span data-stu-id="874ea-108">Release Notes</span></span>
+
+* <span data-ttu-id="874ea-109">Obsługiwane z aktualizacją 1901</span><span class="sxs-lookup"><span data-stu-id="874ea-109">Supported with 1901 update</span></span>
+* <span data-ttu-id="874ea-110">To jest wersja zawierająca zmiany powodujące niezgodność.</span><span class="sxs-lookup"><span data-stu-id="874ea-110">This a breaking change release.</span></span> <span data-ttu-id="874ea-111">Aby uzyskać szczegółowe informacje na temat istotnych zmian, zobacz <https://aka.ms/azspshmigration170></span><span class="sxs-lookup"><span data-stu-id="874ea-111">For details on the breaking changes, refer to <https://aka.ms/azspshmigration170></span></span>
+* <span data-ttu-id="874ea-112">Moduł Azs.Backup.Admin \* Zmiana powodująca niezgodność: Kopia zapasowa zmienia się na tryb szyfrowania opartego na certyfikacie.</span><span class="sxs-lookup"><span data-stu-id="874ea-112">Azs.Backup.Admin Module \* Breaking change: Backup changes to cert-based encryption mode.</span></span> <span data-ttu-id="874ea-113">Obsługa kluczy symetrycznych jest przestarzała.</span><span class="sxs-lookup"><span data-stu-id="874ea-113">Support for symmetric keys is deprecated.</span></span>
+* <span data-ttu-id="874ea-114">Moduł Azs.Fabric.Admin       \* Wycofanie           \* Polecenie Get-AzsInfrastructureVolume jest przestarzałe, udostępniamy nowe polecenie cmdlet Get-AzsVolume \* Polecenie Get AzsStorageSystem jest przestarzałe, udostępniamy nowe polecenie cmdlet Get-AzsStorageSubSystem           \* Polecenie Get AzsStoragePool jest przestarzałe, obiekt StorageSubSystem ma właściwość pojemności</span><span class="sxs-lookup"><span data-stu-id="874ea-114">Azs.Fabric.Admin Module       \* Deprecation           \* Get-AzsInfrastructureVolume has been deprecated, we provide new cmdlet Get-AzsVolume           \* Get-AzsStorageSystem has been deprecated, we provide new cmdlet Get-AzsStorageSubSystem           \* Get-AzsStoragePool has been deprecated, the StorageSubSystem object has the capacity property</span></span>
+* <span data-ttu-id="874ea-115">Moduł Azs.Compute.Admin           \* Poprawka usterki: Add-AzsPlatformImage, Get-AzsPlatformImage: Wywoływanie polecenia ConvertTo-PlatformImageObject tylko w ścieżce powodzenia           \* Poprawka usterki: Add-AzsVmExtension, Get-AzsVmExtension: Wywoływanie polecenia ConvertTo-VmExtensionObject tylko w ścieżce powodzenia</span><span class="sxs-lookup"><span data-stu-id="874ea-115">Azs.Compute.Admin Module           \* BugFix: Add-AzsPlatformImage, Get-AzsPlatformImage : Calling ConvertTo-PlatformImageObject only in the success path           \* BugFix: Add-AzsVmExtension, Get-AzsVmExtension : Calling ConvertTo-VmExtensionObject only in the success path</span></span>
+* <span data-ttu-id="874ea-116">Moduł Azs.Storage.Admin           \* Poprawka usterki — nowy limit przydziału magazynu używa wartości domyślnych, jeśli żadne wartości nie zostaną podane.'</span><span class="sxs-lookup"><span data-stu-id="874ea-116">Azs.Storage.Admin Module           \* Bug fix - New Storage Quota uses defaults if none provided.'</span></span>
