@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/11/2018
-ms.openlocfilehash: 58aa777ca599c2a6181f0ecc5c20f6db7a89b75f
-ms.sourcegitcommit: 8f59e11e5c991543964154d63648aa1e6ae22512
+ms.openlocfilehash: 825a07e01194a07b747712a62384c7f162e63d7d
+ms.sourcegitcommit: d3069aba7d1ac248aff755e4b21533af1f73251d
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58475620"
+ms.lasthandoff: 04/02/2019
+ms.locfileid: "58808040"
 ---
 # <a name="running-cmdlets-in-parallel-using-powershell-jobs"></a>Równoczesne uruchamianie poleceń cmdlet przy użyciu zadań programu PowerShell
 
@@ -25,7 +25,7 @@ Ponieważ zadania PSJob są uruchamiane jako oddzielne procesy, połączenie pla
 
 ```azurepowershell-interactive
 $creds = Get-Credential
-$job = Start-Job { param($context,$vmadmin) New-AzVM -Name MyVm -AzContext $context -Credential $vmadmin} -Arguments (Get-AzContext),$creds
+$job = Start-Job { param($context,$vmadmin) New-AzVM -Name MyVm -AzContext $context -Credential $vmadmin} -ArgumentList (Get-AzContext),$creds
 ```
 
 Jeśli jednak kontekst ma być zapisywany automatycznie przy użyciu polecenia `Enable-AzContextAutosave`, będzie on automatycznie udostępniany wszystkim tworzonym zadaniom.
@@ -33,7 +33,7 @@ Jeśli jednak kontekst ma być zapisywany automatycznie przy użyciu polecenia `
 ```azurepowershell-interactive
 Enable-AzContextAutosave
 $creds = Get-Credential
-$job = Start-Job { param($vmadmin) New-AzVM -Name MyVm -Credential $vmadmin} -Arguments $creds
+$job = Start-Job { param($vmadmin) New-AzVM -Name MyVm -Credential $vmadmin} -ArgumentList $creds
 ```
 
 ## <a name="automatic-jobs-with--asjob"></a>Zadania automatyczne z parametrem `-AsJob`
