@@ -8,10 +8,10 @@ ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.openlocfilehash: 10665a72bc7dcae8ecf36b5ef4e2ab285a0e78b7
-ms.sourcegitcommit: 89066b7c4b527357bb2024e1ad708df84c131804
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59364101"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>Wprowadzenie do nowego modułu Az programu Azure PowerShell
@@ -29,7 +29,7 @@ Az to nowy moduł, dlatego wersja została zresetowana do 1.0.0.
 Zaleca się, aby wszyscy użytkownicy przeprowadzili uaktualnienie do nowego modułu Az. W tym celu:
 
 * __ZALECANE__: [Odinstaluj moduł AzureRM programu Azure PowerShell](/powershell/azure/uninstall-az-ps#uninstall-the-azurerm-module)
-* [Instalowanie modułu Az programu Azure PowerShell](/powershell/azure/install-az-ps)
+* [Zainstaluj moduł Az programu Azure PowerShell](/powershell/azure/install-az-ps)
 * Za pomocą polecenia `Enable-AzureRMAlias` włącz tryb zgodności, aby dodać aliasy dla poleceń cmdlet modułu AzureRM na czas zapoznawania się z nowym zestawem poleceń. Włącz aliasy __tylko wtedy__, gdy nie masz zainstalowanego modułu AzureRM.
 
 ## <a name="migrate-existing-scripts-to-az"></a>Migrowanie istniejących skryptów do modułu Az

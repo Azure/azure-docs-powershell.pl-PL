@@ -463,7 +463,7 @@ To jest lista zmian wprowadzonych w programie Azure PowerShell w tym wydaniu.
 * CognitiveServices
     * Aktualizacja szczegółów umów licencyjnych wyświetlanych podczas tworzenia zasobów usług Cognitive Services
 * Wystąpienia obliczeniowe
-    * Usunięcie błędu związanego z poleceniem Test-AzureRmVMAEMExtension w przypadku maszyn wirtualnych z wieloma dyskami Managed Disks
+    * Usunięcie błędu związanego z poleceniem Test-AzureRmVMAEMExtension w przypadku maszyn wirtualnych z wieloma dyskami funkcji Dyski zarządzane
     * Zaktualizowano polecenie Set-AzureRmVMAEMExtension: Dodawanie informacji dotyczących buforowania dla dysków zarządzanych w warstwie Premium
     * Add-AzureRmVhd: Zwiększono limit rozmiaru wirtualnego dysku twardego do 4 TB.
     * Stop-AzureRmVM: Doprecyzowano dokumentację dotyczącą parametru STayProvisioned

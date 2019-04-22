@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 54d7a9da878e085e90479fb229876c9be6dafd74
-ms.sourcegitcommit: 89066b7c4b527357bb2024e1ad708df84c131804
+ms.sourcegitcommit: 16fcab94f34def77e4ba27073d64af4c09d23923
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/16/2019
 ms.locfileid: "59364138"
 ---
 ## <a name="170---april-2019"></a>1.7.0 — kwiecień 2019 r.
@@ -146,9 +146,9 @@ ms.locfileid: "59364138"
 #### <a name="azresources"></a>Az.Resources
 * Dodano parametr `-TemplateObject` do poleceń cmdlet wdrażania
     - Więcej informacji: https://github.com/Azure/azure-powershell/issues/2933
-* Rozwiązano problem polegający na potokowaniu wyniku polecenia `Get-AzResource` do `Set-AzResource`
+* Rozwiązano problem polegający na potokowaniu wyniku polecenia `Get-AzResource` do polecenia `Set-AzResource`
     - Więcej informacji: https://github.com/Azure/azure-powershell/issues/8240
-* Rozwiązano problem ze zmianą typu danych JSON podczas uruchamiania `Set-AzResource`
+* Rozwiązano problem ze zmianą typu danych JSON podczas uruchamiania polecenia `Set-AzResource`
     - Więcej informacji: https://github.com/Azure/azure-powershell/issues/7930
 
 #### <a name="azsql"></a>Az.Sql

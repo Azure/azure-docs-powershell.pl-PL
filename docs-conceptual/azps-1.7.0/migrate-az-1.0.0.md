@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/14/2018
 ms.openlocfilehash: be3e19dc4b689adbc63b933dd9f3454122d5344a
-ms.sourcegitcommit: 89066b7c4b527357bb2024e1ad708df84c131804
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59364152"
 ---
 # <a name="migration-guide-for-az-100"></a>Przewodnik migracji modułu Az 1.0.0
@@ -60,7 +60,7 @@ Get-AzVM
 Get-AzKeyVaultSecret
 ```
 
-Aby ułatwić przejście na te nowe nazwy poleceń cmdlet, moduł Az wprowadza dwa nowe polecenia cmdlet: ```Enable-AzureRmAlias``` i ```Disable-AzureRmAlias```.  ```Enable-AzureRmAlias``` tworzy aliasy dla starszych nazw poleceń cmdlet w module AzureRM wskazujące nowsze nazwy poleceń cmdlet w module Az.  Polecenie cmdlet umożliwia tworzenie aliasów w bieżącej sesji albo we wszystkich sesjach przez zmianę profilu użytkownika lub maszyny. 
+Aby ułatwić przejście na te nowe nazwy poleceń cmdlet, moduł Az wprowadza dwa nowe polecenia cmdlet: ```Enable-AzureRmAlias``` i ```Disable-AzureRmAlias```.  Polecenie cmdlet ```Enable-AzureRmAlias``` tworzy aliasy dla starszych nazw poleceń cmdlet w module AzureRM wskazujące nowsze nazwy poleceń cmdlet w module Az.  Polecenie cmdlet umożliwia tworzenie aliasów w bieżącej sesji albo we wszystkich sesjach przez zmianę profilu użytkownika lub maszyny. 
 
 Na przykład poniższy skrypt w module AzureRM:
 ```powershell
@@ -82,7 +82,7 @@ Get-AzureRmStorageAccount | Get-AzureStorageContainer | Get-AzureStorageBlob
 
 Aby uzyskać szczegółowe informacje dotyczące użycia aliasów poleceń cmdlet, wykonaj polecenie ```Get-Help -Online Enable-AzureRmAlias``` w wierszu polecenia programu PowerShell.
 
-```Disable-AzureRmAlias``` usuwa aliasy poleceń cmdlet modułu AzureRM utworzone przez polecenie ```Enable-AzureRmAlias```.  Aby uzyskać szczegółowe informacje, wykonaj polecenie ```Get-Help -Online Disable-AzureRmAlias``` w wierszu polecenia programu PowerShell.
+Polecenie ```Disable-AzureRmAlias``` usuwa aliasy poleceń cmdlet modułu AzureRM utworzone przez polecenie ```Enable-AzureRmAlias```.  Aby uzyskać szczegółowe informacje, wykonaj polecenie ```Get-Help -Online Disable-AzureRmAlias``` w wierszu polecenia programu PowerShell.
 
 ### <a name="module-name-changes"></a>Zmiany nazw modułów
 - Nazwy modułów zostały zmienione z `AzureRM.*` na `Az.*`, z wyjątkiem następujących modułów:
@@ -188,9 +188,9 @@ Narzędzia dla tych usług nie są już aktywnie wspierane.  Zachęcamy klientó
 ### <a name="azcompute-previously-azurermcompute"></a>Az.Compute (wcześniej AzureRM.Compute)
 - Pole `IdentityIds` zostało usunięte z właściwości `Identity` w obiektach `PSVirtualMachine` i `PSVirtualMachineScaleSet`. Skrypty nie powinny już używać wartości tego pola do podejmowania decyzji dotyczących przetwarzania.
 - Typ właściwości `InstanceView` obiektu `PSVirtualMachineScaleSetVM` został zmieniony z `VirtualMachineInstanceView` na `VirtualMachineScaleSetVMInstanceView`
-- `AutoOSUpgradePolicy` i `AutomaticOSUpgrade` zostały usunięte z właściwości `UpgradePolicy`
+- Właściwości `AutoOSUpgradePolicy` i `AutomaticOSUpgrade` zostały usunięte z właściwości `UpgradePolicy`
 - Typ właściwości `Sku` w obiekcie `PSSnapshotUpdate` został zmieniony z `DiskSku` na `SnapshotSku`
-- `VmScaleSetVMParameterSet` został usunięty z polecenia cmdlet `Add-AzVMDataDisk`. Nie można już dodawać pojedynczego dysku danych do maszyny wirtualnej w zestawie skalowania.
+- Zestaw `VmScaleSetVMParameterSet` został usunięty z polecenia cmdlet `Add-AzVMDataDisk`. Nie można już dodawać pojedynczego dysku danych do maszyny wirtualnej w zestawie skalowania.
 
 ### <a name="azdatafactory-previously-azurermdatafactories-and-azurermdatafactoryv2"></a>Az.DataFactory (wcześniej AzureRM.DataFactories i AzureRM.DataFactoryV2)
 - Parametr `GatewayName` stał się obowiązkowy w poleceniu cmdlet `New-AzDataFactoryEncryptValue`
@@ -264,7 +264,7 @@ Skrypty nie powinny już podejmować decyzji dotyczących przetwarzania na podst
 
 ### <a name="azrecoveryservices-previously-azurermrecoveryservices-azurermrecoveryservicesbackup-and-azurermrecoveryservicessiterecovery"></a>Az.RecoveryServices (wcześniej AzureRM.RecoveryServices, AzureRM.RecoveryServices.Backup i AzureRM.RecoveryServices.SiteRecovery)
 - Usunięto parametr `Encryption` z polecenia cmdlet `New/Set-AzRecoveryServicesAsrPolicy`
-- `TargetStorageAccountName` jest teraz obowiązkowy na potrzeby przywracania dysku zarządzanego w poleceniu cmdlet `Restore-AzRecoveryServicesBackupItem`
+- Parametr `TargetStorageAccountName` jest teraz obowiązkowy na potrzeby przywracania dysku zarządzanego w poleceniu cmdlet `Restore-AzRecoveryServicesBackupItem`
 - Usunięto parametry `StorageAccountName` i `StorageAccountResourceGroupName` w poleceniu cmdlet `Restore-AzRecoveryServicesBackupItem`
 - Usunięto parametr `Name` w poleceniu cmdlet `Get-AzRecoveryServicesBackupContainer`
 

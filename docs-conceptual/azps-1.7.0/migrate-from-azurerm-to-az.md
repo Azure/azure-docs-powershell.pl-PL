@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/13/2018
 ms.openlocfilehash: 28122ca953d62b405f19effbbc680f2dc6202cca
-ms.sourcegitcommit: 89066b7c4b527357bb2024e1ad708df84c131804
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59364190"
 ---
 # <a name="migrate-from-azurerm-to-azure-powershell-az"></a>Migrowanie z modułu AzureRM do modułu Az programu Azure PowerShell
@@ -43,7 +43,7 @@ Aby zainstalować moduł Az programu Azure PowerShell, wykonaj następujące kro
 
 * __ZALECANE__: [Odinstaluj moduł AzureRM](/powershell/azure/uninstall-az-ps#uninstall-the-azurerm-module).
   Upewnij się, że usuwasz _wszystkie_ zainstalowane wersje modułu AzureRM, a nie tylko najnowszą.
-* [Instalowanie modułu Az](install-az-ps.md)
+* [Zainstaluj moduł Az](install-az-ps.md)
 
 ## <a name="a-namealiasesenable-azurerm-compatibility-aliases"></a><a name="aliases"/>Włączanie aliasów zapewniających zgodność z modułem AzureRM 
 
@@ -68,7 +68,7 @@ Po włączeniu trybu aliasów ponownie uruchom skrypty, aby potwierdzić, że na
 ## <a name="change-module-imports-and-cmdlet-names"></a>Zmienianie importów modułu i nazw poleceń cmdlet
 
 Ogólnie rzecz biorąc, nazwy modułu zostały zmienione tak, aby nazwy `AzureRM` i `Azure` stały się nazwą `Az` — to samo dotyczy poleceń cmdlet.
-Na przykład nazwa modułu `AzureRM.Compute` została zmieniona na `Az.Compute`. `New-AzureRMVM` stało się poleceniem `New-AzVM`, a polecenie `Get-AzureStorageBlob` to teraz polecenie `Get-AzStorageBlob`.
+Na przykład nazwa modułu `AzureRM.Compute` została zmieniona na `Az.Compute`. Polecenie `New-AzureRMVM` stało się poleceniem `New-AzVM`, a polecenie `Get-AzureStorageBlob` to teraz polecenie `Get-AzStorageBlob`.
 
 Istnieją wyjątki od tej reguły zmiany nazw, o których należy wiedzieć. Nazwy niektórych modułów zostały zmienione lub te moduły zostały scalone z istniejącymi modułami, przy czym nie miało to wpływu na sufiks ich poleceń cmdlet poza zmianą ciągu `AzureRM` lub `Azure` na `Az`. W pozostałych przypadkach pełny sufiks polecenia cmdlet został zmieniony, aby odzwierciedlić nową nazwę modułu.
 

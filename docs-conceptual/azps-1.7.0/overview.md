@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.manager: carmonm
 ms.date: 01/10/2019
 ms.openlocfilehash: 45ab083dd133c8c7b8dbe902484c92564bc216b9
-ms.sourcegitcommit: 89066b7c4b527357bb2024e1ad708df84c131804
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59364166"
 ---
 # <a name="overview-of-azure-powershell"></a>Omówienie programu Azure PowerShell
@@ -48,7 +48,7 @@ Przeczytaj artykuł [Rozpoczynanie pracy z programem Azure PowerShell](get-start
 
 * [Instalowanie programu PowerShell](/powershell/scripting/install/installing-powershell)
 * [Tworzenie skryptów przy użyciu programu PowerShell](/powershell/scripting/powershell-scripting)
-* [PowerShell Basics: (Part 1) Getting Started with PowerShell (Podstawy programu PowerShell, część 1: Wprowadzenie do programu PowerShell)](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1)
+* [PowerShell Basics: (Part 1) Getting Started with PowerShell](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1) (Podstawy programu PowerShell, część 1: Wprowadzenie do programu PowerShell)
 * Kurs [Wprowadzenie do programu PowerShell — szybkie rozpoczęcie pracy](https://mva.microsoft.com/liveevents/powershell-jumpstart) w witrynie Microsoft Virtual Academy
 
 Poniższe przykłady mogą pomóc w przypadku niektórych typowych zastosowań platformy Azure:
@@ -65,6 +65,6 @@ Poniższe przykłady mogą pomóc w przypadku niektórych typowych zastosowań p
 
 ## <a name="other-azure-powershell-modules"></a>Inne moduły programu Azure PowerShell
 
-* [Usługa Azure Active Directory](/powershell/azure/active-directory/)
+* [Azure Active Directory](/powershell/azure/active-directory/)
 * [Azure Service Fabric](/powershell/azure/service-fabric/)
 * [Azure ElasticDB](/powershell/azure/elasticdbjobs/)
