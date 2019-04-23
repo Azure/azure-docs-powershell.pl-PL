@@ -218,7 +218,7 @@ ms.locfileid: "59364138"
 * Rozwiązano problem uniemożliwiający powtórzone tworzenie poświadczeń KeyCredentials
 
 #### <a name="azsql"></a>Az.Sql
-* Dodano obsługę warstwy bazy danych SQL w hiperskali
+* Dodano obsługę warstwy Hiperskala bazy danych SQL
 * Rozwiązano problem polegający na tym, że przywracanie może zakończyć się niepowodzeniem z powodu ustawienia niepotrzebnych właściwości w żądaniu przywracania
 
 #### <a name="azwebsites"></a>Az.Websites

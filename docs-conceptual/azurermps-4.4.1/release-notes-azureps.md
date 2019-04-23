@@ -184,10 +184,10 @@ To jest lista zmian wprowadzonych w programie Azure PowerShell w tym wydaniu.
     - Polecenie cmdlet Set-AzureRmManagedApplicationDefinition do aktualizowania istniejącej definicji aplikacji zarządzanej
 * Sql
   * Dodawanie obsługi dla reguł sieci wirtualnej
-    - Dodawane jest polecenie cmdlet Get-AzureRmSqlServerVirtualNetworkRule, które umożliwia uzyskanie reguł sieci wirtualnej według nazwy reguły albo wyświetlenie listy reguł sieci wirtualnej na serwerze Sql platformy Azure.
+    - Dodawane jest polecenie cmdlet Get-AzureRmSqlServerVirtualNetworkRule, które umożliwia uzyskanie reguł sieci wirtualnej według nazwy reguły albo wyświetlenie listy reguł sieci wirtualnej na serwerze Azure SQL.
     - Dodawane jest polecenie cmdlet Set-AzureRmSqlServerVirtualNetworkRule, które zmienia sieć wirtualną wskazywaną przez regułę.
-    - Dodawane jest polecenie cmdlet Remove-AzureRmSqlServerVirtualNetworkRule, które usuwa regułę sieci wirtualnej dla serwera Sql platformy Azure.
-    - Dodawane jest polecenie cmdlet New-AzureRmSqlServerVirtualNetworkRule, które tworzy nową regułę sieci wirtualnej dla serwera Sql platformy Azure.
+    - Dodawane jest polecenie cmdlet Remove-AzureRmSqlServerVirtualNetworkRule, które usuwa regułę sieci wirtualnej dla serwera Azure SQL.
+    - Dodawane jest polecenie cmdlet New-AzureRmSqlServerVirtualNetworkRule, które tworzy nową regułę sieci wirtualnej dla serwera Azure SQL.
 * Witryny internetowe
   * Dodano warstwę PremiumV2 dla planów usługi App Service
 * Azure.Storage
@@ -274,9 +274,9 @@ To jest lista zmian wprowadzonych w programie Azure PowerShell w tym wydaniu.
 * Sql
     * Zaktualizowano polecenie Set-AzureRmSqlServerTransparentDataEncryptionProtector w celu wyświetlania ostrzeżenia i wymagania potwierdzenia, jeśli jako typ funkcji ochrony szyfrowania zostanie ustawiona wartość AzureKeyVault
     * Dodano nowe/zaktualizowane polecenia cmdlet dla ustawień inspekcji
-      - Polecenie cmdlet Get-AzureRmSqlDatabaseAuditing, które pobiera ustawienia inspekcji bazy danych Azure SQL.
+      - Polecenie cmdlet Get-AzureRmSqlDatabaseAuditing, które pobiera ustawienia inspekcji bazy danych Azure SQL Database.
       - Polecenie cmdlet Get-AzureRmSqlServerAuditing, które pobiera ustawienia inspekcji serwera Azure SQL.
-      - Polecenie cmdlet Set-AzureRmSqlDatabaseAuditing, które zmienia ustawienia inspekcji bazy danych Azure SQL.
+      - Polecenie cmdlet Set-AzureRmSqlDatabaseAuditing, które zmienia ustawienia inspekcji bazy danych Azure SQL Database.
       - Polecenie cmdlet Set-AzureRmSqlServerAuditing, które zmienia ustawienia inspekcji serwera Azure SQL.
     * Wycofano istniejące polecenia cmdlet zasad inspekcji
       - Get-AzureRmSqlDatabaseAuditingPolicy
