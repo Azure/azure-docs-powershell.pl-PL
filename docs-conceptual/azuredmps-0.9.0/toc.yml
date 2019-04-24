@@ -1,12 +1,5 @@
-items:
 - name: Azure Deployment Manager PowerShell
   href: overview.md
   items:
-  - name: Informacje o wersji
-    href: release-notes-azuredmps.md
-ms.openlocfilehash: 31c4a7c457b5ba72f57ab8af9203131eff218fcb
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
-ms.translationtype: HT
-ms.contentlocale: pl-PL
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56144886"
+    - name: Informacje o wersji
+      href: release-notes-azuredmps.md

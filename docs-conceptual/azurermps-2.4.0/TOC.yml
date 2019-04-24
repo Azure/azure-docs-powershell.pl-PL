@@ -1,14 +1,7 @@
-items:
 - name: Program Azure PowerShell dla usługi Azure Stack
   href: overview.md
   items:
-  - name: Instalowanie
-    href: https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-powershell-install?toc=/powershell/azure/azure-stack/toc.json
-  - name: Konfigurowanie
-    href: https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-powershell-configure-admin
-ms.openlocfilehash: be9b632ae4a7dd12675b97357d3ac65f744ec3ba
-ms.sourcegitcommit: 8c829e03cafd0575ecc594360b6b412cec0d6d71
-ms.translationtype: HT
-ms.contentlocale: pl-PL
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57335469"
+    - name: Instalowanie
+      href: 'https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-powershell-install?toc=/powershell/azure/azure-stack/toc.json'
+    - name: Konfigurowanie
+      href: 'https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-powershell-configure-admin'

@@ -1,16 +1,9 @@
-items:
 - name: Azure Stack PowerShell
   href: overview.md
   items:
-  - name: Instalowanie
-    href: https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-powershell-install?toc=/powershell/azure/azure-stack/toc.json
-  - name: Łączenie — operator chmury
-    href: https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-powershell-configure-admin
-  - name: Łączenie — użytkownik
-    href: https://docs.microsoft.com/en-us/azure/azure-stack/user/azure-stack-powershell-configure-user
-ms.openlocfilehash: 4c7843ba9e219de49a2b75560d24aad73ce6fecb
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
-ms.translationtype: HT
-ms.contentlocale: pl-PL
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56153734"
+    - name: Instalowanie
+      href: 'https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-powershell-install?toc=/powershell/azure/azure-stack/toc.json'
+    - name: Łączenie — operator chmury
+      href: 'https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-powershell-configure-admin'
+    - name: Łączenie — użytkownik
+      href: 'https://docs.microsoft.com/en-us/azure/azure-stack/user/azure-stack-powershell-configure-user'
