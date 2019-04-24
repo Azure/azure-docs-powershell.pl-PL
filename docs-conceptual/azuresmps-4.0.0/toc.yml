@@ -1,12 +1,5 @@
-items:
 - name: Omówienie
   href: overview.md
   items:
-  - name: Instalowanie
-    href: install-azure-ps.md
-ms.openlocfilehash: fbe6b51bcd8d99846f9fc0b7c329bb5adc4caa10
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
-ms.translationtype: HT
-ms.contentlocale: pl-PL
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56144589"
+    - name: Instalowanie
+      href: install-azure-ps.md

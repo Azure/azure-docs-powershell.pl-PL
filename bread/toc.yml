@@ -1,32 +1,25 @@
-items:
 - name: Azure
   tocHref: /azure/
   topicHref: /azure/index
   items:
-  - name: Azure PowerShell
-    tocHref: /powershell/azure/aip/
-    topicHref: /powershell/azure/aip/overview
-  - name: Azure PowerShell
-    tocHref: /powershell/azure/active-directory/
-    topicHref: /powershell/azure/active-directory/overview
-  - name: Azure PowerShell
-    tocHref: /powershell/azure/elasticdbjobs/
-    topicHref: /powershell/azure/elasticdbjobs/overview
-  - name: Azure PowerShell
-    tocHref: /powershell/azure/service-fabric/
-    topicHref: /powershell/azure/service-fabric/overview
-  - name: Azure PowerShell
-    tocHref: /powershell/azure/
-    topicHref: /powershell/azure/overview
-  - name: Azure PowerShell
-    tocHref: /powershell/module/
-    topicHref: /powershell/module/
-  - name: Azure/PowerShell
-    tocHref: /powershell/azure/deploymentmanager
-    topicHref: /powershell/azure/deploymentmanager/overview
-ms.openlocfilehash: 854e95f1f9ef8c383b68888f23b139ef80d43ce5
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
-ms.translationtype: HT
-ms.contentlocale: pl-PL
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56144910"
+    - name: Azure PowerShell
+      tocHref: /powershell/azure/aip/
+      topicHref: /powershell/azure/aip/overview
+    - name: Azure PowerShell
+      tocHref: /powershell/azure/active-directory/
+      topicHref: /powershell/azure/active-directory/overview
+    - name: Azure PowerShell
+      tocHref: /powershell/azure/elasticdbjobs/
+      topicHref: /powershell/azure/elasticdbjobs/overview
+    - name: Azure PowerShell
+      tocHref: /powershell/azure/service-fabric/
+      topicHref: /powershell/azure/service-fabric/overview
+    - name: Azure PowerShell
+      tocHref: /powershell/azure/
+      topicHref: /powershell/azure/overview
+    - name: Azure PowerShell
+      tocHref: /powershell/module/
+      topicHref: /powershell/module/
+    - name: Azure/PowerShell
+      tocHref: /powershell/azure/deploymentmanager
+      topicHref: /powershell/azure/deploymentmanager/overview
