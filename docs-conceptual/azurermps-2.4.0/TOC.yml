@@ -1,7 +1,6 @@
 - name: Program Azure PowerShell dla usługi Azure Stack
   href: overview.md
-  items:
-    - name: Instalowanie
-      href: 'https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-powershell-install?toc=/powershell/azure/azure-stack/toc.json'
-    - name: Konfigurowanie
-      href: 'https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-powershell-configure-admin'
+- name: Instalowanie
+  href: 'https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-powershell-install?toc=/powershell/azure/azure-stack/toc.json'
+- name: Konfigurowanie
+  href: 'https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-powershell-configure-admin'
