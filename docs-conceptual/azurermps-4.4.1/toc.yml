@@ -1,47 +1,41 @@
 - name: Azure PowerShell
   href: overview.md
+- name: Instalowanie
   items:
-    - name: Instalowanie
+    - name: Instalowanie przy użyciu elementu PowerShellGet
       href: install-azurerm-ps.md
-      items:
-        - name: Instalowanie w systemach macOS i Linux
-          href: install-azurermps-maclinux.md
-        - name: Inne metody instalacji
-          href: other-install.md
-    - name: Rozpoczęcie pracy
-      href: get-started-azureps.md
-    - name: Cloud Shell
-      href: 'https://docs.microsoft.com/azure/cloud-shell/overview'
-    - name: Logowanie
+    - name: Instalowanie przy użyciu pliku MSI lub instalatora WebPI
+      href: other-install.md
+- name: Rozpoczęcie pracy
+  href: get-started-azureps.md
+- name: Cloud Shell
+  href: 'https://docs.microsoft.com/azure/cloud-shell/overview'
+- name: Logowanie
+  items:
+    - name: Metody uwierzytelniania
       href: authenticate-azureps.md
-      items:
-        - name: Tworzenie nazwy głównej usługi
-          href: create-azure-service-principal-azureps.md
-        - name: Poświadczenia trwałe
-          href: context-persistence.md
-    - name: Zapytania
-      href: queries-azureps.md
-    - name: Formatowanie danych wyjściowych
-      href: formatting-output.md
-    - name: Zarządzanie subskrypcjami
-      href: manage-subscriptions-azureps.md
-    - name: Wdrażanie
-      items:
-        - name: Wdrażanie szablonów usługi Resource Manager
-          href: /azure/azure-resource-manager/resource-group-template-deploy
-        - name: Eksportowanie szablonów usługi Resource Manager
-          href: /azure/azure-resource-manager/resource-manager-export-template-powershell
-        - name: Wdrażanie prywatnych szablonów usługi Resource Manager
-          href: /azure/azure-resource-manager/resource-manager-powershell-sas-token
-    - name: Pojęcia
-      items:
-        - name: Moduły eksperymentalne
-          href: using-experimental-modules.md
-    - name: Informacje o wersji
-      href: release-notes-azureps.md
-      items:
-        - name: Istotne zmiany dotyczące programu Azure PowerShell 4.x
-          href: migration-guide.4.0.0.md
+    - name: Tworzenie nazwy głównej usługi
+      href: create-azure-service-principal-azureps.md
+    - name: Poświadczenia trwałe
+      href: context-persistence.md
+- name: Zapytania
+  href: queries-azureps.md
+- name: Formatowanie danych wyjściowych
+  href: formatting-output.md
+- name: Zarządzanie subskrypcjami
+  href: manage-subscriptions-azureps.md
+- name: Wdrażanie
+  items:
+    - name: Wdrażanie szablonów usługi Resource Manager
+      href: /azure/azure-resource-manager/resource-group-template-deploy
+    - name: Eksportowanie szablonów usługi Resource Manager
+      href: /azure/azure-resource-manager/resource-manager-export-template-powershell
+    - name: Wdrażanie prywatnych szablonów usługi Resource Manager
+      href: /azure/azure-resource-manager/resource-manager-powershell-sas-token
+- name: Pojęcia
+  items:
+    - name: Moduły eksperymentalne
+      href: using-experimental-modules.md
 - name: Przykładowe skrypty
   items:
     - name: Maszyny wirtualne z systemem Linux
@@ -54,3 +48,7 @@
       href: /azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
     - name: Cosmos DB
       href: /azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json
+- name: Informacje o wersji
+  href: release-notes-azureps.md
+- name: Istotne zmiany dotyczące programu Azure PowerShell 4.x
+  href: migration-guide.4.0.0.md

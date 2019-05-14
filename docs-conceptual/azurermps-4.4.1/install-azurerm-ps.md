@@ -7,25 +7,28 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
-ms.openlocfilehash: fac77e88612091c09106dffea6aa6d3765c1416b
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: a8f79a5b24e790731a1ee962a1e80fb5ad89561a
+ms.sourcegitcommit: b37b8bb6f8e39ecea5b50ceec48601eed313add7
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56153879"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65511585"
 ---
-# <a name="install-and-configure-azure-powershell"></a>Instalowanie i konfigurowanie programu Azure PowerShell
+# <a name="install-azure-powershell-on-windows-with-powershellget"></a>Instalowanie programu Azure PowerShell w systemie Windows za pomocą modułu PowerShellGet
 
-W tym artykule opisano kroki instalowania modułów programu Azure PowerShell w środowisku systemu Windows.
-Informacje dotyczące korzystania z programu Azure PowerShell w systemie macOS lub Linux znajdują się w następującym artykule: [Instalowanie i konfigurowanie programu Azure PowerShell w systemach macOS i Linux](install-azurermps-maclinux.md).
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
-Instalowanie programu Azure PowerShell z Galerii programu PowerShell jest preferowaną metodą instalacji.
+W tym artykule opisano kroki instalowania modułów programu Azure PowerShell w programie PowerShell 5.x w systemie Windows przy użyciu modułu PowerShellGet. Moduł PowerShellGet i funkcja zarządzania modułami to preferowany sposób instalacji programu Azure PowerShell, ale jeśli wolisz go zainstalować za pomocą Instalatora platformy internetowej lub pakietu MSI, zobacz [Inne metody instalacji](other-install.md).
 
-[!INCLUDE[az-replacing-azurerm.md](../includes/az-replacing-azurerm.md)]
+Klasyczny model wdrażania platformy Azure nie jest obsługiwany przez tę wersję programu Azure PowerShell. Aby uzyskać pomoc techniczną w przypadku wdrożeń klasycznych, postępuj zgodnie z instrukcjami na stronie [Instalowanie modułu zarządzania usługami programu Azure PowerShell](/powershell/azure/servicemanagement/install-azure-ps).
 
-## <a name="step-1-install-powershellget"></a>Krok 1. Zainstaluj moduł PowerShellGet
+> [!IMPORTANT]
+> Moduł AzureRM nie jest obsługiwany w systemach macOS i Linux. Aby używać poleceń cmdlet programu Azure PowerShell na tych platformach, należy [zainstalować moduł Az](/powershell/azure/install-az-ps).
+
+## <a name="step-1-install-powershellget"></a>Krok 1: Zainstaluj moduł PowerShellGet
 
 Instalowanie elementów z Galerii programu PowerShell wymaga modułu PowerShellGet. Upewnij się, że masz odpowiednią wersję modułu PowerShellGet oraz spełnione inne wymagania systemowe. Uruchom następujące polecenie, aby sprawdzić, czy w Twoim systemie został zainstalowany moduł PowerShellGet.
+
 
 ```powershell-interactive
 Get-InstalledModule -Name PowerShellGet -ListAvailable | Select-Object -Property Name,Version,Path
