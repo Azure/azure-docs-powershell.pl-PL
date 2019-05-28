@@ -61,4 +61,8 @@
     - name: Cosmos DB
       href: /azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json
 - name: Informacje o wersji
-  href: release-notes-azureps.md
+  items:
+    - name: Informacje o wersji narzędzia Az 2.1.0
+      href: release-notes-azureps.md
+    - name: Zmiany powodujące niezgodność w narzędziu Az 2.0.0
+      href: migrate-az-2.0.0.md
