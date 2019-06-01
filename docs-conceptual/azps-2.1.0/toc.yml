@@ -2,6 +2,7 @@
   href: overview.md
 - name: Wprowadzenie do nowego modułu Az
   href: new-azureps-module-az.md
+  displayName: 'intro, introduction, azurerm'
 - name: Instalowanie
   href: install-az-ps.md
 - name: Dezinstalacja
@@ -10,26 +11,35 @@
   items:
     - name: Kroki migracji
       href: migrate-from-azurerm-to-az.md
+      displayName: 'migrate, azurerm, az'
     - name: Zmiany między narzędziami AzureRM i Az
       href: migrate-az-1.0.0.md
+      displayName: 'breaking, cmdlet, module, names'
 - name: Rozpoczęcie pracy
   href: get-started-azureps.md
+  displayName: 'sign in, signin, log in, login, find, feedback, intro, introduction'
 - name: Cloud Shell
   href: 'https://docs.microsoft.com/azure/cloud-shell/overview'
 - name: Logowanie
   items:
     - name: Metody uwierzytelniania
       href: authenticate-azureps.md
+      displayName: 'sign in, signin, log in, login, credentials, msi, managed identity, tenant, subscription, region, certificate, service principal, authenticate'
     - name: Tworzenie nazwy głównej usługi
       href: create-azure-service-principal-azureps.md
+      displayName: 'automation, application, web app, script, certificate, sign in, signin, log in, login, devops, dev ops, itpro, it pro, role, aad, authentication, authenticate'
     - name: Poświadczenia trwałe
       href: context-persistence.md
+      displayName: 'sign in, signin, log in, login, process, session'
 - name: Zapytania
   href: queries-azureps.md
+  displayName: 'filter, search, format, output, variable, scripting, array, dictionary, map, object'
 - name: Formatowanie danych wyjściowych
   href: formatting-output.md
+  displayName: 'object, table, yaml, json, xml, csv, html, list'
 - name: Zarządzanie subskrypcjami
   href: manage-subscriptions-azureps.md
+  displayName: 'tenant, user, sign in, signin, log in, login, authenticate, authentication, accounts'
 - name: Wdrażanie
   items:
     - name: Wdrażanie szablonów usługi Resource Manager
@@ -44,6 +54,7 @@
       href: using-experimental-modules.md
     - name: Zadania programu PowerShell
       href: using-psjobs.md
+      displayName: 'background, task, scripting, automation'
 - name: Samouczki
   items:
     - name: Tworzenie maszyn wirtualnych
@@ -52,14 +63,17 @@
   items:
     - name: Maszyny wirtualne z systemem Linux
       href: /azure/virtual-machines/linux/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
+      displayName: vms
     - name: Maszyny wirtualne z systemem Windows
       href: /azure/virtual-machines/windows/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
+      displayName: vms
     - name: Web Apps
       href: /azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
     - name: Bazy danych SQL
       href: /azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
     - name: Cosmos DB
       href: /azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json
+      displayName: 'database, nosql, mongodb, couchdb'
 - name: Informacje o wersji
   items:
     - name: Informacje o wersji narzędzia Az 2.1.0
