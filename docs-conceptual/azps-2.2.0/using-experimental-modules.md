@@ -6,19 +6,17 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 09/11/2018
-ms.openlocfilehash: 11847ca2fe09ebeb48f962eab6dac2be06bd8805
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.date: 12/13/2018
+ms.openlocfilehash: ae2fecf73271a34a08ac66de03962a7a529e353b
+ms.sourcegitcommit: 0c012450805bef75472f48c74fe488baf6ba53bb
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65534348"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66498611"
 ---
 # <a name="use-experimental-azure-powershell-modules"></a>Korzystanie z eksperymentalnych modułów programu Azure PowerShell
 
-[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
-
-Zespół programu Azure PowerShell eksperymentuje z wieloma udoskonaleniami w zakresie korzystania z tego programu, ze szczególnym uwzględnieniem narzędzi dla deweloperów (w szczególności interfejsów wiersza polecenia).
+Zespół programu Azure PowerShell eksperymentuje z wieloma udoskonaleniami w zakresie korzystania z tego programu, ze szczególnym uwzględnieniem narzędzi dla deweloperów na platformie Azure. W tym artykule opisano, jak wyrazić chęć uczestnictwa w eksperymentach dotyczących programu Azure PowerShell i przesyłania opinii do zespołu programistycznego.
 
 ## <a name="experimentation-methodology"></a>Metodologia eksperymentów
 
@@ -26,29 +24,17 @@ Aby ułatwić eksperymenty, tworzymy nowe moduły programu Azure PowerShell, kt�
 
 Te moduły mogą być instalowane obok istniejących modułów programu Azure PowerShell. Nazwy poleceń cmdlet zostały skrócone, aby zmniejszyć ich długość i wyeliminować konflikty z istniejącymi poleceniami cmdlet, które nie są eksperymentalne.
 
-W przypadku modułów eksperymentalnych obowiązuje następująca konwencja nazewnictwa: `AzureRM.*.Experiments`. Ta konwencja nazewnictwa przypomina nazewnictwo modułów z wersji zapoznawczej: `AzureRM.*.Preview`. Moduły z wersji zapoznawczej różnią się od modułów eksperymentalnych. Moduły z wersji zapoznawczej wdrażają nowe funkcje usług platformy Azure, które są dostępne tylko w wersji zapoznawczej. Moduły z wersji zapoznawczej zastępują istniejące moduły programu Azure PowerShell i używają tych samych nazw poleceń cmdlet i nazw parametrów.
+W przypadku modułów eksperymentalnych obowiązuje następująca konwencja nazewnictwa: `Az.*.Experiments`. Ta konwencja nazewnictwa przypomina nazewnictwo modułów z wersji zapoznawczej: `Az.*.Preview`. Moduły z wersji zapoznawczej różnią się od modułów eksperymentalnych. Moduły z wersji zapoznawczej wdrażają nowe funkcje usług platformy Azure, które są dostępne tylko w wersji zapoznawczej. Moduły z wersji zapoznawczej zastępują istniejące moduły programu Azure PowerShell i używają tych samych nazw poleceń cmdlet i nazw parametrów.
 
 ## <a name="how-to-install-an-experimental-module"></a>Jak zainstalować moduł eksperymentalny
 
 Moduły eksperymentalne są publikowane w galerii programu PowerShell tak samo, jak istniejące moduły programu Azure PowerShell. Aby wyświetlić listę modułów eksperymentalnych, uruchom następujące polecenie:
 
 ```azurepowershell-interactive
-Find-Module AzureRM.*.Experiments
+Find-Module Az.*.Experiments
 ```
 
-```output
-Version Name                         Repository Description
-------- ----                         ---------- -----------
-1.0.25  AzureRM.Compute.Experiments  PSGallery  Azure Compute experiments for VM creation
-1.0.0   AzureRM.Websites.Experiments PSGallery  Create and deploy web applications using Azure App Services.
-```
-
-Aby zainstalować moduł eksperymentalny, użyj następujących poleceń w sesji programu PowerShell z podwyższonym poziomem uprawnień:
-
-```azurepowershell-interactive
-Install-Module AzureRM.Compute.Experiments
-Install-Module AzureRM.Websites.Experiments
-```
+Aby zainstalować moduł eksperymentalny, użyj polecenia cmdlet `Install-Module`.
 
 ### <a name="documentation-and-support"></a>Dokumentacja i pomoc techniczna
 
@@ -58,16 +44,17 @@ Zachęcamy do testowania tych modułów. Wasze opinie pozwalają nam poprawiać 
 
 ## <a name="experiments-and-areas-of-improvement"></a>Eksperymenty i obszary ulepszeń
 
-Te ulepszenia zostały wybrane na podstawie kluczowych różnic w konkurencyjnych produktach. Na przykład w interfejsie wiersza polecenia platformy Azure w wersji 2.0 oparto polecenia na _scenariuszach_, a nie na _obszarze powierzchni interfejsu API_.
-W interfejsie wiersza polecenia platformy Azure w wersji 2.0 używana jest pewna liczba domyślnych ustawień inteligentnych, dzięki którym korzystanie ze scenariuszy wprowadzających jest łatwiejsze dla użytkowników.
+Te ulepszenia zostały wybrane na podstawie kluczowych różnic w konkurencyjnych produktach. Na przykład w interfejsie wiersza polecenia platformy Azure oparto polecenia na _scenariuszach_, a nie na _obszarze powierzchni interfejsu API_.
+W interfejsie wiersza polecenia platformy Azure jest używana pewna liczba domyślnych ustawień inteligentnych, dzięki którym korzystanie ze scenariuszy wprowadzających jest łatwiejsze dla użytkowników.
 
 ### <a name="core-improvements"></a>Ulepszenia funkcji podstawowych
 
 Ulepszenia funkcji podstawowych są traktowane jako zdroworozsądkowe, a w celu wdrożenia tych aktualizacji potrzebne jest eksperymentowanie tylko w ograniczonym zakresie.
 
-- Polecenia cmdlet oparte na scenariuszach — <em>*wszystkie</em> polecenia cmdlet powinny być projektowane wokół scenariuszy, a nie w oparciu o usługę Azure REST.
+- Polecenia cmdlet oparte na scenariuszach — **wszystkie* polecenia cmdlet powinny być projektowane wokół scenariuszy, a nie w oparciu o usługę Azure REST.
 
-- Krótsze nazwy — obejmują nazwy poleceń cmdlet (na przykład `New-AzureRmVM` => `New-AzVm`) oraz nazwy parametrów (na przykład `-ResourceGroupName` => `-Rg`). W celu zapewniania zgodności ze „starymi” poleceniami cmdlet należy stosować aliasy. Wymagane jest udostępnianie zestawów parametrów _zgodnych z poprzednimi wersjami_.
+- Krótsze nazwy — obejmują nazwy poleceń cmdlet oraz nazwy parametrów.
+  W celu zapewniania zgodności ze „starymi” poleceniami cmdlet należy stosować aliasy. Wymagane jest udostępnianie zestawów parametrów _zgodnych z poprzednimi wersjami_.
 
 - Inteligentne wartości domyślne — inteligentne wartości domyślne należy tworzyć, aby wypełniać „wymagane” informacje. Na przykład:
   - Grupa zasobów

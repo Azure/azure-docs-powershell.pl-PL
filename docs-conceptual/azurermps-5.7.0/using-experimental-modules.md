@@ -7,14 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/05/2017
-ms.openlocfilehash: ff58693c8ec21b7e50e37bd85975a9ae3980a5e7
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: 9cd88919b51f24d19579b865d9f3d5cc779b62d9
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56153601"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65534797"
 ---
 # <a name="using-experimental-azure-powershell-modules"></a>Korzystanie z eksperymentalnych modułów programu Azure PowerShell
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 Zespół programu Azure PowerShell eksperymentuje z wieloma udoskonaleniami w zakresie korzystania z tego programu, ze szczególnym uwzględnieniem narzędzi dla deweloperów (w szczególności interfejsów wiersza polecenia).
 

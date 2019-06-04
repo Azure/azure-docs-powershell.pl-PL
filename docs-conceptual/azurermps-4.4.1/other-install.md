@@ -7,18 +7,18 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/06/2017
-ms.openlocfilehash: 8049b156e1c881ed2d4fe35a0d29c9dcd48e6e97
-ms.sourcegitcommit: b37b8bb6f8e39ecea5b50ceec48601eed313add7
+ms.openlocfilehash: d41e7ce2faac6a82b63ed173b5b64b85b56577c0
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65511600"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65535091"
 ---
 # <a name="other-installation-methods"></a>Inne metody instalacji
 
-Program Azure PowerShell można zainstalować na wiele sposobów. Preferowaną metodą jest użycie modułu PowerShellGet z galerią programu PowerShell. Program Azure PowerShell można zainstalować w systemie Windows za pomocą Instalatora platformy internetowej (WebPI) lub pliku MSI dostępnego w witrynie GitHub.
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
-[!INCLUDE[az-replacing-azurerm.md](../includes/az-replacing-azurerm.md)]
+Program Azure PowerShell można zainstalować na wiele sposobów. Preferowaną metodą jest użycie modułu PowerShellGet z galerią programu PowerShell. Program Azure PowerShell można zainstalować w systemie Windows za pomocą Instalatora platformy internetowej (WebPI) lub pliku MSI dostępnego w witrynie GitHub.
 
 ## <a name="install-on-windows-using-the-web-platform-installer"></a>Instalowanie w systemie Windows za pomocą Instalatora platformy internetowej
 

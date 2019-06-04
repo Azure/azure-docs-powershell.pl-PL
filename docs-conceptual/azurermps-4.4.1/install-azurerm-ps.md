@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
-ms.openlocfilehash: a8f79a5b24e790731a1ee962a1e80fb5ad89561a
-ms.sourcegitcommit: b37b8bb6f8e39ecea5b50ceec48601eed313add7
+ms.openlocfilehash: 39bf3c879135989bdd9a7382eb003a8f69e5bdbb
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65511585"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65534852"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>Instalowanie programu Azure PowerShell w systemie Windows za pomocą modułu PowerShellGet
 

@@ -7,19 +7,19 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/20/2018
-ms.openlocfilehash: 30f7a01b941bb2861b1652fa30ea002d40c80a80
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: fe35fccd7994d7c3c3587096263a50af598e8651
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56156257"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65535041"
 ---
 # <a name="install-azure-powershell-on-windows-with-msi-or-web-platform-installer"></a>Instalowanie programu Azure PowerShell w systemie Windows za pomocą instalatora MSI lub Instalatora platformy internetowej
 
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+
 W tym artykule opisano sposób instalowania programu Azure PowerShell w systemie Windows przy użyciu pliku MSI lub Instalatora platformy internetowej (WebPI).  
 Tych metod instalacji należy używać tylko wtedy, gdy są one niezbędne w danym systemie. Zalecaną metodą instalacji programu Azure PowerShell w systemie Windows jest moduł PowerShellGet. Aby uzyskać instrukcje dotyczące instalowania programu Azure PowerShell przy użyciu modułu PowerShellGet, zobacz [Instalowanie programu Azure PowerShell za pomocą modułu PowerShellGet](install-azurerm-ps.md).
-
-[!INCLUDE[az-replacing-azurerm.md](../includes/az-replacing-azurerm.md)]
 
 ## <a name="install-or-update-on-windows-using-the-msi-package"></a>Instalowanie lub aktualizowanie w systemie Windows za pomocą pakietu MSI
 

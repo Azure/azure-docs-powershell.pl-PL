@@ -8,14 +8,16 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 2/20/2018
-ms.openlocfilehash: 1a9d38cd60ba596c085e5ee9f8d815e238362b1f
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: ee9fb7e777d06f50514c6b4ba39805936b867045
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56153846"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65535071"
 ---
 # <a name="release-notes"></a>Informacje o wersji
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 To jest lista zmian wprowadzonych w programie Azure PowerShell w tym wydaniu.
 

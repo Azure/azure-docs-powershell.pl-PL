@@ -7,14 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: 9ae0d661630bf4e080b3bbaa7f357c384ef68cc4
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: 0e94d30467c5a11bccfa71630f736bedf0d93112
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56144887"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65535054"
 ---
 # <a name="formatting-query-results"></a>Formatowanie wyników zapytania
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 Domyślnie dane wyjściowe każdego polecenia cmdlet programu PowerShell są wstępnie sformatowane, co ułatwia ich odczytywanie.  Ponadto program PowerShell udostępnia następujące polecenia cmdlet, które pozwalają elastycznie dopasować dane wyjściowe lub przekształcić je do innego formatu:
 

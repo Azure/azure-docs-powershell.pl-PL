@@ -7,14 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 11/15/2017
-ms.openlocfilehash: a64bc4f07a5dc7d3f42e13877ed3bca53c4987d3
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: e2962245b332939da9d65468b57ced28be31d20a
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56144701"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65534831"
 ---
 # <a name="get-started-with-azure-powershell"></a>Rozpoczynanie pracy z programem Azure PowerShell
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 Program Azure PowerShell jest przeznaczony do zarządzania i administrowania zasobami platformy Azure przy użyciu wiersza polecenia oraz do tworzenia skryptów automatyzacji, które pozwalają obsługiwać usługę Azure Resource Manager. Można go używać w przeglądarce dzięki usłudze [Azure Cloud Shell](/azure/cloud-shell/overview) albo można go zainstalować na maszynie lokalnej. W tym artykule przedstawiono podstawowe pojęcia związane z programem Azure PowerShell, które ułatwiają rozpoczęcie korzystania z niego.
 

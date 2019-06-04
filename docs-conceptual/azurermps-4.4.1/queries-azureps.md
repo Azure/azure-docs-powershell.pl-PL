@@ -7,16 +7,18 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: 9a7627a25f9bbd196b1d615229e45a6e1ce7a7d9
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: db161bb0ec1b25b1cb7445724cc5758599dbc674
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56153762"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65534652"
 ---
 # <a name="querying-for-azure-resources"></a>Wykonywanie zapytań dotyczących zasobów platformy Azure
 
-W programie PowerShell można wykonywać zapytania przy użyciu wbudowanych poleceń cmdlet. W programie PowerShell nazwy poleceń cmdlet mają postać **_czasownik-rzeczownik_**. Polecenia cmdlet z czasownikiem **_Get_** służą do tworzenia zapytań. Rzeczowniki w poleceniach cmdlet to typy zasobów platformy Azure, na których działają czasowniki.
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+
+W programie PowerShell można wykonywać zapytania przy użyciu wbudowanych poleceń cmdlet. W programie PowerShell nazwy poleceń cmdlet mają postać **_czasownik-rzeczownik_** . Polecenia cmdlet z czasownikiem **_Get_** służą do tworzenia zapytań. Rzeczowniki w poleceniach cmdlet to typy zasobów platformy Azure, na których działają czasowniki.
 
 ## <a name="selecting-simple-properties"></a>Wybieranie prostych właściwości
 

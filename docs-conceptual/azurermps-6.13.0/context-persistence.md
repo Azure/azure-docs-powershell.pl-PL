@@ -7,14 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/09/2018
-ms.openlocfilehash: a07b5fe8cd532f99038d7f0ce10b3b891c896da1
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: 1e5c89a43886343bfc0a1affb5133a7cb6af0bcc
+ms.sourcegitcommit: 0fdccb57a356b6e7c35a77b1f76e01fb96ef582b
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56153865"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854161"
 ---
 # <a name="persist-user-credentials-across-powershell-sessions"></a>Utrwalanie poświadczeń użytkownika między sesjami programu PowerShell
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 Program Azure PowerShell oferuje funkcję **automatycznego zapisywania kontekstu platformy Azure**, która udostępnia następujące funkcje:
 
@@ -43,7 +45,7 @@ Program Azure PowerShell w wersji 6.3.0 i nowszych automatycznie zachowuje infor
 Aby umożliwić programowi Azure PowerShell zapamiętywanie kontekstu po zamknięciu sesji programu PowerShell, użyj polecenia `Enable-AzureRmContextAutosave`. Informacje o kontekście i poświadczenia będą automatycznie zapisywane w specjalnym ukrytym folderze w katalogu użytkownika (`%AppData%\Roaming\Windows Azure PowerShell`).
 Każda nowa sesja programu PowerShell wybiera kontekst użyty w ostatniej sesji jako docelowy.
 
-Polecenia cmdlet, które umożliwiają zarządzanie kontekstami platformy Azure, umożliwiają także szczegółowe kontrolowanie. Dzięki nim można określić, czy zmiany mają obowiązywać tylko w bieżącej sesji programu PowerShell (zakres `Process`), czy każdej sesji programu PowerShell (zakres `CurrentUser`). Te opcje są szczegółowo omówione w temacie [Korzystanie z zakresów kontekstu](#Using-Context-Scopes).
+Polecenia cmdlet, które umożliwiają zarządzanie kontekstami platformy Azure, umożliwiają także szczegółowe kontrolowanie. Dzięki nim można określić, czy zmiany mają obowiązywać tylko w bieżącej sesji programu PowerShell (zakres `Process`), czy każdej sesji programu PowerShell (zakres `CurrentUser`). Te opcje są szczegółowo omówione w temacie [Korzystanie z zakresów kontekstu](#using-context-scopes).
 
 ## <a name="running-azure-powershell-cmdlets-as-background-jobs"></a>Uruchamianie poleceń cmdlet programu PowerShell platformy Azure jako zadań w tle
 

@@ -7,14 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/05/2017
-ms.openlocfilehash: 30e57805dd59bd60d10c52422fcb68686563fadf
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: 7867adeac41444c81c31b7ee44b910ab40d873f8
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56144684"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65534759"
 ---
 # <a name="using-experimental-azure-powershell-modules"></a>Korzystanie z eksperymentalnych modułów programu Azure PowerShell
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 Zespół programu Azure PowerShell eksperymentuje z wieloma udoskonaleniami w zakresie korzystania z tego programu, ze szczególnym uwzględnieniem narzędzi dla deweloperów (w szczególności interfejsów wiersza polecenia).
 
@@ -30,11 +32,11 @@ W przypadku modułów eksperymentalnych obowiązuje następująca konwencja naze
 
 Moduły eksperymentalne są publikowane w galerii programu PowerShell tak samo, jak istniejące moduły programu Azure PowerShell. Aby wyświetlić listę modułów eksperymentalnych, uruchom następujące polecenie:
 
-```powershell-interactive
+```azurepowershell-interactive
 Find-Module AzureRM.*.Experiments
 ```
 
-```Output
+```output
 Version Name                         Repository Description
 ------- ----                         ---------- -----------
 1.0.25  AzureRM.Compute.Experiments  PSGallery  Azure Compute experiments for VM creation
@@ -43,7 +45,7 @@ Version Name                         Repository Description
 
 Aby zainstalować moduł eksperymentalny, użyj następujących poleceń w sesji programu PowerShell z podwyższonym poziomem uprawnień:
 
-```powershell-interactive
+```azurepowershell-interactive
 Install-Module AzureRM.Compute.Experiments
 Install-Module AzureRM.Websites.Experiments
 ```

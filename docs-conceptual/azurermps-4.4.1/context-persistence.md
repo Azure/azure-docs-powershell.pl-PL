@@ -7,14 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
-ms.openlocfilehash: 85de158cd2a4c3a38f653a530db8e6fae50cb37f
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: 442dfed6175f2f5e2f386df3cb2bcea4871bcc01
+ms.sourcegitcommit: 0fdccb57a356b6e7c35a77b1f76e01fb96ef582b
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56144934"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854165"
 ---
 # <a name="persisting-user-credentials-across-powershell-sessions"></a>Utrwalanie poświadczeń użytkownika między sesjami programu PowerShell
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 Program Azure PowerShell oferuje funkcję **automatycznego zapisywania kontekstu platformy Azure**, która udostępnia następujące funkcje:
 
@@ -45,7 +47,7 @@ Następnie każda nowa sesja programu PowerShell wybiera kontekst użyty w ostat
 
 Aby skonfigurować w programie PowerShell zapominanie kontekstu i poświadczeń, użyj polecenia `Disable-AzureRmContextAutoSave`. W takim przypadku konieczne będzie logowanie się do platformy Azure każdorazowo po otwarciu nowej sesji programu PowerShell.
 
-Polecenia cmdlet, które umożliwiają zarządzanie kontekstami platformy Azure, umożliwiają także szczegółowe kontrolowanie. Dzięki nim można określić, czy zmiany mają obowiązywać tylko w bieżącej sesji programu PowerShell (zakres `Process`), czy każdej sesji programu PowerShell (zakres `CurrentUser`). Te opcje są szczegółowo omówione w temacie [Korzystanie z zakresów kontekstu](#Using-Context-Scopes).
+Polecenia cmdlet, które umożliwiają zarządzanie kontekstami platformy Azure, umożliwiają także szczegółowe kontrolowanie. Dzięki nim można określić, czy zmiany mają obowiązywać tylko w bieżącej sesji programu PowerShell (zakres `Process`), czy każdej sesji programu PowerShell (zakres `CurrentUser`). Te opcje są szczegółowo omówione w temacie [Korzystanie z zakresów kontekstu](#using-context-scopes).
 
 ## <a name="running-azure-powershell-cmdlets-as-background-jobs"></a>Uruchamianie poleceń cmdlet programu PowerShell platformy Azure jako zadań w tle
 

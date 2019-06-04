@@ -7,14 +7,16 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: 9a93145f2abeea466a739775ca8ae7e337e78166
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: f54e982cd65513de4f64634f535cd70a9ec7b8a3
+ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56153421"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65534562"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Logowanie się w programie Azure PowerShell
+
+[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
 Program Azure PowerShell obsługuje wiele metod uwierzytelniania. Najprostszym sposobem rozpoczęcia pracy jest interaktywne zalogowanie się w wierszu polecenia.
 
