@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2019
-ms.openlocfilehash: de07565efa98409c6b00cf5fda3417c618d6586b
-ms.sourcegitcommit: 0c012450805bef75472f48c74fe488baf6ba53bb
+ms.openlocfilehash: 1d99f04525a33f03f859bfb4abe263b12ca6add9
+ms.sourcegitcommit: 492e21ce65bd5782c65171ff93522c6366818060
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66498226"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66814377"
 ---
 # <a name="breaking-changes-for-az-100"></a>Zmiany powodujące niezgodność w module Az 1.0.0
 
@@ -275,7 +275,7 @@ W tej sekcji szczegółowo opisano konkretne zmiany powodujące niezgodność w 
 
   Należy zmienić na
   ```azurepowershell-interactive
-  New-AzMMediaService -Tag @{TagName="TagValue"}
+  New-AzMediaService -Tag @{TagName="TagValue"}
   ```
 
 ### <a name="azmonitor-previously-azurerminsights"></a>Az.Monitor (wcześniej AzureRM.Insights)
@@ -384,7 +384,7 @@ $b.ICloudBlob.Snapshot()
 Az:
 
 ```azurepowershell-interactive
-$b = Get-AzureStorageBlob -Container $containerName -Blob $blobName -Context $ctx
+$b = Get-AzStorageBlob -Container $containerName -Blob $blobName -Context $ctx
 $task = $b.ICloudBlob.SnapshotAsync()
 $task.Wait()
 $snapshot = $task.Result
@@ -402,7 +402,7 @@ $snapshot = $Share.Snapshot()
 Az:
 
 ```azurepowershell-interactive
-$Share = Get-AzureStorageShare -Name $containerName -Context $ctx
+$Share = Get-AzStorageShare -Name $containerName -Context $ctx
 $task = $Share.SnapshotAsync()
 $task.Wait()
 $snapshot = $task.Result
@@ -420,7 +420,7 @@ $b.ICloudBlob.Undelete()
 Az:
 
 ```azurepowershell-interactive
-$b = Get-AzureStorageBlob -Container $containerName -Blob $blobName -IncludeDeleted -Context $ctx
+$b = Get-AzStorageBlob -Container $containerName -Blob $blobName -IncludeDeleted -Context $ctx
 $task = $b.ICloudBlob.UndeleteAsync()
 $task.Wait()
 ```
@@ -440,11 +440,11 @@ $pageBlob.ICloudBlob.SetPremiumBlobTier("P4")
 Az:
 
 ```azurepowershell-interactive
-$blockBlob = Get-AzureStorageBlob -Container $containerName -Blob $blockBlobName -Context $ctx
+$blockBlob = Get-AzStorageBlob -Container $containerName -Blob $blockBlobName -Context $ctx
 $task = $blockBlob.ICloudBlob.SetStandardBlobTierAsync("hot")
 $task.Wait()
 
-$pageBlob = Get-AzureStorageBlob -Container $containerName -Blob $pageBlobName -Context $ctx
+$pageBlob = Get-AzStorageBlob -Container $containerName -Blob $pageBlobName -Context $ctx
 $task = $pageBlob.ICloudBlob.SetPremiumBlobTierAsync("P4")
 $task.Wait()
 ```
