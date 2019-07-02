@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 04/23/2019
-ms.openlocfilehash: abb85d3d3f6a20697510447cda2c02b2703ef921
-ms.sourcegitcommit: 0356a4694f77eda40eec8c3759b9bb7f28979eb6
+ms.openlocfilehash: 6d9df4a62238f1e3b9cc9a62864f5d4d9337d6a7
+ms.sourcegitcommit: 5bdedc77b27b66998387486761ec67ed9326f169
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67192805"
+ms.lasthandoff: 06/24/2019
+ms.locfileid: "67345385"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Tworzenie jednostki usługi platformy Azure za pomocą programu Azure PowerShell
 
@@ -40,7 +40,14 @@ Jeśli żadne inne parametry uwierzytelniania nie istnieją, jest używane uwier
 $sp = New-AzADServicePrincipal -DisplayName ServicePrincipalName
 ```
 
-Zwrócony obiekt zawiera element członkowski `Secret`, który jest elementem `SecureString` zawierającym wygenerowane hasło. Upewnij się, że ta wartość jest przechowywana w bezpiecznym miejscu, aby przeprowadzać uwierzytelnianie za pomocą jednostki usługi. Wartość __nie__ będzie wyświetlana w danych wyjściowych konsoli. W przypadku utraty hasła [zresetuj poświadczenia jednostki usługi](#reset-credentials). 
+Zwrócony obiekt zawiera element członkowski `Secret`, który jest elementem `SecureString` zawierającym wygenerowane hasło. Upewnij się, że ta wartość jest przechowywana w bezpiecznym miejscu, aby przeprowadzać uwierzytelnianie za pomocą jednostki usługi. Wartość __nie__ będzie wyświetlana w danych wyjściowych konsoli. W przypadku utraty hasła [zresetuj poświadczenia jednostki usługi](#reset-credentials).
+
+Następujący kod pozwala wyeksportować wpis tajny:
+
+```azurepowershell-interactive
+$BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($sp.Secret)
+$UnsecureSecret = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
+```
 
 W przypadku haseł podawanych przez użytkowników argument `-PasswordCredential` przyjmuje obiekty `Microsoft.Azure.Commands.ActiveDirectory.PSADPasswordCredential`. Te obiekty muszą mieć prawidłowe daty `StartDate` i `EndDate` oraz zawierać zwykły tekst typu `Password`. Podczas tworzenia hasła upewnij się, że przestrzegasz [reguł i ograniczeń dotyczących haseł usługi Azure Active Directory](/azure/active-directory/active-directory-passwords-policy). Nie używaj słabych haseł ani nie stosuj ponownie tych samych haseł.
 
