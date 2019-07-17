@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: 0e94d30467c5a11bccfa71630f736bedf0d93112
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.openlocfilehash: 7f6cf61eef9c5549dfe78d2d801ab1278db40c17
+ms.sourcegitcommit: 0b644bfecf4224b2ea83520d1a6a956734d9fba4
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65535054"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67863568"
 ---
 # <a name="formatting-query-results"></a>Formatowanie wyników zapytania
 

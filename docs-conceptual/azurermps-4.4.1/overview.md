@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: carmonm
 ms.date: 08/31/2017
-ms.openlocfilehash: 5ee8572ccb8e9fc2de11c2253a1815a666e038a7
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: 0541975e55620a8792c0d51213c4ed02ea29988f
+ms.sourcegitcommit: 0b644bfecf4224b2ea83520d1a6a956734d9fba4
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56153586"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67863407"
 ---
 # <a name="overview-of-azure-powershell"></a>Omówienie programu Azure PowerShell
 
@@ -38,8 +38,6 @@ Jeśli nie znasz programu PowerShell, pomocne może być wprowadzenie do program
 * [Tworzenie skryptów przy użyciu programu PowerShell](/powershell/scripting/scripting-with-windows-powershell)
 
 Możesz również obejrzeć to wideo: [PowerShell Basics: (Part 1) Getting Started with PowerShell](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1) (Podstawy programu PowerShell, część 1: Wprowadzenie do programu PowerShell).
-
-Ewentualnie skorzystaj z kursu [Wprowadzenie do programu PowerShell — szybkie rozpoczęcie pracy](https://mva.microsoft.com/liveevents/powershell-jumpstart).
 
 ## <a name="other-azure-powershell-modules"></a>Inne moduły programu Azure PowerShell
 
