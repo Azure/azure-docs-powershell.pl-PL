@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
-ms.openlocfilehash: b966025532a3bb4d4423ac1a7a6d398988758043
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.openlocfilehash: 2f61e41b701dfc263df18064f6ac2cc4c6e4021e
+ms.sourcegitcommit: 0b644bfecf4224b2ea83520d1a6a956734d9fba4
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65534600"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67863552"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-400"></a>Istotne zmiany dotyczące programu Microsoft Azure PowerShell 4.0.0
 
@@ -180,7 +180,7 @@ $a = $s1.NewResource.ServiceBusRuleId
 ```
     
 ### <a name="set-azurermdiagnosticsettings"></a>Set-AzureRmDiagnosticSettings
-- Nazwa polecenia zostanie zmieniona na `Update-AzureRmDiagnsoticSettings`
+- Nazwa polecenia zostanie zmieniona na `Update-AzureRmDiagnosticSettings`
 
 ```powershell-interactive
 # Old

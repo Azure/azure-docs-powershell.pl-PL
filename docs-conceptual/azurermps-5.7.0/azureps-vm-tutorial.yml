@@ -8,20 +8,20 @@ metadata:
   displayType: two-column
   interactive: azurepowershell
   ms.date: 02/08/2018
-  ms.author: sttramer
-  author: sptramer
+  ms.author: sewhee
+  author: sdwheeler
   manager: carmonm
   ms.devlang: azure-powershell
   ms.prod: powershell
   ms.technology: azure-powershell
-  ms.topic: tutorial
+  ms.service: virtual-machines
   clicktale: true
-  ms.openlocfilehash: 099418c1fe481ec6ab6262ebb164616612fb18c9
-  ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+  ms.openlocfilehash: 08fb135343979a7d1a9723223a2e673641c0090f
+  ms.sourcegitcommit: 0b644bfecf4224b2ea83520d1a6a956734d9fba4
   ms.translationtype: HT
   ms.contentlocale: pl-PL
-  ms.lasthandoff: 05/11/2019
-  ms.locfileid: "65534576"
+  ms.lasthandoff: 07/13/2019
+  ms.locfileid: "67863687"
 items:
 - durationInMinutes: 1
   content: "\n[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]\n\nW tym samouczku poznasz wszystkie kroki związane z konfigurowaniem maszyny wirtualnej za pomocą programu Azure PowerShell. Samouczek obejmuje również dane wyjściowe zapytań, ponowne używanie zasobów platformy Azure i czyszczenie zasobów.\n\nKroki tego samouczka można wykonać za pomocą środowiska interaktywnego oferowanego przez usługę Azure Cloud Shell. Ewentualnie możesz [zainstalować program Azure PowerShell](install-azurerm-ps.md) lokalnie.\n\nUżyj klawiszy __ctrl-shift-v__ (__cmd-shift-v__ w systemie macOS), aby wkleić tekst samouczka do usługi Azure Cloud Shell."

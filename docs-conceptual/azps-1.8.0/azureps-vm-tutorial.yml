@@ -16,12 +16,12 @@ metadata:
   ms.technology: azure-powershell
   ms.topic: tutorial
   clicktale: true
-  ms.openlocfilehash: 98fa4e7428104a4b2e61029e04655b8682743cca
-  ms.sourcegitcommit: 5bdedc77b27b66998387486761ec67ed9326f169
+  ms.openlocfilehash: 71f250c0578e46888845f7a9a1ae4b74f7a38fab
+  ms.sourcegitcommit: 0b644bfecf4224b2ea83520d1a6a956734d9fba4
   ms.translationtype: HT
   ms.contentlocale: pl-PL
-  ms.lasthandoff: 06/24/2019
-  ms.locfileid: "67346666"
+  ms.lasthandoff: 07/13/2019
+  ms.locfileid: "67863824"
 items:
 - durationInMinutes: 1
   content: >-
