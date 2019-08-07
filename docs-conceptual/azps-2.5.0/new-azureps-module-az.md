@@ -7,16 +7,16 @@ ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: da1d7ec9a196068db237d871834b92f8b077b42c
-ms.sourcegitcommit: 6c0d296bfec7c1c35a1d15074ca5eacda6684ea4
+ms.openlocfilehash: 8dc5a7d3b47870455213aa01aebc1d215ad640a7
+ms.sourcegitcommit: a261efc84dedfd829c0613cf62f8fcf3aa62adb8
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657607"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68807457"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>Wprowadzenie do nowego modułu Az programu Azure PowerShell
 
-Począwszy od grudnia 2018 r., moduł Az programu Azure PowerShell jest ogólnie dostępny i interakcja z platformą Azure powinna się teraz odbywać za pomocą tego modułu programu PowerShell. Moduł Az oferuje krótsze polecenia, lepszą stabilność i obsługę wielu platform. Moduł Az zapewnia również równoważność funkcji i łatwą ścieżkę migracji z modułu AzureRM.
+Począwszy od grudnia 2018 r., moduł Az programu Azure PowerShell jest ogólnie dostępny i interakcja z platformą Azure powinna się teraz odbywać za pomocą tego modułu programu PowerShell. Moduł Az oferuje krótsze polecenia, lepszą stabilność i obsługę wielu platform. Moduł Az też ma równoważność funkcji z modułem AzureRM, co zapewnia łatwą ścieżkę migracji.
 
 Dzięki modułowi Az program Azure PowerShell jest teraz zgodny z programem PowerShell 5.1 w systemie Windows oraz programem PowerShell Core w wersji 6.x i nowszych na wszystkich obsługiwanych platformach — w tym Windows, macOS i Linux.
 
@@ -67,6 +67,4 @@ Moduł Az oferuje tryb zgodności, który ułatwia korzystanie z istniejących s
 
 ## <a name="continued-support-for-azurerm"></a>Dalsze wsparcie modułu AzureRM
 
-W istniejącym module AzureRM nie będą już wprowadzane nowe polecenia cmdlet ani funkcje. Jednak moduł AzureRM jest nadal oficjalnie obsługiwany i będą dla niego wydawane poprawki błędów co najmniej do grudnia 2020 r.
-
-Jeśli masz wątpliwości dotyczące tego, czy moduł Az jest w pełni funkcjonalny, przetestowany i gotowy do działania w środowisku produkcyjnym: Wszystkie prace inżynieryjne, które były prowadzone nad modułem AzureRM, skupiają się teraz na module Az. Obejmuje to maksymalne możliwe ponowne użycie kodu istniejących modułów oraz obszerne testy w celu zapewnienia zgodności funkcji nowych modułów. Na migrację do modułu Az powinien mieć wpływ wyłącznie harmonogram organizacji. Nie trzeba czekać na pojawienie się konkretnych funkcji.
+W module AzureRM nie będą już wprowadzane nowe polecenia cmdlet ani funkcje. Jednak moduł AzureRM jest nadal oficjalnie obsługiwany i będą dla niego wydawane poprawki błędów do grudnia 2020 r.

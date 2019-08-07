@@ -1,18 +1,18 @@
 ---
 title: Odinstalowywanie programu Azure PowerShell
 description: Jak w pełni odinstalować program Azure PowerShell
-ms.date: 05/10/2019
+ms.date: 06/10/2019
 author: sptramer
 ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: b32547e9c3df0df7495d1631a43be6934e1f62dc
-ms.sourcegitcommit: febbbd3f75c8dd1a296281d265289f015b6cb537
+ms.openlocfilehash: e71b4d0d662b29a32610fecb36351532040428e4
+ms.sourcegitcommit: a261efc84dedfd829c0613cf62f8fcf3aa62adb8
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67037753"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68807440"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>Odinstalowywanie modułu programu Azure PowerShell
 
@@ -106,7 +106,8 @@ Uninstalling Az.AnalysisServices version 0.7.0
 ```
 
 > [!NOTE]
-> Jeśli ten skrypt nie może być dokładnie zgodny z zależną wersją modułu do odinstalowania, nie spowoduje odinstalowania _żadnej_ wersji tego modułu. Jest to spowodowane tym, że w systemie mogą istnieć inne wersje elementu `Az` oparte na tych modułach. W tym przypadku są wyświetlane wersje modułu, których nie można znaleźć, jeśli zostały zainstalowane. Możesz usunąć wszystkie starsze wersje ręcznie za pomocą polecenia `Uninstall-Module`.
+> Jeśli ten skrypt nie może być dokładnie zgodny z zależnością w tej samej wersji do odinstalowania, nie spowoduje odinstalowania _żadnej_ wersji tej zależności. Jest to spowodowane tym, że w systemie mogą istnieć inne wersje modułu docelowego oparte na tych zależnościach. W tym przypadku są wyświetlane dostępne wersje zależności.
+> Możesz usunąć wszystkie starsze wersje ręcznie za pomocą polecenia `Uninstall-Module`.
 
 Uruchom to polecenie dla każdej wersji programu Azure PowerShell, która ma zostać odinstalowana. Dla ułatwienia poniższy skrypt odinstaluje wszystkie wersje modułu Az __oprócz__ najnowszej.
 

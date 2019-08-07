@@ -7,16 +7,18 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/04/2019
-ms.openlocfilehash: 29d7c84d0ca9ae8d3e4e22f407b007d2d582f8bc
-ms.sourcegitcommit: 5bdedc77b27b66998387486761ec67ed9326f169
+ms.openlocfilehash: 778fdb463a42b609d3a94c910a2c0f9553ef4eb9
+ms.sourcegitcommit: a261efc84dedfd829c0613cf62f8fcf3aa62adb8
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67346564"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68807525"
 ---
 # <a name="use-multiple-azure-subscriptions"></a>Korzystanie z wielu subskrypcji platformy Azure
 
 Większość użytkowników platformy Azure będzie mieć tylko jedną subskrypcję. Jeśli jednak stanowisz składnik więcej niż jednej organizacji lub Twoja organizacja podzieliła dostęp do niektórych zasobów między grupy, możesz mieć wiele subskrypcji w obrębie platformy Azure. Interfejs wiersza polecenia obsługuje wybór subskrypcji zarówno globalnie, jak i za pomocą poleceń.
+
+Aby uzyskać szczegółowe informacje o subskrypcjach, rozliczeniach i zarządzaniu kosztami, zobacz [dokumentację dotyczącą rozliczeń i zarządzania kosztami](/azure/billing/).
 
 ## <a name="tenants-users-and-subscriptions"></a>Dzierżawy, użytkownicy i subskrypcje
 
