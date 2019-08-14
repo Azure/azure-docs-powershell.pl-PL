@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/06/2017
-ms.openlocfilehash: b7283e4a54cd423282141c07750630050799d59c
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: 1f859dcbaca88e28ebc0814513b7f4ee35610dc2
+ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56153748"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68863214"
 ---
 # <a name="installing-the-azure-powershell-service-management-module"></a>Instalowanie modułu zarządzania usługami programu Azure PowerShell
 
@@ -81,7 +81,7 @@ Ogólne informacje na temat instalowania, używania i dostosowywania środowiska
 |Wersja systemu operacyjnego|Instrukcje dotyczące instalacji|
 |---|---|
 |Mam system Windows 10 lub Windows Server 2016|Wbudowane w platformę Windows Management Framework (WMF) 5.0 zawartą w systemie operacyjnym|
-|Chcę przeprowadzić uaktualnienie do programu PowerShell 5|[Zainstaluj najnowszą wersję platformy WMF](https://www.microsoft.com/en-us/download/details.aspx?id=54616)|
+|Chcę przeprowadzić uaktualnienie do programu PowerShell 5|[Zainstaluj najnowszą wersję platformy WMF](https://www.microsoft.com/download/details.aspx?id=54616)|
 |Używam wersji systemu Windows mającej program PowerShell 3 lub 4|[Pobierz moduły PackageManagement](http://go.microsoft.com/fwlink/?LinkID=746217)|
 
 <div id="helpmechoose"/>

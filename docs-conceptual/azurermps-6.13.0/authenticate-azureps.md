@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/09/2018
-ms.openlocfilehash: d6545f18115e4162bb716def79f6b4cae8953a9c
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.openlocfilehash: 464d7efa640f1d1ffd1c34bfbe6cf13cbe5202b6
+ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65534711"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68863238"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Logowanie się w programie Azure PowerShell
 
@@ -54,7 +54,7 @@ Aby uzyskać więcej informacji na temat tożsamości zarządzanych dla zasobów
 
 ## <a name="sign-in-as-a-cloud-solution-provider-csp"></a>Logowanie się jako dostawca rozwiązań w chmurze
 
-Do zalogowania [dostawcy rozwiązań w chmurze](https://azure.microsoft.com/en-us/offers/ms-azr-0145p/) wymagane jest użycie parametru `-TenantId`. Zazwyczaj ten parametr można podać jako identyfikator dzierżawy lub nazwę domeny. Jednak w przypadku logowania dostawcy rozwiązań w chmurze trzeba podać **identyfikator dzierżawy**.
+Do zalogowania [dostawcy rozwiązań w chmurze](https://azure.microsoft.com/offers/ms-azr-0145p/) wymagane jest użycie parametru `-TenantId`. Zazwyczaj ten parametr można podać jako identyfikator dzierżawy lub nazwę domeny. Jednak w przypadku logowania dostawcy rozwiązań w chmurze trzeba podać **identyfikator dzierżawy**.
 
 ```azurepowershell-interactive
 Connect-AzureRmAccount -TenantId 'xxxx-xxxx-xxxx-xxxx'

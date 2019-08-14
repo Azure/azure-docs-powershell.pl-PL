@@ -7,12 +7,12 @@ ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: 8dc5a7d3b47870455213aa01aebc1d215ad640a7
-ms.sourcegitcommit: a261efc84dedfd829c0613cf62f8fcf3aa62adb8
+ms.openlocfilehash: 21d41b6e14d1b39a78e40daee74b80de3a80c2a0
+ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/06/2019
-ms.locfileid: "68807457"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68861262"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>Wprowadzenie do nowego modułu Az programu Azure PowerShell
 
@@ -39,7 +39,7 @@ Wprowadzając te istotne zmiany wymagające utworzenia nowego modułu programu A
 
 Aby być na bieżąco z najnowszymi funkcjami platformy Azure w programie PowerShell, jak najszybciej przeprowadź migrację do modułu Az. Jeśli Twoje środowisko nie jest gotowe do zainstalowania modułu Az w celu zastąpienia modułu AzureRM, dostępnych jest kilka opcji umożliwiających eksperymentowanie z modułem Az:
 
-* Korzystaj ze środowiska `PowerShell` w usłudze [Azure Cloud Shell](https://docs.microsoft.com/en-us/azure/cloud-shell/overview).
+* Korzystaj ze środowiska `PowerShell` w usłudze [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview).
   Usługa Azure Cloud Shell to środowisko powłoki oparte na przeglądarce, w którym zainstalowano moduł Az oraz włączono aliasy zapewniające zgodność przy użyciu polecenia cmdlet `Enable-AzureRM`.
 * Pozostaw moduł AzureRM zainstalowany w programie PowerShell 5.1 dla systemu Windows, ale zainstaluj moduł Az w programie PowerShell Core w wersji 6.x lub nowszej. Programy PowerShell 5.1 dla systemu Windows i PowerShell Core korzystają z oddzielnych kolekcji modułów. Postępuj zgodnie z instrukcjami, aby [zainstalować program PowerShell Core](/powershell/scripting/install/installing-powershell-core-on-windows), a następnie [zainstalować moduł Az](install-az-ps.md) z poziomu terminala programu PowerShell Core.
 

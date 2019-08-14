@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: e72aae940b48543d6a99801032186112748ea48b
-ms.sourcegitcommit: 6c0d296bfec7c1c35a1d15074ca5eacda6684ea4
+ms.openlocfilehash: 77cb28e47d8dddcf3936edff23f794de3b78442b
+ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657964"
+ms.lasthandoff: 08/09/2019
+ms.locfileid: "68861189"
 ---
 ## <a name="250---july-2019"></a>2.5.0 — lipiec 2019
 #### <a name="azaccounts"></a>Az.Accounts
@@ -536,7 +536,7 @@ ms.locfileid: "68657964"
     - Set-AzScheduledQueryRule
     - Update-AzScheduledQueryRule
     - Remove-AzScheduledQueryRule
-    - [Więcej](https://docs.microsoft.com/en-us/rest/api/monitor/scheduledqueryrules) informacji na temat interfejsu API SQR
+    - [Więcej](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) informacji na temat interfejsu API SQR
     - Zaktualizowano plik Az.Monitor.md w celu uwzględnienia poleceń cmdlet dla reguły alertu opartej na metryce GenV2 (nieklasycznej)
 
 #### <a name="aznetwork"></a>Az.Network
@@ -589,7 +589,7 @@ ms.locfileid: "68657964"
 ### <a name="highlights-since-the-last-major-release"></a>Najważniejsze zmiany od ostatniej wersji głównej
 * Ogólna dostępność modułu `Az`
 * Aby uzyskać więcej informacji na temat modułu `Az`, odwiedź następujące strony: https://aka.ms/azps-announce
-* Dodano moduły wypełniania elementów Location, ResourceGroup i ResourceName: https://azure.microsoft.com/en-us/blog/completers-in-azure-powershell/
+* Dodano moduły wypełniania elementów Location, ResourceGroup i ResourceName: https://azure.microsoft.com/blog/completers-in-azure-powershell/
 * Dodano obsługę symboli wieloznacznych w poleceniach cmdlet pobierania elementów Az.Compute i Az.Network
 * Dodano uwierzytelnianie interakcyjne i uwierzytelnianie nazwy użytkownika/hasła tylko dla programu Windows PowerShell 5.1
 * Dodano obsługę elementów runbook języka Python 2 w elemencie Az.Automation
@@ -693,7 +693,7 @@ ms.locfileid: "68657964"
 ### <a name="highlights-since-the-last-major-release"></a>Najważniejsze zmiany od ostatniej wersji głównej
 * Ogólna dostępność modułu `Az`
 * Aby uzyskać więcej informacji na temat modułu `Az`, odwiedź następujące strony: https://aka.ms/azps-announce
-* Dodano moduły wypełniania elementów Location, ResourceGroup i ResourceName: https://azure.microsoft.com/en-us/blog/completers-in-azure-powershell/
+* Dodano moduły wypełniania elementów Location, ResourceGroup i ResourceName: https://azure.microsoft.com/blog/completers-in-azure-powershell/
 * Dodano obsługę symboli wieloznacznych w poleceniach cmdlet pobierania elementów Az.Compute i Az.Network
 * Dodano uwierzytelnianie interakcyjne i uwierzytelnianie nazwy użytkownika/hasła tylko dla programu Windows PowerShell 5.1
 * Dodano obsługę elementów runbook języka Python 2 w elemencie Az.Automation
@@ -750,7 +750,7 @@ ms.locfileid: "68657964"
 ### <a name="highlights-since-the-last-major-release"></a>Najważniejsze zmiany od ostatniej wersji głównej
 * Ogólna dostępność modułu `Az`
 * Aby uzyskać więcej informacji na temat modułu `Az`, odwiedź następujące strony: https://aka.ms/azps-announce
-* Dodano moduły wypełniania elementów Location, ResourceGroup i ResourceName: https://azure.microsoft.com/en-us/blog/completers-in-azure-powershell/
+* Dodano moduły wypełniania elementów Location, ResourceGroup i ResourceName: https://azure.microsoft.com/blog/completers-in-azure-powershell/
 * Dodano obsługę symboli wieloznacznych w poleceniach cmdlet pobierania elementów Az.Compute i Az.Network
 * Dodano uwierzytelnianie interakcyjne i uwierzytelnianie nazwy użytkownika/hasła tylko dla programu Windows PowerShell 5.1
 * Dodano obsługę elementów runbook języka Python 2 w elemencie Az.Automation
