@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/13/2018
-ms.openlocfilehash: 21345445efc89ab54bb7483cfe81f439f0a887a3
-ms.sourcegitcommit: abca342d8687ca638679c049792d0cef6045837d
+ms.openlocfilehash: e302e49d95b6bc15750366c9eb960a6fec80c1a4
+ms.sourcegitcommit: e5b029312d17e12257b2b5351b808fdab0b4634c
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70052893"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70386844"
 ---
 # <a name="install-the-azure-powershell-module"></a>Instalacja modułu Azure PowerShell
 
@@ -101,13 +101,14 @@ Connect-AzAccount
 
 > [!NOTE]
 >
-> Jeśli wyłączono automatyczne ładowanie modułów, musisz ręcznie zaimportować moduł za pomocą polecenia `Import-Module Az`. Ze względu na strukturę modułu może to potrwać kilka sekund.
+> Jeśli wyłączono automatyczne ładowanie modułów, ręcznie zaimportuj moduł za pomocą polecenia `Import-Module Az`. Ze względu na strukturę modułu może to potrwać kilka sekund.
 
 Musisz powtórzyć te kroki dla każdej nowej sesji programu PowerShell, którą rozpoczniesz. Aby dowiedzieć się, jak można utrwalić logowanie się do swojego konta platformy Azure w wielu sesjach programu PowerShell, zobacz [Utrwalanie poświadczeń użytkownika między sesjami programu PowerShell](context-persistence.md).
 
 ## <a name="update-the-azure-powershell-module"></a>Aktualizowanie modułu programu Azure PowerShell
 
-Ze względu na sposób spakowania modułu Az polecenie [Update-Module](/powershell/module/powershellget/update-module) nie zaktualizuje poprawnie Twojej instalacji. Od strony technicznej moduł Az jest metamodułem, obejmującym wszystkie podmoduły zawierające polecenia cmdlet do interakcji z usługami platformy Azure. Oznacza to, że w celu zaktualizowania modułu Azure PowerShell konieczna będzie __ponowna instalacja__, a nie sama __aktualizacja__. Jest ona realizowana w taki sam sposób jak instalacja, ale może być konieczne dodanie argumentu `-Force`:
+Ze względu na sposób spakowania modułu Az polecenie [Update-Module](/powershell/module/powershellget/update-module) nie zaktualizuje poprawnie Twojej instalacji. Zainstalowanie modułu Az powoduje zebranie i zainstalowanie wszystkich zależnych modułów podrzędnych, które udostępniają polecenia cmdlet dla każdej usługi.
+Oznacza to, że w celu zaktualizowania modułu Azure PowerShell konieczna będzie __ponowna instalacja__, a nie sama __aktualizacja__. Jest ona realizowana w taki sam sposób jak instalacja, ale może być konieczne dodanie argumentu `-Force`:
 
 ```powershell
 Install-Module -Name Az -AllowClobber -Force

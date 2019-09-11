@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 02/20/2019
-ms.openlocfilehash: 0b7a6fa4278d95a69b21f570ac6fb22b70f073f6
-ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
+ms.date: 09/04/2019
+ms.openlocfilehash: 21d87bd35da74f09b70976e7b395e7b987fbd3f5
+ms.sourcegitcommit: e5b029312d17e12257b2b5351b808fdab0b4634c
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68861213"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70386812"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Logowanie się w programie Azure PowerShell
 
@@ -54,7 +54,7 @@ Aby pobrać poświadczenia jednostki usługi jako odpowiedni obiekt, użyj polec
 
 ```azurepowershell-interactive
 $pscredential = Get-Credential
-Connect-AzAccount -ServicePrincipal -Credential $pscredential -TenantId $tenantId
+Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant $tenantId
 ```
 
 Dla scenariuszy automatyzacji musisz utworzyć poświadczenia na podstawie nazwy użytkownika i bezpiecznego ciągu:
@@ -62,7 +62,7 @@ Dla scenariuszy automatyzacji musisz utworzyć poświadczenia na podstawie nazwy
 ```azurepowershell-interactive
 $passwd = ConvertTo-SecureString <use a secure password here> -AsPlainText -Force
 $pscredential = New-Object System.Management.Automation.PSCredential('service principal name/id', $passwd)
-Connect-AzAccount -ServicePrincipal -Credential $pscredential -TenantId $tenantId
+Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant $tenantId
 ```
 
 Upewnij się, że podczas automatyzowania połączeń jednostki usługi używasz najlepszych rozwiązań dotyczących magazynu haseł.
@@ -71,7 +71,13 @@ Upewnij się, że podczas automatyzowania połączeń jednostki usługi używasz
 
 Uwierzytelnianie oparte na certyfikatach wymaga, aby program Azure PowerShell mógł pobierać informacje z lokalnego magazynu certyfikatów na podstawie na odcisku palca certyfikatu.
 ```azurepowershell-interactive
-Connect-AzAccount -ServicePrincipal -TenantId $tenantId -CertificateThumbprint <thumbprint>
+Connect-AzAccount -ApplicationId $appId -Tenant $tenantId -CertificateThumbprint <thumbprint>
+```
+
+Jeśli zamiast zarejestrowanej aplikacji używasz jednostki usługi, dodaj argument `-ServicePrincipal` i podaj identyfikator jednostki usługi jako wartość parametru `-ApplicationId`.
+
+```azurepowershell-interactive
+Connect-AzAccount -ServicePrincipal -ApplicationId $servicePrincipalId -Tenant $tenantId -CertificateThumbprint <thumbprint>
 ```
 
 W programie PowerShell 5.1 zarządzanie magazynem certyfikatów i jego badanie może odbywać się za pomocą modułu infrastruktury [PKI](/powershell/module/pkiclient). Dla programu PowerShell Core w wersji 6.x i późniejszych proces jest bardziej skomplikowany. Poniższe skrypty pokazują, jak zaimportować istniejący certyfikat do magazynu certyfikatów dostępnego w programie PowerShell.
@@ -100,7 +106,7 @@ $store.Add($Certificate)
 $store.Close()
 ```
 
-## <a name="sign-in-using-a-managed-identity"></a>Logowanie się przy użyciu tożsamości zarządzanej 
+## <a name="sign-in-using-a-managed-identity"></a>Logowanie się przy użyciu tożsamości zarządzanej
 
 Tożsamości zarządzane to funkcja w usłudze Azure Active Directory. Tożsamości zarządzane to jednostki usługi przypisane do zasobów, które działają na platformie Azure. Jednostki usługi tożsamości zarządzanej można używać do logowania się i uzyskiwania aplikacyjnego tokenu dostępu do uzyskania dostępu do innych zasobów. Tożsamości zarządzane są dostępne tylko w przypadku zasobów działających w chmurze platformy Azure.
 
@@ -108,19 +114,19 @@ Aby uzyskać więcej informacji na temat tożsamości zarządzanych dla zasobów
 
 ## <a name="sign-in-with-a-non-default-tenant-or-as-a-cloud-solution-provider-csp"></a>Logowanie się przy użyciu innej niż domyślnej dzierżawy lub jako dostawca rozwiązań w chmurze (CSP, Cloud Solution Provider)
 
-Jeśli konto jest skojarzone z więcej niż jedną dzierżawą, logowanie wymaga użycia parametru `-TenantId` podczas nawiązywania połączenia. Ten parametr będzie współdziałać z każdą inną metodą logowania. Podczas logowania się wartość tego parametru może być identyfikatorem obiektu platformy Azure dzierżawy (identyfikatorem dzierżawy) lub w pełni kwalifikowaną nazwą domeny dzierżawy.
+Jeśli konto jest skojarzone z więcej niż jedną dzierżawą, logowanie wymaga użycia parametru `-Tenant` podczas nawiązywania połączenia. Ten parametr będzie współdziałać z każdą metodą logowania. Podczas logowania się wartość tego parametru może być identyfikatorem obiektu platformy Azure dzierżawy (identyfikatorem dzierżawy) lub w pełni kwalifikowaną nazwą domeny dzierżawy.
 
-Jeśli jesteś [dostawcą rozwiązań w chmurze (CSP)](https://azure.microsoft.com/offers/ms-azr-0145p/), wartość `-TenantId` **musi** być identyfikatorem dzierżawy.
+Jeśli jesteś [dostawcą rozwiązań w chmurze (CSP)](https://azure.microsoft.com/offers/ms-azr-0145p/), wartość `-Tenant` **musi** być identyfikatorem dzierżawy.
 
 ```azurepowershell-interactive
-Connect-AzAccount -TenantId 'xxxx-xxxx-xxxx-xxxx'
+Connect-AzAccount -Tenant 'xxxx-xxxx-xxxx-xxxx'
 ```
 
 ## <a name="sign-in-to-another-cloud"></a>Logowanie się do innej chmury
 
 Usługi w chmurze platformy Azure oferują środowiska zgodne z regionalnymi przepisami dotyczącymi obsługi danych.
 W przypadku kont w chmurze regionalnej określ środowisko po zalogowaniu się, używając argumentu `-Environment`.
-Na przykład jeśli Twoje konto znajduje się w chmurze w Chinach:
+Ten parametr będzie współdziałać z każdą metodą logowania. Na przykład jeśli Twoje konto znajduje się w chmurze w Chinach:
 
 ```azurepowershell-interactive
 Connect-AzAccount -Environment AzureChinaCloud
