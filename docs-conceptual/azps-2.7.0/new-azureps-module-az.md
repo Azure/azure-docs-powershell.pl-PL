@@ -7,12 +7,12 @@ ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: 21d41b6e14d1b39a78e40daee74b80de3a80c2a0
-ms.sourcegitcommit: 92722d603b60dc769660e7517da60110133d9959
+ms.openlocfilehash: 36bb0074694947f48d703aebc9119f90b508da57
+ms.sourcegitcommit: a6ea0fb4d58a4e4177cab0e7bfd17f893325bc69
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71226426"
+ms.lasthandoff: 10/09/2019
+ms.locfileid: "72162599"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>Wprowadzenie do nowego modułu Az programu Azure PowerShell
 
