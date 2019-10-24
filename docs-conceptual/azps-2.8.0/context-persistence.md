@@ -1,150 +1,161 @@
 ---
-title: Utrwalanie poświadczeń platformy Azure między sesjami programu PowerShell
+title: Poświadczenia logowania i konteksty platformy Azure
 description: Dowiedz się, jak używać ponownie poświadczeń platformy Azure i innych informacji w wielu sesjach programu PowerShell.
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 12/13/2018
-ms.openlocfilehash: 02b8090aa1868f24445ddff3a95c0d0c376e2cb8
-ms.sourcegitcommit: 0b94b9566124331d0b15eb7f5a811305c254172e
+ms.date: 10/21/2019
+ms.openlocfilehash: 72d1b07bb2c66f80ea6f5d37ef7012d0d0a5bbbc
+ms.sourcegitcommit: 1cdff856d1d559b978aac6bc034dd2f99ac04afe
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72370414"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72791473"
 ---
-# <a name="persist-azure-user-credentials-across-powershell-sessions"></a>Utrwalanie poświadczeń użytkownika platformy Azure między sesjami programu PowerShell
+# <a name="azure-powershell-context-objects"></a>Obiekty kontekstu środowiska Azure PowerShell
 
-Program Azure PowerShell oferuje funkcję **automatycznego zapisywania kontekstu platformy Azure**, która udostępnia następujące funkcje:
+Środowisko Azure PowerShell używa _obiektów kontekstu środowiska Azure PowerShell_ (kontekstów platformy Azure) do przechowywania informacji o subskrypcji i uwierzytelnianiu. Jeśli masz więcej niż jedną subskrypcję, konteksty platformy Azure umożliwiają wybranie subskrypcji, na której mają być uruchamiane polecenia cmdlet środowiska Azure PowerShell. Konteksty platformy Azure są również używane do przechowywania informacji logowania w wielu sesjach programu PowerShell i uruchamiania zadań w tle.
 
-- Przechowywanie informacji logowania do ponownego użycia w nowych sesjach programu PowerShell.
-- Łatwiejsze korzystanie z zadań w tle w celu wykonywania długotrwałych poleceń cmdlet.
-- Możliwość przełączania kont, subskrypcji i środowisk bez konieczności osobnego logowania się.
-- Możliwość wykonywania zadań z użyciem różnych poświadczeń i subskrypcji jednocześnie w tej samej sesji programu PowerShell.
+W tym artykule opisano zarządzania kontekstami platformy Azure, a nie zarządzanie subskrypcjami ani kontami. Jeśli chcesz zarządzać użytkownikami, subskrypcjami, dzierżawami lub innymi informacjami o koncie, zapoznaj się z dokumentacją usługi [Azure Active Directory](/azure/active-directory). Aby dowiedzieć się więcej o używaniu kontekstów do uruchamiania zadań w tle lub równolegle, zobacz [Używanie poleceń cmdlet środowiska Azure PowerShell w zadaniach programu PowerShell](using-psjobs.md), gdy już zapoznasz się z kontekstami platformy Azure.
 
-## <a name="azure-contexts-defined"></a>Zdefiniowane konteksty platformy Azure
+## <a name="overview-of-azure-context-objects"></a>Omówienie obiektów kontekstu platformy Azure
 
-*Kontekst platformy Azure* to zestaw informacji, który definiuje cel poleceń cmdlet programu Azure PowerShell. Kontekst składa się z pięciu części:
+Konteksty platformy Azure to obiekty programu PowerShell odzwierciedlające aktywną subskrypcję, w której są uruchamiane polecenia, oraz informacje uwierzytelniania wymagane do nawiązywania połączenia z chmurą platformy Azure. Dzięki kontekstom platformy Azure środowisko Azure PowerShell nie musi ponownie uwierzytelniać Twojego konta za każdym razem, gdy przełączasz subskrypcje. Składniki kontekstu platformy Azure są następujące:
 
-- *Konto* — nazwa użytkownika lub jednostka usługi używana do uwierzytelniania komunikacji z platformą Azure
-- *Subskrypcja* — subskrypcja platformy Azure zawierająca zasoby, których dotyczą wykonywane operacje.
-- *Dzierżawa* — dzierżawa usługi Azure Active Directory, która zawiera Twoją subskrypcję. Dzierżawy są ważniejsze w przypadku uwierzytelniania za pomocą jednostki usługi.
-- *Środowisko* — konkretna chmura platformy Azure będąca chmurą docelową. Zwykle jest to chmura globalna platformy Azure.
-  Jednak ustawienia środowiska pozwalają również wybierać jako obiekty docelowe chmury krajowe, rządowe oraz lokalne (usługa Azure Stack).
-- *Poświadczenia* — informacje używane przez platformę Azure do zweryfikowania Twojej tożsamości i potwierdzenia, że masz autoryzację do uzyskania dostępu do zasobów na platformie Azure
+* _Konto_ użyte do zalogowania się do platformy Azure za pomocą polecenia [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount). Konteksty platformy Azure traktują użytkowników, identyfikatory aplikacji i jednostki usług tak samo z perspektywy konta.
+* Aktywna _subskrypcja_, umowa serwisowa z firmą Microsoft na tworzenie i uruchamianie zasobów platformy Azure, które są skojarzone z _dzierżawą_. Dzierżawy są często określane jako _organizacje_ w dokumentacji lub podczas pracy z usługą Active Directory.
+* Odwołanie do _pamięci podręcznej tokenu_, przechowywanego tokenu uwierzytelniania na potrzeby uzyskiwania dostępu do chmury platformy Azure. Miejsce, w którym ten token jest przechowywany, oraz czas jego trwania jest określany przez [ustawienia automatycznego zapisywania kontekstu](#save-azure-contexts-across-powershell-sessions).
 
-Od najnowszej wersji programu Azure PowerShell konteksty platformy Azure mogą być automatycznie zapisywane przy każdym otwarciu nowej sesji programu PowerShell.
+Aby uzyskać więcej informacji o tych terminach, zobacz [Terminologia usługi Azure Active Directory](/azure/active-directory/fundamentals/active-directory-whatis#terminology). Tokeny uwierzytelniania używane przez konteksty platformy Azure są takie same jak inne przechowywane tokeny będące składnikami sesji trwałej. 
 
-## <a name="automatically-save-the-context-for-the-next-sign-in"></a>Automatyczne zapisywanie kontekstu na potrzeby następnego logowania
+Po zalogowaniu się przy użyciu polecenia `Connect-AzAccount` dla domyślnej subskrypcji zostanie utworzony co najmniej jeden kontekst platformy Azure. Obiekt zwrócony przez polecenie `Connect-AzAccount` jest domyślnym kontekstem platformy Azure używanym przez pozostałą część sesji programu PowerShell.
 
-Program Azure PowerShell automatycznie zachowuje informacje o kontekście między sesjami. Aby skonfigurować w programie PowerShell zapominanie kontekstu i poświadczeń, użyj polecenia `Disable-AzContextAutoSave`. Po wyłączeniu zapisywania kontekstu konieczne będzie logowanie się do platformy Azure każdorazowo po otwarciu nowej sesji programu PowerShell.
+## <a name="get-azure-contexts"></a>Pobieranie kontekstów platformy Azure
 
-Aby umożliwić programowi Azure PowerShell zapamiętywanie kontekstu po zamknięciu sesji programu PowerShell, użyj polecenia `Enable-AzContextAutosave`. Informacje o kontekście i poświadczenia będą automatycznie zapisywane w specjalnym ukrytym folderze w katalogu użytkownika (`$env:USERPROFILE\.Azure` w systemie Windows oraz `$HOME/.Azure` na innych platformach). Każda nowa sesja programu PowerShell wybiera kontekst użyty w ostatniej sesji jako docelowy.
+Dostępne konteksty platformy Azure są pobierane za pomocą polecenia cmdlet [Get-AzContext](/powershell/module/az.accounts/get-azcontext). Wyświetl listę wszystkich dostępnych kontekstów, używając parametru `-ListAvailable`:
 
-Polecenia cmdlet, które umożliwiają zarządzanie kontekstami platformy Azure, umożliwiają także szczegółowe kontrolowanie. Dzięki nim można określić, czy zmiany mają obowiązywać tylko w bieżącej sesji programu PowerShell (zakres `Process`), czy każdej sesji programu PowerShell (zakres `CurrentUser`). Te opcje są szczegółowo omówione w temacie [Korzystanie z zakresów kontekstu](#using-context-scopes).
+```azurepowershell-interactive
+Get-AzContext -ListAvailable
+```
 
-## <a name="running-azure-powershell-cmdlets-as-background-jobs"></a>Uruchamianie poleceń cmdlet programu PowerShell platformy Azure jako zadań w tle
+Lub pobierz kontekst według nazwy:
 
-Funkcja **automatycznego zapisywania kontekstu platformy Azure** umożliwia udostępnianie kontekstu użytkownika zadaniom programu PowerShell wykonywanym w tle. Program PowerShell umożliwia uruchamianie i monitorowanie długo wykonywanych zadań jako zadań w tle bez konieczności oczekiwania na zakończenie tych zadań. Użytkownik może udostępniać poświadczenia zadaniom w tle na dwa sposoby:
+```azurepowershell-interactive
+$context = Get-Context -Name "mycontext"
+```
 
-- Przekazując kontekst jako argument
+Nazwy kontekstów mogą być inne od nazwy skojarzonej subskrypcji.
 
-  Większość poleceń cmdlet usługi AzureRM umożliwia przekazanie kontekstu w postaci parametru do polecenia cmdlet. Kontekst można przekazać do zadania w tle w sposób przedstawiony w poniższym przykładzie:
+> [!IMPORTANT]
+> Dostępne konteksty platformy Azure to __nie zawsze są__ Twoje dostępne subskrypcje. Konteksty platformy Azure odzwierciedlają tylko lokalnie przechowywane informacje. Subskrypcje można pobrać przy użyciu polecenia cmdlet [Get-AzSubscription](/powershell/module/Az.Accounts/Get-AzSubscription?view=azps-1.8.0).
 
-  ```powershell-interactive
-  PS C:\> $job = Start-Job { param ($ctx) New-AzVm -AzureRmContext $ctx [... Additional parameters ...]} -ArgumentList (Get-AzContext)
+## <a name="create-a-new-azure-context-from-subscription-information"></a>Tworzenie nowego kontekstu platformy Azure na podstawie informacji o subskrypcji
+
+Polecenie cmdlet [Set-AzContext](/powershell/module/Az.Accounts/Set-AzContext) służy zarówno do tworzenia nowych kontekstów platformy Azure, jak i ustawiania ich jako aktywnego kontekstu.
+Najprostszy sposób na utworzenie nowego kontekstu platformy Azure to użycie informacji o istniejącej subskrypcji. Polecenie cmdlet ma za zadanie pobranie obiektu wyjściowego z polecenia `Get-AzSubscription` jako wartości w postaci potoku i skonfigurowanie nowego kontekstu platformy Azure:
+
+```azurepowershell-interactive
+Get-AzSubscription -SubscriptionName 'MySubscriptionName' | Set-AzContext -Name 'MyContextName'
+```
+
+Lub podania w razie potrzeby identyfikatora albo nazwy subskrypcji oraz identyfikatora dzierżawy:
+
+```azurepowershell-interactive
+Set-AzContext -Name 'MyContextName' -Subscription 'MySubscriptionName' -Tenant '.......'
+```
+
+Jeśli argument `-Name` zostanie pominięty, jako nazwa kontekstu będzie używany identyfikator i nazwa subskrypcji w formacie `Subscription Name (subscription-id)`.
+
+## <a name="change-the-active-azure-context"></a>Zmienianie aktywnego kontekstu platformy Azure
+
+Aby zmienić aktywny kontekst platformy Azure, można użyć zarówno polecenia `Set-AzContext`, jak i [Select-AzContext](/powershell/module/az.accounts/set-azcontext). Tak jak opisano w sekcji [Tworzenie nowego kontekstu platformy Azure](#create-a-new-azure-context-from-subscription-information), polecenie `Set-AzContext` tworzy nowy kontekst platformy Azure dla subskrypcji, jeśli taki nie istnieje, a następnie przełącza się na używanie tego kontekstu jako aktywnego.
+
+Polecenie `Select-AzContext` powinno być używane tylko z istniejącymi kontekstami platformy Azure i działa podobnie do stosowania polecenia `Set-AzContext -Context`, ale jest przeznaczone do używania z potokowaniem:
+
+```azurepowershell-interactive
+Set-AzContext -Context $(Get-AzContext -Name "mycontext") # Set a context with an inline Azure context object
+Get-AzContext -Name "mycontext" | Select-AzContext # Set a context with a piped Azure context object
+```
+
+Podobnie jak wiele innych poleceń zarządzania kontem i kontekstem w środowisku Azure PowerShell, polecenia `Set-AzContext` i `Select-AzContext` obsługują argument `-Scope`, co pozwala kontrolować czas aktywności kontekstu. Argument `-Scope` pozwala na zmianę aktywnego kontekstu pojedynczej sesji bez zmieniania domyślnego:
+
+```azurepowershell-interactive
+Get-AzContext -Name "mycontext" | Select-AzContext -Scope Process
+```
+
+Aby uniknąć przełączania kontekstów dla całej sesji programu PowerShell, wszystkie polecenia środowiska Azure PowerShell można uruchamiać względem danego kontekstu z argumentem `-AzContext`:
+
+```azurepowershell-interactive
+$context = Get-AzContext -Name "mycontext"
+New-AzVM -Name ExampleVM -AzContext $context
+```
+
+Innym głównym zastosowaniem kontekstów z poleceniami cmdlet środowiska Azure PowerShell jest uruchamianie poleceń w tle. Aby dowiedzieć się więcej o uruchamianiu zadań programu PowerShell przy użyciu środowiska Azure PowerShell, zobacz [Uruchamianie poleceń cmdlet środowiska Azure PowerShell w zadaniach programu PowerShell](using-psjobs.md).
+
+## <a name="save-azure-contexts-across-powershell-sessions"></a>Zapisywanie kontekstów platformy Azure w różnych sesjach programu PowerShell
+
+Domyślnie konteksty platformy Azure są zapisywane w celu używania ich między sesjami programu PowerShell. To zachowanie można zmienić w następujący sposób:
+
+* Zaloguj się przy użyciu polecenia `-Scope Process` z parametrem `Connect-AzAccount`.
+
+  ```azurepowershell
+  Connect-AzAccount -Scope Process
   ```
 
-- Używając domyślnego kontekstu z włączoną funkcją automatycznego zapisywania
+  Kontekst platformy Azure zwrócony jako część tego logowania jest prawidłowy _tylko_ dla bieżącej sesji i nie zostanie automatycznie zapisany, niezależnie od ustawienia automatycznego zapisywania kontekstu środowiska Azure PowerShell.
+* Wyłącz automatyczne zapisywanie kontekstu środowiska Azure PowerShell przy użyciu polecenia cmdlet [Disable-AzContextAutosave](/powershell/module/az.accounts/disable-azcontextautosave).
+  Wyłączenie automatycznego zapisywania kontekstu __nie__ powoduje wyczyszczenia żadnych przechowywanych tokenów. Aby dowiedzieć się, jak wyczyścić przechowywane informacje o kontekście platformy Azure, zobacz [Usuwanie poświadczeń i kontekstów platformy Azure](#remove-azure-contexts-and-stored-credentials).
+* Jawnie włącz automatyczne zapisywanie kontekstu platformy Azure przy użyciu polecenia cmdlet [Enable-AzContextAutosave](/powershell/module/az.accounts/enable-azcontextautosave). Gdy automatyczne zapisywanie jest włączone, wszystkie konteksty użytkownika są przechowywane lokalnie na potrzeby przyszłych sesji programu PowerShell.
+* Za pomocą polecenia [Save-AzContext](/powershell/module/az.accounts/save-azcontext) ręcznie zapisz konteksty do używania w przyszłych sesjach programu PowerShell, w których mogą być one ładowane za pomocą polecenia [Import-AzContext](/powershell/module/az.accounts/import-azcontext):
 
-  Jeśli włączono funkcję **automatycznego zapisywania kontekstu**, wówczas zadania w tle automatycznie używają domyślnego zapisanego kontekstu.
-
-  ```powershell-interactive
-  PS C:\> $job = Start-Job { New-AzVm [... Additional parameters ...]}
+  ```azurepowershell
+  Save-AzContext -Path current-context.json # Save the current context
+  Save-AzContext -Profile $profileObject -Path other-context.json # Save a context object
+  Import-AzContext -Path other-context.json # Load the context from a file and set it to the current context
   ```
 
-Jeśli chcesz poznać wynik zadania w tle, użyj polecenia `Get-Job`, aby sprawdzić stan zadania, oraz polecenia `Wait-Job`, aby poczekać na zakończenie zadania. Aby przechwycić lub wyświetlić wynik zadania w tle, użyj polecenia `Receive-Job`. Aby uzyskać więcej informacji, zobacz opis polecenia [about_Jobs](/powershell/module/microsoft.powershell.core/about/about_jobs).
+> [!WARNING]
+> Wyłączenie automatycznego zapisywania kontekstu __nie__ powoduje wyczyszczenia żadnych zapisanych informacji o kontekście. Aby usunąć przechowywane informacje, użyj polecenia cmdlet [Clear-AzContext](/powershell/module/az.accounts/Clear-AzContext). Aby uzyskać więcej informacji na temat usuwania zapisanych kontekstów, zobacz sekcję [Usuwanie kontekstów i poświadczeń](#remove-azure-contexts-and-stored-credentials).
 
-## <a name="creating-selecting-renaming-and-removing-contexts"></a>Tworzenie, wybieranie i usuwanie kontekstów oraz zmiana ich nazw
-
-Aby utworzyć kontekst, musisz zalogować się do platformy Azure. Polecenie cmdlet `Connect-AzAccount` (lub jego alias — `Login-AzAccount`) ustawia domyślny kontekst używany przez polecenia cmdlet programu Azure PowerShell i pozwala użytkownikowi na dostęp do dowolnych dzierżaw lub subskrypcji, na które pozwalają poświadczenia.
-
-Aby dodać nowy kontekst po zalogowaniu, użyj polecenia `Set-AzContext` (lub jego aliasu — `Select-AzSubscription`).
+Każde z tych poleceń obsługuje parametr `-Scope`, który może przyjmować wartość `Process` do stosowania tylko do obecnie uruchomionego procesu. Aby na przykład zapewnić, że nowo utworzone konteksty nie są zapisywane po zakończeniu sesji programu PowerShell:
 
 ```azurepowershell-interactive
-PS C:\> Set-AzContext -Subscription "Contoso Subscription 1" -Name "Contoso1"
+Disable-AzContextAutosave -Scope Process
+$context2 = Set-AzContext -Subscription "sub-id" -Tenant "other-tenant"
 ```
 
-Poprzedni przykład dodaje nowy kontekst, którego obiektem docelowym jest „Contoso Subscription 1”, z użyciem bieżących poświadczeń użytkownika. Nowy kontekst ma nazwę „Contoso1”. Jeśli nie podasz nazwy dla tego kontekstu, będzie używana nazwa domyślna zawierająca identyfikator konta i identyfikator subskrypcji.
+Informacje o kontekście i tokeny są przechowywane w katalogu `$env:USERPROFILE\.Azure` w systemie Windows oraz w katalogu `$HOME/.Azure` na innych platformach. Informacje poufne, takie jak identyfikatory subskrypcji i identyfikatory dzierżawy, mogą być nadal ujawnione w przechowywanych informacjach za pośrednictwem dzienników lub zapisanych kontekstów. Aby dowiedzieć się, jak wyczyścić przechowywane informacje, zobacz sekcję [Usuwanie kontekstów i poświadczeń](#remove-azure-contexts-and-stored-credentials).
 
-Aby zmienić nazwę istniejącego kontekstu, użyj polecenia cmdlet `Rename-AzContext`. Na przykład:
+## <a name="remove-azure-contexts-and-stored-credentials"></a>Usuwanie przechowywanych poświadczeń i kontekstów platformy Azure
 
-```azurepowershell-interactive
-PS C:\> Rename-AzContext '[user1@contoso.org; 123456-7890-1234-564321]` 'Contoso2'
-```
+Aby wyczyścić poświadczenia i konteksty platformy Azure:
 
-Ten przykład zmienia nazwę kontekstu o nazwie automatycznej `[user1@contoso.org; 123456-7890-1234-564321]` na prostą nazwę „Contoso2”. Polecenia cmdlet, które zarządzają kontekstami, używają również wypełniania po naciśnięciu klawisza TAB, dzięki czemu możliwe jest szybkie wybieranie kontekstu.
+* Wyloguj się z konta przy użyciu polecenia [Disconnect-AzAccount](/powershell/module/az.accounts/disconnect-azaccount).
+  Możesz wylogować się z dowolnego konta według konta lub kontekstu:
 
-Aby na koniec usunąć kontekst, użyj polecenia cmdlet `Remove-AzContext`.  Na przykład:
+  ```azurepowershell-interactive
+  Disconnect-AzAccount # Disconnect active account 
+  Disconnect-AzAccount -Username "user@contoso.com" # Disconnect by account name
 
-```azurepowershell-interactive
-PS C:\> Remove-AzContext Contoso2
-```
+  Disconnect-AzAccount -ContextName "subscription2" # Disconnect by context name
+  Disconnect-AzAccount -AzureContext $contextObject # Disconnect using context object information
+  ```
 
-Powoduje zapomnienie kontekstu o nazwie „Contoso2”. Możesz utworzyć ten kontekst ponownie, używając polecenia `Set-AzContext`
+  Rozłączenie zawsze powoduje usunięcie przechowywanych tokenów uwierzytelniania i wyczyszczenie zapisanych kontekstów skojarzonych z odłączonym użytkownikiem lub kontekstem.
+* Użyj polecenia [Clear-AzContext](/powershell/module/az.accounts/Clear-AzContext). To polecenie cmdlet zawsze gwarantuje usunięcie przechowywanych kontekstów i tokenów uwierzytelniania, a także wyloguje Cię.
+* Usuń kontekst za pomocą polecenia [Remove-AzContext](/powershell/module/az.accounts/remove-azcontext):
+  
+  ```azurepowershell-interactive
+  Remove-AzContext -Name "mycontext" # Remove by name
+  Get-AzContext -Name "mycontext" | Remove-AzContext # Remove by piping Azure context object
+  ```
 
-## <a name="removing-credentials"></a>Usuwanie poświadczeń
+  Jeśli usuniesz aktywny kontekst, nastąpi odłączenie od platformy Azure i będzie konieczne ponowne uwierzytelnienie przy użyciu polecenia `Connect-AzAccount`.
 
-Można usunąć wszystkie poświadczenia i skojarzone konteksty dla użytkownika lub jednostki usługi przy użyciu polecenia `Disconnect-AzAccount` (znanego również jako `Logout-AzAccount`). Polecenie cmdlet `Disconnect-AzAccount` wykonywane bez parametrów usuwa wszystkie poświadczenia i konteksty skojarzone z użytkownikiem lub jednostką usługi w bieżącym kontekście. Możesz przekazać nazwę użytkownika, jednostkę usługi lub kontekst do konkretnego docelowego podmiotu zabezpieczeń.
+## <a name="see-also"></a>Zobacz też
 
-```azurepowershell-interactive
-Disconnect-AzAccount user1@contoso.org
-```
-
-## <a name="using-context-scopes"></a>Korzystanie z zakresów kontekstu
-
-W niektórych okolicznościach kontekst można wybrać, zmienić lub usunąć w sesji programu PowerShell bez wpływu na pozostałe sesje. Aby zmienić domyślne zachowanie poleceń cmdlet kontekstu, użyj parametru `Scope`. Zakres `Process` zastępuje domyślne działanie tego parametru, sprawiając, że dotyczy tylko bieżącej sesji. Z drugiej strony zakres `CurrentUser` zmienia kontekst we wszystkich sesjach, a nie tylko w bieżącej.
-
-Aby na przykład zmienić kontekst domyślny w bieżącej sesji programu PowerShell bez wpływu na inne okna albo na kontekst używany przy następnym otwarciu sesji, użyj następujących poleceń:
-
-```azurepowershell-interactive
-PS C:\> Select-AzContext Contoso1 -Scope Process
-```
-
-## <a name="how-the-context-autosave-setting-is-remembered"></a>Jak zapamiętywane jest ustawienie automatycznego zapisywania kontekstu
-
-Ustawienie automatycznego zapisywania kontekstu jest zapisywane w katalogu użytkownika programu Azure PowerShell (`$env:USERPROFILE\.Azure` w systemie Windows i `$HOME/.Azure` na innych platformach). Niektóre rodzaje kont komputerów mogą nie mieć dostępu do tego katalogu. W przypadku takich scenariuszy można użyć zmiennej środowiskowej
-
-```azurepowershell-interactive
-$env:AzureRmContextAutoSave="true" | "false"
-```
-
-Gdy zostanie ustawiona na wartość „true”, kontekst będzie zapisywany automatycznie. Jeśli zostanie ustawiona na wartość „false”, kontekst nie będzie zapisywany.
-
-## <a name="context-management-cmdlets"></a>Polecenia cmdlet do zarządzania kontekstem
-
-- [Enable-AzContextAutosave][enable] — umożliwia zapisywanie kontekstu między sesjami programu PowerShell.
-  Wszelkie zmiany powodują zmianę kontekstu globalnego.
-- [Disable-AzContextAutosave][disable] — wyłącza automatyczne zapisywanie kontekstu. W każdej nowej sesji programu PowerShell konieczne będzie ponowne logowanie się.
-- [Select-AzContext][select] — umożliwia wybór kontekstu jako domyślnego. Wszystkie polecenia cmdlet będą używać poświadczeń z tego kontekstu do uwierzytelniania.
-- [Disconnect-AzAccount][remove-cred] — usuwa wszystkie poświadczenia i konteksty skojarzone z danym kontem.
-- [Remove-AzContext][remove-context] — usuwa nazwany kontekst.
-- [Rename-AzContext][rename] — zmienia nazwę istniejącego kontekstu.
-- [Add-AzAccount][login] — umożliwia określenie zakresu logowania do procesu lub bieżącego użytkownika.
-  Pozwala na nazwanie domyślnego kontekstu po uwierzytelnieniu się.
-- [Import-AzContext][import] — umożliwia określenie zakresu logowania do procesu lub bieżącego użytkownika.
-- [Set-AzContext][set-context] — umożliwia wybór istniejących nazwanych kontekstów oraz określenie zakresu zmian do procesu lub bieżącego użytkownika.
-
-<!-- Hyperlinks -->
-[enable]: /powershell/module/az.accounts/Enable-AzureRmContextAutosave
-[disable]: /powershell/module/az.accounts/Disable-AzContextAutosave
-[select]: /powershell/module/az.accounts/Select-AzContext
-[remove-cred]: /powershell/module/az.accounts/Disconnect-AzAccount
-[remove-context]: /powershell/module/az.accounts/Remove-AzContext
-[rename]: /powershell/module/az.accounts/Rename-AzContext
-
-<!-- Updated cmdlets -->
-[login]: /powershell/module/az.accounts/Connect-AzAccount
-[import]:  /powershell/module/az.accounts/Import-AzContext
-[set-context]: /powershell/module/az.accounts/Set-AzContext
+* [Uruchamianie poleceń cmdlet środowiska Azure PowerShell w zadaniach programu PowerShell](using-psjobs.md)
+* [Terminologia usługi Azure Active Directory](/azure/active-directory/fundamentals/active-directory-whatis#terminology)
+* [Dokumentacja modułu Az.Accounts](/powershell/module/az.accounts)
