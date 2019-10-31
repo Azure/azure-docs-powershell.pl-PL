@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 12/13/2018
-ms.openlocfilehash: e302e49d95b6bc15750366c9eb960a6fec80c1a4
-ms.sourcegitcommit: 0b94b9566124331d0b15eb7f5a811305c254172e
+ms.date: 10/22/2019
+ms.openlocfilehash: 7f22a420068db87fa2c3c007bd36f515384162fb
+ms.sourcegitcommit: ad7677d703a8512d371d3123dc7e541156b95cb8
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72370342"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72814226"
 ---
 # <a name="install-the-azure-powershell-module"></a>Instalacja modułu Azure PowerShell
 
@@ -67,6 +67,18 @@ Are you sure you want to install the modules from 'PSGallery'?
 Wybierz odpowiedź `Yes` lub `Yes to All`, aby kontynuować instalację.
 
 Moduł Az to zbiorczy moduł poleceń cmdlet programu Azure PowerShell. Po jego zainstalowaniu są pobierane wszystkie dostępne moduły usługi Azure Resource Manager i są udostępniane do użycia ich polecenia cmdlet.
+
+## <a name="install-offline"></a>Instalowanie w trybie offline
+
+W niektórych środowiskach nie jest możliwe nawiązanie połączenia z galerią programu PowerShell. W takich sytuacjach nadal możesz przeprowadzić instalację w trybie offline przy użyciu jednej z następujących metod:
+
+* Pobierz moduły do innej lokalizacji, a następnie użyj jej jako źródłowej lokalizacji instalacji w sieci. Może to być skomplikowany proces, ale umożliwi buforowanie modułów programu PowerShell na pojedynczym serwerze lub wdrażanie udziału plików za pomocą modułu PowerShellGet w dowolnym rozłączonym systemie. Aby dowiedzieć się, jak skonfigurować lokalne repozytorium i przeprowadzić instalację w systemach rozłączonych, zobacz [Working with local PowerShellGet repositories (Praca z lokalnymi repozytoriami modułu PowerShellGet)](/powershell/scripting/gallery/how-to/working-with-local-psrepositories).
+* [Pobierz pakiet MSI programu Azure PowerShell](install-az-ps-msi.md) na maszynę połączoną z siecią, a następnie skopiuj instalator do systemów bez dostępu do galerii programu PowerShell. Pamiętaj, że instalator MSI działa tylko na potrzeby programu PowerShell 5.1 w systemie Windows.
+* Zapisz moduł za pomocą polecenia [Save-Module](/powershell/module/PowershellGet/Save-Module) w udziale plików lub zapisz go w innej lokalizacji źródłowej, a następnie ręcznie skopiuj na inne maszyny:
+  
+  ```powershell-interactive
+  Save-Module -Name Az -Path '\\someshare\PowerShell\modules' -Force
+  ```
 
 ## <a name="troubleshooting"></a>Rozwiązywanie problemów
 
