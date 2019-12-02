@@ -82,3 +82,5 @@
       href: release-notes-azureps.md
     - name: Zmiany powodujące niezgodność w narzędziu Az 2.0.0
       href: migrate-az-2.0.0.md
+    - name: Zmiany powodujące niezgodność w narzędziu Az 3.0.0
+      href: migrate-az-3.0.0.md
