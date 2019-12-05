@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/15/2019
-ms.openlocfilehash: 83e6039153bcc2b8ccb7ceddfa91609f0d6c7b3f
-ms.sourcegitcommit: b4ee3fbaaa2a329ea28308bd1902ae83a34db698
+ms.openlocfilehash: 8c1369cdedf8848f3c62ca6b6bc4eb3d2d78be95
+ms.sourcegitcommit: f9445d1525eac8c165637e1a80fbc92b1ab005c2
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72380199"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74656823"
 ---
 ## <a name="280---october-2019"></a>2.8.0 — październik 2019 r.
 ### <a name="general"></a>Ogólne
@@ -56,16 +56,16 @@ ms.locfileid: "72380199"
 * Drobna poprawka usterki: Polecenie Get-AzIothub nie zwraca wartości subscriptionId 
 
 #### <a name="azmonitor"></a>Az.Monitor
-* Dodano nowe odbiorniki grupy akcji dla grupy akcji -ItsmReceiver -VoiceReceiver -ArmRoleReceiver -AzureFunctionReceiver -LogicAppReceiver -AutomationRunbookReceiver -AzureAppPushReceiver
+* Dodano nowe odbiorniki grupy akcji dla polecenia cmdlet New-AzActionGroupReceiver: -ItsmReceiver -VoiceReceiver -ArmRoleReceiver -AzureFunctionReceiver -LogicAppReceiver -AutomationRunbookReceiver -AzureAppPushReceiver
 * Włączono korzystanie z typowych schematów alertów dla odbiorników. Nie dotyczy to odbiorników wiadomości SMS, powiadomień push usługi Azure App , narzędzia ITSM i połączeń głosowych
-* Elementy webhook obsługują teraz również uwierzytelnianie za pomocą usługi Azure Active Directory.
+* Elementy webhook obsługują teraz uwierzytelnianie za pomocą usługi Azure Active Directory.
 
 #### <a name="aznetwork"></a>Az.Network
 * Dodano nowe polecenie cmdlet Get-AzAvailableServiceAlias, które można wywołać, aby pobrać aliasy do użytku z zasadami punktu końcowego dostawcy.
 * Dodano obsługę dodawania selektorów ruchu do połączeń bramy sieci wirtualnej
     - Dodano nowe polecenia cmdlet:
-        - New-AzureRmTrafficSelectorPolicy
-    - Polecenia cmdlet zostały zaktualizowane o opcjonalny parametr -TrafficSelectorPolicies -New-AzureRmVirtualNetworkGatewayConnection -Set-AzureRmVirtualNetworkGatewayConnection
+        - New-AzIpsecTrafficSelectorPolicy
+    - Polecenia cmdlet zostały zaktualizowane o opcjonalny parametr -TrafficSelectorPolicies -New-AzVirtualNetworkGatewayConnection -Set-AzVirtualNetworkGatewayConnection
 * Dodano obsługę protokołów ESP i AH do konfiguracji reguł zabezpieczeń sieci
     - Zaktualizowano następujące polecenia cmdlet:
         - Add-AzNetworkSecurityRuleConfig
@@ -220,7 +220,7 @@ ms.locfileid: "72380199"
     -  Remove-AzRmStorageShare
 
 #### <a name="azwebsites"></a>Az.Websites
-* Naprawa problemu polegającego na tym, że tagi webapp były usuwane podczas migracji aplikacji do nowej platformy ASP
+* Naprawa problemu powodującego usuwanie tagów aplikacji internetowych podczas migrowania aplikacji do nowego planu ASP
 * Naprawa polecenia Publish-AzureWebapp w taki sposób, aby działało w systemach Linux i Windows
 * Aktualizacja przykładu w dokumentacji referencyjnej polecenia „Get-AzWebAppPublishingProfile”
 
