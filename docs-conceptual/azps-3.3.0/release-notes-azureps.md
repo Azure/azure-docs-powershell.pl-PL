@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 10/15/2019
-ms.openlocfilehash: fb934ed0f8bef5e2aff715debe5d406d54abf24f
-ms.sourcegitcommit: 2d0c3ffaa5246f680784fa7e15b0d2536c27ff80
+ms.date: 01/09/2020
+ms.openlocfilehash: 3806a1c609a71c53c0bddc5bafd51d845c0c296e
+ms.sourcegitcommit: 16904e0a72c55fb81248e0252769defb86c50f36
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75718988"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75831648"
 ---
 # <a name="azure-powershell-release-notes"></a>Informacje o wersji programu Azure PowerShell
 
@@ -33,17 +33,17 @@ ms.locfileid: "75718988"
 * Dodano polecenie cmdlet „Get-AzDataBoxEdgeStorageContainer”
   - Pobieranie kontenera magazynu usługi Edge
 * Dodano polecenie cmdlet „New-AzDataBoxEdgeStorageContainer”
-  - Utworzenie nowego kontenera magazynu usługi Edge
+  - Tworzenie nowego kontenera magazynu usługi Edge
 * Dodano polecenie cmdlet „Remove-AzDataBoxEdgeStorageContainer”
-  - Usunięcie kontenera magazynu usługi Edge
+  - Usuwanie kontenera magazynu usługi Edge
 * Dodano polecenie cmdlet „Invoke-AzDataBoxEdgeStorageContainer”
-  - Wywołanie akcji odświeżania danych w kontenerze magazynu usługi Edge
+  - Wywoływanie akcji odświeżania danych w kontenerze magazynu usługi Edge
 * Dodano polecenie cmdlet „Get-AzDataBoxEdgeStorageAccount”
-  - Uzyskiwanie konta magazynu usługi Edge
+  - Pobieranie konta magazynu usługi Edge
 * Dodano polecenie cmdlet „New-AzDataBoxEdgeStorageAccount”
-  - Utworzenie nowego konta magazynu usługi Edge
+  - Tworzenie nowego konta magazynu usługi Edge
 * Dodano polecenie cmdlet „Remove-AzDataBoxEdgeStorageAccount”
-  - Usunięcie konta magazynu usługi Edge
+  - Usuwanie konta magazynu usługi Edge
 * Wywołanie polecenia cmdlet „Invoke-AzDataBoxEdgeShare”
   - Wywołanie akcji odświeżania danych w udziale
 * Dodano polecenie cmdlet „Set-AzDataBoxEdgeStorageAccountCredential”
