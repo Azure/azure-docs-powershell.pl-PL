@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
-ms.date: 01/14/2019
-ms.openlocfilehash: c515fcbbe4dcb0b6578a56da137a77e3f843a2e6
-ms.sourcegitcommit: 2d0c3ffaa5246f680784fa7e15b0d2536c27ff80
+ms.date: 01/17/2020
+ms.openlocfilehash: 718f0dc0f1ef9b0c2aa3d0630ca099fa5cec7ec0
+ms.sourcegitcommit: 30eeeec0985f8623b1bc03f461124446b04297c2
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75722044"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76256831"
 ---
 # <a name="get-started-with-azure-powershell"></a>Rozpoczynanie pracy z programem Azure PowerShell
 
@@ -53,7 +53,7 @@ Po zalogowaniu użyj poleceń cmdlet programu Azure PowerShell, aby uzyskiwać d
 
 ## <a name="find-commands"></a>Znajdowanie poleceń
 
-Polecenia cmdlet programu Azure PowerShell używają standardowej konwencji nazewnictwa dla programu PowerShell: `VERB-NOUN`. Czasownik (verb) opisuje akcję (przykłady: `New`, `Get`, `Set`, `Remove`), a rzeczownik (noun) opisuje typ zasobu (przykłady: `AzVM`, `AzKeyVaultCertificate`, `AzFirewall`, `AzVirtualNetworkGateway`). Rzeczowniki w programie Azure PowerShell zawsze rozpoczynają się prefiksem `Az`. Aby uzyskać pełną listę standardowych czasowników, zobacz [Approved verbs for PowerShell Commands](/powershell/developer/cmdlet/approved-verbs-for-windows-powershell-commands) (Zatwierdzone czasowniki dla poleceń programu PowerShell).
+Polecenia cmdlet programu Azure PowerShell używają standardowej konwencji nazewnictwa dla programu PowerShell: `VERB-NOUN`. Czasownik (verb) opisuje akcję (przykłady: `New`, `Get`, `Set`, `Remove`), a rzeczownik (noun) opisuje typ zasobu (przykłady: `AzVM`, `AzKeyVaultCertificate`, `AzFirewall`, `AzVirtualNetworkGateway`). Rzeczowniki w programie Azure PowerShell zawsze rozpoczynają się prefiksem `Az`. Aby uzyskać pełną listę standardowych czasowników, zobacz [Approved verbs for PowerShell Commands](/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands) (Zatwierdzone czasowniki dla poleceń programu PowerShell).
 
 Znajomość dostępnych rzeczowników, czasowników i modułów programu Azure PowerShell ułatwia znajdowanie poleceń za pomocą polecenia cmdlet [Get-Command](/powershell/module/microsoft.powershell.core/get-command). Aby na przykład znaleźć wszystkie polecenia dotyczące maszyn wirtualnych i używające czasownika `Get`:
 
