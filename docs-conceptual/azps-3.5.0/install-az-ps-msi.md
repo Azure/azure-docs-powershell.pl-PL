@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/22/2019
-ms.openlocfilehash: 9bb2a0d611c4cc39172fc6c51d375a1b47f834ed
-ms.sourcegitcommit: a321ef9d134c684fa24ababcbd898f86b00d9364
+ms.openlocfilehash: 9f161d6a2bbe696bca5d2a63d39ab734cfc25cb8
+ms.sourcegitcommit: a6f2fc500242de6248224278d743fd09aac2fafd
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77477288"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78264370"
 ---
 # <a name="install-azure-powershell-on-windows-with-msi"></a>Instalowanie programu Azure PowerShell w systemie Windows za pomocą instalatora MSI
 
@@ -34,7 +34,7 @@ Aby użyć programu Azure PowerShell w programie PowerShell 5.1:
 
 ## <a name="install-or-update-on-windows-using-the-msi-package"></a>Instalowanie lub aktualizowanie w systemie Windows za pomocą pakietu MSI
 
-Program Azure PowerShell dla systemu Windows jest instalowany za pomocą pliku MSI dostępnego w witrynie [GitHub](https://github.com/Azure/azure-powershell/releases/tag/v3.3.0-January2020). Jeśli zainstalowano wcześniejsze wersje modułów platformy Azure jako pakiet MSI, instalator automatycznie je usunie. Pakiet MSI instaluje moduły w lokalizacji `${env:ProgramFiles}\WindowsPowerShell\Modules`.
+Program Azure PowerShell dla systemu Windows jest instalowany za pomocą pliku MSI dostępnego w witrynie [GitHub](https://github.com/Azure/azure-powershell/releases/tag/v3.5.0-February2020). Jeśli zainstalowano wcześniejsze wersje modułów platformy Azure jako pakiet MSI, instalator automatycznie je usunie. Pakiet MSI instaluje moduły w lokalizacji `${env:ProgramFiles}\WindowsPowerShell\Modules`.
 
 Aby rozpocząć pracę z programem Azure PowerShell, zaloguj się przy użyciu swoich poświadczeń platformy Azure.
 
