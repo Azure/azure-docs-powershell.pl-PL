@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/04/2019
-ms.openlocfilehash: 614cce77deb4390ea158a48ae2d48b7b983224f2
-ms.sourcegitcommit: a321ef9d134c684fa24ababcbd898f86b00d9364
+ms.openlocfilehash: 0de487cc34593ceac05aa2077358d692470dc23e
+ms.sourcegitcommit: a6f2fc500242de6248224278d743fd09aac2fafd
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77477441"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78264387"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Logowanie się w programie Azure PowerShell
 
@@ -75,7 +75,7 @@ Uwierzytelnianie oparte na certyfikatach wymaga, aby program Azure PowerShell m�
 Connect-AzAccount -ApplicationId $appId -Tenant $tenantId -CertificateThumbprint <thumbprint>
 ```
 
-Jeśli zamiast zarejestrowanej aplikacji używasz jednostki usługi, dodaj argument `-ServicePrincipal` i podaj identyfikator jednostki usługi jako wartość parametru `-ApplicationId`.
+Jeśli zamiast zarejestrowanej aplikacji używasz jednostki usługi, dodaj argument `-ServicePrincipal` i podaj identyfikator aplikacji jednostki usługi jako wartość parametru `-ApplicationId`.
 
 ```azurepowershell-interactive
 Connect-AzAccount -ServicePrincipal -ApplicationId $servicePrincipalId -Tenant $tenantId -CertificateThumbprint <thumbprint>
