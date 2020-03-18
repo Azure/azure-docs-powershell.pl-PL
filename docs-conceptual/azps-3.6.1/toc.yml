@@ -5,7 +5,7 @@
   displayName: 'intro, introduction, azurerm'
 - name: Instalowanie
   items:
-    - name: Instalowanie za pomocą polecenia Get programu PowerShell
+    - name: Instalowanie przy użyciu elementu PowerShellGet
       href: install-az-ps.md
     - name: Instalowanie za pomocą pliku MSI
       href: install-az-ps-msi.md
@@ -24,6 +24,8 @@
   displayName: 'sign in, signin, log in, login, find, feedback, intro, introduction'
 - name: Cloud Shell
   href: 'https://docs.microsoft.com/azure/cloud-shell/overview'
+- name: Program Azure PowerShell na platformie Docker
+  href: azureps-in-docker.md
 - name: Logowanie
   items:
     - name: Metody uwierzytelniania
