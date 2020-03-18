@@ -8,11 +8,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/04/2019
 ms.openlocfilehash: 21d87bd35da74f09b70976e7b395e7b987fbd3f5
-ms.sourcegitcommit: e5b029312d17e12257b2b5351b808fdab0b4634c
+ms.sourcegitcommit: fb95591c45bb5f12b98e0690938d18f2ec611897
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70386812"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79402786"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Logowanie się w programie Azure PowerShell
 
@@ -116,7 +116,7 @@ Aby uzyskać więcej informacji na temat tożsamości zarządzanych dla zasobów
 
 Jeśli konto jest skojarzone z więcej niż jedną dzierżawą, logowanie wymaga użycia parametru `-Tenant` podczas nawiązywania połączenia. Ten parametr będzie współdziałać z każdą metodą logowania. Podczas logowania się wartość tego parametru może być identyfikatorem obiektu platformy Azure dzierżawy (identyfikatorem dzierżawy) lub w pełni kwalifikowaną nazwą domeny dzierżawy.
 
-Jeśli jesteś [dostawcą rozwiązań w chmurze (CSP)](https://azure.microsoft.com/offers/ms-azr-0145p/), wartość `-Tenant` **musi** być identyfikatorem dzierżawy.
+Jeśli jesteś [dostawcą rozwiązań w chmurze (CSP)](https://azure.microsoft.com/offers/ms-azr-0145p/), wartość `-Tenant`**musi** być identyfikatorem dzierżawy.
 
 ```azurepowershell-interactive
 Connect-AzAccount -Tenant 'xxxx-xxxx-xxxx-xxxx'

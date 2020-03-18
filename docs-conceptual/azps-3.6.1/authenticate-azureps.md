@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/04/2019
-ms.openlocfilehash: 44f5d5b44788a52db297a0d73697161eec2eedc2
+ms.openlocfilehash: 0de487cc34593ceac05aa2077358d692470dc23e
 ms.sourcegitcommit: fb95591c45bb5f12b98e0690938d18f2ec611897
 ms.translationtype: HT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 03/15/2020
-ms.locfileid: "79402820"
+ms.locfileid: "79402752"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Logowanie się w programie Azure PowerShell
 
@@ -75,7 +75,7 @@ Uwierzytelnianie oparte na certyfikatach wymaga, aby program Azure PowerShell m�
 Connect-AzAccount -ApplicationId $appId -Tenant $tenantId -CertificateThumbprint <thumbprint>
 ```
 
-Jeśli zamiast zarejestrowanej aplikacji używasz jednostki usługi, dodaj argument `-ServicePrincipal` i podaj identyfikator jednostki usługi jako wartość parametru `-ApplicationId`.
+Jeśli zamiast zarejestrowanej aplikacji używasz jednostki usługi, dodaj argument `-ServicePrincipal` i podaj identyfikator aplikacji jednostki usługi jako wartość parametru `-ApplicationId`.
 
 ```azurepowershell-interactive
 Connect-AzAccount -ServicePrincipal -ApplicationId $servicePrincipalId -Tenant $tenantId -CertificateThumbprint <thumbprint>
@@ -111,7 +111,11 @@ $store.Close()
 
 Tożsamości zarządzane to funkcja w usłudze Azure Active Directory. Tożsamości zarządzane to jednostki usługi przypisane do zasobów, które działają na platformie Azure. Jednostki usługi tożsamości zarządzanej można używać do logowania się i uzyskiwania aplikacyjnego tokenu dostępu do uzyskania dostępu do innych zasobów. Tożsamości zarządzane są dostępne tylko w przypadku zasobów działających w chmurze platformy Azure.
 
-Aby uzyskać więcej informacji na temat tożsamości zarządzanych dla zasobów platformy Azure, zobacz [Jak używać tożsamości zarządzanych dla zasobów platformy Azure na maszynie wirtualnej platformy Azure w celu uzyskania tokenu dostępu](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token).
+To polecenie nawiązuje połączenie przy użyciu tożsamości zarządzanej środowiska hosta. Na przykład w przypadku wykonania na maszynie wirtualnej z przypisaną tożsamością usługi zarządzanej umożliwia kodowi logowanie się przy użyciu tej przypisanej tożsamości.
+
+```azurepowershell-interactive
+ Connect-AzAccount -Identity 
+```
 
 ## <a name="sign-in-with-a-non-default-tenant-or-as-a-cloud-solution-provider-csp"></a>Logowanie się przy użyciu innej niż domyślnej dzierżawy lub jako dostawca rozwiązań w chmurze (CSP, Cloud Solution Provider)
 
