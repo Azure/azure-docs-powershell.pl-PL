@@ -1,18 +1,15 @@
 ---
 title: Informacje o wersji programu Azure PowerShell
 description: Uzyskaj informacje na temat wszystkich najnowszych aktualizacji modułów programu Azure PowerShell.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 01/09/2020
-ms.openlocfilehash: 4c7ea19a225d63307ecf4a6fe5ebfa14ccd78d7e
+ms.date: 03/10/2020
+ms.openlocfilehash: f24e5ef66f9c49976c550c9847903bd0608c5123
 ms.sourcegitcommit: f6fa6543be1e0f6330b1598f01528b2928cc426c
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79036165"
+ms.lasthandoff: 03/11/2020
+ms.locfileid: "79111029"
 ---
 # <a name="azure-powershell-release-notes"></a>Informacje o wersji programu Azure PowerShell
 
@@ -72,14 +69,14 @@ ms.locfileid: "79036165"
     - Remove-AzTag -ResourceId
 * Dodano nowe polecenie cmdlet dotyczące tagów
     - Update-AzTag -ResourceId
-* Dodano element ScopedDeployment z zestawu SDK 3.3.0 
+* Dodano element ScopedDeployment z zestawu SDK 3.3.0
 
 #### <a name="azsql"></a>Az.Sql
 * Dodano parametr PublicNetworkAccess do poleceń „New-AzSqlServer” i „Set-AzSqlServer”
 * Dodano obsługę konfiguracji długoterminowego przechowywania kopii zapasowych dla zarządzanych baz danych
-    - Pobieranie/ustawianie zasad LTR w zarządzanej bazie danych 
-    - Pobieranie kopii zapasowych LTR według zarządzanej bazy danych, wystąpienia zarządzanego lub lokalizacji 
-    - Usuwanie kopii zapasowej LTR 
+    - Pobieranie/ustawianie zasad LTR w zarządzanej bazie danych
+    - Pobieranie kopii zapasowych LTR według zarządzanej bazy danych, wystąpienia zarządzanego lub lokalizacji
+    - Usuwanie kopii zapasowej LTR
     - Przywracanie kopii zapasowej LTR, aby utworzyć nową zarządzaną bazę danych
 * Dodano parametr MinimalTlsVersion do polecenia New-AzSqlServer i Set-AzSqlServer
 * Dodano parametr MinimalTlsVersion do poleceń New-AzSqlInstance i Set-AzSqlInstance
@@ -323,7 +320,7 @@ Naprawiono polecenie cmdlet New-AzSqlDatabaseSecondary, aby sprawdzało istnieni
 #### <a name="azstorage"></a>Az.Storage
 * Dodano komunikat ostrzegawczy na temat zmiany powodującej niezgodność dla zmiany elementu DefaultAction w przyszłej wersji
     - Update-AzStorageAccountNetworkRuleSet
-* Obsługa uzyskiwania ostatniego czasu synchronizacji kont usługi Storage poprzez uruchomienie polecenia get-AzureRMStorageAccount z parametrem -IncludeGeoReplicationStats 
+* Obsługa uzyskiwania ostatniego czasu synchronizacji kont usługi Storage poprzez uruchomienie polecenia get-AzureRMStorageAccount z parametrem -IncludeGeoReplicationStats
     - Get-AzureRMStorageAccount
 
 ## <a name="320---december-2019"></a>3.2.0 — grudzień 2019 r.
@@ -373,7 +370,7 @@ Naprawiono polecenie cmdlet New-AzSqlDatabaseSecondary, aby sprawdzało istnieni
 * Obsługa odwoływania kluczy delegowania użytkowników dla konta magazynu w celu odwołania wszystkich tokenów SAS tożsamości
     - Revoke-AzStorageAccountUserDelegationKeys
 * Uaktualnienie do wersji Microsoft.Azure.Management.Storage 14.2.0 w celu obsługi nowego interfejsu API w wersji 2019-06-01.
-* Obsługa funkcji QuotaGiB (udostępnianie limitu przydziału w GiB) dla wartości powyżej 5120 w poleceniach cmdlet płaszczyzny zarządzania udziałem plików i dodano alias parametru „Quota” do parametru „QuotaGiB”. 
+* Obsługa funkcji QuotaGiB (udostępnianie limitu przydziału w GiB) dla wartości powyżej 5120 w poleceniach cmdlet płaszczyzny zarządzania udziałem plików i dodano alias parametru „Quota” do parametru „QuotaGiB”.
     - New-AzRmStorageShare
     - Update-AzRmStorageShare
 * Dodano alias parametru „QuotaGiB” do parametru „Quota”
@@ -491,7 +488,7 @@ Naprawiono polecenie cmdlet New-AzSqlDatabaseSecondary, aby sprawdzało istnieni
 * Usunięto właściwość `TargetOSVersion` z klasy `PSCloudServiceConfiguration`.
 * Zmieniono nazwę właściwości `CurrentOSVersion` na `OSVersion` w klasie `PSCloudServiceConfiguration`.
 * Usunięto właściwości `DataEgressGiB` i `DataIngressGiB` z klasy `PSPoolUsageMetrics`.
-* Usunięto polecenie cmdlet **Get-AzBatchNodeAgentSku** i zastąpiono je poleceniem cmdlet **Get-AzBatchSupportedImage**. 
+* Usunięto polecenie cmdlet **Get-AzBatchNodeAgentSku** i zastąpiono je poleceniem cmdlet **Get-AzBatchSupportedImage**.
   - Polecenie cmdlet **Get-AzBatchSupportedImage** zwraca te same dane co polecenie cmdlet **Get-AzBatchNodeAgentSku**, ale w bardziej przyjaznym formacie.
   - Teraz są również zwracane nowe obrazy niezweryfikowane. Uwzględniono również dodatkowe informacje na temat właściwości `Capabilities` i `BatchSupportEndOfLife` dla każdego obrazu.
 * Dodano możliwość instalowania zdalnych systemów plików na każdym węźle puli za pośrednictwem nowego parametru `MountConfiguration` polecenia cmdlet **New-AzBatchPool**.
@@ -508,8 +505,7 @@ Naprawiono polecenie cmdlet New-AzSqlDatabaseSecondary, aby sprawdzało istnieni
 #### <a name="azcompute"></a>Az.Compute
 * Funkcja zestawu szyfrowania dysków
     - Nowe polecenia cmdlet:   New-AzDiskEncryptionSetConfig   New-AzDiskEncryptionSet   Get-AzDiskEncryptionSet   Remove-AzDiskEncryptionSet
-    - Dodano parametr DiskEncryptionSetId do następujących poleceń cmdlet: Set-AzImageOSDisk Set-AzVMOSDisk Set-AzVmssStorageProfile        
-        Add-AzImageDataDisk New-AzVMDataDisk Set-AzVMDataDisk Add-AzVMDataDisk Add-AzVmssDataDisk Add-AzVmssVMDataDisk
+    - Dodano parametr DiskEncryptionSetId do następujących poleceń cmdlet:   Set-AzImageOSDisk, Set-AzVMOSDisk, Set-AzVmssStorageProfile, Add-AzImageDataDisk, New-AzVMDataDisk, Set-AzVMDataDisk, Add-AzVMDataDisk, Add-AzVmssDataDisk i Add-AzVmssVMDataDisk
     - Dodano parametry DiskEncryptionSetId i EncryptionType do następujących poleceń cmdlet:   New-AzDiskConfig   New-AzSnapshotConfig
 * Dodano parametr Add PublicIPAddressVersion do polecenia cmdlet New-AzVmssIPConfig
 * Właściwość FileUris rozszerzenia niestandardowego skryptu przeniesiono z ustawienia publicznego do ustawienia chronionego
@@ -660,7 +656,7 @@ Naprawiono polecenie cmdlet New-AzSqlDatabaseSecondary, aby sprawdzało istnieni
 * Get-AzSqlDatabaseRestorePoints (zamiast tego użyj Get-AzSqlDatabaseRestorePoint)
 * Usunięto polecenie cmdlet Get-AzSqlDatabaseSecureConnectionPolicy
 * Usunięto aliasy dla przestarzałych poleceń cmdlet ustawień oceny luk w zabezpieczeniach
-* Oznaczono jako przestarzałe polecenia cmdlet ustawień zaawansowanego wykrywania zagrożeń 
+* Oznaczono jako przestarzałe polecenia cmdlet ustawień zaawansowanego wykrywania zagrożeń
 * Dodawanie poleceń cmdlet do wyłączania i włączania zaleceń dotyczących czułości dla kolumn w bazie danych.
 
 #### <a name="azstorage"></a>Az.Storage
@@ -670,7 +666,7 @@ Naprawiono polecenie cmdlet New-AzSqlDatabaseSecondary, aby sprawdzało istnieni
 * Podczas zamykania/uzyskiwania dojścia do pliku pomiń sprawdzanie, czy ścieżka danych wejściowych jest ścieżką pliku, czy plikiem, aby uniknąć błędu obiektu w stanie DeletePending
     -  Get-AzStorageFileHandle
     -  Close-AzStorageFileHandle
-    
+
 ## <a name="280---october-2019"></a>2.8.0 — październik 2019 r.
 ### <a name="general"></a>Ogólne
 * Wydanie Az.HealthcareApis 1.0.0
@@ -683,7 +679,7 @@ Naprawiono polecenie cmdlet New-AzSqlDatabaseSecondary, aby sprawdzało istnieni
     - Rozwiązano problem https://github.com/Azure/azure-powershell/issues/10068
 
 #### <a name="azautomation"></a>Az.Automation
-* Naprawiono parametr ponownego uruchamiania polecenia cmdlet New-AzureAutomationSoftwareUpdateConfiguration dla systemu Linux. 
+* Naprawiono parametr ponownego uruchamiania polecenia cmdlet New-AzureAutomationSoftwareUpdateConfiguration dla systemu Linux.
 
 #### <a name="azbatch"></a>Az.Batch
 * Polecenie **Get-AzBatchNodeAgentSku** jest przestarzałe i zostanie zastąpione poleceniem **Get-AzBatchSupportImage** w wersji 2.0.0.
@@ -691,7 +687,7 @@ Naprawiono polecenie cmdlet New-AzSqlDatabaseSecondary, aby sprawdzało istnieni
 #### <a name="azcompute"></a>Az.Compute
 * Dodano parametry Priority, EvictionPolicy i MaxPrice do poleceń cmdlet New-AzVM i New-AzVmss
 * Naprawiono komunikat ostrzegawczy i dokumentację pomocy dla poleceń Add-AzVMAdditionalUnattendContent i Add-AzVMSshPublicKey
-* Naprawiono wyjątek -skipVmBackup dla maszyn wirtualnych z systemem Linux z dyskami zarządzanymi dla polecenia Set-AzVMDiskEncryptionExtension. 
+* Naprawiono wyjątek -skipVmBackup dla maszyn wirtualnych z systemem Linux z dyskami zarządzanymi dla polecenia Set-AzVMDiskEncryptionExtension.
 * Naprawiono usterkę w ustawieniach szyfrowania aktualizacji w scenariuszu dwuprzebiegowym polecenia Set-AzVMDiskEncryptionExtension.
 
 #### <a name="azdatafactory"></a>Az.DataFactory
@@ -710,7 +706,7 @@ Naprawiono polecenie cmdlet New-AzSqlDatabaseSecondary, aby sprawdzało istnieni
 
 #### <a name="aziothub"></a>Az.IotHub
 * Dodano nowe źródło routingu: DigitalTwinChangeEvents
-* Drobna poprawka usterki: Polecenie Get-AzIothub nie zwraca wartości subscriptionId 
+* Drobna poprawka usterki: Polecenie Get-AzIothub nie zwraca wartości subscriptionId
 
 #### <a name="azmonitor"></a>Az.Monitor
 * Dodano nowe odbiorniki grupy akcji dla grupy akcji -ItsmReceiver -VoiceReceiver -ArmRoleReceiver -AzureFunctionReceiver -LogicAppReceiver -AutomationRunbookReceiver -AzureAppPushReceiver
@@ -806,7 +802,7 @@ Naprawiono polecenie cmdlet New-AzSqlDatabaseSecondary, aby sprawdzało istnieni
 * Naprawienie usterki dotyczącej określania typu zakresu dla polecenia „Set-AzActionRule”
 
 #### <a name="aznetwork"></a>Az.Network
-* Naprawienie nieprawidłowego przykładu w dokumentacji referencyjnej polecenia „New-AzApplicationGateway” 
+* Naprawienie nieprawidłowego przykładu w dokumentacji referencyjnej polecenia „New-AzApplicationGateway”
 * Dodanie w dokumentacji referencyjnej polecenia „Get-AzNetworkWatcherPacketCapture” uwagi dotyczącej pobierania wszystkich właściwości na potrzeby przechwytywania pakietów
 * Naprawiono przykład w dokumentacji referencyjnej polecenia „Test-AzNetworkWatcherIPFlow”, aby poprawnie wyliczał karty sieciowe
 * Ulepszono analizę wyjątku w chmurze, aby wyświetlane były dodatkowe szczegóły, jeśli są obecne
@@ -942,7 +938,7 @@ Naprawiono polecenie cmdlet New-AzSqlDatabaseSecondary, aby sprawdzało istnieni
     - Sklasyfikowano parametr „PublicIpAddress” jako przestarzały, ponieważ nie jest on nigdy używany po stronie serwera.
     - Dodano jeden opcjonalny parametr „Primary” wskazujący, czy bieżąca konfiguracja IP jest podstawowa, czy nie.
 * Ulepszono obsługę wyjątku błędu żądania z zestawu SDK — rozwiązuje to problem polegający na tym, że poprzednio wyjątki zestawu SDK nie były poprawnie obsługiwane, wskutek czego nie były wyświetlane kluczowe szczegóły błędu
-* Skorygowano logikę weryfikacji prefiksu IP w wersji IPv6 w celu sprawdzania, czy długość prefiksu IPv6 jest poprawna. 
+* Skorygowano logikę weryfikacji prefiksu IP w wersji IPv6 w celu sprawdzania, czy długość prefiksu IPv6 jest poprawna.
 * Zaktualizowano polecenie Get-AzVirtualNetworkSubnetConfig: Dodano parametr ustawiany w celu pobrania identyfikatora zasobu podsieci.
 * Zaktualizowano opis parametru Location dla AzNetworkServiceTag
 
@@ -965,7 +961,7 @@ Naprawiono polecenie cmdlet New-AzSqlDatabaseSecondary, aby sprawdzało istnieni
 #### <a name="azservicebus"></a>Az.ServiceBus
 * Rozwiązano problem nr 9658: Literówka VirtualNetworkRule w poleceniu Set-AzServiceBusNetworkRuleSet
 * Rozwiązano problem nr 9786: nie można utworzyć reguły z prawami tylko do nasłuchiwania
-* Dodano nowe polecenie „Test-AzServiceBusNameAvailability” do sprawdzania dostępności nazwy dla kolejki i tematu 
+* Dodano nowe polecenie „Test-AzServiceBusNameAvailability” do sprawdzania dostępności nazwy dla kolejki i tematu
 
 #### <a name="azservicefabric"></a>Az.ServiceFabric
 * Usunięcie usterek poleceń cmdlet dodawania typu węzła:
@@ -992,10 +988,10 @@ Naprawiono polecenie cmdlet New-AzSqlDatabaseSecondary, aby sprawdzało istnieni
 * Zaktualizowano wspólny kod, aby korzystał z najnowszej wersji środowiska uruchomieniowego klienta
 
 #### <a name="azapplicationinsights"></a>Az.ApplicationInsights
-* Poprawienie pisowni w przykładzie w dokumentacji polecenia „Remove-AzApplicationInsightsApiKey” 
+* Poprawienie pisowni w przykładzie w dokumentacji polecenia „Remove-AzApplicationInsightsApiKey”
 
 #### <a name="azautomation"></a>Az.Automation
-* Poprawienie pisowni w ciągu zasobu 
+* Poprawienie pisowni w ciągu zasobu
 
 #### <a name="azcognitiveservices"></a>Az.CognitiveServices
 * Dodano obsługę właściwości NetworkRuleSet.
@@ -1056,7 +1052,7 @@ Naprawiono polecenie cmdlet New-AzSqlDatabaseSecondary, aby sprawdzało istnieni
     - Aktualizacja polecenia New-AzApplicationGatewayProbeConfig: Dodano opcjonalny parametr Port, który służy do sondowania serwera zaplecza. Ten parametr ma zastosowanie w przypadku jednostek SKU Standard_V2 i WAF_V2.
 
 #### <a name="azoperationalinsights"></a>Az.OperationalInsights
-* Zaktualizowano domyślną wersję zapisywanych wyszukiwań na 1. 
+* Zaktualizowano domyślną wersję zapisywanych wyszukiwań na 1.
 * Poprawiono obsługę wyrażeń regularnych o wartości null dla dzienników niestandardowych
 
 #### <a name="azrecoveryservices"></a>Az.RecoveryServices
@@ -1210,7 +1206,7 @@ Naprawiono polecenie cmdlet New-AzSqlDatabaseSecondary, aby sprawdzało istnieni
     - New-AzureRmEventGridDomainTopic:
         - Tworzy nowy temat domeny usługi Azure Event Grid.
     - Get-AzureRmEventGridDomainTopic
-        - Pobiera szczegóły tematu domeny usługi Event Grid lub pobiera listę wszystkich tematów domeny usługi Event Grid w bieżącej subskrypcji platformy Azure. 
+        - Pobiera szczegóły tematu domeny usługi Event Grid lub pobiera listę wszystkich tematów domeny usługi Event Grid w bieżącej subskrypcji platformy Azure.
     - Remove-AzureRmEventGridDomainTopic:
         - Usuwa istniejący temat domeny usługi Azure Event Grid.
 * Zaktualizowano następujące polecenia cmdlet:
@@ -1222,7 +1218,7 @@ Naprawiono polecenie cmdlet New-AzSqlDatabaseSecondary, aby sprawdzało istnieni
             - Data wygaśnięcia subskrypcji zdarzeń,
             - Zaawansowane parametry filtrowania.
         - Dodano nowe wyliczenie dla elementu servicebusqueue jako miejsca docelowego.
-        - Uniemożliwiono użycie elementu „Wszystkie” w opcji -IncludedEventType i zamieniono go na 
+        - Uniemożliwiono użycie elementu „Wszystkie” w opcji -IncludedEventType i zamieniono go na
     - Get-AzEventGridTopic, Get-AzEventGridDomain, Get-AzEventGridDomainTopic, Get-AzEventGridSubscription:
         - Dodano nowe opcjonalne parametry (Top, ODataQuery i NextLink) w celu obsługi filtrowania i stronicowania wyników.
     - Remove-AzureRmEventGridSubscription
@@ -1240,11 +1236,11 @@ Naprawiono polecenie cmdlet New-AzSqlDatabaseSecondary, aby sprawdzało istnieni
     - Nowe polecenia cmdlet
         - Get-AzVirtualNetworkGatewayVpnClientConnectionHealth
 * Dodano element AvailablePrivateEndpointType
-    - Nowe polecenia cmdlet 
+    - Nowe polecenia cmdlet
         - Get-AzAvailablePrivateEndpointType
 * Dodano element PrivatePrivateLinkService
-    - Nowe polecenia cmdlet 
-        - Get-AzPrivateLinkService 
+    - Nowe polecenia cmdlet
+        - Get-AzPrivateLinkService
         - New-AzPrivateLinkService
         - Remove-AzPrivateLinkService
         - New-AzPrivateLinkServiceIpConfig
@@ -1273,8 +1269,8 @@ Naprawiono polecenie cmdlet New-AzSqlDatabaseSecondary, aby sprawdzało istnieni
         - Dodano parametr -PublicIpAddress, który akceptuje co najmniej jeden obiekt publicznego adresu IP
         - Dodano parametr -VirtualNetwork, który akceptuje obiekt sieci wirtualnej
         - Dodano do obiektu zapory metody AddPublicIpAddress i RemovePublicIpAddress, które akceptują obiekt publicznego adresu IP jako dane wejściowe
-        - Wycofano parametry -PublicIpName i -VirtualNetworkName 
-* Zaktualizowano poniższe polecenia dla funkcji: Ustawiono w opcjach uwierzytelniania usługi AAD elementu VpnClient zasób bramy sieci wirtualnej. 
+        - Wycofano parametry -PublicIpName i -VirtualNetworkName
+* Zaktualizowano poniższe polecenia dla funkcji: Ustawiono w opcjach uwierzytelniania usługi AAD elementu VpnClient zasób bramy sieci wirtualnej.
     - Zaktualizowano polecenie New-AzVirtualNetworkGateway: Dodano parametry opcjonalne AadTenantUri, AadAudienceId i AadIssuerUri, aby ustawić opcje uwierzytelniania usługi AAD elementu VpnClient w bramie.
     - Zaktualizowano polecenie Set-AzVirtualNetworkGateway: Dodano parametry opcjonalne AadTenantUri, AadAudienceId i AadIssuerUri, aby ustawić opcje uwierzytelniania usługi AAD elementu VpnClient w bramie.
     - Zaktualizowano polecenie Set-AzVirtualNetworkGateway: Dodano opcjonalny parametr przełącznika RemoveAadAuthentication w celu usunięcia z bramy opcji uwierzytelniania usługi AAD elementu VpnClient.
@@ -1369,17 +1365,17 @@ Naprawiono polecenie cmdlet New-AzSqlDatabaseSecondary, aby sprawdzało istnieni
     - **Get-AzApiManagementSchema** — pobieranie schematów skonfigurowanych w interfejsie API
     - **Remove-AzApiManagementSchema** — usuwanie schematu skonfigurowanego w interfejsie API
     - **Set-AzApiManagementSchema** — aktualizowanie schematu skonfigurowanego w interfejsie API
-* Utworzono nowe polecenie cmdlet do generowania tokenu użytkownika. 
+* Utworzono nowe polecenie cmdlet do generowania tokenu użytkownika.
     - **New-AzApiManagementUserToken** — generowanie nowego tokenu użytkownika ważnego domyślnie przez 8 godzin. Za pomocą tego polecenia cmdlet można wygenerować token dla użytkownika „GIT”.
 * Utworzono nowe polecenie cmdlet do pobierania stanu sieci.
     - **Get-AzApiManagementNetworkStatus** — uzyskiwanie stanu sieci dla łączności z zasobami, od których zależy usługa API Management. Jest to przydatne w przypadku wdrażania usługi ApiManagement w sieci wirtualnej i weryfikacji, czy któreś z zależności są uszkodzone.
-* Zaktualizowano polecenie cmdlet **New-AzApiManagement** do zarządzania usługą ApiManagement 
+* Zaktualizowano polecenie cmdlet **New-AzApiManagement** do zarządzania usługą ApiManagement
     - Dodano obsługę nowych jednostek SKU „Zużycie”
     - Dodano obsługę włączania flagi „EnableClientCertificate” dla jednostek SKU „Zużycie”
     - Nowe polecenie cmdlet **New-AzApiManagementSslSetting** umożliwia skonfigurowanie ustawienia „TLS/SSL” na „Zaplecze” i „Fronton”. Za jego pomocą można też skonfigurować szyfrowanie, takie jak „3DES”, i protokoły serwera, takie jak „Http2”we frontonie usługi ApiManagement.
     - Dodano obsługę konfigurowania nazwy hosta „DeveloperPortal” usługi ApiManagement.
 * Zaktualizowano polecenia cmdlet **Get-AzApiManagementSsoToken**, aby przyjmowały jako wejście obiekt „PsApiManagement”
-* Zaktualizowano polecenie cmdlet, aby wyświetlało komunikaty o błędach śródwierszowo 
+* Zaktualizowano polecenie cmdlet, aby wyświetlało komunikaty o błędach śródwierszowo
      > PS D:\github\azure-powershell> Set-AzApiManagementPolicy -Context  -PolicyFilePath C:\wrongpolicy.xml -ApiId httpbin Set-AzApiManagementPolicy : Kod błędu: Komunikat o błędzie ValidationError: Co najmniej jedno pole zawiera nieprawidłową wartość: Szczegóły błędu:    [Code=ValidationError, Message=Błąd w elemencie „log-to-eventhub” w wierszu 3, kolumna 10: Nie znaleziono rejestratora, element docelowy=log-to-eventhub]
 * Zaktualizowano polecenie cmdlet **Export-AzApiManagementApi** tak, aby eksportowało interfejsy API w formacie „OpenApi 3.0”
 * Zaktualizowano polecenie cmdlet **Import-AzApiManagementApi**
@@ -1388,15 +1384,15 @@ Naprawiono polecenie cmdlet New-AzSqlDatabaseSecondary, aby sprawdzało istnieni
     - W celu przesłonięcia właściwości „ServiceUrl” określonej w dowolnym dokumencie.
 * Zaktualizowano polecenie cmdlet **Get-AzApiManagementPolicy** tak, aby zwracało zasady w formacie ze zmianą znaczenia inną niż Xml przy użyciu formatu „rawxml”
 * Zaktualizowano polecenie cmdlet **Set-AzApiManagementPolicy** tak, aby akceptowało zasady w formacie ze zmianą znaczenia inną niż Xml przy użyciu formatu „rawxml” i ze zmianą znaczenia Xml przy użyciu formatu „xml”
-* Zaktualizowano polecenie cmdlet **New-AzApiManagementApi** 
+* Zaktualizowano polecenie cmdlet **New-AzApiManagementApi**
     - W celu skonfigurowania interfejsu API za pomocą serwera autoryzacji „OpenId”.
     - W celu utworzenia interfejsu API we właściwości ApiVersionSet.
     - W celu sklonowania interfejsu API przy użyciu właściwości „SourceApiId” i „SourceApiRevision”.
-    - Możliwość skonfigurowania właściwości „SubscriptionRequired” w zakresie interfejsu API. 
+    - Możliwość skonfigurowania właściwości „SubscriptionRequired” w zakresie interfejsu API.
 * Zaktualizowano polecenie cmdlet **Set-AzApiManagementApi**
     - W celu skonfigurowania interfejsu API za pomocą serwera autoryzacji „OpenId”.
-    - W celu zaktualizowania interfejsu API we właściwości „ApiVersionSet”.    
-    - Możliwość skonfigurowania właściwości „SubscriptionRequired” w zakresie interfejsu API. 
+    - W celu zaktualizowania interfejsu API we właściwości „ApiVersionSet”.
+    - Możliwość skonfigurowania właściwości „SubscriptionRequired” w zakresie interfejsu API.
 * Zaktualizowano polecenie cmdlet **New-AzApiManagementRevision**
     - W celu klonowania (kopiowanie tagów, produktów, operacji i zasad) istniejącej wersji przy użyciu właściwości „SourceApiRevision”. Dla nowej wersji przyjmowana jest wartość „ApiId” elementu nadrzędnego.
     - W celu dostarczenia właściwości „ApiRevisionDescription”.
@@ -1422,7 +1418,7 @@ Naprawiono polecenie cmdlet New-AzSqlDatabaseSecondary, aby sprawdzało istnieni
     - „Get-AzApiManagementAuthorizationServer”
     - „Get-AzApiManagementBackend”
         > Get-AzApiManagementBackend -ResourceId /subscriptions/subid/resourceGroups/rgName/providers/Microsoft.ApiManagement/service/contoso/backends/servicefabric
-    - „Get-AzApiManagementCertificate” 
+    - „Get-AzApiManagementCertificate”
     - „Remove-AzApiManagementApiVersionSet”
     - „Remove-AzApiManagementSubscription”
 
@@ -1470,7 +1466,7 @@ Naprawiono polecenie cmdlet New-AzSqlDatabaseSecondary, aby sprawdzało istnieni
     - Do następujących poleceń cmdlet dodano nowy parametr ProximityPlacementGroupId:   New-AzAvailabilitySet   New-AzVMConfig   New-AzVmssConfig
 * Do polecenia New-AzGalleryImageVersion dodano parametr StorageAccountType.
 * Właściwość TargetRegion polecenia New-AzGalleryImageVersion może zawierać parametr StorageAccountType.
-* Do poleceń Stop-AzVM i Stop-AzVmss dodano parametr przełącznika SkipShutdown       
+* Do poleceń Stop-AzVM i Stop-AzVmss dodano parametr przełącznika SkipShutdown
 * Zmiany powodujące niezgodność
     - Polecenie Set-AzVMBootDiagnostics zamieniono na polecenie Set-AzVMBootDiagnostic.
     - Polecenie Export-AzLogAnalyticThrottledRequests zamieniono na polecenie Export-AzLogAnalyticThrottledRequests.
@@ -1505,7 +1501,7 @@ Naprawiono polecenie cmdlet New-AzSqlDatabaseSecondary, aby sprawdzało istnieni
     - Nie będzie to miało wpływu na użytkowników z rolą operatora usługi HDInsight.
 
 #### <a name="azmonitor"></a>Az.Monitor
-* Nowe polecenia cmdlet dla interfejsu API SQR (Scheduled Query Rule, reguła zaplanowanego zapytania)  
+* Nowe polecenia cmdlet dla interfejsu API SQR (Scheduled Query Rule, reguła zaplanowanego zapytania)
     - New-AzScheduledQueryRuleAlertingAction
     - New-AzScheduledQueryRuleAznsActionGroup
     - New-AzScheduledQueryRuleLogMetricTrigger
@@ -1603,7 +1599,7 @@ Naprawiono polecenie cmdlet New-AzSqlDatabaseSecondary, aby sprawdzało istnieni
 * Zaktualizowano tekst pomocy dla punktu końcowego w celu wskazania, że zasoby powinny zostać utworzone przed rozpoczęciem korzystania z poleceń cmdlet do tworzenia/aktualizacji subskrypcji zdarzenia.
 
 #### <a name="azeventhub"></a>Az.EventHub
-* Dodano nowe polecenia cmdlet dla elementu NetworkRuleSet przestrzeni nazw 
+* Dodano nowe polecenia cmdlet dla elementu NetworkRuleSet przestrzeni nazw
 
 #### <a name="azhdinsight"></a>Az.HDInsight
 * Zaktualizowano polecenia cmdlet z rzeczownikami w liczbie mnogiej do pojedynczej. Nazwy w liczbie mnogiej zostały oznaczone jako przestarzałe.
@@ -1693,7 +1689,7 @@ Naprawiono polecenie cmdlet New-AzSqlDatabaseSecondary, aby sprawdzało istnieni
 
 #### <a name="azcompute"></a>Az.Compute
 * Dodano parametr HyperVGeneration do poleceń New-AzDiskConfig i New-AzSnapshotConfig
-* Umożliwiono tworzenie maszyny wirtualnej za pomocą obrazu galerii z innych dzierżaw. 
+* Umożliwiono tworzenie maszyny wirtualnej za pomocą obrazu galerii z innych dzierżaw.
 
 #### <a name="azcontainerinstance"></a>Az.ContainerInstance
 * Rozwiązano problem w parametrze -Command polecenia New-AzContainerGroup, który polegał na dodawaniu pustego argumentu końcowego
@@ -1775,7 +1771,7 @@ Naprawiono polecenie cmdlet New-AzSqlDatabaseSecondary, aby sprawdzało istnieni
     - New-AzStorageAccountManagementPolicyRule
 
 #### <a name="azwebsites"></a>Az.Websites
-* Usunięto usterkę szablonu usługi ARM, która przerywała klonowanie wszystkich miejsc przy użyciu elementu „New-AzWebApp -IncludeSourceWebAppSlots” 
+* Usunięto usterkę szablonu usługi ARM, która przerywała klonowanie wszystkich miejsc przy użyciu elementu „New-AzWebApp -IncludeSourceWebAppSlots”
 
 ## <a name="150---march-2019"></a>1.5.0 — marzec 2019
 #### <a name="azaccounts"></a>Az.Accounts
@@ -1844,7 +1840,7 @@ Naprawiono polecenie cmdlet New-AzSqlDatabaseSecondary, aby sprawdzało istnieni
 * Dodano polecenia cmdlet na potrzeby wyliczania i przywracania usuniętego elementu usługi ADL
 
 #### <a name="azeventhub"></a>Az.EventHub
-* Dodano nową właściwość typu wartość logiczna SkipEmptyArchives w celu pomijania pustych archiwów w klasie CaptureDescription usługi Eventhub 
+* Dodano nową właściwość typu wartość logiczna SkipEmptyArchives w celu pomijania pustych archiwów w klasie CaptureDescription usługi Eventhub
 
 #### <a name="azkeyvault"></a>Az.KeyVault
 * Naprawiono tagowanie w poleceniu Set-AzKeyVaultSecret
@@ -1872,8 +1868,8 @@ Naprawiono polecenie cmdlet New-AzSqlDatabaseSecondary, aby sprawdzało istnieni
 
 #### <a name="azoperationalinsights"></a>Az.OperationalInsights
 * Dodatkowa obsługa źródła danych New i Get ApplicationInsights.
-    - Dodano nowy rodzaj „Application Insights” do obsługi źródeł danych usługi ApplicationInsights typu Pobierz określone i Pobierz wszystkie dla danego obszaru roboczego. 
-    - Dodano polecenie cmdlet New-AzOperationalInsightsApplicationInsightsDataSource służące do tworzenia źródła danych z użyciem danych parametrów zasobów usługi Application-Insights: identyfikator subskrypcji, resourceGroupName i nazwa. 
+    - Dodano nowy rodzaj „Application Insights” do obsługi źródeł danych usługi ApplicationInsights typu Pobierz określone i Pobierz wszystkie dla danego obszaru roboczego.
+    - Dodano polecenie cmdlet New-AzOperationalInsightsApplicationInsightsDataSource służące do tworzenia źródła danych z użyciem danych parametrów zasobów usługi Application-Insights: identyfikator subskrypcji, resourceGroupName i nazwa.
 
 #### <a name="azresources"></a>Az.Resources
 * Rozwiązano problem https://github.com/Azure/azure-powershell/issues/8166
@@ -1904,9 +1900,9 @@ Ogólna dostępność modułu Az.AnalysisServices.
 Ogólna dostępność modułu Az.RecoveryServices.
 
 #### <a name="azresources"></a>Az.Resources
-* Poprawiono tagowanie dla grup zasobów 
+* Poprawiono tagowanie dla grup zasobów
     - Więcej informacji: https://github.com/Azure/azure-powershell/issues/8166
-* Rozwiązano problem polegający na tym, że polecenie `Get-AzureRmRoleAssignment` nie uwzględniało parametru -ErrorAction 
+* Rozwiązano problem polegający na tym, że polecenie `Get-AzureRmRoleAssignment` nie uwzględniało parametru -ErrorAction
     - Więcej informacji: https://github.com/Azure/azure-powershell/issues/8235
 
 #### <a name="azsql"></a>Az.Sql
@@ -2211,7 +2207,7 @@ Dodano obsługę konfigurowania zestawów RewriteRuleSet w usłudze Application 
 
 ### <a name="azwebsites"></a>Az.Websites
 
-* Set-AzureRmWebApp i Set-AzureRmWebAppSlot 
+* Set-AzureRmWebApp i Set-AzureRmWebAppSlot
     - Dodano nowy parametr (-AzureStoragePath) umożliwiający określenie ścieżek usługi Azure Storage, które mają zostać zainstalowane w aplikacjach kontenera systemów Windows i Linux. Użyj danych wyjściowych nowego polecenia cmdlet New-AzureRmWebAppAzureStoragePath jako parametru, aby ustawić ścieżki usługi Azure Storage.
 
 ## <a name="061---november-2018"></a>0.6.1 — listopad 2018 r.
@@ -2239,7 +2235,7 @@ Dodano obsługę konfigurowania zestawów RewriteRuleSet w usłudze Application 
 ### <a name="aznetwork"></a>Az.Network
 * Dodano następujące polecenia cmdlet: New-AzureRmApplicationGatewayCustomError, Add-AzureRmApplicationGatewayCustomError, Get-AzureRmApplicationGatewayCustomError, Set-AzureRmApplicationGatewayCustomError, Remove-AzureRmApplicationGatewayCustomError, Add-AzureRmApplicationGatewayHttpListenerCustomError, Get-AzureRmApplicationGatewayHttpListenerCustomError, Set-AzureRmApplicationGatewayHttpListenerCustomError, Remove-AzureRmApplicationGatewayHttpListenerCustomError
 * Ponownie dodano protokół ICMP do obsługiwanych protokołów sieciowych AzureFirewall
-* Aktualizacja polecenia cmdlet Test-AzureRmNetworkWatcherConnectivity — dodanie walidacji identyfikatora, adresu i portu docelowego. 
+* Aktualizacja polecenia cmdlet Test-AzureRmNetworkWatcherConnectivity — dodanie walidacji identyfikatora, adresu i portu docelowego.
 * Rozwiązano problemy z użyciem pamięci w mapie VirtualNetwork
 
 ### <a name="azrecoveryservicesbackup"></a>Az.RecoveryServices.Backup
@@ -2371,7 +2367,7 @@ Dodano obsługę konfigurowania zestawów RewriteRuleSet w usłudze Application 
     - Start-AzureStorageFileCopy
 * Dodano obsługę pobierania danych użycia zasobów magazynu w określonej lokalizacji i dodano komunikat ostrzegawczy w przypadku pobrania przestarzałych danych użycia globalnego zasobu magazynu.
     - Get-AzStorageUsage
-    
+
 #### <a name="azcognitiveservices"></a>Az.CognitiveServices
 * Obsługa polecenia Get-AzCognitiveServicesAccountSkus bez istniejącego konta.
 
