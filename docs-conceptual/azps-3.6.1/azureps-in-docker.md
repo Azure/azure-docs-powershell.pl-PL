@@ -3,13 +3,13 @@ title: Korzystanie z programu Azure PowerShell na platformie Docker
 description: Jak używać programu Azure PowerShell wstępnie zainstalowanego w obrazie platformy Docker.
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 03/10/2020
-ms.openlocfilehash: a5746b71cfc41f7c6283b0e95b0940ca4b594ec7
-ms.sourcegitcommit: fb95591c45bb5f12b98e0690938d18f2ec611897
+ms.date: 03/20/2020
+ms.openlocfilehash: b5ad201abcabbdc1a88db241b028d88f05054a14
+ms.sourcegitcommit: 104c90600e0c5eeb841b5a596ba7ebe60cc7f4fa
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79402684"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "79990533"
 ---
 # <a name="using-azure-powershell-in-docker"></a>Korzystanie z programu Azure PowerShell na platformie Docker
 
@@ -19,13 +19,13 @@ Publikujemy obrazy platformy Docker z wstępnie zainstalowanym programem Azure P
 
 Wydane obrazy wymagają platformy Docker 17.05 lub nowszej. Oczekuje się również, że możesz uruchomić platformę Docker bez użycia polecenia `sudo` ani lokalnych uprawnień administracyjnych. Skorzystaj z oficjalnych [instrukcji][install], aby poprawnie zainstalować platformę `docker`.
 
-Wydane kontenery zostały utworzone na podstawie oficjalnych kontenerów programu PowerShell, a następnie dodano do nich moduł Az jako warstwę.
+Najnowszy obraz kontenera zawiera najnowszą wersję programu PowerShell i najnowsze moduły Azure PowerShell obsługiwane przez moduł Az.
 
-Najnowszy stabilny obraz obejmuje następujące składniki:
+Z każdą nową wersją modułu Az wydajemy obraz dla następujących systemów operacyjnych:
 
-- Ubuntu 18.04
-- PowerShell 6.2.4
-- Najnowszy moduł Az programu Azure PowerShell
+- Ubuntu 18.04 (domyślny)
+- Debian 9
+- CentOS 7
 
 Pełną listę dostępnych obrazów można znaleźć na naszej stronie [obrazów platformy Docker][az image].
 
@@ -44,6 +44,8 @@ Poniższe kroki pokazują polecenia platformy Docker wymagane do pobrania obrazu
    ```console
    docker run -it mcr.microsoft.com/azure-powershell pwsh
    ```
+
+W przypadku hostów platformy Docker z systemem Windows musisz włączyć udostępnianie plików platformy Docker, aby umożliwić udostępnienie lokalnych dysków systemu Windows dla kontenerów z systemem Linux. Aby uzyskać więcej informacji, zobacz [Wprowadzenie do programu Docker for Windows][file-sharing].
 
 ### <a name="run-the-azure-powershell-container-interactively-using-host-authentication"></a>Interaktywne uruchamianie kontenera azure-powershell przy użyciu uwierzytelniania hosta
 
@@ -71,3 +73,4 @@ Aby dowiedzieć się więcej o modułach programu Azure PowerShell i ich funkcja
 [install]: https://docs.docker.com/engine/installation/
 [powershell image]: https://hub.docker.com/_/microsoft-powershell
 [az image]: https://hub.docker.com/_/microsoft-azure-powershell
+[file-sharing]: https://docs.docker.com/docker-for-windows/#file-sharing
