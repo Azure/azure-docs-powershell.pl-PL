@@ -22,7 +22,7 @@ landingContent:
             url: 'https://shell.azure.com'
       - linkListType: get-started
         links:
-          - text: Rozpoczęcie pracy
+          - text: Rozpoczynanie pracy
             url: get-started-azureps.md
           - text: Poznaj pojęcia dotyczące programu PowerShell
             url: /powershell/scripting/overview
@@ -30,7 +30,7 @@ landingContent:
         links:
           - text: Uwierzytelnianie za pomocą programu Azure PowerShell
             url: authenticate-azureps.md
-          - text: Tworzenie nazwy głównej usługi
+          - text: Tworzenie jednostki usługi
             url: create-azure-service-principal-azureps.md
           - text: Filtrowanie wyników poleceń cmdlet
             url: queries-azureps.md

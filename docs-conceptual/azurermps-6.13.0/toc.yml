@@ -8,7 +8,7 @@
       href: other-install.md
 - name: Dezinstalacja
   href: uninstall-azurerm-ps.md
-- name: Rozpoczęcie pracy
+- name: Rozpoczynanie pracy
   href: get-started-azureps.md
 - name: Cloud Shell
   href: 'https://docs.microsoft.com/azure/cloud-shell/overview'
@@ -16,7 +16,7 @@
   items:
     - name: Metody uwierzytelniania
       href: authenticate-azureps.md
-    - name: Tworzenie nazwy głównej usługi
+    - name: Tworzenie jednostki usługi
       href: create-azure-service-principal-azureps.md
     - name: Poświadczenia trwałe
       href: context-persistence.md
