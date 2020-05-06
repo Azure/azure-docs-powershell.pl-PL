@@ -9,10 +9,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/09/2018
 ms.openlocfilehash: 38bb4345a9e4d2d9e450e74f99fb2c320c3ca4d8
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "65534911"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Tworzenie jednostki usługi platformy Azure za pomocą programu Azure PowerShell
@@ -26,7 +26,7 @@ Jeśli planujesz zarządzanie swoją aplikacją lub usługą za pomocą programu
 
 ## <a name="what-is-a-service-principal"></a>Co to jest „jednostka usługi”?
 
-Jednostka usługi platformy Azure to tożsamość zabezpieczeń używana przez aplikacje, usługi i narzędzia automatyzacji utworzone przez użytkownika w celu uzyskania dostępu do określonych zasobów platformy Azure. Można ją traktować jako „tożsamość użytkownika” (nazwa logowania i hasło lub certyfikat) z określoną rolą i ściśle kontrolowanymi uprawnieniami. W odróżnieniu od ogólnej tożsamości użytkownika, jednostka usługi powinna wykonywać tylko określone czynności. Nazwa główna usługi pozwala poprawić bezpieczeństwo, jeśli przyznasz jej tylko minimalny poziom uprawnień potrzebny do wykonywania zadań zarządzania.
+Jednostka usługi platformy Azure to tożsamość zabezpieczeń używana przez aplikacje, usługi i narzędzia automatyzacji utworzone przez użytkownika w celu uzyskania dostępu do określonych zasobów platformy Azure. Można ją traktować jako „tożsamość użytkownika” (nazwa logowania i hasło lub certyfikat) z określoną rolą i ściśle kontrolowanymi uprawnieniami. W odróżnieniu od ogólnej tożsamości użytkownika, jednostka usługi powinna wykonywać tylko określone czynności. Poprawia to bezpieczeństwo, jeśli tylko przyznasz jej minimalny poziom uprawnień potrzebny do wykonywania zadań zarządzania.
 
 ## <a name="verify-your-own-permission-level"></a>Sprawdzenie własnego poziomu uprawnień
 
@@ -61,7 +61,7 @@ AppPermissions          :
 ReplyUrls               : {}
 ```
 
-### <a name="create-a-service-principal-for-your-application"></a>Tworzenie jednostki usługi dla aplikacji
+### <a name="create-a-service-principal-for-your-application"></a>Tworzenie jednostki usługi dla swojej aplikacji
 
 Do utworzenia jednostki usługi służy polecenie cmdlet `New-AzureRmADServicePrincipal`.
 
@@ -112,7 +112,7 @@ Gratulacje! Możesz użyć tych poświadczeń do uruchomienia aplikacji. Następ
 ## <a name="managing-roles"></a>Zarządzanie rolami
 
 > [!NOTE]
-> Kontrola dostępu oparta na rolach (RBAC) platformy Azure to model definiowania ról użytkowników i jednostek usługi oraz zarządzania nimi. Role mają skojarzone ze sobą zestawy uprawnień umożliwiające wskazanie zasobów, które nazwa główna może odczytywać, zapisywać, do których może uzyskać dostęp lub którymi może zarządzać. Aby uzyskać więcej informacji o rolach i kontroli dostępu opartej na rolach, zobacz [RBAC: Built-in roles](/azure/active-directory/role-based-access-built-in-roles) (Kontrola dostępu oparta na rolach: role wbudowane).
+> Kontrola dostępu oparta na rolach (RBAC) platformy Azure to model definiowania ról użytkowników i jednostek usługi oraz zarządzania nimi. Role mają skojarzone ze sobą zestawy uprawnień umożliwiające wskazanie zasobów, które nazwa główna może odczytywać, zapisywać, do których może uzyskać dostęp lub którymi może zarządzać. Aby uzyskać więcej informacji o kontroli dostępu opartej na rolach i samych rolach, zobacz [RBAC: Built-in roles](/azure/active-directory/role-based-access-built-in-roles) (Kontrola dostępu oparta na rolach [RBAC]: wbudowane role).
 
 Program Azure PowerShell udostępnia następujące polecenia cmdlet do zarządzania przypisaniami ról:
 
@@ -121,7 +121,7 @@ Program Azure PowerShell udostępnia następujące polecenia cmdlet do zarządza
 * [Remove-AzureRmRoleAssignment](/powershell/module/azurerm.resources/remove-azurermroleassignment)
 
 Rolą domyślną dla jednostki usługi jest **Współautor**. Biorąc pod uwagę szerokie uprawnienia tej roli, jej użycie może nie być najlepszą opcją, w zależności od zakresu interakcji aplikacji z usługami platformy Azure.
-Rola **Czytelnik** jest bardziej restrykcyjna i jest dobrym wyborem dla aplikacji potrzebujących dostępu tylko do odczytu. Za pomocą witryny Azure Portal możesz wyświetlić szczegóły uprawnień specyficznych dla ról lub utworzyć niestandardowe uprawnienia.
+Rola **Czytelnik** jest bardziej restrykcyjna i jest dobrym wyborem dla aplikacji potrzebujących dostępu tylko do odczytu. Za pomocą witryny Azure Portal możesz wyświetlić szczegóły dotyczące uprawnień specyficznych dla ról lub utworzyć role niestandardowe.
 
 Zmienimy teraz poprzedni przykład — dodamy rolę **Czytelnik** i usuniemy rolę **Współautor**:
 
@@ -170,7 +170,7 @@ Inne polecenia cmdlet programu Azure PowerShell umożliwiające zarządzania rol
 
 ## <a name="change-the-credentials-of-the-security-principal"></a>Zmienianie poświadczeń podmiotu zabezpieczeń
 
-Dobrą praktyką w zakresie zabezpieczeń jest regularne sprawdzanie uprawnień i aktualizowanie haseł. Warto też zarządzać poświadczeniami zabezpieczeń i modyfikować je w miarę wprowadzania zmian w aplikacji. Można na przykład zmienić hasło jednostki usługi, tworząc nowe hasło i usuwając stare.
+Dobrą praktyką w zakresie zabezpieczeń jest regularne sprawdzanie uprawnień i aktualizowanie haseł. Możesz też zarządzać poświadczeniami zabezpieczeń i modyfikować je w miarę wprowadzania zmian w aplikacji. Można na przykład zmienić hasło jednostki usługi, tworząc nowe hasło i usuwając stare.
 
 ### <a name="add-a-new-password-for-the-service-principal"></a>Dodawanie nowego hasła dla jednostki usługi
 

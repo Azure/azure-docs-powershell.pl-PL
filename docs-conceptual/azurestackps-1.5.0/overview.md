@@ -9,18 +9,18 @@ ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
 ms.openlocfilehash: afa83a6258e57e961576b328e67fad634704dddf
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56153903"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "63053362"
 ---
 # <a name="azure-stack-module-150"></a>Moduł usługi Azure Stack w wersji 1.5.0
 
 ## <a name="requirements"></a>Wymagania:
 Minimalna obsługiwana wersja usługi Azure Stack to 1808.
 
-Uwaga: Jeśli używasz starszej wersji, zainstaluj wersję 1.4.0
+Uwaga: jeśli używasz starszej wersji, zainstaluj wersję 1.4.0
 
 ## <a name="known-issues"></a>Znane problemy:
 
@@ -78,7 +78,7 @@ Wersja zapoznawcza modułu administratora Backup, który pozwala administratorom
 ### <a name="commerce"></a>Commerce
 Wersja zapoznawcza modułu administratora Commerce usługi Azure Stack, który umożliwia wyświetlanie zagregowanego użycia danych w całym systemie usługi Azure Stack.
 
-### <a name="compute"></a>Wystąpienia obliczeniowe
+### <a name="compute"></a>Compute
 Wersja zapoznawcza modułu administratora Compute usługi Azure Stack, który udostępnia funkcje zarządzania limitami przydziału zasobów obliczeniowych, obrazami platformy, dyskami zarządzanymi oraz rozszerzeniami maszyn wirtualnych.
 
 ### <a name="fabric"></a>Fabric
@@ -102,13 +102,13 @@ Wersja zapoznawcza modułu administratora Infrastructure Insights, który pozwal
 ### <a name="keyvault"></a>KeyVault
 Wersja zapoznawcza modułu administratora KeyVault usługi Azure Stack, który pozwala administratorowi na wyświetlanie limitów przydziału magazynu kluczy.
 
-### <a name="network"></a>Sieć
+### <a name="network"></a>Network
 Wersja zapoznawcza modułu administratora Network, który pozwala na:
 - Zarządzanie limitami przydziału sieci
 - Wyświetlanie przydzielonych zasobów sieciowych, takich jak publiczne adresy IP, sieci wirtualne oraz moduły równoważenia obciążenia
 - Korzystanie z polecenia cmdlet, które wyświetla przegląd administratora
 
-### <a name="storage"></a>Magazyn
+### <a name="storage"></a>Storage
 Wersja zapoznawcza modułu administratora Storage usługi Azure Stack.  W tej wersji udostępniamy następujące funkcje:
 - Zarządzanie limitami przydziału magazynu
 - Odzyskiwanie pamięci w przypadku usuniętych zasobów magazynu

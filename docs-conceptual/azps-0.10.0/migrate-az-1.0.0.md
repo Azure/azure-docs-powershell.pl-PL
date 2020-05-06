@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2019
 ms.openlocfilehash: e5121d61b0f5f68ff3e1f33d774e3533adfeb64f
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/16/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81445547"
 ---
 # <a name="breaking-changes-for-az-100"></a>Zmiany powodujące niezgodność w module Az 1.0.0
@@ -58,7 +58,7 @@ W tej sekcji przedstawiono ogólne zmiany powodujące niezgodność wprowadzone 
 
 ### <a name="cmdlet-noun-prefix-changes"></a>Zmiany prefiksów poleceń cmdlet w postaci rzeczownika
 
-W module AzureRM polecenia cmdlet używały ciągu `AzureRM` lub `Azure` jako prefiksu w postaci rzeczownika.  Moduł Az upraszcza i normalizuje nazwy poleceń cmdlet, więc wszystkie polecenia cmdlet mają prefiks w postaci rzeczownika „Az”. Przykład:
+W module AzureRM polecenia cmdlet używały ciągu `AzureRM` lub `Azure` jako prefiksu w postaci rzeczownika.  Moduł Az upraszcza i normalizuje nazwy poleceń cmdlet, więc wszystkie polecenia cmdlet mają prefiks w postaci rzeczownika „Az”. Na przykład:
 
 ```azurepowershell-interactive
 Get-AzureRMVM
@@ -125,7 +125,7 @@ Zmiany nazw modułów oznaczają, że każdy skrypt, który używa instrukcji `#
 
 #### <a name="migrating-requires-and-import-module-statements"></a>Migrowanie instrukcji #Requires i Import-Module
 
-Skrypty używające instrukcji `#Requires` lub `Import-Module` do deklarowania zależności od modułów AzureRM należy zaktualizować tak, aby używały nowych nazw modułów. Przykład:
+Skrypty używające instrukcji `#Requires` lub `Import-Module` do deklarowania zależności od modułów AzureRM należy zaktualizować tak, aby używały nowych nazw modułów. Na przykład:
 
 ```azurepowershell-interactive
 #Requires -Module AzureRM.Compute
@@ -280,7 +280,7 @@ W tej sekcji szczegółowo opisano konkretne zmiany powodujące niezgodność w 
 
 ### <a name="azmonitor-previously-azurerminsights"></a>Az.Monitor (wcześniej AzureRM.Insights)
 
-- Z polecenia cmdlet `Set-AzDiagnosticSetting` usunięto parametry o nazwach w liczbie mnogiej `Categories` i `Timegrains`, aby zastąpić je nazwami parametrów w liczbie pojedynczej. Skrypty używające kodu
+- Z polecenia cmdlet `Categories` usunięto parametry o nazwach w liczbie mnogiej `Timegrains` i `Set-AzDiagnosticSetting`, aby zastąpić je nazwami parametrów w liczbie pojedynczej. Skrypty używające kodu
   ```azurepowershell-interactive
   Set-AzureRmDiagnosticSetting -Timegrains PT1M -Categories Category1, Category2
   ```

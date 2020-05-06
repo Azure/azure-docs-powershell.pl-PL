@@ -19,7 +19,7 @@
     - name: Zmiany między narzędziami AzureRM i Az
       href: migrate-az-1.0.0.md
       displayName: 'breaking, cmdlet, module, names'
-- name: Rozpoczęcie pracy
+- name: Rozpoczynanie pracy
   href: get-started-azureps.md
   displayName: 'sign in, signin, log in, login, find, feedback, intro, introduction'
 - name: Cloud Shell
@@ -31,7 +31,7 @@
     - name: Metody uwierzytelniania
       href: authenticate-azureps.md
       displayName: 'sign in, signin, log in, login, credentials, msi, managed identity, tenant, subscription, region, certificate, service principal, authenticate'
-    - name: Tworzenie nazwy głównej usługi
+    - name: Tworzenie jednostki usługi
       href: create-azure-service-principal-azureps.md
       displayName: 'automation, application, web app, script, certificate, sign in, signin, log in, login, devops, dev ops, itpro, it pro, role, aad, authentication, authenticate'
     - name: Konteksty poświadczeń

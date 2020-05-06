@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2019
 ms.openlocfilehash: ea7593cf2b753b210ff2955b7bd450030ad83596
-ms.sourcegitcommit: f9445d1525eac8c165637e1a80fbc92b1ab005c2
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/16/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "75035833"
 ---
 # <a name="breaking-changes-for-az-100"></a>Zmiany powodujące niezgodność w module Az 1.0.0
@@ -277,7 +277,7 @@ W tej sekcji szczegółowo opisano konkretne zmiany powodujące niezgodność w 
 
 ### <a name="azmonitor-previously-azurerminsights"></a>Az.Monitor (wcześniej AzureRM.Insights)
 
-- Z polecenia cmdlet `Set-AzDiagnosticSetting` usunięto parametry o nazwach w liczbie mnogiej `Categories` i `Timegrains`, aby zastąpić je nazwami parametrów w liczbie pojedynczej. Skrypty używające kodu
+- Z polecenia cmdlet `Categories` usunięto parametry o nazwach w liczbie mnogiej `Timegrains` i `Set-AzDiagnosticSetting`, aby zastąpić je nazwami parametrów w liczbie pojedynczej. Skrypty używające kodu
   ```azurepowershell-interactive
   Set-AzureRmDiagnosticSetting -Timegrains PT1M -Categories Category1, Category2
   ```
