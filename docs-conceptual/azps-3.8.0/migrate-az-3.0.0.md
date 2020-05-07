@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.openlocfilehash: e88752e0c997efc4f49161e358072803cb63450a
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/21/2020
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "81740137"
 ---
 # <a name="migration-guide-for-az-300"></a>Przewodnik migracji modułu Az 3.0.0
@@ -110,7 +110,7 @@ Get-AzBatchSupportedImage -BatchContext $Context
 ### <a name="previous-version-incompatibility-with-azresources-module"></a>Niezgodność poprzedniej wersji z modułem Az.Resources
 Wersja 2.0.1 modułu „Az.Batch” jest niezgodna ze starszymi wersjami (wersja 1.7.0 i wcześniejsze) modułu „Az.Resources”.  Spowoduje to brak możliwości importowania wersji 1.7.0 modułu „Az.Resources”, gdy zostanie zaimportowana wersja 2.0.1 modułu „Az.Batch”.  Aby rozwiązać ten problem, zaktualizuj moduł „Az.Resources” do wersji 1.7.1 lub nowszej albo zainstaluj najnowszą wersję modułu „Az”.
 
-## <a name="compute"></a>Wystąpienia obliczeniowe
+## <a name="compute"></a>Compute
 
 ### `New-AzDiskConfig`
 Parametr `UploadSizeInBytes` jest używany zamiast parametru `DiskSizeGB` dla polecenia cmdlet `New-AzDiskConfig`, gdy opcja CreateOption ma wartość Upload
