@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
 ms.openlocfilehash: 442dfed6175f2f5e2f386df3cb2bcea4871bcc01
-ms.sourcegitcommit: 0fdccb57a356b6e7c35a77b1f76e01fb96ef582b
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "65854165"
 ---
 # <a name="persisting-user-credentials-across-powershell-sessions"></a>Utrwalanie poświadczeń użytkownika między sesjami programu PowerShell
@@ -83,7 +83,7 @@ PS C:\> Set-AzureRMContext -Subscription "Contoso Subscription 1" -Name "Contoso
 
 Poprzedni przykład dodaje nowy kontekst, którego obiektem docelowym jest „Contoso Subscription 1”, z użyciem bieżących poświadczeń użytkownika. Nowy kontekst ma nazwę „Contoso1”. Jeśli nie podasz nazwy dla tego kontekstu, będzie używana nazwa domyślna zawierająca identyfikator konta i identyfikator subskrypcji.
 
-Aby zmienić nazwę istniejącego kontekstu, użyj polecenia cmdlet `Rename-AzureRmContext`. Na przykład:
+Aby zmienić nazwę istniejącego kontekstu, użyj polecenia cmdlet `Rename-AzureRmContext`. Przykład:
 
 ```azurepowershell-interactive
 PS C:\> Rename-AzureRmContext '[user1@contoso.org; 123456-7890-1234-564321]` 'Contoso2'
@@ -91,7 +91,7 @@ PS C:\> Rename-AzureRmContext '[user1@contoso.org; 123456-7890-1234-564321]` 'Co
 
 Ten przykład zmienia nazwę kontekstu o nazwie automatycznej `[user1@contoso.org; 123456-7890-1234-564321]` na prostą nazwę „Contoso2”. Polecenia cmdlet, które zarządzają kontekstami, używają również wypełniania po naciśnięciu klawisza TAB, dzięki czemu możliwe jest szybkie wybieranie kontekstu.
 
-Aby na koniec usunąć kontekst, użyj polecenia cmdlet `Remove-AzureRmContext`.  Na przykład:
+Aby na koniec usunąć kontekst, użyj polecenia cmdlet `Remove-AzureRmContext`.  Przykład:
 
 ```azurepowershell-interactive
 PS C:\> Remove-AzureRmContext Contoso2
