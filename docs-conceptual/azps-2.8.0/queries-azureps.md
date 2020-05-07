@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 01/10/2019
 ms.openlocfilehash: 9141f5640467722608cb7748f425ce3942668fb8
-ms.sourcegitcommit: 0b94b9566124331d0b15eb7f5a811305c254172e
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "72370236"
 ---
 # <a name="query-output-of-azure-powershell"></a>Wykonywanie zapytań dotyczących danych wyjściowych programu Azure PowerShell 

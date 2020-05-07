@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/21/2019
 ms.openlocfilehash: d74d3681794398534fe2c75a0c8fc314767ffa85
-ms.sourcegitcommit: 1cdff856d1d559b978aac6bc034dd2f99ac04afe
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/23/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "72791482"
 ---
 # <a name="run-azure-powershell-cmdlets-in-powershell-jobs"></a>Uruchamianie poleceń cmdlet środowiska Azure PowerShell w zadaniach programu PowerShell
