@@ -280,7 +280,7 @@ W tej sekcji szczegółowo opisano konkretne zmiany powodujące niezgodność w 
 
 ### <a name="azmonitor-previously-azurerminsights"></a>Az.Monitor (wcześniej AzureRM.Insights)
 
-- Z polecenia cmdlet `Categories` usunięto parametry o nazwach w liczbie mnogiej `Timegrains` i `Set-AzDiagnosticSetting`, aby zastąpić je nazwami parametrów w liczbie pojedynczej. Skrypty używające kodu
+- Z polecenia cmdlet `Set-AzDiagnosticSetting` usunięto parametry o nazwach w liczbie mnogiej `Categories` i `Timegrains`, aby zastąpić je nazwami parametrów w liczbie pojedynczej. Skrypty używające kodu
   ```azurepowershell-interactive
   Set-AzureRmDiagnosticSetting -Timegrains PT1M -Categories Category1, Category2
   ```
