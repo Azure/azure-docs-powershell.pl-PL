@@ -30,7 +30,7 @@ Pobierz [pakiet WebPI programu Azure PowerShell](https://aka.ms/webpi-azps) i ur
 >
 > Moduły z Galerii programu PowerShell są instalowane w folderze `$env:ProgramFiles\WindowsPowerShell\Modules`. Z kolei instalator pakietu WebPI instaluje moduły platformy Azure w folderze `$env:ProgramFiles(x86)\Microsoft SDKs\Azure\PowerShell\`.
 >
-> Jeśli podczas instalacji wystąpi błąd, można ręcznie usunąć foldery Azure\* z folderu `$env:ProgramFiles\WindowsPowerShell\Modules`, a następnie ponowić próbę instalacji.
+> Jeśli podczas instalacji wystąpi błąd, można ręcznie usunąć foldery Azure`$env:ProgramFiles\WindowsPowerShell\Modules` z folderu \*, a następnie ponowić próbę instalacji.
 
 Po zakończeniu instalacji ustawienie `$env:PSModulePath` powinno obejmować katalogi zawierające polecenia cmdlet programu Azure PowerShell. Poprawność instalacji programu Azure PowerShell można sprawdzić za pomocą następującego polecenia.
 
