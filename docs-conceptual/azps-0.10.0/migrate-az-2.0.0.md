@@ -1,18 +1,15 @@
 ---
 title: Przewodnik migracji modułu Az 2.0.0
 description: Ten przewodnik migracji zawiera listę zmian powodujących niezgodność wprowadzonych w wersji 2.0 modułu Az programu Azure PowerShell.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/24/2019
-ms.openlocfilehash: 133769c09f74e1d0d90eff0c6c4bdbb90d1ebe24
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 91362f3cc6b35e96a543c1304fb55acbf373d291
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81445496"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387687"
 ---
 # <a name="migration-guide-for-az-200"></a>Przewodnik migracji modułu Az 2.0.0
 

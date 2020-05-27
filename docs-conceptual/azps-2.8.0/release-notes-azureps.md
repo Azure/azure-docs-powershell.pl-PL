@@ -1,18 +1,15 @@
 ---
 title: Informacje o wersji programu Azure PowerShell
 description: Uzyskaj informacje na temat wszystkich najnowszych aktualizacji modułów programu Azure PowerShell.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/15/2019
-ms.openlocfilehash: 98a24c805fbf43dd899119d43301b4261c1f60dc
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 0fc897579e8caef999c337303428fd12740c3606
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "75035765"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83386106"
 ---
 ## <a name="280---october-2019"></a>2.8.0 — październik 2019 r.
 ### <a name="general"></a>Ogólne

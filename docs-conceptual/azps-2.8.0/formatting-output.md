@@ -1,18 +1,15 @@
 ---
 title: Formatowanie danych wyjściowych polecenia cmdlet programu Azure PowerShell
 description: Jak formatować dane wyjściowe polecenia cmdlet programu Azure PowerShell.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 01/07/2019
-ms.openlocfilehash: e5c9a9df830f6d866d171107472ff94166442be9
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: dbce06569ada169cdd93ae85d40e1554a7f7fdec
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "72370369"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387313"
 ---
 # <a name="format-azure-powershell-cmdlet-output"></a>Formatowanie danych wyjściowych polecenia cmdlet programu Azure PowerShell
 

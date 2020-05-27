@@ -1,18 +1,15 @@
 ---
 title: Korzystanie z eksperymentalnych modułów programu Azure PowerShell
 description: Wyjaśnienie filozofii i zasad użycia eksperymentalnych modułów programu Azure PowerShell.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/11/2018
-ms.openlocfilehash: 11847ca2fe09ebeb48f962eab6dac2be06bd8805
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 2c52dec39bdc656c7a2b17c547ec5f87ac659fa1
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "65534348"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387296"
 ---
 # <a name="use-experimental-azure-powershell-modules"></a>Korzystanie z eksperymentalnych modułów programu Azure PowerShell
 
@@ -69,7 +66,7 @@ Ulepszenia funkcji podstawowych są traktowane jako zdroworozsądkowe, a w celu 
 
 - Krótsze nazwy — obejmują nazwy poleceń cmdlet (na przykład `New-AzureRmVM` => `New-AzVm`) oraz nazwy parametrów (na przykład `-ResourceGroupName` => `-Rg`). W celu zapewniania zgodności ze „starymi” poleceniami cmdlet należy stosować aliasy. Wymagane jest udostępnianie zestawów parametrów _zgodnych z poprzednimi wersjami_.
 
-- Inteligentne wartości domyślne — inteligentne wartości domyślne należy tworzyć, aby wypełniać „wymagane” informacje. Na przykład:
+- Inteligentne wartości domyślne — inteligentne wartości domyślne należy tworzyć, aby wypełniać „wymagane” informacje. Przykład:
   - Grupa zasobów
   - Lokalizacja
   - Zasoby zależne

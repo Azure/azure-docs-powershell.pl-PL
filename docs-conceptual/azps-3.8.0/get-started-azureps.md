@@ -1,18 +1,15 @@
 ---
 title: Rozpoczynanie pracy z programem Azure PowerShell
 description: ''
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 04/24/2020
-ms.openlocfilehash: 70f74cf4d3c2465dac88d694f9b373e43c48f64c
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: c0b8ab83052bbe069abe170955f9409eca2118d6
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82587979"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387500"
 ---
 # <a name="get-started-with-azure-powershell"></a>Rozpoczynanie pracy z programem Azure PowerShell
 

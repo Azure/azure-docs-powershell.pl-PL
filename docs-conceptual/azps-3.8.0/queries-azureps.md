@@ -1,18 +1,15 @@
 ---
 title: Wykonywanie zapytań względem danych wyjściowych poleceń cmdlet programu Azure PowerShell
 description: Jak wykonać zapytanie dotyczące zasobów platformy Azure i sformatować wyniki.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 01/10/2019
-ms.openlocfilehash: 9141f5640467722608cb7748f425ce3942668fb8
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: ebd108a2c13bdb376213d054fb72188e6205a565
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81740426"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387364"
 ---
 # <a name="query-output-of-azure-powershell"></a>Wykonywanie zapytań dotyczących danych wyjściowych programu Azure PowerShell 
 

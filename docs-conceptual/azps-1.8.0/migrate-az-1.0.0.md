@@ -1,18 +1,15 @@
 ---
 title: Wszystkie różnice między modułem AzureRM i modułem Az 1.0.0 programu Azure PowerShell
 description: Ten przewodnik migracji zawiera listę zmian powodujących niezgodność wprowadzonych w wersji 1 modułu Az programu Azure PowerShell.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2019
-ms.openlocfilehash: ea7593cf2b753b210ff2955b7bd450030ad83596
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: d2e67ada70fed91a939dc72935e2fa639c731002
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "75035833"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387024"
 ---
 # <a name="breaking-changes-for-az-100"></a>Zmiany powodujące niezgodność w module Az 1.0.0
 
@@ -55,7 +52,7 @@ W tej sekcji przedstawiono ogólne zmiany powodujące niezgodność wprowadzone 
 
 ### <a name="cmdlet-noun-prefix-changes"></a>Zmiany prefiksów poleceń cmdlet w postaci rzeczownika
 
-W module AzureRM polecenia cmdlet używały ciągu `AzureRM` lub `Azure` jako prefiksu w postaci rzeczownika.  Moduł Az upraszcza i normalizuje nazwy poleceń cmdlet, więc wszystkie polecenia cmdlet mają prefiks w postaci rzeczownika „Az”. Na przykład:
+W module AzureRM polecenia cmdlet używały ciągu `AzureRM` lub `Azure` jako prefiksu w postaci rzeczownika.  Moduł Az upraszcza i normalizuje nazwy poleceń cmdlet, więc wszystkie polecenia cmdlet mają prefiks w postaci rzeczownika „Az”. Przykład:
 
 ```azurepowershell-interactive
 Get-AzureRMVM
@@ -122,7 +119,7 @@ Zmiany nazw modułów oznaczają, że każdy skrypt, który używa instrukcji `#
 
 #### <a name="migrating-requires-and-import-module-statements"></a>Migrowanie instrukcji #Requires i Import-Module
 
-Skrypty używające instrukcji `#Requires` lub `Import-Module` do deklarowania zależności od modułów AzureRM należy zaktualizować tak, aby używały nowych nazw modułów. Na przykład:
+Skrypty używające instrukcji `#Requires` lub `Import-Module` do deklarowania zależności od modułów AzureRM należy zaktualizować tak, aby używały nowych nazw modułów. Przykład:
 
 ```azurepowershell-interactive
 #Requires -Module AzureRM.Compute

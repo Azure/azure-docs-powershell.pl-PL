@@ -1,19 +1,16 @@
 ---
 title: Dziennik zmian w programie Azure PowerShell | Microsoft Docs
 description: Jest to historia zmian wprowadzonych w programie Azure PowerShell w jego najnowszej wersji.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 08/28/2018
-ms.openlocfilehash: eecd66ddf433cc2543ceeaef1519d69179f2f099
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 8aa0462af97877e0d20fe898ddd927a6d2850dea
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "65534453"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387330"
 ---
 # <a name="release-notes"></a>Informacje o wersji
 
@@ -273,7 +270,7 @@ To jest lista zmian wprowadzonych w programie Azure PowerShell w tym wydaniu.
   - Set-AzureRmLoadBalancerOutboundRuleConfig
   - Remove-AzureRmLoadBalancerOutboundRuleConfig
 * Dodano nową właściwość HostedWorkloads dla interfejsu PSNetworkInterface
-* Dodano nowe polecenia cmdlet dla funkcji Azure Firewall za pośrednictwem usługi ARM
+* Dodano nowe polecenia cmdlet dla funkcji: Usługa Azure Firewall za pośrednictwem usługi ARM
   - Dodano polecenie Get-AzureRmFirewall
   - Dodano polecenie Set-AzureRmFirewall
   - Dodano polecenie New-AzureRmFirewall
@@ -325,9 +322,9 @@ To jest lista zmian wprowadzonych w programie Azure PowerShell w tym wydaniu.
   - New-AzureRmLoadBalancerFrontendIpConfig
   - New-AzureRmNetworkInterface
 * Dodano polecenia cmdlet na potrzeby delegowania podsieci.
-  - New-AzureRmDelegation: tworzy nowe delegowanie, które można dodać do podsieci
-  - Remove-AzureRmDelegation: pobiera podsieć i usuwa z niej podaną nazwę delegowania
-  - Add-AzureRmDelegation: pobiera podsieć i dodaje do niej podaną nazwę usługi jako delegowanie
+  - New-AzureRmDelegation: Tworzy nowe delegowanie, które można dodać do podsieci
+  - Remove-AzureRmDelegation: Pobiera podsieć i usuwa z niej podaną nazwę delegowania
+  - Add-AzureRmDelegation: Pobiera podsieć i dodaje do niej podaną nazwę usługi jako delegowanie
   - Get-AzureRmDelegation
   - Get-AzureRmAvailableServiceDelegations
 
@@ -778,9 +775,9 @@ To jest lista zmian wprowadzonych w programie Azure PowerShell w tym wydaniu.
 #### <a name="azurermnetwork"></a>AzureRM.Network
 * Włączono komunikację równorzędną między sieciami wirtualnymi w wielu dzierżawach dla polecenia Set/Add-AzureRmVirtualNetworkPeering
 * Zaktualizowano poniższe polecenia cmdlet usługi Application Gateway
-    - New-AzureRmApplicationGateway: dodano obsługę flagi EnableFIPS i stref
-    - New-AzureRmApplicationGatewaySku: dodano nowe jednostki SKU — Standard_v2 i WAF_v2
-    - Set-AzureRmApplicationGatewaySku: dodano nowe jednostki SKU — Standard_v2 i WAF_v2
+    - New-AzureRmApplicationGateway: Dodano flagę EnableFIPS i obsługę stref
+    - New-AzureRmApplicationGatewaySku: Dodano nowe jednostki SKU Standard_v2 i WAF_v2
+    - Set-AzureRmApplicationGatewaySku: Dodano nowe jednostki SKU Standard_v2 i WAF_v2
 * Ponownie wygenerowano polecenia cmdlet RouteTable z użyciem najnowszej wersji generatora
 
 #### <a name="azurermrelay"></a>AzureRM.Relay
@@ -854,7 +851,7 @@ To jest lista zmian wprowadzonych w programie Azure PowerShell w tym wydaniu.
 
 #### <a name="azurermnetwork"></a>AzureRM.Network
 * Uwidoczniono nowe jednostki SKU dla strefowo nadmiarowych bram VirtualNetworkGateways
-* Dodano nowe polecenia dla funkcji interfejsów API partnerów usługi ExpressRoute za pośrednictwem usługi ARM
+* Dodano nowe polecenia dla funkcji: Interfejsy API partnerów usługi ExpressRoute za pośrednictwem usługi ARM
     - Dodano polecenie Get-AzureRmExpressRouteCrossConnection
     - Dodano polecenie Set-AzureRmExpressRouteCrossConnection
     - Dodano polecenie Add-AzureRmExpressRouteCrossConnectionPeering
@@ -1008,7 +1005,7 @@ To jest lista zmian wprowadzonych w programie Azure PowerShell w tym wydaniu.
 * Dodano obsługę instalowania certyfikatów wystawionych przez prywatny urząd certyfikacji jako certyfikatów głównych lub certyfikatów urzędu certyfikacji
 * Dodano obsługę akceptowania niestandardowych certyfikatów SSL za pomocą magazynu kluczy i wielu nazw hostów serwera proxy
 * Dodano obsługę tożsamości MSI
-* Dodano obsługę akceptowania zasad za pomocą adresu URL. UWAGA: następujące polecenia cmdlet staną się przestarzałe w przyszłym wydaniu
+* Dodano obsługę akceptowania zasad za pośrednictwem adresu URL. UWAGA: Następujące polecenia cmdlet staną się przestarzałe w przyszłej wersji
    - Import-AzureRmApiManagementHostnameCertificate
    - New-AzureRmApiManagementHostnameConfiguration
    - Set-AzureRmApiManagementHostnames

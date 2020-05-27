@@ -1,18 +1,15 @@
 ---
 title: Instalowanie programu Azure PowerShell w systemie Windows za pomocą modułu PowerShellGet
 description: Jak zainstalować program Azure PowerShell za pomocą modułu PowerShellGet
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/15/2018
-ms.openlocfilehash: 5a4ccd67433fe3716df42075a4e2fd035a12af2b
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 17e625dacfadff07b0498ac173b7b2c312172f87
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "75722445"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387772"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>Instalowanie programu Azure PowerShell w systemie Windows za pomocą modułu PowerShellGet
 
