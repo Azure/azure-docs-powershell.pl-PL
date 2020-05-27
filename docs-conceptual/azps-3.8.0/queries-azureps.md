@@ -1,28 +1,25 @@
 ---
 title: Wykonywanie zapytań względem danych wyjściowych poleceń cmdlet programu Azure PowerShell
 description: Jak wykonać zapytanie dotyczące zasobów platformy Azure i sformatować wyniki.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 01/10/2019
-ms.openlocfilehash: 9141f5640467722608cb7748f425ce3942668fb8
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: ebd108a2c13bdb376213d054fb72188e6205a565
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81740426"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387364"
 ---
-# <a name="query-output-of-azure-powershell"></a><span data-ttu-id="a03ef-103">Wykonywanie zapytań dotyczących danych wyjściowych programu Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="a03ef-103">Query output of Azure PowerShell</span></span> 
+# <a name="query-output-of-azure-powershell"></a><span data-ttu-id="1f931-103">Wykonywanie zapytań dotyczących danych wyjściowych programu Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="1f931-103">Query output of Azure PowerShell</span></span> 
 
-<span data-ttu-id="a03ef-104">Wyniki każdego polecenia cmdlet programu Azure PowerShell są obiektem programu Azure PowerShell.</span><span class="sxs-lookup"><span data-stu-id="a03ef-104">The results of each Azure PowerShell cmdlet are an Azure PowerShell object.</span></span> <span data-ttu-id="a03ef-105">Nawet polecenia cmdlet, które nie są jawnie operacjami `Get-`, mogą zwracać wartość, którą można zbadać, aby uzyskać informacje o utworzonym lub zmodyfikowanym zasobie.</span><span class="sxs-lookup"><span data-stu-id="a03ef-105">Even cmdlets that aren't explicitly `Get-` operations might return a value that can be inspected, to give information about a resource that was created or modified.</span></span> <span data-ttu-id="a03ef-106">Większość poleceń cmdlet zwraca jeden obiekt, ale niektóre zwracają tablicę, na której należy wykonać iterację.</span><span class="sxs-lookup"><span data-stu-id="a03ef-106">While most cmdlets return a single object, some return an array that should be iterated through.</span></span>
+<span data-ttu-id="1f931-104">Wyniki każdego polecenia cmdlet programu Azure PowerShell są obiektem programu Azure PowerShell.</span><span class="sxs-lookup"><span data-stu-id="1f931-104">The results of each Azure PowerShell cmdlet are an Azure PowerShell object.</span></span> <span data-ttu-id="1f931-105">Nawet polecenia cmdlet, które nie są jawnie operacjami `Get-`, mogą zwracać wartość, którą można zbadać, aby uzyskać informacje o utworzonym lub zmodyfikowanym zasobie.</span><span class="sxs-lookup"><span data-stu-id="1f931-105">Even cmdlets that aren't explicitly `Get-` operations might return a value that can be inspected, to give information about a resource that was created or modified.</span></span> <span data-ttu-id="1f931-106">Większość poleceń cmdlet zwraca jeden obiekt, ale niektóre zwracają tablicę, na której należy wykonać iterację.</span><span class="sxs-lookup"><span data-stu-id="1f931-106">While most cmdlets return a single object, some return an array that should be iterated through.</span></span>
 
-<span data-ttu-id="a03ef-107">Prawie we wszystkich przypadkach dane wyjściowe z programu Azure PowerShell bada się za pomocą polecenia cmdlet [Select-Object](/powershell/module/Microsoft.PowerShell.Utility/Select-Object), które często skraca się do postaci `select`.</span><span class="sxs-lookup"><span data-stu-id="a03ef-107">In almost all cases, you query output from Azure PowerShell with the [Select-Object](/powershell/module/Microsoft.PowerShell.Utility/Select-Object) cmdlet, often abbreviated to `select`.</span></span> <span data-ttu-id="a03ef-108">Dane wyjściowe można filtrować za pomocą polecenia [Where-Object](/powershell/module/Microsoft.PowerShell.Core/Where-Object) lub jego aliasu `where`.</span><span class="sxs-lookup"><span data-stu-id="a03ef-108">Output can be filtered with [Where-Object](/powershell/module/Microsoft.PowerShell.Core/Where-Object), or its alias `where`.</span></span>
+<span data-ttu-id="1f931-107">Prawie we wszystkich przypadkach dane wyjściowe z programu Azure PowerShell bada się za pomocą polecenia cmdlet [Select-Object](/powershell/module/Microsoft.PowerShell.Utility/Select-Object), które często skraca się do postaci `select`.</span><span class="sxs-lookup"><span data-stu-id="1f931-107">In almost all cases, you query output from Azure PowerShell with the [Select-Object](/powershell/module/Microsoft.PowerShell.Utility/Select-Object) cmdlet, often abbreviated to `select`.</span></span> <span data-ttu-id="1f931-108">Dane wyjściowe można filtrować za pomocą polecenia [Where-Object](/powershell/module/Microsoft.PowerShell.Core/Where-Object) lub jego aliasu `where`.</span><span class="sxs-lookup"><span data-stu-id="1f931-108">Output can be filtered with [Where-Object](/powershell/module/Microsoft.PowerShell.Core/Where-Object), or its alias `where`.</span></span>
 
-## <a name="select-simple-properties"></a><span data-ttu-id="a03ef-109">Wybieranie prostych właściwości</span><span class="sxs-lookup"><span data-stu-id="a03ef-109">Select simple properties</span></span>
+## <a name="select-simple-properties"></a><span data-ttu-id="1f931-109">Wybieranie prostych właściwości</span><span class="sxs-lookup"><span data-stu-id="1f931-109">Select simple properties</span></span>
 
-<span data-ttu-id="a03ef-110">W domyślnym formacie tabeli polecenia cmdlet programu Azure PowerShell nie wyświetlają wszystkich dostępnych właściwości.</span><span class="sxs-lookup"><span data-stu-id="a03ef-110">In the default table format, Azure PowerShell cmdlets don't display all of their available properties.</span></span> <span data-ttu-id="a03ef-111">Pełne właściwości można uzyskać za pomocą polecenia cmdlet [Format-List](/powershell/module/microsoft.powershell.utility/format-list) lub potokowego przekazania wartości wyjściowych do polecenia `Select-Object *`:</span><span class="sxs-lookup"><span data-stu-id="a03ef-111">You can get the full properties by using the [Format-List](/powershell/module/microsoft.powershell.utility/format-list) cmdlet, or by piping output to `Select-Object *`:</span></span>
+<span data-ttu-id="1f931-110">W domyślnym formacie tabeli polecenia cmdlet programu Azure PowerShell nie wyświetlają wszystkich dostępnych właściwości.</span><span class="sxs-lookup"><span data-stu-id="1f931-110">In the default table format, Azure PowerShell cmdlets don't display all of their available properties.</span></span> <span data-ttu-id="1f931-111">Pełne właściwości można uzyskać za pomocą polecenia cmdlet [Format-List](/powershell/module/microsoft.powershell.utility/format-list) lub potokowego przekazania wartości wyjściowych do polecenia `Select-Object *`:</span><span class="sxs-lookup"><span data-stu-id="1f931-111">You can get the full properties by using the [Format-List](/powershell/module/microsoft.powershell.utility/format-list) cmdlet, or by piping output to `Select-Object *`:</span></span>
 
 ```azurepowershell-interactive
 Get-AzVM -Name TestVM -ResourceGroupName TestGroup | Select-Object *
@@ -57,7 +54,7 @@ RequestId                : 711d8ed1-b888-4c52-8ab9-66f07b87eb6b
 StatusCode               : OK
 ```
 
-<span data-ttu-id="a03ef-112">Jeśli znasz nazwy odpowiednich właściwości, możesz ich użyć z poleceniem `Select-Object`, aby pobrać je bezpośrednio:</span><span class="sxs-lookup"><span data-stu-id="a03ef-112">Once you know the names of the properties that you're interested in, you can use those property names with `Select-Object` to get them directly:</span></span>
+<span data-ttu-id="1f931-112">Jeśli znasz nazwy odpowiednich właściwości, możesz ich użyć z poleceniem `Select-Object`, aby pobrać je bezpośrednio:</span><span class="sxs-lookup"><span data-stu-id="1f931-112">Once you know the names of the properties that you're interested in, you can use those property names with `Select-Object` to get them directly:</span></span>
 
 ```azurepowershell-interactive
 Get-AzVM -Name TestVM -ResourceGroupName TestGroup | Select-Object Name,VmId,ProvisioningState
@@ -69,11 +66,11 @@ Name   VmId                                 ProvisioningState
 TestVM 711d8ed1-b888-4c52-8ab9-66f07b87eb6b Succeeded
 ```
 
-<span data-ttu-id="a03ef-113">Dane wyjściowe polecenia `Select-Object` zawsze są formatowane w celu wyświetlenia żądanych informacji.</span><span class="sxs-lookup"><span data-stu-id="a03ef-113">Output from using `Select-Object` is always formatted to display the requested information.</span></span> <span data-ttu-id="a03ef-114">Aby uzyskać informacje o używaniu formatowania w zapytaniach dotyczących wyników poleceń cmdlet, zobacz [Formatowanie danych wyjściowych polecenia cmdlet programu Azure PowerShell](formatting-output.md).</span><span class="sxs-lookup"><span data-stu-id="a03ef-114">To learn about using formatting as part of querying cmdlet results, see [Format Azure PowerShell cmdlet output](formatting-output.md).</span></span>
+<span data-ttu-id="1f931-113">Dane wyjściowe polecenia `Select-Object` zawsze są formatowane w celu wyświetlenia żądanych informacji.</span><span class="sxs-lookup"><span data-stu-id="1f931-113">Output from using `Select-Object` is always formatted to display the requested information.</span></span> <span data-ttu-id="1f931-114">Aby uzyskać informacje o używaniu formatowania w zapytaniach dotyczących wyników poleceń cmdlet, zobacz [Formatowanie danych wyjściowych polecenia cmdlet programu Azure PowerShell](formatting-output.md).</span><span class="sxs-lookup"><span data-stu-id="1f931-114">To learn about using formatting as part of querying cmdlet results, see [Format Azure PowerShell cmdlet output](formatting-output.md).</span></span>
 
-## <a name="select-nested-properties"></a><span data-ttu-id="a03ef-115">Wybieranie właściwości zagnieżdżonych</span><span class="sxs-lookup"><span data-stu-id="a03ef-115">Select nested properties</span></span>
+## <a name="select-nested-properties"></a><span data-ttu-id="1f931-115">Wybieranie właściwości zagnieżdżonych</span><span class="sxs-lookup"><span data-stu-id="1f931-115">Select nested properties</span></span>
 
-<span data-ttu-id="a03ef-116">Niektóre właściwości w danych wyjściowych poleceń cmdlet programu Azure PowerShell używają obiektów zagnieżdżonych, takich jak właściwość `StorageProfile` danych wyjściowych polecenia `Get-AzVM`.</span><span class="sxs-lookup"><span data-stu-id="a03ef-116">Some properties in Azure PowerShell cmdlet output use nested objects, like the `StorageProfile` property of `Get-AzVM` output.</span></span> <span data-ttu-id="a03ef-117">Aby uzyskać wartość z właściwości zagnieżdżonej, podaj nazwę wyświetlaną i pełną ścieżkę do badanej wartości jako część argumentu słownika dla polecenia `Select-Object`:</span><span class="sxs-lookup"><span data-stu-id="a03ef-117">To get a value from a nested property, provide a display name and the full path to the value you want to inspect as part of a dictionary argument to `Select-Object`:</span></span>
+<span data-ttu-id="1f931-116">Niektóre właściwości w danych wyjściowych poleceń cmdlet programu Azure PowerShell używają obiektów zagnieżdżonych, takich jak właściwość `StorageProfile` danych wyjściowych polecenia `Get-AzVM`.</span><span class="sxs-lookup"><span data-stu-id="1f931-116">Some properties in Azure PowerShell cmdlet output use nested objects, like the `StorageProfile` property of `Get-AzVM` output.</span></span> <span data-ttu-id="1f931-117">Aby uzyskać wartość z właściwości zagnieżdżonej, podaj nazwę wyświetlaną i pełną ścieżkę do badanej wartości jako część argumentu słownika dla polecenia `Select-Object`:</span><span class="sxs-lookup"><span data-stu-id="1f931-117">To get a value from a nested property, provide a display name and the full path to the value you want to inspect as part of a dictionary argument to `Select-Object`:</span></span>
 
 ```azurepowershell-interactive
 Get-AzVM -ResourceGroupName TestGroup | `
@@ -88,11 +85,11 @@ TestVM2   Linux
 WinVM   Windows
 ```
 
-<span data-ttu-id="a03ef-118">Każdy argument słownika wybiera jedną właściwość z obiektu.</span><span class="sxs-lookup"><span data-stu-id="a03ef-118">Each dictionary argument selects one property from the object.</span></span> <span data-ttu-id="a03ef-119">Właściwość do wyodrębnienia musi być częścią wyrażenia.</span><span class="sxs-lookup"><span data-stu-id="a03ef-119">The property to extract must be part of an expression.</span></span>
+<span data-ttu-id="1f931-118">Każdy argument słownika wybiera jedną właściwość z obiektu.</span><span class="sxs-lookup"><span data-stu-id="1f931-118">Each dictionary argument selects one property from the object.</span></span> <span data-ttu-id="1f931-119">Właściwość do wyodrębnienia musi być częścią wyrażenia.</span><span class="sxs-lookup"><span data-stu-id="1f931-119">The property to extract must be part of an expression.</span></span>
 
-## <a name="filter-results"></a><span data-ttu-id="a03ef-120">Filtrowanie wyników</span><span class="sxs-lookup"><span data-stu-id="a03ef-120">Filter results</span></span> 
+## <a name="filter-results"></a><span data-ttu-id="1f931-120">Filtrowanie wyników</span><span class="sxs-lookup"><span data-stu-id="1f931-120">Filter results</span></span> 
 
-<span data-ttu-id="a03ef-121">Polecenie cmdlet `Where-Object` pozwala filtrować wyniki na podstawie dowolnej wartości właściwości, w tym właściwości zagnieżdżonych.</span><span class="sxs-lookup"><span data-stu-id="a03ef-121">The `Where-Object` cmdlet allows you to filter the result based on any property value, including nested properties.</span></span> <span data-ttu-id="a03ef-122">W następnym przykładzie pokazano używanie polecenia `Where-Object` do znajdowania maszyn wirtualnych z systemem Linux w grupie zasobów.</span><span class="sxs-lookup"><span data-stu-id="a03ef-122">The next example shows how to use `Where-Object` to find the Linux VMs in a resource group.</span></span>
+<span data-ttu-id="1f931-121">Polecenie cmdlet `Where-Object` pozwala filtrować wyniki na podstawie dowolnej wartości właściwości, w tym właściwości zagnieżdżonych.</span><span class="sxs-lookup"><span data-stu-id="1f931-121">The `Where-Object` cmdlet allows you to filter the result based on any property value, including nested properties.</span></span> <span data-ttu-id="1f931-122">W następnym przykładzie pokazano używanie polecenia `Where-Object` do znajdowania maszyn wirtualnych z systemem Linux w grupie zasobów.</span><span class="sxs-lookup"><span data-stu-id="1f931-122">The next example shows how to use `Where-Object` to find the Linux VMs in a resource group.</span></span>
 
 ```azurepowershell-interactive
 Get-AzVM -ResourceGroupName TestGroup | `
@@ -106,7 +103,7 @@ TestGroup          TestVM  westus2 Standard_D2s_v3  Linux  testvm299         Suc
 TestGroup         TestVM2  westus2 Standard_D2s_v3  Linux testvm2669         Succeeded
 ```
 
-<span data-ttu-id="a03ef-123">Można potokowo przekazywać wyniki poleceń `Select-Object` i `Where-Object` między tymi poleceniami.</span><span class="sxs-lookup"><span data-stu-id="a03ef-123">You can pipe the results of `Select-Object` and `Where-Object` to each other.</span></span> <span data-ttu-id="a03ef-124">Ze względu na wydajność zawsze zaleca się umieszczanie operacji `Where-Object` przed operacją `Select-Object`:</span><span class="sxs-lookup"><span data-stu-id="a03ef-124">For performance purposes, it's always recommended to put the `Where-Object` operation before `Select-Object`:</span></span>
+<span data-ttu-id="1f931-123">Można potokowo przekazywać wyniki poleceń `Select-Object` i `Where-Object` między tymi poleceniami.</span><span class="sxs-lookup"><span data-stu-id="1f931-123">You can pipe the results of `Select-Object` and `Where-Object` to each other.</span></span> <span data-ttu-id="1f931-124">Ze względu na wydajność zawsze zaleca się umieszczanie operacji `Where-Object` przed operacją `Select-Object`:</span><span class="sxs-lookup"><span data-stu-id="1f931-124">For performance purposes, it's always recommended to put the `Where-Object` operation before `Select-Object`:</span></span>
 
 ```azurepowershell-interactive
 Get-AzVM -ResourceGroupName TestGroup | `
