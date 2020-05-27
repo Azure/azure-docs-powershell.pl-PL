@@ -4,12 +4,12 @@ description: Jak wykonać zapytanie dotyczące zasobów platformy Azure i sforma
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 01/10/2019
-ms.openlocfilehash: 15067736388b35d2283932b1ca4e9a0d968315a9
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.openlocfilehash: ebd108a2c13bdb376213d054fb72188e6205a565
+ms.sourcegitcommit: 10ec909100a70acec94d42f6084e7bf0342c6854
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83386939"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83624315"
 ---
 # <a name="query-output-of-azure-powershell"></a>Wykonywanie zapytań dotyczących danych wyjściowych programu Azure PowerShell 
 
@@ -73,7 +73,7 @@ Dane wyjściowe polecenia `Select-Object` zawsze są formatowane w celu wyświet
 Niektóre właściwości w danych wyjściowych poleceń cmdlet programu Azure PowerShell używają obiektów zagnieżdżonych, takich jak właściwość `StorageProfile` danych wyjściowych polecenia `Get-AzVM`. Aby uzyskać wartość z właściwości zagnieżdżonej, podaj nazwę wyświetlaną i pełną ścieżkę do badanej wartości jako część argumentu słownika dla polecenia `Select-Object`:
 
 ```azurepowershell-interactive
-Get-AzVM -ResourceGroupName TestGroup |
+Get-AzVM -ResourceGroupName TestGroup | `
     Select-Object Name,@{Name="OSType"; Expression={$_.StorageProfile.OSDisk.OSType}}
 ```
 
@@ -92,7 +92,7 @@ Każdy argument słownika wybiera jedną właściwość z obiektu. Właściwoś�
 Polecenie cmdlet `Where-Object` pozwala filtrować wyniki na podstawie dowolnej wartości właściwości, w tym właściwości zagnieżdżonych. W następnym przykładzie pokazano używanie polecenia `Where-Object` do znajdowania maszyn wirtualnych z systemem Linux w grupie zasobów.
 
 ```azurepowershell-interactive
-Get-AzVM -ResourceGroupName TestGroup |
+Get-AzVM -ResourceGroupName TestGroup | `
     Where-Object {$_.StorageProfile.OSDisk.OSType -eq "Linux"}
 ```
 
@@ -106,8 +106,8 @@ TestGroup         TestVM2  westus2 Standard_D2s_v3  Linux testvm2669         Suc
 Można potokowo przekazywać wyniki poleceń `Select-Object` i `Where-Object` między tymi poleceniami. Ze względu na wydajność zawsze zaleca się umieszczanie operacji `Where-Object` przed operacją `Select-Object`:
 
 ```azurepowershell-interactive
-Get-AzVM -ResourceGroupName TestGroup |
-    Where-Object {$_.StorageProfile.OsDisk.OsType -eq "Linux"} |
+Get-AzVM -ResourceGroupName TestGroup | `
+    Where-Object {$_.StorageProfile.OsDisk.OsType -eq "Linux"} | `
     Select-Object Name,VmID,ProvisioningState
 ```
 

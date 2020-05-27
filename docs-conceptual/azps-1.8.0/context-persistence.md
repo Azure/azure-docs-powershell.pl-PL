@@ -1,18 +1,15 @@
 ---
 title: Poświadczenia logowania i konteksty platformy Azure
 description: Dowiedz się, jak używać ponownie poświadczeń platformy Azure i innych informacji w wielu sesjach programu PowerShell.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/21/2019
-ms.openlocfilehash: 0e8dd4f766307d9ab2e27e2cf8bec6bbd34f5e51
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: d93d7ee0ac88d797b04080e8b96160b4241eaf92
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "72791411"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387126"
 ---
 # <a name="azure-powershell-context-objects"></a>Obiekty kontekstu środowiska Azure PowerShell
 

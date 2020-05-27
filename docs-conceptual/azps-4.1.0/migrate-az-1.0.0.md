@@ -5,11 +5,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2019
 ms.openlocfilehash: 6c2d681144fe561e734a247c44046e3dadb78083
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.sourcegitcommit: 10ec909100a70acec94d42f6084e7bf0342c6854
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387449"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83624372"
 ---
 # <a name="breaking-changes-for-az-100"></a>Zmiany powodujące niezgodność w module Az 1.0.0
 

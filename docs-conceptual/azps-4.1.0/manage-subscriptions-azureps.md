@@ -5,11 +5,11 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/04/2019
 ms.openlocfilehash: 2fbf4387bb6a3b70a95bf607e3a24d61539e5810
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.sourcegitcommit: 10ec909100a70acec94d42f6084e7bf0342c6854
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83386208"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83630728"
 ---
 # <a name="use-multiple-azure-subscriptions"></a>Korzystanie z wielu subskrypcji platformy Azure
 

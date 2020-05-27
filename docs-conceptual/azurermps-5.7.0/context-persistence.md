@@ -1,18 +1,15 @@
 ---
 title: Utrwalanie poświadczeń użytkownika między sesjami programu PowerShell
 description: Dowiedz się, jak używać ponownie poświadczeń platformy Azure i innych informacji w wielu sesjach programu PowerShell.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
-ms.openlocfilehash: c89df2e3d04a97ebe31d62cd448ea662301b74b4
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 5e16922b4f944a56c5a232f5e04541bc2eeb9aa8
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "65854127"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387279"
 ---
 # <a name="persisting-user-credentials-across-powershell-sessions"></a>Utrwalanie poświadczeń użytkownika między sesjami programu PowerShell
 
