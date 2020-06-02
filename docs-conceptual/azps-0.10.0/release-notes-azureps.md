@@ -4,12 +4,12 @@ description: Uzyskaj informacje na temat wszystkich najnowszych aktualizacji mod
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/10/2020
-ms.openlocfilehash: c02cfaa7f7f39393f21cec31c5115f009381b19c
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 9dd733865ba8235eed6dcef4637a63ad93999338
+ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81446057"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84121917"
 ---
 # <a name="azure-powershell-release-notes"></a>Informacje o wersji programu Azure PowerShell
 ## <a name="0100-preview---april-2020"></a>0.10.0-preview — kwiecień 2020 r.
@@ -29,7 +29,7 @@ ms.locfileid: "81446057"
   - Az.Websites
 * Wprowadzono trzy nowe moduły programu PowerShell dla modułu Az, które działają w usłudze Azure Stack Hub: Az.Databox, Az.IotHub i Az.EventHub
 * Polecenia pozostają w zasadzie takie same, wprowadzono tylko niewielkie zmiany, np. zmieniono ciąg AzureRM na Az
-* Zaktualizowany link do dokumentacji programu PowerShell dla usługi Azure Stack Hub można znaleźć [tutaj](aka.ms/InstallASHPowerShell)
+* Zaktualizowany link do dokumentacji programu PowerShell dla usługi Azure Stack Hub można znaleźć [tutaj](https://aka.ms/InstallASHPowerShell)
 
 #### <a name="azaccounts"></a>Az.Accounts
 * Uaktualnienie z biblioteki ADAL do MSAL
@@ -40,7 +40,7 @@ ms.locfileid: "81446057"
 * Rozwiązano problem powodujący zgłaszanie wyjątku NullReferenceException przez polecenia „Get-AzTenant”, „Get-AzDefault” i „Set-AzDefault”, gdy użytkownik nie jest zalogowany [nr 10292]
 
 #### <a name="azcompute"></a>Az.Compute
-* Dodano następujące parametry do polecenia cmdlet „New-AzDiskConfig”: 
+* Dodano następujące parametry do polecenia cmdlet „New-AzDiskConfig”:
     - DiskIOPSReadOnly, DiskMBpsReadOnly, MaxSharesCount, GalleryImageReference
 * Zezwolono na właściwość Encryption parametru Target polecenia cmdlet „New-AzGalleryImageVersion”.
 * Rozwiązano problem tempDisk w przypadku poleceń cmdlet „Set-AzVmss” z parametrem -Reimage i „Invoke-AzVMReimage”. [nr 11354]

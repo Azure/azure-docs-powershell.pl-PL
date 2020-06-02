@@ -4,13 +4,14 @@ description: Uzyskaj informacje na temat wszystkich najnowszych aktualizacji mod
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 04/30/2019
-ms.openlocfilehash: 287e9e1f066d0768e7f572ca7f5f2ee2b78931d9
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.openlocfilehash: 34b21292ccc47bb53b6609cd637ef18338a45cd3
+ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83386973"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84121456"
 ---
+# <a name="azure-powershell-release-notes"></a>Informacje o wersji programu Azure PowerShell
 ## <a name="180---april-2019"></a>1.8.0 — kwiecień 2019 r.
 ### <a name="highlights-since-the-last-major-release"></a>Najważniejsze zmiany od ostatniej wersji głównej
 * Ogólna dostępność modułu `Az`
@@ -48,7 +49,7 @@ ms.locfileid: "83386973"
 * Zaktualizowano tekst pomocy dla punktu końcowego w celu wskazania, że zasoby powinny zostać utworzone przed rozpoczęciem korzystania z poleceń cmdlet do tworzenia/aktualizacji subskrypcji zdarzenia.
 
 #### <a name="azeventhub"></a>Az.EventHub
-* Dodano nowe polecenia cmdlet dla elementu NetworkRuleSet przestrzeni nazw 
+* Dodano nowe polecenia cmdlet dla elementu NetworkRuleSet przestrzeni nazw
 
 #### <a name="azhdinsight"></a>Az.HDInsight
 * Zaktualizowano polecenia cmdlet z rzeczownikami w liczbie mnogiej do pojedynczej. Nazwy w liczbie mnogiej zostały oznaczone jako przestarzałe.
@@ -138,7 +139,7 @@ ms.locfileid: "83386973"
 
 #### <a name="azcompute"></a>Az.Compute
 * Dodano parametr HyperVGeneration do poleceń New-AzDiskConfig i New-AzSnapshotConfig
-* Umożliwiono tworzenie maszyny wirtualnej za pomocą obrazu galerii z innych dzierżaw. 
+* Umożliwiono tworzenie maszyny wirtualnej za pomocą obrazu galerii z innych dzierżaw.
 
 #### <a name="azcontainerinstance"></a>Az.ContainerInstance
 * Rozwiązano problem w parametrze -Command polecenia New-AzContainerGroup, który polegał na dodawaniu pustego argumentu końcowego
@@ -220,7 +221,7 @@ ms.locfileid: "83386973"
     - New-AzStorageAccountManagementPolicyRule
 
 #### <a name="azwebsites"></a>Az.Websites
-* Usunięto usterkę szablonu usługi ARM, która przerywała klonowanie wszystkich miejsc przy użyciu elementu „New-AzWebApp -IncludeSourceWebAppSlots” 
+* Usunięto usterkę szablonu usługi ARM, która przerywała klonowanie wszystkich miejsc przy użyciu elementu „New-AzWebApp -IncludeSourceWebAppSlots”
 
 ## <a name="150---march-2019"></a>1.5.0 — marzec 2019
 #### <a name="azaccounts"></a>Az.Accounts
@@ -289,7 +290,7 @@ ms.locfileid: "83386973"
 * Dodano polecenia cmdlet na potrzeby wyliczania i przywracania usuniętego elementu usługi ADL
 
 #### <a name="azeventhub"></a>Az.EventHub
-* Dodano nową właściwość typu wartość logiczna SkipEmptyArchives w celu pomijania pustych archiwów w klasie CaptureDescription usługi Eventhub 
+* Dodano nową właściwość typu wartość logiczna SkipEmptyArchives w celu pomijania pustych archiwów w klasie CaptureDescription usługi Eventhub
 
 #### <a name="azkeyvault"></a>Az.KeyVault
 * Naprawiono tagowanie w poleceniu Set-AzKeyVaultSecret
@@ -317,8 +318,8 @@ ms.locfileid: "83386973"
 
 #### <a name="azoperationalinsights"></a>Az.OperationalInsights
 * Dodatkowa obsługa źródła danych New i Get ApplicationInsights.
-    - Dodano nowy rodzaj „Application Insights” do obsługi źródeł danych usługi ApplicationInsights typu Pobierz określone i Pobierz wszystkie dla danego obszaru roboczego. 
-    - Dodano polecenie cmdlet New-AzOperationalInsightsApplicationInsightsDataSource służące do tworzenia źródła danych z użyciem danych parametrów zasobów usługi Application-Insights: identyfikator subskrypcji, resourceGroupName i nazwa. 
+    - Dodano nowy rodzaj „Application Insights” do obsługi źródeł danych usługi ApplicationInsights typu Pobierz określone i Pobierz wszystkie dla danego obszaru roboczego.
+    - Dodano polecenie cmdlet New-AzOperationalInsightsApplicationInsightsDataSource służące do tworzenia źródła danych z użyciem danych parametrów zasobów usługi Application-Insights: identyfikator subskrypcji, resourceGroupName i nazwa.
 
 #### <a name="azresources"></a>Az.Resources
 * Rozwiązano problem https://github.com/Azure/azure-powershell/issues/8166
@@ -349,9 +350,9 @@ Ogólna dostępność modułu Az.AnalysisServices.
 Ogólna dostępność modułu Az.RecoveryServices.
 
 #### <a name="azresources"></a>Az.Resources
-* Poprawiono tagowanie dla grup zasobów 
+* Poprawiono tagowanie dla grup zasobów
     - Więcej informacji: https://github.com/Azure/azure-powershell/issues/8166
-* Rozwiązano problem polegający na tym, że polecenie `Get-AzureRmRoleAssignment` nie uwzględniało parametru -ErrorAction 
+* Rozwiązano problem polegający na tym, że polecenie `Get-AzureRmRoleAssignment` nie uwzględniało parametru -ErrorAction
     - Więcej informacji: https://github.com/Azure/azure-powershell/issues/8235
 
 #### <a name="azsql"></a>Az.Sql
@@ -656,7 +657,7 @@ Dodano obsługę konfigurowania zestawów RewriteRuleSet w usłudze Application 
 
 ### <a name="azwebsites"></a>Az.Websites
 
-* Set-AzureRmWebApp i Set-AzureRmWebAppSlot 
+* Set-AzureRmWebApp i Set-AzureRmWebAppSlot
     - Dodano nowy parametr (-AzureStoragePath) umożliwiający określenie ścieżek usługi Azure Storage, które mają zostać zainstalowane w aplikacjach kontenera systemów Windows i Linux. Użyj danych wyjściowych nowego polecenia cmdlet New-AzureRmWebAppAzureStoragePath jako parametru, aby ustawić ścieżki usługi Azure Storage.
 
 ## <a name="061---november-2018"></a>0.6.1 — listopad 2018 r.
@@ -684,7 +685,7 @@ Dodano obsługę konfigurowania zestawów RewriteRuleSet w usłudze Application 
 ### <a name="aznetwork"></a>Az.Network
 * Dodano następujące polecenia cmdlet: New-AzureRmApplicationGatewayCustomError, Add-AzureRmApplicationGatewayCustomError, Get-AzureRmApplicationGatewayCustomError, Set-AzureRmApplicationGatewayCustomError, Remove-AzureRmApplicationGatewayCustomError, Add-AzureRmApplicationGatewayHttpListenerCustomError, Get-AzureRmApplicationGatewayHttpListenerCustomError, Set-AzureRmApplicationGatewayHttpListenerCustomError, Remove-AzureRmApplicationGatewayHttpListenerCustomError
 * Ponownie dodano protokół ICMP do obsługiwanych protokołów sieciowych AzureFirewall
-* Aktualizacja polecenia cmdlet Test-AzureRmNetworkWatcherConnectivity — dodanie walidacji identyfikatora, adresu i portu docelowego. 
+* Aktualizacja polecenia cmdlet Test-AzureRmNetworkWatcherConnectivity — dodanie walidacji identyfikatora, adresu i portu docelowego.
 * Rozwiązano problemy z użyciem pamięci w mapie VirtualNetwork
 
 ### <a name="azrecoveryservicesbackup"></a>Az.RecoveryServices.Backup
@@ -816,7 +817,7 @@ Dodano obsługę konfigurowania zestawów RewriteRuleSet w usłudze Application 
     - Start-AzureStorageFileCopy
 * Dodano obsługę pobierania danych użycia zasobów magazynu w określonej lokalizacji i dodano komunikat ostrzegawczy w przypadku pobrania przestarzałych danych użycia globalnego zasobu magazynu.
     - Get-AzStorageUsage
-    
+
 #### <a name="azcognitiveservices"></a>Az.CognitiveServices
 * Obsługa polecenia Get-AzCognitiveServicesAccountSkus bez istniejącego konta.
 

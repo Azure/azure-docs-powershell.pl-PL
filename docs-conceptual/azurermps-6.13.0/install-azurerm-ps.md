@@ -4,12 +4,12 @@ description: Jak zainstalować program Azure PowerShell za pomocą modułu Power
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 11/16/2018
-ms.openlocfilehash: 0d9eab453fe8c3a0a0e05c1056fbf58d4454ce24
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.openlocfilehash: b04d4070e420f2d1e64f233eda6b3e250f8bb68c
+ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387942"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84122033"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>Instalowanie programu Azure PowerShell w systemie Windows za pomocą modułu PowerShellGet
 
@@ -30,7 +30,7 @@ Począwszy od programu Azure PowerShell w wersji 6.0, jest wymagany program Powe
 $PSVersionTable.PSVersion
 ```
 
-Jeśli masz nieaktualną wersję, zobacz [Upgrading existing Windows PowerShell (Uaktualnianie istniejącego programu Windows PowerShell)](/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell).
+Jeśli masz nieaktualną wersję, zobacz [Upgrading existing Windows PowerShell (Uaktualnianie istniejącego programu Windows PowerShell)](/powershell/scripting/windows-powershell/install/installing-windows-powershell#upgrading-existing-windows-powershell).
 
 > [!IMPORTANT]
 > Moduł opisany w tym dokumencie (AzureRM) korzysta z programu .NET Framework. Dlatego jest on niezgodny z programem PowerShell 6.0, który korzysta z platformy .NET Core. Jeśli korzystasz z programu PowerShell 6.0, postępuj zgodnie z [instrukcjami dotyczącymi instalacji dla systemów macOS i Linux](install-azurermps-maclinux.md).
@@ -39,7 +39,7 @@ Jeśli masz nieaktualną wersję, zobacz [Upgrading existing Windows PowerShell 
 
 Do zainstalowania modułów z galerii programu PowerShell jest wymagany podwyższony poziom uprawnień. Aby zainstalować program Azure PowerShell, uruchom następujące polecenie w sesji z podwyższonym poziomem uprawnień:
 
-```powershell-interactive
+```azurepowershell-interactive
 Install-Module -Name AzureRM -AllowClobber
 ```
 
@@ -48,7 +48,7 @@ Install-Module -Name AzureRM -AllowClobber
 
 Galeria programu PowerShell domyślnie nie jest skonfigurowana jako zaufane repozytorium modułu PowerShellGet. Po pierwszym użyciu Galerii programu PowerShell zostanie wyświetlony następujący komunikat:
 
-```output
+```Output
 Untrusted repository
 
 You are installing the modules from an untrusted repository. If you trust this repository, change
@@ -66,21 +66,19 @@ Moduł `AzureRM` to zbiorczy moduł poleceń cmdlet programu Azure PowerShell. P
 
 Aby rozpocząć pracę z programem Azure PowerShell, zaloguj się przy użyciu swoich poświadczeń platformy Azure.
 
-```powershell-interactive
+```azurepowershell-interactive
 # Connect to Azure with an interactive dialog for sign-in
 Connect-AzureRmAccount
 ```
 
 > [!NOTE]
->
 > Jeśli wyłączono automatyczne ładowanie modułów, musisz ręcznie zaimportować moduł za pomocą polecenia `Import-Module AzureRM`. Ze względu na strukturę modułu może to potrwać kilka sekund.
-
 
 Musisz powtórzyć te kroki dla każdej nowej sesji programu PowerShell, którą rozpoczniesz. Aby dowiedzieć się, jak można utrwalić logowanie się do swojego konta platformy Azure w wielu sesjach programu PowerShell, zobacz [Utrwalanie poświadczeń użytkownika między sesjami programu PowerShell](context-persistence.md).
 
 ## <a name="update-the-azure-powershell-module"></a>Aktualizowanie modułu programu Azure PowerShell
 
-Możesz zaktualizować instalację programu Azure PowerShell przez uruchomienie polecenia [Update-Module](/powershell/module/powershellget/update-module). To polecenie __nie__ powoduje odinstalowania wcześniejszych wersji.
+Możesz zaktualizować instalację programu Azure PowerShell przez uruchomienie polecenia [Update-Module](/powershell/module/powershellget/update-module). To polecenie **nie** powoduje odinstalowania wcześniejszych wersji.
 
 ```powershell-interactive
 Update-Module -Name AzureRM
@@ -92,7 +90,7 @@ Jeśli chcesz usunąć starsze wersje programu Azure PowerShell z systemu, zobac
 
 Jest możliwe zainstalowanie więcej niż jednej wersji programu Azure PowerShell. Aby sprawdzić, czy masz wiele zainstalowanych wersji programu Azure PowerShell, użyj następującego polecenia:
 
-```powershell-interactive
+```azurepowershell-interactive
 Get-InstalledModule -Name AzureRM -AllVersions | select Name,Version
 ```
 
@@ -100,22 +98,21 @@ Aby usunąć wersję programu Azure PowerShell, zobacz [Odinstalowywanie modułu
 
 Obecność więcej niż jednej wersji może być potrzebna w przypadku pracy z lokalnymi zasobami usługi Azure Stack, korzystania ze starszej wersji systemu Windows lub używania klasycznego modelu wdrażania platformy Azure. Aby zainstalować starszą wersję, podaj argument `-RequiredVersion` podczas instalacji.
 
-```powershell-interactive
+```azurepowershell-interactive
 # Install version 2.3.0 of Azure PowerShell
 Install-Module -Name AzureRM -RequiredVersion 2.3.0
 ```
 
 Podczas ładowania modułu Azure PowerShell jest domyślnie ładowana najnowsza wersja. Aby załadować inną wersję, podaj argument `-RequiredVersion`.
 
-```powershell-interactive
+```azurepowershell-interactive
 # Load version 2.3.0 of Azure PowerShell
 Import-Module -Name AzureRM -RequiredVersion 2.3.0
 ```
 
 ## <a name="provide-feedback"></a>Przekazywanie opinii
 
-Jeśli znajdziesz błąd podczas korzystania z programu Azure Powershell, [zgłoś problem w usłudze GitHub](https://github.com/Azure/azure-powershell/issues).
-Aby przekazać opinię z wiersza polecenia, użyj polecenia cmdlet [Send-Feedback](/powershell/module/azurerm.profile/send-feedback).
+Jeśli znajdziesz błąd podczas korzystania z programu Azure Powershell, [zgłoś problem w usłudze GitHub](https://github.com/Azure/azure-powershell/issues). Aby przekazać opinię z wiersza polecenia, użyj polecenia cmdlet [Send-Feedback](/powershell/module/azurerm.profile/send-feedback).
 
 ## <a name="next-steps"></a>Następne kroki
 

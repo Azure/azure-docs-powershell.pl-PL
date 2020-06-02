@@ -8,20 +8,20 @@ metadata:
   displayType: two-column
   interactive: azurepowershell
   ms.date: 12/13/2018
-  ms.author: sttramer
-  author: sptramer
-  manager: carmonm
+  ms.author: mirobb
+  author: mikefrobbins
+  manager: barbkess
   ms.devlang: azure-powershell
   ms.prod: powershell
   ms.technology: azure-powershell
   ms.topic: tutorial
   clicktale: true
-  ms.openlocfilehash: 71f250c0578e46888845f7a9a1ae4b74f7a38fab
-  ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+  ms.openlocfilehash: 92422fbee6e09123cd6e4f0cad722aa9f496759d
+  ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
   ms.translationtype: HT
   ms.contentlocale: pl-PL
-  ms.lasthandoff: 05/05/2020
-  ms.locfileid: "81740460"
+  ms.lasthandoff: 05/28/2020
+  ms.locfileid: "84122124"
 items:
 - durationInMinutes: 1
   content: >-
@@ -31,7 +31,7 @@ items:
     Kroki tego samouczka można wykonać za pomocą środowiska interaktywnego oferowanego przez usługę Azure Cloud Shell. Ewentualnie możesz [zainstalować program Azure PowerShell](install-az-ps.md) lokalnie.
 
 
-    Użyj klawiszy __ctrl-shift-v__ (__cmd-shift-v__ w systemie macOS), aby wkleić tekst samouczka do usługi Azure Cloud Shell.
+    Użyj klawiszy **ctrl-shift-v** (**cmd-shift-v** w systemie macOS), aby wkleić tekst samouczka do usługi Azure Cloud Shell.
 - durationInMinutes: 1
   title: Logowanie
   content: >-
@@ -47,7 +47,7 @@ items:
 
     Ukończ proces logowania, wykonując kroki wyświetlane w terminalu.
 - durationInMinutes: 1
-  title: Utwórz grupę zasobów
+  title: Tworzenie grupy zasobów
   content: >-
     Na platformie Azure wszystkie zasoby są przydzielane w grupie zarządzania zasobami. Grupy zasobów zapewniają logiczne grupowanie zasobów, co ułatwia pracę z nimi jako kolekcją.
 
@@ -373,4 +373,4 @@ items:
     Po zakończeniu czyszczenia samouczek jest ukończony. Kontynuuj, aby zobaczyć podsumowanie zdobytych umiejętności oraz linki do zasobów, które pomogą Ci przy następnych krokach.
 - durationInMinutes: 1
   title: Podsumowanie
-  content: "\nGratulacje! Po ukończeniu tego samouczka wiesz już, jak tworzyć maszyny wirtualne przy użyciu nowych lub istniejących zasobów oraz używać wyrażeń i innych poleceń programu Azure PowerShell do przechwytywania danych, które mają być przechowywane w zmiennych powłoki, a także znasz niektóre zasoby tworzone dla maszyn wirtualnych platformy Azure.\n\nCo zrobisz dalej, zależy od tego, do czego zamierzasz używać programu Azure PowerShell. Istnieje wiele materiałów, które bardziej szczegółowo zgłębiają funkcje omówione w tym samouczku.\n\n### <a name=\"in-depth-azure-powershell-documentation\"></a>Szczegółowa dokumentacja programu Azure PowerShell\n\nWarto poświęcić trochę czasu na zapoznanie się z pełnym zestawem [dokumentacji programu Azure PowerShell](overview.md).\n\nAby uzyskać więcej informacji na temat poleceń używanych w tym samouczku, zobacz następujące artykuły.\n\n- [New-AzResourceGroup](/powershell/module/Az.resources/new-Azresourcegroup)\n- [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential)\n- [New-AzVM](/powershell/module/Az.compute/new-Azvm)\n- [Select-Object](/powershell/module/microsoft.powershell.utility/select-object)\n- [Get-AzPublicIpAddress](/powershell/module/Az.network/get-AzPublicIpAddress)\n- [Remove-AzResourceGroup](/powershell/module/Az.resources/Remove-AzResourceGroup)\n- [Wait-Job](/powershell/module/microsoft.powershell.core/wait-job)\n\nDostępne są także artykuły, które bardziej szczegółowo omawiają funkcje pokazane w tym samouczku.\n\n- [Operacje tworzenia pakietów parametrów programu PowerShell](/powershell/module/microsoft.powershell.core/about/about_splatting)\n- [Zapytania](queries-azureps.md)\n- [Formatowanie](formatting-output.md)\n- [Używanie zadań programu PowerShell](using-psjobs.md)\n\n### <a name=\"sample-scripts\"></a>Przykładowe skrypty\n\nJeśli chcesz od razu zacząć korzystać z określonych zadań, przejrzyj niektóre przykładowe skrypty.\n\n- [Maszyny wirtualne z systemem Linux](/azure/virtual-machines/linux/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Maszyny wirtualne z systemem Windows](/azure/virtual-machines/windows/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Web Apps](/azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Bazy danych SQL](/azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Cosmos DB](/azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json)\n\n### <a name=\"feedback\"></a>Opinia\n\nJeśli chcesz przekazać opinię lub sugestie albo zadać pytania, istnieje wiele sposobów kontaktu.\n\n* `Send-Feedback` to wbudowane polecenie programu Azure PowerShell, które umożliwia przekazanie dowolnej opinii zespołowi.\n* Prześlij wniosek dotyczący funkcji lub raport o usterce do [repozytorium programu Azure PowerShell](https://github.com/Azure/azure-powershell/issues).\n* Zadaj pytanie lub uzyskaj wyjaśnienie, rejestrując problem w [repozytorium dokumentacji programu Azure PowerShell](https://github.com/MicrosoftDocs/azure-docs-powershell/issues).\n\nMamy nadzieję, że podoba Ci się program Azure PowerShell."
+  content: "\nGratulacje! Po ukończeniu tego samouczka wiesz już, jak tworzyć maszyny wirtualne przy użyciu nowych lub istniejących zasobów oraz używać wyrażeń i innych poleceń programu Azure PowerShell do przechwytywania danych, które mają być przechowywane w zmiennych powłoki, a także znasz niektóre zasoby tworzone dla maszyn wirtualnych platformy Azure.\n\nCo zrobisz dalej, zależy od tego, do czego zamierzasz używać programu Azure PowerShell. Istnieje wiele materiałów, które bardziej szczegółowo zgłębiają funkcje omówione w tym samouczku.\n\n### <a name=\"in-depth-azure-powershell-documentation\"></a>Szczegółowa dokumentacja programu Azure PowerShell\n\nWarto poświęcić trochę czasu na zapoznanie się z pełnym zestawem [dokumentacji programu Azure PowerShell](/powershell/azure/new-azureps-module-az?view=azps-3.8.0).\n\nAby uzyskać więcej informacji na temat poleceń używanych w tym samouczku, zobacz następujące artykuły.\n\n- [New-AzResourceGroup](/powershell/module/Az.resources/new-Azresourcegroup)\n- [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential)\n- [New-AzVM](/powershell/module/Az.compute/new-Azvm)\n- [Select-Object](/powershell/module/microsoft.powershell.utility/select-object)\n- [Get-AzPublicIpAddress](/powershell/module/Az.network/get-AzPublicIpAddress)\n- [Remove-AzResourceGroup](/powershell/module/Az.resources/Remove-AzResourceGroup)\n- [Wait-Job](/powershell/module/microsoft.powershell.core/wait-job)\n\nDostępne są także artykuły, które bardziej szczegółowo omawiają funkcje pokazane w tym samouczku.\n\n- [Operacje tworzenia pakietów parametrów programu PowerShell](/powershell/module/microsoft.powershell.core/about/about_splatting)\n- [Zapytania](queries-azureps.md)\n- [Formatowanie](formatting-output.md)\n- [Używanie zadań programu PowerShell](using-psjobs.md)\n\n### <a name=\"sample-scripts\"></a>Przykładowe skrypty\n\nJeśli chcesz od razu zacząć korzystać z określonych zadań, przejrzyj niektóre przykładowe skrypty.\n\n- [Maszyny wirtualne z systemem Linux](/azure/virtual-machines/linux/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Maszyny wirtualne z systemem Windows](/azure/virtual-machines/windows/powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Web Apps](/azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Bazy danych SQL](/azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json)\n- [Cosmos DB](/azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json)\n\n### <a name=\"feedback\"></a>Opinia\n\nJeśli chcesz przekazać opinię lub sugestie albo zadać pytania, istnieje wiele sposobów kontaktu.\n\n* `Send-Feedback` to wbudowane polecenie programu Azure PowerShell, które umożliwia przekazanie dowolnej opinii zespołowi.\n* Prześlij wniosek dotyczący funkcji lub raport o usterce do [repozytorium programu Azure PowerShell](https://github.com/Azure/azure-powershell/issues).\n* Zadaj pytanie lub uzyskaj wyjaśnienie, rejestrując problem w [repozytorium dokumentacji programu Azure PowerShell](https://github.com/MicrosoftDocs/azure-docs-powershell/issues).\n\nMamy nadzieję, że podoba Ci się program Azure PowerShell."
