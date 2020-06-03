@@ -128,7 +128,7 @@ Podczas ładowania modułu Azure PowerShell jest domyślnie ładowana najnowsza 
 Import-Module -Name AzureRM -RequiredVersion 2.3.0
 ```
 
-## <a name="provide-feedback"></a>Przekaż opinię
+## <a name="provide-feedback"></a>Przekazywanie opinii
 
 Jeśli znajdziesz błąd podczas korzystania z programu Azure Powershell, [zgłoś problem w usłudze GitHub](https://github.com/Azure/azure-powershell/issues).
 Aby przekazać opinię z wiersza polecenia, użyj polecenia cmdlet [Send-Feedback](/powershell/module/azurerm.profile/send-feedback).
