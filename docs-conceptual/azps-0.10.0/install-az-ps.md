@@ -4,41 +4,50 @@ description: Jak zainstalować program Azure PowerShell za pomocą modułu Power
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/26/2020
-ms.openlocfilehash: 7a25270566f5e856ee44c4c191a47a3e7334508b
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: fa5b2d80b9caf216f218c85fe49ea4cc7f062404
+ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81445700"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84121986"
 ---
 # <a name="install-azure-powershell"></a>Instalowanie programu Azure PowerShell
 
-W tym artykule wyjaśniono, jak zainstalować moduły programu Azure PowerShell przy użyciu modułu PowerShellGet. Te instrukcje działają na platformach Windows, macOS i Linux.
+W tym artykule wyjaśniono, jak zainstalować moduły programu Azure PowerShell przy użyciu modułu [PowerShellGet](/powershell/scripting/gallery/installing-psget). Te instrukcje działają na platformach Windows, macOS i Linux.
 
-Program Azure PowerShell jest również dostępny w usłudze Azure [Cloud Shell](/azure/cloud-shell/overview) i jest teraz wstępnie instalowany w [obrazach platformy Docker](azureps-in-docker.md).
+Program Azure PowerShell jest również dostępny w usłudze [Azure Cloud Shell](/azure/cloud-shell/overview).
 
 ## <a name="requirements"></a>Wymagania
 
-Program Azure PowerShell działa z programem PowerShell 5.1 lub nowszym w systemie Windows albo z programem PowerShell Core 6.x lub nowszym na dowolnej platformie. Należy zainstalować [najnowszą wersję programu PowerShell Core](/powershell/scripting/install/installing-powershell#powershell-core) dostępną dla danego systemu operacyjnego. Program Azure PowerShell nie ma dodatkowych wymagań w przypadku uruchamiania w programie PowerShell Core.
+Program Azure PowerShell działa z programem PowerShell 5.1 lub nowszym w systemie Windows albo z programem PowerShell Core 6.x lub nowszym na dowolnej platformie. Należy zainstalować [najnowszą wersję programu PowerShell](/powershell/scripting/install/installing-powershell) dostępną dla danego systemu operacyjnego. Program Azure PowerShell nie ma dodatkowych wymagań w przypadku uruchamiania w programie PowerShell 6.2.4 lub nowszym.
 
 Aby sprawdzić używaną wersję programu PowerShell, uruchom polecenie:
 
-```powershell-interactive
+```azurepowershell-interactive
 $PSVersionTable.PSVersion
 ```
 
 Aby użyć programu Azure PowerShell w programie PowerShell 5.1 w systemie Windows:
 
-1. Jeśli to konieczne, przeprowadź aktualizację do programu [Windows PowerShell 5.1](/powershell/scripting/install/installing-windows-powershell#upgrading-existing-windows-powershell). Jeśli używasz systemu Windows 10, masz już zainstalowany program PowerShell 5.1.
+1. Przeprowadź aktualizację do programu [Windows PowerShell 5.1](/powershell/scripting/windows-powershell/install/installing-windows-powershell#upgrading-existing-windows-powershell).
+   Jeśli używasz systemu Windows 10 w wersji 1607 lub nowszej, masz już zainstalowany program PowerShell 5.1.
 2. Zainstaluj program [.NET Framework 4.7.2 lub nowszy](/dotnet/framework/install).
-3. Upewnij się, że masz najnowszą wersję modułu PowerShellGet. Uruchom polecenie `Update-Module PowerShellGet -Force`.
+3. Upewnij się, że masz najnowszą wersję modułu PowerShellGet. Uruchom polecenie `Install-Module -Name PowerShellGet -Force`.
 
 ## <a name="install-the-azure-powershell-module"></a>Instalacja modułu Azure PowerShell
 
-Użycie poleceń cmdlet PowerShellGet jest preferowaną metodą instalacji. Ta metoda działa tak samo na platformach Windows, macOS i Linux. Uruchom następujące polecenie z sesji programu PowerShell:
+> [!WARNING]
+> Nie obsługujemy równocześnie zainstalowanych modułów AzureRM i Az w programie PowerShell 5.1 w systemie Windows. Jeśli chcesz zachować moduł AzureRM dostępny w systemie, zainstaluj moduł Az dla programu PowerShell 6.2.4 lub nowszego.
+
+Użycie poleceń cmdlet PowerShellGet jest preferowaną metodą instalacji. Moduł Az zainstaluj tylko dla bieżącego użytkownika. Jest to zalecany zakres instalacji. Ta metoda działa tak samo na platformach Windows, macOS i Linux. Uruchom następujące polecenie z sesji programu PowerShell:
 
 ```powershell-interactive
-Install-Module -Name Az -AllowClobber
+if (Get-Module -Name AzureRM -ListAvailable) {
+    Write-Warning -Message ('Az module not installed. Having both the AzureRM and ' +
+      'Az modules installed at the same time is not supported.')
+} else {
+    Install-Module -Name Az -AllowClobber -Scope CurrentUser
+}
 ```
 
 Galeria programu PowerShell domyślnie nie jest skonfigurowana jako zaufane repozytorium modułu PowerShellGet. Po pierwszym użyciu Galerii programu PowerShell zostanie wyświetlony następujący komunikat:
@@ -55,31 +64,25 @@ Are you sure you want to install the modules from 'PSGallery'?
 
 Wybierz odpowiedź `Yes` lub `Yes to All`, aby kontynuować instalację.
 
-Moduł Az to zbiorczy moduł poleceń cmdlet programu Azure PowerShell. Po jego zainstalowaniu są pobierane wszystkie dostępne moduły usługi Azure Resource Manager i są udostępniane do użycia ich polecenia cmdlet.
-
-> [!WARNING]
-> Nie obsługujemy równocześnie zainstalowanych modułów AzureRM i Az w programie PowerShell 5.1 dla systemu Windows. Jeśli potrzebujesz zachować moduł AzureRM dostępny w systemie, zainstaluj moduł Az dla programu PowerShell Core w wersji 6.x lub nowszej.
-
-Najpierw [zainstaluj program PowerShell Core 6.x lub nowszy](/powershell/scripting/install/installing-powershell-core-on-windows)
-
-Następnie w sesji programu PowerShell Core zainstaluj moduł Az tylko dla bieżącego użytkownika. Jest to zalecany zakres instalacji.
-
-```powershell-interactive
-Install-Module -Name Az -AllowClobber -Scope CurrentUser
-```
-
 Zainstalowanie modułu dla wszystkich użytkowników w systemie wymaga podniesionych uprawnień. Uruchom sesję programu PowerShell przy użyciu pozycji **Uruchom jako administrator** w systemie Windows albo polecenia `sudo` w systemie macOS lub Linux:
 
 ```powershell-interactive
-Install-Module -Name Az -AllowClobber -Scope AllUsers
+if (Get-Module -Name AzureRM -ListAvailable) {
+    Write-Warning -Message ('Az module not installed. Having both the AzureRM and ' +
+      'Az modules installed at the same time is not supported.')
+} else {
+    Install-Module -Name Az -AllowClobber -Scope AllUsers
+}
 ```
+
+Moduł Az to zbiorczy moduł poleceń cmdlet programu Azure PowerShell. Po jego zainstalowaniu są pobierane wszystkie ogólnie dostępne moduły Az programu PowerShell i są udostępniane do użycia ich polecenia cmdlet.
 
 ## <a name="install-offline"></a>Instalowanie w trybie offline
 
 W niektórych środowiskach nie jest możliwe nawiązanie połączenia z galerią programu PowerShell. W takich sytuacjach nadal możesz przeprowadzić instalację w trybie offline przy użyciu jednej z następujących metod:
 
 * Pobierz moduły do innej lokalizacji w sieci, a następnie użyj jej jako źródłowej lokalizacji instalacji.
-  Umożliwi to buforowanie modułów programu PowerShell na jednym serwerze lub w jednym udziale plików, a następnie wdrażanie ich za pomocą modułu PowerShellGet w dowolnym odłączonym systemie. Aby dowiedzieć się, jak skonfigurować lokalne repozytorium i przeprowadzić instalację w systemach rozłączonych, zobacz [Working with local PowerShellGet repositories (Praca z lokalnymi repozytoriami modułu PowerShellGet)](/powershell/scripting/gallery/how-to/working-with-local-psrepositories).
+  Ta metoda umożliwi buforowanie modułów programu PowerShell na jednym serwerze lub w jednym udziale plików, a następnie wdrażanie ich za pomocą modułu PowerShellGet w dowolnym odłączonym systemie. Aby dowiedzieć się, jak skonfigurować lokalne repozytorium i przeprowadzić instalację w systemach rozłączonych, zobacz [Working with local PowerShellGet repositories (Praca z lokalnymi repozytoriami modułu PowerShellGet)](/powershell/scripting/gallery/how-to/working-with-local-psrepositories).
 * [Pobierz pakiet MSI programu Azure PowerShell](install-az-ps-msi.md) na maszynę połączoną z siecią, a następnie skopiuj instalator do systemów bez dostępu do galerii programu PowerShell. Pamiętaj, że instalator MSI działa tylko na potrzeby programu PowerShell 5.1 w systemie Windows.
 * Zapisz moduł za pomocą polecenia [Save-Module](/powershell/module/PowershellGet/Save-Module) w udziale plików lub zapisz go w innej lokalizacji źródłowej, a następnie ręcznie skopiuj na inne maszyny:
 
@@ -118,7 +121,8 @@ Connect-AzAccount
 ```
 
 > [!NOTE]
-> Jeśli wyłączono automatyczne ładowanie modułów, ręcznie zaimportuj moduł za pomocą polecenia `Import-Module Az`. Ze względu na strukturę modułu może to potrwać kilka sekund.
+> Jeśli wyłączono automatyczne ładowanie modułów, ręcznie zaimportuj moduł za pomocą polecenia `Import-Module -Name Az`.
+> Ze względu na strukturę modułu może to potrwać kilka sekund.
 
 Musisz powtórzyć te kroki dla każdej nowej sesji programu PowerShell, którą rozpoczniesz. Aby dowiedzieć się, jak można utrwalić logowanie się do swojego konta platformy Azure w wielu sesjach programu PowerShell, zobacz [Utrwalanie poświadczeń użytkownika między sesjami programu PowerShell](context-persistence.md).
 
@@ -129,7 +133,12 @@ Aby zaktualizować dowolny moduł programu PowerShell, należy użyć tej samej 
 Polecenia cmdlet PowerShellGet nie mogą zaktualizować modułów, które zostały zainstalowane za pomocą pakietu MSI. Pakiety MSI nie aktualizują modułów, które zostały zainstalowane przy użyciu modułu PowerShellGet. Jeśli masz problemy z aktualizacją za pomocą modułu PowerShellGet, **zainstaluj ponownie** zamiast **aktualizować**. Ponowna instalacja jest przeprowadzana w taki sam sposób jak instalacja, ale należy dodać parametr `-Force`:
 
 ```powershell
-Install-Module -Name Az -AllowClobber -Force
+if (Get-Module -Name AzureRM -ListAvailable) {
+    Write-Warning -Message ('Az module not installed. Having both the AzureRM and ' +
+      'Az modules installed at the same time is not supported.')
+} else {
+    Install-Module -Name Az -AllowClobber -Force
+}
 ```
 
 W przeciwieństwie do instalacji opartych na pakiecie MSI instalowanie lub aktualizowanie przy użyciu modułu PowerShellGet nie powoduje usunięcia starszych wersji, które mogą istnieć w systemie. Aby usunąć stare wersje programu Azure PowerShell z systemu, zobacz [Odinstalowywanie modułu programu Azure PowerShell](uninstall-az-ps.md). Aby uzyskać więcej informacji na temat instalacji opartych na pakiecie MSI, zobacz [Instalowanie programu Azure PowerShell za pomocą pakietu MSI](install-az-ps-msi.md).
@@ -139,7 +148,7 @@ W przeciwieństwie do instalacji opartych na pakiecie MSI instalowanie lub aktua
 Jest możliwe zainstalowanie więcej niż jednej wersji programu Azure PowerShell. Aby sprawdzić, czy masz wiele zainstalowanych wersji programu Azure PowerShell, użyj następującego polecenia:
 
 ```powershell-interactive
-Get-InstalledModule -Name Az -AllVersions | select Name,Version
+Get-InstalledModule -Name Az -AllVersions | Select-Object -Property Name, Version
 ```
 
 Aby usunąć wersję programu Azure PowerShell, zobacz [Odinstalowywanie modułu programu Azure PowerShell](uninstall-az-ps.md).
@@ -155,7 +164,7 @@ Install-Module -Name Az -RequiredVersion 3.6.1
 Import-Module -Name Az -RequiredVersion 3.6.1
 ```
 
-## <a name="provide-feedback"></a>Przekaż opinię
+## <a name="provide-feedback"></a>Przekazywanie opinii
 
 Jeśli znajdziesz usterkę w programie Azure PowerShell, [zgłoś problem w usłudze GitHub](https://github.com/Azure/azure-powershell/issues). Aby przekazać opinię z wiersza polecenia, użyj polecenia cmdlet [Send-Feedback](/powershell/module/az.accounts/send-feedback).
 

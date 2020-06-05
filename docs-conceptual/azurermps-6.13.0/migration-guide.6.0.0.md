@@ -4,12 +4,12 @@ description: Ten przewodnik po migracji zawiera listę zmian powodujących niezg
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
-ms.openlocfilehash: 629cbb31f086c569d2b8961497d0255663602f54
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.openlocfilehash: ab20dd07fb0c14d8066ad12185f8245be291e7ec
+ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387211"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84122237"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-600"></a>Zmiany powodujące niezgodność dotyczące programu Microsoft Azure PowerShell 6.0.0.
 
@@ -20,9 +20,9 @@ Ten dokument służy jako przewodnik zarówno po powiadomieniach o istotnych zmi
 ## <a name="table-of-contents"></a>Spis treści
 
 - [Ogólne zmiany powodujące niezgodność](#general-breaking-changes)
-    - [Minimalna wymagana wersja programu PowerShell została podniesiona do wersji 5.0](#minimum-powershell-version-required-bumped-to-50)
-    - [Automatyczne zapisywanie kontekstu jest domyślnie włączone](#context-autosave-enabled-by-default)
-    - [Usunięcie aliasów Tags](#removal-of-tags-alias)
+  - [Minimalna wymagana wersja programu PowerShell została podniesiona do wersji 5.0](#minimum-powershell-version-required-bumped-to-50)
+  - [Automatyczne zapisywanie kontekstu jest domyślnie włączone](#context-autosave-enabled-by-default)
+  - [Usunięcie aliasów Tags](#removal-of-tags-alias)
 - [Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.Compute](#breaking-changes-to-azurermcompute-cmdlets)
 - [Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.Compute AzureRM.DataLakeStore](#breaking-changes-to-azurermdatalakestore-cmdlets)
 - [Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.Compute AzureRM.Dns](#breaking-changes-to-azurermdns-cmdlets)
@@ -33,22 +33,23 @@ Ten dokument służy jako przewodnik zarówno po powiadomieniach o istotnych zmi
 - [Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.Resources](#breaking-changes-to-azurermresources-cmdlets)
 - [Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.Storage](#breaking-changes-to-azurermstorage-cmdlets)
 - [Usunięte moduły](#removed-modules)
-    - [`AzureRM.ServerManagement`](#azurermservermanagement)
-    - [`AzureRM.SiteRecovery`](#azurermsiterecovery)
+  - [`AzureRM.ServerManagement`](#azurermservermanagement)
+  - [`AzureRM.SiteRecovery`](#azurermsiterecovery)
 
 ## <a name="general-breaking-changes"></a>Ogólne zmiany powodujące niezgodność
 
 ### <a name="minimum-powershell-version-required-bumped-to-50"></a>Minimalna wymagana wersja programu PowerShell została podniesiona do wersji 5.0
 
-Wcześniej w usłudze Azure PowerShell wymagany był program PowerShell w wersji _co najmniej_ 3.0, aby możliwe było uruchamianie jakichkolwiek poleceń cmdlet. W przyszłości to wymaganie zostanie podniesione do wersji 5.0 programu PowerShell. Informacje o uaktualnianiu programu PowerShell 5.0 znajdują się w [tej tabeli](https://docs.microsoft.com/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell).
+Wcześniej w usłudze Azure PowerShell wymagany był program PowerShell w wersji _co najmniej_ 3.0, aby możliwe było uruchamianie jakichkolwiek poleceń cmdlet. W przyszłości to wymaganie zostanie podniesione do wersji 5.0 programu PowerShell. Informacje o uaktualnianiu programu PowerShell 5.0 znajdują się w [tej tabeli](/powershell/scripting/windows-powershell/install/installing-windows-powershell#upgrading-existing-windows-powershell).
 
 ### <a name="context-autosave-enabled-by-default"></a>Automatyczne zapisywanie kontekstu jest domyślnie włączone
 
-Automatyczne zapisywanie kontekstu służy do zapisywania na platformie Azure informacji logowania, których można użyć między nowymi i różnymi sesjami programu PowerShell. Więcej informacji na temat automatycznego zapisywania kontekstu zawiera [ten dokument](https://docs.microsoft.com/powershell/azure/context-persistence).
+Automatyczne zapisywanie kontekstu służy do zapisywania na platformie Azure informacji logowania, których można użyć między nowymi i różnymi sesjami programu PowerShell. Więcej informacji na temat automatycznego zapisywania kontekstu zawiera [ten dokument](/powershell/azure/context-persistence).
 
 Wcześniej automatyczne zapisywanie kontekstu było domyślnie wyłączone, co oznacza, że informacje użytkownika dotyczące uwierzytelniania na platformie Azure nie były przechowywane między sesjami, dopóki użytkownik nie uruchomił polecenia cmdlet `Enable-AzureRmContextAutosave` w celu włączenia trwałości kontekstu. W przyszłości automatyczne zapisywanie kontekstu będzie domyślnie włączone, co oznacza, że dla użytkowników _bez zapisanych ustawień automatycznego zapisywania kontekstu_ kontekst będzie przechowywany do czasu ich następnego zalogowania się. Użytkownicy mogą zrezygnować z tej funkcji przy użyciu polecenia cmdlet `Disable-AzureRmContextAutosave`.
 
-_Uwaga_: ta zmiana nie będzie dotyczyła użytkowników, którzy wcześniej wyłączyli automatyczne zapisywanie kontekstu, użytkowników z włączonym automatycznym zapisywaniem kontekstu ani istniejących kontekstów
+> [!NOTE]
+> Ta zmiana nie będzie dotyczyła użytkowników, którzy wcześniej wyłączyli automatyczne zapisywanie kontekstu, użytkowników z włączonym automatycznym zapisywaniem kontekstu ani istniejących kontekstów.
 
 ### <a name="removal-of-tags-alias"></a>Usunięcie aliasów Tags
 
@@ -96,6 +97,7 @@ Alias `Tags` dla parametru `Tag` został usunięty z wielu poleceń cmdlet. Poni
 ## <a name="breaking-changes-to-azurermcompute-cmdlets"></a>Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.Compute
 
 **Różne**
+
 - Właściwość nazwy jednostki SKU zagnieżdżona w typach `PSDisk` i `PSSnapshot` została zmieniona z wartości `StandardLRS` i `PremiumLRS` odpowiednio na wartości `Standard_LRS` i `Premium_LRS`
 
 ```powershell-interactive
@@ -114,12 +116,15 @@ $vm.StorageProfile.DataDisks[0].ManagedDisk.StorageAccountType   # This will now
 ```
 
 **Add-AzureRmImageDataDisk**
+
 - Dopuszczalne wartości dla parametru `StorageAccountType` zostały zmienione z `StandardLRS` i `PremiumLRS` na odpowiednio `Standard_LRS` i `Premium_LRS`
 
 **Add-AzureRmVMDataDisk**
+
 - Dopuszczalne wartości dla parametru `StorageAccountType` zostały zmienione z `StandardLRS` i `PremiumLRS` na odpowiednio `Standard_LRS` i `Premium_LRS`
 
 **Add-AzureRmVmssDataDisk**
+
 - Dopuszczalne wartości dla parametru `StorageAccountType` zostały zmienione z `StandardLRS` i `PremiumLRS` na odpowiednio `Standard_LRS` i `Premium_LRS`
 
 **New-AzureRmAvailabilitySet**
@@ -254,8 +259,9 @@ Remove-AzureRmDataLakeStoreItem -Account "ContosoADL" -path /myFolder -Recurse
 - W poleceniu cmdlet nie są już akceptowane pojedyncze parametry, które tworzą token dostępu. Zamiast tego w poleceniach cmdlet jawne parametry tokenu, takie jak `Service` lub `Permissions`, zostały zastąpione ogólnym parametrem `TemplateUri` odpowiadającym przykładowemu tokenowi dostępu zdefiniowanemu w innym miejscu (prawdopodobnie za pomocą poleceń cmdlet programu PowerShell lub utworzonemu ręcznie zgodnie z dokumentacją usługi Storage) W poleceniu cmdlet zachowano parametr `ValidityPeriod`.
 
 Więcej informacji dotyczących tworzenia tokenów dostępu współdzielonego dla usługi Azure Storage można znaleźć na stronach dokumentacji, czyli odpowiednio:
-- [Tworzenie sygnatury dostępu współdzielonego usługi](https://docs.microsoft.com/rest/api/storageservices/Constructing-a-Service-SAS)
-- [Tworzenia sygnatury dostępu współdzielonego konta](https://docs.microsoft.com/rest/api/storageservices/constructing-an-account-sas)
+
+- [Tworzenie sygnatury dostępu współdzielonego usługi](/rest/api/storageservices/Constructing-a-Service-SAS)
+- [Tworzenia sygnatury dostępu współdzielonego konta](/rest/api/storageservices/constructing-an-account-sas)
 
 ```powershell-interactive
 # Old
@@ -282,7 +288,7 @@ $sas=Set-AzureKeyVaultManagedStorageSasDefinition -AccountName $sa.StorageAccoun
 - Uprawnienie `all` zostało usunięte z parametrów `PermissionsToKeys`, `PermissionsToSecrets`, i `PermissionsToCertificates`.
 
 **Ogólne**
-- Właściwość `ValueFromPipelineByPropertyName` została usunięta ze wszystkich poleceń cmdlet, w których włączone było potokowanie za pomocą parametru `InputObject`.  Polecenia cmdlet, których to dotyczy, są następujące:
+- Właściwość `ValueFromPipelineByPropertyName` została usunięta ze wszystkich poleceń cmdlet, w których włączone było potokowanie za pomocą parametru `InputObject`. Polecenia cmdlet, których to dotyczy, są następujące:
     - `Add-AzureKeyVaultCertificate`
     - `Add-AzureKeyVaultCertificateContact`
     - `Add-AzureKeyVaultKey`

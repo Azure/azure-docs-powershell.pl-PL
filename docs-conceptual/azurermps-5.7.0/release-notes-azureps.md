@@ -1,18 +1,18 @@
 ---
-title: Dziennik zmian w programie Azure PowerShell | Microsoft Docs
+title: Dziennik zmian w programie Azure PowerShell
 description: Jest to historia zmian wprowadzonych w programie Azure PowerShell w jego najnowszej wersji.
 ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 2/20/2018
-ms.openlocfilehash: 795aa938ec179bb6d845774cf25778bd2b7c1442
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.openlocfilehash: cf8d1fc76feb07e075339255de63e09f59187dc6
+ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387760"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84122058"
 ---
-# <a name="release-notes"></a>Informacje o wersji
+# <a name="azure-powershell-release-notes"></a>Informacje o wersji programu Azure PowerShell
 
 [!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
@@ -20,7 +20,7 @@ To jest lista zmian wprowadzonych w programie Azure PowerShell w tym wydaniu.
 
 ---
 
-# <a name="azure-powershell-570"></a>Azure PowerShell 5.7.0
+## <a name="azure-powershell-570"></a>Azure PowerShell 5.7.0
 
 Instalator programu Azure PowerShell 5.7.0: [link](https://github.com/Azure/azure-powershell/releases/download/v5.7.0-April2018/azure-powershell.5.7.0.msi)
 
@@ -38,7 +38,7 @@ Aby zaktualizować starszą wersję programu `AzureRM`, uruchom następujące po
 Update-Module -Name AzureRM
 ```
 
-## <a name="changes-since-last-release"></a>Zmiany od ostatniego wydania
+### <a name="changes-since-last-release"></a>Zmiany od ostatniego wydania
 
 #### <a name="general"></a>Ogólne
 * Zaktualizowano do najnowszej wersji środowiska Azure ClientRuntime
