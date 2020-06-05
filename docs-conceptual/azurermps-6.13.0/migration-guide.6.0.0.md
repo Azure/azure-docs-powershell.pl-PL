@@ -4,55 +4,56 @@ description: Ten przewodnik po migracji zawiera listę zmian powodujących niezg
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
-ms.openlocfilehash: 629cbb31f086c569d2b8961497d0255663602f54
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.openlocfilehash: ab20dd07fb0c14d8066ad12185f8245be291e7ec
+ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387211"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84122237"
 ---
-# <a name="breaking-changes-for-microsoft-azure-powershell-600"></a><span data-ttu-id="9c1a8-103">Zmiany powodujące niezgodność dotyczące programu Microsoft Azure PowerShell 6.0.0.</span><span class="sxs-lookup"><span data-stu-id="9c1a8-103">Breaking changes for Microsoft Azure PowerShell 6.0.0</span></span>
+# <a name="breaking-changes-for-microsoft-azure-powershell-600"></a><span data-ttu-id="6b71a-103">Zmiany powodujące niezgodność dotyczące programu Microsoft Azure PowerShell 6.0.0.</span><span class="sxs-lookup"><span data-stu-id="6b71a-103">Breaking changes for Microsoft Azure PowerShell 6.0.0</span></span>
 
 [!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
 
-<span data-ttu-id="9c1a8-104">Ten dokument służy jako przewodnik zarówno po powiadomieniach o istotnych zmianach, jak i migracji dla użytkowników poleceń cmdlet programu Microsoft Azure PowerShell.</span><span class="sxs-lookup"><span data-stu-id="9c1a8-104">This document serves as both a breaking change notification and migration guide for consumers of the Microsoft Azure PowerShell cmdlets.</span></span> <span data-ttu-id="9c1a8-105">Każda sekcja opisuje zarówno tempo istotnej zmiany, jak i ścieżkę migracji najmniejszego oporu.</span><span class="sxs-lookup"><span data-stu-id="9c1a8-105">Each section describes both the impetus for the breaking change and the migration path of least resistance.</span></span> <span data-ttu-id="9c1a8-106">Aby uzyskać szczegółowy kontekst, zapoznaj się z żądaniem ściągnięcia skojarzonym z każdą zmianą.</span><span class="sxs-lookup"><span data-stu-id="9c1a8-106">For in-depth context, please refer to the pull request associated with each change.</span></span>
+<span data-ttu-id="6b71a-104">Ten dokument służy jako przewodnik zarówno po powiadomieniach o istotnych zmianach, jak i migracji dla użytkowników poleceń cmdlet programu Microsoft Azure PowerShell.</span><span class="sxs-lookup"><span data-stu-id="6b71a-104">This document serves as both a breaking change notification and migration guide for consumers of the Microsoft Azure PowerShell cmdlets.</span></span> <span data-ttu-id="6b71a-105">Każda sekcja opisuje zarówno tempo istotnej zmiany, jak i ścieżkę migracji najmniejszego oporu.</span><span class="sxs-lookup"><span data-stu-id="6b71a-105">Each section describes both the impetus for the breaking change and the migration path of least resistance.</span></span> <span data-ttu-id="6b71a-106">Aby uzyskać szczegółowy kontekst, zapoznaj się z żądaniem ściągnięcia skojarzonym z każdą zmianą.</span><span class="sxs-lookup"><span data-stu-id="6b71a-106">For in-depth context, please refer to the pull request associated with each change.</span></span>
 
-## <a name="table-of-contents"></a><span data-ttu-id="9c1a8-107">Spis treści</span><span class="sxs-lookup"><span data-stu-id="9c1a8-107">Table of Contents</span></span>
+## <a name="table-of-contents"></a><span data-ttu-id="6b71a-107">Spis treści</span><span class="sxs-lookup"><span data-stu-id="6b71a-107">Table of Contents</span></span>
 
-- [<span data-ttu-id="9c1a8-108">Ogólne zmiany powodujące niezgodność</span><span class="sxs-lookup"><span data-stu-id="9c1a8-108">General breaking changes</span></span>](#general-breaking-changes)
-    - [<span data-ttu-id="9c1a8-109">Minimalna wymagana wersja programu PowerShell została podniesiona do wersji 5.0</span><span class="sxs-lookup"><span data-stu-id="9c1a8-109">Minimum PowerShell version required bumped to 5.0</span></span>](#minimum-powershell-version-required-bumped-to-50)
-    - [<span data-ttu-id="9c1a8-110">Automatyczne zapisywanie kontekstu jest domyślnie włączone</span><span class="sxs-lookup"><span data-stu-id="9c1a8-110">Context autosaved enabled by default</span></span>](#context-autosave-enabled-by-default)
-    - [<span data-ttu-id="9c1a8-111">Usunięcie aliasów Tags</span><span class="sxs-lookup"><span data-stu-id="9c1a8-111">Removal of Tags alias</span></span>](#removal-of-tags-alias)
-- [<span data-ttu-id="9c1a8-112">Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.Compute</span><span class="sxs-lookup"><span data-stu-id="9c1a8-112">Breaking changes to AzureRM.Compute cmdlets</span></span>](#breaking-changes-to-azurermcompute-cmdlets)
-- [<span data-ttu-id="9c1a8-113">Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.Compute AzureRM.DataLakeStore</span><span class="sxs-lookup"><span data-stu-id="9c1a8-113">Breaking changes to AzureRM.DataLakeStore cmdlets</span></span>](#breaking-changes-to-azurermdatalakestore-cmdlets)
-- [<span data-ttu-id="9c1a8-114">Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.Compute AzureRM.Dns</span><span class="sxs-lookup"><span data-stu-id="9c1a8-114">Breaking changes to AzureRM.Dns cmdlets</span></span>](#breaking-changes-to-azurermdns-cmdlets)
-- [<span data-ttu-id="9c1a8-115">Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.Compute AzureRM.Insights</span><span class="sxs-lookup"><span data-stu-id="9c1a8-115">Breaking changes to AzureRM.Insights cmdlets</span></span>](#breaking-changes-to-azurerminsights-cmdlets)
-- [<span data-ttu-id="9c1a8-116">Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.KeyVault</span><span class="sxs-lookup"><span data-stu-id="9c1a8-116">Breaking changes to AzureRM.KeyVault cmdlets</span></span>](#breaking-changes-to-azurermkeyvault-cmdlets)
-- [<span data-ttu-id="9c1a8-117">Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.Network</span><span class="sxs-lookup"><span data-stu-id="9c1a8-117">Breaking changes to AzureRM.Network cmdlets</span></span>](#breaking-changes-to-azurermnetwork-cmdlets)
-- [<span data-ttu-id="9c1a8-118">Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.RedisCache</span><span class="sxs-lookup"><span data-stu-id="9c1a8-118">Breaking changes to AzureRM.RedisCache cmdlets</span></span>](#breaking-changes-to-azurermrediscache-cmdlets)
-- [<span data-ttu-id="9c1a8-119">Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.Resources</span><span class="sxs-lookup"><span data-stu-id="9c1a8-119">Breaking changes to AzureRM.Resources cmdlets</span></span>](#breaking-changes-to-azurermresources-cmdlets)
-- [<span data-ttu-id="9c1a8-120">Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.Storage</span><span class="sxs-lookup"><span data-stu-id="9c1a8-120">Breaking changes to AzureRM.Storage cmdlets</span></span>](#breaking-changes-to-azurermstorage-cmdlets)
-- [<span data-ttu-id="9c1a8-121">Usunięte moduły</span><span class="sxs-lookup"><span data-stu-id="9c1a8-121">Removed modules</span></span>](#removed-modules)
-    - [`AzureRM.ServerManagement`](#azurermservermanagement)
-    - [`AzureRM.SiteRecovery`](#azurermsiterecovery)
+- [<span data-ttu-id="6b71a-108">Ogólne zmiany powodujące niezgodność</span><span class="sxs-lookup"><span data-stu-id="6b71a-108">General breaking changes</span></span>](#general-breaking-changes)
+  - [<span data-ttu-id="6b71a-109">Minimalna wymagana wersja programu PowerShell została podniesiona do wersji 5.0</span><span class="sxs-lookup"><span data-stu-id="6b71a-109">Minimum PowerShell version required bumped to 5.0</span></span>](#minimum-powershell-version-required-bumped-to-50)
+  - [<span data-ttu-id="6b71a-110">Automatyczne zapisywanie kontekstu jest domyślnie włączone</span><span class="sxs-lookup"><span data-stu-id="6b71a-110">Context autosaved enabled by default</span></span>](#context-autosave-enabled-by-default)
+  - [<span data-ttu-id="6b71a-111">Usunięcie aliasów Tags</span><span class="sxs-lookup"><span data-stu-id="6b71a-111">Removal of Tags alias</span></span>](#removal-of-tags-alias)
+- [<span data-ttu-id="6b71a-112">Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.Compute</span><span class="sxs-lookup"><span data-stu-id="6b71a-112">Breaking changes to AzureRM.Compute cmdlets</span></span>](#breaking-changes-to-azurermcompute-cmdlets)
+- [<span data-ttu-id="6b71a-113">Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.Compute AzureRM.DataLakeStore</span><span class="sxs-lookup"><span data-stu-id="6b71a-113">Breaking changes to AzureRM.DataLakeStore cmdlets</span></span>](#breaking-changes-to-azurermdatalakestore-cmdlets)
+- [<span data-ttu-id="6b71a-114">Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.Compute AzureRM.Dns</span><span class="sxs-lookup"><span data-stu-id="6b71a-114">Breaking changes to AzureRM.Dns cmdlets</span></span>](#breaking-changes-to-azurermdns-cmdlets)
+- [<span data-ttu-id="6b71a-115">Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.Compute AzureRM.Insights</span><span class="sxs-lookup"><span data-stu-id="6b71a-115">Breaking changes to AzureRM.Insights cmdlets</span></span>](#breaking-changes-to-azurerminsights-cmdlets)
+- [<span data-ttu-id="6b71a-116">Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.KeyVault</span><span class="sxs-lookup"><span data-stu-id="6b71a-116">Breaking changes to AzureRM.KeyVault cmdlets</span></span>](#breaking-changes-to-azurermkeyvault-cmdlets)
+- [<span data-ttu-id="6b71a-117">Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.Network</span><span class="sxs-lookup"><span data-stu-id="6b71a-117">Breaking changes to AzureRM.Network cmdlets</span></span>](#breaking-changes-to-azurermnetwork-cmdlets)
+- [<span data-ttu-id="6b71a-118">Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.RedisCache</span><span class="sxs-lookup"><span data-stu-id="6b71a-118">Breaking changes to AzureRM.RedisCache cmdlets</span></span>](#breaking-changes-to-azurermrediscache-cmdlets)
+- [<span data-ttu-id="6b71a-119">Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.Resources</span><span class="sxs-lookup"><span data-stu-id="6b71a-119">Breaking changes to AzureRM.Resources cmdlets</span></span>](#breaking-changes-to-azurermresources-cmdlets)
+- [<span data-ttu-id="6b71a-120">Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.Storage</span><span class="sxs-lookup"><span data-stu-id="6b71a-120">Breaking changes to AzureRM.Storage cmdlets</span></span>](#breaking-changes-to-azurermstorage-cmdlets)
+- [<span data-ttu-id="6b71a-121">Usunięte moduły</span><span class="sxs-lookup"><span data-stu-id="6b71a-121">Removed modules</span></span>](#removed-modules)
+  - [`AzureRM.ServerManagement`](#azurermservermanagement)
+  - [`AzureRM.SiteRecovery`](#azurermsiterecovery)
 
-## <a name="general-breaking-changes"></a><span data-ttu-id="9c1a8-122">Ogólne zmiany powodujące niezgodność</span><span class="sxs-lookup"><span data-stu-id="9c1a8-122">General breaking changes</span></span>
+## <a name="general-breaking-changes"></a><span data-ttu-id="6b71a-122">Ogólne zmiany powodujące niezgodność</span><span class="sxs-lookup"><span data-stu-id="6b71a-122">General breaking changes</span></span>
 
-### <a name="minimum-powershell-version-required-bumped-to-50"></a><span data-ttu-id="9c1a8-123">Minimalna wymagana wersja programu PowerShell została podniesiona do wersji 5.0</span><span class="sxs-lookup"><span data-stu-id="9c1a8-123">Minimum PowerShell version required bumped to 5.0</span></span>
+### <a name="minimum-powershell-version-required-bumped-to-50"></a><span data-ttu-id="6b71a-123">Minimalna wymagana wersja programu PowerShell została podniesiona do wersji 5.0</span><span class="sxs-lookup"><span data-stu-id="6b71a-123">Minimum PowerShell version required bumped to 5.0</span></span>
 
-<span data-ttu-id="9c1a8-124">Wcześniej w usłudze Azure PowerShell wymagany był program PowerShell w wersji _co najmniej_ 3.0, aby możliwe było uruchamianie jakichkolwiek poleceń cmdlet.</span><span class="sxs-lookup"><span data-stu-id="9c1a8-124">Previously, Azure PowerShell required _at least_ version 3.0 of PowerShell to run any cmdlet.</span></span> <span data-ttu-id="9c1a8-125">W przyszłości to wymaganie zostanie podniesione do wersji 5.0 programu PowerShell.</span><span class="sxs-lookup"><span data-stu-id="9c1a8-125">Moving forward, this requirement will be raised to version 5.0 of PowerShell.</span></span> <span data-ttu-id="9c1a8-126">Informacje o uaktualnianiu programu PowerShell 5.0 znajdują się w [tej tabeli](https://docs.microsoft.com/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell).</span><span class="sxs-lookup"><span data-stu-id="9c1a8-126">For information on upgrading to PowerShell 5.0, please see [this table](https://docs.microsoft.com/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell).</span></span>
+<span data-ttu-id="6b71a-124">Wcześniej w usłudze Azure PowerShell wymagany był program PowerShell w wersji _co najmniej_ 3.0, aby możliwe było uruchamianie jakichkolwiek poleceń cmdlet.</span><span class="sxs-lookup"><span data-stu-id="6b71a-124">Previously, Azure PowerShell required _at least_ version 3.0 of PowerShell to run any cmdlet.</span></span> <span data-ttu-id="6b71a-125">W przyszłości to wymaganie zostanie podniesione do wersji 5.0 programu PowerShell.</span><span class="sxs-lookup"><span data-stu-id="6b71a-125">Moving forward, this requirement will be raised to version 5.0 of PowerShell.</span></span> <span data-ttu-id="6b71a-126">Informacje o uaktualnianiu programu PowerShell 5.0 znajdują się w [tej tabeli](/powershell/scripting/windows-powershell/install/installing-windows-powershell#upgrading-existing-windows-powershell).</span><span class="sxs-lookup"><span data-stu-id="6b71a-126">For information on upgrading to PowerShell 5.0, please see [this table](/powershell/scripting/windows-powershell/install/installing-windows-powershell#upgrading-existing-windows-powershell).</span></span>
 
-### <a name="context-autosave-enabled-by-default"></a><span data-ttu-id="9c1a8-127">Automatyczne zapisywanie kontekstu jest domyślnie włączone</span><span class="sxs-lookup"><span data-stu-id="9c1a8-127">Context autosave enabled by default</span></span>
+### <a name="context-autosave-enabled-by-default"></a><span data-ttu-id="6b71a-127">Automatyczne zapisywanie kontekstu jest domyślnie włączone</span><span class="sxs-lookup"><span data-stu-id="6b71a-127">Context autosave enabled by default</span></span>
 
-<span data-ttu-id="9c1a8-128">Automatyczne zapisywanie kontekstu służy do zapisywania na platformie Azure informacji logowania, których można użyć między nowymi i różnymi sesjami programu PowerShell.</span><span class="sxs-lookup"><span data-stu-id="9c1a8-128">Context autosave is the storage of Azure sign in information that can be used between new and different PowerShell sessions.</span></span> <span data-ttu-id="9c1a8-129">Więcej informacji na temat automatycznego zapisywania kontekstu zawiera [ten dokument](https://docs.microsoft.com/powershell/azure/context-persistence).</span><span class="sxs-lookup"><span data-stu-id="9c1a8-129">For more information on context autosave, please see [this document](https://docs.microsoft.com/powershell/azure/context-persistence).</span></span>
+<span data-ttu-id="6b71a-128">Automatyczne zapisywanie kontekstu służy do zapisywania na platformie Azure informacji logowania, których można użyć między nowymi i różnymi sesjami programu PowerShell.</span><span class="sxs-lookup"><span data-stu-id="6b71a-128">Context autosave is the storage of Azure sign in information that can be used between new and different PowerShell sessions.</span></span> <span data-ttu-id="6b71a-129">Więcej informacji na temat automatycznego zapisywania kontekstu zawiera [ten dokument](/powershell/azure/context-persistence).</span><span class="sxs-lookup"><span data-stu-id="6b71a-129">For more information on context autosave, please see [this document](/powershell/azure/context-persistence).</span></span>
 
-<span data-ttu-id="9c1a8-130">Wcześniej automatyczne zapisywanie kontekstu było domyślnie wyłączone, co oznacza, że informacje użytkownika dotyczące uwierzytelniania na platformie Azure nie były przechowywane między sesjami, dopóki użytkownik nie uruchomił polecenia cmdlet `Enable-AzureRmContextAutosave` w celu włączenia trwałości kontekstu.</span><span class="sxs-lookup"><span data-stu-id="9c1a8-130">Previously by default, context autosave was disabled, which meant the user's Azure authentication information was not stored between sessions until they ran the `Enable-AzureRmContextAutosave` cmdlet to turn on context persistence.</span></span> <span data-ttu-id="9c1a8-131">W przyszłości automatyczne zapisywanie kontekstu będzie domyślnie włączone, co oznacza, że dla użytkowników _bez zapisanych ustawień automatycznego zapisywania kontekstu_ kontekst będzie przechowywany do czasu ich następnego zalogowania się.</span><span class="sxs-lookup"><span data-stu-id="9c1a8-131">Moving forward, context autosave will be enabled by default, which means that users _with no saved context autosave settings_ will have their context stored the next time they sign in.</span></span> <span data-ttu-id="9c1a8-132">Użytkownicy mogą zrezygnować z tej funkcji przy użyciu polecenia cmdlet `Disable-AzureRmContextAutosave`.</span><span class="sxs-lookup"><span data-stu-id="9c1a8-132">Users can opt out of this functionality by using the `Disable-AzureRmContextAutosave` cmdlet.</span></span>
+<span data-ttu-id="6b71a-130">Wcześniej automatyczne zapisywanie kontekstu było domyślnie wyłączone, co oznacza, że informacje użytkownika dotyczące uwierzytelniania na platformie Azure nie były przechowywane między sesjami, dopóki użytkownik nie uruchomił polecenia cmdlet `Enable-AzureRmContextAutosave` w celu włączenia trwałości kontekstu.</span><span class="sxs-lookup"><span data-stu-id="6b71a-130">Previously by default, context autosave was disabled, which meant the user's Azure authentication information was not stored between sessions until they ran the `Enable-AzureRmContextAutosave` cmdlet to turn on context persistence.</span></span> <span data-ttu-id="6b71a-131">W przyszłości automatyczne zapisywanie kontekstu będzie domyślnie włączone, co oznacza, że dla użytkowników _bez zapisanych ustawień automatycznego zapisywania kontekstu_ kontekst będzie przechowywany do czasu ich następnego zalogowania się.</span><span class="sxs-lookup"><span data-stu-id="6b71a-131">Moving forward, context autosave will be enabled by default, which means that users _with no saved context autosave settings_ will have their context stored the next time they sign in.</span></span> <span data-ttu-id="6b71a-132">Użytkownicy mogą zrezygnować z tej funkcji przy użyciu polecenia cmdlet `Disable-AzureRmContextAutosave`.</span><span class="sxs-lookup"><span data-stu-id="6b71a-132">Users can opt out of this functionality by using the `Disable-AzureRmContextAutosave` cmdlet.</span></span>
 
-<span data-ttu-id="9c1a8-133">_Uwaga_: ta zmiana nie będzie dotyczyła użytkowników, którzy wcześniej wyłączyli automatyczne zapisywanie kontekstu, użytkowników z włączonym automatycznym zapisywaniem kontekstu ani istniejących kontekstów</span><span class="sxs-lookup"><span data-stu-id="9c1a8-133">_Note_: users that previously disabled context autosave or users with context autosave enabled and existing contexts will not be affected by this change</span></span>
+> [!NOTE]
+> <span data-ttu-id="6b71a-133">Ta zmiana nie będzie dotyczyła użytkowników, którzy wcześniej wyłączyli automatyczne zapisywanie kontekstu, użytkowników z włączonym automatycznym zapisywaniem kontekstu ani istniejących kontekstów.</span><span class="sxs-lookup"><span data-stu-id="6b71a-133">Users who previously disabled context autosave or users with context autosave enabled and existing contexts will not be affected by this change.</span></span>
 
-### <a name="removal-of-tags-alias"></a><span data-ttu-id="9c1a8-134">Usunięcie aliasów Tags</span><span class="sxs-lookup"><span data-stu-id="9c1a8-134">Removal of Tags alias</span></span>
+### <a name="removal-of-tags-alias"></a><span data-ttu-id="6b71a-134">Usunięcie aliasów Tags</span><span class="sxs-lookup"><span data-stu-id="6b71a-134">Removal of Tags alias</span></span>
 
-<span data-ttu-id="9c1a8-135">Alias `Tags` dla parametru `Tag` został usunięty z wielu poleceń cmdlet.</span><span class="sxs-lookup"><span data-stu-id="9c1a8-135">The alias `Tags` for the `Tag` parameter has been removed across numerous cmdlets.</span></span> <span data-ttu-id="9c1a8-136">Poniżej przedstawiono listę modułów (i odpowiednich poleceń cmdlet), na które ta zmiana ma wpływ:</span><span class="sxs-lookup"><span data-stu-id="9c1a8-136">Below is a list of modules (and the corresponding cmdlets) affected by this:</span></span>
+<span data-ttu-id="6b71a-135">Alias `Tags` dla parametru `Tag` został usunięty z wielu poleceń cmdlet.</span><span class="sxs-lookup"><span data-stu-id="6b71a-135">The alias `Tags` for the `Tag` parameter has been removed across numerous cmdlets.</span></span> <span data-ttu-id="6b71a-136">Poniżej przedstawiono listę modułów (i odpowiednich poleceń cmdlet), na które ta zmiana ma wpływ:</span><span class="sxs-lookup"><span data-stu-id="6b71a-136">Below is a list of modules (and the corresponding cmdlets) affected by this:</span></span>
 
 #### `AzureRM.ApiManagement`
 
@@ -93,10 +94,11 @@ ms.locfileid: "83387211"
 - `Set-AzureRmOperationalInsightsSavedSearch`
 - `Set-AzureRmOperationalInsightsWorkspace`
 
-## <a name="breaking-changes-to-azurermcompute-cmdlets"></a><span data-ttu-id="9c1a8-137">Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.Compute</span><span class="sxs-lookup"><span data-stu-id="9c1a8-137">Breaking changes to AzureRM.Compute cmdlets</span></span>
+## <a name="breaking-changes-to-azurermcompute-cmdlets"></a><span data-ttu-id="6b71a-137">Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.Compute</span><span class="sxs-lookup"><span data-stu-id="6b71a-137">Breaking changes to AzureRM.Compute cmdlets</span></span>
 
-<span data-ttu-id="9c1a8-138">**Różne**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-138">**Miscellaneous**</span></span>
-- <span data-ttu-id="9c1a8-139">Właściwość nazwy jednostki SKU zagnieżdżona w typach `PSDisk` i `PSSnapshot` została zmieniona z wartości `StandardLRS` i `PremiumLRS` odpowiednio na wartości `Standard_LRS` i `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="9c1a8-139">The sku name property nested in types `PSDisk` and `PSSnapshot` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
+<span data-ttu-id="6b71a-138">**Różne**</span><span class="sxs-lookup"><span data-stu-id="6b71a-138">**Miscellaneous**</span></span>
+
+- <span data-ttu-id="6b71a-139">Właściwość nazwy jednostki SKU zagnieżdżona w typach `PSDisk` i `PSSnapshot` została zmieniona z wartości `StandardLRS` i `PremiumLRS` odpowiednio na wartości `Standard_LRS` i `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="6b71a-139">The sku name property nested in types `PSDisk` and `PSSnapshot` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
 
 ```powershell-interactive
 $disk = Get-AzureRmDisk -ResourceGroupName "MyResourceGroup" -DiskName "MyDiskName"
@@ -106,24 +108,27 @@ $snapshot = Get-AzureRmSnapshot -ResourceGroupName "MyResourceGroup" -SnapshotNa
 $snapshot.Sku.Name   # This will now return Standard_LRS or Premium_LRS
 ```
 
-- <span data-ttu-id="9c1a8-140">Właściwość typu konta magazynu zagnieżdżona w typach `PSVirtualMachine`, `PSVirtualMachineScaleSet` i `PSImage` została zmieniona z wartości `StandardLRS` i `PremiumLRS` odpowiednio na wartości `Standard_LRS` i `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="9c1a8-140">The storage account type property nested in types `PSVirtualMachine`, `PSVirtualMachineScaleSet` and `PSImage` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
+- <span data-ttu-id="6b71a-140">Właściwość typu konta magazynu zagnieżdżona w typach `PSVirtualMachine`, `PSVirtualMachineScaleSet` i `PSImage` została zmieniona z wartości `StandardLRS` i `PremiumLRS` odpowiednio na wartości `Standard_LRS` i `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="6b71a-140">The storage account type property nested in types `PSVirtualMachine`, `PSVirtualMachineScaleSet` and `PSImage` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
 
 ```powershell-interactive
 $vm = Get-AzureRmVM -ResourceGroupName "MyResourceGroup" -Name "MyVM"
 $vm.StorageProfile.DataDisks[0].ManagedDisk.StorageAccountType   # This will now return Standard_LRS or Premium_LRS
 ```
 
-<span data-ttu-id="9c1a8-141">**Add-AzureRmImageDataDisk**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-141">**Add-AzureRmImageDataDisk**</span></span>
-- <span data-ttu-id="9c1a8-142">Dopuszczalne wartości dla parametru `StorageAccountType` zostały zmienione z `StandardLRS` i `PremiumLRS` na odpowiednio `Standard_LRS` i `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="9c1a8-142">The accepted values for parameter `StorageAccountType` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
+<span data-ttu-id="6b71a-141">**Add-AzureRmImageDataDisk**</span><span class="sxs-lookup"><span data-stu-id="6b71a-141">**Add-AzureRmImageDataDisk**</span></span>
 
-<span data-ttu-id="9c1a8-143">**Add-AzureRmVMDataDisk**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-143">**Add-AzureRmVMDataDisk**</span></span>
-- <span data-ttu-id="9c1a8-144">Dopuszczalne wartości dla parametru `StorageAccountType` zostały zmienione z `StandardLRS` i `PremiumLRS` na odpowiednio `Standard_LRS` i `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="9c1a8-144">The accepted values for parameter `StorageAccountType` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
+- <span data-ttu-id="6b71a-142">Dopuszczalne wartości dla parametru `StorageAccountType` zostały zmienione z `StandardLRS` i `PremiumLRS` na odpowiednio `Standard_LRS` i `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="6b71a-142">The accepted values for parameter `StorageAccountType` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
 
-<span data-ttu-id="9c1a8-145">**Add-AzureRmVmssDataDisk**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-145">**Add-AzureRmVmssDataDisk**</span></span>
-- <span data-ttu-id="9c1a8-146">Dopuszczalne wartości dla parametru `StorageAccountType` zostały zmienione z `StandardLRS` i `PremiumLRS` na odpowiednio `Standard_LRS` i `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="9c1a8-146">The accepted values for parameter `StorageAccountType` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
+<span data-ttu-id="6b71a-143">**Add-AzureRmVMDataDisk**</span><span class="sxs-lookup"><span data-stu-id="6b71a-143">**Add-AzureRmVMDataDisk**</span></span>
 
-<span data-ttu-id="9c1a8-147">**New-AzureRmAvailabilitySet**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-147">**New-AzureRmAvailabilitySet**</span></span>
-- <span data-ttu-id="9c1a8-148">Parametr `Managed` został usunięty i wprowadzono parametr `Sku`</span><span class="sxs-lookup"><span data-stu-id="9c1a8-148">The parameter `Managed` was removed in favor of `Sku`</span></span>
+- <span data-ttu-id="6b71a-144">Dopuszczalne wartości dla parametru `StorageAccountType` zostały zmienione z `StandardLRS` i `PremiumLRS` na odpowiednio `Standard_LRS` i `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="6b71a-144">The accepted values for parameter `StorageAccountType` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
+
+<span data-ttu-id="6b71a-145">**Add-AzureRmVmssDataDisk**</span><span class="sxs-lookup"><span data-stu-id="6b71a-145">**Add-AzureRmVmssDataDisk**</span></span>
+
+- <span data-ttu-id="6b71a-146">Dopuszczalne wartości dla parametru `StorageAccountType` zostały zmienione z `StandardLRS` i `PremiumLRS` na odpowiednio `Standard_LRS` i `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="6b71a-146">The accepted values for parameter `StorageAccountType` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
+
+<span data-ttu-id="6b71a-147">**New-AzureRmAvailabilitySet**</span><span class="sxs-lookup"><span data-stu-id="6b71a-147">**New-AzureRmAvailabilitySet**</span></span>
+- <span data-ttu-id="6b71a-148">Parametr `Managed` został usunięty i wprowadzono parametr `Sku`</span><span class="sxs-lookup"><span data-stu-id="6b71a-148">The parameter `Managed` was removed in favor of `Sku`</span></span>
 
 ```powershell-interactive
 # Old
@@ -133,41 +138,41 @@ New-AzureRmAvailabilitySet -ResourceGroupName "MyRG" -Name "MyAvailabilitySet" -
 New-AzureRmAvailabilitySet -ResourceGroupName "MyRG" -Name "MyAvailabilitySet" -Location "West US" -Sku "Aligned"
 ```
 
-<span data-ttu-id="9c1a8-149">**New-AzureRmDiskConfig**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-149">**New-AzureRmDiskConfig**</span></span>
-- <span data-ttu-id="9c1a8-150">Dopuszczalne wartości dla parametru `SkuName` zostały zmienione z `StandardLRS` i `PremiumLRS` na odpowiednio `Standard_LRS` i `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="9c1a8-150">The accepted values for parameter `SkuName` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
+<span data-ttu-id="6b71a-149">**New-AzureRmDiskConfig**</span><span class="sxs-lookup"><span data-stu-id="6b71a-149">**New-AzureRmDiskConfig**</span></span>
+- <span data-ttu-id="6b71a-150">Dopuszczalne wartości dla parametru `SkuName` zostały zmienione z `StandardLRS` i `PremiumLRS` na odpowiednio `Standard_LRS` i `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="6b71a-150">The accepted values for parameter `SkuName` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
 
-<span data-ttu-id="9c1a8-151">**New-AzureRmDiskUpdateConfig**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-151">**New-AzureRmDiskUpdateConfig**</span></span>
-- <span data-ttu-id="9c1a8-152">Dopuszczalne wartości dla parametru `SkuName` zostały zmienione z `StandardLRS` i `PremiumLRS` na odpowiednio `Standard_LRS` i `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="9c1a8-152">The accepted values for parameter `SkuName` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
+<span data-ttu-id="6b71a-151">**New-AzureRmDiskUpdateConfig**</span><span class="sxs-lookup"><span data-stu-id="6b71a-151">**New-AzureRmDiskUpdateConfig**</span></span>
+- <span data-ttu-id="6b71a-152">Dopuszczalne wartości dla parametru `SkuName` zostały zmienione z `StandardLRS` i `PremiumLRS` na odpowiednio `Standard_LRS` i `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="6b71a-152">The accepted values for parameter `SkuName` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
 
-<span data-ttu-id="9c1a8-153">**New-AzureRmSnapshotConfig**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-153">**New-AzureRmSnapshotConfig**</span></span>
-- <span data-ttu-id="9c1a8-154">Dopuszczalne wartości dla parametru `SkuName` zostały zmienione z `StandardLRS` i `PremiumLRS` na odpowiednio `Standard_LRS` i `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="9c1a8-154">The accepted values for parameter `SkuName` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
+<span data-ttu-id="6b71a-153">**New-AzureRmSnapshotConfig**</span><span class="sxs-lookup"><span data-stu-id="6b71a-153">**New-AzureRmSnapshotConfig**</span></span>
+- <span data-ttu-id="6b71a-154">Dopuszczalne wartości dla parametru `SkuName` zostały zmienione z `StandardLRS` i `PremiumLRS` na odpowiednio `Standard_LRS` i `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="6b71a-154">The accepted values for parameter `SkuName` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
 
-<span data-ttu-id="9c1a8-155">**New-AzureRmSnapshotUpdateConfig**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-155">**New-AzureRmSnapshotUpdateConfig**</span></span>
-- <span data-ttu-id="9c1a8-156">Dopuszczalne wartości dla parametru `SkuName` zostały zmienione z `StandardLRS` i `PremiumLRS` na odpowiednio `Standard_LRS` i `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="9c1a8-156">The accepted values for parameter `SkuName` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
+<span data-ttu-id="6b71a-155">**New-AzureRmSnapshotUpdateConfig**</span><span class="sxs-lookup"><span data-stu-id="6b71a-155">**New-AzureRmSnapshotUpdateConfig**</span></span>
+- <span data-ttu-id="6b71a-156">Dopuszczalne wartości dla parametru `SkuName` zostały zmienione z `StandardLRS` i `PremiumLRS` na odpowiednio `Standard_LRS` i `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="6b71a-156">The accepted values for parameter `SkuName` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
 
-<span data-ttu-id="9c1a8-157">**Set-AzureRmImageOsDisk**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-157">**Set-AzureRmImageOsDisk**</span></span>
-- <span data-ttu-id="9c1a8-158">Dopuszczalne wartości dla parametru `StorageAccountType` zostały zmienione z `StandardLRS` i `PremiumLRS` na odpowiednio `Standard_LRS` i `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="9c1a8-158">The accepted values for parameter `StorageAccountType` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
+<span data-ttu-id="6b71a-157">**Set-AzureRmImageOsDisk**</span><span class="sxs-lookup"><span data-stu-id="6b71a-157">**Set-AzureRmImageOsDisk**</span></span>
+- <span data-ttu-id="6b71a-158">Dopuszczalne wartości dla parametru `StorageAccountType` zostały zmienione z `StandardLRS` i `PremiumLRS` na odpowiednio `Standard_LRS` i `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="6b71a-158">The accepted values for parameter `StorageAccountType` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
 
-<span data-ttu-id="9c1a8-159">**Set-AzureRmVMAEMExtension**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-159">**Set-AzureRmVMAEMExtension**</span></span>
-- <span data-ttu-id="9c1a8-160">Parametr `DisableWAD` został usunięty</span><span class="sxs-lookup"><span data-stu-id="9c1a8-160">The parameter `DisableWAD` was removed</span></span>
-    -  <span data-ttu-id="9c1a8-161">Usługa Diagnostyka Microsoft Azure jest domyślnie wyłączona</span><span class="sxs-lookup"><span data-stu-id="9c1a8-161">Windows Azure Diagnostics is disabled by default</span></span>
+<span data-ttu-id="6b71a-159">**Set-AzureRmVMAEMExtension**</span><span class="sxs-lookup"><span data-stu-id="6b71a-159">**Set-AzureRmVMAEMExtension**</span></span>
+- <span data-ttu-id="6b71a-160">Parametr `DisableWAD` został usunięty</span><span class="sxs-lookup"><span data-stu-id="6b71a-160">The parameter `DisableWAD` was removed</span></span>
+    -  <span data-ttu-id="6b71a-161">Usługa Diagnostyka Microsoft Azure jest domyślnie wyłączona</span><span class="sxs-lookup"><span data-stu-id="6b71a-161">Windows Azure Diagnostics is disabled by default</span></span>
 
-<span data-ttu-id="9c1a8-162">**Set-AzureRmVMDataDisk**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-162">**Set-AzureRmVMDataDisk**</span></span>
-- <span data-ttu-id="9c1a8-163">Dopuszczalne wartości dla parametru `StorageAccountType` zostały zmienione z `StandardLRS` i `PremiumLRS` na odpowiednio `Standard_LRS` i `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="9c1a8-163">The accepted values for parameter `StorageAccountType` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
+<span data-ttu-id="6b71a-162">**Set-AzureRmVMDataDisk**</span><span class="sxs-lookup"><span data-stu-id="6b71a-162">**Set-AzureRmVMDataDisk**</span></span>
+- <span data-ttu-id="6b71a-163">Dopuszczalne wartości dla parametru `StorageAccountType` zostały zmienione z `StandardLRS` i `PremiumLRS` na odpowiednio `Standard_LRS` i `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="6b71a-163">The accepted values for parameter `StorageAccountType` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
 
-<span data-ttu-id="9c1a8-164">**Set-AzureRmVMOSDisk**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-164">**Set-AzureRmVMOSDisk**</span></span>
-- <span data-ttu-id="9c1a8-165">Dopuszczalne wartości dla parametru `StorageAccountType` zostały zmienione z `StandardLRS` i `PremiumLRS` na odpowiednio `Standard_LRS` i `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="9c1a8-165">The accepted values for parameter `StorageAccountType` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
+<span data-ttu-id="6b71a-164">**Set-AzureRmVMOSDisk**</span><span class="sxs-lookup"><span data-stu-id="6b71a-164">**Set-AzureRmVMOSDisk**</span></span>
+- <span data-ttu-id="6b71a-165">Dopuszczalne wartości dla parametru `StorageAccountType` zostały zmienione z `StandardLRS` i `PremiumLRS` na odpowiednio `Standard_LRS` i `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="6b71a-165">The accepted values for parameter `StorageAccountType` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
 
-<span data-ttu-id="9c1a8-166">**Set-AzureRmVmssStorageProfile**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-166">**Set-AzureRmVmssStorageProfile**</span></span>
-- <span data-ttu-id="9c1a8-167">Dopuszczalne wartości dla parametru `ManagedDisk` zostały zmienione z `StandardLRS` i `PremiumLRS` na odpowiednio `Standard_LRS` i `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="9c1a8-167">The accepted values for parameter `ManagedDisk` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
+<span data-ttu-id="6b71a-166">**Set-AzureRmVmssStorageProfile**</span><span class="sxs-lookup"><span data-stu-id="6b71a-166">**Set-AzureRmVmssStorageProfile**</span></span>
+- <span data-ttu-id="6b71a-167">Dopuszczalne wartości dla parametru `ManagedDisk` zostały zmienione z `StandardLRS` i `PremiumLRS` na odpowiednio `Standard_LRS` i `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="6b71a-167">The accepted values for parameter `ManagedDisk` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
 
-<span data-ttu-id="9c1a8-168">**Update-AzureRmVmss**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-168">**Update-AzureRmVmss**</span></span>
-- <span data-ttu-id="9c1a8-169">Dopuszczalne wartości dla parametru `ManagedDiskStorageAccountType` zostały zmienione z `StandardLRS` i `PremiumLRS` na odpowiednio `Standard_LRS` i `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="9c1a8-169">The accepted values for parameter `ManagedDiskStorageAccountType` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
+<span data-ttu-id="6b71a-168">**Update-AzureRmVmss**</span><span class="sxs-lookup"><span data-stu-id="6b71a-168">**Update-AzureRmVmss**</span></span>
+- <span data-ttu-id="6b71a-169">Dopuszczalne wartości dla parametru `ManagedDiskStorageAccountType` zostały zmienione z `StandardLRS` i `PremiumLRS` na odpowiednio `Standard_LRS` i `Premium_LRS`</span><span class="sxs-lookup"><span data-stu-id="6b71a-169">The accepted values for parameter `ManagedDiskStorageAccountType` changed from `StandardLRS` and `PremiumLRS` to `Standard_LRS` and `Premium_LRS`, respectively</span></span>
 
-## <a name="breaking-changes-to-azurermdatalakestore-cmdlets"></a><span data-ttu-id="9c1a8-170">Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.DataLakeStore</span><span class="sxs-lookup"><span data-stu-id="9c1a8-170">Breaking changes to AzureRM.DataLakeStore cmdlets</span></span>
+## <a name="breaking-changes-to-azurermdatalakestore-cmdlets"></a><span data-ttu-id="6b71a-170">Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.DataLakeStore</span><span class="sxs-lookup"><span data-stu-id="6b71a-170">Breaking changes to AzureRM.DataLakeStore cmdlets</span></span>
 
-<span data-ttu-id="9c1a8-171">**Export-AzureRmDataLakeStoreItem**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-171">**Export-AzureRmDataLakeStoreItem**</span></span>
-- <span data-ttu-id="9c1a8-172">Parametry `PerFileThreadCount` i `ConcurrentFileCount` zostały usunięte.</span><span class="sxs-lookup"><span data-stu-id="9c1a8-172">Parameters `PerFileThreadCount` and `ConcurrentFileCount` were removed.</span></span> <span data-ttu-id="9c1a8-173">W przyszłości użyj parametru `Concurrency`</span><span class="sxs-lookup"><span data-stu-id="9c1a8-173">Please use the `Concurrency` parameter moving forward</span></span>
+<span data-ttu-id="6b71a-171">**Export-AzureRmDataLakeStoreItem**</span><span class="sxs-lookup"><span data-stu-id="6b71a-171">**Export-AzureRmDataLakeStoreItem**</span></span>
+- <span data-ttu-id="6b71a-172">Parametry `PerFileThreadCount` i `ConcurrentFileCount` zostały usunięte.</span><span class="sxs-lookup"><span data-stu-id="6b71a-172">Parameters `PerFileThreadCount` and `ConcurrentFileCount` were removed.</span></span> <span data-ttu-id="6b71a-173">W przyszłości użyj parametru `Concurrency`</span><span class="sxs-lookup"><span data-stu-id="6b71a-173">Please use the `Concurrency` parameter moving forward</span></span>
 
 ```powershell-interactive
 # Old
@@ -177,8 +182,8 @@ Export-AzureRmDataLakeStoreItem -Account contoso -Path /test -Destination C:\tes
 Export-AzureRmDataLakeStoreItem -Account contoso -Path /test -Destination C:\test -Recurse -Resume -Concurrency 160
 ```
 
-<span data-ttu-id="9c1a8-174">**Import-AzureRmDataLakeStoreItem**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-174">**Import-AzureRmDataLakeStoreItem**</span></span>
-- <span data-ttu-id="9c1a8-175">Parametry `PerFileThreadCount` i `ConcurrentFileCount` zostały usunięte.</span><span class="sxs-lookup"><span data-stu-id="9c1a8-175">Parameters `PerFileThreadCount` and `ConcurrentFileCount` were removed.</span></span> <span data-ttu-id="9c1a8-176">W przyszłości użyj parametru `Concurrency`</span><span class="sxs-lookup"><span data-stu-id="9c1a8-176">Please use the `Concurrency` parameter moving forward</span></span>
+<span data-ttu-id="6b71a-174">**Import-AzureRmDataLakeStoreItem**</span><span class="sxs-lookup"><span data-stu-id="6b71a-174">**Import-AzureRmDataLakeStoreItem**</span></span>
+- <span data-ttu-id="6b71a-175">Parametry `PerFileThreadCount` i `ConcurrentFileCount` zostały usunięte.</span><span class="sxs-lookup"><span data-stu-id="6b71a-175">Parameters `PerFileThreadCount` and `ConcurrentFileCount` were removed.</span></span> <span data-ttu-id="6b71a-176">W przyszłości użyj parametru `Concurrency`</span><span class="sxs-lookup"><span data-stu-id="6b71a-176">Please use the `Concurrency` parameter moving forward</span></span>
 
 ```powershell-interactive
 # Old
@@ -188,8 +193,8 @@ Import-AzureRmDataLakeStoreItem -Account contoso -Path C:\test -Destination /tes
 Import-AzureRmDataLakeStoreItem -Account contoso -Path C:\test -Destination /test -Recurse -Resume -ForceBinary -Concurrency 160
 ```
 
-<span data-ttu-id="9c1a8-177">**Remove-AzureRmDataLakeStoreItem**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-177">**Remove-AzureRmDataLakeStoreItem**</span></span>
-- <span data-ttu-id="9c1a8-178">Parametr `Clean` został usunięty</span><span class="sxs-lookup"><span data-stu-id="9c1a8-178">Parameter `Clean` was removed</span></span>
+<span data-ttu-id="6b71a-177">**Remove-AzureRmDataLakeStoreItem**</span><span class="sxs-lookup"><span data-stu-id="6b71a-177">**Remove-AzureRmDataLakeStoreItem**</span></span>
+- <span data-ttu-id="6b71a-178">Parametr `Clean` został usunięty</span><span class="sxs-lookup"><span data-stu-id="6b71a-178">Parameter `Clean` was removed</span></span>
 
 ```powershell-interactive
 # Old
@@ -199,63 +204,64 @@ Remove-AzureRmDataLakeStoreItem -Account "ContosoADL" -path /myFolder -Recurse -
 Remove-AzureRmDataLakeStoreItem -Account "ContosoADL" -path /myFolder -Recurse
 ```
 
-## <a name="breaking-changes-to-azurermdns-cmdlets"></a><span data-ttu-id="9c1a8-179">Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.Dns</span><span class="sxs-lookup"><span data-stu-id="9c1a8-179">Breaking changes to AzureRM.Dns cmdlets</span></span>
+## <a name="breaking-changes-to-azurermdns-cmdlets"></a><span data-ttu-id="6b71a-179">Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.Dns</span><span class="sxs-lookup"><span data-stu-id="6b71a-179">Breaking changes to AzureRM.Dns cmdlets</span></span>
 
-<span data-ttu-id="9c1a8-180">**New-AzureRmDnsRecordSet**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-180">**New-AzureRmDnsRecordSet**</span></span>
-- <span data-ttu-id="9c1a8-181">Parametr `Force` został usunięty</span><span class="sxs-lookup"><span data-stu-id="9c1a8-181">The parameter `Force` was removed</span></span>
+<span data-ttu-id="6b71a-180">**New-AzureRmDnsRecordSet**</span><span class="sxs-lookup"><span data-stu-id="6b71a-180">**New-AzureRmDnsRecordSet**</span></span>
+- <span data-ttu-id="6b71a-181">Parametr `Force` został usunięty</span><span class="sxs-lookup"><span data-stu-id="6b71a-181">The parameter `Force` was removed</span></span>
 
-<span data-ttu-id="9c1a8-182">**Remove-AzureRmDnsRecordSet**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-182">**Remove-AzureRmDnsRecordSet**</span></span>
-- <span data-ttu-id="9c1a8-183">Parametr `Force` został usunięty</span><span class="sxs-lookup"><span data-stu-id="9c1a8-183">The parameter `Force` was removed</span></span>
+<span data-ttu-id="6b71a-182">**Remove-AzureRmDnsRecordSet**</span><span class="sxs-lookup"><span data-stu-id="6b71a-182">**Remove-AzureRmDnsRecordSet**</span></span>
+- <span data-ttu-id="6b71a-183">Parametr `Force` został usunięty</span><span class="sxs-lookup"><span data-stu-id="6b71a-183">The parameter `Force` was removed</span></span>
 
-<span data-ttu-id="9c1a8-184">**Remove-AzureRmDnsZone**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-184">**Remove-AzureRmDnsZone**</span></span>
-- <span data-ttu-id="9c1a8-185">Parametr `Force` został usunięty</span><span class="sxs-lookup"><span data-stu-id="9c1a8-185">The parameter `Force` was removed</span></span>
+<span data-ttu-id="6b71a-184">**Remove-AzureRmDnsZone**</span><span class="sxs-lookup"><span data-stu-id="6b71a-184">**Remove-AzureRmDnsZone**</span></span>
+- <span data-ttu-id="6b71a-185">Parametr `Force` został usunięty</span><span class="sxs-lookup"><span data-stu-id="6b71a-185">The parameter `Force` was removed</span></span>
 
-## <a name="breaking-changes-to-azurerminsights-cmdlets"></a><span data-ttu-id="9c1a8-186">Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.Insights</span><span class="sxs-lookup"><span data-stu-id="9c1a8-186">Breaking changes to AzureRM.Insights cmdlets</span></span>
+## <a name="breaking-changes-to-azurerminsights-cmdlets"></a><span data-ttu-id="6b71a-186">Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.Insights</span><span class="sxs-lookup"><span data-stu-id="6b71a-186">Breaking changes to AzureRM.Insights cmdlets</span></span>
 
-<span data-ttu-id="9c1a8-187">**Add-AzureRmAutoscaleSetting**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-187">**Add-AzureRmAutoscaleSetting**</span></span>
-- <span data-ttu-id="9c1a8-188">Aliasy parametrów `AutoscaleProfiles` i `Notifications` zostały usunięte</span><span class="sxs-lookup"><span data-stu-id="9c1a8-188">The parameter aliases `AutoscaleProfiles` and `Notifications` were removed</span></span>
+<span data-ttu-id="6b71a-187">**Add-AzureRmAutoscaleSetting**</span><span class="sxs-lookup"><span data-stu-id="6b71a-187">**Add-AzureRmAutoscaleSetting**</span></span>
+- <span data-ttu-id="6b71a-188">Aliasy parametrów `AutoscaleProfiles` i `Notifications` zostały usunięte</span><span class="sxs-lookup"><span data-stu-id="6b71a-188">The parameter aliases `AutoscaleProfiles` and `Notifications` were removed</span></span>
 
-<span data-ttu-id="9c1a8-189">**Add-AzureRmLogProfile**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-189">**Add-AzureRmLogProfile**</span></span>
-- <span data-ttu-id="9c1a8-190">Aliasy parametrów `Categories` i `Locations` zostały usunięte</span><span class="sxs-lookup"><span data-stu-id="9c1a8-190">The parameter aliases `Categories` and `Locations` were removed</span></span>
+<span data-ttu-id="6b71a-189">**Add-AzureRmLogProfile**</span><span class="sxs-lookup"><span data-stu-id="6b71a-189">**Add-AzureRmLogProfile**</span></span>
+- <span data-ttu-id="6b71a-190">Aliasy parametrów `Categories` i `Locations` zostały usunięte</span><span class="sxs-lookup"><span data-stu-id="6b71a-190">The parameter aliases `Categories` and `Locations` were removed</span></span>
 
-<span data-ttu-id="9c1a8-191">**Add-AzureRmMetricAlertRule**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-191">**Add-AzureRmMetricAlertRule**</span></span>
-- <span data-ttu-id="9c1a8-192">Alias parametru `Actions` został usunięty</span><span class="sxs-lookup"><span data-stu-id="9c1a8-192">The parameter alias `Actions` was removed</span></span>
+<span data-ttu-id="6b71a-191">**Add-AzureRmMetricAlertRule**</span><span class="sxs-lookup"><span data-stu-id="6b71a-191">**Add-AzureRmMetricAlertRule**</span></span>
+- <span data-ttu-id="6b71a-192">Alias parametru `Actions` został usunięty</span><span class="sxs-lookup"><span data-stu-id="6b71a-192">The parameter alias `Actions` was removed</span></span>
 
-<span data-ttu-id="9c1a8-193">**Add-AzureRmWebtestAlertRule**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-193">**Add-AzureRmWebtestAlertRule**</span></span>
-- <span data-ttu-id="9c1a8-194">Alias parametru `Actions` został usunięty</span><span class="sxs-lookup"><span data-stu-id="9c1a8-194">The parameter alias `Actions` was removed</span></span>
+<span data-ttu-id="6b71a-193">**Add-AzureRmWebtestAlertRule**</span><span class="sxs-lookup"><span data-stu-id="6b71a-193">**Add-AzureRmWebtestAlertRule**</span></span>
+- <span data-ttu-id="6b71a-194">Alias parametru `Actions` został usunięty</span><span class="sxs-lookup"><span data-stu-id="6b71a-194">The parameter alias `Actions` was removed</span></span>
 
-<span data-ttu-id="9c1a8-195">**Get-AzureRmLog**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-195">**Get-AzureRmLog**</span></span>
-- <span data-ttu-id="9c1a8-196">Aliasy parametrów `MaxRecords` i `MaxEvents` zostały usunięte</span><span class="sxs-lookup"><span data-stu-id="9c1a8-196">The parameter aliases `MaxRecords` and `MaxEvents` were removed</span></span>
+<span data-ttu-id="6b71a-195">**Get-AzureRmLog**</span><span class="sxs-lookup"><span data-stu-id="6b71a-195">**Get-AzureRmLog**</span></span>
+- <span data-ttu-id="6b71a-196">Aliasy parametrów `MaxRecords` i `MaxEvents` zostały usunięte</span><span class="sxs-lookup"><span data-stu-id="6b71a-196">The parameter aliases `MaxRecords` and `MaxEvents` were removed</span></span>
 
-<span data-ttu-id="9c1a8-197">**Get-AzureRmMetricDefinition**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-197">**Get-AzureRmMetricDefinition**</span></span>
-- <span data-ttu-id="9c1a8-198">Alias parametru `MetricNames` został usunięty</span><span class="sxs-lookup"><span data-stu-id="9c1a8-198">The parameter alias `MetricNames` was removed</span></span>
+<span data-ttu-id="6b71a-197">**Get-AzureRmMetricDefinition**</span><span class="sxs-lookup"><span data-stu-id="6b71a-197">**Get-AzureRmMetricDefinition**</span></span>
+- <span data-ttu-id="6b71a-198">Alias parametru `MetricNames` został usunięty</span><span class="sxs-lookup"><span data-stu-id="6b71a-198">The parameter alias `MetricNames` was removed</span></span>
 
-<span data-ttu-id="9c1a8-199">**New-AzureRmAlertRuleEmail**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-199">**New-AzureRmAlertRuleEmail**</span></span>
-- <span data-ttu-id="9c1a8-200">Aliasy parametrów `CustomEmails` i `SendToServiceOwners` zostały usunięte</span><span class="sxs-lookup"><span data-stu-id="9c1a8-200">The parameter aliases `CustomEmails` and `SendToServiceOwners` were removed</span></span>
+<span data-ttu-id="6b71a-199">**New-AzureRmAlertRuleEmail**</span><span class="sxs-lookup"><span data-stu-id="6b71a-199">**New-AzureRmAlertRuleEmail**</span></span>
+- <span data-ttu-id="6b71a-200">Aliasy parametrów `CustomEmails` i `SendToServiceOwners` zostały usunięte</span><span class="sxs-lookup"><span data-stu-id="6b71a-200">The parameter aliases `CustomEmails` and `SendToServiceOwners` were removed</span></span>
 
-<span data-ttu-id="9c1a8-201">**New-AzureRmAlertRuleWebhook**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-201">**New-AzureRmAlertRuleWebhook**</span></span>
-- <span data-ttu-id="9c1a8-202">Alias parametru `Properties` został usunięty</span><span class="sxs-lookup"><span data-stu-id="9c1a8-202">The parameter alias `Properties` was removed</span></span>
+<span data-ttu-id="6b71a-201">**New-AzureRmAlertRuleWebhook**</span><span class="sxs-lookup"><span data-stu-id="6b71a-201">**New-AzureRmAlertRuleWebhook**</span></span>
+- <span data-ttu-id="6b71a-202">Alias parametru `Properties` został usunięty</span><span class="sxs-lookup"><span data-stu-id="6b71a-202">The parameter alias `Properties` was removed</span></span>
 
-<span data-ttu-id="9c1a8-203">**New-AzureRmAutoscaleNotification**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-203">**New-AzureRmAutoscaleNotification**</span></span>
-- <span data-ttu-id="9c1a8-204">Aliasy parametrów `CustomEmails`, `SendEmailToSubscriptionCoAdministrators` i `Webhooks` zostały usunięte</span><span class="sxs-lookup"><span data-stu-id="9c1a8-204">The parameter aliases `CustomEmails`, `SendEmailToSubscriptionCoAdministrators` and `Webhooks` were removed</span></span>
+<span data-ttu-id="6b71a-203">**New-AzureRmAutoscaleNotification**</span><span class="sxs-lookup"><span data-stu-id="6b71a-203">**New-AzureRmAutoscaleNotification**</span></span>
+- <span data-ttu-id="6b71a-204">Aliasy parametrów `CustomEmails`, `SendEmailToSubscriptionCoAdministrators` i `Webhooks` zostały usunięte</span><span class="sxs-lookup"><span data-stu-id="6b71a-204">The parameter aliases `CustomEmails`, `SendEmailToSubscriptionCoAdministrators` and `Webhooks` were removed</span></span>
 
-<span data-ttu-id="9c1a8-205">**New-AzureRmAutoscaleProfile**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-205">**New-AzureRmAutoscaleProfile**</span></span>
-- <span data-ttu-id="9c1a8-206">Aliasy parametrów `Rules`, `ScheduleDays`, `ScheduleHours` i `ScheduleMinutes` zostały usunięte</span><span class="sxs-lookup"><span data-stu-id="9c1a8-206">The parameter aliases `Rules`, `ScheduleDays`, `ScheduleHours` and `ScheduleMinutes` were removed</span></span>
+<span data-ttu-id="6b71a-205">**New-AzureRmAutoscaleProfile**</span><span class="sxs-lookup"><span data-stu-id="6b71a-205">**New-AzureRmAutoscaleProfile**</span></span>
+- <span data-ttu-id="6b71a-206">Aliasy parametrów `Rules`, `ScheduleDays`, `ScheduleHours` i `ScheduleMinutes` zostały usunięte</span><span class="sxs-lookup"><span data-stu-id="6b71a-206">The parameter aliases `Rules`, `ScheduleDays`, `ScheduleHours` and `ScheduleMinutes` were removed</span></span>
 
-<span data-ttu-id="9c1a8-207">**New-AzureRmAutoscaleWebhook**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-207">**New-AzureRmAutoscaleWebhook**</span></span>
-- <span data-ttu-id="9c1a8-208">Alias parametru `Properties` został usunięty</span><span class="sxs-lookup"><span data-stu-id="9c1a8-208">The parameter alias `Properties` was removed</span></span>
+<span data-ttu-id="6b71a-207">**New-AzureRmAutoscaleWebhook**</span><span class="sxs-lookup"><span data-stu-id="6b71a-207">**New-AzureRmAutoscaleWebhook**</span></span>
+- <span data-ttu-id="6b71a-208">Alias parametru `Properties` został usunięty</span><span class="sxs-lookup"><span data-stu-id="6b71a-208">The parameter alias `Properties` was removed</span></span>
 
-## <a name="breaking-changes-to-azurermkeyvault-cmdlets"></a><span data-ttu-id="9c1a8-209">Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.KeyVault</span><span class="sxs-lookup"><span data-stu-id="9c1a8-209">Breaking changes to AzureRM.KeyVault cmdlets</span></span>
+## <a name="breaking-changes-to-azurermkeyvault-cmdlets"></a><span data-ttu-id="6b71a-209">Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.KeyVault</span><span class="sxs-lookup"><span data-stu-id="6b71a-209">Breaking changes to AzureRM.KeyVault cmdlets</span></span>
 
-<span data-ttu-id="9c1a8-210">**Add-AzureKeyVaultCertificate**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-210">**Add-AzureKeyVaultCertificate**</span></span>
-- <span data-ttu-id="9c1a8-211">Parametr `CertificatePolicy` stał się obowiązkowy.</span><span class="sxs-lookup"><span data-stu-id="9c1a8-211">The `CertificatePolicy` parameter has become mandatory.</span></span>
+<span data-ttu-id="6b71a-210">**Add-AzureKeyVaultCertificate**</span><span class="sxs-lookup"><span data-stu-id="6b71a-210">**Add-AzureKeyVaultCertificate**</span></span>
+- <span data-ttu-id="6b71a-211">Parametr `CertificatePolicy` stał się obowiązkowy.</span><span class="sxs-lookup"><span data-stu-id="6b71a-211">The `CertificatePolicy` parameter has become mandatory.</span></span>
 
-<span data-ttu-id="9c1a8-212">**Set-AzureKeyVaultManagedStorageSasDefinition**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-212">**Set-AzureKeyVaultManagedStorageSasDefinition**</span></span>
-- <span data-ttu-id="9c1a8-213">W poleceniu cmdlet nie są już akceptowane pojedyncze parametry, które tworzą token dostępu. Zamiast tego w poleceniach cmdlet jawne parametry tokenu, takie jak `Service` lub `Permissions`, zostały zastąpione ogólnym parametrem `TemplateUri` odpowiadającym przykładowemu tokenowi dostępu zdefiniowanemu w innym miejscu (prawdopodobnie za pomocą poleceń cmdlet programu PowerShell lub utworzonemu ręcznie zgodnie z dokumentacją usługi Storage) W poleceniu cmdlet zachowano parametr `ValidityPeriod`.</span><span class="sxs-lookup"><span data-stu-id="9c1a8-213">The cmdlet no longer accepts individual parameters that compose the access token; instead, the cmdlet replaces explicit token parameters, such as `Service` or `Permissions`, with a generic `TemplateUri` parameter, corresponding to a sample access token defined elsewhere (presumably using Storage PowerShell cmdlets, or composed manually according to the Storage documentation.) The cmdlet retains the `ValidityPeriod` parameter.</span></span>
+<span data-ttu-id="6b71a-212">**Set-AzureKeyVaultManagedStorageSasDefinition**</span><span class="sxs-lookup"><span data-stu-id="6b71a-212">**Set-AzureKeyVaultManagedStorageSasDefinition**</span></span>
+- <span data-ttu-id="6b71a-213">W poleceniu cmdlet nie są już akceptowane pojedyncze parametry, które tworzą token dostępu. Zamiast tego w poleceniach cmdlet jawne parametry tokenu, takie jak `Service` lub `Permissions`, zostały zastąpione ogólnym parametrem `TemplateUri` odpowiadającym przykładowemu tokenowi dostępu zdefiniowanemu w innym miejscu (prawdopodobnie za pomocą poleceń cmdlet programu PowerShell lub utworzonemu ręcznie zgodnie z dokumentacją usługi Storage) W poleceniu cmdlet zachowano parametr `ValidityPeriod`.</span><span class="sxs-lookup"><span data-stu-id="6b71a-213">The cmdlet no longer accepts individual parameters that compose the access token; instead, the cmdlet replaces explicit token parameters, such as `Service` or `Permissions`, with a generic `TemplateUri` parameter, corresponding to a sample access token defined elsewhere (presumably using Storage PowerShell cmdlets, or composed manually according to the Storage documentation.) The cmdlet retains the `ValidityPeriod` parameter.</span></span>
 
-<span data-ttu-id="9c1a8-214">Więcej informacji dotyczących tworzenia tokenów dostępu współdzielonego dla usługi Azure Storage można znaleźć na stronach dokumentacji, czyli odpowiednio:</span><span class="sxs-lookup"><span data-stu-id="9c1a8-214">For more information on composing shared access tokens for Azure Storage, please refer to the documentation pages, respectively:</span></span>
-- [<span data-ttu-id="9c1a8-215">Tworzenie sygnatury dostępu współdzielonego usługi</span><span class="sxs-lookup"><span data-stu-id="9c1a8-215">Constructing a Service SAS</span></span>](https://docs.microsoft.com/rest/api/storageservices/Constructing-a-Service-SAS)
-- [<span data-ttu-id="9c1a8-216">Tworzenia sygnatury dostępu współdzielonego konta</span><span class="sxs-lookup"><span data-stu-id="9c1a8-216">Constructing an Account SAS</span></span>](https://docs.microsoft.com/rest/api/storageservices/constructing-an-account-sas)
+<span data-ttu-id="6b71a-214">Więcej informacji dotyczących tworzenia tokenów dostępu współdzielonego dla usługi Azure Storage można znaleźć na stronach dokumentacji, czyli odpowiednio:</span><span class="sxs-lookup"><span data-stu-id="6b71a-214">For more information on composing shared access tokens for Azure Storage, please refer to the documentation pages, respectively:</span></span>
+
+- [<span data-ttu-id="6b71a-215">Tworzenie sygnatury dostępu współdzielonego usługi</span><span class="sxs-lookup"><span data-stu-id="6b71a-215">Constructing a Service SAS</span></span>](/rest/api/storageservices/Constructing-a-Service-SAS)
+- [<span data-ttu-id="6b71a-216">Tworzenia sygnatury dostępu współdzielonego konta</span><span class="sxs-lookup"><span data-stu-id="6b71a-216">Constructing an Account SAS</span></span>](/rest/api/storageservices/constructing-an-account-sas)
 
 ```powershell-interactive
 # Old
@@ -269,20 +275,20 @@ $at=New-AzureStorageAccountSasToken -Service blob -ResourceType Service,Containe
 $sas=Set-AzureKeyVaultManagedStorageSasDefinition -AccountName $sa.StorageAccountName -VaultName $kv.VaultName -Name accountsas -TemplateUri $at -SasType 'account' -ValidityPeriod ([System.Timespan]::FromDays(30))
 ```
 
-<span data-ttu-id="9c1a8-217">**Set-AzureKeyVaultCertificateIssuer**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-217">**Set-AzureKeyVaultCertificateIssuer**</span></span>
-- <span data-ttu-id="9c1a8-218">Parametr `IssuerProvider` stał się obowiązkowy.</span><span class="sxs-lookup"><span data-stu-id="9c1a8-218">The `IssuerProvider` parameter has become mandatory.</span></span>
+<span data-ttu-id="6b71a-217">**Set-AzureKeyVaultCertificateIssuer**</span><span class="sxs-lookup"><span data-stu-id="6b71a-217">**Set-AzureKeyVaultCertificateIssuer**</span></span>
+- <span data-ttu-id="6b71a-218">Parametr `IssuerProvider` stał się obowiązkowy.</span><span class="sxs-lookup"><span data-stu-id="6b71a-218">The `IssuerProvider` parameter has become mandatory.</span></span>
 
-<span data-ttu-id="9c1a8-219">**Undo-AzureKeyVaultCertificateRemoval**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-219">**Undo-AzureKeyVaultCertificateRemoval**</span></span>
-- <span data-ttu-id="9c1a8-220">Dane wyjściowe tego polecenia cmdlet zmieniły się z wartości `CertificateBundle` na `PSKeyVaultCertificate`.</span><span class="sxs-lookup"><span data-stu-id="9c1a8-220">The output of this cmdlet has changed from `CertificateBundle` to `PSKeyVaultCertificate`.</span></span>
+<span data-ttu-id="6b71a-219">**Undo-AzureKeyVaultCertificateRemoval**</span><span class="sxs-lookup"><span data-stu-id="6b71a-219">**Undo-AzureKeyVaultCertificateRemoval**</span></span>
+- <span data-ttu-id="6b71a-220">Dane wyjściowe tego polecenia cmdlet zmieniły się z wartości `CertificateBundle` na `PSKeyVaultCertificate`.</span><span class="sxs-lookup"><span data-stu-id="6b71a-220">The output of this cmdlet has changed from `CertificateBundle` to `PSKeyVaultCertificate`.</span></span>
 
-<span data-ttu-id="9c1a8-221">**Undo-AzureRmKeyVaultRemoval**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-221">**Undo-AzureRmKeyVaultRemoval**</span></span>
-- <span data-ttu-id="9c1a8-222">Parametr `ResourceGroupName` został usunięty z zestawu parametrów `InputObject` i zamiast tego jest pobierany z właściwości `ResourceId` parametru `InputObject`.</span><span class="sxs-lookup"><span data-stu-id="9c1a8-222">`ResourceGroupName` has been removed from the `InputObject` parameter set, and is instead obtained from the `InputObject` parameter's `ResourceId` property.</span></span>
+<span data-ttu-id="6b71a-221">**Undo-AzureRmKeyVaultRemoval**</span><span class="sxs-lookup"><span data-stu-id="6b71a-221">**Undo-AzureRmKeyVaultRemoval**</span></span>
+- <span data-ttu-id="6b71a-222">Parametr `ResourceGroupName` został usunięty z zestawu parametrów `InputObject` i zamiast tego jest pobierany z właściwości `ResourceId` parametru `InputObject`.</span><span class="sxs-lookup"><span data-stu-id="6b71a-222">`ResourceGroupName` has been removed from the `InputObject` parameter set, and is instead obtained from the `InputObject` parameter's `ResourceId` property.</span></span>
 
-<span data-ttu-id="9c1a8-223">**Set-AzureRmKeyVaultAccessPolicy**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-223">**Set-AzureRmKeyVaultAccessPolicy**</span></span>
-- <span data-ttu-id="9c1a8-224">Uprawnienie `all` zostało usunięte z parametrów `PermissionsToKeys`, `PermissionsToSecrets`, i `PermissionsToCertificates`.</span><span class="sxs-lookup"><span data-stu-id="9c1a8-224">The `all` permission was removed from `PermissionsToKeys`, `PermissionsToSecrets`, and `PermissionsToCertificates`.</span></span>
+<span data-ttu-id="6b71a-223">**Set-AzureRmKeyVaultAccessPolicy**</span><span class="sxs-lookup"><span data-stu-id="6b71a-223">**Set-AzureRmKeyVaultAccessPolicy**</span></span>
+- <span data-ttu-id="6b71a-224">Uprawnienie `all` zostało usunięte z parametrów `PermissionsToKeys`, `PermissionsToSecrets`, i `PermissionsToCertificates`.</span><span class="sxs-lookup"><span data-stu-id="6b71a-224">The `all` permission was removed from `PermissionsToKeys`, `PermissionsToSecrets`, and `PermissionsToCertificates`.</span></span>
 
-<span data-ttu-id="9c1a8-225">**Ogólne**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-225">**General**</span></span>
-- <span data-ttu-id="9c1a8-226">Właściwość `ValueFromPipelineByPropertyName` została usunięta ze wszystkich poleceń cmdlet, w których włączone było potokowanie za pomocą parametru `InputObject`.</span><span class="sxs-lookup"><span data-stu-id="9c1a8-226">The `ValueFromPipelineByPropertyName` property was removed from all cmdlets where piping by `InputObject` was enabled.</span></span>  <span data-ttu-id="9c1a8-227">Polecenia cmdlet, których to dotyczy, są następujące:</span><span class="sxs-lookup"><span data-stu-id="9c1a8-227">The cmdlets affected are:</span></span>
+<span data-ttu-id="6b71a-225">**Ogólne**</span><span class="sxs-lookup"><span data-stu-id="6b71a-225">**General**</span></span>
+- <span data-ttu-id="6b71a-226">Właściwość `ValueFromPipelineByPropertyName` została usunięta ze wszystkich poleceń cmdlet, w których włączone było potokowanie za pomocą parametru `InputObject`.</span><span class="sxs-lookup"><span data-stu-id="6b71a-226">The `ValueFromPipelineByPropertyName` property was removed from all cmdlets where piping by `InputObject` was enabled.</span></span> <span data-ttu-id="6b71a-227">Polecenia cmdlet, których to dotyczy, są następujące:</span><span class="sxs-lookup"><span data-stu-id="6b71a-227">The cmdlets affected are:</span></span>
     - `Add-AzureKeyVaultCertificate`
     - `Add-AzureKeyVaultCertificateContact`
     - `Add-AzureKeyVaultKey`
@@ -325,7 +331,7 @@ $sas=Set-AzureKeyVaultManagedStorageSasDefinition -AccountName $sa.StorageAccoun
     - `Update-AzureKeyVaultManagedStorageAccount`
     - `Update-AzureKeyVaultManagedStorageAccountKey`
 
-- <span data-ttu-id="9c1a8-228">Poziomy `ConfirmImpact` zostały usunięte ze wszystkich poleceń cmdlet.</span><span class="sxs-lookup"><span data-stu-id="9c1a8-228">`ConfirmImpact` levels were removed from all cmdlets.</span></span>  <span data-ttu-id="9c1a8-229">Polecenia cmdlet, których to dotyczy, są następujące:</span><span class="sxs-lookup"><span data-stu-id="9c1a8-229">The cmdlets affected are:</span></span>
+- <span data-ttu-id="6b71a-228">Poziomy `ConfirmImpact` zostały usunięte ze wszystkich poleceń cmdlet.</span><span class="sxs-lookup"><span data-stu-id="6b71a-228">`ConfirmImpact` levels were removed from all cmdlets.</span></span>  <span data-ttu-id="6b71a-229">Polecenia cmdlet, których to dotyczy, są następujące:</span><span class="sxs-lookup"><span data-stu-id="6b71a-229">The cmdlets affected are:</span></span>
     - `Remove-AzureRmKeyVault`
     - `Remove-AzureKeyVaultCertificate`
     - `Remove-AzureKeyVaultCertificateIssuer`
@@ -337,7 +343,7 @@ $sas=Set-AzureKeyVaultManagedStorageSasDefinition -AccountName $sa.StorageAccoun
     - `Stop-AzureKeyVaultCertificateOperation`
     - `Update-AzureKeyVaultManagedStorageAccountKey`
 
-- <span data-ttu-id="9c1a8-230">Parametr `IKeyVaultDataServiceClient` został zaktualizowany, więc wszystkie operacje certyfikatu zwracają typy PSTypes zamiast typów SDK.</span><span class="sxs-lookup"><span data-stu-id="9c1a8-230">The `IKeyVaultDataServiceClient` was updated so all Certificate operations return PSTypes instead of SDK types.</span></span> <span data-ttu-id="9c1a8-231">Obejmuje to:</span><span class="sxs-lookup"><span data-stu-id="9c1a8-231">This includes:</span></span>
+- <span data-ttu-id="6b71a-230">Parametr `IKeyVaultDataServiceClient` został zaktualizowany, więc wszystkie operacje certyfikatu zwracają typy PSTypes zamiast typów SDK.</span><span class="sxs-lookup"><span data-stu-id="6b71a-230">The `IKeyVaultDataServiceClient` was updated so all Certificate operations return PSTypes instead of SDK types.</span></span> <span data-ttu-id="6b71a-231">Obejmuje to:</span><span class="sxs-lookup"><span data-stu-id="6b71a-231">This includes:</span></span>
     - `SetCertificateContacts`
     - `GetCertificateContacts`
     - `GetCertificate`
@@ -357,27 +363,27 @@ $sas=Set-AzureKeyVaultManagedStorageSasDefinition -AccountName $sa.StorageAccoun
     - `SetCertificateIssuer`
     - `DeleteCertificateIssuer`
 
-## <a name="breaking-changes-to-azurermnetwork-cmdlets"></a><span data-ttu-id="9c1a8-232">Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.Network</span><span class="sxs-lookup"><span data-stu-id="9c1a8-232">Breaking changes to AzureRM.Network cmdlets</span></span>
+## <a name="breaking-changes-to-azurermnetwork-cmdlets"></a><span data-ttu-id="6b71a-232">Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.Network</span><span class="sxs-lookup"><span data-stu-id="6b71a-232">Breaking changes to AzureRM.Network cmdlets</span></span>
 
 
-<span data-ttu-id="9c1a8-233">**Add-AzureRmApplicationGatewayBackendHttpSettings**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-233">**Add-AzureRmApplicationGatewayBackendHttpSettings**</span></span>
-- <span data-ttu-id="9c1a8-234">Parametr `ProbeEnabled` został usunięty</span><span class="sxs-lookup"><span data-stu-id="9c1a8-234">The parameter `ProbeEnabled` was removed</span></span>
+<span data-ttu-id="6b71a-233">**Add-AzureRmApplicationGatewayBackendHttpSettings**</span><span class="sxs-lookup"><span data-stu-id="6b71a-233">**Add-AzureRmApplicationGatewayBackendHttpSettings**</span></span>
+- <span data-ttu-id="6b71a-234">Parametr `ProbeEnabled` został usunięty</span><span class="sxs-lookup"><span data-stu-id="6b71a-234">The parameter `ProbeEnabled` was removed</span></span>
 
-<span data-ttu-id="9c1a8-235">**Add-AzureRmVirtualNetworkPeering**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-235">**Add-AzureRmVirtualNetworkPeering**</span></span>
-- <span data-ttu-id="9c1a8-236">Alias parametru `AlloowGatewayTransit` został usunięty</span><span class="sxs-lookup"><span data-stu-id="9c1a8-236">The parameter alias `AlloowGatewayTransit` was removed</span></span>
+<span data-ttu-id="6b71a-235">**Add-AzureRmVirtualNetworkPeering**</span><span class="sxs-lookup"><span data-stu-id="6b71a-235">**Add-AzureRmVirtualNetworkPeering**</span></span>
+- <span data-ttu-id="6b71a-236">Alias parametru `AlloowGatewayTransit` został usunięty</span><span class="sxs-lookup"><span data-stu-id="6b71a-236">The parameter alias `AlloowGatewayTransit` was removed</span></span>
 
-<span data-ttu-id="9c1a8-237">**New-AzureRmApplicationGatewayBackendHttpSettings**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-237">**New-AzureRmApplicationGatewayBackendHttpSettings**</span></span>
-- <span data-ttu-id="9c1a8-238">Parametr `ProbeEnabled` został usunięty</span><span class="sxs-lookup"><span data-stu-id="9c1a8-238">The parameter `ProbeEnabled` was removed</span></span>
+<span data-ttu-id="6b71a-237">**New-AzureRmApplicationGatewayBackendHttpSettings**</span><span class="sxs-lookup"><span data-stu-id="6b71a-237">**New-AzureRmApplicationGatewayBackendHttpSettings**</span></span>
+- <span data-ttu-id="6b71a-238">Parametr `ProbeEnabled` został usunięty</span><span class="sxs-lookup"><span data-stu-id="6b71a-238">The parameter `ProbeEnabled` was removed</span></span>
 
-<span data-ttu-id="9c1a8-239">**Set-AzureRmApplicationGatewayBackendHttpSettings**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-239">**Set-AzureRmApplicationGatewayBackendHttpSettings**</span></span>
-- <span data-ttu-id="9c1a8-240">Parametr `ProbeEnabled` został usunięty</span><span class="sxs-lookup"><span data-stu-id="9c1a8-240">The parameter `ProbeEnabled` was removed</span></span>
+<span data-ttu-id="6b71a-239">**Set-AzureRmApplicationGatewayBackendHttpSettings**</span><span class="sxs-lookup"><span data-stu-id="6b71a-239">**Set-AzureRmApplicationGatewayBackendHttpSettings**</span></span>
+- <span data-ttu-id="6b71a-240">Parametr `ProbeEnabled` został usunięty</span><span class="sxs-lookup"><span data-stu-id="6b71a-240">The parameter `ProbeEnabled` was removed</span></span>
 
-## <a name="breaking-changes-to-azurermrediscache-cmdlets"></a><span data-ttu-id="9c1a8-241">Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.RedisCache</span><span class="sxs-lookup"><span data-stu-id="9c1a8-241">Breaking changes to AzureRM.RedisCache cmdlets</span></span>
+## <a name="breaking-changes-to-azurermrediscache-cmdlets"></a><span data-ttu-id="6b71a-241">Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.RedisCache</span><span class="sxs-lookup"><span data-stu-id="6b71a-241">Breaking changes to AzureRM.RedisCache cmdlets</span></span>
 
-<span data-ttu-id="9c1a8-242">**New-AzureRmRedisCache**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-242">**New-AzureRmRedisCache**</span></span>
-- <span data-ttu-id="9c1a8-243">Parametry `Subnet` oraz `VirtualNetwork` zostały usunięte i wprowadzono parametr `SubnetId`</span><span class="sxs-lookup"><span data-stu-id="9c1a8-243">The parameters `Subnet` and `VirtualNetwork` were removed in favor of `SubnetId`</span></span>
-- <span data-ttu-id="9c1a8-244">Parametr `RedisVersion` został usunięty</span><span class="sxs-lookup"><span data-stu-id="9c1a8-244">The parameter `RedisVersion` was removed</span></span>
-- <span data-ttu-id="9c1a8-245">Parametr `MaxMemoryPolicy` został usunięty i wprowadzono parametr `RedisConfiguration`</span><span class="sxs-lookup"><span data-stu-id="9c1a8-245">The parameter `MaxMemoryPolicy` was removed in favor of `RedisConfiguration`</span></span>
+<span data-ttu-id="6b71a-242">**New-AzureRmRedisCache**</span><span class="sxs-lookup"><span data-stu-id="6b71a-242">**New-AzureRmRedisCache**</span></span>
+- <span data-ttu-id="6b71a-243">Parametry `Subnet` oraz `VirtualNetwork` zostały usunięte i wprowadzono parametr `SubnetId`</span><span class="sxs-lookup"><span data-stu-id="6b71a-243">The parameters `Subnet` and `VirtualNetwork` were removed in favor of `SubnetId`</span></span>
+- <span data-ttu-id="6b71a-244">Parametr `RedisVersion` został usunięty</span><span class="sxs-lookup"><span data-stu-id="6b71a-244">The parameter `RedisVersion` was removed</span></span>
+- <span data-ttu-id="6b71a-245">Parametr `MaxMemoryPolicy` został usunięty i wprowadzono parametr `RedisConfiguration`</span><span class="sxs-lookup"><span data-stu-id="6b71a-245">The parameter `MaxMemoryPolicy` was removed in favor of `RedisConfiguration`</span></span>
 
 ```powershell-interactive
 # Old
@@ -387,8 +393,8 @@ New-AzureRmRedisCache -ResourceGroupName "MyRG" -Name "MyRedisCache" -Location "
 New-AzureRmRedisCache -ResourceGroupName "MyRG" -Name "MyRedisCache" -Location "North Central US" -RedisConfiguration @{"maxmemory-policy" = "allkeys-lru"}
 ```
 
-<span data-ttu-id="9c1a8-246">**Set-AzureRmRedisCache**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-246">**Set-AzureRmRedisCache**</span></span>
-- <span data-ttu-id="9c1a8-247">Parametr `MaxMemoryPolicy` został usunięty i wprowadzono parametr `RedisConfiguration`</span><span class="sxs-lookup"><span data-stu-id="9c1a8-247">The parameter `MaxMemoryPolicy` was removed in favor of `RedisConfiguration`</span></span>
+<span data-ttu-id="6b71a-246">**Set-AzureRmRedisCache**</span><span class="sxs-lookup"><span data-stu-id="6b71a-246">**Set-AzureRmRedisCache**</span></span>
+- <span data-ttu-id="6b71a-247">Parametr `MaxMemoryPolicy` został usunięty i wprowadzono parametr `RedisConfiguration`</span><span class="sxs-lookup"><span data-stu-id="6b71a-247">The parameter `MaxMemoryPolicy` was removed in favor of `RedisConfiguration`</span></span>
 
 ```powershell-interactive
 # Old
@@ -398,10 +404,10 @@ Set-AzureRmRedisCache -ResourceGroupName "MyRG" -Name "MyRedisCache" -MaxMemoryP
 Set-AzureRmRedisCache -ResourceGroupName "MyRG" -Name "MyRedisCache" -RedisConfiguration @{"maxmemory-policy" = "allkeys-lru"}
 ```
 
-## <a name="breaking-changes-to-azurermresources-cmdlets"></a><span data-ttu-id="9c1a8-248">Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.Resources</span><span class="sxs-lookup"><span data-stu-id="9c1a8-248">Breaking changes to AzureRM.Resources cmdlets</span></span>
+## <a name="breaking-changes-to-azurermresources-cmdlets"></a><span data-ttu-id="6b71a-248">Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.Resources</span><span class="sxs-lookup"><span data-stu-id="6b71a-248">Breaking changes to AzureRM.Resources cmdlets</span></span>
 
-<span data-ttu-id="9c1a8-249">**Find-AzureRmResource**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-249">**Find-AzureRmResource**</span></span>
-- <span data-ttu-id="9c1a8-250">To polecenie cmdlet zostało usunięte, a jego funkcjonalność została przeniesiona do polecenia `Get-AzureRmResource`</span><span class="sxs-lookup"><span data-stu-id="9c1a8-250">This cmdlet was removed and the functionality was moved into `Get-AzureRmResource`</span></span>
+<span data-ttu-id="6b71a-249">**Find-AzureRmResource**</span><span class="sxs-lookup"><span data-stu-id="6b71a-249">**Find-AzureRmResource**</span></span>
+- <span data-ttu-id="6b71a-250">To polecenie cmdlet zostało usunięte, a jego funkcjonalność została przeniesiona do polecenia `Get-AzureRmResource`</span><span class="sxs-lookup"><span data-stu-id="6b71a-250">This cmdlet was removed and the functionality was moved into `Get-AzureRmResource`</span></span>
 
 ```powershell-interactive
 # Old
@@ -413,8 +419,8 @@ Get-AzureRmResource -ResourceType "Microsoft.Web/sites" -ResourceGroupName "*Res
 Get-AzureRmResource -ResourceType "Microsoft.Web/sites" -Name "*test*"
 ```
 
-<span data-ttu-id="9c1a8-251">**Find-AzureRmResourceGroup**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-251">**Find-AzureRmResourceGroup**</span></span>
-- <span data-ttu-id="9c1a8-252">To polecenie cmdlet zostało usunięte, a jego funkcjonalność została przeniesiona do polecenia `Get-AzureRmResourceGroup`</span><span class="sxs-lookup"><span data-stu-id="9c1a8-252">This cmdlet was removed and the functionality was moved into `Get-AzureRmResourceGroup`</span></span>
+<span data-ttu-id="6b71a-251">**Find-AzureRmResourceGroup**</span><span class="sxs-lookup"><span data-stu-id="6b71a-251">**Find-AzureRmResourceGroup**</span></span>
+- <span data-ttu-id="6b71a-252">To polecenie cmdlet zostało usunięte, a jego funkcjonalność została przeniesiona do polecenia `Get-AzureRmResourceGroup`</span><span class="sxs-lookup"><span data-stu-id="6b71a-252">This cmdlet was removed and the functionality was moved into `Get-AzureRmResourceGroup`</span></span>
 
 ```powershell-interactive
 # Old
@@ -428,8 +434,8 @@ Get-AzureRmResourceGroup -Tag @{ "testtag" = $null }
 Get-AzureRmResourceGroup -Tag @{ "testtag" = "testval" }
 ```
 
-<span data-ttu-id="9c1a8-253">**Get-AzureRmRoleDefinition**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-253">**Get-AzureRmRoleDefinition**</span></span>
-- <span data-ttu-id="9c1a8-254">Parametr `AtScopeAndBelow` został usunięty.</span><span class="sxs-lookup"><span data-stu-id="9c1a8-254">Parameter `AtScopeAndBelow` was removed.</span></span>
+<span data-ttu-id="6b71a-253">**Get-AzureRmRoleDefinition**</span><span class="sxs-lookup"><span data-stu-id="6b71a-253">**Get-AzureRmRoleDefinition**</span></span>
+- <span data-ttu-id="6b71a-254">Parametr `AtScopeAndBelow` został usunięty.</span><span class="sxs-lookup"><span data-stu-id="6b71a-254">Parameter `AtScopeAndBelow` was removed.</span></span>
 
 ```powershell-interactive
 
@@ -440,25 +446,25 @@ Get-AzureRmRoleDefinition [other required parameters] -AtScopeAndBelow
 Get-AzureRmRoleDefinition [other required parameters]
 ```
 
-## <a name="breaking-changes-to-azurermstorage-cmdlets"></a><span data-ttu-id="9c1a8-255">Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.Storage</span><span class="sxs-lookup"><span data-stu-id="9c1a8-255">Breaking changes to AzureRM.Storage cmdlets</span></span>
+## <a name="breaking-changes-to-azurermstorage-cmdlets"></a><span data-ttu-id="6b71a-255">Zmiany powodujące niezgodność dotyczące poleceń cmdlet AzureRM.Storage</span><span class="sxs-lookup"><span data-stu-id="6b71a-255">Breaking changes to AzureRM.Storage cmdlets</span></span>
 
-<span data-ttu-id="9c1a8-256">**New-AzureRmStorageAccount**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-256">**New-AzureRmStorageAccount**</span></span>
-- <span data-ttu-id="9c1a8-257">Parametr `EnableEncryptionService` został usunięty</span><span class="sxs-lookup"><span data-stu-id="9c1a8-257">The parameter `EnableEncryptionService` was removed</span></span>
+<span data-ttu-id="6b71a-256">**New-AzureRmStorageAccount**</span><span class="sxs-lookup"><span data-stu-id="6b71a-256">**New-AzureRmStorageAccount**</span></span>
+- <span data-ttu-id="6b71a-257">Parametr `EnableEncryptionService` został usunięty</span><span class="sxs-lookup"><span data-stu-id="6b71a-257">The parameter `EnableEncryptionService` was removed</span></span>
 
-<span data-ttu-id="9c1a8-258">**Set-AzureRmStorageAccount**</span><span class="sxs-lookup"><span data-stu-id="9c1a8-258">**Set-AzureRmStorageAccount**</span></span>
-- <span data-ttu-id="9c1a8-259">Parametry `EnableEncryptionService` i `DisableEncryptionService` zostały usunięte</span><span class="sxs-lookup"><span data-stu-id="9c1a8-259">The parameters `EnableEncryptionService` and `DisableEncryptionService` were removed</span></span>
+<span data-ttu-id="6b71a-258">**Set-AzureRmStorageAccount**</span><span class="sxs-lookup"><span data-stu-id="6b71a-258">**Set-AzureRmStorageAccount**</span></span>
+- <span data-ttu-id="6b71a-259">Parametry `EnableEncryptionService` i `DisableEncryptionService` zostały usunięte</span><span class="sxs-lookup"><span data-stu-id="6b71a-259">The parameters `EnableEncryptionService` and `DisableEncryptionService` were removed</span></span>
 
-## <a name="removed-modules"></a><span data-ttu-id="9c1a8-260">Usunięte moduły</span><span class="sxs-lookup"><span data-stu-id="9c1a8-260">Removed modules</span></span>
+## <a name="removed-modules"></a><span data-ttu-id="6b71a-260">Usunięte moduły</span><span class="sxs-lookup"><span data-stu-id="6b71a-260">Removed modules</span></span>
 
 ### `AzureRM.ServerManagement`
 
-<span data-ttu-id="9c1a8-261">Usługa Server Management Tools została [wycofana w zeszłym roku](https://blogs.technet.microsoft.com/servermanagement/2017/05/17/smt-preview-service-is-being-retired-on-june-30-2017/), w wyniku czego odpowiedni moduł dla usługi SMT, `AzureRM.ServerManagement`, został usunięty z modułu `AzureRM` i nie będzie w przyszłości dostarczany.</span><span class="sxs-lookup"><span data-stu-id="9c1a8-261">The Server Management Tools service was [retired last year](https://blogs.technet.microsoft.com/servermanagement/2017/05/17/smt-preview-service-is-being-retired-on-june-30-2017/), and as a result, the corresponding module for SMT, `AzureRM.ServerManagement`, was removed from `AzureRM` and will stop shipping moving forward.</span></span>
+<span data-ttu-id="6b71a-261">Usługa Server Management Tools została [wycofana w zeszłym roku](https://blogs.technet.microsoft.com/servermanagement/2017/05/17/smt-preview-service-is-being-retired-on-june-30-2017/), w wyniku czego odpowiedni moduł dla usługi SMT, `AzureRM.ServerManagement`, został usunięty z modułu `AzureRM` i nie będzie w przyszłości dostarczany.</span><span class="sxs-lookup"><span data-stu-id="6b71a-261">The Server Management Tools service was [retired last year](https://blogs.technet.microsoft.com/servermanagement/2017/05/17/smt-preview-service-is-being-retired-on-june-30-2017/), and as a result, the corresponding module for SMT, `AzureRM.ServerManagement`, was removed from `AzureRM` and will stop shipping moving forward.</span></span>
 
 ### `AzureRM.SiteRecovery`
 
-<span data-ttu-id="9c1a8-262">Moduł `AzureRM.SiteRecovery` jest zastępowany przez moduł `AzureRM.RecoveryServices.SiteRecovery`, który jest funkcjonalnym nadzbiorem modułu `AzureRM.SiteRecovery` i obejmuje nowy zestaw równoważnych poleceń cmdlet.</span><span class="sxs-lookup"><span data-stu-id="9c1a8-262">The `AzureRM.SiteRecovery` module is being superseded by `AzureRM.RecoveryServices.SiteRecovery`, which is a functional superset of the `AzureRM.SiteRecovery` module and includes a new set of equivalent cmdlets.</span></span> <span data-ttu-id="9c1a8-263">Poniżej znajduje się pełna lista mapowań ze starych na nowe polecenia cmdlet:</span><span class="sxs-lookup"><span data-stu-id="9c1a8-263">The full list of mappings from old to new cmdlets can be found below:</span></span>
+<span data-ttu-id="6b71a-262">Moduł `AzureRM.SiteRecovery` jest zastępowany przez moduł `AzureRM.RecoveryServices.SiteRecovery`, który jest funkcjonalnym nadzbiorem modułu `AzureRM.SiteRecovery` i obejmuje nowy zestaw równoważnych poleceń cmdlet.</span><span class="sxs-lookup"><span data-stu-id="6b71a-262">The `AzureRM.SiteRecovery` module is being superseded by `AzureRM.RecoveryServices.SiteRecovery`, which is a functional superset of the `AzureRM.SiteRecovery` module and includes a new set of equivalent cmdlets.</span></span> <span data-ttu-id="6b71a-263">Poniżej znajduje się pełna lista mapowań ze starych na nowe polecenia cmdlet:</span><span class="sxs-lookup"><span data-stu-id="6b71a-263">The full list of mappings from old to new cmdlets can be found below:</span></span>
 
-| <span data-ttu-id="9c1a8-264">Przestarzałe polecenie cmdlet</span><span class="sxs-lookup"><span data-stu-id="9c1a8-264">Deprecated cmdlet</span></span>                                        | <span data-ttu-id="9c1a8-265">Równoważne polecenie cmdlet</span><span class="sxs-lookup"><span data-stu-id="9c1a8-265">Equivalent cmdlet</span></span>                                                | <span data-ttu-id="9c1a8-266">Aliasy</span><span class="sxs-lookup"><span data-stu-id="9c1a8-266">Aliases</span></span>                                  |
+| <span data-ttu-id="6b71a-264">Przestarzałe polecenie cmdlet</span><span class="sxs-lookup"><span data-stu-id="6b71a-264">Deprecated cmdlet</span></span>                                        | <span data-ttu-id="6b71a-265">Równoważne polecenie cmdlet</span><span class="sxs-lookup"><span data-stu-id="6b71a-265">Equivalent cmdlet</span></span>                                                | <span data-ttu-id="6b71a-266">Aliasy</span><span class="sxs-lookup"><span data-stu-id="6b71a-266">Aliases</span></span>                                  |
 |----------------------------------------------------------|------------------------------------------------------------------|------------------------------------------|
 | `Edit-AzureRmSiteRecoveryRecoveryPlan`                   | `Edit-AzureRmRecoveryServicesAsrRecoveryPlan`                    | `Edit-ASRRecoveryPlan`                   |
 | `Get-AzureRmSiteRecoveryFabric`                          | `Get-AzureRmRecoveryServicesAsrFabric`                           | `Get-ASRFabric`                          |
