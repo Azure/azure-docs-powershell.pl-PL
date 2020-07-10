@@ -3,19 +3,19 @@ title: Logowanie się w programie Azure PowerShell
 description: Jak zalogować się w programie Azure PowerShell jako użytkownik albo za pomocą jednostki usługi lub tożsamości zarządzanych dla zasobów platformy Azure.
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 06/18/2020
-ms.openlocfilehash: f82a9e373806f2f071ae59f6aee7e0a0bd4ea13d
-ms.sourcegitcommit: 747769a143ddebff39e78c2cc62a182401adddb9
+ms.date: 7/7/2020
+ms.openlocfilehash: 7ac723202ca9e81c8ef4cba5e844d46b98ba4b67
+ms.sourcegitcommit: 7b368a9be1cea2ac4e7d269e1a51529271269a42
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85268191"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86098784"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Logowanie się w programie Azure PowerShell
 
 Program Azure PowerShell obsługuje kilka metod uwierzytelniania. Najprostszym sposobem na rozpoczęcie pracy jest usługa [Azure Cloud Shell](/azure/cloud-shell/overview), która loguje Cię automatycznie. W przypadku instalacji lokalnej możesz logować się interaktywnie za pośrednictwem przeglądarki. Podczas pisania skryptów automatyzacji zalecanym rozwiązaniem jest użycie [jednostki usługi](create-azure-service-principal-azureps.md) z odpowiednimi uprawnieniami. Możliwie największe ograniczenie uprawnień logowania w danym przypadku użycia pomaga w zabezpieczeniu zasobów platformy Azure.
 
-Po zalogowaniu się polecenia są uruchamiane względem subskrypcji domyślnej. Aby zmienić aktywną subskrypcję dla sesji, użyj polecenia cmdlet [Set-AzContext](/powershell/module/az.accounts/set-azcontext). Aby zmienić domyślną subskrypcję używaną podczas logowania się przy użyciu programu Azure PowerShell, użyj polecenia [Set-AzDefault](/powershell/module/az.accounts/set-azdefault).
+Początkowo logowanie następuje do pierwszej subskrypcji zwróconej przez platformę Azure, jeśli masz dostęp do więcej niż jednej subskrypcji. Polecenia są domyślnie uruchamiane dla tej subskrypcji. Aby zmienić aktywną subskrypcję dla sesji, użyj polecenia cmdlet [Set-AzContext](/powershell/module/az.accounts/set-azcontext). Aby zmienić aktywną subskrypcję i zachować to ustawienie między sesjami w tym samym systemie, użyj polecenia cmdlet [Select-AzContext](/powershell/module/az.accounts/select-azcontext).
 
 > [!IMPORTANT]
 > Poświadczenia są współdzielone w ramach wielu sesji programu PowerShell, dopóki użytkownik pozostanie zalogowany.
