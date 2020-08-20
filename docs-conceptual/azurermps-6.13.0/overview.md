@@ -4,12 +4,12 @@ description: Ten temat zawiera omówienie programu Azure PowerShell oraz linki p
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/20/2018
-ms.openlocfilehash: 9d1b9c35829facc34cd7c252cb450fcce18685b2
-ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
+ms.openlocfilehash: 0ebbb504111c54fb42415f4084ba6828d47958d2
+ms.sourcegitcommit: 7546b8bcca0a6381248ecbb9d9bd6b2ef34b70e6
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84122222"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88584411"
 ---
 # <a name="overview-of-azure-powershell"></a>Omówienie programu Azure PowerShell
 
@@ -21,8 +21,8 @@ Używaj usługi [Cloud Shell](/azure/cloud-shell/overview), aby uruchamiać prog
 
 Poniższe przykłady mogą pomóc nauczyć się, jak realizować typowe scenariusze za pomocą programu Azure PowerShell:
 
-- [Maszyny wirtualne z systemem Linux](/azure/virtual-machines/virtual-machines-linux-powershell-samples?toc=/powershell/azure/toc.json)
-- [Maszyny wirtualne z systemem Windows](/azure/virtual-machines/virtual-machines-windows-powershell-samples?toc=/powershell/azure/toc.json)
+- [Maszyny wirtualne z systemem Linux](https://docs.microsoft.com/azure/virtual-machines/linux/powershell-samples)
+- [Maszyny wirtualne z systemem Windows](https://docs.microsoft.com/azure/virtual-machines/windows/powershell-samples)
 - [Web Apps](/azure/app-service-web/app-service-powershell-samples?toc=/powershell/azure/toc.json)
 - [Bazy danych SQL](/azure/sql-database/sql-database-powershell-samples?toc=/powershell/azure/toc.json)
 
