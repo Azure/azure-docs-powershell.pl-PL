@@ -3,13 +3,13 @@ title: Zarządzanie zasobami platformy Azure przy użyciu polecenia Invoke-AzRes
 description: Jak zarządzać zasobami za pomocą usługi Azure PowerShell i polecenia cmdlet Invoke-AzRestMethod.
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 08/17/2020
-ms.openlocfilehash: 380fd818a3af2474ce192c7a1da8a6798795cf21
-ms.sourcegitcommit: bd7edc4d48b6a8a8bec864edc876e16af0a49505
+ms.date: 08/24/2020
+ms.openlocfilehash: 6a267e28ec8e2540ce7d6431ffd9aab0b2090c6a
+ms.sourcegitcommit: b94a3f00c147144b0ef7f8cf8d0f151e04674b89
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88512993"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88821367"
 ---
 # <a name="manage-azure-resources-with-invoke-azrestmethod"></a>Zarządzanie zasobami platformy Azure przy użyciu polecenia Invoke-AzRestMethod
 
@@ -19,8 +19,7 @@ To polecenie cmdlet jest przydatne, gdy chcesz zarządzać usługami platformy A
 
 ## <a name="how-to-use-invoke-azrestmethod"></a>Jak używać polecenia cmdlet Invoke-AzRestMethod
 
-Na przykład możesz zezwolić na dostęp do usługi Azure Container Registry (ACR) tylko dla określonych sieci lub odmówić dostępu publicznego. Ta funkcja nie jest jeszcze dostępna w [module Az.ContainerRegistry programu PowerShell](/powershell/module/Az.ContainerRegistry/).
-Jednak w międzyczasie można nią zarządzać za pomocą polecenia cmdlet `Invoke-AzRestMethod`.
+Na przykład możesz zezwolić na dostęp do usługi Azure Container Registry (ACR) tylko dla określonych sieci lub odmówić dostępu publicznego. W wersji 4.5.0 modułu Az PowerShell ta funkcja nie jest jeszcze dostępna w [module Az.ContainerRegistry programu PowerShell](/powershell/module/Az.ContainerRegistry/). Jednak w międzyczasie można nią zarządzać za pomocą polecenia cmdlet `Invoke-AzRestMethod`.
 
 ## <a name="using-invoke-azrestmethod-with-get-operations"></a>Używanie polecenia cmdlet Invoke-AzRestMethod z operacjami GET
 
@@ -51,7 +50,7 @@ Definicję dla wersji 2019-12-01-preview usługi ACR można znaleźć w następu
 
 ## <a name="using-invoke-azrestmethod-with-patch-operations"></a>Używanie polecenia cmdlet Invoke-AzRestMethod z operacjami PATCH
 
-Dostęp publiczny do istniejącego elementu usługi ACR o nazwie `myacr` w grupie zasobów `myresourcegroup` możesz wyłączyć za pomocą polecenia cmdlet Invoke-AzRestMethod.
+Dostęp publiczny do istniejącego elementu usługi ACR o nazwie `myacr` w grupie zasobów `myresourcegroup` możesz wyłączyć za pomocą polecenia cmdlet `Invoke-AzRestMethod`.
 
 Aby wyłączyć dostęp do sieci publicznej, wykonaj wywołanie **PATCH** względem interfejsu API, które zmieni wartość parametru `publicNetwokAccess`, jak pokazano w następującym przykładzie:
 
@@ -100,11 +99,11 @@ Invoke-AzRestMethod @specificIpParams
 
 ## <a name="comparison-to-get-azresource-new-azresource-and-remove-azresource"></a>Porównanie z poleceniami cmdlet Get-AzResource, New-AzResource i Remove-AzResource
 
-Polecenia cmdlet `*-AzResource` umożliwiają dostosowanie wywołania interfejsu API REST względem platformy Azure przez określenie typu zasobu, wersji interfejsu API i właściwości do zaktualizowania. Jednak właściwości muszą być obiektem `PSObject`, którego utworzenie może być skomplikowane.
+Polecenia cmdlet `*-AzResource` umożliwiają dostosowanie wywołania interfejsu API REST względem platformy Azure przez określenie typu zasobu, wersji interfejsu API i właściwości do zaktualizowania. Należy jednak najpierw utworzyć właściwości jako `PSObject`. Ten proces wnosi dodatkowy poziom złożoności i może łatwo stać się skomplikowany.
 
-Polecenie cmdlet `Invoke-AzRestMethod` oferuje łatwiejszy sposób zarządzania zasobami platformy Azure. W poprzednim przykładzie można było zobaczyć, że ładunek jest ciągiem JSON. Nie musisz przejmować się konwersją między formatem JSON i obiektami `PSObjects`.
+Polecenie cmdlet `Invoke-AzRestMethod` oferuje łatwy sposób zarządzania zasobami platformy Azure. Jak pokazano w poprzednim przykładzie, można utworzyć ciąg JSON i za jego pomocą dostosować wywołanie interfejsu API REST bez konieczności wstępnego tworzenia żadnych obiektów `PSObjects`.
 
-Jeśli masz już doświadczenie z poleceniami cmdlet `*-AzResource`, możesz nadal z nich korzystać. Zakończenie ich obsługi nie jest planowane. Polecenie cmdlet `Invoke-AzRestMethod` to nowy dodatek do rodziny.
+Jeśli masz już doświadczenie z poleceniami cmdlet `*-AzResource`, możesz nadal z nich korzystać. Zakończenie ich obsługi nie jest planowane. Polecenie cmdlet `Invoke-AzRestMethod` to nowy dodatek do zestawu narzędzi.
 
 ## <a name="see-also"></a>Zobacz też
 
