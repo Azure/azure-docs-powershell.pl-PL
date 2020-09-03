@@ -4,12 +4,13 @@ description: Jak zainstalować program Azure PowerShell za pomocą modułu Power
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/26/2020
-ms.openlocfilehash: fa5b2d80b9caf216f218c85fe49ea4cc7f062404
-ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 00cb5542e8d805f6e5e79e2177270fcbb93af808
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84121986"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89241903"
 ---
 # <a name="install-azure-powershell"></a>Instalowanie programu Azure PowerShell
 

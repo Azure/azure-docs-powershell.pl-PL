@@ -4,12 +4,13 @@ description: Jak w pełni odinstalować program Azure PowerShell
 ms.date: 05/28/2020
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: d99b40121deca0a4817c3a6364ad55020dadbda1
-ms.sourcegitcommit: b94a3f00c147144b0ef7f8cf8d0f151e04674b89
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 8b6a96c89b37708646b24f2f2f82a10537dd0ee5
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88821743"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89241818"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>Odinstalowywanie modułu programu Azure PowerShell
 

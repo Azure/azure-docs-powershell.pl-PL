@@ -4,12 +4,13 @@ description: Zarządzanie subskrypcjami platformy Azure za pomocą programu Azur
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/04/2019
-ms.openlocfilehash: 4947435259f78c10e4f67434eb62ec8d4c3c6013
-ms.sourcegitcommit: b94a3f00c147144b0ef7f8cf8d0f151e04674b89
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 96b94ffcb5075764eb5d2dcaec7b13c5933b83da
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88821790"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89242192"
 ---
 # <a name="use-multiple-azure-subscriptions"></a>Korzystanie z wielu subskrypcji platformy Azure
 

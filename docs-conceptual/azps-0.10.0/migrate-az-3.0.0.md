@@ -4,12 +4,13 @@ description: Ten przewodnik migracji zawiera listę zmian powodujących niezgodn
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 11/04/2019
-ms.openlocfilehash: 06be35bc3573d00d90a8cf2d822ac051ab72f6bb
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 727a74ef9cd0f6e1bf93b65c4776816c1aa23334
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387670"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89241716"
 ---
 # <a name="migration-guide-for-az-300"></a>Przewodnik migracji modułu Az 3.0.0
 
