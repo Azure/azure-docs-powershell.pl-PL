@@ -16,15 +16,15 @@ metadata:
   ms.technology: azure-powershell
   ms.service: virtual-machines
   clicktale: true
-  ms.openlocfilehash: 08fb135343979a7d1a9723223a2e673641c0090f
-  ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+  ms.openlocfilehash: b71557b2280d0fbfded2f626a54480a0606e126d
+  ms.sourcegitcommit: c10563f2c4753ee6e1481e52768b05d19c812b8c
   ms.translationtype: HT
   ms.contentlocale: pl-PL
-  ms.lasthandoff: 05/05/2020
-  ms.locfileid: "67863687"
+  ms.lasthandoff: 08/29/2020
+  ms.locfileid: "89098184"
 items:
 - durationInMinutes: 1
-  content: "\n[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]\n\nW tym samouczku poznasz wszystkie kroki związane z konfigurowaniem maszyny wirtualnej za pomocą programu Azure PowerShell. Samouczek obejmuje również dane wyjściowe zapytań, ponowne używanie zasobów platformy Azure i czyszczenie zasobów.\n\nKroki tego samouczka można wykonać za pomocą środowiska interaktywnego oferowanego przez usługę Azure Cloud Shell. Ewentualnie możesz [zainstalować program Azure PowerShell](install-azurerm-ps.md) lokalnie.\n\nUżyj klawiszy __ctrl-shift-v__ (__cmd-shift-v__ w systemie macOS), aby wkleić tekst samouczka do usługi Azure Cloud Shell."
+  content: "\n[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]\n\nW tym samouczku poznasz wszystkie kroki związane z konfigurowaniem maszyny wirtualnej za pomocą programu Azure PowerShell. Samouczek obejmuje również dane wyjściowe zapytań, ponowne używanie zasobów platformy Azure i czyszczenie zasobów.\n\nKroki tego samouczka można wykonać za pomocą środowiska interaktywnego oferowanego przez usługę Azure Cloud Shell. Ewentualnie możesz [zainstalować program Azure PowerShell](install-azurerm-ps.md) lokalnie.\n\nUżyj klawiszy __ctrl-shift-v__ (__cmd-shift-v__ w systemie macOS), aby wkleić tekst samouczka do usługi Azure Cloud Shell."
 - durationInMinutes: 1
   title: Logowanie
   content: >-
@@ -40,7 +40,7 @@ items:
 
     Ukończ proces logowania, wykonując kroki wyświetlane w terminalu.
 - durationInMinutes: 1
-  title: Utwórz grupę zasobów
+  title: Tworzenie grupy zasobów
   content: >-
     Na platformie Azure wszystkie zasoby są przydzielane w grupie zarządzania zasobami. Grupy zasobów zapewniają logiczne grupowanie zasobów, co ułatwia pracę z nimi jako kolekcją.
 
