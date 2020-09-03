@@ -4,12 +4,13 @@ description: Uzyskaj informacje na temat wszystkich najnowszych aktualizacji mod
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/10/2020
-ms.openlocfilehash: ea8169e0aa04fb4cc27b715ef9dfde86f0e75e85
-ms.sourcegitcommit: b94a3f00c147144b0ef7f8cf8d0f151e04674b89
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 8892d11dafef724f499a7766836d23f30b2be24f
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88821757"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89239523"
 ---
 # <a name="azure-powershell-release-notes"></a>Informacje o wersji programu Azure PowerShell
 

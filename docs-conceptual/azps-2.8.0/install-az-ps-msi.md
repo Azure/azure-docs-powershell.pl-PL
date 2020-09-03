@@ -4,12 +4,13 @@ description: Jak zainstalować program Azure PowerShell bez modułu PowerShellGe
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/22/2019
-ms.openlocfilehash: 227c525d0625522c277d026ff10ae5a1cdcaedbe
-ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 157031cc827f2abfa947013821bd5db5bb84c3d3
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84121368"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89244113"
 ---
 # <a name="install-azure-powershell-on-windows-with-msi"></a>Instalowanie programu Azure PowerShell w systemie Windows za pomocą instalatora MSI
 

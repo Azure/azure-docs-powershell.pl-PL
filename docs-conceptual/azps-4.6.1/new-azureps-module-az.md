@@ -1,22 +1,25 @@
 ---
 title: Wprowadzenie do modułu Az programu Azure PowerShell
 description: Przedstawiamy nowy moduł programu Azure PowerShell — Az — który zastąpi moduł AzureRM.
-ms.date: 05/10/2019
+ms.date: 05/20/2020
 ms.devlang: powershell
 ms.topic: conceptual
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: e7fb420f8d3c7f4ac76f3f542a4fd3171d9effa4
+ms.openlocfilehash: 0771bc474f43d8bbf392f2eba10da2e320d30556
 ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 09/01/2020
-ms.locfileid: "89244011"
+ms.locfileid: "89240526"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>Wprowadzenie do nowego modułu Az programu Azure PowerShell
 
 Począwszy od grudnia 2018 r., moduł Az programu Azure PowerShell jest ogólnie dostępny i interakcja z platformą Azure powinna się teraz odbywać za pomocą tego modułu programu PowerShell. Moduł Az oferuje krótsze polecenia, lepszą stabilność i obsługę wielu platform. Moduł Az też ma równoważność funkcji z modułem AzureRM, co zapewnia łatwą ścieżkę migracji.
 
-Dzięki modułowi Az program Azure PowerShell jest teraz zgodny z programem PowerShell 5.1 w systemie Windows oraz programem PowerShell Core w wersji 6.x i nowszych na wszystkich obsługiwanych platformach — w tym Windows, macOS i Linux.
+> [!NOTE]
+> Program PowerShell w wersji 7.x lub nowszej jest zalecaną wersją programu PowerShell do używania z programem Azure PowerShell na wszystkich platformach.
+
+Dzięki najnowszemu modułowi Az program Azure PowerShell współpracuje z programem PowerShell 6.2.4 lub nowszym na wszystkich platformach, w tym w systemach Windows, macOS i Linux. Jest on również zgodny z programem PowerShell 5.1 w systemie Windows.
 
 Az to nowy moduł, dlatego wersja została zresetowana do 1.0.0.
 
@@ -27,7 +30,7 @@ Duże aktualizacje mogą być kłopotliwe. Dlatego chcemy poinformować Cię o p
 Największa i najważniejsza zmiana wiąże się z tym, że program PowerShell stał się produktem dla wielu platform od czasu wprowadzenia programu [PowerShell](/powershell/scripting/overview) opartego na bibliotece .NET Standard.
 Dążymy do tego, aby obsługa platformy Azure była możliwa na wszystkich platformach, co oznaczało konieczność aktualizacji modułów programu Azure PowerShell, aby korzystały z biblioteki .NET Standard i były zgodne z programem PowerShell Core. Zamiast wprowadzać złożone zmiany w module AzureRM w celu dodania tej obsługi, utworzyliśmy moduł Az.
 
-Ponadto utworzenie nowego modułu dało naszym inżynierom szansę na uspójnienie projektu i nazw poleceń cmdlet oraz modułów. Wszystkie moduły rozpoczynają się teraz prefiksem `Az.`, a wszystkie polecenia cmdlet używają formatu _Czasownik_-`Az`_Rzeczownik_. Wcześniej nazwy poleceń cmdlet były nie tylko dłuższe, ale też niespójne.
+Ponadto utworzenie nowego modułu pozwoliło naszym inżynierom na uspójnienie projektu i nazw poleceń cmdlet oraz modułów. Wszystkie moduły rozpoczynają się teraz prefiksem `Az.`, a wszystkie polecenia cmdlet używają formatu _Czasownik_-`Az`_Rzeczownik_. Wcześniej nazwy poleceń cmdlet były nie tylko dłuższe, ale też niespójne.
 
 Zmniejszona została również liczba modułów: Niektóre moduły, które działały z tymi samymi usługami, zostały połączone. Polecenia cmdlet płaszczyzny zarządzania i płaszczyzny danych są teraz zawarte w pojedynczych modułach dla swoich usług. Znacznie upraszcza to pracę osobom, które ręcznie zarządzają zależnościami i importowaniem.
 
@@ -49,7 +52,7 @@ Aby uaktualnić istniejącą instalację modułu AzureRM:
 ## <a name="migrate-existing-scripts-to-az"></a>Migrowanie istniejących skryptów do modułu Az
 
 Nowe nazwy poleceń cmdlet zaprojektowano tak, aby były łatwe do zapamiętania. Zamiast używać ciągu `AzureRm` lub `Azure` w nazwach poleceń cmdlet, wystarczy użyć ciągu `Az`. Na przykład stare polecenie `New-AzureRMVm` to teraz polecenie `New-AzVm`.
-Migracja to jednak nie tylko zapoznanie się z nowymi nazwami poleceń cmdlet: Zmieniono nazwy modułów i parametrów oraz wprowadzono inne ważne zmiany.
+Migracja to jednak nie tylko zapoznanie się z nowymi nazwami poleceń cmdlet. Zmieniono nazwy modułów i parametrów oraz wprowadzono inne ważne zmiany.
 
 Aby ułatwić proces migracji z modułu AzureRM do Az, udostępniamy wiele zasobów:
 
@@ -57,7 +60,7 @@ Aby ułatwić proces migracji z modułu AzureRM do Az, udostępniamy wiele zasob
 - [Pełna lista zmian powodujących niezgodność w module Az 1.0.0 względem modułu AzureRM](migrate-az-1.0.0.md)
 - Polecenie cmdlet [Enable-AzureRmAlias](/powershell/module/az.accounts/enable-azurermalias)
 
-Moduł Az oferuje tryb zgodności, który ułatwia korzystanie z istniejących skryptów podczas pracy nad aktualizacjami do nowej składni. Polecenie cmdlet [Enable-AzureRmAlias](/powershell/module/az.accounts/enable-azurermalias) włącza tryb zgodności przy użyciu aliasów, aby możliwe było używanie istniejących skryptów z minimalnymi zmianami podczas pracy nad pełną migracją do modułu Az.
+Moduł Az oferuje tryb zgodności, który ułatwia korzystanie z istniejących skryptów podczas pracy nad aktualizacjami do nowej składni. Polecenie cmdlet [Enable-AzureRmAlias](/powershell/module/az.accounts/enable-azurermalias) włącza tryb zgodności przy użyciu aliasów, aby możliwe było używanie istniejących skryptów z minimalnymi zmianami podczas pracy nad pełną migracją do modułu Az. Domyślnie polecenie `Enable-AzureRmAlias` włącza tylko aliasy zgodności dla bieżącej sesji programu PowerShell. Użyj parametru `Scope`, aby zachować aliasy zgodności między sesjami programu PowerShell. Aby uzyskać więcej informacji, zobacz [dokumentację dotyczącą polecenia Enable-AzureRmAlias](/powershell/module/az.accounts/enable-azurermalias).
 
 > [!IMPORTANT]
 > Chociaż dostępne są aliasy dla nazw poleceń cmdlet, w przypadku poleceń cmdlet modułu Az mogły zostać dodane (lub zmienione) parametry albo zmienione wartości zwracane. Nie oczekuj, że włączenie aliasów rozwiąże problem migracji za Ciebie. Zobacz [pełną listę zmian powodujących niezgodność](migrate-az-1.0.0.md), aby dowiedzieć się, w których miejscach skryptów trzeba wprowadzić aktualizacje.

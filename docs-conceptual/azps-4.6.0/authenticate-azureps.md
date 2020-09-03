@@ -4,12 +4,13 @@ description: Jak zalogować się w programie Azure PowerShell jako użytkownik a
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 7/7/2020
-ms.openlocfilehash: 7ac723202ca9e81c8ef4cba5e844d46b98ba4b67
-ms.sourcegitcommit: b94a3f00c147144b0ef7f8cf8d0f151e04674b89
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 8f18af8ed67ecf2aefd353208c07bf812df732d9
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88821631"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89244555"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Logowanie się w programie Azure PowerShell
 
