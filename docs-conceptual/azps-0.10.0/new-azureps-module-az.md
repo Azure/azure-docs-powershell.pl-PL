@@ -4,12 +4,13 @@ description: Przedstawiamy nowy moduł programu Azure PowerShell — Az — któ
 ms.date: 05/10/2019
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: bef3ae8344a13e170a30889c1954fd2e9b29dcdf
-ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: fbb2851b3ab6adc76219a3439157fc3c687dd89b
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84121939"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89242736"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>Wprowadzenie do nowego modułu Az programu Azure PowerShell
 

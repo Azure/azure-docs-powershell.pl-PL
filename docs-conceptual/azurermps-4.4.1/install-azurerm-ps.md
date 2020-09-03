@@ -4,16 +4,17 @@ description: Jak zainstalować i skonfigurować program Azure PowerShell do pier
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
-ms.openlocfilehash: 653284edc093943972516dfd4253af6297754a6a
-ms.sourcegitcommit: c19bf5a96a82a56e2b1fa9ab5e106690f850cedf
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 7c0ae849d276df103619bec3422cdc9b694d068f
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87177513"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89238588"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>Instalowanie programu Azure PowerShell w systemie Windows za pomocą modułu PowerShellGet
 
-[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
 W tym artykule opisano kroki instalowania modułów programu Azure PowerShell w programie PowerShell 5.x w systemie Windows przy użyciu modułu PowerShellGet. Moduł PowerShellGet i funkcja zarządzania modułami to preferowany sposób instalacji programu Azure PowerShell, ale jeśli wolisz go zainstalować za pomocą Instalatora platformy internetowej lub pakietu MSI, zobacz [Inne metody instalacji](other-install.md).
 

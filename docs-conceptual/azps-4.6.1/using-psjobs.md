@@ -10,7 +10,7 @@ ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 09/01/2020
-ms.locfileid: "89243161"
+ms.locfileid: "89242923"
 ---
 # <a name="run-azure-powershell-cmdlets-in-powershell-jobs"></a>Uruchamianie poleceń cmdlet środowiska Azure PowerShell w zadaniach programu PowerShell
 

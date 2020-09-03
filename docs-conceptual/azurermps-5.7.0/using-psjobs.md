@@ -4,16 +4,17 @@ description: Sposób równoległego uruchamiania poleceń cmdlet za pomocą para
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/11/2017
-ms.openlocfilehash: 3f8617ade3afbf6a283f3696f6d688ba9529173a
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: b5385a9fa3da508e6f0841baea2e4bcd20503b9f
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387993"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89243552"
 ---
 # <a name="running-cmdlets-in-parallel-using-powershell-jobs"></a>Równoczesne uruchamianie poleceń cmdlet przy użyciu zadań programu PowerShell
 
-[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
 Program PowerShell obsługuje akcję asynchroniczną przy użyciu [zadań programu PowerShell](/powershell/module/microsoft.powershell.core/about/about_jobs).
 Program Azure PowerShell w znacznej mierze zależy od wykonywania wywołań sieci do platformy Azure i oczekiwania na nie. Jako deweloper możesz często wykonywać wiele nieblokujących wywołań do platformy Azure w skrypcie lub tworzyć zasoby platformy Azure w rozwiązaniu REPL bez blokowania bieżącej sesji. Aby zaspokoić te potrzeby, program Azure PowerShell oferuje najwyższej jakości obsługę zadań [PSJob](/powershell/module/microsoft.powershell.core/about/about_jobs).

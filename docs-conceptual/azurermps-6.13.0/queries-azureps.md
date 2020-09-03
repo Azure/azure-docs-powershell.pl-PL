@@ -4,16 +4,17 @@ description: Jak wykonać zapytanie dotyczące zasobów platformy Azure i sforma
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/11/2018
-ms.openlocfilehash: 0900b060bc83392c538b0a5d1a8949c51925d66a
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: e5c0422c88f586c5578c4e42b8d9b666860c4bf9
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387262"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89238789"
 ---
 # <a name="query-output-of-azure-powershell-cmdlets"></a>Wykonywanie zapytań względem danych wyjściowych poleceń cmdlet programu Azure PowerShell
 
-[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
 W programie PowerShell można wykonywać zapytania przy użyciu wbudowanych poleceń cmdlet. W programie PowerShell nazwy poleceń cmdlet mają postać **_czasownik-rzeczownik_**. Polecenia cmdlet z czasownikiem **_Get_** służą do tworzenia zapytań. Rzeczowniki w poleceniach cmdlet to typy zasobów platformy Azure, na których działają czasowniki.
 
