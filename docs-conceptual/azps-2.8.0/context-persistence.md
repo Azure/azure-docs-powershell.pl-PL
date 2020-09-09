@@ -4,12 +4,13 @@ description: Dowiedz się, jak używać ponownie poświadczeń platformy Azure i
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/21/2019
-ms.openlocfilehash: f2f6de80168ab295f65fcce97da77e1c958ae7ae
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 99c3d594c6d774152a4594a2eed7c7c3209bdbe9
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387551"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89244164"
 ---
 # <a name="azure-powershell-context-objects"></a>Obiekty kontekstu środowiska Azure PowerShell
 
