@@ -4,12 +4,13 @@ description: Jak wykonać zapytanie dotyczące zasobów platformy Azure i sforma
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 01/10/2019
-ms.openlocfilehash: ebd108a2c13bdb376213d054fb72188e6205a565
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 2754df5132ca9d528217fa5caad95b7f59cc8215
+ms.sourcegitcommit: 2f1e3c275626fba1c4275cae8ef1d13b11f55735
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387364"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89449980"
 ---
 # <a name="query-output-of-azure-powershell"></a>Wykonywanie zapytań dotyczących danych wyjściowych programu Azure PowerShell 
 
