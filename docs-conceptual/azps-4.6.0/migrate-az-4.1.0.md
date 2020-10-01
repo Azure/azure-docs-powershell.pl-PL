@@ -5,12 +5,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/23/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 5f42bbb65313d1caa839443d463b61cc743ca0a5
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.openlocfilehash: c64541beb5eb0d3db38932fb3915de865919641b
+ms.sourcegitcommit: 5fcf17330d6f335561640a5ee3d98c59f7baab94
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89242668"
+ms.lasthandoff: 09/26/2020
+ms.locfileid: "91381466"
 ---
 # <a name="migration-guide-for-az-410"></a>Przewodnik migracji modułu Az 4.1.0
 
@@ -135,19 +135,19 @@ Typ właściwości `Type` typu `Microsoft.Azure.Commands.ApiManagement.Models.Ps
 
 ### `Get-AzApiManagementProperty`
 
-Polecenie cmdlet `Get-AzApiManagementProperty` zostało zastąpione przez polecenie `Get-AzureApiManagementNamedValue`.
+Polecenie cmdlet `Get-AzApiManagementProperty` zostało zastąpione przez polecenie `Get-AzApiManagementNamedValue`.
 
 ### `New-AzApiManagementProperty`
 
-Polecenie cmdlet `New-AzApiManagementProperty` zostało zastąpione przez polecenie `New-AzureApiManagementNamedValue`.
+Polecenie cmdlet `New-AzApiManagementProperty` zostało zastąpione przez polecenie `New-AzApiManagementNamedValue`.
 
 ### `Remove-AzApiManagementProperty`
 
-Polecenie cmdlet `Remove-AzApiManagementProperty` zostało zastąpione przez polecenie `Remove-AzureApiManagementNamedValue`.
+Polecenie cmdlet `Remove-AzApiManagementProperty` zostało zastąpione przez polecenie `Remove-AzApiManagementNamedValue`.
 
 ### `Set-AzApiManagementProperty`
 
-Polecenie cmdlet `Set-AzApiManagementProperty` zostało zastąpione przez polecenie `Set-AzureApiManagementNamedValue`.
+Polecenie cmdlet `Set-AzApiManagementProperty` zostało zastąpione przez polecenie `Set-AzApiManagementNamedValue`.
 
 ## <a name="azbatch"></a>Az.Batch
 

@@ -1,16 +1,16 @@
 ---
 title: Odinstalowywanie programu Azure PowerShell
 description: Jak w pełni odinstalować program Azure PowerShell
-ms.date: 05/28/2020
+ms.date: 09/15/2020
 ms.devlang: powershell
 ms.topic: conceptual
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 8b6a96c89b37708646b24f2f2f82a10537dd0ee5
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.openlocfilehash: 20859d6135676a3a4fb1e9f5d66909d157b38ac6
+ms.sourcegitcommit: 5fcf17330d6f335561640a5ee3d98c59f7baab94
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89241818"
+ms.lasthandoff: 09/26/2020
+ms.locfileid: "91381398"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>Odinstalowywanie modułu programu Azure PowerShell
 
@@ -43,8 +43,6 @@ Version             Name                           Repository           Descript
 3.8.0               Az                             PSGallery            Microsoft Azure PowerShell
 4.1.0               Az                             PSGallery            Microsoft Azure PowerShell
 ```
-
-<a name="uninstall-script"/>
 
 Poniższy skrypt wysyła zapytanie do galerii programu PowerShell w celu uzyskania listy zależnych modułów podrzędnych. Następnie skrypt odinstalowuje odpowiednią wersję każdego modułu podrzędnego. Do uruchomienia tego skryptu w zakresie innym niż **Proces** lub **Bieżący użytkownik** wymagany jest dostęp administratora.
 
