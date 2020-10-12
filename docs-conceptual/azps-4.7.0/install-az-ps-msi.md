@@ -5,12 +5,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/10/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 33d9214544ddb126b717685f9e7986bed926b149
-ms.sourcegitcommit: 15f21c40dcb7610e2fbaaabf264ad925e4224500
+ms.openlocfilehash: 193e8c5d14f1bf2fe9c84a9da2defac50be97ec7
+ms.sourcegitcommit: 3d16496984a0b9fd7631aa043726060ddae3624d
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90928246"
+ms.lasthandoff: 10/08/2020
+ms.locfileid: "91833268"
 ---
 # <a name="install-azure-powershell-on-windows-with-msi"></a>Instalowanie programu Azure PowerShell w systemie Windows za pomocą instalatora MSI
 
@@ -31,7 +31,14 @@ Aby użyć programu Azure PowerShell w programie PowerShell 5.1:
 
 ## <a name="install-or-update-on-windows-using-the-msi-package"></a>Instalowanie lub aktualizowanie w systemie Windows za pomocą pakietu MSI
 
-Pakiet MSI dla programu Azure PowerShell jest dostępny w witrynie [GitHub](https://github.com/Azure/azure-powershell/releases/latest). Jeśli wcześniejsze wersje programu Azure PowerShell zainstalowano za pomocą pakietu MSI, instalator automatycznie je usunie. Pakiet MSI instaluje moduły w lokalizacji `${env:ProgramFiles}\WindowsPowerShell\Modules`.
+Pakiet MSI dla programu Azure PowerShell jest dostępny w witrynie [GitHub](https://github.com/Azure/azure-powershell/releases):
+
+1. Przejdź do adresu https://github.com/Azure/azure-powershell/releases.
+2. Wyszukaj najnowszy moduł galerii dla programu Azure PowerShell (są one wyświetlane chronologicznie i zwykle są to tylko wersje wydania bez nazwy, np. „4.7.0”).
+3. Przewiń na sam dół informacji o poprawce i kliknij strzałkę obok pozycji „Zasoby”, aby wyświetlić opcje pakietu MSI.
+4. Kliknij wybrane polecenie Az pakietu MSI, aby rozpocząć pobieranie.
+
+Jeśli wcześniejsze wersje programu Azure PowerShell zainstalowano za pomocą pakietu MSI, instalator automatycznie je usunie. Pakiet MSI instaluje moduły w lokalizacji `${env:ProgramFiles}\WindowsPowerShell\Modules`.
 
 Aby rozpocząć pracę z programem Azure PowerShell, zaloguj się przy użyciu swoich poświadczeń platformy Azure.
 
