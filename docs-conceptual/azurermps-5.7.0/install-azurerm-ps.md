@@ -5,12 +5,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/15/2018
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: c287afa2fb34938cac7304028071afd7deedb263
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.openlocfilehash: c03c6ee3782b68de8a237b3c215405ff6513dbca
+ms.sourcegitcommit: 038cb42a3bd8c009bc57c8c1c252e66fa170c84b
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89243790"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92523244"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>Instalowanie programu Azure PowerShell w systemie Windows za pomocą modułu PowerShellGet
 
@@ -54,7 +54,6 @@ Jeśli nie masz zainstalowanego modułu PowerShellGet, postępuj zgodnie z instr
 |---|---|
 |Windows 10<br/>Windows Server 2016|Wbudowane w platformę Windows Management Framework (WMF) 5.0 zawartą w systemie operacyjnym|
 |Uaktualnienie do programu PowerShell 5| <ol><li>[Zainstaluj najnowszą wersję platformy WMF](https://www.microsoft.com/download/details.aspx?id=54616)</li><li>Uruchom następujące polecenie:<br/>```Install-Module PowerShellGet -Force```</li></ol>|
-|System Windows z programem PowerShell 3 lub PowerShell 4|<ol><il>[Pobierz moduły PackageManagement](https://go.microsoft.com/fwlink/?LinkID=746217)</il><li>Uruchom następujące polecenie:<br/>```Install-Module PowerShellGet -Force```</li></ol>|
 
 > [!NOTE]
 > Korzystanie z modułu PowerShellGet wymaga zasad wykonania pozwalających uruchamiać skrypty. Aby uzyskać więcej informacji na temat zasad wykonania programu PowerShell, zobacz [Informacje o zasadach wykonania](/powershell/module/microsoft.powershell.core/about/about_execution_policies).
@@ -82,7 +81,7 @@ You are installing the modules from an untrusted repository. If you trust this r
 its InstallationPolicy value by running the Set-PSRepository cmdlet.
 
 Are you sure you want to install the modules from 'PSGallery'?
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
 Wybierz odpowiedź `Yes` lub `Yes to All`, aby kontynuować instalację.
