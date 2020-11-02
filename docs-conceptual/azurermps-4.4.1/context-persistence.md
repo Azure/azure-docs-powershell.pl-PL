@@ -5,18 +5,18 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 9c9d6a028d3a28f99320aef5a574d868b2fd9bc1
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.openlocfilehash: 77f5bcc478228a9d860039983640ff0e7ff31ab2
+ms.sourcegitcommit: 038cb42a3bd8c009bc57c8c1c252e66fa170c84b
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89244606"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92523193"
 ---
 # <a name="persisting-user-credentials-across-powershell-sessions"></a>Utrwalanie poświadczeń użytkownika między sesjami programu PowerShell
 
 [!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
-Program Azure PowerShell oferuje funkcję **automatycznego zapisywania kontekstu platformy Azure**, która udostępnia następujące funkcje:
+Program Azure PowerShell oferuje funkcję **automatycznego zapisywania kontekstu platformy Azure** , która udostępnia następujące funkcje:
 
 - Przechowywanie informacji logowania do ponownego użycia w nowych sesjach programu PowerShell.
 - Łatwiejsze korzystanie z zadań w tle w celu wykonywania długotrwałych poleceń cmdlet.
@@ -61,7 +61,7 @@ Funkcja **automatycznego zapisywania kontekstu platformy Azure** umożliwia udos
 
 - Używając domyślnego kontekstu z włączoną funkcją automatycznego zapisywania
 
-  Jeśli włączono funkcję **automatycznego zapisywania kontekstu**, wówczas zadania w tle automatycznie używają domyślnego zapisanego kontekstu.
+  Jeśli włączono funkcję **automatycznego zapisywania kontekstu** , wówczas zadania w tle automatycznie używają domyślnego zapisanego kontekstu.
 
   ```powershell-interactive
   PS C:\> $job = Start-Job { New-AzureRmVm [... Additional parameters ...]}
@@ -154,5 +154,4 @@ Zmiany istniejących poleceń cmdlet dotyczących profilu
 
 <!-- Updated cmdlets -->
 [login]: /powershell/module/azurerm.profile/Add-AzureRmAccount
-[import]: /powershell/module/azurerm.profile/Import-AzureRmAccount
 [set-context]: /powershell/module/azurerm.profile/Import-AzureRmContext
