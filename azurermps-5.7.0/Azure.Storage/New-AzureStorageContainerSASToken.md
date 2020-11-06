@@ -1,0 +1,233 @@
+---
+external help file: Microsoft.WindowsAzure.Commands.Storage.dll-Help.xml
+ms.assetid: 6FF04E82-4921-4F7B-83D0-6997316BC5FD
+online version: https://docs.microsoft.com/en-us/powershell/module/azure.storage/new-azurestoragecontainersastoken
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/Storage/Commands.Storage/help/New-AzureStorageContainerSASToken.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/Storage/Commands.Storage/help/New-AzureStorageContainerSASToken.md
+ms.openlocfilehash: 0e8ad44ebbd8a5585626de27317caa14b408f87a
+ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "93549816"
+---
+# <span data-ttu-id="e1e60-101">New-AzureStorageContainerSASToken</span><span class="sxs-lookup"><span data-stu-id="e1e60-101">New-AzureStorageContainerSASToken</span></span>
+
+## <span data-ttu-id="e1e60-102">STRESZCZENIe</span><span class="sxs-lookup"><span data-stu-id="e1e60-102">SYNOPSIS</span></span>
+<span data-ttu-id="e1e60-103">Generuje token SAS dla kontenera magazynu platformy Azure.</span><span class="sxs-lookup"><span data-stu-id="e1e60-103">Generates an SAS token for an Azure storage container.</span></span>
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## <span data-ttu-id="e1e60-104">POLECENIA</span><span class="sxs-lookup"><span data-stu-id="e1e60-104">SYNTAX</span></span>
+
+### <span data-ttu-id="e1e60-105">SasPolicy</span><span class="sxs-lookup"><span data-stu-id="e1e60-105">SasPolicy</span></span>
+```
+New-AzureStorageContainerSASToken [-Name] <String> -Policy <String> [-Protocol <SharedAccessProtocol>]
+ [-IPAddressOrRange <String>] [-StartTime <DateTime>] [-ExpiryTime <DateTime>] [-FullUri]
+ [-Context <IStorageContext>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="e1e60-106">SasPermission</span><span class="sxs-lookup"><span data-stu-id="e1e60-106">SasPermission</span></span>
+```
+New-AzureStorageContainerSASToken [-Name] <String> [-Permission <String>] [-Protocol <SharedAccessProtocol>]
+ [-IPAddressOrRange <String>] [-StartTime <DateTime>] [-ExpiryTime <DateTime>] [-FullUri]
+ [-Context <IStorageContext>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="e1e60-107">Opis</span><span class="sxs-lookup"><span data-stu-id="e1e60-107">DESCRIPTION</span></span>
+<span data-ttu-id="e1e60-108">Polecenie cmdlet **New-AzureStorageContainerSASToken** generuje token dostępu współużytkowanego (SAS) dla kontenera magazynu platformy Azure.</span><span class="sxs-lookup"><span data-stu-id="e1e60-108">The **New-AzureStorageContainerSASToken** cmdlet generates a Shared Access Signature (SAS) token for an Azure storage container.</span></span>
+
+## <span data-ttu-id="e1e60-109">Przykłady</span><span class="sxs-lookup"><span data-stu-id="e1e60-109">EXAMPLES</span></span>
+
+### <span data-ttu-id="e1e60-110">Przykład 1. Generuj token SAS kontenera z uprawnieniem pełny kontener</span><span class="sxs-lookup"><span data-stu-id="e1e60-110">Example 1: Generate a container SAS token with full container permission</span></span>
+```
+PS C:\>New-AzureStorageContainerSASToken -Name "Test" -Permission rwdl
+```
+
+<span data-ttu-id="e1e60-111">W tym przykładzie Wygenerowano token SAS kontenera z uprawnieniem pełnego kontenera.</span><span class="sxs-lookup"><span data-stu-id="e1e60-111">This example generates a container SAS token with full container permission.</span></span>
+
+### <span data-ttu-id="e1e60-112">Przykład 2: generowanie wielu tokenów SAS kontenera według rurociągu</span><span class="sxs-lookup"><span data-stu-id="e1e60-112">Example 2: Generate multiple container SAS token by pipeline</span></span>
+```
+PS C:\>Get-AzureStorageContainer -Container test* | New-AzureStorageContainerSASToken -Permission rwdl
+```
+
+<span data-ttu-id="e1e60-113">W tym przykładzie Wygenerowano wiele tokenów SAS kontenera za pomocą potoku.</span><span class="sxs-lookup"><span data-stu-id="e1e60-113">This example generates multiple container SAS tokens by using the pipeline.</span></span>
+
+### <span data-ttu-id="e1e60-114">Przykład 3: generowanie tokenu SAS kontenera z zasadami dostępu współużytkowanego</span><span class="sxs-lookup"><span data-stu-id="e1e60-114">Example 3: Generate container SAS token with shared access policy</span></span>
+```
+PS C:\>New-AzureStorageContainerSASToken -Name "Test" -Policy "PolicyName"
+```
+
+<span data-ttu-id="e1e60-115">W tym przykładzie Wygenerowano token SAS kontenera z zasadami dostępu współużytkowanego.</span><span class="sxs-lookup"><span data-stu-id="e1e60-115">This example generates a container SAS token with shared access policy.</span></span>
+
+## <span data-ttu-id="e1e60-116">PARAMETRÓW</span><span class="sxs-lookup"><span data-stu-id="e1e60-116">PARAMETERS</span></span>
+
+### <span data-ttu-id="e1e60-117">-Context</span><span class="sxs-lookup"><span data-stu-id="e1e60-117">-Context</span></span>
+<span data-ttu-id="e1e60-118">Określa kontekst usługi Azure Storage.</span><span class="sxs-lookup"><span data-stu-id="e1e60-118">Specifies an Azure storage context.</span></span>
+<span data-ttu-id="e1e60-119">Możesz ją utworzyć przy użyciu polecenia cmdlet New-AzureStorageContext.</span><span class="sxs-lookup"><span data-stu-id="e1e60-119">You can create it by using the New-AzureStorageContext cmdlet.</span></span>
+
+```yaml
+Type: IStorageContext
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e1e60-120">-ExpiryTime</span><span class="sxs-lookup"><span data-stu-id="e1e60-120">-ExpiryTime</span></span>
+<span data-ttu-id="e1e60-121">Określa czas, po upływie którego podpis udostępniony jest nieprawidłowy.</span><span class="sxs-lookup"><span data-stu-id="e1e60-121">Specifies the time at which the shared access signature becomes invalid.</span></span>
+
+<span data-ttu-id="e1e60-122">Jeśli użytkownik ustawi czas rozpoczęcia, ale nie czas wygaśnięcia, czas wygaśnięcia jest ustawiany na czas rozpoczęcia Plus o godzinę.</span><span class="sxs-lookup"><span data-stu-id="e1e60-122">If the user sets the start time but not the expiry time, the expiry time is set to the start time plus one hour.</span></span>
+<span data-ttu-id="e1e60-123">Jeśli nie określono godziny rozpoczęcia ani godziny wygaśnięcia, czas wygaśnięcia jest ustawiany na bieżący czas plus co godzinę.</span><span class="sxs-lookup"><span data-stu-id="e1e60-123">If neither the start time nor the expiry time is specified, the expiry time is set to the current time plus one hour.</span></span>
+
+```yaml
+Type: DateTime
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e1e60-124">-FullUri</span><span class="sxs-lookup"><span data-stu-id="e1e60-124">-FullUri</span></span>
+<span data-ttu-id="e1e60-125">Wskazuje, że to polecenie cmdlet zwróci pełny identyfikator URI obiektu BLOB i token podpisu dostępu współdzielonego.</span><span class="sxs-lookup"><span data-stu-id="e1e60-125">Indicates that this cmdlet return the full blob URI and the shared access signature token.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e1e60-126">-IPAddressOrRange</span><span class="sxs-lookup"><span data-stu-id="e1e60-126">-IPAddressOrRange</span></span>
+<span data-ttu-id="e1e60-127">Określa adres IP lub zakres adresów IP, od których należy akceptować żądania, takie jak 168.1.5.65 lub 168.1.5.60-168.1.5.70.</span><span class="sxs-lookup"><span data-stu-id="e1e60-127">Specifies the IP address or range of IP addresses from which to accept requests, such as 168.1.5.65 or 168.1.5.60-168.1.5.70.</span></span>
+<span data-ttu-id="e1e60-128">Zakresem jest włącznie.</span><span class="sxs-lookup"><span data-stu-id="e1e60-128">The range is inclusive.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e1e60-129">-Name (nazwa)</span><span class="sxs-lookup"><span data-stu-id="e1e60-129">-Name</span></span>
+<span data-ttu-id="e1e60-130">Określa nazwę kontenera magazynu platformy Azure.</span><span class="sxs-lookup"><span data-stu-id="e1e60-130">Specifies an Azure storage container name.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: N, Container
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e1e60-131">-Uprawnienie</span><span class="sxs-lookup"><span data-stu-id="e1e60-131">-Permission</span></span>
+<span data-ttu-id="e1e60-132">Określa uprawnienia kontenera magazynu.</span><span class="sxs-lookup"><span data-stu-id="e1e60-132">Specifies permissions for a storage container.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: SasPermission
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e1e60-133">-Policy</span><span class="sxs-lookup"><span data-stu-id="e1e60-133">-Policy</span></span>
+<span data-ttu-id="e1e60-134">Określa zasady dostępu przechowywane na platformie Azure.</span><span class="sxs-lookup"><span data-stu-id="e1e60-134">Specifies an Azure Stored Access Policy.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: SasPolicy
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e1e60-135">-Protocol (protokół)</span><span class="sxs-lookup"><span data-stu-id="e1e60-135">-Protocol</span></span>
+<span data-ttu-id="e1e60-136">Określa protokół dozwolony dla żądania.</span><span class="sxs-lookup"><span data-stu-id="e1e60-136">Specifies the protocol permitted for a request.</span></span>
+<span data-ttu-id="e1e60-137">Dopuszczalne wartości tego parametru to:</span><span class="sxs-lookup"><span data-stu-id="e1e60-137">The acceptable values for this parameter are:</span></span>
+* <span data-ttu-id="e1e60-138">HttpsOnly</span><span class="sxs-lookup"><span data-stu-id="e1e60-138">HttpsOnly</span></span>
+* <span data-ttu-id="e1e60-139">HttpsOrHttp</span><span class="sxs-lookup"><span data-stu-id="e1e60-139">HttpsOrHttp</span></span>
+
+<span data-ttu-id="e1e60-140">Wartość domyślna to HttpsOrHttp.</span><span class="sxs-lookup"><span data-stu-id="e1e60-140">The default value is HttpsOrHttp.</span></span>
+
+```yaml
+Type: SharedAccessProtocol
+Parameter Sets: (All)
+Aliases: 
+Accepted values: HttpsOnly, HttpsOrHttp
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e1e60-141">-StartTime</span><span class="sxs-lookup"><span data-stu-id="e1e60-141">-StartTime</span></span>
+<span data-ttu-id="e1e60-142">Określa czas, po upływie którego podpis udostępniony będzie ważny.</span><span class="sxs-lookup"><span data-stu-id="e1e60-142">Specifies the time at which the shared access signature becomes valid.</span></span>
+
+```yaml
+Type: DateTime
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="e1e60-143">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="e1e60-143">CommonParameters</span></span>
+<span data-ttu-id="e1e60-144">To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="e1e60-144">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="e1e60-145">Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="e1e60-145">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="e1e60-146">WEJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="e1e60-146">INPUTS</span></span>
+
+### <span data-ttu-id="e1e60-147">IStorageContext</span><span class="sxs-lookup"><span data-stu-id="e1e60-147">IStorageContext</span></span>
+
+<span data-ttu-id="e1e60-148">Parametr "context" przyjmuje wartość typu "IStorageContext" z potoku</span><span class="sxs-lookup"><span data-stu-id="e1e60-148">Parameter 'Context' accepts value of type 'IStorageContext' from the pipeline</span></span>
+
+### <span data-ttu-id="e1e60-149">Ciąg</span><span class="sxs-lookup"><span data-stu-id="e1e60-149">String</span></span>
+
+<span data-ttu-id="e1e60-150">Parametr "nazwa" akceptuje wartość typu "String" z procesu</span><span class="sxs-lookup"><span data-stu-id="e1e60-150">Parameter 'Name' accepts value of type 'String' from the pipeline</span></span>
+
+## <span data-ttu-id="e1e60-151">WYSYŁA</span><span class="sxs-lookup"><span data-stu-id="e1e60-151">OUTPUTS</span></span>
+
+### <span data-ttu-id="e1e60-152">System. String</span><span class="sxs-lookup"><span data-stu-id="e1e60-152">System.String</span></span>
+
+## <span data-ttu-id="e1e60-153">INFORMACYJN</span><span class="sxs-lookup"><span data-stu-id="e1e60-153">NOTES</span></span>
+
+## <span data-ttu-id="e1e60-154">LINKI POKREWNE</span><span class="sxs-lookup"><span data-stu-id="e1e60-154">RELATED LINKS</span></span>
+
+[<span data-ttu-id="e1e60-155">Nowe — AzureStorageBlobSASToken</span><span class="sxs-lookup"><span data-stu-id="e1e60-155">New-AzureStorageBlobSASToken</span></span>](./New-AzureStorageBlobSASToken.md)
