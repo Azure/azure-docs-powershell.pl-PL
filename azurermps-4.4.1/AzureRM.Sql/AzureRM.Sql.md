@@ -1,0 +1,396 @@
+---
+Module Name: AzureRM.Sql
+Module Guid: XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+Download Help Link:
+  object Object: 
+Help Version:
+  object Object: 
+Locale: en-US
+content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/Sql/Commands.Sql/help/AzureRM.Sql.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/Sql/Commands.Sql/help/AzureRM.Sql.md
+ms.openlocfilehash: 334e791a051cc41d1bdfaaa28c52443e09b09bfb
+ms.sourcegitcommit: 43f4bdf2a59dd82fd881512aa9761bf72eb5703c
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "93522829"
+---
+# Moduł AzureRM. SQL
+## Opis
+W tym temacie są wyświetlane tematy pomocy dotyczące poleceń cmdlet bazy danych usługi Azure SQL.
+
+## Polecenia cmdlet AzureRM. SQL
+### [Dodaj-AzureRmSqlDatabaseToFailoverGroup](Add-AzureRmSqlDatabaseToFailoverGroup.md)
+Dodaje co najmniej jeden bazę danych do grupy trybu failover bazy danych SQL Azure.
+
+### [Dodaj-AzureRmSqlServerKeyVaultKey](Add-AzureRmSqlServerKeyVaultKey.md)
+Dodaje klucz magazynu kluczy do programu SQL Server.
+
+### [Get-AzureRmSqlCapability](Get-AzureRmSqlCapability.md)
+Pobiera funkcje bazy danych SQL dla bieżącej subskrypcji.
+
+### [Get-AzureRmSqlDatabase](Get-AzureRmSqlDatabase.md)
+Pobiera co najmniej jeden z baz danych.
+
+### [Get-AzureRmSqlDatabaseActivity](Get-AzureRmSqlDatabaseActivity.md)
+Pobiera stan przeniesień elastycznych baz danych.
+
+### [Get-AzureRmSqlDatabaseAdvisor](Get-AzureRmSqlDatabaseAdvisor.md)
+Pobiera co najmniej jeden klasyfikator dla bazy danych SQL Azure.
+
+### [Get-AzureRmSqlDatabaseAuditingPolicy](Get-AzureRmSqlDatabaseAuditingPolicy.md)
+Pobiera zasady inspekcji bazy danych.
+
+### [Get-AzureRmSqlDatabaseBackupLongTermRetentionPolicy](Get-AzureRmSqlDatabaseBackupLongTermRetentionPolicy.md)
+Pobiera zasady przechowywania długoterminowych baz danych.
+
+### [Get-AzureRmSqlDatabaseDataMaskingPolicy](Get-AzureRmSqlDatabaseDataMaskingPolicy.md)
+Pobiera zasady maskowania danych dla bazy danych.
+
+### [Get-AzureRmSqlDatabaseDataMaskingRule](Get-AzureRmSqlDatabaseDataMaskingRule.md)
+Pobiera reguły maskowania danych z bazy danych.
+
+### [Get-AzureRmSqlDatabaseExpanded](Get-AzureRmSqlDatabaseExpanded.md)
+Pobiera bazę danych i jej rozwinięte wartości właściwości.
+
+### [Get-AzureRmSqlDatabaseFailoverGroup](Get-AzureRmSqlDatabaseFailoverGroup.md)
+Pobiera lub wyświetla listę grup pracy awaryjnej bazy danych Azure SQL Database.
+
+### [Get-AzureRmSqlDatabaseGeoBackup](Get-AzureRmSqlDatabaseGeoBackup.md)
+Pobiera kopię zapasową bazy danych w postaci geograficznej.
+
+### [Get-AzureRmSqlDatabaseGeoBackupPolicy](Get-AzureRmSqlDatabaseGeoBackupPolicy.md)
+Pobiera zasady geograficznej kopii zapasowej bazy danych.
+
+### [Get-AzureRmSqlDatabaseImportExportStatus](Get-AzureRmSqlDatabaseImportExportStatus.md)
+Pobiera szczegóły importu lub eksportu bazy danych SQL Azure.
+
+### [Get-AzureRmSqlDatabaseIndexRecommendations](Get-AzureRmSqlDatabaseIndexRecommendations.md)
+Pobiera zalecane operacje indeksowania dla serwera lub bazy danych.
+
+### [Get-AzureRmSqlDatabaseRecommendedAction](Get-AzureRmSqlDatabaseRecommendedAction.md)
+Umożliwia wykonanie jednej lub większej liczby zalecanych akcji dla klasyfikatora bazy danych Azure SQL Database.
+
+### [Get-AzureRmSqlDatabaseReplicationLink](Get-AzureRmSqlDatabaseReplicationLink.md)
+Pobiera linki replikacji geograficznej między bazą danych SQL Azure a grupą zasobów lub programem SQL Server.
+
+### [Get-AzureRmSqlDatabaseRestorePoints](Get-AzureRmSqlDatabaseRestorePoints.md)
+Pobiera różne punkty przywracania, z których można przywrócić magazyn danych SQL.
+
+### [Get-AzureRmSqlDatabaseSecureConnectionPolicy](Get-AzureRmSqlDatabaseSecureConnectionPolicy.md)
+Pobiera zasady bezpiecznego połączenia z bazą danych.
+
+### [Get-AzureRmSqlDatabaseThreatDetectionPolicy](Get-AzureRmSqlDatabaseThreatDetectionPolicy.md)
+Pobiera zasady wykrywania zagrożeń dla bazy danych.
+
+### [Get-AzureRmSqlDatabaseTransparentDataEncryption](Get-AzureRmSqlDatabaseTransparentDataEncryption.md)
+Pobiera stan TDE bazy danych.
+
+### [Get-AzureRmSqlDatabaseTransparentDataEncryptionActivity](Get-AzureRmSqlDatabaseTransparentDataEncryptionActivity.md)
+Pobiera postęp TDEgo skanowania bazy danych.
+
+### [Get-AzureRmSqlDatabaseUpgradeHint](Get-AzureRmSqlDatabaseUpgradeHint.md)
+Pobiera wskazówki dotyczące warstwy cenowej dla bazy danych.
+
+### [Get-AzureRmSqlDeletedDatabaseBackup](Get-AzureRmSqlDeletedDatabaseBackup.md)
+Pobieranie usuniętej bazy danych, którą można przywrócić.
+
+### [Get-AzureRmSqlElasticPool](Get-AzureRmSqlElasticPool.md)
+Pobiera pule elastyczne i wartości ich właściwości w bazie danych SQL Azure.
+
+### [Get-AzureRmSqlElasticPoolActivity](Get-AzureRmSqlElasticPoolActivity.md)
+Pobiera stan operacji z puli elastycznej.
+
+### [Get-AzureRmSqlElasticPoolAdvisor](Get-AzureRmSqlElasticPoolAdvisor.md)
+Pobiera jeden lub więcej doradców dla puli elastycznej SQL Azure.
+
+### [Get-AzureRmSqlElasticPoolDatabase](Get-AzureRmSqlElasticPoolDatabase.md)
+Pobiera elastyczną bazę danych w puli elastycznej i jej wartości właściwości.
+
+### [Get-AzureRmSqlElasticPoolRecommendation](Get-AzureRmSqlElasticPoolRecommendation.md)
+Pobiera elastyczne rekomendacje.
+
+### [Get-AzureRmSqlElasticPoolRecommendedAction](Get-AzureRmSqlElasticPoolRecommendedAction.md)
+Umożliwia wykonanie jednej lub większej liczby zalecanych akcji dla klasyfikatora Elastic Pool SQL platformy Azure.
+
+### [Get-AzureRmSqlServer](Get-AzureRmSqlServer.md)
+Zwraca informacje o serwerach baz danych SQL.
+
+### [Get-AzureRmSqlServerActiveDirectoryAdministrator](Get-AzureRmSqlServerActiveDirectoryAdministrator.md)
+Pobiera informacje o administratorze usługi Azure AD dla programu SQL Server.
+
+### [Get-AzureRmSqlServerAdvisor](Get-AzureRmSqlServerAdvisor.md)
+Pobiera jeden lub więcej doradców dla programu Azure SQL Server.
+
+### [Get-AzureRmSqlServerAuditingPolicy](Get-AzureRmSqlServerAuditingPolicy.md)
+Pobiera zasady inspekcji programu SQL Server.
+
+### [Get-AzureRmSqlServerBackupLongTermRetentionVault](Get-AzureRmSqlServerBackupLongTermRetentionVault.md)
+Pobiera serwerowy magazyn przechowywania długoterminowego.
+
+### [Get-AzureRmSqlServerCommunicationLink](Get-AzureRmSqlServerCommunicationLink.md)
+Pobiera linki komunikacyjne dotyczące transakcji Elastic Database między serwerami baz danych.
+
+### [Get-AzureRmSqlServerDisasterRecoveryConfiguration](Get-AzureRmSqlServerDisasterRecoveryConfiguration.md)
+Pobiera konfigurację odzyskiwania systemu serwera bazy danych.
+
+### [Get-AzureRmSqlServerDisasterRecoveryConfigurationActivity](Get-AzureRmSqlServerDisasterRecoveryConfigurationActivity.md)
+Pobiera aktywność dotyczącą konfiguracji odzyskiwania systemu serwera bazy danych.
+
+### [Get-AzureRmSqlServerFirewallRule](Get-AzureRmSqlServerFirewallRule.md)
+Pobiera reguły zapory dla serwera bazy danych SQL.
+
+### [Get-AzureRmSqlServerKeyVaultKey](Get-AzureRmSqlServerKeyVaultKey.md)
+Pobiera klucze magazynu kluczy programu SQL Server.
+
+### [Get-AzureRmSqlServerRecommendedAction](Get-AzureRmSqlServerRecommendedAction.md)
+Umożliwia wykonanie jednej lub kilku zalecanych akcji dla usługi Azure SQL Server Advisor.
+
+### [Get-AzureRmSqlServerServiceObjective](Get-AzureRmSqlServerServiceObjective.md)
+Umożliwia pobieranie celów usługi dla serwera bazy danych Azure SQL.
+
+### [Get-AzureRmSqlServerThreatDetectionPolicy](Get-AzureRmSqlServerThreatDetectionPolicy.md)
+Pobiera zasady wykrywania zagrożeń dla serwera.
+
+### [Get-AzureRmSqlServerTransparentDataEncryptionProtector](Get-AzureRmSqlServerTransparentDataEncryptionProtector.md)
+Pobiera funkcję ochrony przezroczystego szyfrowania danych (TDE)
+
+### [Get-AzureRmSqlServerUpgrade](Get-AzureRmSqlServerUpgrade.md)
+Pobiera stan uaktualnienia serwera bazy danych SQL platformy Azure.
+
+### [Get-AzureRmSqlServerUpgradeHint](Get-AzureRmSqlServerUpgradeHint.md)
+Pobiera wskazówki dotyczące warstwy cenowej w celu uaktualnienia serwera bazy danych SQL Azure.
+
+### [Nowe — AzureRmSqlDatabase](New-AzureRmSqlDatabase.md)
+Tworzy bazę danych lub elastyczną bazę danych.
+
+### [Nowe — AzureRmSqlDatabaseCopy](New-AzureRmSqlDatabaseCopy.md)
+Tworzy kopię bazy danych SQL, która w bieżącym czasie używa migawki.
+
+### [Nowe — AzureRmSqlDatabaseDataMaskingRule](New-AzureRmSqlDatabaseDataMaskingRule.md)
+Tworzy regułę maskowania danych dla bazy danych.
+
+### [Nowe — AzureRmSqlDatabaseExport](New-AzureRmSqlDatabaseExport.md)
+Eksportuje bazę danych SQL Azure jako plik BACPAC do konta magazynu.
+
+### [Nowe — AzureRmSqlDatabaseFailoverGroup](New-AzureRmSqlDatabaseFailoverGroup.md)
+To polecenie powoduje utworzenie nowej grupy trybu failover bazy danych SQL Azure.
+
+### [Nowe — AzureRmSqlDatabaseImport](New-AzureRmSqlDatabaseImport.md)
+Importuje plik BACPAC i tworzy nową bazę danych na serwerze.
+
+### [Nowe — AzureRmSqlDatabaseSecondary](New-AzureRmSqlDatabaseSecondary.md)
+Tworzy pomocniczą bazę danych dla istniejącej bazy danych i uruchamia replikację danych.
+
+### [Nowe — AzureRmSqlElasticPool](New-AzureRmSqlElasticPool.md)
+Tworzy pulę Elastic Database dla bazy danych SQL.
+
+### [Nowe — AzureRmSqlServer](New-AzureRmSqlServer.md)
+Tworzy serwer bazy danych SQL.
+
+### [Nowe — AzureRmSqlServerCommunicationLink](New-AzureRmSqlServerCommunicationLink.md)
+Umożliwia utworzenie łącza komunikacyjnego dla transakcji Elastic Database między dwoma serwerami baz danych SQL.
+
+### [Nowe — AzureRmSqlServerDisasterRecoveryConfiguration](New-AzureRmSqlServerDisasterRecoveryConfiguration.md)
+Umożliwia utworzenie konfiguracji odzyskiwania systemu serwera bazy danych.
+
+### [Nowe — AzureRmSqlServerFirewallRule](New-AzureRmSqlServerFirewallRule.md)
+Tworzy regułę zapory dla serwera bazy danych SQL.
+
+### [Remove-AzureRmSqlDatabase](Remove-AzureRmSqlDatabase.md)
+Usuwa bazę danych SQL Azure.
+
+### [Remove-AzureRmSqlDatabaseAuditing](Remove-AzureRmSqlDatabaseAuditing.md)
+Usuwa inspekcję bazy danych.
+
+### [Remove-AzureRmSqlDatabaseDataMaskingRule](Remove-AzureRmSqlDatabaseDataMaskingRule.md)
+Usuwa regułę maskowania danych z bazy danych.
+
+### [Remove-AzureRmSqlDatabaseFailoverGroup](Remove-AzureRmSqlDatabaseFailoverGroup.md)
+Usuwa grupę trybu failover bazy danych SQL Azure.
+
+### [Remove-AzureRmSqlDatabaseFromFailoverGroup](Remove-AzureRmSqlDatabaseFromFailoverGroup.md)
+Usuwa co najmniej jeden z baz danych z grupy usługi Azure SQL Database failover.
+
+### [Remove-AzureRmSqlDatabaseSecondary](Remove-AzureRmSqlDatabaseSecondary.md)
+Kończenie replikacji danych między bazą danych SQL a określoną pomocniczą bazą danych.
+
+### [Remove-AzureRmSqlDatabaseThreatDetectionPolicy](Remove-AzureRmSqlDatabaseThreatDetectionPolicy.md)
+Usuwa zasady wykrywania zagrożeń z bazy danych.
+
+### [Remove-AzureRmSqlElasticPool](Remove-AzureRmSqlElasticPool.md)
+Usuwa pulę Elastic Database.
+
+### [Remove-AzureRmSqlServer](Remove-AzureRmSqlServer.md)
+Usuwa serwer bazy danych SQL Azure.
+
+### [Remove-AzureRmSqlServerActiveDirectoryAdministrator](Remove-AzureRmSqlServerActiveDirectoryAdministrator.md)
+Usuwa administratora usługi Azure AD dla programu SQL Server.
+
+### [Remove-AzureRmSqlServerAuditing](Remove-AzureRmSqlServerAuditing.md)
+Usuwa inspekcję programu SQL Server.
+
+### [Remove-AzureRmSqlServerCommunicationLink](Remove-AzureRmSqlServerCommunicationLink.md)
+Umożliwia usunięcie łącza komunikacyjnego dla transakcji Elastic Database między dwoma serwerami.
+
+### [Remove-AzureRmSqlServerDisasterRecoveryConfiguration](Remove-AzureRmSqlServerDisasterRecoveryConfiguration.md)
+Usuwa konfigurację odzyskiwania systemu serwera bazy danych SQL.
+
+### [Remove-AzureRmSqlServerFirewallRule](Remove-AzureRmSqlServerFirewallRule.md)
+Usuwa regułę zapory z serwera bazy danych SQL.
+
+### [Remove-AzureRmSqlServerKeyVaultKey](Remove-AzureRmSqlServerKeyVaultKey.md)
+Usuwa klucz magazynu kluczy z programu SQL Server.
+
+### [Remove-AzureRmSqlServerThreatDetectionPolicy](Remove-AzureRmSqlServerThreatDetectionPolicy.md)
+Usuwa zasady wykrywania zagrożeń z serwera.
+
+### [Restore-AzureRmSqlDatabase](Restore-AzureRmSqlDatabase.md)
+Przywraca bazę danych SQL.
+
+### [Życiorys — AzureRmSqlDatabase](Resume-AzureRmSqlDatabase.md)
+Wznawia bazę danych hurtowni danych SQL.
+
+### [Set-AzureRmSqlDatabase](Set-AzureRmSqlDatabase.md)
+Ustawia właściwości bazy danych lub przenosi istniejącą bazę danych do puli elastycznej.
+
+### [Set-AzureRmSqlDatabaseAdvisorAutoExecuteStatus](Set-AzureRmSqlDatabaseAdvisorAutoExecuteStatus.md)
+Modyfikuje stan automatycznego wykonywania klasyfikatora usługi Azure SQL Database.
+
+### [Set-AzureRmSqlDatabaseAuditingPolicy](Set-AzureRmSqlDatabaseAuditingPolicy.md)
+Ustawia zasady inspekcji dla bazy danych.
+
+### [Set-AzureRmSqlDatabaseBackupLongTermRetentionPolicy](Set-AzureRmSqlDatabaseBackupLongTermRetentionPolicy.md)
+Ustawia zasady przechowywania długoterminowych serwerów.
+
+### [Set-AzureRmSqlDatabaseDataMaskingPolicy](Set-AzureRmSqlDatabaseDataMaskingPolicy.md)
+Ustawia maskowanie danych dla bazy danych.
+
+### [Set-AzureRmSqlDatabaseDataMaskingRule](Set-AzureRmSqlDatabaseDataMaskingRule.md)
+Ustawia właściwości reguły maskowania danych dla bazy danych.
+
+### [Set-AzureRmSqlDatabaseFailoverGroup](Set-AzureRmSqlDatabaseFailoverGroup.md)
+Modyfikuje konfigurację grupy trybu failover bazy danych SQL Azure.
+
+### [Set-AzureRmSqlDatabaseGeoBackupPolicy](Set-AzureRmSqlDatabaseGeoBackupPolicy.md)
+Ustawianie zasad tworzenia kopii zapasowej bazy danych.
+
+### [Set-AzureRmSqlDatabaseRecommendedActionState](Set-AzureRmSqlDatabaseRecommendedActionState.md)
+Aktualizuje stan zalecanej akcji bazy danych SQL Azure.
+
+### [Set-AzureRmSqlDatabaseSecondary](Set-AzureRmSqlDatabaseSecondary.md)
+Przełącza pomocniczą bazę danych na podstawową w celu zainicjowania trybu failover.
+
+### [Set-AzureRmSqlDatabaseThreatDetectionPolicy](Set-AzureRmSqlDatabaseThreatDetectionPolicy.md)
+Ustawia zasady wykrywania zagrożeń dla bazy danych.
+
+### [Set-AzureRmSqlDatabaseTransparentDataEncryption](Set-AzureRmSqlDatabaseTransparentDataEncryption.md)
+Modyfikuje Właściwość TDE bazy danych.
+
+### [Set-AzureRmSqlElasticPool](Set-AzureRmSqlElasticPool.md)
+Modyfikuje właściwości puli Elastic Database w bazie danych SQL.
+
+### [Set-AzureRmSqlElasticPoolAdvisorAutoExecuteStatus](Set-AzureRmSqlElasticPoolAdvisorAutoExecuteStatus.md)
+Aktualizuje stan automatycznego wykonania klasyfikatora Elastic Pool SQL platformy Azure.
+
+### [Set-AzureRmSqlElasticPoolRecommendedActionState](Set-AzureRmSqlElasticPoolRecommendedActionState.md)
+Aktualizuje stan zalecanej akcji puli elastycznej w usłudze Azure SQL.
+
+### [Set-AzureRmSqlServer](Set-AzureRmSqlServer.md)
+Modyfikuje właściwości serwera bazy danych SQL.
+
+### [Set-AzureRmSqlServerActiveDirectoryAdministrator](Set-AzureRmSqlServerActiveDirectoryAdministrator.md)
+Inicjuje obsługę administracyjną administratora usługi Azure AD dla programu SQL Server.
+
+### [Set-AzureRmSqlServerAdvisorAutoExecuteStatus](Set-AzureRmSqlServerAdvisorAutoExecuteStatus.md)
+Aktualizuje stan automatycznego wykonywania usługi Azure SQL Server Advisor.
+
+### [Set-AzureRmSqlServerAuditingPolicy](Set-AzureRmSqlServerAuditingPolicy.md)
+Zmienia zasady inspekcji serwera bazy danych SQL.
+
+### [Set-AzureRmSqlServerBackupLongTermRetentionVault](Set-AzureRmSqlServerBackupLongTermRetentionVault.md)
+Ustawia magazyn długoterminowy przechowywania serwera.
+
+### [Set-AzureRmSqlServerDisasterRecoveryConfiguration](Set-AzureRmSqlServerDisasterRecoveryConfiguration.md)
+Modyfikuje konfigurację odzyskiwania serwera bazy danych.
+
+### [Set-AzureRmSqlServerFirewallRule](Set-AzureRmSqlServerFirewallRule.md)
+Modyfikuje regułę zapory na serwerze bazy danych SQL Azure.
+
+### [Set-AzureRmSqlServerRecommendedActionState](Set-AzureRmSqlServerRecommendedActionState.md)
+Aktualizuje stan zalecanej akcji programu Azure SQL Server.
+
+### [Set-AzureRmSqlServerThreatDetectionPolicy](Set-AzureRmSqlServerThreatDetectionPolicy.md)
+Ustawia zasady wykrywania zagrożeń na serwerze.
+
+### [Set-AzureRmSqlServerTransparentDataEncryptionProtector](Set-AzureRmSqlServerTransparentDataEncryptionProtector.md)
+Ustawia funkcję ochrony przezroczystego szyfrowania danych (TDE) dla programu SQL Server.
+
+### [Start — AzureRmSqlDatabaseExecuteIndexRecommendation](Start-AzureRmSqlDatabaseExecuteIndexRecommendation.md)
+Uruchamia przepływ pracy, w którym jest uruchamiana zalecana operacja indeksowania.
+
+### [Start — AzureRmSqlServerUpgrade](Start-AzureRmSqlServerUpgrade.md)
+Rozpoczynanie uaktualniania serwera bazy danych SQL.
+
+### [Zatrzymaj — AzureRmSqlDatabaseExecuteIndexRecommendation](Stop-AzureRmSqlDatabaseExecuteIndexRecommendation.md)
+Zatrzymuje przepływ pracy, w którym jest uruchamiana zalecana operacja indeksowania.
+
+### [Zatrzymaj — AzureRmSqlServerUpgrade](Stop-AzureRmSqlServerUpgrade.md)
+Zatrzymuje uaktualnienie serwera bazy danych SQL.
+
+### [Suspend — AzureRmSqlDatabase](Suspend-AzureRmSqlDatabase.md)
+Wstrzymuje bazę danych hurtowni danych SQL.
+
+### [Przełącznik-AzureRmSqlDatabaseFailoverGroup](Switch-AzureRmSqlDatabaseFailoverGroup.md)
+Wykonuje przejście do trybu failover grupy trybu failover bazy danych SQL Azure.
+
+### [Użyj — AzureRmSqlServerAuditingPolicy](Use-AzureRmSqlServerAuditingPolicy.md)
+Określa, że baza danych używa zasad inspekcji swojego serwera hosta.
+
+### [Nowe — AzureRmSqlSyncGroup](New-AzureRmSqlSyncGroup.md)
+Tworzy grupę usługi Azure SQL Database Sync.
+
+### [Update-AzureRmSqlSyncGroup](Update-AzureRmSqlSyncGroup.md)
+Umożliwia zaktualizowanie grupy synchronizacji bazy danych Azure SQL.
+
+### [Get-AzureRmSqlSyncGroup](Get-AzureRmSqlSyncGroup.md)
+Zwraca informacje dotyczące grup synchronizacji bazy danych Azure SQL Database.
+
+### [Remove-AzureRmSqlSyncGroup](Remove-AzureRmSqlSyncGroup.md)
+Usuwa grupę usługi Azure SQL Database Sync.
+
+### [Start — AzureRmSqlSyncGroupSync](Start-AzureRmSqlSyncGroupSync.md)
+Rozpoczyna synchronizację grupy synchronizacji.
+
+### [Zatrzymaj — AzureRmSqlSyncGroupSync](Stop-AzureRmSqlSyncGroupSync.md)
+Zatrzymuje synchronizację grupy synchronizacji.
+
+### [Get-AzureRmSqlSyncGroupLog](Get-AzureRmSqlSyncGroupLog.md)
+Zwraca dzienniki grupy synchronizacji bazy danych Azure SQL.
+
+### [Nowe — AzureRmSqlSyncMember](New-AzureRmSqlSyncMember.md)
+Tworzy członka synchronizacji bazy danych Azure SQL Database.
+
+### [Update-AzureRmSqlSyncMember](Update-AzureRmSqlSyncMember.md)
+Umożliwia zaktualizowanie elementu członkowskiego synchronizacji bazy danych Azure SQL Database.
+
+### [Get-AzureRmSqlSyncMember](Get-AzureRmSqlSyncMember.md)
+Zwraca informacje o elementach członkowskich synchronizacji bazy danych Azure SQL Database.
+
+### [Remove-AzureRmSqlSyncMember](Remove-AzureRmSqlSyncMember.md)
+Usuwa członka synchronizacji bazy danych SQL Azure.
+
+### [Nowe — AzureRmSqlSyncAgent](New-AzureRmSqlSyncAgent.md)
+Tworzy agenta synchronizacji usługi Azure SQL.
+
+### [Nowe — AzureRmSqlSyncAgentKey](New-AzureRmSqlSyncAgentKey.md)
+Tworzy klucz agenta synchronizacji platformy Azure SQL.
+
+### [Get-AzureRmSqlSyncAgent](Get-AzureRmSqlSyncAgent.md)
+Zwraca informacje dotyczące agentów synchronizacji Azure SQL.
+
+### [Remove-AzureRmSqlSyncAgent](Remove-AzureRmSqlSyncAgent.md)
+Usuwa agenta synchronizacji usługi Azure SQL.
+
+### [Get-AzureRmSqlSyncAgentLinkedDatabase](Get-AzureRmSqlSyncAgentLinkedDatabase.md)
+Zwraca informacje o bazach danych programu SQL Server połączonych z agentem synchronizacji.
