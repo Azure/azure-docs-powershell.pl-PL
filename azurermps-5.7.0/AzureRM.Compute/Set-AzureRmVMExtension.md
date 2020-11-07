@@ -1,0 +1,328 @@
+---
+external help file: Microsoft.Azure.Commands.Compute.dll-Help.xml
+ms.assetid: 064196C3-ABF3-4F3A-A4AB-EB0D27098C70
+online version: ''
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/Compute/Stack/Commands.Compute/help/Set-AzureRmVMExtension.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/Compute/Stack/Commands.Compute/help/Set-AzureRmVMExtension.md
+ms.openlocfilehash: 1f758f77fc7162f8110f0e2d5887eadb55d7f7c1
+ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "93716500"
+---
+# <span data-ttu-id="89dde-101">Set-AzureRmVMExtension</span><span class="sxs-lookup"><span data-stu-id="89dde-101">Set-AzureRmVMExtension</span></span>
+
+## <span data-ttu-id="89dde-102">STRESZCZENIe</span><span class="sxs-lookup"><span data-stu-id="89dde-102">SYNOPSIS</span></span>
+<span data-ttu-id="89dde-103">Aktualizuje właściwości rozszerzenia lub dodaje rozszerzenie do maszyny wirtualnej.</span><span class="sxs-lookup"><span data-stu-id="89dde-103">Updates extension properties or adds an extension to a virtual machine.</span></span>
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## <span data-ttu-id="89dde-104">POLECENIA</span><span class="sxs-lookup"><span data-stu-id="89dde-104">SYNTAX</span></span>
+
+### <span data-ttu-id="89dde-105">Ustawienia (domyślne)</span><span class="sxs-lookup"><span data-stu-id="89dde-105">Settings (Default)</span></span>
+```
+Set-AzureRmVMExtension -Publisher <String> -ExtensionType <String> [-Settings <Hashtable>]
+ [-ProtectedSettings <Hashtable>] [-ResourceGroupName] <String> [-VMName] <String> [-Name <String>]
+ [-TypeHandlerVersion <String>] [-Location <String>] [-DisableAutoUpgradeMinorVersion] [-ForceRerun <String>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="89dde-106">SettingString</span><span class="sxs-lookup"><span data-stu-id="89dde-106">SettingString</span></span>
+```
+Set-AzureRmVMExtension -Publisher <String> -ExtensionType <String> [-SettingString <String>]
+ [-ProtectedSettingString <String>] [-ResourceGroupName] <String> [-VMName] <String> [-Name <String>]
+ [-TypeHandlerVersion <String>] [-Location <String>] [-DisableAutoUpgradeMinorVersion] [-ForceRerun <String>]
+ [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="89dde-107">Opis</span><span class="sxs-lookup"><span data-stu-id="89dde-107">DESCRIPTION</span></span>
+<span data-ttu-id="89dde-108">Polecenie cmdlet **Set-AzureRmVMExtension** aktualizuje właściwości istniejących rozszerzeń maszyny wirtualnej lub dodaje rozszerzenie do maszyny wirtualnej.</span><span class="sxs-lookup"><span data-stu-id="89dde-108">The **Set-AzureRmVMExtension** cmdlet updates properties for existing Virtual Machine Extensions or adds an extension to a virtual machine.</span></span>
+
+## <span data-ttu-id="89dde-109">Przykłady</span><span class="sxs-lookup"><span data-stu-id="89dde-109">EXAMPLES</span></span>
+
+### <span data-ttu-id="89dde-110">Przykład 1: modyfikowanie ustawień za pomocą tabel skrótów</span><span class="sxs-lookup"><span data-stu-id="89dde-110">Example 1: Modify settings by using hash tables</span></span>
+```
+PS C:\> $Settings = @{"fileUris" = "[]"; "commandToExecute" = ""};
+PS C:\> $ProtectedSettings = @{"storageAccountName" = $stoname; "storageAccountKey" = $stokey};
+PS C:\> Set-AzureRmVMExtension -ResourceGroupName "ResourceGroup11" -Location "West US" -VMName "VirtualMachine22" -Name "ContosoTest" -Publisher "Contoso.Compute" -Type "CustomScriptExtension" -TypeHandlerVersion "1.1" -Settings $Settings -ProtectedSettings $ProtectedSettings;
+```
+
+<span data-ttu-id="89dde-111">W dwóch pierwszych poleceniach użyto standardowej składni środowiska Windows PowerShell do tworzenia tabel skrótów, a następnie są one przechowywane w zmiennych $Settings i $ProtectedSettings.</span><span class="sxs-lookup"><span data-stu-id="89dde-111">The first two commands use standard Windows PowerShell syntax to create hash tables, and then stores those hash tables in the $Settings and $ProtectedSettings variables.</span></span>
+<span data-ttu-id="89dde-112">Aby uzyskać więcej informacji, wpisz tekst `Get-Help about_Hash_Tables` .</span><span class="sxs-lookup"><span data-stu-id="89dde-112">For more information, type `Get-Help about_Hash_Tables`.</span></span>
+<span data-ttu-id="89dde-113">Drugie polecenie zawiera dwie wartości, które zostały wcześniej utworzone i zapisane w zmiennych.</span><span class="sxs-lookup"><span data-stu-id="89dde-113">The second command includes two values previously created and stored in variables.</span></span>
+
+<span data-ttu-id="89dde-114">Polecenie ostatnie modyfikuje rozszerzenie maszyny wirtualnej o nazwie VirtualMachine22 w ResourceGroup11 zgodnie z zawartością $Settings i $ProtectedSettings.</span><span class="sxs-lookup"><span data-stu-id="89dde-114">The final command modifies an extension of the virtual machine named VirtualMachine22 in ResourceGroup11 according to the contents of $Settings and $ProtectedSettings.</span></span>
+<span data-ttu-id="89dde-115">W poleceniu są określone inne wymagane informacje zawierające wydawcę oraz typ rozszerzenia.</span><span class="sxs-lookup"><span data-stu-id="89dde-115">The command specifies other required information that includes the publisher and the extension type.</span></span>
+
+### <span data-ttu-id="89dde-116">Przykład 2: modyfikowanie ustawień za pomocą ciągów znaków</span><span class="sxs-lookup"><span data-stu-id="89dde-116">Example 2: Modify settings by using strings</span></span>
+```
+PS C:\> $SettingsString = '{"fileUris":[],"commandToExecute":""}';
+PS C:\> $ProtectedSettingsString = '{"storageAccountName":"' + $stoname + '","storageAccountKey":"' + $stokey + '"}';
+PS C:\> Set-AzureRmVMExtension -ResourceGroupName "ResourceGroup11" -Location "West US" -VMName "VirtualMachine22" -Name "CustomScriptExtension" -Publisher "Contoso.Compute" -Type "CustomScriptExtension" -TypeHandlerVersion "1.1" -SettingString $SettingsString -ProtectedSettingString $ProtectedSettingsString ;
+```
+
+<span data-ttu-id="89dde-117">Pierwsze dwa polecenia tworzą ciągi zawierające ustawienia, a następnie przechowują je w $SettingsString i $ProtectedSettingsString zmiennych.</span><span class="sxs-lookup"><span data-stu-id="89dde-117">The first two commands create strings that contain settings, and then stores them in the $SettingsString and $ProtectedSettingsString variables.</span></span>
+
+<span data-ttu-id="89dde-118">Polecenie ostatnie modyfikuje rozszerzenie maszyny wirtualnej o nazwie VirtualMachine22 w ResourceGroup11 zgodnie z zawartością $SettingsString i $ProtectedSettingsString.</span><span class="sxs-lookup"><span data-stu-id="89dde-118">The final command modifies an extension of the virtual machine named VirtualMachine22 in ResourceGroup11 according to the contents of $SettingsString and $ProtectedSettingsString.</span></span>
+<span data-ttu-id="89dde-119">W poleceniu są określone inne wymagane informacje zawierające wydawcę oraz typ rozszerzenia.</span><span class="sxs-lookup"><span data-stu-id="89dde-119">The command specifies other required information that includes the publisher and the extension type.</span></span>
+
+## <span data-ttu-id="89dde-120">PARAMETRÓW</span><span class="sxs-lookup"><span data-stu-id="89dde-120">PARAMETERS</span></span>
+
+### <span data-ttu-id="89dde-121">-DisableAutoUpgradeMinorVersion</span><span class="sxs-lookup"><span data-stu-id="89dde-121">-DisableAutoUpgradeMinorVersion</span></span>
+<span data-ttu-id="89dde-122">Wskazuje, że to polecenie cmdlet uniemożliwia agentowi gościa platformy Azure automatyczne aktualizowanie rozszerzeń nowszą wersją pomocniczą.</span><span class="sxs-lookup"><span data-stu-id="89dde-122">Indicates that this cmdlet prevents the Azure guest agent from automatically updating the extensions to a newer minor version.</span></span>
+<span data-ttu-id="89dde-123">Domyślnie to polecenie cmdlet umożliwia agentowi gościa aktualizowanie rozszerzeń.</span><span class="sxs-lookup"><span data-stu-id="89dde-123">By default, this cmdlet enables the guest agent to update the extensions.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="89dde-124">-ExtensionType</span><span class="sxs-lookup"><span data-stu-id="89dde-124">-ExtensionType</span></span>
+<span data-ttu-id="89dde-125">Określa typ rozszerzenia.</span><span class="sxs-lookup"><span data-stu-id="89dde-125">Specifies the extension type.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: Type
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="89dde-126">-ForceRerun</span><span class="sxs-lookup"><span data-stu-id="89dde-126">-ForceRerun</span></span>
+<span data-ttu-id="89dde-127">Wskazuje, że to polecenie cmdlet Wymusza ponowne uruchomienie tej samej konfiguracji rozszerzenia na maszynie wirtualnej bez odinstalowywania i ponownego instalowania rozszerzenia.</span><span class="sxs-lookup"><span data-stu-id="89dde-127">Indicates that this cmdlet forces a rerun of the same extension configuration on the virtual machine without uninstalling and reinstalling the extension.</span></span>
+<span data-ttu-id="89dde-128">Wartością może być dowolny ciąg różny od bieżącej wartości.</span><span class="sxs-lookup"><span data-stu-id="89dde-128">The value can be any string different from the current value.</span></span>
+
+<span data-ttu-id="89dde-129">Jeśli forceUpdateTag nie zostanie zmieniony, aktualizacje do ustawień publicznych lub chronionych są nadal stosowane przez program obsługi.</span><span class="sxs-lookup"><span data-stu-id="89dde-129">If forceUpdateTag is not changed, updates to public or protected settings are still applied by the handler.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="89dde-130">— Lokalizacja</span><span class="sxs-lookup"><span data-stu-id="89dde-130">-Location</span></span>
+<span data-ttu-id="89dde-131">Określa lokalizację maszyny wirtualnej.</span><span class="sxs-lookup"><span data-stu-id="89dde-131">Specifies the location of the virtual machine.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="89dde-132">-Name (nazwa)</span><span class="sxs-lookup"><span data-stu-id="89dde-132">-Name</span></span>
+<span data-ttu-id="89dde-133">Określa nazwę rozszerzenia.</span><span class="sxs-lookup"><span data-stu-id="89dde-133">Specifies the name of an extension.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: ExtensionName
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="89dde-134">-ProtectedSettings</span><span class="sxs-lookup"><span data-stu-id="89dde-134">-ProtectedSettings</span></span>
+<span data-ttu-id="89dde-135">Określa prywatną konfigurację rozszerzenia jako tablicę skrótów.</span><span class="sxs-lookup"><span data-stu-id="89dde-135">Specifies private configuration for the extension, as a hash table.</span></span>
+<span data-ttu-id="89dde-136">To polecenie cmdlet szyfruje konfigurację prywatną.</span><span class="sxs-lookup"><span data-stu-id="89dde-136">This cmdlet encrypts the private configuration.</span></span>
+
+```yaml
+Type: Hashtable
+Parameter Sets: Settings
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="89dde-137">-ProtectedSettingString</span><span class="sxs-lookup"><span data-stu-id="89dde-137">-ProtectedSettingString</span></span>
+<span data-ttu-id="89dde-138">Określa prywatną konfigurację rozszerzenia w postaci ciągu.</span><span class="sxs-lookup"><span data-stu-id="89dde-138">Specifies private configuration for the extension, as a string.</span></span>
+<span data-ttu-id="89dde-139">To polecenie cmdlet szyfruje konfigurację prywatną.</span><span class="sxs-lookup"><span data-stu-id="89dde-139">This cmdlet encrypts the private configuration.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: SettingString
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="89dde-140">— Wydawca</span><span class="sxs-lookup"><span data-stu-id="89dde-140">-Publisher</span></span>
+<span data-ttu-id="89dde-141">Określa nazwę wydawcy rozszerzenia.</span><span class="sxs-lookup"><span data-stu-id="89dde-141">Specifies the name of the extension publisher.</span></span>
+<span data-ttu-id="89dde-142">Gdy program Publisher zarejestruje rozszerzenie, program Publisher podaje nazwę.</span><span class="sxs-lookup"><span data-stu-id="89dde-142">The publisher provides a name when the publisher registers an extension.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="89dde-143">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="89dde-143">-ResourceGroupName</span></span>
+<span data-ttu-id="89dde-144">Określa nazwę grupy zasobów maszyny wirtualnej.</span><span class="sxs-lookup"><span data-stu-id="89dde-144">Specifies the name of the resource group of the virtual machine.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="89dde-145">-Settings (Ustawienia)</span><span class="sxs-lookup"><span data-stu-id="89dde-145">-Settings</span></span>
+<span data-ttu-id="89dde-146">Określa publiczną konfigurację rozszerzenia jako tablicę skrótów.</span><span class="sxs-lookup"><span data-stu-id="89dde-146">Specifies public configuration for the extension, as a hash table.</span></span>
+<span data-ttu-id="89dde-147">To polecenie cmdlet nie szyfruje konfiguracji publicznej.</span><span class="sxs-lookup"><span data-stu-id="89dde-147">This cmdlet does not encrypt public configuration.</span></span>
+
+```yaml
+Type: Hashtable
+Parameter Sets: Settings
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="89dde-148">-SettingString</span><span class="sxs-lookup"><span data-stu-id="89dde-148">-SettingString</span></span>
+<span data-ttu-id="89dde-149">Określa publiczną konfigurację rozszerzenia w postaci ciągu.</span><span class="sxs-lookup"><span data-stu-id="89dde-149">Specifies public configuration for the extension, as a string.</span></span>
+<span data-ttu-id="89dde-150">To polecenie cmdlet nie szyfruje konfiguracji publicznej.</span><span class="sxs-lookup"><span data-stu-id="89dde-150">This cmdlet does not encrypt public configuration.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: SettingString
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="89dde-151">-TypeHandlerVersion</span><span class="sxs-lookup"><span data-stu-id="89dde-151">-TypeHandlerVersion</span></span>
+<span data-ttu-id="89dde-152">Określa wersję rozszerzenia, która ma być używana dla tej maszyny wirtualnej.</span><span class="sxs-lookup"><span data-stu-id="89dde-152">Specifies the version of the extension to use for this virtual machine.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: HandlerVersion, Version
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="89dde-153">-VMName</span><span class="sxs-lookup"><span data-stu-id="89dde-153">-VMName</span></span>
+<span data-ttu-id="89dde-154">Określa nazwę maszyny wirtualnej.</span><span class="sxs-lookup"><span data-stu-id="89dde-154">Specifies the name of a virtual machine.</span></span>
+<span data-ttu-id="89dde-155">To polecenie cmdlet powoduje modyfikację rozszerzeń maszyny wirtualnej, którą ten parametr określa.</span><span class="sxs-lookup"><span data-stu-id="89dde-155">This cmdlet modifies extensions for the virtual machine that this parameter specifies.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: ResourceName
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="89dde-156">-Potwierdź</span><span class="sxs-lookup"><span data-stu-id="89dde-156">-Confirm</span></span>
+<span data-ttu-id="89dde-157">Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.</span><span class="sxs-lookup"><span data-stu-id="89dde-157">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="89dde-158">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="89dde-158">-WhatIf</span></span>
+<span data-ttu-id="89dde-159">Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet.</span><span class="sxs-lookup"><span data-stu-id="89dde-159">Shows what would happen if the cmdlet runs.</span></span>
+
+<span data-ttu-id="89dde-160">Polecenie cmdlet nie jest uruchamiane.</span><span class="sxs-lookup"><span data-stu-id="89dde-160">The cmdlet is not run.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="89dde-161">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="89dde-161">CommonParameters</span></span>
+<span data-ttu-id="89dde-162">To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="89dde-162">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="89dde-163">Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="89dde-163">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="89dde-164">WEJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="89dde-164">INPUTS</span></span>
+
+### <span data-ttu-id="89dde-165">Znaleziono</span><span class="sxs-lookup"><span data-stu-id="89dde-165">None</span></span>
+<span data-ttu-id="89dde-166">To polecenie cmdlet nie akceptuje żadnych danych wejściowych.</span><span class="sxs-lookup"><span data-stu-id="89dde-166">This cmdlet does not accept any input.</span></span>
+
+## <span data-ttu-id="89dde-167">WYSYŁA</span><span class="sxs-lookup"><span data-stu-id="89dde-167">OUTPUTS</span></span>
+
+## <span data-ttu-id="89dde-168">INFORMACYJN</span><span class="sxs-lookup"><span data-stu-id="89dde-168">NOTES</span></span>
+
+## <span data-ttu-id="89dde-169">LINKI POKREWNE</span><span class="sxs-lookup"><span data-stu-id="89dde-169">RELATED LINKS</span></span>
+
+[<span data-ttu-id="89dde-170">Get-AzureRmVMExtension</span><span class="sxs-lookup"><span data-stu-id="89dde-170">Get-AzureRmVMExtension</span></span>](./Get-AzureRmVMExtension.md)
+
+[<span data-ttu-id="89dde-171">Remove-AzureRmVMExtension</span><span class="sxs-lookup"><span data-stu-id="89dde-171">Remove-AzureRmVMExtension</span></span>](./Remove-AzureRmVMExtension.md)
+
+
