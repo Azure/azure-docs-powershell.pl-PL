@@ -1,0 +1,113 @@
+---
+external help file: Microsoft.Azure.Commands.Network.dll-Help.xml
+Module Name: AzureRM.Network
+ms.assetid: F965A9DE-645C-471B-84E8-58D648B1CA57
+online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.network/remove-azurermloadbalancerbackendaddresspoolconfig
+schema: 2.0.0
+ms.openlocfilehash: 9bbfa0aec2da00ada25fc4bb8a5334f67e80e41a
+ms.sourcegitcommit: b9b2dea3441d1532a5564ddca3dced45424fe2d6
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "93899241"
+---
+# Remove-AzureRmLoadBalancerBackendAddressPoolConfig
+
+## STRESZCZENIe
+Usuwa konfigurację puli adresów zaplecza z modułu równoważenia obciążenia.
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## POLECENIA
+
+```
+Remove-AzureRmLoadBalancerBackendAddressPoolConfig [-Name <String>] -LoadBalancer <PSLoadBalancer>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## Opis
+Polecenie cmdlet **Remove-AzureRmLoadBalancerBackendAddressPoolConfig** usuwa pulę adresów zaplecza z modułu równoważenia obciążenia.
+
+## Przykłady
+
+### Przykład 1: Usuwanie konfiguracji puli adresów zaplecza z modułu równoważenia obciążenia
+```
+PS C:\>Get-AzureRmLoadBalancer -Name "MyLoadBalancer" -ResourceGroupName "MyResourceGroup" | Remove-AzureRmLoadBalancerBackendAddressPoolConfig -Name "BackendAddressPool02" | Set-AzureRmLoadBalancer
+```
+
+To polecenie uzyskuje moduł równoważenia obciążenia o nazwie MyLoadBalancer i przekazuje go do pozycji **Remove-AzureRmLoadBalancerBackendAddressPoolConfig** , co powoduje usunięcie konfiguracji BackendAddressPool02 z MyLoadBalancer.
+Na koniec Set-AzureRmLoadBalancer polecenie cmdlet aktualizuje MyLoadBalancer.
+Należy pamiętać, że konfiguracja puli adresów zaplecza musi istnieć, aby można było ją usunąć.
+
+## PARAMETRÓW
+
+### -DefaultProfile
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Moduł równoważenia obciążenia
+Określa moduł równoważenia obciążenia zawierający pulę adresów zaplecza do usunięcia.
+
+```yaml
+Type: PSLoadBalancer
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -Name (nazwa)
+Określa nazwę puli adresów zaplecza, która zostanie usunięta przez to polecenie cmdlet.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## WEJŚCIOWE
+
+### PSLoadBalancer
+Parametr "równoważenia obciążenia" akceptuje wartość typu "PSLoadBalancer" z procesu
+
+## WYSYŁA
+
+### Microsoft. Azure. Commands. Network. models. PSLoadBalancer
+
+## INFORMACYJN
+
+## LINKI POKREWNE
+
+[Dodaj-AzureRmLoadBalancerBackendAddressPoolConfig](./Add-AzureRmLoadBalancerBackendAddressPoolConfig.md)
+
+[Get-AzureRmLoadBalancer](./Get-AzureRmLoadBalancer.md)
+
+[Get-AzureRmLoadBalancerBackendAddressPoolConfig](./Get-AzureRmLoadBalancerBackendAddressPoolConfig.md)
+
+[Nowe — AzureRmLoadBalancerBackendAddressPoolConfig](./New-AzureRmLoadBalancerBackendAddressPoolConfig.md)
+
+
