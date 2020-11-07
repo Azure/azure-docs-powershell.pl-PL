@@ -1,0 +1,111 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Websites.dll-Help.xml
+Module Name: Az.WebSites
+ms.assetid: 2D83D38F-3A5C-40DB-BE8B-D52E5CAFCF6E
+online version: https://docs.microsoft.com/en-us/powershell/module/Az.websites/get-Azwebappcertificate
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Websites/Websites/help/Get-AzWebAppCertificate.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Websites/Websites/help/Get-AzWebAppCertificate.md
+ms.openlocfilehash: f06075a8067ae8a7d7e1c2dcd522774325b48c57
+ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 04/16/2020
+ms.locfileid: "93891942"
+---
+# Get-AzWebAppCertificate
+
+## STRESZCZENIe
+Pobiera certyfikat aplikacji Azure Web App.
+
+## POLECENIA
+
+```
+Get-AzWebAppCertificate [[-ResourceGroupName] <String>] [[-Thumbprint] <String>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## Opis
+Polecenie cmdlet **Get-AzWebAppCertificate** pobiera informacje o certyfikatach aplikacji Azure Web App skojarzonych z określoną grupą zasobów.
+Jeśli znasz odcisk palca certyfikatu, możesz również użyć tego polecenia cmdlet, aby uzyskać informacje o określonym certyfikacie.
+
+## Przykłady
+
+### Przykład 1: uzyskiwanie certyfikatów aplikacji sieci Web w grupie zasobów
+```
+PS C:\>Get-AzWebAppCertificate -ResourceGroupName "ContosoResourceGroup"
+```
+
+To polecenie zwraca informacje o przekazanych certyfikatach aplikacji sieci Web skojarzonych z grupą ContosoResourceGroup.
+
+### Przykład 2: uzyskiwanie określonego certyfikatu aplikacji sieci Web
+```
+PS C:\>Get-AzWebAppCertificate -ResourceGroupName "ContosoResourceGroup" -Thumbprint "E3A38EBA60CAA1C162785A2E1C44A15AD450199C3"
+```
+
+To polecenie pobiera certyfikat aplikacji ContosoResourceGroup Web App z E3A38EBA60CAA1C162785A2E1C44A15AD450199C3em odcisku palca.
+
+## PARAMETRÓW
+
+### -DefaultProfile
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceGroupName
+Określa nazwę grupy zasobów, do której przypisano certyfikat.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Odcisk palca
+Określa unikatowy identyfikator certyfikatu.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## WEJŚCIOWE
+
+### Znaleziono
+To polecenie cmdlet nie akceptuje żadnych danych wejściowych.
+
+## WYSYŁA
+
+## INFORMACYJN
+
+## LINKI POKREWNE
+
+[Get-AzWebAppSSLBinding](./Get-AzWebAppSSLBinding.md)
+
+
