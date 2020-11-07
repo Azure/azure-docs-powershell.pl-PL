@@ -1,0 +1,44 @@
+---
+Module Name: Azs.Network.Admin
+Module Guid: d6537bd8-790c-49a5-8536-fa40389ef5cf
+Download Help Link:
+  '[object Object]': 
+Help Version:
+  '[object Object]': 
+Locale: en-US
+ms.openlocfilehash: 0ff8d5a71999aaa0e52764829f029d1deaff2249
+ms.sourcegitcommit: 0fdccb57a356b6e7c35a77b1f76e01fb96ef582b
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "93704416"
+---
+# Moduł AZS. Network. admin
+## Opis
+Wersja zapoznawcza modułu operatorów sieciowych, która umożliwia operatorom monitorowanie zasobów sieciowych i zarządzanie przydziałami sieci.
+
+## Polecenia cmdlet AZS. Network. admin
+### [Get-AzsLoadBalancer](Get-AzsLoadBalancer.md)
+Zapoznaj się z listą wszystkich modułów równoważenia obciążenia.
+
+### [Get-AzsNetworkAdminOverview](Get-AzsNetworkAdminOverview.md)
+Zapoznaj się z omówieniem stanu dostawcy zasobów sieciowych.
+
+### [Get-AzsNetworkQuota](Get-AzsNetworkQuota.md)
+Lista wszystkich przydziałów.
+
+### [Get-AzsPublicIPAddress](Get-AzsPublicIPAddress.md)
+Lista publicznych adresów IP.
+
+### [Get-AzsVirtualNetwork](Get-AzsVirtualNetwork.md)
+Zapoznaj się z listą wszystkich sieci wirtualnych.
+
+### [Nowe — AzsNetworkQuota](New-AzsNetworkQuota.md)
+Tworzenie lub aktualizowanie przydziału.
+
+### [Remove-AzsNetworkQuota](Remove-AzsNetworkQuota.md)
+Usuwanie przydziału według nazwy.
+
+### [Set-AzsNetworkQuota](Set-AzsNetworkQuota.md)
+Tworzenie lub aktualizowanie przydziału.
+
