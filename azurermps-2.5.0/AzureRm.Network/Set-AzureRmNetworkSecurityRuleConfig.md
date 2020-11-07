@@ -1,0 +1,372 @@
+---
+external help file: Microsoft.Azure.Commands.Network.dll-Help.xml
+Module Name: AzureRM.Network
+ms.assetid: 7EFFFF43-501E-4955-A4EE-2C09B8863B30
+online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.network/set-azurermnetworksecurityruleconfig
+schema: 2.0.0
+ms.openlocfilehash: 8a1e4cb97f151843f92697a2a230bd2721a56f29
+ms.sourcegitcommit: b9b2dea3441d1532a5564ddca3dced45424fe2d6
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 08/15/2020
+ms.locfileid: "93898885"
+---
+# Set-AzureRmNetworkSecurityRuleConfig
+
+## STRESZCZENIe
+Ustawia stan celu konfiguracji reguł zabezpieczeń sieci.
+
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
+
+## POLECENIA
+
+### SetByResource (domyślny)
+```
+Set-AzureRmNetworkSecurityRuleConfig -Name <String> -NetworkSecurityGroup <PSNetworkSecurityGroup>
+ [-Description <String>] [-Protocol <String>]
+ [-SourcePortRange <System.Collections.Generic.List`1[System.String]>]
+ [-DestinationPortRange <System.Collections.Generic.List`1[System.String]>]
+ [-SourceAddressPrefix <System.Collections.Generic.List`1[System.String]>]
+ [-DestinationAddressPrefix <System.Collections.Generic.List`1[System.String]>]
+ [-SourceApplicationSecurityGroup <System.Collections.Generic.List`1[Microsoft.Azure.Commands.Network.Models.PSApplicationSecurityGroup]>]
+ [-DestinationApplicationSecurityGroup <System.Collections.Generic.List`1[Microsoft.Azure.Commands.Network.Models.PSApplicationSecurityGroup]>]
+ [-Access <String>] [-Priority <Int32>] [-Direction <String>] [-DefaultProfile <IAzureContextContainer>]
+ [<CommonParameters>]
+```
+
+### SetByResourceId
+```
+Set-AzureRmNetworkSecurityRuleConfig -Name <String> -NetworkSecurityGroup <PSNetworkSecurityGroup>
+ [-Description <String>] [-Protocol <String>]
+ [-SourcePortRange <System.Collections.Generic.List`1[System.String]>]
+ [-DestinationPortRange <System.Collections.Generic.List`1[System.String]>]
+ [-SourceAddressPrefix <System.Collections.Generic.List`1[System.String]>]
+ [-DestinationAddressPrefix <System.Collections.Generic.List`1[System.String]>]
+ [-SourceApplicationSecurityGroupId <System.Collections.Generic.List`1[System.String]>]
+ [-DestinationApplicationSecurityGroupId <System.Collections.Generic.List`1[System.String]>] [-Access <String>]
+ [-Priority <Int32>] [-Direction <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## Opis
+Polecenie cmdlet **Set-AzureRmNetworkSecurityRuleConfig** ustawia stan celu konfiguracji reguł zabezpieczeń sieci Azure.
+
+## Przykłady
+
+### Przykład 1. Zmienianie konfiguracji dostępu w regule zabezpieczeń sieci
+```
+PS C:\>$nsg = Get-AzureRmNetworkSecurityGroup -Name "NSG-FrontEnd" -ResourceGroupName "TestRG"
+PS C:\> $nsg | Get-AzureRmNetworkSecurityRuleConfig -Name "rdp-rule"
+PS C:\> Set-AzureRmNetworkSecurityRuleConfig -Name "rdp-rule" -NetworkSecurityGroup $nsg -Access "Deny"
+```
+
+Pierwsze polecenie uzyskuje grupę zabezpieczeń sieci o nazwie NSG-fronton, a następnie zapisuje ją w zmiennej $nsg.
+
+Drugie polecenie używa operatora potoku w celu przekazania grupy zabezpieczeń w $nsg do polecenia Get-AzureRmNetworkSecurityRuleConfig, który uzyskuje konfigurację reguł zabezpieczeń o nazwie RDP-rule.
+
+W trzecim poleceniu jest zmieniana Konfiguracja dostępu protokołu RDP — reguła jest odrzucana.
+
+## PARAMETRÓW
+
+### — Dostęp
+Określa, czy ruch sieciowy jest dozwolony, czy zabroniony. Dopuszczalne wartości tego parametru to: Allow i Deny.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+Accepted values: Allow, Deny
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### — Opis
+Umożliwia określenie opisu konfiguracji reguły.
+Maksymalny rozmiar to 140 znaków.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DestinationAddressPrefix
+Określa prefiks adresu docelowego.
+Dopuszczalne wartości tego parametru to:
+
+- Adres międzydomenowy (Classless indomain Routing) 
+- Zakres docelowego adresu IP 
+- Znak wieloznaczny (*), aby dopasować dowolny adres IP
+
+Możesz korzystać ze znaczników, takich jak VirtualNetwork, AzureLoadBalancer i Internet.
+
+```yaml
+Type: System.Collections.Generic.List`1[System.String]
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DestinationApplicationSecurityGroup
+Grupa zabezpieczeń aplikacji ustawiona jako miejsce docelowe dla reguły. Nie można go użyć z parametrem "DestinationAddressPrefix".
+
+```yaml
+Type: System.Collections.Generic.List`1[Microsoft.Azure.Commands.Network.Models.PSApplicationSecurityGroup]
+Parameter Sets: SetByResource
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DestinationApplicationSecurityGroupId
+Grupa zabezpieczeń aplikacji ustawiona jako miejsce docelowe dla reguły. Nie można go użyć z parametrem "DestinationAddressPrefix".
+
+```yaml
+Type: System.Collections.Generic.List`1[System.String]
+Parameter Sets: SetByResourceId
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DestinationPortRange
+Określa port docelowy lub zakres.
+Dopuszczalne wartości tego parametru to:
+
+- Liczba całkowita 
+- Zakres liczb całkowitych z zakresu od 0 do 65535
+- Znak wieloznaczny (*), aby dopasować port
+
+```yaml
+Type: System.Collections.Generic.List`1[System.String]
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Direction
+Określa, czy reguła jest obliczana na potrzeby ruchu przychodzącego lub wychodzącego.
+Dopuszczalne wartości tego parametru to: przychodzące i wychodzące.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+Accepted values: Inbound, Outbound
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name (nazwa)
+Określa nazwę konfiguracji reguł zabezpieczeń sieci, która jest ustawiana przez to polecenie cmdlet.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -NetworkSecurityGroup
+Określa obiekt **NetworkSecurityGroup** , który zawiera konfigurację reguł zabezpieczeń sieci do ustawienia.
+
+```yaml
+Type: PSNetworkSecurityGroup
+Parameter Sets: (All)
+Aliases: 
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -Priority (priorytet)
+Określa priorytet konfiguracji reguły.
+Dopuszczalne wartości tego parametru to: liczba całkowita między 100 a 4096.
+
+Numer priorytetu musi być unikatowy dla każdej reguły w kolekcji.
+Niższy numer priorytetu, wyższy priorytet reguły.
+
+```yaml
+Type: Int32
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Protocol (protokół)
+Określa protokół sieciowy, którego dotyczy konfiguracja reguły.
+Dopuszczalne wartości tego parametru to:
+
+ --TCP
+- Obsługiwane
+- Znak wieloznaczny (*) zgodny z obydwoma
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: 
+Accepted values: Tcp, Udp, *
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SourceAddressPrefix
+Określa prefiks adresu źródłowego.
+Dopuszczalne wartości tego parametru to:
+
+- CIDR
+- Zakres źródłowy adresu IP
+- Znak wieloznaczny (*), aby dopasować dowolny adres IP
+
+Możesz również korzystać ze znaczników, takich jak VirtualNetwork, AzureLoadBalancer i Internet.
+
+```yaml
+Type: System.Collections.Generic.List`1[System.String]
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SourceApplicationSecurityGroup
+Grupa zabezpieczeń aplikacji ustawiona jako źródło dla reguły. Nie można go użyć z parametrem "SourceAddressPrefix".
+
+```yaml
+Type: System.Collections.Generic.List`1[Microsoft.Azure.Commands.Network.Models.PSApplicationSecurityGroup]
+Parameter Sets: SetByResource
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SourceApplicationSecurityGroupId
+Grupa zabezpieczeń aplikacji ustawiona jako źródło dla reguły. Nie można go użyć z parametrem "SourceAddressPrefix".
+
+```yaml
+Type: System.Collections.Generic.List`1[System.String]
+Parameter Sets: SetByResourceId
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -SourcePortRange
+Określa port źródłowy lub zakres.
+Dopuszczalne wartości tego parametru to:
+
+- Liczba całkowita
+- Zakres liczb całkowitych z zakresu od 0 do 65535
+- Znak wieloznaczny (*), aby dopasować port
+
+```yaml
+Type: System.Collections.Generic.List`1[System.String]
+Parameter Sets: (All)
+Aliases: 
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## WEJŚCIOWE
+
+### PSNetworkSecurityGroup
+Parametr "NetworkSecurityGroup" akceptuje wartość typu "PSNetworkSecurityGroup" z rurociągu
+
+## WYSYŁA
+
+### Microsoft. Azure. Commands. Network. models. PSNetworkSecurityGroup
+
+## INFORMACYJN
+
+## LINKI POKREWNE
+
+[Dodaj-AzureRmNetworkSecurityRuleConfig](./Add-AzureRmNetworkSecurityRuleConfig.md)
+
+[Get-AzureRmNetworkSecurityRuleConfig](./Get-AzureRmNetworkSecurityRuleConfig.md)
+
+[Nowe — AzureRmNetworkSecurityRuleConfig](./New-AzureRmNetworkSecurityRuleConfig.md)
+
+[Remove-AzureRmNetworkSecurityRuleConfig](./Remove-AzureRmNetworkSecurityRuleConfig.md)
+
+
