@@ -1,0 +1,187 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices.Backup.dll-Help.xml
+Module Name: Az.RecoveryServices
+ms.assetid: ECD3F05A-9350-407E-8B48-67443547652F
+online version: https://docs.microsoft.com/en-us/powershell/module/az.recoveryservices/disable-azrecoveryservicesbackupprotection
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Disable-AzRecoveryServicesBackupProtection.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Disable-AzRecoveryServicesBackupProtection.md
+ms.openlocfilehash: 9dc42a137d3abcd23a64e096117be8d287571ecf
+ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "94219300"
+---
+# <span data-ttu-id="1f37d-101">Disable-AzRecoveryServicesBackupProtection</span><span class="sxs-lookup"><span data-stu-id="1f37d-101">Disable-AzRecoveryServicesBackupProtection</span></span>
+
+## <span data-ttu-id="1f37d-102">STRESZCZENIe</span><span class="sxs-lookup"><span data-stu-id="1f37d-102">SYNOPSIS</span></span>
+<span data-ttu-id="1f37d-103">Wyłącza ochronę elementu chronionego kopią zapasową.</span><span class="sxs-lookup"><span data-stu-id="1f37d-103">Disables protection for a Backup-protected item.</span></span>
+
+## <span data-ttu-id="1f37d-104">POLECENIA</span><span class="sxs-lookup"><span data-stu-id="1f37d-104">SYNTAX</span></span>
+
+```
+Disable-AzRecoveryServicesBackupProtection [-Item] <ItemBase> [-RemoveRecoveryPoints] [-Force]
+ [-VaultId <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="1f37d-105">Opis</span><span class="sxs-lookup"><span data-stu-id="1f37d-105">DESCRIPTION</span></span>
+<span data-ttu-id="1f37d-106">Polecenie cmdlet **disable-AzRecoveryServicesBackupProtection** wyłącza ochronę elementu chronionego usługą Kopia zapasowa Azure.</span><span class="sxs-lookup"><span data-stu-id="1f37d-106">The **Disable-AzRecoveryServicesBackupProtection** cmdlet disables protection for an Azure Backup-protected item.</span></span>
+<span data-ttu-id="1f37d-107">To polecenie cmdlet zatrzymuje regularne Planowanie kopii zapasowej elementu.</span><span class="sxs-lookup"><span data-stu-id="1f37d-107">This cmdlet stops regular scheduled backup of an item.</span></span>
+<span data-ttu-id="1f37d-108">To polecenie cmdlet umożliwia również usunięcie istniejących punktów odzyskiwania dla elementu kopii zapasowej, jeśli jest on wykonywany z parametrem RemoveRecoveryPoints.</span><span class="sxs-lookup"><span data-stu-id="1f37d-108">This cmdlet can also delete existing recovery points for the backup item if executed with RemoveRecoveryPoints parameter.</span></span>
+<span data-ttu-id="1f37d-109">Przed użyciem bieżącego polecenia cmdlet Ustaw kontekst magazynu przy użyciu polecenia cmdlet Set-AzRecoveryServicesVaultContext.</span><span class="sxs-lookup"><span data-stu-id="1f37d-109">Set the vault context by using the Set-AzRecoveryServicesVaultContext cmdlet before you use the current cmdlet.</span></span>
+
+## <span data-ttu-id="1f37d-110">Przykłady</span><span class="sxs-lookup"><span data-stu-id="1f37d-110">EXAMPLES</span></span>
+
+### <span data-ttu-id="1f37d-111">Przykład 1: Wyłączanie ochrony przed kopiami zapasowymi</span><span class="sxs-lookup"><span data-stu-id="1f37d-111">Example 1: Disable Backup protection</span></span>
+```powershell
+PS C:\> $Cont = Get-AzRecoveryServicesBackupContainer -ContainerType AzureVM -Status Registered 
+PS C:\> $PI = Get-AzRecoveryServicesBackupItem -Container $Cont[0] -WorkloadType AzureVM 
+PS C:\> Disable-AzRecoveryServicesBackupProtection -Item $PI[0]
+```
+
+<span data-ttu-id="1f37d-112">Pierwsze polecenie uzyskuje tablicę kontenerów kopii zapasowych, a następnie zapisuje je w tablicy $Cont.</span><span class="sxs-lookup"><span data-stu-id="1f37d-112">The first command gets an array of backup containers, and then stores it in the $Cont array.</span></span>
+<span data-ttu-id="1f37d-113">Drugie polecenie pobiera element kopii zapasowej odpowiadający pierwszemu kontenerowi, a następnie zapisuje go w zmiennej $PI.</span><span class="sxs-lookup"><span data-stu-id="1f37d-113">The second command gets the Backup item corresponding to the first container item, and then stores it in the $PI variable.</span></span>
+<span data-ttu-id="1f37d-114">Ostatnie polecenie wyłącza ochronę kopii zapasowych elementu w $PI \[ 0 \] , ale zachowuje dane.</span><span class="sxs-lookup"><span data-stu-id="1f37d-114">The last command disables Backup protection for the item in $PI\[0\], but retains the data.</span></span>
+
+### <span data-ttu-id="1f37d-115">Przykład 2</span><span class="sxs-lookup"><span data-stu-id="1f37d-115">Example 2</span></span>
+
+<span data-ttu-id="1f37d-116">Wyłącza ochronę elementu chronionego kopią zapasową.</span><span class="sxs-lookup"><span data-stu-id="1f37d-116">Disables protection for a Backup-protected item.</span></span> <span data-ttu-id="1f37d-117">(autogenerowana)</span><span class="sxs-lookup"><span data-stu-id="1f37d-117">(autogenerated)</span></span>
+
+```powershell <!-- Aladdin Generated Example --> 
+Disable-AzRecoveryServicesBackupProtection -Item $PI[0] -RemoveRecoveryPoints -VaultId $vault.ID
+```
+
+## <span data-ttu-id="1f37d-118">PARAMETRÓW</span><span class="sxs-lookup"><span data-stu-id="1f37d-118">PARAMETERS</span></span>
+
+### <span data-ttu-id="1f37d-119">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="1f37d-119">-DefaultProfile</span></span>
+<span data-ttu-id="1f37d-120">Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.</span><span class="sxs-lookup"><span data-stu-id="1f37d-120">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="1f37d-121">-Force</span><span class="sxs-lookup"><span data-stu-id="1f37d-121">-Force</span></span>
+<span data-ttu-id="1f37d-122">Wymusza uruchomienie polecenia bez monitowania o potwierdzenie użytkownika.</span><span class="sxs-lookup"><span data-stu-id="1f37d-122">Forces the command to run without asking for user confirmation.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="1f37d-123">-Item</span><span class="sxs-lookup"><span data-stu-id="1f37d-123">-Item</span></span>
+<span data-ttu-id="1f37d-124">Określa element kopii zapasowej, dla którego to polecenie cmdlet wyłącza ochronę.</span><span class="sxs-lookup"><span data-stu-id="1f37d-124">Specifies the Backup item for which this cmdlet disables protection.</span></span>
+<span data-ttu-id="1f37d-125">Aby uzyskać **AzureRmRecoveryServicesBackupItem** , użyj polecenia cmdlet Get-AzRecoveryServicesBackupItem.</span><span class="sxs-lookup"><span data-stu-id="1f37d-125">To obtain an **AzureRmRecoveryServicesBackupItem** , use the Get-AzRecoveryServicesBackupItem cmdlet.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models.ItemBase
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="1f37d-126">-RemoveRecoveryPoints</span><span class="sxs-lookup"><span data-stu-id="1f37d-126">-RemoveRecoveryPoints</span></span>
+<span data-ttu-id="1f37d-127">Wskazuje, że to polecenie cmdlet usuwa istniejące punkty odzyskiwania.</span><span class="sxs-lookup"><span data-stu-id="1f37d-127">Indicates that this cmdlet deletes existing recovery points.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="1f37d-128">-VaultId</span><span class="sxs-lookup"><span data-stu-id="1f37d-128">-VaultId</span></span>
+<span data-ttu-id="1f37d-129">Identyfikator ARM magazynu usług Recovery Services.</span><span class="sxs-lookup"><span data-stu-id="1f37d-129">ARM ID of the Recovery Services Vault.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="1f37d-130">-Potwierdź</span><span class="sxs-lookup"><span data-stu-id="1f37d-130">-Confirm</span></span>
+<span data-ttu-id="1f37d-131">Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.</span><span class="sxs-lookup"><span data-stu-id="1f37d-131">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="1f37d-132">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="1f37d-132">-WhatIf</span></span>
+<span data-ttu-id="1f37d-133">Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet.</span><span class="sxs-lookup"><span data-stu-id="1f37d-133">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="1f37d-134">Polecenie cmdlet nie jest uruchamiane.</span><span class="sxs-lookup"><span data-stu-id="1f37d-134">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="1f37d-135">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="1f37d-135">CommonParameters</span></span>
+<span data-ttu-id="1f37d-136">To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="1f37d-136">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="1f37d-137">Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="1f37d-137">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="1f37d-138">WEJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="1f37d-138">INPUTS</span></span>
+
+### <span data-ttu-id="1f37d-139">Microsoft. Azure. Commands. RecoveryServices. Backup. cmdlets. models. ItemBase</span><span class="sxs-lookup"><span data-stu-id="1f37d-139">Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models.ItemBase</span></span>
+
+### <span data-ttu-id="1f37d-140">System. String</span><span class="sxs-lookup"><span data-stu-id="1f37d-140">System.String</span></span>
+
+## <span data-ttu-id="1f37d-141">WYSYŁA</span><span class="sxs-lookup"><span data-stu-id="1f37d-141">OUTPUTS</span></span>
+
+### <span data-ttu-id="1f37d-142">Microsoft. Azure. Commands. RecoveryServices. Backup. cmdlets. models. JobBase</span><span class="sxs-lookup"><span data-stu-id="1f37d-142">Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models.JobBase</span></span>
+
+## <span data-ttu-id="1f37d-143">INFORMACYJN</span><span class="sxs-lookup"><span data-stu-id="1f37d-143">NOTES</span></span>
+
+## <span data-ttu-id="1f37d-144">LINKI POKREWNE</span><span class="sxs-lookup"><span data-stu-id="1f37d-144">RELATED LINKS</span></span>
+
+[<span data-ttu-id="1f37d-145">Enable-AzRecoveryServicesBackupProtection</span><span class="sxs-lookup"><span data-stu-id="1f37d-145">Enable-AzRecoveryServicesBackupProtection</span></span>](./Enable-AzRecoveryServicesBackupProtection.md)
+
+[<span data-ttu-id="1f37d-146">Get-AzRecoveryServicesBackupContainer</span><span class="sxs-lookup"><span data-stu-id="1f37d-146">Get-AzRecoveryServicesBackupContainer</span></span>](./Get-AzRecoveryServicesBackupContainer.md)
+
+[<span data-ttu-id="1f37d-147">Get-AzRecoveryServicesBackupItem</span><span class="sxs-lookup"><span data-stu-id="1f37d-147">Get-AzRecoveryServicesBackupItem</span></span>](./Get-AzRecoveryServicesBackupItem.md)
+
+
