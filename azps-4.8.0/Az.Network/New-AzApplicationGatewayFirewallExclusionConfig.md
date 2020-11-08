@@ -1,0 +1,114 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
+Module Name: Az.Network
+online version: https://docs.microsoft.com/en-us/powershell/module/az.network/new-azapplicationgatewayfirewallexclusionconfig
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzApplicationGatewayFirewallExclusionConfig.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzApplicationGatewayFirewallExclusionConfig.md
+ms.openlocfilehash: 370965325a265ef4c2b7fa5e0070ae705099e2c8
+ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 10/13/2020
+ms.locfileid: "94063949"
+---
+# <span data-ttu-id="41e80-101">New-AzApplicationGatewayFirewallExclusionConfig</span><span class="sxs-lookup"><span data-stu-id="41e80-101">New-AzApplicationGatewayFirewallExclusionConfig</span></span>
+
+## <span data-ttu-id="41e80-102">STRESZCZENIe</span><span class="sxs-lookup"><span data-stu-id="41e80-102">SYNOPSIS</span></span>
+<span data-ttu-id="41e80-103">Tworzy nową listę reguł wykluczeń dla usługi Application Gateway WAF</span><span class="sxs-lookup"><span data-stu-id="41e80-103">Creates a new exclusion rule list for application gateway waf</span></span>
+
+## <span data-ttu-id="41e80-104">POLECENIA</span><span class="sxs-lookup"><span data-stu-id="41e80-104">SYNTAX</span></span>
+
+```
+New-AzApplicationGatewayFirewallExclusionConfig -Variable <String> -Operator <String> -Selector <String>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="41e80-105">Opis</span><span class="sxs-lookup"><span data-stu-id="41e80-105">DESCRIPTION</span></span>
+<span data-ttu-id="41e80-106">Polecenie cmdlet **New-AzApplicationGatewayFirewallExclusionConfig** z listą reguł wykluczeń dla bramy Application WAF.</span><span class="sxs-lookup"><span data-stu-id="41e80-106">The **New-AzApplicationGatewayFirewallExclusionConfig** cmdlet a new exclusion rule list for application gateway waf.</span></span>
+
+## <span data-ttu-id="41e80-107">Przykłady</span><span class="sxs-lookup"><span data-stu-id="41e80-107">EXAMPLES</span></span>
+
+### <span data-ttu-id="41e80-108">Przykład 1</span><span class="sxs-lookup"><span data-stu-id="41e80-108">Example 1</span></span>
+```powershell
+PS C:\> $exclusion1 = New-AzApplicationGatewayFirewallExclusionConfig -Variable "RequestHeaderNames" -Operator "StartsWith" -Selector "xyz"
+```
+
+<span data-ttu-id="41e80-109">To polecenie tworzy nową konfigurację listy reguł wykluczeń dla zmiennej o nazwie RequestHeaderNames oraz operatora o nazwie StartsWith i selektora o nazwie xyz.</span><span class="sxs-lookup"><span data-stu-id="41e80-109">This command creates a new exclusion rule lists configuration for the variable named RequestHeaderNames and operator named StartsWith and Selector named xyz.</span></span> <span data-ttu-id="41e80-110">Konfiguracja listy wykluczeń jest zapisywana w $exclusion 1.</span><span class="sxs-lookup"><span data-stu-id="41e80-110">The exclusion list configuration is saved in $exclusion1.</span></span>
+
+## <span data-ttu-id="41e80-111">PARAMETRÓW</span><span class="sxs-lookup"><span data-stu-id="41e80-111">PARAMETERS</span></span>
+
+### <span data-ttu-id="41e80-112">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="41e80-112">-DefaultProfile</span></span>
+<span data-ttu-id="41e80-113">Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.</span><span class="sxs-lookup"><span data-stu-id="41e80-113">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="41e80-114">-Operator</span><span class="sxs-lookup"><span data-stu-id="41e80-114">-Operator</span></span>
+<span data-ttu-id="41e80-115">Gdy zmienna jest kolekcją, działa na selektorze w celu określenia, których elementów w kolekcji dotyczy wyłączenie.</span><span class="sxs-lookup"><span data-stu-id="41e80-115">When variable is a collection, operate on the selector to specify which elements in the collection this exclusion applies to.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="41e80-116">-Selector</span><span class="sxs-lookup"><span data-stu-id="41e80-116">-Selector</span></span>
+<span data-ttu-id="41e80-117">Gdy zmienna jest kolekcją, operator służy do określenia, do których elementów w kolekcji odnosi się wyłączenie.</span><span class="sxs-lookup"><span data-stu-id="41e80-117">When variable is a collection, operator used to specify which elements in the collection this exclusion applies to.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="41e80-118">-Zmienna</span><span class="sxs-lookup"><span data-stu-id="41e80-118">-Variable</span></span>
+<span data-ttu-id="41e80-119">Zmienna, którą należy wykluczyć.</span><span class="sxs-lookup"><span data-stu-id="41e80-119">The variable to be excluded.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="41e80-120">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="41e80-120">CommonParameters</span></span>
+<span data-ttu-id="41e80-121">To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="41e80-121">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="41e80-122">Aby uzyskać więcej informacji, zobacz about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="41e80-122">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="41e80-123">WEJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="41e80-123">INPUTS</span></span>
+
+### <span data-ttu-id="41e80-124">Znaleziono</span><span class="sxs-lookup"><span data-stu-id="41e80-124">None</span></span>
+
+## <span data-ttu-id="41e80-125">WYSYŁA</span><span class="sxs-lookup"><span data-stu-id="41e80-125">OUTPUTS</span></span>
+
+### <span data-ttu-id="41e80-126">Microsoft. Azure. Commands. Network. models. PSApplicationGatewayFirewallExclusion</span><span class="sxs-lookup"><span data-stu-id="41e80-126">Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayFirewallExclusion</span></span>
+
+## <span data-ttu-id="41e80-127">INFORMACYJN</span><span class="sxs-lookup"><span data-stu-id="41e80-127">NOTES</span></span>
+
+## <span data-ttu-id="41e80-128">LINKI POKREWNE</span><span class="sxs-lookup"><span data-stu-id="41e80-128">RELATED LINKS</span></span>
