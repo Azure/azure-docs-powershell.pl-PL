@@ -5,12 +5,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/10/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 913532fa5a8937f7ba4cc1ce21c5879f3920fc7f
-ms.sourcegitcommit: b4a38bcb0501a9016a4998efd377aa75d3ef9ce8
+ms.openlocfilehash: 4ab5639cfb997c5f9ee1286e6eacb97ef775239a
+ms.sourcegitcommit: 63181e0af0e4468b0530fdb0495ed4d44bdfd1c8
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92753845"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93134866"
 ---
 # <a name="azure-powershell-release-notes"></a>Informacje o wersji programu Azure PowerShell
 
@@ -46,7 +46,7 @@ ms.locfileid: "92753845"
 * Dodano parametry „Tier”, „MaxSharesCount”, „DiskIOPSReadOnly” i „DiskMBpsReadOnly” do polecenia cmdlet „New-AzDiskUpdateConfig”. 
 
 #### <a name="azcontainerregistry"></a>Az.ContainerRegistry
-* [Zmiana powodująca niezgodność] Aktualizuje wersję interfejsu API do 2020-05-01
+* [Zmiana powodująca niezgodność] Aktualizuje wersję interfejsu API do 2019-05-01
 * [Zmiana powodująca niezgodność] Usunięto jednostkę SKU „Klasyczna” i parametr „StorageAccountName” z polecenia „New-AzContainerRegistry”
 * Dodano nowe polecenia cmdlet: „Connect-AzContainerRegistry”, „import-AzContainerRegistry”, „Get-AzContainerRegistryUsage”, „New-AzContainerRegistryNetworkRule”, „Set-AzContainerRegistryNetworkRule”
 * Dodano nowy parametr „NetworkRuleSet” do polecenia „Update-AzContainerRegistry”
@@ -1762,28 +1762,28 @@ Naprawiono polecenie cmdlet New-AzSqlDatabaseSecondary, aby sprawdzało istnieni
 
 #### <a name="azbatch"></a>Az.Batch
 * Nazwę elementu `CoreQuota` dla klasy `BatchAccountContext` zmieniono na `DedicatedCoreQuota`. Jest również nowa właściwość `LowPriorityCoreQuota`.
-  - Ma to wpływ na polecenie **Get-AzBatchAccount** .
-* Parametr polecenia cmdlet **New-AzBatchTask** `-ResourceFile` teraz przyjmuje kolekcję obiektów `PSResourceFile`, którą można utworzyć przy użyciu nowego polecenia cmdlet **New-AzBatchResourceFile** .
+  - Ma to wpływ na polecenie **Get-AzBatchAccount**.
+* Parametr polecenia cmdlet **New-AzBatchTask** `-ResourceFile` teraz przyjmuje kolekcję obiektów `PSResourceFile`, którą można utworzyć przy użyciu nowego polecenia cmdlet **New-AzBatchResourceFile**.
 * Nowe polecenie cmdlet **New-AzBatchResourceFile** w celu ułatwienia tworzenia obiektów `PSResourceFile`. Można je dostarczyć do polecenia cmdlet **New-AzBatchTask** w parametrze `-ResourceFile`.
   - Obsługuje ono dwa nowe rodzaje plików zasobów oprócz istniejącego sposobu `HttpUrl`:
     - Pliki zasobów oparte na elemencie `AutoStorageContainerName` pobierają cały kontener automatycznego magazynu do węzła usługi Batch.
     - Pliki zasobów oparte na elemencie `StorageContainerUrl` pobierają kontener określony w adresie URL do węzła usługi Batch.
-* Usunięto właściwość `ApplicationPackages` elementu `PSApplication` zwracaną przez polecenie cmdlet **Get-AzBatchApplication** .
-  - Określone pakiety wewnątrz aplikacji można teraz pobrać przy użyciu polecenia cmdlet **Get-AzBatchApplicationPackage** . Na przykład: `Get-AzBatchApplication -AccountName myaccount -ResourceGroupName myresourcegroup -ApplicationId myapplication`.
-* Zmieniono nazwę właściwości `ApplicationId` na `ApplicationName` w poleceniach cmdlet **Get-AzBatchApplicationPackage** , **New-AzBatchApplicationPackage** , **Remove-AzBatchApplicationPackage** , **Get-AzBatchApplication** , **New-AzBatchApplication** , **Remove-AzBatchApplication** i **Set-AzBatchApplication** .
+* Usunięto właściwość `ApplicationPackages` elementu `PSApplication` zwracaną przez polecenie cmdlet **Get-AzBatchApplication**.
+  - Określone pakiety wewnątrz aplikacji można teraz pobrać przy użyciu polecenia cmdlet **Get-AzBatchApplicationPackage**. Na przykład: `Get-AzBatchApplication -AccountName myaccount -ResourceGroupName myresourcegroup -ApplicationId myapplication`.
+* Zmieniono nazwę właściwości `ApplicationId` na `ApplicationName` w poleceniach cmdlet **Get-AzBatchApplicationPackage** , **New-AzBatchApplicationPackage** , **Remove-AzBatchApplicationPackage** , **Get-AzBatchApplication** , **New-AzBatchApplication** , **Remove-AzBatchApplication** i **Set-AzBatchApplication**.
   - `ApplicationId` teraz jest aliasem `ApplicationName`.
 * Dodano nową właściwość `PSWindowsUserConfiguration` do klasy `PSUserAccount`.
 * Zmieniono nazwę właściwości `Version` na `Name` w klasie `PSApplicationPackage`.
 * Zmieniono nazwę właściwości `BlobSource` na `HttpUrl` w klasie `PSResourceFile`.
 * Usunięto właściwość `OSDisk` z klasy `PSVirtualMachineConfiguration`.
-* Usunięto polecenie cmdlet **Set-AzBatchPoolOSVersion** . Ta operacja nie jest już obsługiwana.
+* Usunięto polecenie cmdlet **Set-AzBatchPoolOSVersion**. Ta operacja nie jest już obsługiwana.
 * Usunięto właściwość `TargetOSVersion` z klasy `PSCloudServiceConfiguration`.
 * Zmieniono nazwę właściwości `CurrentOSVersion` na `OSVersion` w klasie `PSCloudServiceConfiguration`.
 * Usunięto właściwości `DataEgressGiB` i `DataIngressGiB` z klasy `PSPoolUsageMetrics`.
-* Usunięto polecenie cmdlet **Get-AzBatchNodeAgentSku** i zastąpiono je poleceniem cmdlet **Get-AzBatchSupportedImage** .
+* Usunięto polecenie cmdlet **Get-AzBatchNodeAgentSku** i zastąpiono je poleceniem cmdlet **Get-AzBatchSupportedImage**.
   - Polecenie cmdlet **Get-AzBatchSupportedImage** zwraca te same dane co polecenie cmdlet **Get-AzBatchNodeAgentSku** , ale w bardziej przyjaznym formacie.
   - Teraz są również zwracane nowe obrazy niezweryfikowane. Uwzględniono również dodatkowe informacje na temat właściwości `Capabilities` i `BatchSupportEndOfLife` dla każdego obrazu.
-* Dodano możliwość instalowania zdalnych systemów plików na każdym węźle puli za pośrednictwem nowego parametru `MountConfiguration` polecenia cmdlet **New-AzBatchPool** .
+* Dodano możliwość instalowania zdalnych systemów plików na każdym węźle puli za pośrednictwem nowego parametru `MountConfiguration` polecenia cmdlet **New-AzBatchPool**.
 * Teraz obsługiwane są reguły zabezpieczeń sieciowych blokujące dostęp sieciowy do puli na podstawie portu źródłowego ruchu. Jest to realizowane za pomocą właściwości `SourcePortRanges` w klasie `PSNetworkSecurityGroupRule`.
 * Podczas uruchamiania kontenera usługa Batch obsługuje teraz wykonywanie zadania w katalogu roboczym kontenera lub w katalogu roboczym zadania usługi Batch. Jest to kontrolowane przez właściwość `WorkingDirectory` w klasie `PSTaskContainerSettings`.
 * Dodano możliwość określania kolekcji publicznych adresów IP w klasie `PSNetworkConfiguration` za pośrednictwem nowej właściwości `PublicIPs`. To gwarantuje, że węzły w puli będą miały adres IP z listy adresów IP dostarczonych przez użytkownika.
@@ -2079,8 +2079,8 @@ Naprawiono polecenie cmdlet New-AzSqlDatabaseSecondary, aby sprawdzało istnieni
 #### <a name="azmonitor"></a>Az.Monitor
 * Wskazanie najnowszego zestawu Monitor SDK, tj. 0.24.1-preview
    - Dodaje zmiany niepowodujące niezgodności do poleceń cmdlet metryk, tj. wyliczenie Unit obsługuje kilka nowych wartości. Są to polecenia cmdlet tylko do odczytu, więc nie będzie żadnych zmian w danych wejściowych tych poleceń cmdlet.
-   - Wartość api-version żądań **ActionGroups** to teraz **2019-06-01** , wcześniej było to **2018-03-01** . Testy scenariusza zostały zaktualizowane w celu dostosowania do tej zmiany.
-   - Konstruktory dla klas **EmailReceiver** i **WebhookReceiver** dodały jeden nowy argument obowiązkowy, tj. wartość logiczną o nazwie **useCommonAlertSchema** . Obecnie wartość ta jest stała i równa **false** , aby ukryć tę zmianę powodującą niezgodność przed poleceniami cmdlet. **UWAGA** : Jest to tymczasowa zmiana, która musi być zweryfikowana przez zespół ds. alertów.
+   - Wartość api-version żądań **ActionGroups** to teraz **2019-06-01** , wcześniej było to **2018-03-01**. Testy scenariusza zostały zaktualizowane w celu dostosowania do tej zmiany.
+   - Konstruktory dla klas **EmailReceiver** i **WebhookReceiver** dodały jeden nowy argument obowiązkowy, tj. wartość logiczną o nazwie **useCommonAlertSchema**. Obecnie wartość ta jest stała i równa **false** , aby ukryć tę zmianę powodującą niezgodność przed poleceniami cmdlet. **UWAGA** : Jest to tymczasowa zmiana, która musi być zweryfikowana przez zespół ds. alertów.
    - Kolejność argumentów konstruktora klasy **Source** (powiązanej z klasą **ScheduledQueryRuleSource** ) zmieniła się od poprzedniego zestawu SDK. Ta zmiana wymaga naprawienia dwóch testów jednostkowych: kompilowały się, ale nie przechodziły testów.
    - Kolejność argumentów konstruktora klasy **AlertingAction** (powiązanej z klasą **ScheduledQueryRuleSource** ) została zmieniona od poprzedniego zestawu SDK. Ta zmiana wymaga naprawienia dwóch testów jednostkowych: kompilowały się, ale nie przechodziły testów.
 * Obsługa kryteriów progu dynamicznego dla alertu metryki w wersji 2
