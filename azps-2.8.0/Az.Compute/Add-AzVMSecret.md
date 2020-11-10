@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/ad
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Add-AzVMSecret.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Add-AzVMSecret.md
-ms.openlocfilehash: f2b8f3e9b51e7e11eee589bde24508a09c1fd262
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 561610141f0f802b8e2a2bc917330e67c0e5f482
+ms.sourcegitcommit: 7aaa37edc9681b643946505bcbc3cc6435f1d7ca
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93706485"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94395241"
 ---
 # Add-AzVMSecret
 
@@ -30,7 +30,7 @@ Polecenie cmdlet **Add-AzVMSecret** umożliwia dodanie klucza tajnego do maszyny
 Ta wartość umożliwia dodanie certyfikatu do maszyny wirtualnej.
 Klucz tajny musi być przechowywany w magazynie kluczy.
 Aby uzyskać więcej informacji na temat magazynu kluczy, zobacz [co to jest magazyn kluczy Azure?](https://azure.microsoft.com/en-us/documentation/articles/key-vault-whatis/).
-Aby uzyskać więcej informacji na temat poleceń cmdlet, zobacz [polecenia cmdlet magazynu kluczy platformy Azure](https://msdn.microsoft.com/library/azure/dn868052.aspx) w bibliotece sieci Microsoft Developer Network lub polecenia cmdlet [Set-AzKeyVaultSecret](/powershell/module/az.keyvault/set-azkeyvaultsecret) .
+Aby uzyskać więcej informacji na temat poleceń cmdlet, zobacz [polecenia cmdlet magazynu kluczy platformy Azure](/powershell/module/az.keyvault) lub polecenia cmdlet [Set-AzKeyVaultSecret](/powershell/module/az.keyvault/set-azkeyvaultsecret) .
 
 ## Przykłady
 
@@ -81,7 +81,7 @@ Accept wildcard characters: False
 
 ### -CertificateUrl
 Określa adres URL wskazujący klucz tajny magazynu kluczy zawierający certyfikat.
-Certyfikat jest kodowaniem Base64 następującego obiektu notacji języka JavaScript (JSON), który jest zakodowany w formacie UTF-8: {"dane": " \< unbase Base64-File", "DataType": " \> \< plik-format \> ", "hasło": " \< PFX-File-Password \> "} obecnie typ danych akceptuje tylko pliki PFX.
+Certyfikat jest kodowaniem Base64 następującego obiektu notacji języka JavaScript (JSON), który jest zakodowany w formacie UTF-8: {"dane": " \<Base64-encoded-file\> ", "typ danych": " \<file-format\> ", "hasło" " \<pfx-file-password\> } obecnie typ danych akceptuje tylko pliki PFX.
 
 ```yaml
 Type: System.String
