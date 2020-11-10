@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/ad
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Add-AzVmssSecret.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Add-AzVmssSecret.md
-ms.openlocfilehash: c5bc6295db0346b12f42093a2e03f8de137a4146
-ms.sourcegitcommit: b4a38bcb0501a9016a4998efd377aa75d3ef9ce8
+ms.openlocfilehash: 6f9f1f29f23906442d7c9c8187b9bab3bf41403b
+ms.sourcegitcommit: 7aaa37edc9681b643946505bcbc3cc6435f1d7ca
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "94233558"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94395513"
 ---
-# <span data-ttu-id="86015-101">Add-AzVmssSecret</span><span class="sxs-lookup"><span data-stu-id="86015-101">Add-AzVmssSecret</span></span>
+# <span data-ttu-id="010a2-101">Add-AzVmssSecret</span><span class="sxs-lookup"><span data-stu-id="010a2-101">Add-AzVmssSecret</span></span>
 
-## <span data-ttu-id="86015-102">STRESZCZENIe</span><span class="sxs-lookup"><span data-stu-id="86015-102">SYNOPSIS</span></span>
-<span data-ttu-id="86015-103">Dodaje klucz tajny do VMSS.</span><span class="sxs-lookup"><span data-stu-id="86015-103">Adds a secret to a VMSS.</span></span>
+## <span data-ttu-id="010a2-102">STRESZCZENIe</span><span class="sxs-lookup"><span data-stu-id="010a2-102">SYNOPSIS</span></span>
+<span data-ttu-id="010a2-103">Dodaje klucz tajny do VMSS.</span><span class="sxs-lookup"><span data-stu-id="010a2-103">Adds a secret to a VMSS.</span></span>
 
-## <span data-ttu-id="86015-104">POLECENIA</span><span class="sxs-lookup"><span data-stu-id="86015-104">SYNTAX</span></span>
+## <span data-ttu-id="010a2-104">POLECENIA</span><span class="sxs-lookup"><span data-stu-id="010a2-104">SYNTAX</span></span>
 
 ```
 Add-AzVmssSecret [-VirtualMachineScaleSet] <PSVirtualMachineScaleSet> [[-SourceVaultId] <String>]
@@ -26,15 +26,15 @@ Add-AzVmssSecret [-VirtualMachineScaleSet] <PSVirtualMachineScaleSet> [[-SourceV
  [<CommonParameters>]
 ```
 
-## <span data-ttu-id="86015-105">Opis</span><span class="sxs-lookup"><span data-stu-id="86015-105">DESCRIPTION</span></span>
-<span data-ttu-id="86015-106">Polecenie cmdlet **Add-AzVmssSecret** umożliwia dodanie klucza tajnego do zestawu skali maszyny wirtualnej (VMSS).</span><span class="sxs-lookup"><span data-stu-id="86015-106">The **Add-AzVmssSecret** cmdlet adds a secret to the Virtual Machine Scale Set (VMSS).</span></span>
-<span data-ttu-id="86015-107">Klucz tajny musi być przechowywany w magazynie kluczy platformy Azure.</span><span class="sxs-lookup"><span data-stu-id="86015-107">The secret must be stored in an Azure Key Vault.</span></span>
-<span data-ttu-id="86015-108">Aby uzyskać więcej informacji dotyczących magazynu kluczy, zobacz [co to jest magazyn kluczy platformy Azure?](https://azure.microsoft.com/en-us/documentation/articles/key-vault-whatis/)</span><span class="sxs-lookup"><span data-stu-id="86015-108">For more information relating to Key Vault, see [What is Azure Key Vault?](https://azure.microsoft.com/en-us/documentation/articles/key-vault-whatis/)</span></span> <span data-ttu-id="86015-109">(https://azure.microsoft.com/en-us/documentation/articles/key-vault-whatis/).</span><span class="sxs-lookup"><span data-stu-id="86015-109">(https://azure.microsoft.com/en-us/documentation/articles/key-vault-whatis/).</span></span>
-<span data-ttu-id="86015-110">Aby uzyskać więcej informacji na temat poleceń cmdlet, zobacz [polecenia cmdlet magazynu kluczy platformy Azure](https://msdn.microsoft.com/library/azure/dn868052.aspx) ( https://msdn.microsoft.com/library/azure/dn868052.aspx) w bibliotece Microsoft Developer Network lub [Set-AzKeyVaultSecret](/powershell/module/az.keyvault/set-azkeyvaultsecret) cmdlet.</span><span class="sxs-lookup"><span data-stu-id="86015-110">For more information about the cmdlets, see [Azure Key Vault Cmdlets](https://msdn.microsoft.com/library/azure/dn868052.aspx) (https://msdn.microsoft.com/library/azure/dn868052.aspx) in the Microsoft Developer Network library or the [Set-AzKeyVaultSecret](/powershell/module/az.keyvault/set-azkeyvaultsecret) cmdlet.</span></span>
+## <span data-ttu-id="010a2-105">Opis</span><span class="sxs-lookup"><span data-stu-id="010a2-105">DESCRIPTION</span></span>
+<span data-ttu-id="010a2-106">Polecenie cmdlet **Add-AzVmssSecret** umożliwia dodanie klucza tajnego do zestawu skali maszyny wirtualnej (VMSS).</span><span class="sxs-lookup"><span data-stu-id="010a2-106">The **Add-AzVmssSecret** cmdlet adds a secret to the Virtual Machine Scale Set (VMSS).</span></span>
+<span data-ttu-id="010a2-107">Klucz tajny musi być przechowywany w magazynie kluczy platformy Azure.</span><span class="sxs-lookup"><span data-stu-id="010a2-107">The secret must be stored in an Azure Key Vault.</span></span>
+<span data-ttu-id="010a2-108">Aby uzyskać więcej informacji dotyczących magazynu kluczy, zobacz [co to jest magazyn kluczy platformy Azure?](https://azure.microsoft.com/en-us/documentation/articles/key-vault-whatis/)</span><span class="sxs-lookup"><span data-stu-id="010a2-108">For more information relating to Key Vault, see [What is Azure Key Vault?](https://azure.microsoft.com/en-us/documentation/articles/key-vault-whatis/)</span></span> <span data-ttu-id="010a2-109">(https://azure.microsoft.com/en-us/documentation/articles/key-vault-whatis/).</span><span class="sxs-lookup"><span data-stu-id="010a2-109">(https://azure.microsoft.com/en-us/documentation/articles/key-vault-whatis/).</span></span>
+<span data-ttu-id="010a2-110">Aby uzyskać więcej informacji na temat poleceń cmdlet, zobacz [polecenia cmdlet magazynu kluczy platformy Azure](/powershell/module/az.keyvault) lub polecenia cmdlet [Set-AzKeyVaultSecret](/powershell/module/az.keyvault/set-azkeyvaultsecret) .</span><span class="sxs-lookup"><span data-stu-id="010a2-110">For more information about the cmdlets, see [Azure Key Vault Cmdlets](/powershell/module/az.keyvault) or the [Set-AzKeyVaultSecret](/powershell/module/az.keyvault/set-azkeyvaultsecret) cmdlet.</span></span>
 
-## <span data-ttu-id="86015-111">Przykłady</span><span class="sxs-lookup"><span data-stu-id="86015-111">EXAMPLES</span></span>
+## <span data-ttu-id="010a2-111">Przykłady</span><span class="sxs-lookup"><span data-stu-id="010a2-111">EXAMPLES</span></span>
 
-### <span data-ttu-id="86015-112">Przykład 1. Dodaj klucz tajny do VMSS</span><span class="sxs-lookup"><span data-stu-id="86015-112">Example 1: Add a secret to the VMSS</span></span>
+### <span data-ttu-id="010a2-112">Przykład 1. Dodaj klucz tajny do VMSS</span><span class="sxs-lookup"><span data-stu-id="010a2-112">Example 1: Add a secret to the VMSS</span></span>
 ```
 PS C:\> $Vault = Get-AzKeyVault -VaultName "ContosoVault"
 PS C:\> $CertConfig = New-AzVmssVaultCertificateConfig -CertificateUrl "http://keyVaultName.vault.contoso.net/secrets/secretName/secretVersion" -CertificateStore "Certificates"
@@ -42,16 +42,16 @@ PS C:\> $VMSS = New-AzVmssConfig
 PS C:\> Add-AzVmssSecret -VirtualMachineScaleSet $VMSS -SourceVaultId $Vault.ResourceId -VaultCertificate $CertConfig
 ```
 
-<span data-ttu-id="86015-113">W tym przykładzie jest dodawany klucz tajny do VMSS.</span><span class="sxs-lookup"><span data-stu-id="86015-113">This example adds a secret to the VMSS.</span></span>
-<span data-ttu-id="86015-114">W pierwszym poleceniu użyto polecenia cmdlet Get-AzKeyVault, aby uzyskać tajemnicę magazynu z magazynu o nazwie ContosoVault i przechowywać wynik w zmiennej o nazwie $Vault.</span><span class="sxs-lookup"><span data-stu-id="86015-114">The first command uses the Get-AzKeyVault cmdlet to get a vault secret from the vault named ContosoVault and stores the result in the variable named $Vault.</span></span>
-<span data-ttu-id="86015-115">W drugim poleceniu użyto polecenia cmdlet **New-AzVmssVaultCertificateConfig** w celu utworzenia konfiguracji certyfikatu magazynu kluczy przy użyciu określonego adresu URL certyfikatu z magazynu certyfikatów o nazwie Certificates i zapisanie wyników w zmiennej o nazwie $CertConfig.</span><span class="sxs-lookup"><span data-stu-id="86015-115">The second command uses the **New-AzVmssVaultCertificateConfig** cmdlet to create a Key Vault certificate configuration using the specified certificate URL from the certificate store named Certificates and stores the results in the variable named $CertConfig.</span></span>
-<span data-ttu-id="86015-116">W trzecim poleceniu użyto polecenia cmdlet **New-AzVmssConfig** w celu utworzenia VMSS obiektu konfiguracji i zapisu wyniku w zmiennej o nazwie $VMSS.</span><span class="sxs-lookup"><span data-stu-id="86015-116">The third command uses the **New-AzVmssConfig** cmdlet to create a VMSS configuration object and stores the result in the variable named $VMSS.</span></span>
-<span data-ttu-id="86015-117">Czwarte polecenie dodaje klucz tajny do VMSS przy użyciu klucza tajnego magazynu przy użyciu identyfikatora zasobu kluczy oraz certyfikatu magazynu przechowywanego w $Vault i $CertConfig zmiennych.</span><span class="sxs-lookup"><span data-stu-id="86015-117">The fourth command adds a secret to the VMSS using the vault secret using the key resource ID and the vault certificate stored in the $Vault and $CertConfig variables.</span></span>
+<span data-ttu-id="010a2-113">W tym przykładzie jest dodawany klucz tajny do VMSS.</span><span class="sxs-lookup"><span data-stu-id="010a2-113">This example adds a secret to the VMSS.</span></span>
+<span data-ttu-id="010a2-114">W pierwszym poleceniu użyto polecenia cmdlet Get-AzKeyVault, aby uzyskać tajemnicę magazynu z magazynu o nazwie ContosoVault i przechowywać wynik w zmiennej o nazwie $Vault.</span><span class="sxs-lookup"><span data-stu-id="010a2-114">The first command uses the Get-AzKeyVault cmdlet to get a vault secret from the vault named ContosoVault and stores the result in the variable named $Vault.</span></span>
+<span data-ttu-id="010a2-115">W drugim poleceniu użyto polecenia cmdlet **New-AzVmssVaultCertificateConfig** w celu utworzenia konfiguracji certyfikatu magazynu kluczy przy użyciu określonego adresu URL certyfikatu z magazynu certyfikatów o nazwie Certificates i zapisanie wyników w zmiennej o nazwie $CertConfig.</span><span class="sxs-lookup"><span data-stu-id="010a2-115">The second command uses the **New-AzVmssVaultCertificateConfig** cmdlet to create a Key Vault certificate configuration using the specified certificate URL from the certificate store named Certificates and stores the results in the variable named $CertConfig.</span></span>
+<span data-ttu-id="010a2-116">W trzecim poleceniu użyto polecenia cmdlet **New-AzVmssConfig** w celu utworzenia VMSS obiektu konfiguracji i zapisu wyniku w zmiennej o nazwie $VMSS.</span><span class="sxs-lookup"><span data-stu-id="010a2-116">The third command uses the **New-AzVmssConfig** cmdlet to create a VMSS configuration object and stores the result in the variable named $VMSS.</span></span>
+<span data-ttu-id="010a2-117">Czwarte polecenie dodaje klucz tajny do VMSS przy użyciu klucza tajnego magazynu przy użyciu identyfikatora zasobu kluczy oraz certyfikatu magazynu przechowywanego w $Vault i $CertConfig zmiennych.</span><span class="sxs-lookup"><span data-stu-id="010a2-117">The fourth command adds a secret to the VMSS using the vault secret using the key resource ID and the vault certificate stored in the $Vault and $CertConfig variables.</span></span>
 
-## <span data-ttu-id="86015-118">PARAMETRÓW</span><span class="sxs-lookup"><span data-stu-id="86015-118">PARAMETERS</span></span>
+## <span data-ttu-id="010a2-118">PARAMETRÓW</span><span class="sxs-lookup"><span data-stu-id="010a2-118">PARAMETERS</span></span>
 
-### <span data-ttu-id="86015-119">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="86015-119">-DefaultProfile</span></span>
-<span data-ttu-id="86015-120">Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.</span><span class="sxs-lookup"><span data-stu-id="86015-120">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+### <span data-ttu-id="010a2-119">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="010a2-119">-DefaultProfile</span></span>
+<span data-ttu-id="010a2-120">Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.</span><span class="sxs-lookup"><span data-stu-id="010a2-120">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -65,10 +65,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="86015-121">-SourceVaultId</span><span class="sxs-lookup"><span data-stu-id="86015-121">-SourceVaultId</span></span>
-<span data-ttu-id="86015-122">Określa identyfikator zasobu magazynu kluczy zawierającego certyfikaty, które można dodać do maszyny wirtualnej.</span><span class="sxs-lookup"><span data-stu-id="86015-122">Specifies the resource ID of the Key Vault that contains the certificates that you can add to the virtual machine.</span></span>
-<span data-ttu-id="86015-123">Ta wartość działa także jako klucz do dodawania wielu certyfikatów.</span><span class="sxs-lookup"><span data-stu-id="86015-123">This value also acts as the key for adding multiple certificates.</span></span>
-<span data-ttu-id="86015-124">Oznacza to, że w przypadku dodawania wielu certyfikatów z tego samego magazynu kluczy można użyć tej samej wartości parametru *SourceVaultId* .</span><span class="sxs-lookup"><span data-stu-id="86015-124">This means that you can use the same value for the *SourceVaultId* parameter when you add multiple certificates from the same Key Vault.</span></span>
+### <span data-ttu-id="010a2-121">-SourceVaultId</span><span class="sxs-lookup"><span data-stu-id="010a2-121">-SourceVaultId</span></span>
+<span data-ttu-id="010a2-122">Określa identyfikator zasobu magazynu kluczy zawierającego certyfikaty, które można dodać do maszyny wirtualnej.</span><span class="sxs-lookup"><span data-stu-id="010a2-122">Specifies the resource ID of the Key Vault that contains the certificates that you can add to the virtual machine.</span></span>
+<span data-ttu-id="010a2-123">Ta wartość działa także jako klucz do dodawania wielu certyfikatów.</span><span class="sxs-lookup"><span data-stu-id="010a2-123">This value also acts as the key for adding multiple certificates.</span></span>
+<span data-ttu-id="010a2-124">Oznacza to, że w przypadku dodawania wielu certyfikatów z tego samego magazynu kluczy można użyć tej samej wartości parametru *SourceVaultId* .</span><span class="sxs-lookup"><span data-stu-id="010a2-124">This means that you can use the same value for the *SourceVaultId* parameter when you add multiple certificates from the same Key Vault.</span></span>
 
 ```yaml
 Type: System.String
@@ -82,9 +82,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="86015-125">-VaultCertificate</span><span class="sxs-lookup"><span data-stu-id="86015-125">-VaultCertificate</span></span>
-<span data-ttu-id="86015-126">Określa obiekt **certyfikatu** magazynu zawierający adres URL i nazwę certyfikatu certyfikatu.</span><span class="sxs-lookup"><span data-stu-id="86015-126">Specifies the Vault **Certificate** object that contains the certificate URL and certificate name.</span></span>
-<span data-ttu-id="86015-127">Aby utworzyć ten obiekt, możesz użyć polecenia cmdlet [New-AzVmssVaultCertificateConfig](./New-AzVmssVaultCertificateConfig.md) .</span><span class="sxs-lookup"><span data-stu-id="86015-127">You can use the [New-AzVmssVaultCertificateConfig](./New-AzVmssVaultCertificateConfig.md) cmdlet to create this object.</span></span>
+### <span data-ttu-id="010a2-125">-VaultCertificate</span><span class="sxs-lookup"><span data-stu-id="010a2-125">-VaultCertificate</span></span>
+<span data-ttu-id="010a2-126">Określa obiekt **certyfikatu** magazynu zawierający adres URL i nazwę certyfikatu certyfikatu.</span><span class="sxs-lookup"><span data-stu-id="010a2-126">Specifies the Vault **Certificate** object that contains the certificate URL and certificate name.</span></span>
+<span data-ttu-id="010a2-127">Aby utworzyć ten obiekt, możesz użyć polecenia cmdlet [New-AzVmssVaultCertificateConfig](./New-AzVmssVaultCertificateConfig.md) .</span><span class="sxs-lookup"><span data-stu-id="010a2-127">You can use the [New-AzVmssVaultCertificateConfig](./New-AzVmssVaultCertificateConfig.md) cmdlet to create this object.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Management.Compute.Models.VaultCertificate[]
@@ -98,9 +98,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="86015-128">-VirtualMachineScaleSet</span><span class="sxs-lookup"><span data-stu-id="86015-128">-VirtualMachineScaleSet</span></span>
-<span data-ttu-id="86015-129">Określa obiekt VMSS.</span><span class="sxs-lookup"><span data-stu-id="86015-129">Specifies the VMSS object.</span></span>
-<span data-ttu-id="86015-130">Aby utworzyć ten obiekt, możesz użyć polecenia cmdlet [New-AzVmssConfig](./New-AzVmssConfig.md) .</span><span class="sxs-lookup"><span data-stu-id="86015-130">You can use the [New-AzVmssConfig](./New-AzVmssConfig.md) cmdlet to create this object.</span></span>
+### <span data-ttu-id="010a2-128">-VirtualMachineScaleSet</span><span class="sxs-lookup"><span data-stu-id="010a2-128">-VirtualMachineScaleSet</span></span>
+<span data-ttu-id="010a2-129">Określa obiekt VMSS.</span><span class="sxs-lookup"><span data-stu-id="010a2-129">Specifies the VMSS object.</span></span>
+<span data-ttu-id="010a2-130">Aby utworzyć ten obiekt, możesz użyć polecenia cmdlet [New-AzVmssConfig](./New-AzVmssConfig.md) .</span><span class="sxs-lookup"><span data-stu-id="010a2-130">You can use the [New-AzVmssConfig](./New-AzVmssConfig.md) cmdlet to create this object.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Compute.Automation.Models.PSVirtualMachineScaleSet
@@ -114,8 +114,8 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="86015-131">-Potwierdź</span><span class="sxs-lookup"><span data-stu-id="86015-131">-Confirm</span></span>
-<span data-ttu-id="86015-132">Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.</span><span class="sxs-lookup"><span data-stu-id="86015-132">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="010a2-131">-Potwierdź</span><span class="sxs-lookup"><span data-stu-id="010a2-131">-Confirm</span></span>
+<span data-ttu-id="010a2-132">Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.</span><span class="sxs-lookup"><span data-stu-id="010a2-132">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -129,8 +129,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="86015-133">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="86015-133">-WhatIf</span></span>
-<span data-ttu-id="86015-134">Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet.</span><span class="sxs-lookup"><span data-stu-id="86015-134">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="86015-135">Polecenie cmdlet nie jest uruchamiane.</span><span class="sxs-lookup"><span data-stu-id="86015-135">The cmdlet is not run.</span></span>
+### <span data-ttu-id="010a2-133">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="010a2-133">-WhatIf</span></span>
+<span data-ttu-id="010a2-134">Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet.</span><span class="sxs-lookup"><span data-stu-id="010a2-134">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="010a2-135">Polecenie cmdlet nie jest uruchamiane.</span><span class="sxs-lookup"><span data-stu-id="010a2-135">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -144,25 +144,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="86015-136">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="86015-136">CommonParameters</span></span>
-<span data-ttu-id="86015-137">To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="86015-137">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="86015-138">Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="86015-138">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="010a2-136">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="010a2-136">CommonParameters</span></span>
+<span data-ttu-id="010a2-137">To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="010a2-137">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="010a2-138">Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="010a2-138">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="86015-139">WEJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="86015-139">INPUTS</span></span>
+## <span data-ttu-id="010a2-139">WEJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="010a2-139">INPUTS</span></span>
 
-### <span data-ttu-id="86015-140">Microsoft. Azure. Commands. COMPUTE. Automation. MODELES. PSVirtualMachineScaleSet</span><span class="sxs-lookup"><span data-stu-id="86015-140">Microsoft.Azure.Commands.Compute.Automation.Models.PSVirtualMachineScaleSet</span></span>
+### <span data-ttu-id="010a2-140">Microsoft. Azure. Commands. COMPUTE. Automation. MODELES. PSVirtualMachineScaleSet</span><span class="sxs-lookup"><span data-stu-id="010a2-140">Microsoft.Azure.Commands.Compute.Automation.Models.PSVirtualMachineScaleSet</span></span>
 
-### <span data-ttu-id="86015-141">System. String</span><span class="sxs-lookup"><span data-stu-id="86015-141">System.String</span></span>
+### <span data-ttu-id="010a2-141">System. String</span><span class="sxs-lookup"><span data-stu-id="010a2-141">System.String</span></span>
 
-### <span data-ttu-id="86015-142">Microsoft. Azure. Management. COMPUTE. MODELES. VaultCertificate []</span><span class="sxs-lookup"><span data-stu-id="86015-142">Microsoft.Azure.Management.Compute.Models.VaultCertificate[]</span></span>
+### <span data-ttu-id="010a2-142">Microsoft. Azure. Management. COMPUTE. MODELES. VaultCertificate []</span><span class="sxs-lookup"><span data-stu-id="010a2-142">Microsoft.Azure.Management.Compute.Models.VaultCertificate[]</span></span>
 
-## <span data-ttu-id="86015-143">WYSYŁA</span><span class="sxs-lookup"><span data-stu-id="86015-143">OUTPUTS</span></span>
+## <span data-ttu-id="010a2-143">WYSYŁA</span><span class="sxs-lookup"><span data-stu-id="010a2-143">OUTPUTS</span></span>
 
-### <span data-ttu-id="86015-144">Microsoft. Azure. Commands. COMPUTE. Automation. MODELES. PSVirtualMachineScaleSet</span><span class="sxs-lookup"><span data-stu-id="86015-144">Microsoft.Azure.Commands.Compute.Automation.Models.PSVirtualMachineScaleSet</span></span>
+### <span data-ttu-id="010a2-144">Microsoft. Azure. Commands. COMPUTE. Automation. MODELES. PSVirtualMachineScaleSet</span><span class="sxs-lookup"><span data-stu-id="010a2-144">Microsoft.Azure.Commands.Compute.Automation.Models.PSVirtualMachineScaleSet</span></span>
 
-## <span data-ttu-id="86015-145">INFORMACYJN</span><span class="sxs-lookup"><span data-stu-id="86015-145">NOTES</span></span>
+## <span data-ttu-id="010a2-145">INFORMACYJN</span><span class="sxs-lookup"><span data-stu-id="010a2-145">NOTES</span></span>
 
-## <span data-ttu-id="86015-146">LINKI POKREWNE</span><span class="sxs-lookup"><span data-stu-id="86015-146">RELATED LINKS</span></span>
+## <span data-ttu-id="010a2-146">LINKI POKREWNE</span><span class="sxs-lookup"><span data-stu-id="010a2-146">RELATED LINKS</span></span>
 
-[<span data-ttu-id="86015-147">Nowe — AzVmssVaultCertificateConfig</span><span class="sxs-lookup"><span data-stu-id="86015-147">New-AzVmssVaultCertificateConfig</span></span>](./New-AzVmssVaultCertificateConfig.md)
+[<span data-ttu-id="010a2-147">Nowe — AzVmssVaultCertificateConfig</span><span class="sxs-lookup"><span data-stu-id="010a2-147">New-AzVmssVaultCertificateConfig</span></span>](./New-AzVmssVaultCertificateConfig.md)
 
-[<span data-ttu-id="86015-148">Nowe — AzVmssConfig</span><span class="sxs-lookup"><span data-stu-id="86015-148">New-AzVmssConfig</span></span>](./New-AzVmssConfig.md)
+[<span data-ttu-id="010a2-148">Nowe — AzVmssConfig</span><span class="sxs-lookup"><span data-stu-id="010a2-148">New-AzVmssConfig</span></span>](./New-AzVmssConfig.md)
