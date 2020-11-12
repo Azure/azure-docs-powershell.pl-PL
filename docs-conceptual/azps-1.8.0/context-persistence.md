@@ -5,12 +5,13 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/21/2019
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: b75382d09e01dc242acf37a1652ec265266eaf7f
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.service: azure-powershell
+ms.openlocfilehash: e428106fcc525cc8836af954897faa3f6c169990
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89243008"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93408806"
 ---
 # <a name="azure-powershell-context-objects"></a>Obiekty kontekstu środowiska Azure PowerShell
 
@@ -23,10 +24,10 @@ W tym artykule opisano zarządzania kontekstami platformy Azure, a nie zarządza
 Konteksty platformy Azure to obiekty programu PowerShell odzwierciedlające aktywną subskrypcję, w której są uruchamiane polecenia, oraz informacje uwierzytelniania wymagane do nawiązywania połączenia z chmurą platformy Azure. Dzięki kontekstom platformy Azure środowisko Azure PowerShell nie musi ponownie uwierzytelniać Twojego konta za każdym razem, gdy przełączasz subskrypcje. Składniki kontekstu platformy Azure są następujące:
 
 * _Konto_ użyte do zalogowania się do platformy Azure za pomocą polecenia [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount). Konteksty platformy Azure traktują użytkowników, identyfikatory aplikacji i jednostki usług tak samo z perspektywy konta.
-* Aktywna _subskrypcja_, umowa serwisowa z firmą Microsoft na tworzenie i uruchamianie zasobów platformy Azure, które są skojarzone z _dzierżawą_. Dzierżawy są często określane jako _organizacje_ w dokumentacji lub podczas pracy z usługą Active Directory.
-* Odwołanie do _pamięci podręcznej tokenu_, przechowywanego tokenu uwierzytelniania na potrzeby uzyskiwania dostępu do chmury platformy Azure. Miejsce, w którym ten token jest przechowywany, oraz czas jego trwania jest określany przez [ustawienia automatycznego zapisywania kontekstu](#save-azure-contexts-across-powershell-sessions).
+* Aktywna _subskrypcja_ , umowa serwisowa z firmą Microsoft na tworzenie i uruchamianie zasobów platformy Azure, które są skojarzone z _dzierżawą_. Dzierżawy są często określane jako _organizacje_ w dokumentacji lub podczas pracy z usługą Active Directory.
+* Odwołanie do _pamięci podręcznej tokenu_ , przechowywanego tokenu uwierzytelniania na potrzeby uzyskiwania dostępu do chmury platformy Azure. Miejsce, w którym ten token jest przechowywany, oraz czas jego trwania jest określany przez [ustawienia automatycznego zapisywania kontekstu](#save-azure-contexts-across-powershell-sessions).
 
-Aby uzyskać więcej informacji o tych terminach, zobacz [Terminologia usługi Azure Active Directory](/azure/active-directory/fundamentals/active-directory-whatis#terminology). Tokeny uwierzytelniania używane przez konteksty platformy Azure są takie same jak inne przechowywane tokeny będące składnikami sesji trwałej. 
+Aby uzyskać więcej informacji o tych terminach, zobacz [Terminologia usługi Azure Active Directory](/azure/active-directory/fundamentals/active-directory-whatis#terminology). Tokeny uwierzytelniania używane przez konteksty platformy Azure są takie same jak inne przechowywane tokeny będące składnikami sesji trwałej.
 
 Po zalogowaniu się przy użyciu polecenia `Connect-AzAccount` dla domyślnej subskrypcji zostanie utworzony co najmniej jeden kontekst platformy Azure. Obiekt zwrócony przez polecenie `Connect-AzAccount` jest domyślnym kontekstem platformy Azure używanym przez pozostałą część sesji programu PowerShell.
 
@@ -47,11 +48,11 @@ $context = Get-Context -Name "mycontext"
 Nazwy kontekstów mogą być inne od nazwy skojarzonej subskrypcji.
 
 > [!IMPORTANT]
-> Dostępne konteksty platformy Azure to __nie zawsze są__ Twoje dostępne subskrypcje. Konteksty platformy Azure odzwierciedlają tylko lokalnie przechowywane informacje. Subskrypcje można pobrać przy użyciu polecenia cmdlet [Get-AzSubscription](/powershell/module/Az.Accounts/Get-AzSubscription?view=azps-1.8.0).
+> Dostępne konteksty platformy Azure to __nie zawsze są__ Twoje dostępne subskrypcje. Konteksty platformy Azure odzwierciedlają tylko lokalnie przechowywane informacje. Subskrypcje można pobrać przy użyciu polecenia cmdlet [Get-AzSubscription](/powershell/module/Az.Accounts/Get-AzSubscription).
 
 ## <a name="create-a-new-azure-context-from-subscription-information"></a>Tworzenie nowego kontekstu platformy Azure na podstawie informacji o subskrypcji
 
-Polecenie cmdlet [Set-AzContext](/powershell/module/Az.Accounts/Set-AzContext?view=azps-1.8.0) służy zarówno do tworzenia nowych kontekstów platformy Azure, jak i ustawiania ich jako aktywnego kontekstu.
+Polecenie cmdlet [Set-AzContext](/powershell/module/Az.Accounts/Set-AzContext) służy zarówno do tworzenia nowych kontekstów platformy Azure, jak i ustawiania ich jako aktywnego kontekstu.
 Najprostszy sposób na utworzenie nowego kontekstu platformy Azure to użycie informacji o istniejącej subskrypcji. Polecenie cmdlet ma za zadanie pobranie obiektu wyjściowego z polecenia `Get-AzSubscription` jako wartości w postaci potoku i skonfigurowanie nowego kontekstu platformy Azure:
 
 ```azurepowershell-interactive
@@ -68,7 +69,7 @@ Jeśli argument `-Name` zostanie pominięty, jako nazwa kontekstu będzie używa
 
 ## <a name="change-the-active-azure-context"></a>Zmienianie aktywnego kontekstu platformy Azure
 
-Aby zmienić aktywny kontekst platformy Azure, można użyć zarówno polecenia `Set-AzContext`, jak i [Select-AzContext](/powershell/module/az.accounts/set-azcontext?view=azps-1.8.0). Tak jak opisano w sekcji [Tworzenie nowego kontekstu platformy Azure](#create-a-new-azure-context-from-subscription-information), polecenie `Set-AzContext` tworzy nowy kontekst platformy Azure dla subskrypcji, jeśli taki nie istnieje, a następnie przełącza się na używanie tego kontekstu jako aktywnego.
+Aby zmienić aktywny kontekst platformy Azure, można użyć zarówno polecenia `Set-AzContext`, jak i [Select-AzContext](/powershell/module/az.accounts/set-azcontext). Tak jak opisano w sekcji [Tworzenie nowego kontekstu platformy Azure](#create-a-new-azure-context-from-subscription-information), polecenie `Set-AzContext` tworzy nowy kontekst platformy Azure dla subskrypcji, jeśli taki nie istnieje, a następnie przełącza się na używanie tego kontekstu jako aktywnego.
 
 Polecenie `Select-AzContext` powinno być używane tylko z istniejącymi kontekstami platformy Azure i działa podobnie do stosowania polecenia `Set-AzContext -Context`, ale jest przeznaczone do używania z potokowaniem:
 
@@ -134,7 +135,7 @@ Aby wyczyścić poświadczenia i konteksty platformy Azure:
   Możesz wylogować się z dowolnego konta według konta lub kontekstu:
 
   ```azurepowershell-interactive
-  Disconnect-AzAccount # Disconnect active account 
+  Disconnect-AzAccount # Disconnect active account
   Disconnect-AzAccount -Username "user@contoso.com" # Disconnect by account name
 
   Disconnect-AzAccount -ContextName "subscription2" # Disconnect by context name
@@ -144,7 +145,7 @@ Aby wyczyścić poświadczenia i konteksty platformy Azure:
   Rozłączenie zawsze powoduje usunięcie przechowywanych tokenów uwierzytelniania i wyczyszczenie zapisanych kontekstów skojarzonych z odłączonym użytkownikiem lub kontekstem.
 * Użyj polecenia [Clear-AzContext](/powershell/module/az.accounts/Clear-AzContext). To polecenie cmdlet zawsze gwarantuje usunięcie przechowywanych kontekstów i tokenów uwierzytelniania, a także wyloguje Cię.
 * Usuń kontekst za pomocą polecenia [Remove-AzContext](/powershell/module/az.accounts/remove-azcontext):
-  
+
   ```azurepowershell-interactive
   Remove-AzContext -Name "mycontext" # Remove by name
   Get-AzContext -Name "mycontext" | Remove-AzContext # Remove by piping Azure context object
