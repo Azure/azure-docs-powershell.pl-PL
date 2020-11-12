@@ -5,26 +5,27 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/21/2019
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 5d9028c0a433149c8f6cc346651bb8bf875bb42a
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.service: azure-powershell
+ms.openlocfilehash: b76e310e1677e539927ebc4746df67c1d1accc16
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92002387"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93407718"
 ---
-# <a name="run-azure-powershell-cmdlets-in-powershell-jobs"></a><span data-ttu-id="687f0-103">Uruchamianie poleceń cmdlet środowiska Azure PowerShell w zadaniach programu PowerShell</span><span class="sxs-lookup"><span data-stu-id="687f0-103">Run Azure PowerShell cmdlets in PowerShell Jobs</span></span>
+# <a name="run-azure-powershell-cmdlets-in-powershell-jobs"></a><span data-ttu-id="95143-103">Uruchamianie poleceń cmdlet środowiska Azure PowerShell w zadaniach programu PowerShell</span><span class="sxs-lookup"><span data-stu-id="95143-103">Run Azure PowerShell cmdlets in PowerShell Jobs</span></span>
 
-<span data-ttu-id="687f0-104">Środowisko Azure PowerShell polega na nawiązywaniu połączenia z chmurą platformy Azure i oczekiwaniu na odpowiedzi, dlatego większość tych poleceń cmdlet blokuje sesję programu PowerShell do czasu uzyskania odpowiedzi z chmury.</span><span class="sxs-lookup"><span data-stu-id="687f0-104">Azure PowerShell depends on connecting to an Azure cloud and waiting for responses, so most of these cmdlets block your PowerShell session until they get a response from the cloud.</span></span>
-<span data-ttu-id="687f0-105">Zadania programu PowerShell umożliwiają uruchamianie poleceń cmdlet w tle lub jednoczesne wykonywanie wielu zadań na platformie Azure w ramach jednej sesji programu PowerShell.</span><span class="sxs-lookup"><span data-stu-id="687f0-105">Powershell Jobs let you run cmdlets in the background or do multiple tasks on Azure at once, from inside a single PowerShell session.</span></span>
+<span data-ttu-id="95143-104">Środowisko Azure PowerShell polega na nawiązywaniu połączenia z chmurą platformy Azure i oczekiwaniu na odpowiedzi, dlatego większość tych poleceń cmdlet blokuje sesję programu PowerShell do czasu uzyskania odpowiedzi z chmury.</span><span class="sxs-lookup"><span data-stu-id="95143-104">Azure PowerShell depends on connecting to an Azure cloud and waiting for responses, so most of these cmdlets block your PowerShell session until they get a response from the cloud.</span></span>
+<span data-ttu-id="95143-105">Zadania programu PowerShell umożliwiają uruchamianie poleceń cmdlet w tle lub jednoczesne wykonywanie wielu zadań na platformie Azure w ramach jednej sesji programu PowerShell.</span><span class="sxs-lookup"><span data-stu-id="95143-105">Powershell Jobs let you run cmdlets in the background or do multiple tasks on Azure at once, from inside a single PowerShell session.</span></span>
 
-<span data-ttu-id="687f0-106">Ten artykuł zawiera krótkie omówienie sposobu uruchamiania poleceń cmdlet środowiska Azure PowerShell jako zadań programu PowerShell i sprawdzania, czy zostały one ukończone.</span><span class="sxs-lookup"><span data-stu-id="687f0-106">This article is a brief overview of how to run Azure PowerShell cmdlets as PowerShell Jobs and check for completion.</span></span> <span data-ttu-id="687f0-107">Uruchamianie poleceń w środowisku Azure PowerShell wymaga używania kontekstów środowiska Azure PowerShell, które szczegółowo opisano w sekcji [Poświadczenia logowania i konteksty platformy Azure](context-persistence.md).</span><span class="sxs-lookup"><span data-stu-id="687f0-107">Running commands in Azure PowerShell requires the use of Azure PowerShell contexts, which are covered in detail in [Azure contexts and sign-in credentials](context-persistence.md).</span></span>
-<span data-ttu-id="687f0-108">Aby dowiedzieć się więcej na temat zadań programu PowerShell, zobacz [Informacje o zadaniach programu PowerShell](/powershell/module/microsoft.powershell.core/about/about_jobs).</span><span class="sxs-lookup"><span data-stu-id="687f0-108">To learn more about PowerShell Jobs, see [About PowerShell Jobs](/powershell/module/microsoft.powershell.core/about/about_jobs).</span></span>
+<span data-ttu-id="95143-106">Ten artykuł zawiera krótkie omówienie sposobu uruchamiania poleceń cmdlet środowiska Azure PowerShell jako zadań programu PowerShell i sprawdzania, czy zostały one ukończone.</span><span class="sxs-lookup"><span data-stu-id="95143-106">This article is a brief overview of how to run Azure PowerShell cmdlets as PowerShell Jobs and check for completion.</span></span> <span data-ttu-id="95143-107">Uruchamianie poleceń w środowisku Azure PowerShell wymaga używania kontekstów środowiska Azure PowerShell, które szczegółowo opisano w sekcji [Poświadczenia logowania i konteksty platformy Azure](context-persistence.md).</span><span class="sxs-lookup"><span data-stu-id="95143-107">Running commands in Azure PowerShell requires the use of Azure PowerShell contexts, which are covered in detail in [Azure contexts and sign-in credentials](context-persistence.md).</span></span>
+<span data-ttu-id="95143-108">Aby dowiedzieć się więcej na temat zadań programu PowerShell, zobacz [Informacje o zadaniach programu PowerShell](/powershell/module/microsoft.powershell.core/about/about_jobs).</span><span class="sxs-lookup"><span data-stu-id="95143-108">To learn more about PowerShell Jobs, see [About PowerShell Jobs](/powershell/module/microsoft.powershell.core/about/about_jobs).</span></span>
 
-## <a name="azure-contexts-with-powershell-jobs"></a><span data-ttu-id="687f0-109">Konteksty platformy Azure z zadaniami programu PowerShell</span><span class="sxs-lookup"><span data-stu-id="687f0-109">Azure contexts with PowerShell jobs</span></span>
+## <a name="azure-contexts-with-powershell-jobs"></a><span data-ttu-id="95143-109">Konteksty platformy Azure z zadaniami programu PowerShell</span><span class="sxs-lookup"><span data-stu-id="95143-109">Azure contexts with PowerShell jobs</span></span>
 
-<span data-ttu-id="687f0-110">Zadania programu PowerShell są uruchamiane jako oddzielne procesy bez dołączonej sesji programu PowerShell, dlatego Twoje poświadczenia platformy Azure muszą być im udostępnione.</span><span class="sxs-lookup"><span data-stu-id="687f0-110">PowerShell Jobs are run as separate processes without an attached PowerShell session, so your Azure credentials must be shared with them.</span></span> <span data-ttu-id="687f0-111">Poświadczenia są przekazywane jako obiekty kontekstu platformy Azure przy użyciu jednej z tych metod:</span><span class="sxs-lookup"><span data-stu-id="687f0-111">Credentials are passed as Azure context objects, using one of these methods:</span></span>
+<span data-ttu-id="95143-110">Zadania programu PowerShell są uruchamiane jako oddzielne procesy bez dołączonej sesji programu PowerShell, dlatego Twoje poświadczenia platformy Azure muszą być im udostępnione.</span><span class="sxs-lookup"><span data-stu-id="95143-110">PowerShell Jobs are run as separate processes without an attached PowerShell session, so your Azure credentials must be shared with them.</span></span> <span data-ttu-id="95143-111">Poświadczenia są przekazywane jako obiekty kontekstu platformy Azure przy użyciu jednej z tych metod:</span><span class="sxs-lookup"><span data-stu-id="95143-111">Credentials are passed as Azure context objects, using one of these methods:</span></span>
 
-* <span data-ttu-id="687f0-112">Automatyczna trwałość kontekstu.</span><span class="sxs-lookup"><span data-stu-id="687f0-112">Automatic context persistence.</span></span> <span data-ttu-id="687f0-113">Trwałość kontekstu jest domyślnie włączona i zachowuje informacje logowania w wielu sesjach.</span><span class="sxs-lookup"><span data-stu-id="687f0-113">Context persistence is enabled by default and preserves your sign-in information across multiple sessions.</span></span> <span data-ttu-id="687f0-114">Po włączeniu trwałości kontekstu bieżący kontekst platformy Azure jest przenoszony do nowego procesu:</span><span class="sxs-lookup"><span data-stu-id="687f0-114">With context persistence enabled, the current Azure context is passed to the new process:</span></span>
+* <span data-ttu-id="95143-112">Automatyczna trwałość kontekstu.</span><span class="sxs-lookup"><span data-stu-id="95143-112">Automatic context persistence.</span></span> <span data-ttu-id="95143-113">Trwałość kontekstu jest domyślnie włączona i zachowuje informacje logowania w wielu sesjach.</span><span class="sxs-lookup"><span data-stu-id="95143-113">Context persistence is enabled by default and preserves your sign-in information across multiple sessions.</span></span> <span data-ttu-id="95143-114">Po włączeniu trwałości kontekstu bieżący kontekst platformy Azure jest przenoszony do nowego procesu:</span><span class="sxs-lookup"><span data-stu-id="95143-114">With context persistence enabled, the current Azure context is passed to the new process:</span></span>
 
   ```azurepowershell-interactive
   Enable-AzContextAutosave # Enables context autosave if not already on
@@ -32,7 +33,7 @@ ms.locfileid: "92002387"
   $job = Start-Job { param($vmadmin) New-AzVM -Name MyVm -Credential $vmadmin } -ArgumentList $creds
   ```
 
-* <span data-ttu-id="687f0-115">Użyj parametru `-AzContext` z dowolnymi poleceniami cmdlet środowiska Azure PowerShell, aby udostępnić obiekt kontekstu platformy Azure:</span><span class="sxs-lookup"><span data-stu-id="687f0-115">Use the `-AzContext` parameter with any Azure PowerShell cmdlets to provide an Azure context object:</span></span>
+* <span data-ttu-id="95143-115">Użyj parametru `-AzContext` z dowolnymi poleceniami cmdlet środowiska Azure PowerShell, aby udostępnić obiekt kontekstu platformy Azure:</span><span class="sxs-lookup"><span data-stu-id="95143-115">Use the `-AzContext` parameter with any Azure PowerShell cmdlets to provide an Azure context object:</span></span>
 
   ```azurepowershell-interactive
   $context = Get-AzContext -Name 'mycontext' # Get an Azure context object
@@ -40,20 +41,20 @@ ms.locfileid: "92002387"
   $job = Start-Job { param($context, $vmadmin) New-AzVM -Name MyVm -AzContext $context -Credential $vmadmin} -ArgumentList $context,$creds }
   ```
 
-  <span data-ttu-id="687f0-116">Jeśli trwałość kontekstu jest wyłączona, wymagany jest argument `-AzContext`.</span><span class="sxs-lookup"><span data-stu-id="687f0-116">If context persistence is disabled, the `-AzContext` argument is required.</span></span>
+  <span data-ttu-id="95143-116">Jeśli trwałość kontekstu jest wyłączona, wymagany jest argument `-AzContext`.</span><span class="sxs-lookup"><span data-stu-id="95143-116">If context persistence is disabled, the `-AzContext` argument is required.</span></span>
 
-* <span data-ttu-id="687f0-117">Użyj przełącznika `-AsJob` dostarczanego przez niektóre polecenia cmdlet środowiska Azure PowerShell.</span><span class="sxs-lookup"><span data-stu-id="687f0-117">Use the `-AsJob` switch provided by some Azure PowerShell cmdlets.</span></span> <span data-ttu-id="687f0-118">Ten przełącznik automatycznie uruchamia polecenie cmdlet jako zadanie programu PowerShell przy użyciu obecnie aktywnego kontekstu platformy Azure:</span><span class="sxs-lookup"><span data-stu-id="687f0-118">This switch automatically starts the cmdlet as a PowerShell Job, using the currently active Azure context:</span></span>
+* <span data-ttu-id="95143-117">Użyj przełącznika `-AsJob` dostarczanego przez niektóre polecenia cmdlet środowiska Azure PowerShell.</span><span class="sxs-lookup"><span data-stu-id="95143-117">Use the `-AsJob` switch provided by some Azure PowerShell cmdlets.</span></span> <span data-ttu-id="95143-118">Ten przełącznik automatycznie uruchamia polecenie cmdlet jako zadanie programu PowerShell przy użyciu obecnie aktywnego kontekstu platformy Azure:</span><span class="sxs-lookup"><span data-stu-id="95143-118">This switch automatically starts the cmdlet as a PowerShell Job, using the currently active Azure context:</span></span>
 
   ```azurepowershell-interactive
   $creds = Get-Credential
   $job = New-AzVM -Name MyVm -Credential $creds -AsJob
   ```
 
-  <span data-ttu-id="687f0-119">Aby sprawdzić, czy polecenie cmdlet obsługuje przełącznik `-AsJob`, zapoznaj się z jego dokumentacją referencyjną.</span><span class="sxs-lookup"><span data-stu-id="687f0-119">To see if a cmdlet supports `-AsJob`, check its reference documentation.</span></span> <span data-ttu-id="687f0-120">Przełącznik `-AsJob` nie wymaga, aby automatyczne zapisywanie kontekstu było włączone.</span><span class="sxs-lookup"><span data-stu-id="687f0-120">The `-AsJob` switch doesn't require context autosave to be enabled.</span></span>
+  <span data-ttu-id="95143-119">Aby sprawdzić, czy polecenie cmdlet obsługuje przełącznik `-AsJob`, zapoznaj się z jego dokumentacją referencyjną.</span><span class="sxs-lookup"><span data-stu-id="95143-119">To see if a cmdlet supports `-AsJob`, check its reference documentation.</span></span> <span data-ttu-id="95143-120">Przełącznik `-AsJob` nie wymaga, aby automatyczne zapisywanie kontekstu było włączone.</span><span class="sxs-lookup"><span data-stu-id="95143-120">The `-AsJob` switch doesn't require context autosave to be enabled.</span></span>
 
-<span data-ttu-id="687f0-121">Stan uruchomionego zadania można sprawdzić przy użyciu polecenia cmdlet [Get-Job](/powershell/module/microsoft.powershell.core/get-job).</span><span class="sxs-lookup"><span data-stu-id="687f0-121">You can check the status of a running job with the [Get-Job](/powershell/module/microsoft.powershell.core/get-job) cmdlet.</span></span> <span data-ttu-id="687f0-122">Aby pobrać dane wyjściowe z zadania do tej pory, użyj polecenia cmdlet [Receive-Job](/powershell/module/microsoft.powershell.core/receive-job).</span><span class="sxs-lookup"><span data-stu-id="687f0-122">To get the output from a job so far, use the [Receive-Job](/powershell/module/microsoft.powershell.core/receive-job) cmdlet.</span></span>
+<span data-ttu-id="95143-121">Stan uruchomionego zadania można sprawdzić przy użyciu polecenia cmdlet [Get-Job](/powershell/module/microsoft.powershell.core/get-job).</span><span class="sxs-lookup"><span data-stu-id="95143-121">You can check the status of a running job with the [Get-Job](/powershell/module/microsoft.powershell.core/get-job) cmdlet.</span></span> <span data-ttu-id="95143-122">Aby pobrać dane wyjściowe z zadania do tej pory, użyj polecenia cmdlet [Receive-Job](/powershell/module/microsoft.powershell.core/receive-job).</span><span class="sxs-lookup"><span data-stu-id="95143-122">To get the output from a job so far, use the [Receive-Job](/powershell/module/microsoft.powershell.core/receive-job) cmdlet.</span></span>
 
-<span data-ttu-id="687f0-123">Aby sprawdzić postęp operacji zdalnie na platformie Azure, użyj poleceń cmdlet `Get-` skojarzonych z typem zasobu modyfikowanym przez zadanie:</span><span class="sxs-lookup"><span data-stu-id="687f0-123">To check an operation's progress remotely on Azure, use the `Get-` cmdlets associated with the type of resource being modified by the job:</span></span>
+<span data-ttu-id="95143-123">Aby sprawdzić postęp operacji zdalnie na platformie Azure, użyj poleceń cmdlet `Get-` skojarzonych z typem zasobu modyfikowanym przez zadanie:</span><span class="sxs-lookup"><span data-stu-id="95143-123">To check an operation's progress remotely on Azure, use the `Get-` cmdlets associated with the type of resource being modified by the job:</span></span>
 
 ```azurepowershell-interactive
 $creds = Get-Credential
@@ -66,9 +67,9 @@ Get-Job $job
 Get-AzVM -Name $vmName
 ```
 
-## <a name="see-also"></a><span data-ttu-id="687f0-124">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="687f0-124">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="95143-124">Zobacz też</span><span class="sxs-lookup"><span data-stu-id="95143-124">See Also</span></span>
 
-* [<span data-ttu-id="687f0-125">Konteksty środowiska Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="687f0-125">Azure PowerShell contexts</span></span>](context-persistence.md)
-* [<span data-ttu-id="687f0-126">Informacje o zadaniach programu PowerShell</span><span class="sxs-lookup"><span data-stu-id="687f0-126">About PowerShell Jobs</span></span>](/powershell/module/microsoft.powershell.core/about/about_jobs)
-* [<span data-ttu-id="687f0-127">Dokumentacja polecenia Get-Job</span><span class="sxs-lookup"><span data-stu-id="687f0-127">Get-Job reference</span></span>](/powershell/module/microsoft.powershell.core/get-job)
-* [<span data-ttu-id="687f0-128">Dokumentacja polecenia Receive-Job</span><span class="sxs-lookup"><span data-stu-id="687f0-128">Receive-Job reference</span></span>](/powershell/module/microsoft.powershell.core/receive-job)
+* [<span data-ttu-id="95143-125">Konteksty środowiska Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="95143-125">Azure PowerShell contexts</span></span>](context-persistence.md)
+* [<span data-ttu-id="95143-126">Informacje o zadaniach programu PowerShell</span><span class="sxs-lookup"><span data-stu-id="95143-126">About PowerShell Jobs</span></span>](/powershell/module/microsoft.powershell.core/about/about_jobs)
+* [<span data-ttu-id="95143-127">Dokumentacja polecenia Get-Job</span><span class="sxs-lookup"><span data-stu-id="95143-127">Get-Job reference</span></span>](/powershell/module/microsoft.powershell.core/get-job)
+* [<span data-ttu-id="95143-128">Dokumentacja polecenia Receive-Job</span><span class="sxs-lookup"><span data-stu-id="95143-128">Receive-Job reference</span></span>](/powershell/module/microsoft.powershell.core/receive-job)
