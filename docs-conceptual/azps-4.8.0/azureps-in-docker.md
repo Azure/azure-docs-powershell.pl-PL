@@ -5,70 +5,71 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/20/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 2b487abeecbffa6cd8b7b64276ab301619348385
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.service: azure-powershell
+ms.openlocfilehash: 48935f15241ec965adf4c34d2c17aa670110585a
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "92002336"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93410166"
 ---
-# <a name="using-azure-powershell-in-docker"></a><span data-ttu-id="f02ea-103">Korzystanie z programu Azure PowerShell na platformie Docker</span><span class="sxs-lookup"><span data-stu-id="f02ea-103">Using Azure PowerShell in Docker</span></span>
+# <a name="using-azure-powershell-in-docker"></a><span data-ttu-id="57156-103">Korzystanie z programu Azure PowerShell na platformie Docker</span><span class="sxs-lookup"><span data-stu-id="57156-103">Using Azure PowerShell in Docker</span></span>
 
-<span data-ttu-id="f02ea-104">Publikujemy obrazy platformy Docker z wstępnie zainstalowanym programem Azure PowerShell.</span><span class="sxs-lookup"><span data-stu-id="f02ea-104">We are publishing Docker images with Azure PowerShell preinstalled.</span></span> <span data-ttu-id="f02ea-105">W tym artykule pokazano, jak rozpocząć korzystanie z programu Azure PowerShell w kontenerze platformy Docker.</span><span class="sxs-lookup"><span data-stu-id="f02ea-105">This article shows you how to get started using Azure PowerShell in the Docker container.</span></span>
+<span data-ttu-id="57156-104">Publikujemy obrazy platformy Docker z wstępnie zainstalowanym programem Azure PowerShell.</span><span class="sxs-lookup"><span data-stu-id="57156-104">We are publishing Docker images with Azure PowerShell preinstalled.</span></span> <span data-ttu-id="57156-105">W tym artykule pokazano, jak rozpocząć korzystanie z programu Azure PowerShell w kontenerze platformy Docker.</span><span class="sxs-lookup"><span data-stu-id="57156-105">This article shows you how to get started using Azure PowerShell in the Docker container.</span></span>
 
-## <a name="finding-available-images"></a><span data-ttu-id="f02ea-106">Znajdowanie dostępnych obrazów</span><span class="sxs-lookup"><span data-stu-id="f02ea-106">Finding available images</span></span>
+## <a name="finding-available-images"></a><span data-ttu-id="57156-106">Znajdowanie dostępnych obrazów</span><span class="sxs-lookup"><span data-stu-id="57156-106">Finding available images</span></span>
 
-<span data-ttu-id="f02ea-107">Wydane obrazy wymagają platformy Docker 17.05 lub nowszej.</span><span class="sxs-lookup"><span data-stu-id="f02ea-107">The released images require Docker 17.05 or newer.</span></span> <span data-ttu-id="f02ea-108">Oczekuje się również, że możesz uruchomić platformę Docker bez użycia polecenia `sudo` ani lokalnych uprawnień administracyjnych.</span><span class="sxs-lookup"><span data-stu-id="f02ea-108">It is also expected that you are able to run Docker without `sudo` or local administrative rights.</span></span> <span data-ttu-id="f02ea-109">Skorzystaj z oficjalnych [instrukcji][install], aby poprawnie zainstalować platformę `docker`.</span><span class="sxs-lookup"><span data-stu-id="f02ea-109">Please follow Docker's official [instructions][install] to install `docker` correctly.</span></span>
+<span data-ttu-id="57156-107">Wydane obrazy wymagają platformy Docker 17.05 lub nowszej.</span><span class="sxs-lookup"><span data-stu-id="57156-107">The released images require Docker 17.05 or newer.</span></span> <span data-ttu-id="57156-108">Oczekuje się również, że możesz uruchomić platformę Docker bez użycia polecenia `sudo` ani lokalnych uprawnień administracyjnych.</span><span class="sxs-lookup"><span data-stu-id="57156-108">It is also expected that you are able to run Docker without `sudo` or local administrative rights.</span></span> <span data-ttu-id="57156-109">Skorzystaj z oficjalnych [instrukcji][install], aby poprawnie zainstalować platformę `docker`.</span><span class="sxs-lookup"><span data-stu-id="57156-109">Please follow Docker's official [instructions][install] to install `docker` correctly.</span></span>
 
-<span data-ttu-id="f02ea-110">Najnowszy obraz kontenera zawiera najnowszą wersję programu PowerShell i najnowsze moduły Azure PowerShell obsługiwane przez moduł Az.</span><span class="sxs-lookup"><span data-stu-id="f02ea-110">The latest container image contains the latest version of PowerShell and the latest Azure PowerShell modules supported with the Az module.</span></span>
+<span data-ttu-id="57156-110">Najnowszy obraz kontenera zawiera najnowszą wersję programu PowerShell i najnowsze moduły Azure PowerShell obsługiwane przez moduł Az.</span><span class="sxs-lookup"><span data-stu-id="57156-110">The latest container image contains the latest version of PowerShell and the latest Azure PowerShell modules supported with the Az module.</span></span>
 
-<span data-ttu-id="f02ea-111">Z każdą nową wersją modułu Az wydajemy obraz dla następujących systemów operacyjnych:</span><span class="sxs-lookup"><span data-stu-id="f02ea-111">For each new release of the Az module we are releasing an image for the following operating systems:</span></span>
+<span data-ttu-id="57156-111">Z każdą nową wersją modułu Az wydajemy obraz dla następujących systemów operacyjnych:</span><span class="sxs-lookup"><span data-stu-id="57156-111">For each new release of the Az module we are releasing an image for the following operating systems:</span></span>
 
-- <span data-ttu-id="f02ea-112">Ubuntu 18.04 (domyślny)</span><span class="sxs-lookup"><span data-stu-id="f02ea-112">Ubuntu 18.04 (default)</span></span>
-- <span data-ttu-id="f02ea-113">Debian 9</span><span class="sxs-lookup"><span data-stu-id="f02ea-113">Debian 9</span></span>
-- <span data-ttu-id="f02ea-114">CentOS 7</span><span class="sxs-lookup"><span data-stu-id="f02ea-114">CentOs 7</span></span>
+- <span data-ttu-id="57156-112">Ubuntu 18.04 (domyślny)</span><span class="sxs-lookup"><span data-stu-id="57156-112">Ubuntu 18.04 (default)</span></span>
+- <span data-ttu-id="57156-113">Debian 9</span><span class="sxs-lookup"><span data-stu-id="57156-113">Debian 9</span></span>
+- <span data-ttu-id="57156-114">CentOS 7</span><span class="sxs-lookup"><span data-stu-id="57156-114">CentOs 7</span></span>
 
-<span data-ttu-id="f02ea-115">Pełną listę dostępnych obrazów można znaleźć na naszej stronie [obrazów platformy Docker][az image].</span><span class="sxs-lookup"><span data-stu-id="f02ea-115">A full list of available images can be found on our [Docker image][az image] page.</span></span>
+<span data-ttu-id="57156-115">Pełną listę dostępnych obrazów można znaleźć na naszej stronie [obrazów platformy Docker][az image].</span><span class="sxs-lookup"><span data-stu-id="57156-115">A full list of available images can be found on our [Docker image][az image] page.</span></span>
 
-## <a name="using-azure-powershell-in-a-container"></a><span data-ttu-id="f02ea-116">Korzystanie z programu Azure PowerShell w kontenerze</span><span class="sxs-lookup"><span data-stu-id="f02ea-116">Using Azure PowerShell in a container</span></span>
+## <a name="using-azure-powershell-in-a-container"></a><span data-ttu-id="57156-116">Korzystanie z programu Azure PowerShell w kontenerze</span><span class="sxs-lookup"><span data-stu-id="57156-116">Using Azure PowerShell in a container</span></span>
 
-<span data-ttu-id="f02ea-117">Poniższe kroki pokazują polecenia platformy Docker wymagane do pobrania obrazu i uruchomienia interaktywnej sesji programu PowerShell.</span><span class="sxs-lookup"><span data-stu-id="f02ea-117">The following steps show the Docker commands required to download the image and start an interactive PowerShell session.</span></span>
+<span data-ttu-id="57156-117">Poniższe kroki pokazują polecenia platformy Docker wymagane do pobrania obrazu i uruchomienia interaktywnej sesji programu PowerShell.</span><span class="sxs-lookup"><span data-stu-id="57156-117">The following steps show the Docker commands required to download the image and start an interactive PowerShell session.</span></span>
 
-1. <span data-ttu-id="f02ea-118">Pobierz najnowszy obraz azure-powershell.</span><span class="sxs-lookup"><span data-stu-id="f02ea-118">Download the latest azure-powershell image.</span></span>
+1. <span data-ttu-id="57156-118">Pobierz najnowszy obraz azure-powershell.</span><span class="sxs-lookup"><span data-stu-id="57156-118">Download the latest azure-powershell image.</span></span>
 
    ```console
    docker pull mcr.microsoft.com/azure-powershell
    ```
 
-1. <span data-ttu-id="f02ea-119">Uruchom kontener azure-powershell w trybie interaktywnym:</span><span class="sxs-lookup"><span data-stu-id="f02ea-119">Run the azure-powershell container in interactive mode:</span></span>
+1. <span data-ttu-id="57156-119">Uruchom kontener azure-powershell w trybie interaktywnym:</span><span class="sxs-lookup"><span data-stu-id="57156-119">Run the azure-powershell container in interactive mode:</span></span>
 
    ```console
    docker run -it mcr.microsoft.com/azure-powershell pwsh
    ```
 
-<span data-ttu-id="f02ea-120">W przypadku hostów platformy Docker z systemem Windows musisz włączyć udostępnianie plików platformy Docker, aby umożliwić udostępnienie lokalnych dysków systemu Windows dla kontenerów z systemem Linux.</span><span class="sxs-lookup"><span data-stu-id="f02ea-120">For Windows Docker hosts, you must enable Docker File Sharing to allow local drives on Windows to be shared with Linux containers.</span></span> <span data-ttu-id="f02ea-121">Aby uzyskać więcej informacji, zobacz [Wprowadzenie do programu Docker for Windows][file-sharing].</span><span class="sxs-lookup"><span data-stu-id="f02ea-121">For more information see [Get started with Docker for Windows][file-sharing].</span></span>
+<span data-ttu-id="57156-120">W przypadku hostów platformy Docker z systemem Windows musisz włączyć udostępnianie plików platformy Docker, aby umożliwić udostępnienie lokalnych dysków systemu Windows dla kontenerów z systemem Linux.</span><span class="sxs-lookup"><span data-stu-id="57156-120">For Windows Docker hosts, you must enable Docker File Sharing to allow local drives on Windows to be shared with Linux containers.</span></span> <span data-ttu-id="57156-121">Aby uzyskać więcej informacji, zobacz [Wprowadzenie do programu Docker for Windows][file-sharing].</span><span class="sxs-lookup"><span data-stu-id="57156-121">For more information see [Get started with Docker for Windows][file-sharing].</span></span>
 
-### <a name="run-the-azure-powershell-container-interactively-using-host-authentication"></a><span data-ttu-id="f02ea-122">Interaktywne uruchamianie kontenera azure-powershell przy użyciu uwierzytelniania hosta</span><span class="sxs-lookup"><span data-stu-id="f02ea-122">Run the azure-powershell container interactively using host authentication</span></span>
+### <a name="run-the-azure-powershell-container-interactively-using-host-authentication"></a><span data-ttu-id="57156-122">Interaktywne uruchamianie kontenera azure-powershell przy użyciu uwierzytelniania hosta</span><span class="sxs-lookup"><span data-stu-id="57156-122">Run the azure-powershell container interactively using host authentication</span></span>
 
-<span data-ttu-id="f02ea-123">Jeśli w systemie hostującym platformę Docker jest już zainstalowany program Azure PowerShell, być może masz buforowane poświadczenia platformy Azure.</span><span class="sxs-lookup"><span data-stu-id="f02ea-123">If you have Azure PowerShell already installed on the system hosting Docker, you may have cached Azure credentials.</span></span> <span data-ttu-id="f02ea-124">Tych poświadczeń można używać w sesji programu PowerShell działającej w kontenerze platformy Docker.</span><span class="sxs-lookup"><span data-stu-id="f02ea-124">These credentials can be used in the PowerShell session running in the Docker container.</span></span>
+<span data-ttu-id="57156-123">Jeśli w systemie hostującym platformę Docker jest już zainstalowany program Azure PowerShell, być może masz buforowane poświadczenia platformy Azure.</span><span class="sxs-lookup"><span data-stu-id="57156-123">If you have Azure PowerShell already installed on the system hosting Docker, you may have cached Azure credentials.</span></span> <span data-ttu-id="57156-124">Tych poświadczeń można używać w sesji programu PowerShell działającej w kontenerze platformy Docker.</span><span class="sxs-lookup"><span data-stu-id="57156-124">These credentials can be used in the PowerShell session running in the Docker container.</span></span>
 
-<span data-ttu-id="f02ea-125">Domyślnie buforowane poświadczenia znajdują się w katalogu `$HOME/.Azure` na hoście.</span><span class="sxs-lookup"><span data-stu-id="f02ea-125">By default, the cached credentials are in `$HOME/.Azure` directory on your host.</span></span> <span data-ttu-id="f02ea-126">Usługa Docker musi mieć dostęp do tej lokalizacji, aby uzyskać dostęp do poświadczeń.</span><span class="sxs-lookup"><span data-stu-id="f02ea-126">The Docker service must have access to this location to access the credentials.</span></span> <span data-ttu-id="f02ea-127">Następujące polecenie uruchamia kontener z zainstalowaną pamięcią podręczną poświadczeń i uruchamia interaktywną sesję programu PowerShell.</span><span class="sxs-lookup"><span data-stu-id="f02ea-127">The following command starts the container with the credential cache mounted and starts an interactive PowerShell session.</span></span>
+<span data-ttu-id="57156-125">Domyślnie buforowane poświadczenia znajdują się w katalogu `$HOME/.Azure` na hoście.</span><span class="sxs-lookup"><span data-stu-id="57156-125">By default, the cached credentials are in `$HOME/.Azure` directory on your host.</span></span> <span data-ttu-id="57156-126">Usługa Docker musi mieć dostęp do tej lokalizacji, aby uzyskać dostęp do poświadczeń.</span><span class="sxs-lookup"><span data-stu-id="57156-126">The Docker service must have access to this location to access the credentials.</span></span> <span data-ttu-id="57156-127">Następujące polecenie uruchamia kontener z zainstalowaną pamięcią podręczną poświadczeń i uruchamia interaktywną sesję programu PowerShell.</span><span class="sxs-lookup"><span data-stu-id="57156-127">The following command starts the container with the credential cache mounted and starts an interactive PowerShell session.</span></span>
 
 ```console
 docker run -it -v ~/.Azure/AzureRmContext.json:/root/.Azure/AzureRmContext.json -v ~/.Azure/TokenCache.dat:/root/.Azure/TokenCache.dat mcr.microsoft.com/azure-powershell pwsh
 ```
 
-### <a name="remove-the-image-when-no-longer-needed"></a><span data-ttu-id="f02ea-128">Usuwanie obrazu, gdy nie jest już konieczny</span><span class="sxs-lookup"><span data-stu-id="f02ea-128">Remove the image when no longer needed</span></span>
+### <a name="remove-the-image-when-no-longer-needed"></a><span data-ttu-id="57156-128">Usuwanie obrazu, gdy nie jest już konieczny</span><span class="sxs-lookup"><span data-stu-id="57156-128">Remove the image when no longer needed</span></span>
 
-<span data-ttu-id="f02ea-129">Następujące polecenie służy do usuwania kontenera platformy Docker, gdy nie jest już potrzebny.</span><span class="sxs-lookup"><span data-stu-id="f02ea-129">The following command is used to delete the Docker container when you no longer need it.</span></span>
+<span data-ttu-id="57156-129">Następujące polecenie służy do usuwania kontenera platformy Docker, gdy nie jest już potrzebny.</span><span class="sxs-lookup"><span data-stu-id="57156-129">The following command is used to delete the Docker container when you no longer need it.</span></span>
 
 ```console
 docker rmi mcr.microsoft.com/azure-powershell
 ```
 
-## <a name="next-steps"></a><span data-ttu-id="f02ea-130">Następne kroki</span><span class="sxs-lookup"><span data-stu-id="f02ea-130">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="57156-130">Następne kroki</span><span class="sxs-lookup"><span data-stu-id="57156-130">Next steps</span></span>
 
-<span data-ttu-id="f02ea-131">Aby dowiedzieć się więcej o modułach programu Azure PowerShell i ich funkcjach, zobacz [Rozpoczynanie pracy z programem Azure PowerShell](get-started-azureps.md).</span><span class="sxs-lookup"><span data-stu-id="f02ea-131">To learn more about the Azure PowerShell modules and their features, see [Get Started with Azure PowerShell](get-started-azureps.md).</span></span>
+<span data-ttu-id="57156-131">Aby dowiedzieć się więcej o modułach programu Azure PowerShell i ich funkcjach, zobacz [Rozpoczynanie pracy z programem Azure PowerShell](get-started-azureps.md).</span><span class="sxs-lookup"><span data-stu-id="57156-131">To learn more about the Azure PowerShell modules and their features, see [Get Started with Azure PowerShell](get-started-azureps.md).</span></span>
 
 <!-- link references -->
 [install]: https://docs.docker.com/engine/installation/
