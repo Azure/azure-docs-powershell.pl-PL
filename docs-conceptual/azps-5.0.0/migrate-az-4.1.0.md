@@ -5,12 +5,13 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/23/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: c64541beb5eb0d3db38932fb3915de865919641b
-ms.sourcegitcommit: b4a38bcb0501a9016a4998efd377aa75d3ef9ce8
+ms.service: azure-powershell
+ms.openlocfilehash: fe4a2a7c2f1b171b530eef41ac072b2029be1026
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92753881"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93410047"
 ---
 # <a name="migration-guide-for-az-410"></a>Przewodnik migracji modułu Az 4.1.0
 

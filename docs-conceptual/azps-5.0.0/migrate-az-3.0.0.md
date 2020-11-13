@@ -5,12 +5,13 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 727a74ef9cd0f6e1bf93b65c4776816c1aa23334
-ms.sourcegitcommit: b4a38bcb0501a9016a4998efd377aa75d3ef9ce8
+ms.service: azure-powershell
+ms.openlocfilehash: 641804fc0931d29f082ef7057f610beb75d7550a
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92753953"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93410030"
 ---
 # <a name="migration-guide-for-az-300"></a>Przewodnik migracji modułu Az 3.0.0
 

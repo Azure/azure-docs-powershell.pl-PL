@@ -5,12 +5,13 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/24/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 55d7cc06178257a9288e2d27f810d1180369ddc4
-ms.sourcegitcommit: b4a38bcb0501a9016a4998efd377aa75d3ef9ce8
+ms.service: azure-powershell
+ms.openlocfilehash: 5fdb8543630198d141d42626dc3a8b85f0bcdaa7
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92753965"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93410234"
 ---
 # <a name="manage-azure-resources-with-invoke-azrestmethod"></a>Zarządzanie zasobami platformy Azure przy użyciu polecenia Invoke-AzRestMethod
 
@@ -72,7 +73,7 @@ Invoke-AzRestMethod @patchParams
 
 Właściwość `Payload` jest ciągiem JSON, który pokazuje ścieżkę właściwości do zmodyfikowania.
 
-Wszystkie parametry tego interfejsu API są opisane w skojarzonym z nim pliku **rest-api-spec** .
+Wszystkie parametry tego interfejsu API są opisane w skojarzonym z nim pliku **rest-api-spec**.
 Konkretną definicję parametru publicNetworkAccess można znaleźć w [pliku JSON rejestru kontenerów](https://github.com/Azure/azure-rest-api-specs/blob/2a9da9a79d0a7b74089567ec4f0289f3e0f31bec/specification/containerregistry/resource-manager/Microsoft.ContainerRegistry/preview/2019-12-01-preview/containerregistry.json) dla wersji 2019-12-01-preview interfejsu API.
 
 Aby zezwolić na dostęp do rejestru tylko z określonego adresu IP, należy zmodyfikować ładunek tak, jak pokazano w następującym przykładzie:

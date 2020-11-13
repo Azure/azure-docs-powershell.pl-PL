@@ -5,12 +5,13 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/15/2019
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 2929d7ebaf26e069b12c5b6451e333255ae740af
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.service: azure-powershell
+ms.openlocfilehash: c6880e4c09339ec6a3e192480fde9e1f85cbca5f
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89244334"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93409503"
 ---
 # <a name="azure-powershell-release-notes"></a>Informacje o wersji programu Azure PowerShell
 ## <a name="280---october-2019"></a>2.8.0 — październik 2019 r.
@@ -135,10 +136,10 @@ ms.locfileid: "89244334"
 #### <a name="azmonitor"></a>Az.Monitor
 * Wskazanie najnowszego zestawu Monitor SDK, tj. 0.24.1-preview
    - Dodaje zmiany niepowodujące niezgodności do poleceń cmdlet metryk, tj. wyliczenie Unit obsługuje kilka nowych wartości. Są to polecenia cmdlet tylko do odczytu, więc nie będzie żadnych zmian w danych wejściowych tych poleceń cmdlet.
-   - Wartość api-version żądań **ActionGroups** to teraz **2019-06-01**, wcześniej było to **2018-03-01**. Testy scenariusza zostały zaktualizowane w celu dostosowania do tej zmiany.
-   - Konstruktory dla klas **EmailReceiver** i **WebhookReceiver** dodały jeden nowy argument obowiązkowy, tj. wartość logiczną o nazwie **useCommonAlertSchema**. Obecnie wartość ta jest stała i równa **false**, aby ukryć tę zmianę powodującą niezgodność przed poleceniami cmdlet. **UWAGA**: Jest to tymczasowa zmiana, która musi być zweryfikowana przez zespół ds. alertów.
-   - Kolejność argumentów konstruktora klasy **Source** (powiązanej z klasą **ScheduledQueryRuleSource**) zmieniła się od poprzedniego zestawu SDK. Ta zmiana wymaga naprawienia dwóch testów jednostkowych: kompilowały się, ale nie przechodziły testów.
-   - Kolejność argumentów konstruktora klasy **AlertingAction** (powiązanej z klasą **ScheduledQueryRuleSource**) została zmieniona od poprzedniego zestawu SDK. Ta zmiana wymaga naprawienia dwóch testów jednostkowych: kompilowały się, ale nie przechodziły testów.
+   - Wartość api-version żądań **ActionGroups** to teraz **2019-06-01** , wcześniej było to **2018-03-01**. Testy scenariusza zostały zaktualizowane w celu dostosowania do tej zmiany.
+   - Konstruktory dla klas **EmailReceiver** i **WebhookReceiver** dodały jeden nowy argument obowiązkowy, tj. wartość logiczną o nazwie **useCommonAlertSchema**. Obecnie wartość ta jest stała i równa **false** , aby ukryć tę zmianę powodującą niezgodność przed poleceniami cmdlet. **UWAGA** : Jest to tymczasowa zmiana, która musi być zweryfikowana przez zespół ds. alertów.
+   - Kolejność argumentów konstruktora klasy **Source** (powiązanej z klasą **ScheduledQueryRuleSource** ) zmieniła się od poprzedniego zestawu SDK. Ta zmiana wymaga naprawienia dwóch testów jednostkowych: kompilowały się, ale nie przechodziły testów.
+   - Kolejność argumentów konstruktora klasy **AlertingAction** (powiązanej z klasą **ScheduledQueryRuleSource** ) została zmieniona od poprzedniego zestawu SDK. Ta zmiana wymaga naprawienia dwóch testów jednostkowych: kompilowały się, ale nie przechodziły testów.
 * Obsługa kryteriów progu dynamicznego dla alertu metryki w wersji 2
     - New-AzMetricAlertRuleV2Criteria: teraz tworzy kryteria progów dynamicznych
     - Add-AzMetricAlertRuleV2: teraz akceptuje kryteria progów dynamicznych
@@ -722,7 +723,7 @@ ms.locfileid: "89244334"
     - Dodano obsługę włączania flagi „EnableClientCertificate” dla jednostek SKU „Zużycie”
     - Nowe polecenie cmdlet **New-AzApiManagementSslSetting** umożliwia skonfigurowanie ustawienia „TLS/SSL” na „Zaplecze” i „Fronton”. Za jego pomocą można też skonfigurować szyfrowanie, takie jak „3DES”, i protokoły serwera, takie jak „Http2”we frontonie usługi ApiManagement.
     - Dodano obsługę konfigurowania nazwy hosta „DeveloperPortal” usługi ApiManagement.
-* Zaktualizowano polecenia cmdlet **Get-AzApiManagementSsoToken**, aby przyjmowały jako wejście obiekt „PsApiManagement”
+* Zaktualizowano polecenia cmdlet **Get-AzApiManagementSsoToken** , aby przyjmowały jako wejście obiekt „PsApiManagement”
 * Zaktualizowano polecenie cmdlet, aby wyświetlało komunikaty o błędach śródwierszowo
      > PS D:\github\azure-powershell> Set-AzApiManagementPolicy -Context  -PolicyFilePath C:\wrongpolicy.xml -ApiId httpbin Set-AzApiManagementPolicy : Kod błędu: Komunikat o błędzie ValidationError: Co najmniej jedno pole zawiera nieprawidłową wartość: Szczegóły błędu:    [Code=ValidationError, Message=Błąd w elemencie „log-to-eventhub” w wierszu 3, kolumna 10: Nie znaleziono rejestratora, element docelowy=log-to-eventhub]
 * Zaktualizowano polecenie cmdlet **Export-AzApiManagementApi** tak, aby eksportowało interfejsy API w formacie „OpenApi 3.0”

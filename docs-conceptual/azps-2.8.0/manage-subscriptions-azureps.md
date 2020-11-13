@@ -5,12 +5,13 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/04/2019
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: cfe5833bd8bbfac53f65695f8bdfbd7b946a8852
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.service: azure-powershell
+ms.openlocfilehash: a8fa4e04d316b48a6d7c6f6c496504727fd2aaf3
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89244079"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93410421"
 ---
 # <a name="use-multiple-azure-subscriptions"></a>Korzystanie z wielu subskrypcji platformy Azure
 
@@ -21,7 +22,7 @@ Aby uzyskać szczegółowe informacje o subskrypcjach, rozliczeniach i zarządza
 ## <a name="tenants-users-and-subscriptions"></a>Dzierżawy, użytkownicy i subskrypcje
 
 Rozpoznanie różnic między dzierżawami, użytkownikami i subskrypcjami w obrębie platformy Azure może być trudne. _Dzierżawa_ to jednostka usługi Azure Active Directory, która obejmuje całą organizację. Ta dzierżawa ma co najmniej jedną _subskrypcję_ i jednego _użytkownika_. Użytkownik to osoba skojarzona z tylko jedną dzierżawą — organizacją, do której należy. Użytkownicy to konta, które logują się do platformy Azure w celu tworzenia zasobów, korzystania z nich i zarządzania nimi.
-Użytkownik może mieć dostęp do wielu _subskrypcji_, które są umowami z firmą Microsoft na korzystanie z usług w chmurze, w tym z platformy Azure. Każdy zasób jest skojarzony z subskrypcją.
+Użytkownik może mieć dostęp do wielu _subskrypcji_ , które są umowami z firmą Microsoft na korzystanie z usług w chmurze, w tym z platformy Azure. Każdy zasób jest skojarzony z subskrypcją.
 
 Aby dowiedzieć się więcej na temat różnic między dzierżawami, użytkownikami i subskrypcjami, zobacz [Słownik terminologii dotyczący chmury Azure](/azure/azure-glossary-cloud-terminology).  Aby dowiedzieć się, jak dodać nową subskrypcję do dzierżawy usługi Azure Active Directory, zobacz [Jak dodać subskrypcję platformy Azure do katalogu usługi Azure Active Directory](/azure/active-directory/active-directory-how-subscriptions-associated-directory).
 Aby dowiedzieć się, jak zalogować się do określonej dzierżawy, zobacz [Logowanie się za pomocą programu Azure PowerShell](/powershell/azure/authenticate-azureps).

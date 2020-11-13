@@ -1,16 +1,17 @@
 ---
 title: Rozpoczynanie pracy z programem Azure PowerShell
-description: ''
+description: Rozpoczynanie pracy z programem Azure PowerShell
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 04/24/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 6281ac5f6ec8941e0d5c1755f90f99552db9aa92
-ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
+ms.service: azure-powershell
+ms.openlocfilehash: 68b2b50afdd2dc79bdbd8f8b203a7cd3664c4973
+ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89240764"
+ms.lasthandoff: 11/06/2020
+ms.locfileid: "93409231"
 ---
 # <a name="get-started-with-azure-powershell"></a>Rozpoczynanie pracy z programem Azure PowerShell
 
@@ -33,7 +34,7 @@ Zaloguj się interakcyjnie za pomocą polecenia cmdlet [Connect-AzAccount](/powe
 Connect-AzAccount
 ```
 
-Usługi w chmurze platformy Azure oferują środowiska zgodne z regionalnymi przepisami dotyczącymi obsługi danych. W przypadku kont w chmurze regionalnej użyj parametru **Environment**, aby się zalogować. Uzyskaj nazwę środowiska dla swojego regionu, używając polecenia cmdlet [Get-AzEnvironment](/powershell/module/Az.Accounts/Get-AzEnvironment).
+Usługi w chmurze platformy Azure oferują środowiska zgodne z regionalnymi przepisami dotyczącymi obsługi danych. W przypadku kont w chmurze regionalnej użyj parametru **Environment** , aby się zalogować. Uzyskaj nazwę środowiska dla swojego regionu, używając polecenia cmdlet [Get-AzEnvironment](/powershell/module/Az.Accounts/Get-AzEnvironment).
 Aby na przykład zalogować się do platformy Azure w Chinach — 21Vianet:
 
 ```azurepowershell-interactive
