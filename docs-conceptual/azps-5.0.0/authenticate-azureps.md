@@ -3,15 +3,15 @@ title: Logowanie się w programie Azure PowerShell
 description: Jak zalogować się w programie Azure PowerShell jako użytkownik albo za pomocą jednostki usługi lub tożsamości zarządzanych dla zasobów platformy Azure.
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 7/7/2020
+ms.date: 11/23/2020
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: 2ec432ae2823bb59f32ca7801a44a9da48db9fac
-ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
+ms.openlocfilehash: a5bff1a5c22d5cd93cc3548a470e123daf5e129e
+ms.sourcegitcommit: 25eca7b5f5480758aa2cd830458900cf91cf673c
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93407667"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95515079"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Logowanie się w programie Azure PowerShell
 
@@ -31,7 +31,7 @@ Aby zalogować się interakcyjnie, skorzystaj z polecenia cmdlet [Connect-AzAcco
 Connect-AzAccount
 ```
 
-W przypadku uruchomienia w programie PowerShell w wersji 6 lub nowszej to polecenie cmdlet przedstawia ciąg tokenu. Aby się zalogować, skopiuj ten ciąg i wklej go w witrynie [microsoft.com/devicelogin](https://microsoft.com/devicelogin) otwartej w przeglądarce internetowej. Sesja programu PowerShell zostanie uwierzytelniona na potrzeby połączenia z platformą Azure. Możesz podać parametr `UseDeviceAuthentication`, aby otrzymać ciąg tokenu w programie Windows PowerShell.
+Począwszy od wersji 5.0.0 modułu Az programu PowerShell, to polecenie cmdlet domyślnie wyświetla interakcyjny monit logowania oparty na przeglądarce. Możesz określić parametr `UseDeviceAuthentication`, aby otrzymać ciąg tokenu, który był wcześniej używany domyślnie w programie PowerShell 6 i jego nowszych wersjach.
 
 > [!IMPORTANT]
 > Autoryzacja poświadczenia nazwy użytkownika/hasła została usunięta z programu Azure PowerShell z powodu zmian implementacji autoryzacji usługi Active Directory i zagadnień związanych z bezpieczeństwem. Jeśli używasz autoryzacji poświadczeń do celów automatyzacji, w zamian [utwórz jednostkę usługi](create-azure-service-principal-azureps.md).
