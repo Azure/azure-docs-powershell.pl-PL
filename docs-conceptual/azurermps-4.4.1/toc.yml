@@ -6,15 +6,15 @@
       href: install-azurerm-ps.md
     - name: Instalowanie przy użyciu pliku MSI lub instalatora WebPI
       href: other-install.md
-- name: Rozpoczynanie pracy
+- name: Rozpoczęcie pracy
   href: get-started-azureps.md
 - name: Cloud Shell
-  href: 'https://docs.microsoft.com/azure/cloud-shell/overview'
+  href: /azure/cloud-shell/overview
 - name: Logowanie
   items:
     - name: Metody uwierzytelniania
       href: authenticate-azureps.md
-    - name: Tworzenie jednostki usługi
+    - name: Tworzenie nazwy głównej usługi
       href: create-azure-service-principal-azureps.md
     - name: Poświadczenia trwałe
       href: context-persistence.md
