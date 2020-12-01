@@ -19,11 +19,11 @@
     - name: Zmiany między narzędziami AzureRM i Az
       href: migrate-az-1.0.0.md
       displayName: 'breaking, cmdlet, module, names'
-- name: Rozpoczynanie pracy
+- name: Rozpoczęcie pracy
   href: get-started-azureps.md
   displayName: 'sign in, signin, log in, login, find, feedback, intro, introduction'
 - name: Cloud Shell
-  href: 'https://docs.microsoft.com/azure/cloud-shell/overview'
+  href: /azure/cloud-shell/overview
 - name: Program Azure PowerShell na platformie Docker
   href: azureps-in-docker.md
 - name: Logowanie
@@ -31,7 +31,7 @@
     - name: Metody uwierzytelniania
       href: authenticate-azureps.md
       displayName: 'sign in, signin, log in, login, credentials, msi, managed identity, tenant, subscription, region, certificate, service principal, authenticate'
-    - name: Tworzenie jednostki usługi
+    - name: Tworzenie nazwy głównej usługi
       href: create-azure-service-principal-azureps.md
       displayName: 'automation, application, web app, script, certificate, sign in, signin, log in, login, devops, dev ops, itpro, it pro, role, aad, authentication, authenticate'
     - name: Konteksty poświadczeń
