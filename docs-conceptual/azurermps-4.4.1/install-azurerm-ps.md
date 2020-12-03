@@ -5,12 +5,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 3f4b05352ef5e5c7f32495d002a78aadd3e056e1
-ms.sourcegitcommit: 038cb42a3bd8c009bc57c8c1c252e66fa170c84b
+ms.openlocfilehash: c4aa030a7d95f5b22ceeff9438af506ced5c8cb5
+ms.sourcegitcommit: 071b8c40c837ed4b2d65ce778339110d9e0899ab
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92523295"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96428044"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>Instalowanie programu Azure PowerShell w systemie Windows za pomocą modułu PowerShellGet
 
@@ -149,7 +149,7 @@ Zgodnie z treścią komunikatu o błędzie trzeba zainstalować moduł, podając
 Install-Module -Name AzureRM -AllowClobber
 ```
 
-Aby uzyskać więcej informacji, zobacz temat pomocy dotyczący parametru [Install-Module](https://msdn.microsoft.com/powershell/reference/5.1/PowerShellGet/install-module).
+Aby uzyskać więcej informacji, zobacz temat pomocy dotyczący parametru [Install-Module](/powershell/module/powershellget/install-module).
 
 ### <a name="installing-module-versions-side-by-side"></a>Instalowanie wersji modułu obok siebie
 
@@ -167,7 +167,7 @@ Import-Module -Name AzureRM -RequiredVersion 2.3.0
 ```
 
 > [!NOTE]
-> Wersja 2.1.0 i wersja 1.2.6 to pierwsze wersje modułu przeznaczone do instalacji i używania obok siebie. Załadowanie starszej wersji programu Azure PowerShell powoduje załadowanie niezgodnych wersji modułu **AzureRM.Profile** . W wyniku tego każde wykonanie polecenia cmdlet powoduje wyświetlenie polecenia cmdlet z monitem o zalogowanie się.
+> Wersja 2.1.0 i wersja 1.2.6 to pierwsze wersje modułu przeznaczone do instalacji i używania obok siebie. Załadowanie starszej wersji programu Azure PowerShell powoduje załadowanie niezgodnych wersji modułu **AzureRM.Profile**. W wyniku tego każde wykonanie polecenia cmdlet powoduje wyświetlenie polecenia cmdlet z monitem o zalogowanie się.
 
 ### <a name="other-installation-methods"></a>Inne metody instalacji
 

@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 03/10/2020
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: 966b6ef2fe8e0a52cf230520015e1a92cd29fe1a
-ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
+ms.openlocfilehash: 382883b6a3d6915697b7954e4346613a04a6b870
+ms.sourcegitcommit: 071b8c40c837ed4b2d65ce778339110d9e0899ab
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93410183"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96427653"
 ---
 # <a name="azure-powershell-release-notes"></a>Informacje o wersji programu Azure PowerShell
 
@@ -116,7 +116,7 @@ ms.locfileid: "93410183"
 
 ## <a name="0100-preview---april-2020"></a>0.10.0-preview — kwiecień 2020 r.
 ### <a name="general"></a>Ogólne
-* Moduły Az są teraz dostępne w wersji zapoznawczej w usłudze Azure Stack Hub. Pozwala to na uzyskanie zgodności między wieloma platformami w przypadku systemów Linux i macOS. Usługa Azure Stack Hub obsługuje teraz program PowerShell Core z modułami Az; więcej informacji znajduje się [tutaj](https://aka.ms/az4AzureStack)
+* Moduły Az są teraz dostępne w wersji zapoznawczej w usłudze Azure Stack Hub. Pozwala to na uzyskanie zgodności między wieloma platformami w przypadku systemów Linux i macOS. Usługa Azure Stack Hub obsługuje teraz program PowerShell Core z modułami Az; więcej informacji znajduje się [tutaj](/azure-stack/operator/powershell-install-az-module)
 * Moduły Az obsługują profil 2019-03-01-hybrid:
   - Az.Billing
   - Az.Compute
@@ -131,7 +131,7 @@ ms.locfileid: "93410183"
   - Az.Websites
 * Wprowadzono trzy nowe moduły programu PowerShell dla modułu Az, które działają w usłudze Azure Stack Hub: Az.Databox, Az.IotHub i Az.EventHub
 * Polecenia pozostają w zasadzie takie same, wprowadzono tylko niewielkie zmiany, np. zmieniono ciąg AzureRM na Az
-* Zaktualizowany link do dokumentacji programu PowerShell dla usługi Azure Stack Hub można znaleźć [tutaj](https://aka.ms/InstallASHPowerShell)
+* Zaktualizowany link do dokumentacji programu PowerShell dla usługi Azure Stack Hub można znaleźć [tutaj](/azure-stack/operator/powershell-install-az-module)
 
 ## <a name="370---march-2020"></a>3.7.0 — marzec 2020 r.
 #### <a name="azaccounts"></a>Az.Accounts
@@ -679,7 +679,7 @@ Naprawiono polecenie cmdlet New-AzSqlDatabaseSecondary, aby sprawdzało istnieni
     - Pliki zasobów oparte na elemencie `StorageContainerUrl` pobierają kontener określony w adresie URL do węzła usługi Batch.
 * Usunięto właściwość `ApplicationPackages` elementu `PSApplication` zwracaną przez polecenie cmdlet **Get-AzBatchApplication**.
   - Określone pakiety wewnątrz aplikacji można teraz pobrać przy użyciu polecenia cmdlet **Get-AzBatchApplicationPackage**. Na przykład: `Get-AzBatchApplication -AccountName myaccount -ResourceGroupName myresourcegroup -ApplicationId myapplication`.
-* Zmieniono nazwę właściwości `ApplicationId` na `ApplicationName` w poleceniach cmdlet **Get-AzBatchApplicationPackage** , **New-AzBatchApplicationPackage** , **Remove-AzBatchApplicationPackage** , **Get-AzBatchApplication** , **New-AzBatchApplication** , **Remove-AzBatchApplication** i **Set-AzBatchApplication**.
+* Zmieniono nazwę właściwości `ApplicationId` na `ApplicationName` w poleceniach cmdlet **Get-AzBatchApplicationPackage**, **New-AzBatchApplicationPackage**, **Remove-AzBatchApplicationPackage**, **Get-AzBatchApplication**, **New-AzBatchApplication**, **Remove-AzBatchApplication** i **Set-AzBatchApplication**.
   - `ApplicationId` teraz jest aliasem `ApplicationName`.
 * Dodano nową właściwość `PSWindowsUserConfiguration` do klasy `PSUserAccount`.
 * Zmieniono nazwę właściwości `Version` na `Name` w klasie `PSApplicationPackage`.
@@ -690,7 +690,7 @@ Naprawiono polecenie cmdlet New-AzSqlDatabaseSecondary, aby sprawdzało istnieni
 * Zmieniono nazwę właściwości `CurrentOSVersion` na `OSVersion` w klasie `PSCloudServiceConfiguration`.
 * Usunięto właściwości `DataEgressGiB` i `DataIngressGiB` z klasy `PSPoolUsageMetrics`.
 * Usunięto polecenie cmdlet **Get-AzBatchNodeAgentSku** i zastąpiono je poleceniem cmdlet **Get-AzBatchSupportedImage**.
-  - Polecenie cmdlet **Get-AzBatchSupportedImage** zwraca te same dane co polecenie cmdlet **Get-AzBatchNodeAgentSku** , ale w bardziej przyjaznym formacie.
+  - Polecenie cmdlet **Get-AzBatchSupportedImage** zwraca te same dane co polecenie cmdlet **Get-AzBatchNodeAgentSku**, ale w bardziej przyjaznym formacie.
   - Teraz są również zwracane nowe obrazy niezweryfikowane. Uwzględniono również dodatkowe informacje na temat właściwości `Capabilities` i `BatchSupportEndOfLife` dla każdego obrazu.
 * Dodano możliwość instalowania zdalnych systemów plików na każdym węźle puli za pośrednictwem nowego parametru `MountConfiguration` polecenia cmdlet **New-AzBatchPool**.
 * Teraz obsługiwane są reguły zabezpieczeń sieciowych blokujące dostęp sieciowy do puli na podstawie portu źródłowego ruchu. Jest to realizowane za pomocą właściwości `SourcePortRanges` w klasie `PSNetworkSecurityGroupRule`.
@@ -988,10 +988,10 @@ Naprawiono polecenie cmdlet New-AzSqlDatabaseSecondary, aby sprawdzało istnieni
 #### <a name="azmonitor"></a>Az.Monitor
 * Wskazanie najnowszego zestawu Monitor SDK, tj. 0.24.1-preview
    - Dodaje zmiany niepowodujące niezgodności do poleceń cmdlet metryk, tj. wyliczenie Unit obsługuje kilka nowych wartości. Są to polecenia cmdlet tylko do odczytu, więc nie będzie żadnych zmian w danych wejściowych tych poleceń cmdlet.
-   - Wartość api-version żądań **ActionGroups** to teraz **2019-06-01** , wcześniej było to **2018-03-01**. Testy scenariusza zostały zaktualizowane w celu dostosowania do tej zmiany.
-   - Konstruktory dla klas **EmailReceiver** i **WebhookReceiver** dodały jeden nowy argument obowiązkowy, tj. wartość logiczną o nazwie **useCommonAlertSchema**. Obecnie wartość ta jest stała i równa **false** , aby ukryć tę zmianę powodującą niezgodność przed poleceniami cmdlet. **UWAGA** : Jest to tymczasowa zmiana, która musi być zweryfikowana przez zespół ds. alertów.
-   - Kolejność argumentów konstruktora klasy **Source** (powiązanej z klasą **ScheduledQueryRuleSource** ) zmieniła się od poprzedniego zestawu SDK. Ta zmiana wymaga naprawienia dwóch testów jednostkowych: kompilowały się, ale nie przechodziły testów.
-   - Kolejność argumentów konstruktora klasy **AlertingAction** (powiązanej z klasą **ScheduledQueryRuleSource** ) została zmieniona od poprzedniego zestawu SDK. Ta zmiana wymaga naprawienia dwóch testów jednostkowych: kompilowały się, ale nie przechodziły testów.
+   - Wartość api-version żądań **ActionGroups** to teraz **2019-06-01**, wcześniej było to **2018-03-01**. Testy scenariusza zostały zaktualizowane w celu dostosowania do tej zmiany.
+   - Konstruktory dla klas **EmailReceiver** i **WebhookReceiver** dodały jeden nowy argument obowiązkowy, tj. wartość logiczną o nazwie **useCommonAlertSchema**. Obecnie wartość ta jest stała i równa **false**, aby ukryć tę zmianę powodującą niezgodność przed poleceniami cmdlet. **UWAGA**: Jest to tymczasowa zmiana, która musi być zweryfikowana przez zespół ds. alertów.
+   - Kolejność argumentów konstruktora klasy **Source** (powiązanej z klasą **ScheduledQueryRuleSource**) zmieniła się od poprzedniego zestawu SDK. Ta zmiana wymaga naprawienia dwóch testów jednostkowych: kompilowały się, ale nie przechodziły testów.
+   - Kolejność argumentów konstruktora klasy **AlertingAction** (powiązanej z klasą **ScheduledQueryRuleSource**) została zmieniona od poprzedniego zestawu SDK. Ta zmiana wymaga naprawienia dwóch testów jednostkowych: kompilowały się, ale nie przechodziły testów.
 * Obsługa kryteriów progu dynamicznego dla alertu metryki w wersji 2
     - New-AzMetricAlertRuleV2Criteria: teraz tworzy kryteria progów dynamicznych
     - Add-AzMetricAlertRuleV2: teraz akceptuje kryteria progów dynamicznych
@@ -1575,7 +1575,7 @@ Naprawiono polecenie cmdlet New-AzSqlDatabaseSecondary, aby sprawdzało istnieni
     - Dodano obsługę włączania flagi „EnableClientCertificate” dla jednostek SKU „Zużycie”
     - Nowe polecenie cmdlet **New-AzApiManagementSslSetting** umożliwia skonfigurowanie ustawienia „TLS/SSL” na „Zaplecze” i „Fronton”. Za jego pomocą można też skonfigurować szyfrowanie, takie jak „3DES”, i protokoły serwera, takie jak „Http2”we frontonie usługi ApiManagement.
     - Dodano obsługę konfigurowania nazwy hosta „DeveloperPortal” usługi ApiManagement.
-* Zaktualizowano polecenia cmdlet **Get-AzApiManagementSsoToken** , aby przyjmowały jako wejście obiekt „PsApiManagement”
+* Zaktualizowano polecenia cmdlet **Get-AzApiManagementSsoToken**, aby przyjmowały jako wejście obiekt „PsApiManagement”
 * Zaktualizowano polecenie cmdlet, aby wyświetlało komunikaty o błędach śródwierszowo
      > PS D:\github\azure-powershell> Set-AzApiManagementPolicy -Context  -PolicyFilePath C:\wrongpolicy.xml -ApiId httpbin Set-AzApiManagementPolicy : Kod błędu: Komunikat o błędzie ValidationError: Co najmniej jedno pole zawiera nieprawidłową wartość: Szczegóły błędu:    [Code=ValidationError, Message=Błąd w elemencie „log-to-eventhub” w wierszu 3, kolumna 10: Nie znaleziono rejestratora, element docelowy=log-to-eventhub]
 * Zaktualizowano polecenie cmdlet **Export-AzApiManagementApi** tak, aby eksportowało interfejsy API w formacie „OpenApi 3.0”
@@ -1714,7 +1714,7 @@ Naprawiono polecenie cmdlet New-AzSqlDatabaseSecondary, aby sprawdzało istnieni
     - Set-AzScheduledQueryRule
     - Update-AzScheduledQueryRule
     - Remove-AzScheduledQueryRule
-    - [Więcej](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules) informacji na temat interfejsu API SQR
+    - [Więcej](/rest/api/monitor/scheduledqueryrules) informacji na temat interfejsu API SQR
     - Zaktualizowano plik Az.Monitor.md w celu uwzględnienia poleceń cmdlet dla reguły alertu opartej na metryce GenV2 (nieklasycznej)
 
 #### <a name="aznetwork"></a>Az.Network

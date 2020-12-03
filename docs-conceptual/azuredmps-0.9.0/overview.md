@@ -9,15 +9,15 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 09/26/2018
-ms.openlocfilehash: 306d67c85e8721ee2e88613645b3eece4c48de45
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 6023ff16593f89bd4f5a382f1d3e6815ff54a2e4
+ms.sourcegitcommit: 071b8c40c837ed4b2d65ce778339110d9e0899ab
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "68861115"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96427857"
 ---
 # <a name="overview-of-azure-deployment-manager"></a>Omówienie usługi Azure Deployment Manager
 
 Usługa Deployment Manager pozwala na stosowanie praktyk bezpiecznego wdrażania podczas wdrażania usługi w wielu regionach.
 
-Usługa Azure Deployment Manager jest w publicznej wersji zapoznawczej. Aby dowiedzieć się, jak zarejestrować się w wersji zapoznawczej i używać usługi Azure Deployment Manager, zobacz [Włączanie praktyk bezpiecznego wdrażania w usłudze Azure Deployment Manager](https://docs.microsoft.com/azure/azure-resource-manager/deployment-manager-overview). Aby skorzystać z samouczka, zobacz [Używanie usługi Azure Deployment Manager z szablonami usługi Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/deployment-manager-tutorial).
+Usługa Azure Deployment Manager jest w publicznej wersji zapoznawczej. Aby dowiedzieć się, jak zarejestrować się w wersji zapoznawczej i używać usługi Azure Deployment Manager, zobacz [Włączanie praktyk bezpiecznego wdrażania w usłudze Azure Deployment Manager](/azure/azure-resource-manager/deployment-manager-overview). Aby skorzystać z samouczka, zobacz [Używanie usługi Azure Deployment Manager z szablonami usługi Resource Manager](/azure/azure-resource-manager/deployment-manager-tutorial).
