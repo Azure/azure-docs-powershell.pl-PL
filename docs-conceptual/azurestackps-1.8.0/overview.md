@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 02/24/2020
-ms.openlocfilehash: ec406c80de6b457f7e340a23fe8caf2ab83be46a
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: e19fea440025e7a00a037e360ac95ff8e0e62129
+ms.sourcegitcommit: 071b8c40c837ed4b2d65ce778339110d9e0899ab
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "78264414"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96428014"
 ---
 # <a name="azure-stack-module-180"></a>Moduł usługi Azure Stack w wersji 1.8.0
 
@@ -21,7 +21,7 @@ ms.locfileid: "78264414"
 
 Minimalna obsługiwana wersja usługi Azure Stack to 1910.
 
-Uwaga: Aby użyć starszych wersji usługi Azure Stack, zobacz [Instalowanie programu Azure Stack PowerShell](https://docs.microsoft.com/azure/azure-stack/azure-stack-powershell-install#install-azure-stack-powershell)
+Uwaga: Aby użyć starszych wersji usługi Azure Stack, zobacz [Instalowanie programu Azure Stack PowerShell](/azure/azure-stack/azure-stack-powershell-install#install-azure-stack-powershell)
 
 ## <a name="install"></a>Instalowanie
 
@@ -40,7 +40,7 @@ Install-Module -Name AzureStack -RequiredVersion 1.8.0
 ## <a name="release-notes"></a>Informacje o wersji
 
 * Obsługiwane z aktualizacją 1910
-* Zmiany obejmują:
+* Zmiany te obejmują:
 
     - **Nowy moduł administracyjny dostawcy DRP**: Dostawca Deployment Resource Provider (DRP) umożliwia zorganizowane wdrożenia dostawców zasobów w usłudze Azure Stack Hub. Te polecenia współpracują z warstwą Azure Resource Manager w celu interakcji z dostawcą DRP.
 
