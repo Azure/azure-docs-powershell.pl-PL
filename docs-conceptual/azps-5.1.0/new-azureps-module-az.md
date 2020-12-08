@@ -6,12 +6,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: a3b74531ff71ed0e9ac473831b71efb6f29d6e66
-ms.sourcegitcommit: 7887e040bdeb2f55c035a3169cd0d9d807ab186e
+ms.openlocfilehash: d922affd608ebfce41f9608ec82d565d6afe9f7f
+ms.sourcegitcommit: 3ef9f7f6c20af98282a0499b1527c291ee54011b
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96536548"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "96617723"
 ---
 # <a name="introducing-the-azure-az-powershell-module"></a>Wprowadzenie do modułu Az programu Azure PowerShell
 
@@ -77,7 +77,7 @@ Jeśli skrypty nadal są oparte na module AzureRM, udostępniamy kilka zasobów 
 
 Moduł Az to najnowszy moduł programu PowerShell dla platformy Azure. Problemy lub żądania funkcji można rejestrować bezpośrednio w [repozytorium GitHub](https://github.com/Azure/azure-powershell) lub za pośrednictwem pomocy technicznej firmy Microsoft, jeśli masz umowę pomocy technicznej. Żądania funkcji zostaną zaimplementowane w najnowszej wersji modułu Az. Krytyczne problemy zostaną zaimplementowane w dwóch najnowszych wersjach modułu Az.
 
-W module AzureRM nie będą już wprowadzane nowe polecenia cmdlet ani funkcje. Jednak moduł AzureRM jest nadal oficjalnie obsługiwany i będzie otrzymywać krytyczne poprawki do lutego 2020 r.
+W module AzureRM nie będą już wprowadzane nowe polecenia cmdlet ani funkcje. Jednak moduł AzureRM jest nadal oficjalnie obsługiwany i będzie otrzymywać krytyczne poprawki do lutego 2021 r.
 
 ## <a name="data-collection"></a>Zbieranie danych
 
