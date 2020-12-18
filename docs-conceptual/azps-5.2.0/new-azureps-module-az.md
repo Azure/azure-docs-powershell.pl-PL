@@ -6,12 +6,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: d922affd608ebfce41f9608ec82d565d6afe9f7f
-ms.sourcegitcommit: 04221336bc9eed46c05ed1e828a6811534d4b4ab
+ms.openlocfilehash: 9021a1d8fdc73aedb87b17631f8e67cb8ef79166
+ms.sourcegitcommit: a6d92493a8d1b81b85f4db2a38f271134be5e6c5
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96856683"
+ms.lasthandoff: 12/12/2020
+ms.locfileid: "97353856"
 ---
 # <a name="introducing-the-azure-az-powershell-module"></a>Wprowadzenie do modułu Az programu Azure PowerShell
 
@@ -34,16 +34,17 @@ Moduł Az programu PowerShell oferuje następujące korzyści:
 
 * Bezpieczeństwo i stabilność
   * Szyfrowanie pamięci podręcznej tokenów
-  * Obsługa usługi ADFS 2019
-  * Mechanizm zabezpieczeń uniemożliwiający ataki typu man-in-the-middle
+  * Zapobieganie atakom typu man-in-the-middle
+  * Obsługa uwierzytelniania za pomocą usługi ADFS 2019
+  * Uwierzytelnianie za pomocą nazwy użytkownika i hasła w programie PowerShell 7
   * Obsługa funkcji, takich jak ciągła weryfikacja dostępu (dostępna w 2021 r.)
 * Obsługa wszystkich usług platformy Azure
-  * Moduł jest dostępny dla każdej usługi platformy Azure
+  * Wszystkie ogólnie dostępne usługi platformy Azure mają odpowiadający im obsługiwany moduł programu PowerShell
   * Wiele poprawek usterek i uaktualnień wersji interfejsu API od czasu modułu AzureRM
-* Kilka dodatkowych nowych funkcji
+* Nowe możliwości
   * Obsługa w usłudze Cloud Shell i na wielu platformach
   * Możliwość uzyskania token dostępu i używania go w celu uzyskiwania dostępu do zasobów platformy Azure
-  * Ogólne polecenie cmdlet modułu Az dla operacji typu wyjście awaryjne
+  * Dostępne polecenie cmdlet do zaawansowanych operacji REST dla zasobów platformy Azure
 
 > [!NOTE]
 > Program PowerShell w wersji 7 lub nowszej jest zalecaną wersją programu PowerShell do używania z modułem Az programu PowerShell na wszystkich platformach.
