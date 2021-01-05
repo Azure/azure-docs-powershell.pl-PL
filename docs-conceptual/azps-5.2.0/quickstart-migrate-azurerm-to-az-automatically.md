@@ -6,20 +6,17 @@ ms.service: azure-powershell
 ms.topic: quickstart
 ms.custom: devx-track-azurepowershell
 ms.author: mirobb
-ms.date: 12/10/2020
-ms.openlocfilehash: 6752fa0376c2f8887511455f56add0859f8961c8
-ms.sourcegitcommit: 076ff98abc48e072eb1727532817487bac7507c6
+ms.date: 12/18/2020
+ms.openlocfilehash: 3a26dfbb89f83a9d1983ea8d69cd47c9f74eab38
+ms.sourcegitcommit: dd90c54d8794109fa7984543649bb3faa0cbb544
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97488533"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97701301"
 ---
 # <a name="quickstart-automatically-migrate-powershell-scripts-from-azurerm-to-the-az-powershell-module"></a>Szybki start: Automatyczne migrowanie skryptów programu PowerShell z modułu AzureRM do Az programu PowerShell
 
-W tym artykule dowiesz się, jak przeprowadzić automatyczne uaktualnienie skryptów programu PowerShell i modułów skryptów z modułu AzureRM do Az programu PowerShell za pomocą modułu Az.Tools.Migration programu PowerShell.
-
-> [!IMPORTANT]
-> Moduł Az.Tools.Migration programu PowerShell jest obecnie w publicznej wersji zapoznawczej. Ta wersja zapoznawcza jest dostępna bez umowy dotyczącej poziomu usług. Nie jest ona zalecana w przypadku obciążeń produkcyjnych. Niektóre funkcje mogą być nieobsługiwane lub ograniczone. Aby uzyskać więcej informacji, zobacz [Uzupełniające warunki korzystania z wersji zapoznawczych platformy Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+W tym artykule dowiesz się, jak przeprowadzić automatyczne uaktualnienie skryptów programu PowerShell i modułów skryptów z modułu AzureRM do Az programu PowerShell za pomocą modułu Az.Tools.Migration programu PowerShell. Aby uzyskać dodatkowe opcje migracji, zobacz [Migrowanie programu Azure PowerShell z modułu AzureRM do modułu Az](/powershell/azure/migrate-from-azurerm-to-az).
 
 ## <a name="requirements"></a>Wymagania
 
