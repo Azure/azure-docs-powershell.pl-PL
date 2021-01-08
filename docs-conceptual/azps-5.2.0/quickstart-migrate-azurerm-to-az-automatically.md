@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.custom: devx-track-azurepowershell
 ms.author: mirobb
 ms.date: 12/18/2020
-ms.openlocfilehash: 3a26dfbb89f83a9d1983ea8d69cd47c9f74eab38
-ms.sourcegitcommit: dd90c54d8794109fa7984543649bb3faa0cbb544
+ms.openlocfilehash: 57218c130f172bc359334b83db16e5790fa5562c
+ms.sourcegitcommit: 68451baa389791703e666d95469602c5652609ee
 ms.translationtype: HT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97701301"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97893332"
 ---
 # <a name="quickstart-automatically-migrate-powershell-scripts-from-azurerm-to-the-az-powershell-module"></a>Szybki start: Automatyczne migrowanie skryptów programu PowerShell z modułu AzureRM do Az programu PowerShell
 
@@ -38,7 +38,7 @@ Poniższy przykład generuje plan dla wszystkich skryptów w folderze _`C:\Scrip
 
 ```powershell
 # Generate an upgrade plan for all the scripts and module files in the specified folder and save it to a variable.
-New-AzUpgradeModulePlan -FromAzureRmVersion 6.13.1 -ToAzVersion 4.6.1 -DirectoryPath 'C:\Scripts' -OutVariable Plan
+New-AzUpgradeModulePlan -FromAzureRmVersion 6.13.1 -ToAzVersion 5.2.0 -DirectoryPath 'C:\Scripts' -OutVariable Plan
 ```
 
 Jak pokazano w poniższych danych wyjściowych, plan uaktualniania określa plik i punkty przesunięcia, które wymagają zmian podczas przechodzenia z modułu AzureRM do poleceń cmdlet modułu Az programu PowerShell.
@@ -76,7 +76,7 @@ Przed uaktualnieniem należy wyświetlić wyniki planu, aby sprawdzić je pod k�
 $Plan | Where-Object PlanResult -ne ReadyToUpgrade | Format-List
 ```
 
-Elementy widoczne w następujących danych wyjściowych nie zostaną uaktualnione automatycznie bez uprzedniego skorygowania problemów w sposób ręczny. Znane problemy uniemożliwiające uaktualnianie automatyczne obejmują wszelkie polecenia, które używają tworzenia pakietów.
+Elementy widoczne w następujących danych wyjściowych nie zostaną uaktualnione automatycznie bez uprzedniego skorygowania problemów w sposób ręczny.
 
 ```Output
 Order                  : 42
@@ -158,10 +158,9 @@ Replacement            :
 
 ## <a name="limitations"></a>Ograniczenia
 
-* Automatyczne aktualizacje nazw parametrów w zestawach parametrów nie są obsługiwane. W przypadku znalezienia takiego zestawu podczas generowania planu uaktualniania zostanie zwrócone ostrzeżenie.
 * Operacje We/Wy na plikach używają domyślnego kodowania. Nietypowe kodowanie plików może powodować problemy.
 * Polecenia cmdlet modułu AzureRM przekazane jako argumenty do pozornych instrukcji testu jednostkowego usługi Pester nie są wykrywane.
-* Obecnie jako element docelowy jest obsługiwany tylko moduł Az programu PowerShell w wersji 4.6.1.
+* Obecnie jako element docelowy jest obsługiwany tylko moduł Az programu PowerShell w wersji 5.2.0.
 
 ## <a name="how-to-report-issues"></a>Jak zgłaszać problemy
 
