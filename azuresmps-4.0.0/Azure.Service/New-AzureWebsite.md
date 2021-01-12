@@ -3,12 +3,12 @@ external help file: Microsoft.WindowsAzure.Commands.dll-Help.xml
 ms.assetid: FBB55071-454D-4473-93BA-D97F33067785
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: 0f83489d21fba97bb50145de1fedc1ac9a7195a1
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: 768eff2dda32c6dfa0bad14f028338d3c5fa1abd
+ms.sourcegitcommit: 87730c7ea4f98f628d3fe1b40aa4a9d2885e1c75
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "94055150"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98110482"
 ---
 # New-AzureWebsite
 
@@ -19,7 +19,7 @@ Utwórz nową witrynę sieci Web do uruchamiania na platformie Azure.
 
 ```
 New-AzureWebsite [-Location <String>] [-Hostname <String>] [-PublishingUsername <String>] [-Git] [-GitHub]
- [-GithubCredentials <PSCredential>] [-GithubRepository <String>] [-Name <String>] [-Slot <String>]
+ [-GitHubCredentials <PSCredential>] [-GitHubRepository <String>] [-Name <String>] [-Slot <String>]
  [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
 
@@ -40,7 +40,7 @@ W tym przykładzie jest tworzona nowa witryna sieci Web na platformie Azure oraz
 
 ### Przykład 2: Tworzenie witryny sieci Web zintegrowanej z usługą GitHub
 ```
-PS C:\> New-AzureWebsite mysite -Github -GithubRepository myaccount/myrepo
+PS C:\> New-AzureWebsite mysite -GitHub -GitHubRepository myaccount/myrepo
 ```
 
 W tym przykładzie jest tworzona nowa witryna sieci Web połączona z repozytorium GitHub o nazwie Moje konto/moje repozytorium.
@@ -80,7 +80,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -GithubCredentials
+### -GitHubCredentials
 Określa poświadczenia nazwy użytkownika i hasła w celu nawiązania połączenia z usługą GitHub.
 
 ```yaml
@@ -95,7 +95,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -GithubRepository
+### -GitHubRepository
 Określa pełną nazwę repozytorium GitHub, które ma zostać połączone z tą witryną internetową.
 Na przykład `myaccount/myrepo` .
 
