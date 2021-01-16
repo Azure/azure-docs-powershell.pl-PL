@@ -1,0 +1,102 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Compute.dll-Help.xml
+Module Name: Az.Compute
+online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/remove-azvmssvmdatadisk
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Remove-AzVmssVMDataDisk.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Remove-AzVmssVMDataDisk.md
+ms.openlocfilehash: 534b565e7fc77b1c8764b372675a7d8c4674b571
+ms.sourcegitcommit: 04221336bc9eed46c05ed1e828a6811534d4b4ab
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "98355321"
+---
+# Remove-AzVmssVMDataDisk
+
+## STRESZCZENIe
+Usuwa dysk danych z zestawu skali maszyny wirtualnej
+
+## POLECENIA
+
+```
+Remove-AzVmssVMDataDisk [-VirtualMachineScaleSetVM] <PSVirtualMachineScaleSetVM> [-Lun] <Int32>
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## Opis
+Polecenie cmdlet **Remove-AzVmssVMDataDisk** usuwa dysk danych z maszyny wirtualnej zestawu skali maszyny wirtualnej
+
+## Przykłady
+
+### Przykład 1: usuwanie dysku danych z maszyny wirtualnej zestawu skali maszyny wirtualnej
+```powershell
+PS C:\> $VmssVM = Get-AzVmssVM -ResourceGroupName "myrg" -VMScaleSetName "myvmss" -InstanceId 0 
+PS C:\> Remove-AzVmssVMDataDisk -VM $VirtualMachine -Lun 0
+PS C:\> Update-AzVmssVM -VirtualMachineScaleSetVM $VmssVM
+```
+
+Pierwsze polecenie getsan istniejącą maszynę wirtualną VMSS określoną przez nazwę grupy zasobów, nazwę VMSS i identyfikator wystąpienia.
+Drugie polecenie usuwa z dysku dane numer LUN 0 z maszyny wirtualnej zestawu Skala maszyn wirtualnych przechowywanej w $VmssVM polecenie końcowe aktualizuje VMSS maszyny wirtualnej z usuniętym dyskiem danych.
+
+## PARAMETRÓW
+
+### -DefaultProfile
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -LUN
+Określa numer jednostki logicznej dysku.
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -VirtualMachineScaleSetVM
+Skala maszyny wirtualnej ustawiona na profil maszyny wirtualnej.
+
+```yaml
+Type: Microsoft.Azure.Commands.Compute.Automation.Models.PSVirtualMachineScaleSetVM
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### CommonParameters
+To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+
+## WEJŚCIOWE
+
+### Microsoft. Azure. Commands. COMPUTE. Automation. MODELES. PSVirtualMachineScaleSetVM
+
+## WYSYŁA
+
+### Microsoft. Azure. Commands. COMPUTE. Automation. MODELES. PSVirtualMachineScaleSetVM
+
+## INFORMACYJN
+
+## LINKI POKREWNE
