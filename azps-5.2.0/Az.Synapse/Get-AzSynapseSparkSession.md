@@ -1,0 +1,181 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Synapse.dll-Help.xml
+Module Name: Az.Synapse
+online version: https://docs.microsoft.com/en-us/powershell/module/az.synapse/get-azsynapsesparksession
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Synapse/Synapse/help/Get-AzSynapseSparkSession.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Synapse/Synapse/help/Get-AzSynapseSparkSession.md
+ms.openlocfilehash: 587183d72c6fdeec965f1ec1aa6aa88f5d6f36f9
+ms.sourcegitcommit: 04221336bc9eed46c05ed1e828a6811534d4b4ab
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 12/08/2020
+ms.locfileid: "98359452"
+---
+# <span data-ttu-id="88230-101">Get-AzSynapseSparkSession</span><span class="sxs-lookup"><span data-stu-id="88230-101">Get-AzSynapseSparkSession</span></span>
+
+## <span data-ttu-id="88230-102">STRESZCZENIe</span><span class="sxs-lookup"><span data-stu-id="88230-102">SYNOPSIS</span></span>
+<span data-ttu-id="88230-103">Pobiera sesję Synapse Analytics Spark.</span><span class="sxs-lookup"><span data-stu-id="88230-103">Gets a Synapse Analytics Spark session.</span></span>
+
+## <span data-ttu-id="88230-104">POLECENIA</span><span class="sxs-lookup"><span data-stu-id="88230-104">SYNTAX</span></span>
+
+### <span data-ttu-id="88230-105">GetByNameParameterSet (domyślny)</span><span class="sxs-lookup"><span data-stu-id="88230-105">GetByNameParameterSet (Default)</span></span>
+```
+Get-AzSynapseSparkSession -WorkspaceName <String> -SparkPoolName <String> [-LivyId <Int32>] [-Name <String>]
+ [-ApplicationId <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="88230-106">GetByParentObjectParameterSet</span><span class="sxs-lookup"><span data-stu-id="88230-106">GetByParentObjectParameterSet</span></span>
+```
+Get-AzSynapseSparkSession -SparkPoolObject <PSSynapseSparkPool> [-LivyId <Int32>] [-Name <String>]
+ [-ApplicationId <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="88230-107">Opis</span><span class="sxs-lookup"><span data-stu-id="88230-107">DESCRIPTION</span></span>
+<span data-ttu-id="88230-108">Polecenie cmdlet **Get-AzSynapseSparkSession** pobiera informacje o sesji usługi Azure Synapse Analytics Spark.</span><span class="sxs-lookup"><span data-stu-id="88230-108">The **Get-AzSynapseSparkSession** cmdlet gets information about an Azure Synapse Analytics Spark session.</span></span>
+
+## <span data-ttu-id="88230-109">Przykłady</span><span class="sxs-lookup"><span data-stu-id="88230-109">EXAMPLES</span></span>
+
+### <span data-ttu-id="88230-110">Przykład 1</span><span class="sxs-lookup"><span data-stu-id="88230-110">Example 1</span></span>
+```powershell
+PS C:\> Get-AzSynapseSparkSession -WorkspaceName ContosoWorkspace -SparkPoolName ContosoSparkPool
+```
+
+<span data-ttu-id="88230-111">To polecenie pobiera wszystkie sesje platformy Spark w ramach określonej puli platformy Spark.</span><span class="sxs-lookup"><span data-stu-id="88230-111">This command gets all the Spark sessions under the specified Spark pool.</span></span>
+
+### <span data-ttu-id="88230-112">Przykład 2</span><span class="sxs-lookup"><span data-stu-id="88230-112">Example 2</span></span>
+```powershell
+PS C:\> Get-AzSynapseSparkSession -WorkspaceName ContosoWorkspace -SparkPoolName ContosoSparkPool -LivyId 1
+```
+
+<span data-ttu-id="88230-113">To polecenie pobiera sesję programu Spark o określonym IDENTYFIKATORze livy.</span><span class="sxs-lookup"><span data-stu-id="88230-113">This command gets the Spark session with the specified livy ID.</span></span>
+
+### <span data-ttu-id="88230-114">Przykład 3</span><span class="sxs-lookup"><span data-stu-id="88230-114">Example 3</span></span>
+```powershell
+PS C:\> $pool = Get-AzSynapseSparkPool -WorkspaceName ContosoWorkspace -Name ContosoSparkPool
+PS C:\> $pool | Get-AzSynapseSparkSession
+```
+
+<span data-ttu-id="88230-115">To polecenie pobiera wszystkie sesje platformy Spark w określonej puli platformy Spark za pomocą potoku.</span><span class="sxs-lookup"><span data-stu-id="88230-115">This command gets all the Spark sessions under the specified Spark pool through pipeline.</span></span>
+
+## <span data-ttu-id="88230-116">PARAMETRÓW</span><span class="sxs-lookup"><span data-stu-id="88230-116">PARAMETERS</span></span>
+
+### <span data-ttu-id="88230-117">-Identyfikator aplikacji</span><span class="sxs-lookup"><span data-stu-id="88230-117">-ApplicationId</span></span>
+<span data-ttu-id="88230-118">Identyfikator aplikacji sesji.</span><span class="sxs-lookup"><span data-stu-id="88230-118">The Application identifier of the session.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="88230-119">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="88230-119">-DefaultProfile</span></span>
+<span data-ttu-id="88230-120">Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.</span><span class="sxs-lookup"><span data-stu-id="88230-120">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="88230-121">-LivyId</span><span class="sxs-lookup"><span data-stu-id="88230-121">-LivyId</span></span>
+<span data-ttu-id="88230-122">Identyfikator sesji usługi Spark.</span><span class="sxs-lookup"><span data-stu-id="88230-122">Identifier of Spark session.</span></span>
+
+```yaml
+Type: System.Int32
+Parameter Sets: (All)
+Aliases: Id
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="88230-123">-Name (nazwa)</span><span class="sxs-lookup"><span data-stu-id="88230-123">-Name</span></span>
+<span data-ttu-id="88230-124">Nazwa puli Synapse Spark.</span><span class="sxs-lookup"><span data-stu-id="88230-124">Name of Synapse Spark pool.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="88230-125">-SparkPoolName</span><span class="sxs-lookup"><span data-stu-id="88230-125">-SparkPoolName</span></span>
+<span data-ttu-id="88230-126">Nazwa puli Synapse Spark.</span><span class="sxs-lookup"><span data-stu-id="88230-126">Name of Synapse Spark pool.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: GetByNameParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="88230-127">-SparkPoolObject</span><span class="sxs-lookup"><span data-stu-id="88230-127">-SparkPoolObject</span></span>
+<span data-ttu-id="88230-128">Obiekt wejściowy usługi Spark Pool, zazwyczaj przepuszczany przez rurociąg.</span><span class="sxs-lookup"><span data-stu-id="88230-128">Spark pool input object, usually passed through the pipeline.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Synapse.Models.PSSynapseSparkPool
+Parameter Sets: GetByParentObjectParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="88230-129">-Nazwa_obszaru_roboczego</span><span class="sxs-lookup"><span data-stu-id="88230-129">-WorkspaceName</span></span>
+<span data-ttu-id="88230-130">Nazwa obszaru roboczego Synapse.</span><span class="sxs-lookup"><span data-stu-id="88230-130">Name of Synapse workspace.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: GetByNameParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="88230-131">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="88230-131">CommonParameters</span></span>
+<span data-ttu-id="88230-132">To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="88230-132">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="88230-133">Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="88230-133">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="88230-134">WEJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="88230-134">INPUTS</span></span>
+
+### <span data-ttu-id="88230-135">Microsoft. Azure. Commands. Synapse. models. PSSynapseSparkPool</span><span class="sxs-lookup"><span data-stu-id="88230-135">Microsoft.Azure.Commands.Synapse.Models.PSSynapseSparkPool</span></span>
+
+## <span data-ttu-id="88230-136">WYSYŁA</span><span class="sxs-lookup"><span data-stu-id="88230-136">OUTPUTS</span></span>
+
+### <span data-ttu-id="88230-137">Microsoft. Azure. Commands. Synapse. models. PSSynapseSparkSession</span><span class="sxs-lookup"><span data-stu-id="88230-137">Microsoft.Azure.Commands.Synapse.Models.PSSynapseSparkSession</span></span>
+
+## <span data-ttu-id="88230-138">INFORMACYJN</span><span class="sxs-lookup"><span data-stu-id="88230-138">NOTES</span></span>
+
+## <span data-ttu-id="88230-139">LINKI POKREWNE</span><span class="sxs-lookup"><span data-stu-id="88230-139">RELATED LINKS</span></span>
