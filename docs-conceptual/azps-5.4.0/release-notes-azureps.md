@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 03/10/2020
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: 8cf52259008b2551b780d4cf6f09b4876673723c
-ms.sourcegitcommit: 12bb1a6d1f89789bf2a78992f9b8ca848691a4d7
+ms.openlocfilehash: 5310923995ad8c950183a1fbf97c01530cac734c
+ms.sourcegitcommit: 8f997856c29db6b969893d5c570215d9ab2f2bfb
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98574121"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98685858"
 ---
 # <a name="azure-powershell-release-notes"></a>Informacje o wersji programu Azure PowerShell
 
@@ -52,10 +52,10 @@ ms.locfileid: "98574121"
 
 #### <a name="aznetwork"></a>Az.Network
 * Dodano nowe polecenia cmdlet dla CRUD of VpnGatewayNATRule.
-    - "New-AzAzVpnGatewayNatRule"
-    - "Update-AzAzVpnGatewayNatRule"
-    - "Get-AzAzVpnGatewayNatRule"
-    - "Remove-AzAzVpnGatewayNatRule"    
+    - "New-AzVpnGatewayNatRule"
+    - "Update-AzVpnGatewayNatRule"
+    - "Get-AzVpnGatewayNatRule"
+    - "Remove-AzVpnGatewayNatRule"  
 * Zaktualizowano polecenia cmdlet służące do ustawiania — obiekt natrule w zasobie bramy vpngateway i kojarzenia go z zasobem VpnSiteLinkConnection.
     - "New-AzVpnGateway"
     - "Update-AzVpnGateway" 
