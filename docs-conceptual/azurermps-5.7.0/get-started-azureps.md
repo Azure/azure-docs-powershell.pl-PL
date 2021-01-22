@@ -1,16 +1,16 @@
 ---
 title: Rozpoczynanie pracy z programem Azure PowerShell
-description: ''
+description: 'Dowiedz się więcej na temat: Rozpoczynanie pracy z usługą Azure PowerShell'
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 11/15/2017
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 474fd0cbabf3967f13b7f60e02158fc2c9a106cc
-ms.sourcegitcommit: 038cb42a3bd8c009bc57c8c1c252e66fa170c84b
-ms.translationtype: HT
+ms.openlocfilehash: 5fe6eb0ef2a0ab993474bee35f678c5454d4d368
+ms.sourcegitcommit: 3715500acad08bcc482b0465edddaafb7b95cb9e
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92523329"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98566054"
 ---
 # <a name="get-started-with-azure-powershell"></a>Rozpoczynanie pracy z programem Azure PowerShell
 
