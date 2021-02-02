@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/New-AzADServicePrincipal.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/New-AzADServicePrincipal.md
-ms.openlocfilehash: f921cceb3692032f61f99db825efeea074773faa
-ms.sourcegitcommit: 375232b84336ef5e13052504deaa43f5bd4b7f65
+ms.openlocfilehash: 3a410dfb43cc767b0a73086147042425d42764d1
+ms.sourcegitcommit: e680033f216d86cd91a1dfdb8328d32f4c99d21a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "94319470"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99251628"
 ---
 # New-AzADServicePrincipal
 
-## STRESZCZENIe
+## SYNOPSIS
 Tworzy nowy podmiot zabezpieczeń usługi Azure Active Directory.
 
-## POLECENIA
+## SKŁADNIA
 
-### SimpleParameterSet (domyślny)
+### SimpleParameterSet (domyślne)
 ```
 New-AzADServicePrincipal [-ApplicationId <Guid>] [-DisplayName <String>] [-StartDate <DateTime>]
  [-EndDate <DateTime>] [-Scope <String>] [-Role <String>] [-SkipAssignment]
@@ -111,19 +111,19 @@ New-AzADServicePrincipal -ApplicationObject <PSADApplication> -KeyCredential <PS
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Opis
-Tworzy nowy podmiot zabezpieczeń usługi Azure Active Directory. W przypadku domyślnego zestawu parametrów są używane wartości domyślne parametrów, jeśli użytkownik nie udostępnił tego parametru. Aby uzyskać więcej informacji na temat używanych wartości domyślnych, zapoznaj się z opisem podanych niżej parametrów.
-To polecenie cmdlet umożliwia przypisywanie roli do podmiotu zabezpieczeń usługi z `Role` `Scope` parametrami i parametrami. Jeśli nie podano żadnego z tych parametrów, żadna rola nie zostanie przypisana do podmiotu zabezpieczeń usługi. Domyślne wartości `Role` parametrów and są następujące `Scope` : "Współautor" oraz bieżący abonament ( _Uwaga_ : wartości domyślne są używane tylko wtedy, gdy użytkownik podaje wartość dla jednego z dwóch parametrów, ale nie z drugiej).
-Polecenie cmdlet powoduje również niejawne utworzenie aplikacji i ustawienie jej właściwości (Jeśli identyfikator aplikacji nie jest dostarczany). W celu zaktualizowania parametrów specyficznych dla aplikacji użyj polecenia cmdlet Set-AzADApplication.
+## OPIS
+Tworzy nowy podmiot zabezpieczeń usługi Azure Active Directory. Domyślny zestaw parametrów używa wartości domyślnych dla parametrów, jeśli użytkownik ich nie poda. Aby uzyskać więcej informacji na temat używanych wartości domyślnych, zobacz opis podanych parametrów poniżej.
+To polecenie cmdlet umożliwia przypisanie roli do podmiotu zabezpieczeń usługi wraz z parametrami. Jeśli żaden z tych parametrów nie zostanie podany, do podmiotu zabezpieczeń usługi nie zostanie przypisana `Role` `Scope` żadna rola. Wartością domyślną parametrów i parametrów są odpowiednio "Współautor" i bieżąca subskrypcja (uwaga: wartości domyślne są używane tylko wtedy, gdy użytkownik dostarcza wartość dla jednego z dwóch parametrów, ale nie `Role` `Scope` drugi).
+Polecenie cmdlet niejawnie tworzy również aplikację i ustawia jej właściwości (jeśli wartość ApplicationId nie jest podano). Aby zaktualizować konkretne parametry aplikacji, użyj Set-AzADApplication cmdlet.
 
 > [!WARNING]
-> Podczas tworzenia podmiotu usługi za pomocą polecenia **New-AzADServicePrincipal** dane wyjściowe będą zawierały poświadczenia, które należy chronić. Upewnij się, że nie są uwzględniane te poświadczenia w kodzie, lub sprawdź poświadczenia w kontroli źródła. Alternatywne rozwiązanie polega na użyciu [tożsamości zarządzanych](/azure/active-directory/managed-identities-azure-resources/overview) , aby uniknąć konieczności korzystania z poświadczeń.
+> Po utworzeniu podmiotu zabezpieczeń usługi za pomocą **polecenia New-AzADServicePrincipal** dane wyjściowe zawierają poświadczenia, które należy chronić. Rozważ użycie tożsamości [zarządzanych,](/azure/active-directory/managed-identities-azure-resources/overview) aby uniknąć konieczności używania poświadczeń.
 >
-> Domyślnie polecenie **New-AzADServicePrincipal** przypisuje rolę [współautora](/azure/role-based-access-control/built-in-roles#contributor) głównemu usługi w zakresie subskrypcji. Aby zmniejszyć ryzyko naruszenia zabezpieczeń usługi, należy przypisać bardziej określoną rolę i zawęzić jej zakres do zasobu lub grupy zasobów. Aby uzyskać więcej informacji [, zobacz instrukcje dodawania zadania roli](/azure/role-based-access-control/role-assignments-steps) .
+> Domyślnie **new-AzADServicePrincipal** przypisuje rolę [](/azure/role-based-access-control/built-in-roles#contributor) współautora podmiotowi usługi w zakresie subskrypcji. Aby zmniejszyć ryzyko wystąpienia naruszonego podmiotu zabezpieczeń usługi, przypisz bardziej konkretną rolę i zawęzij zakres do grupy zasobów lub zasobu. Zobacz [Kroki, aby dodać przypisanie roli,](/azure/role-based-access-control/role-assignments-steps) aby uzyskać więcej informacji.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1 — prosta operacja tworzenia podmiotu zabezpieczeń usługi REKLAMowej
+### Przykład 1. Tworzenie podmiotu zabezpieczeń prostej usługi AD
 
 ```
 PS C:\> New-AzADServicePrincipal
@@ -136,9 +136,9 @@ Id                    : yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy
 Type                  : ServicePrincipal
 ```
 
-Powyższe polecenie tworzy podmiot zabezpieczeń usługi AD, używając wartości domyślnych dla parametrów, które nie zostały podane. Ponieważ identyfikator aplikacji nie został podany, utworzono aplikację dla podmiotu zabezpieczeń usługi. Ponieważ nie zostały podane żadne wartości `Role` , ani też `Scope` utworzony podmiot zabezpieczeń usługi nie ma żadnych uprawnień.
+Powyższe polecenie tworzy podmiot zabezpieczeń usługi AD, używając wartości domyślnych dla parametrów, które nie zostały podane. Ponieważ nie podano identyfikatora aplikacji, utworzono aplikację dla podmiotu zabezpieczeń usługi. Ponieważ nie podano żadnych wartości lub podmiot zabezpieczeń utworzonej usługi `Role` `Scope` nie ma żadnych uprawnień.
 
-### Przykład 2 — proste tworzenie podmiotów głównych usługi REKLAMowej z określoną rolą i zakresem domyślnym
+### Przykład 2. Tworzenie podmiotu zabezpieczeń prostej usługi AD z określoną rolą i zakresem domyślnym
 
 ```
 PS C:\> New-AzADServicePrincipal -Role Reader
@@ -153,9 +153,9 @@ Type                  : ServicePrincipal
 WARNING: Assigning role 'Reader' over scope '/subscriptions/zzzzzzzz-zzzz-zzzz-zzzz-zzzzzzzzzzzz' to the new service principal.
 ```
 
-Powyższe polecenie tworzy podmiot zabezpieczeń usługi AD, używając wartości domyślnych dla parametrów, które nie zostały podane. Ponieważ identyfikator aplikacji nie został podany, utworzono aplikację dla podmiotu zabezpieczeń usługi. Podmiot zabezpieczeń usługi został utworzony za pomocą uprawnień czytelnika w bieżącym abonamentzie (ponieważ nie podano wartości dla tego `Scope` parametru).
+Powyższe polecenie tworzy podmiot zabezpieczeń usługi AD, używając wartości domyślnych dla parametrów, które nie zostały podane. Ponieważ identyfikator aplikacji nie został podany, utworzono aplikację dla podmiotu zabezpieczeń usługi. Podmiot zabezpieczeń usługi został utworzony przy użyciu uprawnień "Czytnik" dla bieżącej subskrypcji (ponieważ dla parametru nie podano żadnej `Scope` wartości).
 
-### Przykład 3 — prosta główna usługa reklamy z określonym zakresem i rolą domyślną
+### Przykład 3. Tworzenie podmiotu zabezpieczeń prostej usługi AD z określonym zakresem i rolą domyślną
 
 ```
 PS C:\> New-AzADServicePrincipal -Scope /subscriptions/zzzzzzzz-zzzz-zzzz-zzzz-zzzzzzzzzzzz/resourceGroups/myResourceGroup
@@ -170,9 +170,9 @@ Type                  : ServicePrincipal
 WARNING: Assigning role 'Contributor' over scope '/subscriptions/zzzzzzzz-zzzz-zzzz-zzzz-zzzzzzzzzzzz/resourceGroups/myResourceGroup' to the new service principal.
 ```
 
-Powyższe polecenie tworzy podmiot zabezpieczeń usługi AD, używając wartości domyślnych dla parametrów, które nie zostały podane. Ponieważ identyfikator aplikacji nie został podany, utworzono aplikację dla podmiotu zabezpieczeń usługi. Podmiot zabezpieczeń usługi został utworzony za pomocą uprawnień "współautora" (ponieważ nie podano wartości `Role` parametru) w zakresie podanego zakresu grupy zasobów.
+Powyższe polecenie tworzy podmiot zabezpieczeń usługi AD, używając wartości domyślnych dla parametrów, które nie zostały podane. Ponieważ identyfikator aplikacji nie został podany, utworzono aplikację dla podmiotu zabezpieczeń usługi. Podmiot zabezpieczeń usługi został utworzony przy użyciu uprawnień "Współautor" (ponieważ dla parametru nie podano żadnej wartości) w zakresie `Role` dostępnej grupy zasobów.
 
-### Przykład 4 — prosta główna usługa reklamy z określonym zakresem i rolą
+### Przykład 4. Tworzenie podmiotu zabezpieczeń prostej usługi AD z określonym zakresem i rolą
 
 ```
 PS C:\> New-AzADServicePrincipal -Role Reader -Scope /subscriptions/zzzzzzzz-zzzz-zzzz-zzzz-zzzzzzzzzzzz/resourceGroups/myResourceGroup
@@ -187,9 +187,9 @@ Type                  : ServicePrincipal
 WARNING: Assigning role 'Reader' over scope '/subscriptions/zzzzzzzz-zzzz-zzzz-zzzz-zzzzzzzzzzzz/resourceGroups/myResourceGroup' to the new service principal.
 ```
 
-Powyższe polecenie tworzy podmiot zabezpieczeń usługi AD, używając wartości domyślnych dla parametrów, które nie zostały podane. Ponieważ identyfikator aplikacji nie został podany, utworzono aplikację dla podmiotu zabezpieczeń usługi. Podmiot zabezpieczeń usługi został utworzony z uprawnieniami "czytelnik" w udostępnionym zakresie grupy zasobów.
+Powyższe polecenie tworzy podmiot zabezpieczeń usługi AD, używając wartości domyślnych dla parametrów, które nie zostały podane. Ponieważ identyfikator aplikacji nie został podany, utworzono aplikację dla podmiotu zabezpieczeń usługi. Podmiot zabezpieczeń usługi został utworzony przy użyciu uprawnień "Czytnik" w zakresie dostępnej grupy zasobów.
 
-### Przykład 5 — Utwórz nowy podmiot zabezpieczeń usługi reklamy przy użyciu identyfikatora aplikacji z przypisaniem roli
+### Przykład 5. Tworzenie nowego podmiotu zabezpieczeń usługi AD przy użyciu identyfikatora aplikacji z przypisaniem roli
 
 ```
 PS C:\> New-AzADServicePrincipal -ApplicationId 34a28ad2-dec4-4a41-bc3b-d22ddf90000e
@@ -201,17 +201,17 @@ Id                    : yyyyyyyy-yyyy-yyyy-yyyy-yyyyyyyyyyyy
 Type                  : ServicePrincipal
 ```
 
-Tworzy nowy podmiot zabezpieczeń usługi reklamy dla aplikacji z identyfikatorem aplikacji "34a28ad2-DEC4-4a41-bc3b-d22ddf90000e". Ponieważ nie zostały podane żadne wartości `Role` , ani też `Scope` utworzony podmiot zabezpieczeń usługi nie ma żadnych uprawnień.
+Tworzy nowy podmiot zabezpieczeń usługi AD dla aplikacji o identyfikatorze aplikacji '34a28ad2-dec4-4a41-bc3b-d22ddf90000e'. Ponieważ nie podano żadnych wartości lub podmiot zabezpieczeń utworzonej usługi `Role` `Scope` nie ma żadnych uprawnień.
 
-### Przykład 6 — Tworzenie nowego podmiotu zabezpieczeń usługi AD przy użyciu połączeń rurowych
+### Przykład 6. Tworzenie nowego podmiotu zabezpieczeń usługi AD przy użyciu funkcji rurowych
 
 ```
 PS C:\> Get-AzADApplication -ObjectId 3ede3c26-b443-4e0b-9efc-b05e68338dc3 | New-AzADServicePrincipal
 ```
 
-Pobiera aplikację o identyfikatorze obiektu "3ede3c26-B443-4e0b-9efc-b05e68338dc3" i potokach, które są poleceniami cmdlet New-AzADServicePrincipal, aby utworzyć nowy podmiot zabezpieczeń usługi AD dla tej aplikacji.
+Pobiera aplikację z identyfikatorem obiektu "3ede3c26-b443-4e0b-9efc-b05e68338dc3" i potoki, które są do polecenia cmdlet programu New-AzADServicePrincipal, w celu utworzenia nowego podmiotu zabezpieczeń usługi AD dla tej aplikacji.
 
-### Przykład 7 — Tworzenie nowego podmiotu zabezpieczeń usługi AD przy użyciu poświadczenia DisplayName i hasła
+### Przykład 7. Tworzenie nowego podmiotu zabezpieczeń usługi AD przy użyciu poświadczeń displayname i hasła
 
 ```
 PS C:\> $credentials = New-Object -TypeName Microsoft.Azure.Commands.ActiveDirectory.PSADPasswordCredential -Property @{ StartDate=Get-Date; EndDate=Get-Date -Year 2024; Password="StrongPassworld!23"}
@@ -225,9 +225,9 @@ Id                    : 6xxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxb
 Type                  :
 ```
 
-Tworzy nową aplikację o nazwie "ServicePrincipalName" i hasła "StrongPassworld! 23" i tworzy podmiot zabezpieczeń usługi na podstawie właśnie utworzonej aplikacji. Data rozpoczęcia i Data zakończenia zostaną dodane do poświadczenia hasła.
+Tworzy nową aplikację o nazwie "ServicePrincipalName" i hasłem "StrongPassworld!23" i tworzy podmiot zabezpieczeń usługi na podstawie właśnie utworzonej aplikacji. Data rozpoczęcia i data zakończenia zostaną dodane do poświadczeń hasła.
 
-### Przykład 8 — Tworzenie nowego podmiotu zabezpieczeń usługi AD przy użyciu poświadczenia DisplayName i zwykłego klucza
+### Przykład 8. Tworzenie nowego podmiotu zabezpieczeń usługi AD przy użyciu poświadczeń DisplayName i zwykłego klucza
 
 ```
 PS C:\> $cert = <public certificate as base64-encoded string>
@@ -241,14 +241,14 @@ Id                    : cxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxc
 Type                  :
 ```
 
-Tworzy nową aplikację o nazwie "ServicePrincipalName" i certifcate "$cert" i tworzy podmiot zabezpieczeń usługi na podstawie właśnie utworzonej aplikacji. Data zakończenia zostanie dodana do poświadczenia klucza.
+Tworzy nową aplikację o nazwie "ServicePrincipalName" i certifcate "$cert" i tworzy podmiot zabezpieczeń usługi na podstawie właśnie utworzonej aplikacji. Data zakończenia zostanie dodana do poświadczeń klucza.
 
-## PARAMETRÓW
+## PARAMETERS
 
-### -Identyfikator aplikacji
-Unikatowy identyfikator aplikacji dla podmiotu zabezpieczeń usługi w dzierżawie.
+### -ApplicationId
+Unikatowy identyfikator aplikacji podmiotu zabezpieczeń usługi w dzierżawie.
 Po utworzeniu tej właściwości nie można jej zmienić.
-Jeśli nie podano identyfikatora aplikacji, zostanie on wygenerowany.
+Jeśli nie zostanie określony identyfikator aplikacji, zostanie wygenerowany.
 
 ```yaml
 Type: System.Guid
@@ -274,7 +274,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Applicationobject
+### -ApplicationObject
 Obiekt reprezentujący aplikację, dla której jest tworzony podmiot zabezpieczeń usługi.
 
 ```yaml
@@ -290,8 +290,8 @@ Accept wildcard characters: False
 ```
 
 ### -CertValue
-Wartość "asymetrycznego" typu poświadczeń.
-Reprezentuje certyfikat zakodowany Base 64.
+Wartość typu poświadczeń "asymetrycznego".
+Reprezentuje certyfikat zakodowany na podstawie 64.
 
 ```yaml
 Type: System.String
@@ -318,7 +318,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -332,8 +332,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DisplayName
-Przyjazna nazwa podmiotu zabezpieczeń usługi. Jeśli nie podano nazwy wyświetlanej, ta wartość będzie domyślnie równa "Azure-PowerShell-MM-DD-RRRR-HH-mm-SS", gdzie sufiks jest momentem utworzenia aplikacji.
+### — DisplayName
+Przyjazna nazwa podmiotu zabezpieczeń usługi. Jeśli nazwa wyświetlana nie zostanie podany, ta wartość będzie domyślnie wyświetlana jako "azure-powershell-MM-dd-yyyy-HH-mm-ss", gdzie sufiks jest czasem tworzenia aplikacji.
 
 ```yaml
 Type: System.String
@@ -360,8 +360,8 @@ Accept wildcard characters: False
 ```
 
 ### -EndDate
-Efektywna Data zakończenia użycia poświadczeń.
-Domyślną wartością daty zakończenia jest rok od dzisiaj. W przypadku poświadczenia typu asymetrycznego należy ustawić tę opcję na wartość w dniu lub przed datą ważności certyfikatu x509.
+Data zakończenia użytkowania poświadczeń.
+Domyślna wartość daty końcowej wynosi jeden rok od dnia dzisiejszego. W przypadku poświadczeń typu "asymetrycznego" musi on być ustawiony na datę ważności certyfikatu X509 lub wcześniejszą.
 
 ```yaml
 Type: System.DateTime
@@ -387,8 +387,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Poświadczenia
-Kolekcja kluczowych poświadczeń skojarzonych z aplikacją.
+### -KeyCredential
+Zbiór poświadczeń klucza skojarzonych z aplikacją.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ActiveDirectory.PSADKeyCredential[]
@@ -414,8 +414,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -PasswordCredential
-Kolekcja poświadczeń haseł skojarzonych z aplikacją.
+### - PasswordCredential
+Zbiór poświadczeń hasła skojarzonych z aplikacją.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ActiveDirectory.PSADPasswordCredential[]
@@ -441,8 +441,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Rola
-Rola podmiotu zabezpieczeń usługi w zakresie. Jeśli wartość `Scope` jest podana, ale nie jest podana wartość `Role` , domyślnie zostanie wykorzystana `Role` rola współautora.
+### — Rola
+Rola podmiotu zabezpieczeń usługi w zakresie. Jeśli podano wartość, ale nie podano żadnej wartości, zostanie ona domyślnie dodana do roli `Scope` `Role` `Role` "Współautor".
 
 ```yaml
 Type: System.String
@@ -456,8 +456,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Zakres
-Zakres, dla którego główna usługa ma uprawnienia. Jeśli wartość `Role` jest podana, ale nie jest podana wartość `Scope` , domyślnie zostanie wykorzystana `Scope` bieżąca subskrypcja.
+### — Zakres
+Zakres uprawnień podmiotu zabezpieczeń usługi. Jeśli podano wartość, ale nie podano żadnej wartości, zostanie ona domyślnie dodana `Role` `Scope` do `Scope` bieżącej subskrypcji.
 
 ```yaml
 Type: System.String
@@ -471,8 +471,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -SkipAssignment
-Jeśli zostanie ustawiona, spowoduje to Pominięcie tworzenia domyślnego zadania roli dla podmiotu usługi.
+### - SkipAssignment
+Jeśli zostanie ustawiony, pominiesz tworzenie domyślnego przydziału ról dla podmiotu zabezpieczeń usługi.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -486,9 +486,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DataRozpoczęcia
-Efektywna Data rozpoczęcia użycia poświadczeń.
-Domyślna wartość daty rozpoczęcia przypada dzisiaj. W przypadku poświadczenia typu asymetrycznego należy ustawić tę opcję na wartość w dniu lub po dniu, od którego certyfikat x509 jest ważny.
+### - StartDate
+Data rozpoczęcia użytkowania poświadczeń.
+Domyślna wartość daty rozpoczęcia to dzisiaj. W przypadku poświadczeń typu "asymetrycznego" musi on być ustawiony na datę, od kiedy certyfikat X509 jest prawidłowy, lub później.
 
 ```yaml
 Type: System.DateTime
@@ -514,8 +514,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Potwierdź
-Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.
+### — Potwierdź
+Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -530,8 +530,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet.
-Polecenie cmdlet nie jest uruchamiane.
+Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet.
+Polecenie cmdlet nie zostanie uruchomione.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -546,44 +546,44 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### System. GUID
+### System.Guid
 
-### System. String
+### System.String
 
-### Microsoft. Azure. Commands. pozycji. PSADApplication
+### Microsoft.Azure.Commands.ActiveDirectory.PSADApplication
 
-### Microsoft. Azure. Commands. pozycji. PSADPasswordCredential []
+### Microsoft.Azure.Commands.ActiveDirectory.PSADPasswordCredential[]
 
-### Microsoft. Azure. Commands. pozycji. PSADKeyCredential []
+### Microsoft.Azure.Commands.ActiveDirectory.PSADKeyCredential[]
 
-### System. DateTime
+### System.DateTime
 
-## WYSYŁA
+## OUTPUTS
 
-### Microsoft. Azure. Commands. pozycji. PSADServicePrincipal
+### Microsoft.Azure.Commands.ActiveDirectory.PSADServicePrincipal
 
-### Microsoft. Azure. Commands. resources. models. Authorization. PSADServicePrincipalWrapper
+### Microsoft.Azure.Commands.Resources.Models.Authorization.PSADServicePrincipalWrapper
 
-## INFORMACYJN
-Słowa kluczowe: Azure, azurerm, ramię, zasób, zarządzanie, Menedżer, zasób, Grupa, szablon, wdrożenie
+## NOTATKI
+Słowa kluczowe: azure, azurerm, arm, resource, management, manager, zasób, grupa, szablon, wdrożenie
 
 ## LINKI POKREWNE
 
 [Remove-AzADServicePrincipal](./Remove-AzADServicePrincipal.md)
 
-[Get-AzADServicePrincipal](./Get-AzADServicePrincipal.md)
+[Get-AzadServicePrincipal](./Get-AzADServicePrincipal.md)
 
-[Nowe — AzADApplication](./New-AzADApplication.md)
+[New-AzadApplication](./New-AzADApplication.md)
 
-[Remove-AzADApplication](./Remove-AzADApplication.md)
+[Remove-AzadApplication](./Remove-AzADApplication.md)
 
 [Get-AzADSpCredential](./Get-AzADSpCredential.md)
 
-[Nowe — AzADSpCredential](./New-AzADSpCredential.md)
+[New-AzADSpCredential](./New-AzADSpCredential.md)
 
 [Remove-AzADSpCredential](./Remove-AzADSpCredential.md)
 

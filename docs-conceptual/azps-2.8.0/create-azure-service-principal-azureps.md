@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 04/23/2019
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: a8ce4669d52e587bd171cbeab2496e5386029615
-ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
-ms.translationtype: HT
+ms.openlocfilehash: 660096fd31e4b95db3eb326f7f3e2e78b08e0790
+ms.sourcegitcommit: e680033f216d86cd91a1dfdb8328d32f4c99d21a
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93407973"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99251764"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Tworzenie jednostki usługi platformy Azure za pomocą programu Azure PowerShell
 
@@ -22,7 +22,7 @@ Jednostka usługi platformy Azure to tożsamość przeznaczona do użycia z apli
 W tym artykule przedstawiono kroki tworzenia i resetowania jednostki usługi oraz uzyskiwania informacji o niej przy użyciu programu Azure PowerShell.
 
 > [!WARNING]
-> Gdy tworzysz jednostkę usługi za pomocą polecenia [New-AzADServicePrincipal](/powershell/module/Az.Resources/New-AzADServicePrincipal), dane wyjściowe zawierają poświadczenia, które należy chronić. Pamiętaj, aby nie uwzględniać tych poświadczeń w kodzie ani nie ewidencjonować ich w systemie kontroli kodu źródłowego. Alternatywnie rozważ użycie [tożsamości zarządzanych](/azure/active-directory/managed-identities-azure-resources/overview), aby uniknąć konieczności używania poświadczeń.
+> Gdy tworzysz jednostkę usługi za pomocą polecenia [New-AzADServicePrincipal](/powershell/module/Az.Resources/New-AzADServicePrincipal), dane wyjściowe zawierają poświadczenia, które należy chronić. Alternatywnie rozważ użycie [tożsamości zarządzanych](/azure/active-directory/managed-identities-azure-resources/overview), aby uniknąć konieczności używania poświadczeń.
 >
 > Domyślnie polecenie [New-AzADServicePrincipal](/powershell/module/Az.Resources/New-AzADServicePrincipal) przypisuje rolę [Współautor](/azure/role-based-access-control/built-in-roles#contributor) do jednostki usługi w zakresie subskrypcji. Aby zmniejszyć ryzyko naruszenia zabezpieczeń jednostki usługi, przypisz bardziej konkretną rolę i zawęź zakres do zasobu lub grupy zasobów. Aby uzyskać więcej informacji, zobacz [Kroki dodawania przypisania roli](/azure/role-based-access-control/role-assignments-steps).
 
@@ -115,7 +115,7 @@ Program Azure PowerShell oferuje następujące polecenia cmdlet do zarządzania 
 
 Rolą domyślną dla jednostki usługi jest **Współautor**. Ta rola ma pełne uprawnienia do odczytu i zapisu dla konta platformy Azure. Rola **Czytelnik** jest bardziej restrykcyjna i zapewnia dostęp tylko do odczytu.  Aby uzyskać więcej informacji o rolach i kontroli dostępu opartej na rolach (RBAC), zobacz [RBAC: Built-in roles](/azure/active-directory/role-based-access-built-in-roles) (Kontrola dostępu oparta na rolach: role wbudowane).
 
-W tym przykładzie jest dodawana rola **Czytelnik** i usuwana rola **Współautor** :
+W tym przykładzie jest dodawana rola **Czytelnik** i usuwana rola **Współautor**:
 
 ```azurepowershell-interactive
 New-AzRoleAssignment -ApplicationId <service principal application ID> -RoleDefinitionName "Reader"

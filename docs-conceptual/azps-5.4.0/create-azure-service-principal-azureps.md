@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.service: azure-powershell
 ms.date: 06/17/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: a5640ded6fc8c6478084374f7808450f6a99d6e5
-ms.sourcegitcommit: 12bb1a6d1f89789bf2a78992f9b8ca848691a4d7
+ms.openlocfilehash: 1879fea883c796dae26e353adeab908c8acdb967
+ms.sourcegitcommit: e680033f216d86cd91a1dfdb8328d32f4c99d21a
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98573961"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "99251849"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Tworzenie jednostki usługi platformy Azure za pomocą programu Azure PowerShell
 
@@ -22,7 +22,7 @@ Jednostka usługi platformy Azure to tożsamość przeznaczona do użycia z apli
 W tym artykule przedstawiono kroki tworzenia i resetowania jednostki usługi oraz uzyskiwania informacji o niej przy użyciu programu Azure PowerShell.
 
 > [!WARNING]
-> Gdy tworzysz jednostkę usługi za pomocą polecenia [New-AzADServicePrincipal](/powershell/module/Az.Resources/New-AzADServicePrincipal), dane wyjściowe zawierają poświadczenia, które należy chronić. Pamiętaj, aby nie uwzględniać tych poświadczeń w kodzie ani nie ewidencjonować ich w systemie kontroli kodu źródłowego. Alternatywnie rozważ użycie [tożsamości zarządzanych](/azure/active-directory/managed-identities-azure-resources/overview), aby uniknąć konieczności używania poświadczeń.
+> Gdy tworzysz jednostkę usługi za pomocą polecenia [New-AzADServicePrincipal](/powershell/module/Az.Resources/New-AzADServicePrincipal), dane wyjściowe zawierają poświadczenia, które należy chronić. Alternatywnie rozważ użycie [tożsamości zarządzanych](/azure/active-directory/managed-identities-azure-resources/overview), aby uniknąć konieczności używania poświadczeń.
 >
 > Domyślnie polecenie [New-AzADServicePrincipal](/powershell/module/Az.Resources/New-AzADServicePrincipal) przypisuje rolę [Współautor](/azure/role-based-access-control/built-in-roles#contributor) do jednostki usługi w zakresie subskrypcji. Aby zmniejszyć ryzyko naruszenia zabezpieczeń jednostki usługi, przypisz bardziej konkretną rolę i zawęź zakres do zasobu lub grupy zasobów. Aby uzyskać więcej informacji, zobacz [Kroki dodawania przypisania roli](/azure/role-based-access-control/role-assignments-steps).
 
