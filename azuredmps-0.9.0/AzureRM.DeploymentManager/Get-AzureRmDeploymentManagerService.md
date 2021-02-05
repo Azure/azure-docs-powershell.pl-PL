@@ -3,22 +3,21 @@ external help file: Microsoft.Azure.Commands.DeploymentManager.dll-Help.xml
 Module Name: AzureRM.DeploymentManager
 online version: https://docs.microsoft.com/en-us/powershell/module/azurerm.deploymentmanager/get-azurermdeploymentmanagerservice
 schema: 2.0.0
-content_git_url: ''
-ms.openlocfilehash: 655cfeeae35d1b48bbfe2149fd4262dffe72ae09
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 4a91c2f8fdda1d2cda7c75f0cf7cfab165701f3d
+ms.sourcegitcommit: e57be0da5162efeb0a01f396e2343dd137920063
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93524093"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "99572109"
 ---
 # Get-AzureRmDeploymentManagerService
 
-## STRESZCZENIe
+## SYNOPSIS
 Pobiera usługę w topologii usługi.
 
-## POLECENIA
+## SKŁADNIA
 
-### Interaktywny (domyślnie)
+### Interakcyjna (domyślna)
 ```
 Get-AzureRmDeploymentManagerService [-ResourceGroupName] <String> [-ServiceTopologyName] <String>
  [-Name] <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
@@ -36,51 +35,51 @@ Get-AzureRmDeploymentManagerService [-ResourceGroupName] <String> [-Name] <Strin
  [-ServiceTopologyResourceId] <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### Zasobów
+### ResourceId
 ```
 Get-AzureRmDeploymentManagerService [-ResourceId] <String> [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
 ```
 
-### Inputobject
+### InputObject
 ```
 Get-AzureRmDeploymentManagerService [-Service] <PSServiceResource> [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **Get-AzureRmDeploymentManagerService** pobiera usługę w ramach topologii usług i zwraca obiekt reprezentujący tę usługę.
-Określ usługę za pomocą jej nazwy, topologii usługi i nazwy grupy zasobów. Alternatywnie możesz podać obiekt Service lub ResourceId.
+## OPIS
+Polecenie **cmdlet Get-AzureRmDeploymentManagerService** pobiera usługę w topologii usługi i zwraca obiekt reprezentujący usługę.
+Określ usługę według jej nazwy, topologii usługi oraz nazwy grupy zasobów. Ewentualnie możesz podać obiekt Service lub ResourceId.
 
-Możesz zmodyfikować ten obiekt lokalnie, a następnie zastosować zmiany w usłudze za pomocą polecenia cmdlet Set-AzureRmDeploymentManagerService.
+Możesz zmodyfikować ten obiekt lokalnie, a następnie zastosować zmiany do usługi za pomocą Set-AzureRmDeploymentManagerService cmdlet.
 
-## Przykłady
+## PRZYKŁADY
 
 ### Przykład 1
 ```powershell
 PS C:\> Get-AzureRmDeploymentManagerService -ResourceGroupName ContosoResourceGroup -ServiceTopologyName ContosoServiceTopology -Name ContosoService1
 ```
 
-To polecenie uzyskuje usługę o nazwie ContosoService1 w topologii usługi o nazwie ContosoServiceTopology w ContosoResourceGroup.
+To polecenie pobiera usługę o nazwie ContosoService1 w topologii usługi o nazwie ContosoServiceTopology w grupie ContosoResourceGroup.
 
-### Przykład 2: Uzyskiwanie usługi przy użyciu identyfikatora zasobu.
+### Przykład 2. Uzyskiwanie usługi przy użyciu identyfikatora zasobu.
 ```powershell
 PS C:\> Get-AzureRmDeploymentManagerService -ResourceId "/subscriptions/subscriptionId/resourcegroups/ContosoResourceGroup/providers/Microsoft.DeploymentManager/serviceTopologies/ContosoServiceTopology/services/ContosoService1"
 ```
 
-To polecenie uzyskuje usługę o nazwie ContosoService1 w topologii usługi o nazwie ContosoServiceTopology w ContosoResourceGroup.
+To polecenie pobiera usługę o nazwie ContosoService1 w topologii usługi o nazwie ContosoServiceTopology w grupie ContosoResourceGroup.
 
-### Przykład 3: Uzyskiwanie usługi przy użyciu przedmiotu serwisu.
+### Przykład 3. Uzyskiwanie usługi przy użyciu obiektu usługi.
 ```powershell
 PS C:\> Get-AzureRmDeploymentManagerService -Service $serviceObject
 ```
 
-To polecenie uzyskuje usługę, której nazwa, nazwa topologii usługi i nazwa źródła zasobów są zgodne z właściwościami Name, servicetopologyname i ResourceGroupName w $serviceObject.
+To polecenie pobiera usługę, której nazwa, nazwa topologii usługi i grupa zasobów są zgodne odpowiednio z właściwościami Name (Nazwa_usługi) i NazwaGrupy Zasobów ($serviceObject Nazwa Grupy Zasobów).
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
@@ -94,7 +93,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (nazwa)
+### — Nazwa
 Nazwa usługi.
 
 ```yaml
@@ -139,8 +138,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Service
-Obiekt usługi.
+### — Usługa
+Obiekt Service.
 
 ```yaml
 Type: Microsoft.Azure.Commands.DeploymentManager.Models.PSServiceResource
@@ -154,8 +153,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Servicetopology
-Obiekt z topologią usług, w którym ma zostać utworzona usługa.
+### -ServiceTopology
+Obiekt topologii usługi, w którym powinna zostać utworzona usługa.
 
 ```yaml
 Type: Microsoft.Azure.Commands.DeploymentManager.Models.PSServiceTopologyResource
@@ -169,7 +168,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Servicetopologyname
+### -ServiceTopologyName
 Nazwa topologii usługi.
 
 ```yaml
@@ -185,7 +184,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceTopologyResourceId
-Identyfikator zasobu topologii usług, w którym ma zostać utworzona usługa.
+Identyfikator zasobu topologii usługi, w którym należy utworzyć usługę.
 
 ```yaml
 Type: System.String
@@ -200,21 +199,21 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### Znaleziono
+### Brak
 
-## WYSYŁA
+## OUTPUTS
 
-### Microsoft. Azure. Commands. Deploymentmanager. MODELES. PSServiceResource
+### Microsoft.Azure.Commands.DeploymentManager.Models.PSServiceResource
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
-[Nowe — AzureRmDeploymentManagerService](./New-AzureRmDeploymentManagerService.md)
+[New-AzureRmDeploymentManagerService](./New-AzureRmDeploymentManagerService.md)
 
 [Remove-AzureRmDeploymentManagerService](./Remove-AzureRmDeploymentManagerService.md)
 
