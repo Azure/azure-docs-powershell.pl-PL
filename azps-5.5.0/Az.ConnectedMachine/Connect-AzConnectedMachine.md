@@ -1,0 +1,207 @@
+---
+external help file: ''
+Module Name: Az.ConnectedMachine
+online version: https://docs.microsoft.com/en-us/powershell/module/az.connectedmachine/connect-azconnectedmachine
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ConnectedMachine/help/Connect-AzConnectedMachine.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ConnectedMachine/help/Connect-AzConnectedMachine.md
+ms.openlocfilehash: 281d456eb7612914bac546b3d361238bb5056626
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100243995"
+---
+# <span data-ttu-id="93d06-101">Connect-AzConnectedMachine</span><span class="sxs-lookup"><span data-stu-id="93d06-101">Connect-AzConnectedMachine</span></span>
+
+## <span data-ttu-id="93d06-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="93d06-102">SYNOPSIS</span></span>
+<span data-ttu-id="93d06-103">Interfejs API do rejestrowania nowego komputera, a tym samym tworzenia śledzonego zasobu w ARM</span><span class="sxs-lookup"><span data-stu-id="93d06-103">API to register a new machine and thereby create a tracked resource in ARM</span></span>
+
+## <span data-ttu-id="93d06-104">SKŁADNIA</span><span class="sxs-lookup"><span data-stu-id="93d06-104">SYNTAX</span></span>
+
+```
+Connect-AzConnectedMachine [-ResourceGroupName] <String> [-Location] <String> [[-SubscriptionId] <String>]
+ [[-Name] <String>] [[-DefaultProfile] <PSObject>] [[-PSSession] <PSSession[]>] [[-Tag] <Hashtable>]
+ [[-Proxy] <Uri>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="93d06-105">OPIS</span><span class="sxs-lookup"><span data-stu-id="93d06-105">DESCRIPTION</span></span>
+<span data-ttu-id="93d06-106">Interfejs API do rejestrowania nowego komputera, a tym samym tworzenia śledzonego zasobu w ARM</span><span class="sxs-lookup"><span data-stu-id="93d06-106">API to register a new machine and thereby create a tracked resource in ARM</span></span>
+
+## <span data-ttu-id="93d06-107">PRZYKŁADY</span><span class="sxs-lookup"><span data-stu-id="93d06-107">EXAMPLES</span></span>
+
+### <span data-ttu-id="93d06-108">Przykład 1. Dołącza komputer, na których jesteś, jako połączony komputer</span><span class="sxs-lookup"><span data-stu-id="93d06-108">Example 1: Onboards the machine you're on as a connected machine</span></span>
+```powershell
+PS C:\> Connect-AzConnectedMachine -ResourceGroupName contoso-connected-machines -Name linux_eastus1_1 -Location eastus
+
+< truncated output of installing the azcmagent >
+
+time="2020-08-07T13:13:25-07:00" level=info msg="Onboarding Machine. It usually takes a few minutes to complete. Sometimes it may take longer depending on network and server load status."
+time="2020-08-07T13:13:25-07:00" level=info msg="Check network connectivity to all endpoints..."
+time="2020-08-07T13:13:29-07:00" level=info msg="All endpoints are available... continue onboarding"
+time="2020-08-07T13:13:50-07:00" level=info msg="Successfully Onboarded Resource to Azure" VM Id=978ab182-6cf0-4de3-a58b-53c8d0a3235e
+
+Name             Location OSName   Status     ProvisioningState
+----             -------- ------   ------     -----------------
+linux_eastus1_1  eastus   linux    Connected  Succeeded
+```
+
+<span data-ttu-id="93d06-109">Dołącza komputer, na których jesteś, jako połączony komputer.</span><span class="sxs-lookup"><span data-stu-id="93d06-109">Onboards the machine you're on as a connected machine.</span></span>
+
+### <span data-ttu-id="93d06-110">Przykład 2. Dołącza komputer zdalny jako podłączone urządzenie</span><span class="sxs-lookup"><span data-stu-id="93d06-110">Example 2: Onboards a remote machine as a connected device</span></span>
+```powershell
+PS C:\> $session = Connect-PSSession -ComputerName WINBOX
+PS C:\> Connect-AzConnectedMachine -ResourceGroupName contoso-rg -Name win_eastus1_1 -Location eastus -PSSession $session
+
+< truncated output of installing the azcmagent >
+
+time="2020-08-07T13:13:25-07:00" level=info msg="Onboarding Machine. It usually takes a few minutes to complete. Sometimes it may take longer depending on network and server load status."
+time="2020-08-07T13:13:25-07:00" level=info msg="Check network connectivity to all endpoints..."
+time="2020-08-07T13:13:29-07:00" level=info msg="All endpoints are available... continue onboarding"
+time="2020-08-07T13:13:50-07:00" level=info msg="Successfully Onboarded Resource to Azure" VM Id=978ab182-6cf0-4de3-a58b-53c8d0a3236a
+
+Name           Location OSName   Status     ProvisioningState
+----           -------- ------   ------     -----------------
+win_eastus1_1  eastus   windows  Connected  Succeeded
+```
+
+<span data-ttu-id="93d06-111">Dołącza komputer zdalny jako połączone urządzenie przy użyciu ponownego odsłuchiania programu PowerShell.</span><span class="sxs-lookup"><span data-stu-id="93d06-111">Onboards a remote machine as a connected device using PowerShell remoting.</span></span>
+<span data-ttu-id="93d06-112">Uwaga: w tej chwili obsługiwany jest tylko system Windows jako element docelowy.</span><span class="sxs-lookup"><span data-stu-id="93d06-112">Note: only Windows as the target is supported at this time.</span></span>
+
+## <span data-ttu-id="93d06-113">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="93d06-113">PARAMETERS</span></span>
+
+### <span data-ttu-id="93d06-114">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="93d06-114">-DefaultProfile</span></span>
+<span data-ttu-id="93d06-115">Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.</span><span class="sxs-lookup"><span data-stu-id="93d06-115">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: System.Management.Automation.PSObject
+Parameter Sets: (All)
+Aliases: AzureRMContext, AzureCredential
+
+Required: False
+Position: 4
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="93d06-116">— Lokalizacja</span><span class="sxs-lookup"><span data-stu-id="93d06-116">-Location</span></span>
+<span data-ttu-id="93d06-117">Lokalizacja utworzonego connectedMachine.</span><span class="sxs-lookup"><span data-stu-id="93d06-117">The location for the created ConnectedMachine.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="93d06-118">— Nazwa</span><span class="sxs-lookup"><span data-stu-id="93d06-118">-Name</span></span>
+<span data-ttu-id="93d06-119">Nazwa, która będzie używana dla tego komputera.</span><span class="sxs-lookup"><span data-stu-id="93d06-119">The name that will be used for this machine.</span></span>
+<span data-ttu-id="93d06-120">Nazwa hosta jest używana domyślnie.</span><span class="sxs-lookup"><span data-stu-id="93d06-120">The hostname is used by default.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 3
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="93d06-121">— serwer proxy</span><span class="sxs-lookup"><span data-stu-id="93d06-121">-Proxy</span></span>
+<span data-ttu-id="93d06-122">Adres URI serwera proxy do użycia</span><span class="sxs-lookup"><span data-stu-id="93d06-122">The URI for the proxy server to use</span></span>
+
+```yaml
+Type: System.Uri
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 7
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="93d06-123">-PSSession</span><span class="sxs-lookup"><span data-stu-id="93d06-123">-PSSession</span></span>
+<span data-ttu-id="93d06-124">W określonym przypadku polecenie, które uruchamia komputery na platformie Azure, będzie uruchamiane w ramach każdego polecenia PSSession.</span><span class="sxs-lookup"><span data-stu-id="93d06-124">When specified, the command that onboards machines to Azure will be run within each PSSession.</span></span>
+<span data-ttu-id="93d06-125">UWAGA: Ta funkcja na razie działa tylko w systemie Windows.</span><span class="sxs-lookup"><span data-stu-id="93d06-125">NOTE: This only works on Windows for now.</span></span>
+
+```yaml
+Type: System.Management.Automation.Runspaces.PSSession[]
+Parameter Sets: (All)
+Aliases: Session
+
+Required: False
+Position: 5
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="93d06-126">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="93d06-126">-ResourceGroupName</span></span>
+<span data-ttu-id="93d06-127">Nazwa grupy zasobów, do której chcesz dodać komputer.</span><span class="sxs-lookup"><span data-stu-id="93d06-127">The name of the resource group you want to add the machine to.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="93d06-128">- SubscriptionId</span><span class="sxs-lookup"><span data-stu-id="93d06-128">-SubscriptionId</span></span>
+<span data-ttu-id="93d06-129">Identyfikator subskrypcji, do której chcesz dodać komputer.</span><span class="sxs-lookup"><span data-stu-id="93d06-129">The ID of the subscription you want to add the machine to.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: (Get-AzContext).Subscription.Id
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="93d06-130">— Tag</span><span class="sxs-lookup"><span data-stu-id="93d06-130">-Tag</span></span>
+<span data-ttu-id="93d06-131">Tagi zasobów.</span><span class="sxs-lookup"><span data-stu-id="93d06-131">Resource tags.</span></span>
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 6
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="93d06-132">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="93d06-132">CommonParameters</span></span>
+<span data-ttu-id="93d06-133">To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="93d06-133">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="93d06-134">Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="93d06-134">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="93d06-135">DANE WEJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="93d06-135">INPUTS</span></span>
+
+## <span data-ttu-id="93d06-136">DANE WYJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="93d06-136">OUTPUTS</span></span>
+
+## <span data-ttu-id="93d06-137">NOTATKI</span><span class="sxs-lookup"><span data-stu-id="93d06-137">NOTES</span></span>
+
+<span data-ttu-id="93d06-138">ALIASY</span><span class="sxs-lookup"><span data-stu-id="93d06-138">ALIASES</span></span>
+
+## <span data-ttu-id="93d06-139">LINKI POKREWNE</span><span class="sxs-lookup"><span data-stu-id="93d06-139">RELATED LINKS</span></span>
+
