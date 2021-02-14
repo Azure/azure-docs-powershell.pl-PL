@@ -1,0 +1,163 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices.Backup.dll-Help.xml
+Module Name: Az.RecoveryServices
+ms.assetid: A10DC2A2-A732-416F-9C68-6533C143AE8F
+online version: https://docs.microsoft.com/en-us/powershell/module/az.recoveryservices/unregister-azrecoveryservicesbackupcontainer
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Unregister-AzRecoveryServicesBackupContainer.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Unregister-AzRecoveryServicesBackupContainer.md
+ms.openlocfilehash: 20e0c403656cc7fd714981f73b2a5a8c1335f9b0
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100183874"
+---
+# <span data-ttu-id="b1d67-101">Unregister-AzRecoveryServicesBackupContainer</span><span class="sxs-lookup"><span data-stu-id="b1d67-101">Unregister-AzRecoveryServicesBackupContainer</span></span>
+
+## <span data-ttu-id="b1d67-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="b1d67-102">SYNOPSIS</span></span>
+<span data-ttu-id="b1d67-103">Wyrejestruje serwer Windows Server lub inny kontener z magazynu.</span><span class="sxs-lookup"><span data-stu-id="b1d67-103">Unregisters a Windows Server or other container from the vault.</span></span>
+
+## <span data-ttu-id="b1d67-104">SKŁADNIA</span><span class="sxs-lookup"><span data-stu-id="b1d67-104">SYNTAX</span></span>
+
+```
+Unregister-AzRecoveryServicesBackupContainer [-Container] <ContainerBase> [-PassThru] [-VaultId <String>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="b1d67-105">OPIS</span><span class="sxs-lookup"><span data-stu-id="b1d67-105">DESCRIPTION</span></span>
+<span data-ttu-id="b1d67-106">Polecenie cmdlet **Unregister-AzRecoveryServicesBackupContainer** wyrejestruje z magazynu serwer Windows Server lub inny kontener kopii zapasowej.</span><span class="sxs-lookup"><span data-stu-id="b1d67-106">The **Unregister-AzRecoveryServicesBackupContainer** cmdlet unregisters a Windows Server or other Backup container from the vault.</span></span>
+<span data-ttu-id="b1d67-107">To polecenie cmdlet usuwa odwołania do kontenera z magazynu.</span><span class="sxs-lookup"><span data-stu-id="b1d67-107">This cmdlet removes references to a container from the vault.</span></span>
+<span data-ttu-id="b1d67-108">Aby można było wyrejestrować kontener, należy usunąć wszystkie chronione dane skojarzone z tym kontenerem.</span><span class="sxs-lookup"><span data-stu-id="b1d67-108">Before you can unregister a container, you must delete any protected data associated with that container.</span></span>
+<span data-ttu-id="b1d67-109">Ustaw kontekst magazynu za pomocą Set-AzRecoveryServicesVaultContext cmdlet przed użyciem bieżącego polecenia cmdlet.</span><span class="sxs-lookup"><span data-stu-id="b1d67-109">Set the vault context by using the Set-AzRecoveryServicesVaultContext cmdlet before you use the current cmdlet.</span></span>
+
+## <span data-ttu-id="b1d67-110">PRZYKŁADY</span><span class="sxs-lookup"><span data-stu-id="b1d67-110">EXAMPLES</span></span>
+
+### <span data-ttu-id="b1d67-111">Przykład 1. Wyrejestruj system Windows Server z magazynu</span><span class="sxs-lookup"><span data-stu-id="b1d67-111">Example 1: Unregister a Windows Server from the vault</span></span>
+```powershell
+PS C:\>$Cont = Get-AzRecoveryServicesBackupContainer -ContainerType "Windows" -BackupManagementType MARS -Name "server01.contoso.com"
+PS C:\> Unregister-AzRecoveryServicesBackupContainer -Container $Cont
+```
+
+<span data-ttu-id="b1d67-112">Pierwsze polecenie pobiera kontener systemu Windows o nazwie server01.contoso.com, który jest zarejestrowany w magazynie, a następnie przechowuje go w $Cont zmienną.</span><span class="sxs-lookup"><span data-stu-id="b1d67-112">The first command gets the Windows container named server01.contoso.com that is registered in the vault, and then stores it in the $Cont variable.</span></span>
+<span data-ttu-id="b1d67-113">Drugie polecenie wyrejestruje określony serwer Windows Server z magazynu kopii zapasowej platformy Azure.</span><span class="sxs-lookup"><span data-stu-id="b1d67-113">The second command unregisters the specified Windows Server from the Azure Backup vault.</span></span>
+
+### <span data-ttu-id="b1d67-114">Przykład 2</span><span class="sxs-lookup"><span data-stu-id="b1d67-114">Example 2</span></span>
+
+<span data-ttu-id="b1d67-115">Wyrejestruje serwer Windows Server lub inny kontener z magazynu.</span><span class="sxs-lookup"><span data-stu-id="b1d67-115">Unregisters a Windows Server or other container from the vault.</span></span> <span data-ttu-id="b1d67-116">(wygenerowane automatycznie)</span><span class="sxs-lookup"><span data-stu-id="b1d67-116">(autogenerated)</span></span>
+
+```powershell <!-- Aladdin Generated Example --> 
+Unregister-AzRecoveryServicesBackupContainer -Container $Cont -VaultId $vault.ID
+```
+
+## <span data-ttu-id="b1d67-117">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="b1d67-117">PARAMETERS</span></span>
+
+### <span data-ttu-id="b1d67-118">— Kontener</span><span class="sxs-lookup"><span data-stu-id="b1d67-118">-Container</span></span>
+<span data-ttu-id="b1d67-119">Określa obiekt kontenera kopii zapasowej do wyrejestrniania.</span><span class="sxs-lookup"><span data-stu-id="b1d67-119">Specifies a Backup container object to unregister.</span></span>
+<span data-ttu-id="b1d67-120">Aby uzyskać obiekt **BackupContainer,** użyj Get-AzRecoveryServicesBackupContainer cmdlet.</span><span class="sxs-lookup"><span data-stu-id="b1d67-120">To obtain a **BackupContainer** object, use the Get-AzRecoveryServicesBackupContainer cmdlet.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models.ContainerBase
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b1d67-121">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="b1d67-121">-DefaultProfile</span></span>
+<span data-ttu-id="b1d67-122">Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.</span><span class="sxs-lookup"><span data-stu-id="b1d67-122">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b1d67-123">-PassThru</span><span class="sxs-lookup"><span data-stu-id="b1d67-123">-PassThru</span></span>
+<span data-ttu-id="b1d67-124">Zwróć kontener do usunięcia.</span><span class="sxs-lookup"><span data-stu-id="b1d67-124">Return the container to be deleted.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b1d67-125">-VaultId</span><span class="sxs-lookup"><span data-stu-id="b1d67-125">-VaultId</span></span>
+<span data-ttu-id="b1d67-126">ARM identyfikatora magazynu usług odzyskiwania.</span><span class="sxs-lookup"><span data-stu-id="b1d67-126">ARM ID of the Recovery Services Vault.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b1d67-127">— Potwierdź</span><span class="sxs-lookup"><span data-stu-id="b1d67-127">-Confirm</span></span>
+<span data-ttu-id="b1d67-128">Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.</span><span class="sxs-lookup"><span data-stu-id="b1d67-128">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b1d67-129">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="b1d67-129">-WhatIf</span></span>
+<span data-ttu-id="b1d67-130">Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet.</span><span class="sxs-lookup"><span data-stu-id="b1d67-130">Shows what would happen if the cmdlet runs.</span></span> 
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="b1d67-131">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="b1d67-131">CommonParameters</span></span>
+<span data-ttu-id="b1d67-132">To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="b1d67-132">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="b1d67-133">Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="b1d67-133">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="b1d67-134">DANE WEJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="b1d67-134">INPUTS</span></span>
+
+### <span data-ttu-id="b1d67-135">System.String</span><span class="sxs-lookup"><span data-stu-id="b1d67-135">System.String</span></span>
+
+## <span data-ttu-id="b1d67-136">DANE WYJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="b1d67-136">OUTPUTS</span></span>
+
+### <span data-ttu-id="b1d67-137">Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlet.Models.ContainerBase</span><span class="sxs-lookup"><span data-stu-id="b1d67-137">Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models.ContainerBase</span></span>
+
+## <span data-ttu-id="b1d67-138">NOTATKI</span><span class="sxs-lookup"><span data-stu-id="b1d67-138">NOTES</span></span>
+
+## <span data-ttu-id="b1d67-139">LINKI POKREWNE</span><span class="sxs-lookup"><span data-stu-id="b1d67-139">RELATED LINKS</span></span>
+
+[<span data-ttu-id="b1d67-140">Get-AzRecoveryServicesBackupContainer</span><span class="sxs-lookup"><span data-stu-id="b1d67-140">Get-AzRecoveryServicesBackupContainer</span></span>](./Get-AzRecoveryServicesBackupContainer.md)
+
+
