@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/di
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Monitor/Monitor/help/Disable-AzActivityLogAlert.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Monitor/Monitor/help/Disable-AzActivityLogAlert.md
-ms.openlocfilehash: 84a377e2936a2c9f5aeaf0516dc96f848b9eb0b3
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: b37c3dde3a2f9566a4991111a53aeac72e44cce7
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93891233"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398805"
 ---
 # Disable-AzActivityLogAlert
 
-## STRESZCZENIe
-Wyłącza alert dziennika aktywności i ustawia jego Tagi.
+## SYNOPSIS
+Wyłącza alert dziennika aktywności i ustawia jego tagi.
 
-## POLECENIA
+## SKŁADNIA
 
 ### DisableByNameAndResourceGroup
 ```
@@ -38,39 +38,39 @@ Disable-AzActivityLogAlert -ResourceId <String> [-DefaultProfile <IAzureContextC
  [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **disable-AzActivityLogAlert** wyłącza alert dziennika aktywności i umożliwia ustawianie jego tagów.
-To polecenie cmdlet implementuje wzorzec ShouldProcess, tzn. może zażądać potwierdzenia od użytkownika przed faktycznym zainstalowaniem zasobu.
+## OPIS
+Polecenie **cmdlet Disable-AzActivityLogAlert** wyłącza alert dziennika aktywności i umożliwia ustawianie tagów.
+To polecenie cmdlet implementuje wzorzec ShouldProcess, czyli może wymagać potwierdzenia od użytkownika przed wykonaniem poprawek dla zasobu.
 
-## Przykłady
+## PRZYKŁADY
 
 ### Przykład 1. Wyłączanie alertu dziennika aktywności
 ```
 PS C:\>Disable-AzActivityLogAlert -Name "alert1" -ResourceGroupName "Default-ActivityLogsAlerts"
 ```
 
-To polecenie wyłącza alert dziennika aktywności o nazwie alert1 w grupie zasobów domyślna — ActivityLogsAlerts.
-To polecenie powoduje zmianę właściwości znaczników alertu dziennika aktywności o nazwie alert1 i wyłączenie go.
+To polecenie wyłącza alert dziennika aktywności o nazwie alert1 w grupie zasobów Default-ActivityLogsAlerts.
+To polecenie zmienia właściwość tagów alertu dziennika aktywności nazywanego alertem1 i wyłącza go.
 
-### Przykład 2: wyłączanie alertu w dzienniku aktywności przy użyciu obiektu PSActivityLogAlertResource jako danych wejściowych
+### Przykład 2. Wyłączanie alertu dziennika aktywności przy użyciu obiektu PSActivityLogAlertResource jako danych wejściowych
 ```
 PS C:\>$obj = Get-AzActivityLogAlert -ResourceGroup "Default-activityLogAlerts" -Name "alert1"
 PS C:\>Disable-AzActivityLogAlert -InputObject $obj
 ```
 
-To polecenie wyłącza alert dziennika aktywności o nazwie alert1. W tym przypadku obiekt PSActivityLogAlertResource jest używany jako argument wejściowy.
+To polecenie wyłącza alert dziennika aktywności o nazwie alert1. W tym celu jako argument wejściowy jest używany obiekt PSActivityLogAlertResource.
 
-### Przykład 3: wyłączanie ActivityLogAlert przy użyciu parametru ResourceId
+### Przykład 3. Wyłączanie parametru ActivityLogAlert przy użyciu parametru ResourceId
 ```
 PS C:\>Get-AzResource -ResourceGroupName "myResourceGroup" -Name "myLogAlert" | Disable-AzActivityLogAlert
 ```
 
-To polecenie wyłącza ActivityLogAlert przy użyciu parametru ResourceId z potoku.
+To polecenie wyłącza parametr ActivityLogAlert przy użyciu parametru ResourceId z potoku.
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -84,8 +84,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Inputobject
-Umożliwia ustawienie właściwości Inputobject dla połączenia w celu wyodrębnienia wymaganej nazwy, nazwy grupy zasobów i właściwości znacznika opcjonalnego.
+### -InputObject
+Ustawia właściwość tagów InputObject połączenia w celu wyodrębnienia wymaganej nazwy, nazwy grupy zasobów i opcjonalnych właściwości tagu.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource
@@ -99,7 +99,7 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Name (nazwa)
+### — Nazwa
 Nazwa alertu dziennika aktywności.
 
 ```yaml
@@ -115,7 +115,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Nazwa grupy zasobów, w której ma się znajdować zasób alertu.
+Nazwa grupy zasobów, w której ma istnieć zasób alertu.
 
 ```yaml
 Type: System.String
@@ -130,7 +130,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Ustawia właściwość znaczniki ResourceId połączenia, aby wyodrębnić wymaganą nazwę, właściwości nazwy grupy zasobów.
+Ustawia właściwość tagów ResourceId połączenia w celu wyodrębnienia wymaganej nazwy, właściwości nazwy grupy zasobów.
 
 ```yaml
 Type: System.String
@@ -144,8 +144,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Potwierdź
-Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.
+### — Potwierdź
+Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -160,7 +160,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet. Polecenie cmdlet nie jest uruchamiane.
+Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet. Polecenie cmdlet nie zostanie uruchomione.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -175,19 +175,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### System. String
+### System.String
 
-### Microsoft. Azure. Commands. Insights. OutputClasses. PSActivityLogAlertResource
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource
 
-## WYSYŁA
+## OUTPUTS
 
-### Microsoft. Azure. Commands. Insights. OutputClasses. PSActivityLogAlertResource
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
@@ -197,8 +197,8 @@ To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariab
 
 [Remove-AzActivityLogAlert](./Remove-AzActivityLogAlert.md)
 
-[Nowe — AzActionGroup](./New-AzActionGroup.md)
+[New-AzActionGroup](./New-AzActionGroup.md)
 
-[Nowe — AzActivityLogAlertCondition](./Get-AzActivityLogAlertCondition.md)
+
 
 [Enable-AzActivityLogAlert](./Enable-AzActivityLogAlert.md)
