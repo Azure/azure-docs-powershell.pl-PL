@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.frontdoor/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/New-AzFrontDoorCustomRuleObject.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/New-AzFrontDoorCustomRuleObject.md
-ms.openlocfilehash: 19f8215f8feaa1765da871f0fa38cc0120d842ea
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 8602bd4636e3e6034552f48a6f6514a453b816a0
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93868403"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400675"
 ---
 # New-AzFrontDoorCustomRuleObject
 
-## STRESZCZENIe
-Tworzenie obiektu CustomRule do tworzenia zasad WAF
+## SYNOPSIS
+Tworzenie obiektu CustomRule na celu utworzenia zasad WAF
 
-## POLECENIA
+## SKŁADNIA
 
 ```
 New-AzFrontDoorCustomRuleObject -Name <String> -RuleType <PSCustomRuleType>
@@ -26,10 +26,10 @@ New-AzFrontDoorCustomRuleObject -Name <String> -RuleType <PSCustomRuleType>
  [<CommonParameters>]
 ```
 
-## Opis
+## OPIS
 Tworzenie obiektu CustomRule do tworzenia zasad WAF
 
-## Przykłady
+## PRZYKŁADY
 
 ### Przykład 1
 ```powershell
@@ -42,11 +42,11 @@ Rule1 MatchRule  Block        2                          1
 
 Tworzenie obiektu CustomRule
 
-## PARAMETRÓW
+## PARAMETERS
 
-### -Action
+### — akcja
 Typ akcji.
-Możliwe wartości obejmują: "dozwolone", "Zablokuj", "log".
+Możliwe wartości: "Zezwalaj", "Blokowy", "Dziennik"
 
 ```yaml
 Type: Microsoft.Azure.Commands.FrontDoor.Models.PSAction
@@ -62,7 +62,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -77,7 +77,7 @@ Accept wildcard characters: False
 ```
 
 ### -MatchCondition
-Lista warunków zgodności.
+Lista warunków dopasowania.
 
 ```yaml
 Type: Microsoft.Azure.Commands.FrontDoor.Models.PSMatchCondition[]
@@ -91,7 +91,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (nazwa)
+### — Nazwa
 Nazwa reguły
 
 ```yaml
@@ -106,8 +106,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Priority (priorytet)
-Opisuje priorytet reguły.
+### — Priority (Priorytet)
+W tym artykule opisano priorytet reguły.
 
 ```yaml
 Type: System.Int32
@@ -122,7 +122,7 @@ Accept wildcard characters: False
 ```
 
 ### -RateLimitDurationInMinutes
-Limit szybkości. Domyślne — 1 minuta
+Czas trwania limitu stawek. Domyślne — 1 minuta
 
 ```yaml
 Type: System.Int32
@@ -137,7 +137,7 @@ Accept wildcard characters: False
 ```
 
 ### -RateLimitThreshold
-Limit szybkości thresold
+Przerzucanie limitu stawek
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -151,9 +151,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Ruletype
-Typ reguły.
-Możliwe wartości obejmują: "MatchRule", "RateLimitRule"
+### -RuleType
+Wpisz regułę.
+Możliwe wartości to: 'MatchRule', 'RateLimitRule'
 
 ```yaml
 Type: Microsoft.Azure.Commands.FrontDoor.Models.PSCustomRuleType
@@ -169,19 +169,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### Znaleziono
+### Brak
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### Microsoft. Azure. Commands. FrontDoor. models. PSCustomRule
+### Microsoft.Azure.Commands.FrontDoor.Models.PSCustomRule
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
-[Nowe — AzFrontDoorFireWallPolicy](./New-AzFrontDoorFireWallPolicy.md) 
- [Set-AzFrontDoorFireWallPolicy](./Set-AzFrontDoorFireWallPolicy.md)
+[New-AzFrontDoorFireWallPolicy](./New-AzFrontDoorFireWallPolicy.md) 
+ [Update-AzFrontDoorFireWallPolicy](./Update-AzFrontDoorFireWallPolicy.md)

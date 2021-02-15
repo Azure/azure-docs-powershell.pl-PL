@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Get-AzVMBootDiagnosticsData.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Get-AzVMBootDiagnosticsData.md
-ms.openlocfilehash: 94e5a1087f870f8dbbe099962e69d83b64f52ed3
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: ee210b5b9408f3de2b9e92213fafe4846ea8c3e1
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93869099"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400658"
 ---
 # Get-AzVMBootDiagnosticsData
 
-## STRESZCZENIe
-Pobiera dane diagnostyczne dotyczące rozruchu maszyny wirtualnej.
+## SYNOPSIS
+Pobiera dane diagnostyczne rozruchu dla maszyny wirtualnej.
 
-## POLECENIA
+## SKŁADNIA
 
-### WindowsParamSet (domyślny)
+### Zestaw WindowsParamSet (domyślny)
 ```
 Get-AzVMBootDiagnosticsData [-ResourceGroupName] <String> [-Name] <String> [-Windows] [-LocalPath] <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
@@ -32,24 +32,24 @@ Get-AzVMBootDiagnosticsData [-ResourceGroupName] <String> [-Name] <String> [-Lin
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **Get-AzVMBootDiagnosticsData** pobiera dane diagnostyczne dotyczące rozruchu maszyny wirtualnej.
+## OPIS
+Polecenie **cmdlet Get-AzVMBootDiagnosticsData** pobiera dane diagnostyczne rozruchu dla maszyny wirtualnej.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1: uzyskiwanie danych diagnostycznych rozruchu
+### Przykład 1. Uzyskiwanie danych diagnostycznych rozruchu
 ```
 PS C:\> Get-AzVMBootDiagnosticsData -ResourceGroupName "ResourceGroup11" -Name "ContosoVM07" -Windows -LocalPath "C:\Contoso\BootDiagnostics"
 ```
 
-To polecenie umożliwia wyświetlenie danych diagnostycznych rozruchu maszyny wirtualnej o nazwie ContosoVM07.
-Ta maszyna wirtualna uruchamia system operacyjny Windows.
-Polecenie zapisuje dane w określonej ścieżce lokalnej.
+To polecenie pobiera dane diagnostyczne rozruchu dla maszyny wirtualnej o nazwie ContosoVM07.
+Ta maszyny wirtualnej działa system operacyjny Windows.
+Polecenie przechowuje dane w określonej ścieżce lokalnej.
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -63,8 +63,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Linux
-Oznacza, że maszyna wirtualna uruchamia system operacyjny Linux.
+### — Linux
+Wskazuje, że maszyny wirtualnej jest uruchamiany system operacyjny Linux.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -78,8 +78,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -LocalPath
-Określa ścieżkę lokalną danych diagnostycznych rozruchu.
+### — LocalPath
+Określa ścieżkę lokalną dla danych diagnostycznych rozruchu.
 
 ```yaml
 Type: System.String
@@ -105,7 +105,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Name (nazwa)
+### — Nazwa
 Określa nazwę maszyny wirtualnej, dla której to polecenie cmdlet pobiera dane diagnostyczne.
 
 ```yaml
@@ -135,8 +135,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Windows
-Oznacza, że maszyna wirtualna uruchamia system operacyjny Windows.
+### — Windows
+Wskazuje, że na maszyny wirtualnej działa system operacyjny Windows.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -151,22 +151,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### System. String
+### System.String
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### Microsoft. Azure. Commands. COMPUTE. models. PSVirtualMachine
+### Microsoft.Azure.Commands.Compute.Models.PSVirtualMachine
 
-### Microsoft. Azure. Commands. COMPUTE. models. PSVirtualMachineInstanceView
+### Microsoft.Azure.Commands.Compute.Models.PSVirtualMachineInstanceView
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
-[Set-AzVMBootDiagnostics](./Set-AzVMBootDiagnostics.md)
+[Set-AzVMBootDiagnostic](./Set-AzVMBootDiagnostic.md)
 
 
