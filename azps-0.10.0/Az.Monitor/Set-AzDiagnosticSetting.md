@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/se
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Monitor/Monitor/help/Set-AzDiagnosticSetting.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Monitor/Monitor/help/Set-AzDiagnosticSetting.md
-ms.openlocfilehash: 175d3cc49f042cb10200c43cb07bbed5d58cf9e1
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: 5a9594c4261e3de99090d875e07997668fadea57
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93891054"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398975"
 ---
 # Set-AzDiagnosticSetting
 
-## STRESZCZENIe
+## SYNOPSIS
 Ustawia ustawienia dzienników i metryk dla zasobu.
 
-## POLECENIA
+## SKŁADNIA
 
-### OldSetDiagnosticSetting (domyślny)
+### OldSetDiagnosticSetting (domyślne)
 ```
 Set-AzDiagnosticSetting -ResourceId <String> [-Name <String>] [-StorageAccountId <String>]
  [-ServiceBusRuleId <String>] [-EventHubName <String>] [-EventHubAuthorizationRuleId <String>]
@@ -37,28 +37,28 @@ Set-AzDiagnosticSetting -InputObject <PSServiceDiagnosticSettings> [-DefaultProf
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **Set-AzDiagnosticSetting** włącza lub wyłącza każdą kategorię ziarno i dziennik dla określonego zasobu.
+## OPIS
+Polecenie **cmdlet Set-AzDiagnosticSetting** włącza lub wyłącza każdą kategorię czasową i kategorię dziennika dla określonego zasobu.
 Dzienniki i metryki są przechowywane na określonym koncie magazynu.
-To polecenie cmdlet implementuje wzorzec ShouldProcess, tzn. może zażądać potwierdzenia od użytkownika przed faktycznym utworzeniem, zmodyfikowaniem lub usunięciem zasobu.
+To polecenie cmdlet implementuje wzorzec ShouldProcess, czyli może wymagać potwierdzenia od użytkownika przed jego utworzeniem, zmodyfikowaniem lub usunięciem.
 
-## Przykłady
+## PRZYKŁADY
 
 ### Przykład 1. Włączanie wszystkich metryk i dzienników dla zasobu
 ```
 PS C:\>Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $True
 ```
 
-To polecenie umożliwia włączenie wszystkich dostępnych metryk i dzienników dla Resource01.
+To polecenie udostępnia wszystkie dostępne metryki i dzienniki dla zasobu Resource01.
 
-### Przykład 2: wyłączenie wszystkich metryk i dzienników
+### Przykład 2. Wyłączanie wszystkich metryk i dzienników
 ```
 PS C:\>Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $False
 ```
 
-To polecenie powoduje wyłączenie wszystkich dostępnych metryk i dzienników dla Resource01 zasobów.
+To polecenie wyłącza wszystkie dostępne metryki i dzienniki dla zasobu Resource01.
 
-### Przykład 3: Włączanie/wyłączanie kategorii wielu metryk
+### Przykład 3. Włączanie/wyłączanie wielu kategorii metryk
 ```
 PS C:\>Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $False -MetricCategory MetricCategory1,MetricCategory2
 StorageAccountId   : <storageAccountId>
@@ -84,10 +84,10 @@ Logs
    Category : Category4
 ```
 
-To polecenie wyłącza kategorie metryk o nazwie Category1 oraz Category2.
-Wszystkie pozostałe kategorie pozostają bez zmian.
+To polecenie wyłącza kategorie metryk o nazwach Kategoria1 i Kategoria2.
+Wszystkie pozostałe kategorie pozostają takie same.
 
-### Przykład 4: Włączanie/wyłączanie wielu kategorii dziennika
+### Przykład 4. Włączanie/wyłączanie wielu kategorii dziennika
 ```
 PS C:\>Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $True -Category Category1,Category2
 StorageAccountId   : <storageAccountId>
@@ -113,29 +113,29 @@ Logs
    Category : Category4
 ```
 
-To polecenie umożliwia włączenie Category1 i Category2.
-Wszystkie pozostałe kategorie metryk i dzienniki pozostają bez zmian.
+To polecenie włącza kategorie Kategoria1 i Kategoria2.
+Wszystkie pozostałe metryki i kategorie dzienników pozostają takie same.
 
-### Przykład 4: Włączanie ziarna czasu i wielu kategorii
+### Przykład 4. Włączanie odsłoń czasu i wielu kategorii
 ```
 PS C:\>Set-AzDiagnosticSetting -ResourceId "Resource01" -Enabled $True -Category Category1,Category2 -Timegrain PT1M
 ```
 
-To polecenie umożliwia włączenie tylko Category1, Category2 i ziarna PT1M.
-Wszystkie pozostałe ziarno i kategorie są niezmienione.
+To polecenie włącza tylko kategorię Category1, Category2 i time grain PT1M.
+Wszystkie pozostałe kategorie i kategorie czasu pozostają bez zmian.
 
-### Przykład 5: korzystanie z rurociągu
+### Przykład 5. Korzystanie z potoku
 ```
 PS C:\>Get-AzDiagnosticSetting -ResourceId "Resource01" | Set-AzDiagnosticSetting -Enabled $True -Category Category1,Category2
 ```
 
-To polecenie używa potoku programu PowerShell do ustawiania (bez zmiany) ustawienia diagnostycznego.
+To polecenie używa potoku programu PowerShell do ustawienia ustawienia diagnostycznego (bez zmian).
 
-## PARAMETRÓW
+## PARAMETERS
 
-### -Category
-Określa listę kategorii dziennika, które mają zostać włączone lub wyłączone, zgodnie z wartością *włączoną*.
-Jeśli nie podano żadnej kategorii, to polecenie będzie działać we wszystkich obsługiwanych kategoriach. 
+### — Kategoria
+Określa listę kategorii dziennika do włączenia lub wyłączenia zgodnie z *wartością* Włączone.
+Jeśli nie zostanie określona żadna kategoria, to polecenie będzie działać na wszystkich obsługiwanych kategoriach.
 
 ```yaml
 Type: System.Collections.Generic.List`1[System.String]
@@ -150,7 +150,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -164,9 +164,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Enabled
+### — włączone
 Wskazuje, czy włączyć diagnostykę.
-Określ $True, aby włączyć diagnostykę, lub $False, aby wyłączyć diagnostykę.
+Określ $True, aby włączyć diagnostykę, lub określ, $False wyłączyć diagnostykę.
 
 ```yaml
 Type: System.Boolean
@@ -211,9 +211,9 @@ Accept wildcard characters: False
 ```
 
 ### -ExportToResourceSpecific
-Flaga wskazująca, że eksport do elementu LA musi zostać wykonany w tabeli określonego zasobu, vel tabela schematów dedykowana lub stała, w przeciwieństwie do **domyślnej** tabeli schematu dynamicznego o nazwie **AzureDiagnostics**.
+Flaga oznaczaca, że eksport do la musi zostać wykonane dla tabeli specyficznej dla zasobu, czyli dedykowaną lub stałą  tabelę schematu, a nie domyślną tabelę schematów dynamicznych o **nazwie AzureDiagnostics.**
 
-Ten argument obowiązuje tylko wtedy, gdy podany jest również argument **-workspaceId** .
+Ten argument ma wartość skuteczną tylko wtedy, gdy **argument -workspaceId** również jest podany.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -227,8 +227,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Inputobject
-Obiekt wejściowy (możliwy z potoku). Nazwa i identyfikator zasobu zostaną wyodrębnione z tego obiektu.
+### -InputObject
+Obiekt wejściowy (możliwe z potoku). Nazwa i identyfikator zasobu zostaną wyodrębnione z tego obiektu.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Insights.OutputClasses.PSServiceDiagnosticSettings
@@ -242,8 +242,9 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -MetricCategory
-Lista kategorii metrycznych. Jeśli nie podano żadnej kategorii, to polecenie będzie działać we wszystkich obsługiwanych kategoriach. 
+### - MetricCategory
+Lista kategorii metrycznych.
+Jeśli nie zostanie określona żadna kategoria, to polecenie będzie działać na wszystkich obsługiwanych kategoriach.
 
 ```yaml
 Type: System.Collections.Generic.List`1[System.String]
@@ -257,8 +258,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Name (nazwa)
-Nazwa ustawienia diagnostycznego. Wartość domyślna to **Usługa**.
+### — Nazwa
+Nazwa ustawienia diagnostycznego. Wartość domyślna to **usługa.**
 
 ```yaml
 Type: System.String
@@ -288,7 +289,7 @@ Accept wildcard characters: False
 ```
 
 ### -RetentionEnabled
-Wskazuje, czy zachowywanie informacji diagnostycznych jest włączone.
+Wskazuje, czy jest włączone przechowywanie informacji diagnostycznych.
 
 ```yaml
 Type: System.Nullable`1[System.Boolean]
@@ -318,7 +319,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceBusRuleId
-Identyfikator reguły usługi Service Bus.
+Identyfikator reguły autobusu usługowego.
 
 ```yaml
 Type: System.String
@@ -332,8 +333,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -StorageAccountId
-Określa identyfikator konta magazynu, w którym należy zapisać dane.
+### - StorageAccountId
+Określa identyfikator konta magazynu, na którym mają być zapisywanie danych.
 
 ```yaml
 Type: System.String
@@ -347,9 +348,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Timegrain
-Określa ziarno czasu, w którym można włączać lub wyłączać metryki w zależności od wartości *włączonego*.
-Jeśli nie określisz ziarna, to polecenie będzie działać na wszystkich dostępnych ziarnach czasu.
+### - Timegrain
+Określa, w których godzinach mają być włączone lub wyłączone metryki zgodnie z wartością *Włączone.*
+Jeśli nie zostanie określony czasowy, to polecenie będzie dotyczyć wszystkich dostępnych okresów.
 
 ```yaml
 Type: System.Collections.Generic.List`1[System.String]
@@ -363,8 +364,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -WorkspaceId
-Identyfikator obszaru roboczego
+### - WorkspaceId
+Identyfikator zasobu obszaru roboczego analizy dziennika w celu wysyłania dzienników/metryk do
 
 ```yaml
 Type: System.String
@@ -378,8 +379,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Potwierdź
-Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.
+### — Potwierdź
+Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -394,7 +395,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet. Polecenie cmdlet nie jest uruchamiane.
+Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet. Polecenie cmdlet nie zostanie uruchomione.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -409,27 +410,27 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### Microsoft. Azure. Commands. Insights. OutputClasses. PSServiceDiagnosticSettings
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSServiceDiagnosticSettings
 
-### System. String
+### System.String
 
-### System. Boolean
+### System.Boolean
 
-### System. Collections. Generic. list "1 [[System. String; system. private. CoreLib, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Collections.Generic.List'1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-### System. Nullable "1 [[System. Boolean, system. private. CoreLib, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-### System. Nullable ' 1 [[System. Int32; system. private. CoreLib, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### Microsoft. Azure. Commands. Insights. OutputClasses. PSServiceDiagnosticSettings
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSServiceDiagnosticSettings
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 

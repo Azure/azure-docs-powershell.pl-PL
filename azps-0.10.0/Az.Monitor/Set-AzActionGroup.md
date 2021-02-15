@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/se
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Monitor/Monitor/help/Set-AzActionGroup.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Monitor/Monitor/help/Set-AzActionGroup.md
-ms.openlocfilehash: aad8ebb5b78163319ca0c6f56780bd0e336853f7
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: ede2a8566f7305b4f56a5fc392090b426c148547
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93891062"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399009"
 ---
 # Set-AzActionGroup
 
-## STRESZCZENIe
-Umożliwia utworzenie nowej lub zaktualizowanie istniejącej grupy akcji.
+## SYNOPSIS
+Tworzy nową lub aktualizuje istniejącą grupę akcji.
 
-## POLECENIA
+## SKŁADNIA
 
-### ByPropertyName (domyślny)
+### ByPropertyName (Default)
 ```
 Set-AzActionGroup -ResourceGroupName <String> -Name <String> -ShortName <String>
  -Receiver <System.Collections.Generic.List`1[Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupReceiverBase]>
@@ -44,10 +44,10 @@ Set-AzActionGroup [-ShortName <String>] [-DisableGroup]
  [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **Set-AzActionGroup** powoduje utworzenie nowej lub zaktualizowanie istniejącej grupy akcji
+## OPIS
+Polecenie **cmdlet Set-AzActionGroup** tworzy nową lub aktualizuje istniejącą grupę akcji
 
-## Przykłady
+## PRZYKŁADY
 
 ### Przykład 1. Tworzenie grupy akcji
 ```
@@ -56,13 +56,13 @@ PS C:\>$sms1 = New-AzActionGroupReceiver -Name 'user2' -SmsReceiver -CountryCode
 PS C:\>Set-AzActionGroup -Name $actionGroupName -ResourceGroup $resourceGroupName -ShortName $shortName -Receiver $email1,$sms1
 ```
 
-Dwa pierwsze polecenia tworzą dwa odbiorniki.
-W ostatnim poleceniu zostanie utworzona grupa akcji zawierająca dwóch odbiorców.
+Pierwsze dwa polecenia tworzą dwóch odbiorców.
+Ostatnie polecenie tworzy grupę akcji z dwoma odbiorcami.
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -76,7 +76,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Disable
+### -DisableGroup
 Wyłącza grupę akcji.
 
 ```yaml
@@ -103,8 +103,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Inputobject
-Zasób grupa akcji
+### -InputObject
+Zasób grupy akcji
 
 ```yaml
 Type: Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupResource
@@ -118,7 +118,7 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Name (nazwa)
+### — Nazwa
 Nazwa grupy akcji.
 
 ```yaml
@@ -133,7 +133,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Receiver
+### - Odbiorca
 Lista odbiorców grupy akcji.
 
 ```yaml
@@ -149,7 +149,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Grupa zasobów
+Nazwa grupy zasobów
 
 ```yaml
 Type: System.String
@@ -205,8 +205,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Tag
-Znaczniki zasobu grupa akcji
+### — Tag
+Tagi zasobu grupy akcji
 
 ```yaml
 Type: System.Collections.Generic.IDictionary`2[System.String,System.String]
@@ -232,8 +232,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Potwierdź
-Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.
+### — Potwierdź
+Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -248,7 +248,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet. Polecenie cmdlet nie jest uruchamiane.
+Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet. Polecenie cmdlet nie zostanie uruchomione.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -263,28 +263,28 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### System. String
+### System.String
 
-### System. Collections. Generic. list "1 [[Microsoft. Azure. polecenia....... w. OutputClasses. PSActionGroupReceiverBase, Microsoft. Azure. PowerShell. cmdlets. Monitor, wersja = 1.0.0.0, Culture = neutral, PublicKeyToken = null]]
+### System.Collections.generic.List'1[[Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupReceiverBase, Microsoft.Azure.PowerShell.Cmdlet.Monitor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 
-### System. Management. Automation. SwitchParameter
+### System.Management.Automation.SwitchParameters
 
-### System. Collections. Generic. IDictionary ' 2 [[System. String, system. private. CoreLib, Version = 4.0.0.0, Culture = neutral; PublicKeyToken = 7cec85d7bea7798e], [System. String, system. private. CoreLib, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Collections.Generic.IDictionary'2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-### Microsoft. Azure. Commands. Insights. OutputClasses. PSActionGroupResource
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupResource
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### Microsoft. Azure. Commands. Insights. OutputClasses. PSActionGroupResource
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupResource
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
 [Get-AzActionGroup](./Get-AzActionGroup.md) 
- [Remove-AzActionGroup](./Remove-AzActionGroup.md) 
- [Nowe — AzActionGroupReceiver](./AzureRmActionGroupReceiver.md)
+ [Remove-AzActionGroup](./Remove-AzActionGroup.md)
+
