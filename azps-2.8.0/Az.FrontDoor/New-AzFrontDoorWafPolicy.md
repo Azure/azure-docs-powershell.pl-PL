@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.frontdoor/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/New-AzFrontDoorWafPolicy.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/New-AzFrontDoorWafPolicy.md
-ms.openlocfilehash: 242478245188e68fe0a5d86ee7c54aba57d4d056
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 0612f8bddf69e36fe8084bf27dbb44635059ee1a
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93705373"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100408920"
 ---
 # New-AzFrontDoorWafPolicy
 
-## STRESZCZENIe
-Tworzenie zasad WAF
+## SYNOPSIS
+Tworzenie zasad SAF
 
-## POLECENIA
+## SKŁADNIA
 
 ```
 New-AzFrontDoorWafPolicy -ResourceGroupName <String> -Name <String> [-EnabledState <PSEnabledState>]
@@ -26,12 +26,12 @@ New-AzFrontDoorWafPolicy -ResourceGroupName <String> -Name <String> [-EnabledSta
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **New-AzFrontDoorWafPolicy** tworzy nowe zasady usługi Azure WAF w określonej grupie zasobów w obszarze bieżący abonament.
+## OPIS
+Polecenie **cmdlet New-AzFrontDoorWafPolicy** tworzy nowe zasady Azure WAF w określonej grupie zasobów w ramach bieżącej subskrypcji
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1: Tworzenie zasad WAF
+### Przykład 1. Tworzenie zasad SAF
 ```powershell
 PS C:\> New-AzFrontDoorWafPolicy -Name $policyName -ResourceGroupName $resourceGroupName -Customrule $customRule1,$customRule2 -ManagedRule $managedRule1 -EnabledState Enabled -Mode Prevention -RedirectUrl "https://www.bing.com/" -CustomBlockResponseStatusCode 405 -CustomBlockResponseBody "<html><head><title>You are blocked!</title></head><body></body></html>"
 
@@ -40,12 +40,12 @@ Name         PolicyMode PolicyEnabledState RedirectUrl
 {policyName} Prevention            Enabled https://www.bing.com/
 ```
 
-Tworzenie zasad WAF
+Tworzenie zasad SAF
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -CustomBlockResponseBody
-Treść niestandardowej odpowiedzi
+Niestandardowa treść odpowiedzi
 
 ```yaml
 Type: System.String
@@ -74,7 +74,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Customrule
+### — Customrule
 Reguły niestandardowe w zasadach
 
 ```yaml
@@ -90,7 +90,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -105,8 +105,8 @@ Accept wildcard characters: False
 ```
 
 ### -EnabledState
-Czy zasady są w stanie włączonym, czy wyłączone.
-Możliwe wartości obejmują: "wyłączone", "włączone"
+Czy zasady są w stanie włączonym, czy wyłączonym.
+Możliwe wartości: "Wyłączone", "Włączone"
 
 ```yaml
 Type: Microsoft.Azure.Commands.FrontDoor.Models.PSEnabledState
@@ -121,7 +121,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ManagedRule
+### - ManagedRule
 Reguły zarządzane w zasadach
 
 ```yaml
@@ -136,9 +136,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Mode (tryb)
-Opisuje, czy jest w trybie wykrywania, czy w trybie zapobiegania na poziomie zasad.
-Możliwe wartości obejmują: "Zapobieganie", "wykrywanie".
+### — tryb
+W tym artykule opisano, czy jest on w trybie wykrywania, czy w trybie zapobiegania na poziomie zasad.
+Możliwe wartości to:'Zapobieganie', 'Wykrywanie'
 
 ```yaml
 Type: System.String
@@ -152,8 +152,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (nazwa)
-Nazwa WebApplicationFireWallPolicy.
+### — Nazwa
+Nazwa witryny WebApplicationFireWallPolicy.
 
 ```yaml
 Type: System.String
@@ -197,8 +197,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Potwierdź
-Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.
+### — Potwierdź
+Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -213,8 +213,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet.
-Polecenie cmdlet nie jest uruchamiane.
+Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet.
+Polecenie cmdlet nie zostanie uruchomione.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -229,22 +229,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### Znaleziono
+### Brak
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### Microsoft. Azure. Commands. FrontDoor. models. PSPolicy
+### Microsoft.Azure.Commands.FrontDoor.Models.PSPolicy
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
-[Set-AzFrontDoorWafPolicy](./Set-AzFrontDoorWafPolicy.md) 
- [Get-AzFrontDoorWafPolicy](./Get-AzFrontDoorWafPolicy.md) 
+[Get-AzFrontDoorWafPolicy](./Get-AzFrontDoorWafPolicy.md) 
  [Remove-AzFrontDoorWafPolicy](./Remove-AzFrontDoorWafPolicy.md) 
- [Nowe — AzFrontDoorWafManagedRuleObject](./New-AzFrontDoorWafManagedRuleObject.md) 
- [Nowe — AzFrontDoorWafCustomRuleObject](./New-AzFrontDoorWafManagedRuleObject.md)
+ [Update-AzFrontDoorWafPolicy](./Update-AzFrontDoorWafPolicy.md) 
+ [New-AzFrontDoorWafManagedRuleObject](./New-AzFrontDoorWafManagedRuleObject.md) 
+ [New-AzFrontDoorWafCustomRuleObject](./New-AzFrontDoorWafManagedRuleObject.md)

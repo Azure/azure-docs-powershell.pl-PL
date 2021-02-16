@@ -5,21 +5,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzNetworkWatcherSecurityGroupView.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzNetworkWatcherSecurityGroupView.md
-ms.openlocfilehash: f40b7e28bce34ef9e4cc289bed7f8c4524ef49d4
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: e1b6b0339b093a048d6d74998ac6b0eb276e81cd
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93709483"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400300"
 ---
 # Get-AzNetworkWatcherSecurityGroupView
 
-## STRESZCZENIe
-Wyświetl skonfigurowane i efektywne reguły grupowych zabezpieczeń sieci stosowane na maszynie wirtualnej.
+## SYNOPSIS
+Wyświetl skonfigurowane i efektywne reguły grupy zabezpieczeń sieciowych zastosowane do maszyny wirtualnej.
 
-## POLECENIA
+## SKŁADNIA
 
-### SetByResource (domyślny)
+### SetByResource (Domyślne)
 ```
 Get-AzNetworkWatcherSecurityGroupView -NetworkWatcher <PSNetworkWatcher> -TargetVirtualMachineId <String>
  [-AsJob] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
@@ -37,12 +37,12 @@ Get-AzNetworkWatcherSecurityGroupView -Location <String> -TargetVirtualMachineId
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Opis
-Get-AzNetworkWatcherSecurityGroupView pozwala wyświetlić skonfigurowane i efektywne reguły grupowych zabezpieczeń sieci stosowane na maszynie wirtualnej.
+## OPIS
+Ta Get-AzNetworkWatcherSecurityGroupView umożliwia wyświetlenie skonfigurowanych i efektywnych reguł grupy zabezpieczeń sieciowych zastosowanych do maszyny wirtualnej.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1. Tworzenie grup zabezpieczeń w celu wyświetlania połączeń na maszynie wirtualnej
+### Przykład 1. Wywołanie widoku grupy zabezpieczeń na maszyny wirtualnej
 ```
 $nw = Get-AzResource | Where {$_.ResourceType -eq "Microsoft.Network/networkWatchers" -and $_.Location -eq "WestCentralUS" } 
 $networkWatcher = Get-AzNetworkWatcher -Name $nw.Name -ResourceGroupName $nw.ResourceGroupName 
@@ -50,12 +50,12 @@ $VM = Get-AzVM -ResourceGroupName ContosoResourceGroup -Name VM0
 Get-AzNetworkWatcherSecurityGroupView -NetworkWatcher $networkWatcher -TargetVirtualMachineId $VM.Id
 ```
 
-W powyższym przykładzie najpierw jest wyświetlany regionalny Monitor sieci, a następnie maszyna wirtualna w regionie. Następnie nawiązanie połączenia z grupą zabezpieczeń na określonej maszynie wirtualnej jest włączone.
+W powyższym przykładzie najpierw używamy regionalnego urządzenia Network Watcher, a następnie maszyny wirtualnej w regionie. Następnie wywołamy widok grupy zabezpieczeń dla określonej maszyny wirtualnej.
 
-## PARAMETRÓW
+## PARAMETERS
 
-### -AsJob
-Uruchom polecenie cmdlet w tle
+### — AsJob
+Uruchamianie polecenia cmdlet w tle
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -70,7 +70,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -85,7 +85,7 @@ Accept wildcard characters: False
 ```
 
 ### — Lokalizacja
-Lokalizacja obserwatora sieci.
+Lokalizacja czujki sieci.
 
 ```yaml
 Type: System.String
@@ -99,8 +99,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -NetworkWatcher
-Zasób obserwatora sieci.
+### — NetworkWatcher
+Zasób obserwowania sieci.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
@@ -115,7 +115,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcherName
-Nazwa obserwatora sieci.
+Nazwa osoby oglądacej sieć.
 
 ```yaml
 Type: System.String
@@ -130,7 +130,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Nazwa grupy zasobów obserwatora sieci.
+Nazwa grupy zasobów obserwowanych sieci.
 
 ```yaml
 Type: System.String
@@ -145,7 +145,7 @@ Accept wildcard characters: False
 ```
 
 ### -TargetVirtualMachineId
-Docelowy Identyfikator maszyny wirtualnej
+Docelowy identyfikator maszyny wirtualnej
 
 ```yaml
 Type: System.String
@@ -160,24 +160,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### Microsoft. Azure. Commands. Network. models. PSNetworkWatcher
+### Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
 
-### System. String
+### System.String
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### Microsoft. Azure. Commands. Network. models. PSSecurityGroupViewResult
+### Microsoft.Azure.Commands.Network.Models.PSSecurityGroupViewResult
 
-## INFORMACYJN
-Słowa kluczowe: Azure, azurerm, ARM, Resource, Management, Manager, Network, Networking, monitor sieciowy, przepływ, IP 
+## NOTATKI
+Słowa kluczowe: azure, azurerm, arm, resource, management, manager, network, networking, network watcher, flow, ip 
 
 ## LINKI POKREWNE
 
-[Nowe — AzNetworkWatcher](./New-AzNetworkWatcher.md)
+[New-AzNetworkWatcher](./New-AzNetworkWatcher.md)
 
 [Get-AzNetworkWatcher](./Get-AzNetworkWatcher.md)
 
@@ -189,27 +189,27 @@ Słowa kluczowe: Azure, azurerm, ARM, Resource, Management, Manager, Network, Ne
 
 [Get-AzNetworkWatcherTopology](./Get-AzNetworkWatcherTopology.md)
 
-[Start — AzNetworkWatcherResourceTroubleshooting](./Start-AzNetworkWatcherResourceTroubleshooting.md)
+[Start-AzNetworkWatcherResourceTroubleshooting](./Start-AzNetworkWatcherResourceTroubleshooting.md)
 
-[Nowe — AzNetworkWatcherPacketCapture](./New-AzNetworkWatcherPacketCapture.md)
+[New-AzNetworkWatcherPacketCapture](./New-AzNetworkWatcherPacketCapture.md)
 
-[Nowe — AzPacketCaptureFilterConfig](./New-AzPacketCaptureFilterConfig.md)
+[New-AzPacketCaptureFilterConfig](./New-AzPacketCaptureFilterConfig.md)
 
 [Get-AzNetworkWatcherPacketCapture](./Get-AzNetworkWatcherPacketCapture.md)
 
 [Remove-AzNetworkWatcherPacketCapture](./Remove-AzNetworkWatcherPacketCapture.md)
 
-[Zatrzymaj — AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
+[Stop-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
 
-[Nowe — AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md)
+[New-AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md)
 
-[Test — AzNetworkWatcherIPFlow](./Test-AzNetworkWatcherIPFlow.md)
+[Test-AzNetworkWatcherIPFlow](./Test-AzNetworkWatcherIPFlow.md)
 
-[Test — AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md)
+[Test-AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md)
 
-[Zatrzymaj — AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
+[Stop-AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
 
-[Start — AzNetworkWatcherConnectionMonitor](./Start-AzNetworkWatcherConnectionMonitor.md)
+[Start-AzNetworkWatcherConnectionMonitor](./Start-AzNetworkWatcherConnectionMonitor.md)
 
 [Set-AzNetworkWatcherConnectionMonitor](./Set-AzNetworkWatcherConnectionMonitor.md)
 
@@ -217,7 +217,7 @@ Słowa kluczowe: Azure, azurerm, ARM, Resource, Management, Manager, Network, Ne
 
 [Remove-AzNetworkWatcherConnectionMonitor](./Remove-AzNetworkWatcherConnectionMonitor.md)
 
-[Nowe — AzNetworkWatcherConnectionMonitor](./New-AzNetworkWatcherConnectionMonitor.md)
+[New-AzNetworkWatcherConnectionMonitor](./New-AzNetworkWatcherConnectionMonitor.md)
 
 [Get-AzNetworkWatcherTroubleshootingResult](./Get-AzNetworkWatcherTroubleshootingResult.md)
 
@@ -227,6 +227,6 @@ Słowa kluczowe: Azure, azurerm, ARM, Resource, Management, Manager, Network, Ne
 
 [Get-AzNetworkWatcherFlowLogStatus](./Get-AzNetworkWatcherFlowLogStatus.md)
 
-[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport)
+[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)
