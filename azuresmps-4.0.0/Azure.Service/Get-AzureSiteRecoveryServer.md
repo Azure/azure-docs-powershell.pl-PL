@@ -3,21 +3,21 @@ external help file: Microsoft.Azure.Commands.RecoveryServicesRdfe.dll-Help.xml
 ms.assetid: 3EC274C9-9BF6-4B39-BC70-C7F9D780805D
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: a4081d6d072aadd6a4ae7d09ff57748a8f2cb697
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: 79b61501a56913fedb2a003d7aea1a041bfab4d5
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "94054546"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100412286"
 ---
 # Get-AzureSiteRecoveryServer
 
-## STRESZCZENIe
-Pobiera serwery odzyskiwania witryny zarejestrowane w magazynie odzyskiwania witryny.
+## SYNOPSIS
+Pobiera serwery odzyskiwania witryn, które zarejestrły magazyn odzyskiwania witryny.
 
-## POLECENIA
+## SKŁADNIA
 
-### Domyślne (domyślnie)
+### Domyślne (domyślne)
 ```
 Get-AzureSiteRecoveryServer [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
@@ -32,12 +32,12 @@ Get-AzureSiteRecoveryServer -Id <String> [-Profile <AzureSMProfile>] [<CommonPar
 Get-AzureSiteRecoveryServer -Name <String> [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **Get-AzureSiteRecoveryServer** pobiera informacje o serwerach usługi Azure Site Recovery zarejestrowanych w bieżącym magazynie odzyskiwania witryny.
+## OPIS
+Polecenie **cmdlet Get-AzureSiteRecoveryServer** pobiera informacje o serwerach azure site recovery zarejestrowanych w bieżącym magazynie odzyskiwania witryny.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1: uzyskiwanie informacji o serwerze odzyskiwania witryny
+### Przykład 1. Uzyskiwanie informacji o serwerze odzyskiwania witryny
 ```
 PS C:\> Get-AzureSiteRecoveryServer
 ID              : cd7dec80-1144-4531-9ab3-888b8ab39bee
@@ -53,11 +53,11 @@ ProviderVersion : 3.5
 ServerVersion   : 3.2.7510.0
 ```
 
-To polecenie pobiera informacje o serwerze usługi Azure Site Recovery.
+To polecenie pobiera informacje o serwerze Azure Site Recovery.
 
-## PARAMETRÓW
+## PARAMETERS
 
-### -ID
+### — Id
 Określa identyfikator serwera.
 
 ```yaml
@@ -72,7 +72,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (nazwa)
+### — Nazwa
 Określa nazwę serwera.
 
 ```yaml
@@ -87,9 +87,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Profile
-Określa Profil platformy Azure, na podstawie którego jest odczytywane to polecenie cmdlet.
-Jeśli nie podano profilu, to polecenie cmdlet odczytuje lokalny profil domyślny.
+### — Profil
+Określa profil platformy Azure, z którego będzie odczytywane to polecenie cmdlet.
+Jeśli nie określisz profilu, to polecenie cmdlet zostanie odczytane z lokalnego profilu domyślnego.
 
 ```yaml
 Type: AzureSMProfile
@@ -104,16 +104,16 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-## WYSYŁA
+## OUTPUTS
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
-[Polecenia cmdlet usług Azure Site Recovery](./Azure.SiteRecoveryServices.md)
+
 
 
