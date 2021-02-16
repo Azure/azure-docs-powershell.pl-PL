@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.frontdoor/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/New-AzFrontDoorWafPolicy.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/New-AzFrontDoorWafPolicy.md
-ms.openlocfilehash: 2e78b132019b19725a5261d58a760b3eb9988bb2
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 2d3811b5605b6f4923abd58c64d8d870ede8d334
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94053321"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100403854"
 ---
-# <span data-ttu-id="ca359-101">New-AzFrontDoorWafPolicy</span><span class="sxs-lookup"><span data-stu-id="ca359-101">New-AzFrontDoorWafPolicy</span></span>
+# <span data-ttu-id="39bef-101">New-AzFrontDoorWafPolicy</span><span class="sxs-lookup"><span data-stu-id="39bef-101">New-AzFrontDoorWafPolicy</span></span>
 
-## <span data-ttu-id="ca359-102">STRESZCZENIe</span><span class="sxs-lookup"><span data-stu-id="ca359-102">SYNOPSIS</span></span>
-<span data-ttu-id="ca359-103">Tworzenie zasad WAF</span><span class="sxs-lookup"><span data-stu-id="ca359-103">Create WAF policy</span></span>
+## <span data-ttu-id="39bef-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="39bef-102">SYNOPSIS</span></span>
+<span data-ttu-id="39bef-103">Tworzenie zasad SAF</span><span class="sxs-lookup"><span data-stu-id="39bef-103">Create WAF policy</span></span>
 
-## <span data-ttu-id="ca359-104">POLECENIA</span><span class="sxs-lookup"><span data-stu-id="ca359-104">SYNTAX</span></span>
+## <span data-ttu-id="39bef-104">SKŁADNIA</span><span class="sxs-lookup"><span data-stu-id="39bef-104">SYNTAX</span></span>
 
 ```
 New-AzFrontDoorWafPolicy -ResourceGroupName <String> -Name <String> [-EnabledState <PSEnabledState>]
@@ -26,12 +26,12 @@ New-AzFrontDoorWafPolicy -ResourceGroupName <String> -Name <String> [-EnabledSta
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="ca359-105">Opis</span><span class="sxs-lookup"><span data-stu-id="ca359-105">DESCRIPTION</span></span>
-<span data-ttu-id="ca359-106">Polecenie cmdlet **New-AzFrontDoorWafPolicy** tworzy nowe zasady usługi Azure WAF w określonej grupie zasobów w obszarze bieżący abonament.</span><span class="sxs-lookup"><span data-stu-id="ca359-106">The **New-AzFrontDoorWafPolicy** cmdlet creates a new Azure WAF policy in the specified resource group under current subscription</span></span>
+## <span data-ttu-id="39bef-105">OPIS</span><span class="sxs-lookup"><span data-stu-id="39bef-105">DESCRIPTION</span></span>
+<span data-ttu-id="39bef-106">Polecenie **cmdlet New-AzFrontDoorWafPolicy** tworzy nowe zasady Azure WAF w określonej grupie zasobów w ramach bieżącej subskrypcji</span><span class="sxs-lookup"><span data-stu-id="39bef-106">The **New-AzFrontDoorWafPolicy** cmdlet creates a new Azure WAF policy in the specified resource group under current subscription</span></span>
 
-## <span data-ttu-id="ca359-107">Przykłady</span><span class="sxs-lookup"><span data-stu-id="ca359-107">EXAMPLES</span></span>
+## <span data-ttu-id="39bef-107">PRZYKŁADY</span><span class="sxs-lookup"><span data-stu-id="39bef-107">EXAMPLES</span></span>
 
-### <span data-ttu-id="ca359-108">Przykład 1: Tworzenie zasad WAF</span><span class="sxs-lookup"><span data-stu-id="ca359-108">Example 1: Create WAF policy</span></span>
+### <span data-ttu-id="39bef-108">Przykład 1. Tworzenie zasad SAF</span><span class="sxs-lookup"><span data-stu-id="39bef-108">Example 1: Create WAF policy</span></span>
 ```powershell
 PS C:\> New-AzFrontDoorWafPolicy -Name $policyName -ResourceGroupName $resourceGroupName -Customrule $customRule1,$customRule2 -ManagedRule $managedRule1 -EnabledState Enabled -Mode Prevention -RedirectUrl "https://www.bing.com/" -CustomBlockResponseStatusCode 405 -CustomBlockResponseBody "<html><head><title>You are blocked!</title></head><body></body></html>"
 
@@ -40,12 +40,12 @@ Name         PolicyMode PolicyEnabledState RedirectUrl
 {policyName} Prevention            Enabled https://www.bing.com/
 ```
 
-<span data-ttu-id="ca359-109">Tworzenie zasad WAF</span><span class="sxs-lookup"><span data-stu-id="ca359-109">Create WAF policy</span></span>
+<span data-ttu-id="39bef-109">Tworzenie zasad SAF</span><span class="sxs-lookup"><span data-stu-id="39bef-109">Create WAF policy</span></span>
 
-## <span data-ttu-id="ca359-110">PARAMETRÓW</span><span class="sxs-lookup"><span data-stu-id="ca359-110">PARAMETERS</span></span>
+## <span data-ttu-id="39bef-110">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="39bef-110">PARAMETERS</span></span>
 
-### <span data-ttu-id="ca359-111">-CustomBlockResponseBody</span><span class="sxs-lookup"><span data-stu-id="ca359-111">-CustomBlockResponseBody</span></span>
-<span data-ttu-id="ca359-112">Treść niestandardowej odpowiedzi</span><span class="sxs-lookup"><span data-stu-id="ca359-112">Custom Response Body</span></span>
+### <span data-ttu-id="39bef-111">-CustomBlockResponseBody</span><span class="sxs-lookup"><span data-stu-id="39bef-111">-CustomBlockResponseBody</span></span>
+<span data-ttu-id="39bef-112">Niestandardowa treść odpowiedzi</span><span class="sxs-lookup"><span data-stu-id="39bef-112">Custom Response Body</span></span>
 
 ```yaml
 Type: System.String
@@ -59,8 +59,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ca359-113">-CustomBlockResponseStatusCode</span><span class="sxs-lookup"><span data-stu-id="ca359-113">-CustomBlockResponseStatusCode</span></span>
-<span data-ttu-id="ca359-114">Niestandardowy kod stanu odpowiedzi</span><span class="sxs-lookup"><span data-stu-id="ca359-114">Custom Response Status Code</span></span>
+### <span data-ttu-id="39bef-113">-CustomBlockResponseStatusCode</span><span class="sxs-lookup"><span data-stu-id="39bef-113">-CustomBlockResponseStatusCode</span></span>
+<span data-ttu-id="39bef-114">Niestandardowy kod stanu odpowiedzi</span><span class="sxs-lookup"><span data-stu-id="39bef-114">Custom Response Status Code</span></span>
 
 ```yaml
 Type: System.Int32
@@ -74,8 +74,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ca359-115">-Customrule</span><span class="sxs-lookup"><span data-stu-id="ca359-115">-Customrule</span></span>
-<span data-ttu-id="ca359-116">Reguły niestandardowe w zasadach</span><span class="sxs-lookup"><span data-stu-id="ca359-116">Custom rules inside the policy</span></span>
+### <span data-ttu-id="39bef-115">— Customrule</span><span class="sxs-lookup"><span data-stu-id="39bef-115">-Customrule</span></span>
+<span data-ttu-id="39bef-116">Reguły niestandardowe w zasadach</span><span class="sxs-lookup"><span data-stu-id="39bef-116">Custom rules inside the policy</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.FrontDoor.Models.PSCustomRule[]
@@ -89,8 +89,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ca359-117">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="ca359-117">-DefaultProfile</span></span>
-<span data-ttu-id="ca359-118">Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.</span><span class="sxs-lookup"><span data-stu-id="ca359-118">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+### <span data-ttu-id="39bef-117">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="39bef-117">-DefaultProfile</span></span>
+<span data-ttu-id="39bef-118">Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.</span><span class="sxs-lookup"><span data-stu-id="39bef-118">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -104,9 +104,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ca359-119">-EnabledState</span><span class="sxs-lookup"><span data-stu-id="ca359-119">-EnabledState</span></span>
-<span data-ttu-id="ca359-120">Czy zasady są w stanie włączonym, czy wyłączone.</span><span class="sxs-lookup"><span data-stu-id="ca359-120">Whether the policy is in enabled state or disabled state.</span></span>
-<span data-ttu-id="ca359-121">Możliwe wartości obejmują: "wyłączone", "włączone"</span><span class="sxs-lookup"><span data-stu-id="ca359-121">Possible values include: 'Disabled', 'Enabled'</span></span>
+### <span data-ttu-id="39bef-119">-EnabledState</span><span class="sxs-lookup"><span data-stu-id="39bef-119">-EnabledState</span></span>
+<span data-ttu-id="39bef-120">Czy zasady są w stanie włączonym, czy wyłączonym.</span><span class="sxs-lookup"><span data-stu-id="39bef-120">Whether the policy is in enabled state or disabled state.</span></span>
+<span data-ttu-id="39bef-121">Możliwe wartości: "Wyłączone", "Włączone"</span><span class="sxs-lookup"><span data-stu-id="39bef-121">Possible values include: 'Disabled', 'Enabled'</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.FrontDoor.Models.PSEnabledState
@@ -121,8 +121,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ca359-122">-ManagedRule</span><span class="sxs-lookup"><span data-stu-id="ca359-122">-ManagedRule</span></span>
-<span data-ttu-id="ca359-123">Reguły zarządzane w zasadach</span><span class="sxs-lookup"><span data-stu-id="ca359-123">Managed rules inside the policy</span></span>
+### <span data-ttu-id="39bef-122">- ManagedRule</span><span class="sxs-lookup"><span data-stu-id="39bef-122">-ManagedRule</span></span>
+<span data-ttu-id="39bef-123">Reguły zarządzane w zasadach</span><span class="sxs-lookup"><span data-stu-id="39bef-123">Managed rules inside the policy</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.FrontDoor.Models.PSManagedRule[]
@@ -136,9 +136,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ca359-124">-Mode (tryb)</span><span class="sxs-lookup"><span data-stu-id="ca359-124">-Mode</span></span>
-<span data-ttu-id="ca359-125">Opisuje, czy jest w trybie wykrywania, czy w trybie zapobiegania na poziomie zasad.</span><span class="sxs-lookup"><span data-stu-id="ca359-125">Describes if it is in detection mode  or prevention mode at policy level.</span></span>
-<span data-ttu-id="ca359-126">Możliwe wartości obejmują: "Zapobieganie", "wykrywanie".</span><span class="sxs-lookup"><span data-stu-id="ca359-126">Possible values include:'Prevention', 'Detection'</span></span>
+### <span data-ttu-id="39bef-124">— tryb</span><span class="sxs-lookup"><span data-stu-id="39bef-124">-Mode</span></span>
+<span data-ttu-id="39bef-125">W tym artykule opisano, czy jest on w trybie wykrywania, czy w trybie zapobiegania na poziomie zasad.</span><span class="sxs-lookup"><span data-stu-id="39bef-125">Describes if it is in detection mode  or prevention mode at policy level.</span></span>
+<span data-ttu-id="39bef-126">Możliwe wartości to:'Zapobieganie', 'Wykrywanie'</span><span class="sxs-lookup"><span data-stu-id="39bef-126">Possible values include:'Prevention', 'Detection'</span></span>
 
 ```yaml
 Type: System.String
@@ -152,8 +152,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ca359-127">-Name (nazwa)</span><span class="sxs-lookup"><span data-stu-id="ca359-127">-Name</span></span>
-<span data-ttu-id="ca359-128">Nazwa WebApplicationFireWallPolicy.</span><span class="sxs-lookup"><span data-stu-id="ca359-128">WebApplicationFireWallPolicy name.</span></span>
+### <span data-ttu-id="39bef-127">— Nazwa</span><span class="sxs-lookup"><span data-stu-id="39bef-127">-Name</span></span>
+<span data-ttu-id="39bef-128">Nazwa witryny WebApplicationFireWallPolicy.</span><span class="sxs-lookup"><span data-stu-id="39bef-128">WebApplicationFireWallPolicy name.</span></span>
 
 ```yaml
 Type: System.String
@@ -167,8 +167,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ca359-129">-RedirectUrl</span><span class="sxs-lookup"><span data-stu-id="ca359-129">-RedirectUrl</span></span>
-<span data-ttu-id="ca359-130">Adres URL przekierowania</span><span class="sxs-lookup"><span data-stu-id="ca359-130">Redirect URL</span></span>
+### <span data-ttu-id="39bef-129">-RedirectUrl</span><span class="sxs-lookup"><span data-stu-id="39bef-129">-RedirectUrl</span></span>
+<span data-ttu-id="39bef-130">Adres URL przekierowania</span><span class="sxs-lookup"><span data-stu-id="39bef-130">Redirect URL</span></span>
 
 ```yaml
 Type: System.String
@@ -182,8 +182,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ca359-131">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="ca359-131">-ResourceGroupName</span></span>
-<span data-ttu-id="ca359-132">Nazwa grupy zasobów</span><span class="sxs-lookup"><span data-stu-id="ca359-132">The resource group name</span></span>
+### <span data-ttu-id="39bef-131">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="39bef-131">-ResourceGroupName</span></span>
+<span data-ttu-id="39bef-132">Nazwa grupy zasobów</span><span class="sxs-lookup"><span data-stu-id="39bef-132">The resource group name</span></span>
 
 ```yaml
 Type: System.String
@@ -197,8 +197,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ca359-133">-Potwierdź</span><span class="sxs-lookup"><span data-stu-id="ca359-133">-Confirm</span></span>
-<span data-ttu-id="ca359-134">Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.</span><span class="sxs-lookup"><span data-stu-id="ca359-134">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="39bef-133">— Potwierdź</span><span class="sxs-lookup"><span data-stu-id="39bef-133">-Confirm</span></span>
+<span data-ttu-id="39bef-134">Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.</span><span class="sxs-lookup"><span data-stu-id="39bef-134">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -212,9 +212,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ca359-135">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="ca359-135">-WhatIf</span></span>
-<span data-ttu-id="ca359-136">Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet.</span><span class="sxs-lookup"><span data-stu-id="ca359-136">Shows what would happen if the cmdlet runs.</span></span>
-<span data-ttu-id="ca359-137">Polecenie cmdlet nie jest uruchamiane.</span><span class="sxs-lookup"><span data-stu-id="ca359-137">The cmdlet is not run.</span></span>
+### <span data-ttu-id="39bef-135">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="39bef-135">-WhatIf</span></span>
+<span data-ttu-id="39bef-136">Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet.</span><span class="sxs-lookup"><span data-stu-id="39bef-136">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="39bef-137">Polecenie cmdlet nie zostanie uruchomione.</span><span class="sxs-lookup"><span data-stu-id="39bef-137">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -228,27 +228,27 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="ca359-138">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="ca359-138">CommonParameters</span></span>
-<span data-ttu-id="ca359-139">To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="ca359-139">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="ca359-140">Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="ca359-140">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="39bef-138">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="39bef-138">CommonParameters</span></span>
+<span data-ttu-id="39bef-139">To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="39bef-139">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="39bef-140">Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="39bef-140">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="ca359-141">WEJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="ca359-141">INPUTS</span></span>
+## <span data-ttu-id="39bef-141">DANE WEJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="39bef-141">INPUTS</span></span>
 
-### <span data-ttu-id="ca359-142">Znaleziono</span><span class="sxs-lookup"><span data-stu-id="ca359-142">None</span></span>
+### <span data-ttu-id="39bef-142">Brak</span><span class="sxs-lookup"><span data-stu-id="39bef-142">None</span></span>
 
-## <span data-ttu-id="ca359-143">WYSYŁA</span><span class="sxs-lookup"><span data-stu-id="ca359-143">OUTPUTS</span></span>
+## <span data-ttu-id="39bef-143">DANE WYJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="39bef-143">OUTPUTS</span></span>
 
-### <span data-ttu-id="ca359-144">Microsoft. Azure. Commands. FrontDoor. models. PSPolicy</span><span class="sxs-lookup"><span data-stu-id="ca359-144">Microsoft.Azure.Commands.FrontDoor.Models.PSPolicy</span></span>
+### <span data-ttu-id="39bef-144">Microsoft.Azure.Commands.FrontDoor.Models.PSPolicy</span><span class="sxs-lookup"><span data-stu-id="39bef-144">Microsoft.Azure.Commands.FrontDoor.Models.PSPolicy</span></span>
 
-## <span data-ttu-id="ca359-145">INFORMACYJN</span><span class="sxs-lookup"><span data-stu-id="ca359-145">NOTES</span></span>
+## <span data-ttu-id="39bef-145">NOTATKI</span><span class="sxs-lookup"><span data-stu-id="39bef-145">NOTES</span></span>
 
-## <span data-ttu-id="ca359-146">LINKI POKREWNE</span><span class="sxs-lookup"><span data-stu-id="ca359-146">RELATED LINKS</span></span>
+## <span data-ttu-id="39bef-146">LINKI POKREWNE</span><span class="sxs-lookup"><span data-stu-id="39bef-146">RELATED LINKS</span></span>
 
-<span data-ttu-id="ca359-147">[Set-AzFrontDoorWafPolicy](./Set-AzFrontDoorWafPolicy.md) 
- [Get-AzFrontDoorWafPolicy](./Get-AzFrontDoorWafPolicy.md) 
+<span data-ttu-id="39bef-147">[Get-AzFrontDoorWafPolicy](./Get-AzFrontDoorWafPolicy.md) 
  [Remove-AzFrontDoorWafPolicy](./Remove-AzFrontDoorWafPolicy.md) 
- [Nowe — AzFrontDoorWafManagedRuleObject](./New-AzFrontDoorWafManagedRuleObject.md) 
- [Nowe — AzFrontDoorWafCustomRuleObject](./New-AzFrontDoorWafManagedRuleObject.md)</span><span class="sxs-lookup"><span data-stu-id="ca359-147">[Set-AzFrontDoorWafPolicy](./Set-AzFrontDoorWafPolicy.md)
-[Get-AzFrontDoorWafPolicy](./Get-AzFrontDoorWafPolicy.md)
+ [Update-AzFrontDoorWafPolicy](./Update-AzFrontDoorWafPolicy.md) 
+ [New-AzFrontDoorWafManagedRuleObject](./New-AzFrontDoorWafManagedRuleObject.md) 
+ [New-AzFrontDoorWafCustomRuleObject](./New-AzFrontDoorWafManagedRuleObject.md)</span><span class="sxs-lookup"><span data-stu-id="39bef-147">[Get-AzFrontDoorWafPolicy](./Get-AzFrontDoorWafPolicy.md)
 [Remove-AzFrontDoorWafPolicy](./Remove-AzFrontDoorWafPolicy.md)
+[Update-AzFrontDoorWafPolicy](./Update-AzFrontDoorWafPolicy.md)
 [New-AzFrontDoorWafManagedRuleObject](./New-AzFrontDoorWafManagedRuleObject.md)
 [New-AzFrontDoorWafCustomRuleObject](./New-AzFrontDoorWafManagedRuleObject.md)</span></span>

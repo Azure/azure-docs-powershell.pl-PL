@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.frontdoor/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/New-AzFrontDoorWafManagedRuleObject.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/New-AzFrontDoorWafManagedRuleObject.md
-ms.openlocfilehash: 6e56ff9b174ec13d0844a1ac860d34043f8b73cf
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 7c9ace339da9639404072fd802782aee43d8ab37
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94052802"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100403956"
 ---
-# <span data-ttu-id="dea77-101">New-AzFrontDoorWafManagedRuleObject</span><span class="sxs-lookup"><span data-stu-id="dea77-101">New-AzFrontDoorWafManagedRuleObject</span></span>
+# <span data-ttu-id="2588f-101">New-AzFrontDoorWafManagedRuleObject</span><span class="sxs-lookup"><span data-stu-id="2588f-101">New-AzFrontDoorWafManagedRuleObject</span></span>
 
-## <span data-ttu-id="dea77-102">STRESZCZENIe</span><span class="sxs-lookup"><span data-stu-id="dea77-102">SYNOPSIS</span></span>
-<span data-ttu-id="dea77-103">Tworzenie obiektu ManagedRule do tworzenia zasad WAF</span><span class="sxs-lookup"><span data-stu-id="dea77-103">Create ManagedRule Object for WAF policy creation</span></span>
+## <span data-ttu-id="2588f-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="2588f-102">SYNOPSIS</span></span>
+<span data-ttu-id="2588f-103">Tworzenie obiektu ManagedRule do tworzenia zasad WAF</span><span class="sxs-lookup"><span data-stu-id="2588f-103">Create ManagedRule Object for WAF policy creation</span></span>
 
-## <span data-ttu-id="dea77-104">POLECENIA</span><span class="sxs-lookup"><span data-stu-id="dea77-104">SYNTAX</span></span>
+## <span data-ttu-id="2588f-104">SKŁADNIA</span><span class="sxs-lookup"><span data-stu-id="2588f-104">SYNTAX</span></span>
 
 ```
 New-AzFrontDoorWafManagedRuleObject -Type <String> -Version <String>
@@ -25,12 +25,12 @@ New-AzFrontDoorWafManagedRuleObject -Type <String> -Version <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="dea77-105">Opis</span><span class="sxs-lookup"><span data-stu-id="dea77-105">DESCRIPTION</span></span>
-<span data-ttu-id="dea77-106">Tworzenie obiektu ManagedRule do tworzenia zasad WAF</span><span class="sxs-lookup"><span data-stu-id="dea77-106">Create ManagedRule Object for WAF policy creation</span></span>
+## <span data-ttu-id="2588f-105">OPIS</span><span class="sxs-lookup"><span data-stu-id="2588f-105">DESCRIPTION</span></span>
+<span data-ttu-id="2588f-106">Tworzenie obiektu ManagedRule na celu utworzenia zasad WAF</span><span class="sxs-lookup"><span data-stu-id="2588f-106">Create ManagedRule Object for WAF policy creation</span></span>
 
-## <span data-ttu-id="dea77-107">Przykłady</span><span class="sxs-lookup"><span data-stu-id="dea77-107">EXAMPLES</span></span>
+## <span data-ttu-id="2588f-107">PRZYKŁADY</span><span class="sxs-lookup"><span data-stu-id="2588f-107">EXAMPLES</span></span>
 
-### <span data-ttu-id="dea77-108">Przykład 1</span><span class="sxs-lookup"><span data-stu-id="dea77-108">Example 1</span></span>
+### <span data-ttu-id="2588f-108">Przykład 1</span><span class="sxs-lookup"><span data-stu-id="2588f-108">Example 1</span></span>
 ```powershell
 PS C:\> $ruleOverride1 = New-AzFrontDoorWafManagedRuleOverrideObject -RuleId "942250" -Action Log -EnabledState Enabled
 PS C:\> $ruleOverride2 = New-AzFrontDoorWafManagedRuleOverrideObject -RuleId "942251" -Action Log -EnabledState Enabled
@@ -46,12 +46,12 @@ RuleGroupOverrides RuleSetType    RuleSetVersion
 {SQLI, XSS}        DefaultRuleSet preview-0.1
 ```
 
-<span data-ttu-id="dea77-109">Tworzenie obiektu ManagedRule</span><span class="sxs-lookup"><span data-stu-id="dea77-109">Create a ManagedRule Object</span></span>
+<span data-ttu-id="2588f-109">Tworzenie obiektu ManagedRule</span><span class="sxs-lookup"><span data-stu-id="2588f-109">Create a ManagedRule Object</span></span>
 
-## <span data-ttu-id="dea77-110">PARAMETRÓW</span><span class="sxs-lookup"><span data-stu-id="dea77-110">PARAMETERS</span></span>
+## <span data-ttu-id="2588f-110">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="2588f-110">PARAMETERS</span></span>
 
-### <span data-ttu-id="dea77-111">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="dea77-111">-DefaultProfile</span></span>
-<span data-ttu-id="dea77-112">Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.</span><span class="sxs-lookup"><span data-stu-id="dea77-112">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+### <span data-ttu-id="2588f-111">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="2588f-111">-DefaultProfile</span></span>
+<span data-ttu-id="2588f-112">Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.</span><span class="sxs-lookup"><span data-stu-id="2588f-112">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -65,8 +65,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="dea77-113">-Wykluczenie</span><span class="sxs-lookup"><span data-stu-id="dea77-113">-Exclusion</span></span>
-<span data-ttu-id="dea77-114">Wyjątki</span><span class="sxs-lookup"><span data-stu-id="dea77-114">Exclusion</span></span>
+### <span data-ttu-id="2588f-113">— Wykluczenie</span><span class="sxs-lookup"><span data-stu-id="2588f-113">-Exclusion</span></span>
+<span data-ttu-id="2588f-114">Wykluczenie</span><span class="sxs-lookup"><span data-stu-id="2588f-114">Exclusion</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.FrontDoor.Models.PSManagedRuleExclusion[]
@@ -80,8 +80,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="dea77-115">-RuleGroupOverride</span><span class="sxs-lookup"><span data-stu-id="dea77-115">-RuleGroupOverride</span></span>
-<span data-ttu-id="dea77-116">Lista zastępowania konfiguracji zarządzanego dostawcy usługi Azure</span><span class="sxs-lookup"><span data-stu-id="dea77-116">List of azure managed provider override configuration</span></span>
+### <span data-ttu-id="2588f-115">-RuleGroupOverride</span><span class="sxs-lookup"><span data-stu-id="2588f-115">-RuleGroupOverride</span></span>
+<span data-ttu-id="2588f-116">Lista konfiguracji zastępowania dostawcy zarządzanego platformy Azure</span><span class="sxs-lookup"><span data-stu-id="2588f-116">List of azure managed provider override configuration</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.FrontDoor.Models.PSAzureRuleGroupOverride[]
@@ -95,8 +95,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="dea77-117">-Type</span><span class="sxs-lookup"><span data-stu-id="dea77-117">-Type</span></span>
-<span data-ttu-id="dea77-118">Typ zestaw reguł</span><span class="sxs-lookup"><span data-stu-id="dea77-118">Type of the ruleset</span></span>
+### <span data-ttu-id="2588f-117">— Wpisz</span><span class="sxs-lookup"><span data-stu-id="2588f-117">-Type</span></span>
+<span data-ttu-id="2588f-118">Typ reguły</span><span class="sxs-lookup"><span data-stu-id="2588f-118">Type of the ruleset</span></span>
 
 ```yaml
 Type: System.String
@@ -110,8 +110,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="dea77-119">-Version</span><span class="sxs-lookup"><span data-stu-id="dea77-119">-Version</span></span>
-<span data-ttu-id="dea77-120">Wersja zestaw reguł</span><span class="sxs-lookup"><span data-stu-id="dea77-120">Version of the ruleset</span></span>
+### <span data-ttu-id="2588f-119">— Wersja</span><span class="sxs-lookup"><span data-stu-id="2588f-119">-Version</span></span>
+<span data-ttu-id="2588f-120">Wersja pakietu Ruleset</span><span class="sxs-lookup"><span data-stu-id="2588f-120">Version of the ruleset</span></span>
 
 ```yaml
 Type: System.String
@@ -125,23 +125,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="dea77-121">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="dea77-121">CommonParameters</span></span>
-<span data-ttu-id="dea77-122">To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="dea77-122">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="dea77-123">Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="dea77-123">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="2588f-121">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="2588f-121">CommonParameters</span></span>
+<span data-ttu-id="2588f-122">To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="2588f-122">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="2588f-123">Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="2588f-123">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="dea77-124">WEJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="dea77-124">INPUTS</span></span>
+## <span data-ttu-id="2588f-124">DANE WEJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="2588f-124">INPUTS</span></span>
 
-### <span data-ttu-id="dea77-125">Znaleziono</span><span class="sxs-lookup"><span data-stu-id="dea77-125">None</span></span>
+### <span data-ttu-id="2588f-125">Brak</span><span class="sxs-lookup"><span data-stu-id="2588f-125">None</span></span>
 
-## <span data-ttu-id="dea77-126">WYSYŁA</span><span class="sxs-lookup"><span data-stu-id="dea77-126">OUTPUTS</span></span>
+## <span data-ttu-id="2588f-126">OUTPUTS</span><span class="sxs-lookup"><span data-stu-id="2588f-126">OUTPUTS</span></span>
 
-### <span data-ttu-id="dea77-127">Microsoft. Azure. Commands. FrontDoor. models. PSAzureManagedRule</span><span class="sxs-lookup"><span data-stu-id="dea77-127">Microsoft.Azure.Commands.FrontDoor.Models.PSAzureManagedRule</span></span>
+### <span data-ttu-id="2588f-127">Microsoft.Azure.Commands.FrontDoor.Models.PSAzureManagedRule</span><span class="sxs-lookup"><span data-stu-id="2588f-127">Microsoft.Azure.Commands.FrontDoor.Models.PSAzureManagedRule</span></span>
 
-## <span data-ttu-id="dea77-128">INFORMACYJN</span><span class="sxs-lookup"><span data-stu-id="dea77-128">NOTES</span></span>
+## <span data-ttu-id="2588f-128">NOTATKI</span><span class="sxs-lookup"><span data-stu-id="2588f-128">NOTES</span></span>
 
-## <span data-ttu-id="dea77-129">LINKI POKREWNE</span><span class="sxs-lookup"><span data-stu-id="dea77-129">RELATED LINKS</span></span>
+## <span data-ttu-id="2588f-129">LINKI POKREWNE</span><span class="sxs-lookup"><span data-stu-id="2588f-129">RELATED LINKS</span></span>
 
-<span data-ttu-id="dea77-130">[Nowe — AzFrontDoorWafPolicy](./New-AzFrontDoorWafPolicy.md) 
- [Set-AzFrontDoorWafPolicy](./Set-AzFrontDoorWafPolicy.md) 
- [Nowe — AzFrontDoorWafRuleGroupOverrideObject](./New-AzFrontDoorWafRuleGroupOverrideObject.md)</span><span class="sxs-lookup"><span data-stu-id="dea77-130">[New-AzFrontDoorWafPolicy](./New-AzFrontDoorWafPolicy.md)
-[Set-AzFrontDoorWafPolicy](./Set-AzFrontDoorWafPolicy.md)
+<span data-ttu-id="2588f-130">[New-AzFrontDoorWafPolicy](./New-AzFrontDoorWafPolicy.md) 
+ [Update-AzFrontDoorWafPolicy](./Update-AzFrontDoorWafPolicy.md) 
+ [New-AzFrontDoorWafRuleGroupOverrideObject](./New-AzFrontDoorWafRuleGroupOverrideObject.md)</span><span class="sxs-lookup"><span data-stu-id="2588f-130">[New-AzFrontDoorWafPolicy](./New-AzFrontDoorWafPolicy.md)
+[Update-AzFrontDoorWafPolicy](./Update-AzFrontDoorWafPolicy.md)
 [New-AzFrontDoorWafRuleGroupOverrideObject](./New-AzFrontDoorWafRuleGroupOverrideObject.md)</span></span>
