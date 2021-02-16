@@ -1,0 +1,282 @@
+---
+external help file: ''
+Module Name: Az.PostgreSql
+online version: https://docs.microsoft.com/en-us/powershell/module/az.postgresql/update-azpostgresqlconfiguration
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/PostgreSql/help/Update-AzPostgreSqlConfiguration.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/PostgreSql/help/Update-AzPostgreSqlConfiguration.md
+ms.openlocfilehash: e1b0ea3d07a7504e75f8bd6143820c52e73d9cf9
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100184018"
+---
+# <span data-ttu-id="df100-101">Update-AzPostgreSqlConfiguration</span><span class="sxs-lookup"><span data-stu-id="df100-101">Update-AzPostgreSqlConfiguration</span></span>
+
+## <span data-ttu-id="df100-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="df100-102">SYNOPSIS</span></span>
+<span data-ttu-id="df100-103">Aktualizuje konfigurację serwera.</span><span class="sxs-lookup"><span data-stu-id="df100-103">Updates a configuration of a server.</span></span>
+<span data-ttu-id="df100-104">Użyj Update-AzPostgreSqlServer, jeśli chcesz zaktualizować hasło AdministratorLoginPassword, sku itp.</span><span class="sxs-lookup"><span data-stu-id="df100-104">Use Update-AzPostgreSqlServer instead if you want update AdministratorLoginPassword, sku, etc.</span></span>
+
+## <span data-ttu-id="df100-105">SKŁADNIA</span><span class="sxs-lookup"><span data-stu-id="df100-105">SYNTAX</span></span>
+
+### <span data-ttu-id="df100-106">UpdateExpanded (Domyślna)</span><span class="sxs-lookup"><span data-stu-id="df100-106">UpdateExpanded (Default)</span></span>
+```
+Update-AzPostgreSqlConfiguration -Name <String> -ResourceGroupName <String> -ServerName <String>
+ [-SubscriptionId <String>] [-Source <String>] [-Value <String>] [-DefaultProfile <PSObject>] [-AsJob]
+ [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### <span data-ttu-id="df100-107">UpdateViaIdentityExpanded</span><span class="sxs-lookup"><span data-stu-id="df100-107">UpdateViaIdentityExpanded</span></span>
+```
+Update-AzPostgreSqlConfiguration -InputObject <IPostgreSqlIdentity> [-Source <String>] [-Value <String>]
+ [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+## <span data-ttu-id="df100-108">OPIS</span><span class="sxs-lookup"><span data-stu-id="df100-108">DESCRIPTION</span></span>
+<span data-ttu-id="df100-109">Aktualizuje konfigurację serwera.</span><span class="sxs-lookup"><span data-stu-id="df100-109">Updates a configuration of a server.</span></span>
+<span data-ttu-id="df100-110">Użyj Update-AzPostgreSqlServer, jeśli chcesz zaktualizować hasło AdministratorLoginPassword, sku itp.</span><span class="sxs-lookup"><span data-stu-id="df100-110">Use Update-AzPostgreSqlServer instead if you want update AdministratorLoginPassword, sku, etc.</span></span>
+
+## <span data-ttu-id="df100-111">PRZYKŁADY</span><span class="sxs-lookup"><span data-stu-id="df100-111">EXAMPLES</span></span>
+
+### <span data-ttu-id="df100-112">Przykład 1. Aktualizowanie konfiguracji postgresql według nazwy</span><span class="sxs-lookup"><span data-stu-id="df100-112">Example 1: Update PostgreSql configuration by name</span></span>
+```powershell
+PS C:\> Update-AzPostgreSqlConfiguration -Name intervalstyle -ResourceGroupName PostgreSqlTestRG -ServerName PostgreSqlTestServer -Value SQL_STANDARD
+
+Name          Value
+----          -----
+intervalstyle SQL_STANDARD
+```
+
+<span data-ttu-id="df100-113">To polecenie cmdlet aktualizuje konfigurację PostgreSql według nazwy.</span><span class="sxs-lookup"><span data-stu-id="df100-113">This cmdlet updates PostgreSql configuration by name.</span></span>
+
+### <span data-ttu-id="df100-114">Przykład 2. Aktualizowanie konfiguracji postgresql przez tożsamość.</span><span class="sxs-lookup"><span data-stu-id="df100-114">Example 2: Update PostgreSql configuration by identity.</span></span>
+```powershell
+PS C:\> $ID = "/subscriptions/<SubscriptionId>/resourceGroups/PostgreSqlTestRG/providers/Microsoft.DBforPostgreSQL/servers/PostgreSqlTestServer/configurations/deadlock_timeout"
+PS C:\> Update-AzPostgreSqlConfiguration -InputObject $ID -Value 2000
+
+Name             Value
+----             -----
+deadlock_timeout 2000
+```
+
+<span data-ttu-id="df100-115">Te polecenia cmdlet aktualizują konfigurację PostgreSql według tożsamości.</span><span class="sxs-lookup"><span data-stu-id="df100-115">These cmdlets update PostgreSql configuration by identity.</span></span>
+
+## <span data-ttu-id="df100-116">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="df100-116">PARAMETERS</span></span>
+
+### <span data-ttu-id="df100-117">— AsJob</span><span class="sxs-lookup"><span data-stu-id="df100-117">-AsJob</span></span>
+<span data-ttu-id="df100-118">Uruchamianie polecenia jako zadania</span><span class="sxs-lookup"><span data-stu-id="df100-118">Run the command as a job</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="df100-119">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="df100-119">-DefaultProfile</span></span>
+<span data-ttu-id="df100-120">Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.</span><span class="sxs-lookup"><span data-stu-id="df100-120">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: System.Management.Automation.PSObject
+Parameter Sets: (All)
+Aliases: AzureRMContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="df100-121">-InputObject</span><span class="sxs-lookup"><span data-stu-id="df100-121">-InputObject</span></span>
+<span data-ttu-id="df100-122">Identity Parameter To construct, see NOTES section for INPUTOBJECT properties and create a hash table.</span><span class="sxs-lookup"><span data-stu-id="df100-122">Identity Parameter To construct, see NOTES section for INPUTOBJECT properties and create a hash table.</span></span>
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.PostgreSql.Models.IPostgreSqlIdentity
+Parameter Sets: UpdateViaIdentityExpanded
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="df100-123">— Nazwa</span><span class="sxs-lookup"><span data-stu-id="df100-123">-Name</span></span>
+<span data-ttu-id="df100-124">Nazwa konfiguracji serwera.</span><span class="sxs-lookup"><span data-stu-id="df100-124">The name of the server configuration.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded
+Aliases: ConfigurationName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="df100-125">-NoWait</span><span class="sxs-lookup"><span data-stu-id="df100-125">-NoWait</span></span>
+<span data-ttu-id="df100-126">Uruchamianie polecenia asynchronicznie</span><span class="sxs-lookup"><span data-stu-id="df100-126">Run the command asynchronously</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="df100-127">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="df100-127">-ResourceGroupName</span></span>
+<span data-ttu-id="df100-128">Nazwa grupy zasobów.</span><span class="sxs-lookup"><span data-stu-id="df100-128">The name of the resource group.</span></span>
+<span data-ttu-id="df100-129">W nazwie nie jest uwzględniania liter.</span><span class="sxs-lookup"><span data-stu-id="df100-129">The name is case insensitive.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="df100-130">-ServerName</span><span class="sxs-lookup"><span data-stu-id="df100-130">-ServerName</span></span>
+<span data-ttu-id="df100-131">Nazwa serwera.</span><span class="sxs-lookup"><span data-stu-id="df100-131">The name of the server.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="df100-132">— Źródło</span><span class="sxs-lookup"><span data-stu-id="df100-132">-Source</span></span>
+<span data-ttu-id="df100-133">Źródło konfiguracji.</span><span class="sxs-lookup"><span data-stu-id="df100-133">Source of the configuration.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="df100-134">- SubscriptionId</span><span class="sxs-lookup"><span data-stu-id="df100-134">-SubscriptionId</span></span>
+<span data-ttu-id="df100-135">Identyfikator subskrypcji docelowej.</span><span class="sxs-lookup"><span data-stu-id="df100-135">The ID of the target subscription.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: (Get-AzContext).Subscription.Id
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="df100-136">— Wartość</span><span class="sxs-lookup"><span data-stu-id="df100-136">-Value</span></span>
+<span data-ttu-id="df100-137">Wartość konfiguracji.</span><span class="sxs-lookup"><span data-stu-id="df100-137">Value of the configuration.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="df100-138">— Potwierdź</span><span class="sxs-lookup"><span data-stu-id="df100-138">-Confirm</span></span>
+<span data-ttu-id="df100-139">Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.</span><span class="sxs-lookup"><span data-stu-id="df100-139">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="df100-140">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="df100-140">-WhatIf</span></span>
+<span data-ttu-id="df100-141">Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet.</span><span class="sxs-lookup"><span data-stu-id="df100-141">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="df100-142">Polecenie cmdlet nie zostanie uruchomione.</span><span class="sxs-lookup"><span data-stu-id="df100-142">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="df100-143">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="df100-143">CommonParameters</span></span>
+<span data-ttu-id="df100-144">To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="df100-144">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="df100-145">Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="df100-145">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="df100-146">DANE WEJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="df100-146">INPUTS</span></span>
+
+### <span data-ttu-id="df100-147">Microsoft.Azure.PowerShell.Cmdlet.PostgreSql.Models.IPostgreSqlIdentity</span><span class="sxs-lookup"><span data-stu-id="df100-147">Microsoft.Azure.PowerShell.Cmdlets.PostgreSql.Models.IPostgreSqlIdentity</span></span>
+
+## <span data-ttu-id="df100-148">DANE WYJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="df100-148">OUTPUTS</span></span>
+
+### <span data-ttu-id="df100-149">Microsoft.Azure.PowerShell.Cmdlet.PostgreSql.Models.Api20171201.IConfiguration</span><span class="sxs-lookup"><span data-stu-id="df100-149">Microsoft.Azure.PowerShell.Cmdlets.PostgreSql.Models.Api20171201.IConfiguration</span></span>
+
+## <span data-ttu-id="df100-150">NOTATKI</span><span class="sxs-lookup"><span data-stu-id="df100-150">NOTES</span></span>
+
+<span data-ttu-id="df100-151">ALIASY</span><span class="sxs-lookup"><span data-stu-id="df100-151">ALIASES</span></span>
+
+<span data-ttu-id="df100-152">ZŁOŻONE WŁAŚCIWOŚCI PARAMETRÓW</span><span class="sxs-lookup"><span data-stu-id="df100-152">COMPLEX PARAMETER PROPERTIES</span></span>
+
+<span data-ttu-id="df100-153">Aby utworzyć parametry opisane poniżej, skonstruuj tabelę skrótów zawierającą odpowiednie właściwości.</span><span class="sxs-lookup"><span data-stu-id="df100-153">To create the parameters described below, construct a hash table containing the appropriate properties.</span></span> <span data-ttu-id="df100-154">Aby uzyskać informacje na temat skrótów tabel, uruchom Get-Help about_Hash_Tables.</span><span class="sxs-lookup"><span data-stu-id="df100-154">For information on hash tables, run Get-Help about_Hash_Tables.</span></span>
+
+
+<span data-ttu-id="df100-155">INPUTOBJECT: <IPostgreSqlIdentity> Parametr tożsamości</span><span class="sxs-lookup"><span data-stu-id="df100-155">INPUTOBJECT <IPostgreSqlIdentity>: Identity Parameter</span></span>
+  - <span data-ttu-id="df100-156">`[ConfigurationName <String>]`: nazwa konfiguracji serwera.</span><span class="sxs-lookup"><span data-stu-id="df100-156">`[ConfigurationName <String>]`: The name of the server configuration.</span></span>
+  - <span data-ttu-id="df100-157">`[DatabaseName <String>]`: nazwa bazy danych.</span><span class="sxs-lookup"><span data-stu-id="df100-157">`[DatabaseName <String>]`: The name of the database.</span></span>
+  - <span data-ttu-id="df100-158">`[FirewallRuleName <String>]`: nazwa reguły zapory serwera.</span><span class="sxs-lookup"><span data-stu-id="df100-158">`[FirewallRuleName <String>]`: The name of the server firewall rule.</span></span>
+  - <span data-ttu-id="df100-159">`[Id <String>]`: ścieżka tożsamości zasobu</span><span class="sxs-lookup"><span data-stu-id="df100-159">`[Id <String>]`: Resource identity path</span></span>
+  - <span data-ttu-id="df100-160">`[LocationName <String>]`: nazwa lokalizacji.</span><span class="sxs-lookup"><span data-stu-id="df100-160">`[LocationName <String>]`: The name of the location.</span></span>
+  - <span data-ttu-id="df100-161">`[ResourceGroupName <String>]`: nazwa grupy zasobów.</span><span class="sxs-lookup"><span data-stu-id="df100-161">`[ResourceGroupName <String>]`: The name of the resource group.</span></span> <span data-ttu-id="df100-162">W nazwie nie jest uwzględniania liter.</span><span class="sxs-lookup"><span data-stu-id="df100-162">The name is case insensitive.</span></span>
+  - <span data-ttu-id="df100-163">`[SecurityAlertPolicyName <SecurityAlertPolicyName?>]`: nazwa zasad alertów zabezpieczeń.</span><span class="sxs-lookup"><span data-stu-id="df100-163">`[SecurityAlertPolicyName <SecurityAlertPolicyName?>]`: The name of the security alert policy.</span></span>
+  - <span data-ttu-id="df100-164">`[ServerName <String>]`: nazwa serwera.</span><span class="sxs-lookup"><span data-stu-id="df100-164">`[ServerName <String>]`: The name of the server.</span></span>
+  - <span data-ttu-id="df100-165">`[SubscriptionId <String>]`: Identyfikator subskrypcji docelowej.</span><span class="sxs-lookup"><span data-stu-id="df100-165">`[SubscriptionId <String>]`: The ID of the target subscription.</span></span>
+  - <span data-ttu-id="df100-166">`[VirtualNetworkRuleName <String>]`: nazwa reguły sieci wirtualnej.</span><span class="sxs-lookup"><span data-stu-id="df100-166">`[VirtualNetworkRuleName <String>]`: The name of the virtual network rule.</span></span>
+
+## <span data-ttu-id="df100-167">LINKI POKREWNE</span><span class="sxs-lookup"><span data-stu-id="df100-167">RELATED LINKS</span></span>
+
