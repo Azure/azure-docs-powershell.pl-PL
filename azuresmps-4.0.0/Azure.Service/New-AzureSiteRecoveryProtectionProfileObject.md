@@ -3,21 +3,21 @@ external help file: Microsoft.Azure.Commands.RecoveryServicesRdfe.dll-Help.xml
 ms.assetid: 853D5585-2A92-4B65-BA8C-EC06BEE8C237
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: 63274c772c6085fc8c491557851673a38056aa77
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: d7681631d98f80def1076a04ab57f1774bad245c
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "94054857"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100403650"
 ---
 # New-AzureSiteRecoveryProtectionProfileObject
 
-## STRESZCZENIe
-Tworzy obiekt profilu ochrony przed odzyskiwaniem witryny.
+## SYNOPSIS
+Tworzy obiekt profilu ochrony odzyskiwania witryny.
 
-## POLECENIA
+## SKŁADNIA
 
-### EnterpriseToAzure (domyślny)
+### EnterpriseToAzure (domyślne)
 ```
 New-AzureSiteRecoveryProtectionProfileObject [-Name <String>] -ReplicationProvider <String>
  -RecoveryAzureSubscription <String> -RecoveryAzureStorageAccount <String>
@@ -35,11 +35,11 @@ New-AzureSiteRecoveryProtectionProfileObject [-Name <String>] -ReplicationProvid
  [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **New-AzureSiteRecoveryProtectionProfileObject** tworzy obiekt profilu ochrony usługi Azure Site Recovery.
-To polecenie cmdlet tworzy obiekt **ASRProtectionProfile** , który będzie używany z innymi poleceniami cmdlet.
+## OPIS
+Polecenie **cmdlet New-AzureSiteRecoveryProtectionProfileObject** tworzy obiekt profilu ochrony usługi Azure Site Recovery.
+To polecenie cmdlet tworzy obiekt **ASRProtectionProfile** do użycia z innymi poleceniami cmdlet.
 
-## Przykłady
+## PRZYKŁADY
 
 ### Przykład 1. Tworzenie profilu ochrony
 ```
@@ -53,7 +53,7 @@ HyperVReplicaAzureProviderSettingsObject :
 
 To polecenie tworzy obiekt profilu ochrony.
 
-### Przykład 2: Tworzenie profilu ochrony dla dostawcy usługi HyperVReplicaAzure
+### Przykład 2. Tworzenie profilu ochrony dla dostawcy HyperVReplicaAzure
 ```
 PS C:\> New-AzureSiteRecoveryProtectionProfileObject -Name "ProtectionProfile" -ReplicationProvider "HyperVReplicaAzure" -RecoveryAzureSubscription "cb53d0c3-bd59-4721-89bc-06916a9147ef" -RecoveryAzureStorageAccount "Contoso01" -ReplicationFrequencyInSeconds 30 -RecoveryPoints 1 -Force
 Name                                     : ProtectionProfile
@@ -65,10 +65,10 @@ HyperVReplicaAzureProviderSettingsObject : Microsoft.Azure.Portal.RecoveryServic
 
 To polecenie tworzy profil ochrony dla dostawcy HyperVReplicaAzure.
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -AllowReplicaDeletion
-Wskazuje, że profil ochrony umożliwia usuwanie jednostek repliki.
+Wskazuje, że profil ochrony umożliwia usuwanie replik obiektów.
 
 ```yaml
 Type: SwitchParameter
@@ -83,7 +83,7 @@ Accept wildcard characters: False
 ```
 
 ### -ApplicationConsistentSnapshotFrequencyInHours
-Określa częstotliwość (w godzinach) tworzenia migawek zgodnych z aplikacją.
+Określa częstotliwość (w godzinach) migawek zgodnych z aplikacją.
 
 ```yaml
 Type: Int32
@@ -98,8 +98,8 @@ Accept wildcard characters: False
 ```
 
 ### — Uwierzytelnianie
-Określa typ uwierzytelniania, którego należy użyć.
-Dopuszczalne wartości tego parametru to: certyfikat i protokół Kerberos.
+Określa typ uwierzytelniania do użycia.
+Dopuszczalne wartości dla tego parametru to: Certificate i Kerberos.
 
 ```yaml
 Type: String
@@ -128,8 +128,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Force
-Wymusza uruchomienie polecenia bez monitowania o potwierdzenie użytkownika.
+### — Wymuszanie
+Wymusza uruchomienie polecenia bez pytania o potwierdzenie przez użytkownika.
 
 ```yaml
 Type: SwitchParameter
@@ -143,7 +143,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (nazwa)
+### — Nazwa
 Określa nazwę profilu ochrony.
 
 ```yaml
@@ -158,9 +158,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Profile
-Określa Profil platformy Azure, na podstawie którego jest odczytywane to polecenie cmdlet.
-Jeśli nie podano profilu, to polecenie cmdlet odczytuje lokalny profil domyślny.
+### — Profil
+Określa profil platformy Azure, z którego będzie odczytywane to polecenie cmdlet.
+Jeśli nie określisz profilu, to polecenie cmdlet zostanie odczytane z lokalnego profilu domyślnego.
 
 ```yaml
 Type: AzureSMProfile
@@ -175,7 +175,7 @@ Accept wildcard characters: False
 ```
 
 ### -RecoveryAzureStorageAccount
-Określa nazwę konta usługi Azure Storage, na którym ma być przechowywana encja usługi Azure Replica.
+Określa nazwę konta magazynu platformy Azure, na którym ma być przechowana replika platformy Azure.
 
 ```yaml
 Type: String
@@ -190,8 +190,8 @@ Accept wildcard characters: False
 ```
 
 ### -RecoveryAzureSubscription
-Określa identyfikator subskrypcji usługi Azure dla konta magazynu.
-Ten parametr odwołuje się do konta, na którym jest przechowywana jednostka usługi Azure Replica.
+Określa identyfikator subskrypcji platformy Azure dla konta magazynu.
+Ten parametr odwołuje się do konta, na którym ma być przechowywane replika platformy Azure.
 
 ```yaml
 Type: String
@@ -206,7 +206,7 @@ Accept wildcard characters: False
 ```
 
 ### -RecoveryPoints
-Określa liczbę godzin do przechowywania punktów odzyskiwania.
+Określa liczbę godzin, przez które mają być zachowywane punkty odzyskiwania.
 
 ```yaml
 Type: Int32
@@ -221,7 +221,7 @@ Accept wildcard characters: False
 ```
 
 ### -ReplicationFrequencyInSeconds
-Określa interwał częstotliwości (w sekundach) replikacji. Dopuszczalne wartości tego parametru to:
+Określa interwał częstotliwości (w sekundach) dla replikacji. Dopuszczalne wartości dla tego parametru to:
 
 - 30 
 - 300 
@@ -240,11 +240,11 @@ Accept wildcard characters: False
 ```
 
 ### -ReplicationMethod
-Określa metodę replikacji. Dopuszczalne wartości tego parametru to:
+Określa metodę replikacji. Dopuszczalne wartości dla tego parametru to:
 
-- Ekran.
+- Online.
 Replikacja za pośrednictwem sieci.
-- Pracy.
+- W trybie offline.
 
 ```yaml
 Type: String
@@ -259,7 +259,7 @@ Accept wildcard characters: False
 ```
 
 ### -ReplicationPort
-Określa numer portu, na którym odbywa się replikacja.
+Określa numer portu, na którym występuje replikacja.
 
 ```yaml
 Type: UInt16
@@ -274,7 +274,7 @@ Accept wildcard characters: False
 ```
 
 ### -ReplicationProvider
-Określa typ dostawcy replikacji. Dopuszczalne wartości tego parametru to: HyperVReplica oraz HyperVReplicaAzure.
+Określa typ dostawcy replikacji. Dopuszczalne wartości dla tego parametru to: HyperVReplica i HyperVReplicaAzure.
 
 ```yaml
 Type: String
@@ -289,8 +289,8 @@ Accept wildcard characters: False
 ```
 
 ### -ReplicationStartTime
-Określa godzinę rozpoczęcia replikacji.
-Określ czas w ciągu 24 godzin po rozpoczęciu zadania.
+Określa czas rozpoczęcia replikacji.
+Określ czas w ciągu 24 godzin od rozpoczęcia zadania.
 
 ```yaml
 Type: TimeSpan
@@ -305,16 +305,16 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
-[Polecenia cmdlet usług Azure Site Recovery](./Azure.SiteRecoveryServices.md)
+
 
 
