@@ -6,49 +6,49 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.notificati
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Get-AzNotificationHubListKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Get-AzNotificationHubListKey.md
-ms.openlocfilehash: 6b9aa676e00d137612908955e88558b4cefb0eb8
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 7ce6c3c08c1794e2bed794186203a5c6c0d1fdea
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93872020"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100413765"
 ---
-# <span data-ttu-id="5d88e-101">Get-AzNotificationHubListKey</span><span class="sxs-lookup"><span data-stu-id="5d88e-101">Get-AzNotificationHubListKey</span></span>
+# <span data-ttu-id="2da29-101">Get-AzNotificationHubListKey</span><span class="sxs-lookup"><span data-stu-id="2da29-101">Get-AzNotificationHubListKey</span></span>
 
-## <span data-ttu-id="5d88e-102">STRESZCZENIe</span><span class="sxs-lookup"><span data-stu-id="5d88e-102">SYNOPSIS</span></span>
-<span data-ttu-id="5d88e-103">Pobiera parametry połączenia podstawowego i pomocniczego skojarzone z regułą autoryzacji centrum powiadomień.</span><span class="sxs-lookup"><span data-stu-id="5d88e-103">Gets the primary and secondary connection strings associated with a notification hub authorization rule.</span></span>
+## <span data-ttu-id="2da29-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="2da29-102">SYNOPSIS</span></span>
+<span data-ttu-id="2da29-103">Pobiera podstawowe i pomocnicze parametry połączenia skojarzone z regułą autoryzacji centrum powiadomień.</span><span class="sxs-lookup"><span data-stu-id="2da29-103">Gets the primary and secondary connection strings associated with a notification hub authorization rule.</span></span>
 
-## <span data-ttu-id="5d88e-104">POLECENIA</span><span class="sxs-lookup"><span data-stu-id="5d88e-104">SYNTAX</span></span>
+## <span data-ttu-id="2da29-104">SKŁADNIA</span><span class="sxs-lookup"><span data-stu-id="2da29-104">SYNTAX</span></span>
 
 ```
 Get-AzNotificationHubListKey [-ResourceGroup] <String> [-Namespace] <String> [-NotificationHub] <String>
  [-AuthorizationRule] <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="5d88e-105">Opis</span><span class="sxs-lookup"><span data-stu-id="5d88e-105">DESCRIPTION</span></span>
-<span data-ttu-id="5d88e-106">Polecenie cmdlet **Get-AzNotificationHubListKey** zwraca podstawowe i pomocnicze ciągi połączeń dla reguły autoryzacji podpisu dostępu udostępnionego w centrum powiadomień.</span><span class="sxs-lookup"><span data-stu-id="5d88e-106">The **Get-AzNotificationHubListKey** cmdlet returns the primary and secondary connection strings of a notification hub Shared Access Signature (SAS) authorization rule.</span></span>
-<span data-ttu-id="5d88e-107">Reguły autoryzacji Zarządzaj prawami użytkowników do centrum.</span><span class="sxs-lookup"><span data-stu-id="5d88e-107">Authorization rules manage user rights to the hub.</span></span>
-<span data-ttu-id="5d88e-108">Każda reguła zawiera parametry połączenia podstawowego i pomocniczego.</span><span class="sxs-lookup"><span data-stu-id="5d88e-108">Each rule includes a primary and a secondary connection string.</span></span>
-<span data-ttu-id="5d88e-109">Te ciągi połączeń (identyfikatory URI) wykonują następujące czynności:</span><span class="sxs-lookup"><span data-stu-id="5d88e-109">These connection strings (URIs) perform the following:</span></span>
-- <span data-ttu-id="5d88e-110">Wskazywanie użytkownikom zasobu.</span><span class="sxs-lookup"><span data-stu-id="5d88e-110">Point users to a resource.</span></span>
-- <span data-ttu-id="5d88e-111">Dołącz token zawierający parametry zapytania.</span><span class="sxs-lookup"><span data-stu-id="5d88e-111">Include a token containing query parameters.</span></span>
-<span data-ttu-id="5d88e-112">Za pomocą jednego z tych parametrów podpis służy do uwierzytelniania użytkownika i zapewnia określony poziom dostępu.</span><span class="sxs-lookup"><span data-stu-id="5d88e-112">One of these parameters, the signature, is used to authenticate the user and provide the specified level of access.</span></span>
+## <span data-ttu-id="2da29-105">OPIS</span><span class="sxs-lookup"><span data-stu-id="2da29-105">DESCRIPTION</span></span>
+<span data-ttu-id="2da29-106">Polecenie **cmdlet Get-AzNotificationHubListKey** zwraca podstawowe i pomocnicze parametry połączenia reguły autoryzacji podpisu dostępu udostępnionego (SAS) centrum powiadomień.</span><span class="sxs-lookup"><span data-stu-id="2da29-106">The **Get-AzNotificationHubListKey** cmdlet returns the primary and secondary connection strings of a notification hub Shared Access Signature (SAS) authorization rule.</span></span>
+<span data-ttu-id="2da29-107">Reguły autoryzacji zarządzają prawami użytkowników do centrum.</span><span class="sxs-lookup"><span data-stu-id="2da29-107">Authorization rules manage user rights to the hub.</span></span>
+<span data-ttu-id="2da29-108">Każda reguła zawiera podstawowy i pomocniczy ciąg połączenia.</span><span class="sxs-lookup"><span data-stu-id="2da29-108">Each rule includes a primary and a secondary connection string.</span></span>
+<span data-ttu-id="2da29-109">Te parametry połączenia ( URI) wykonują następujące czynności:</span><span class="sxs-lookup"><span data-stu-id="2da29-109">These connection strings (URIs) perform the following:</span></span>
+- <span data-ttu-id="2da29-110">Wskaż użytkownikom zasób.</span><span class="sxs-lookup"><span data-stu-id="2da29-110">Point users to a resource.</span></span>
+- <span data-ttu-id="2da29-111">Uwzględnianie tokenu zawierającego parametry zapytania.</span><span class="sxs-lookup"><span data-stu-id="2da29-111">Include a token containing query parameters.</span></span>
+<span data-ttu-id="2da29-112">Jeden z tych parametrów ( podpis) służy do uwierzytelniania użytkownika i zapewnienia określonego poziomu dostępu.</span><span class="sxs-lookup"><span data-stu-id="2da29-112">One of these parameters, the signature, is used to authenticate the user and provide the specified level of access.</span></span>
 
-## <span data-ttu-id="5d88e-113">Przykłady</span><span class="sxs-lookup"><span data-stu-id="5d88e-113">EXAMPLES</span></span>
+## <span data-ttu-id="2da29-113">PRZYKŁADY</span><span class="sxs-lookup"><span data-stu-id="2da29-113">EXAMPLES</span></span>
 
-### <span data-ttu-id="5d88e-114">Przykład 1: uzyskiwanie ciągów połączenia podstawowego i pomocniczego dla reguły autoryzacji</span><span class="sxs-lookup"><span data-stu-id="5d88e-114">Example 1: Get the primary and secondary connection strings for an authorization rule</span></span>
+### <span data-ttu-id="2da29-114">Przykład 1. Uzyskiwanie podstawowych i pomocniczych ciągów połączenia dla reguły autoryzacji</span><span class="sxs-lookup"><span data-stu-id="2da29-114">Example 1: Get the primary and secondary connection strings for an authorization rule</span></span>
 ```
 PS C:\>Get-AzNotificationHubListKey -Namespace "ContosoNamespace" -NotificationHub "ContosoInternalHub" -ResourceGroup "ContosoNotificationsGroup" -AuthorizationRule "ListenRule"
 ```
 
-<span data-ttu-id="5d88e-115">To polecenie pobiera podstawowe i pomocnicze ciągi połączeń dla reguły autoryzacji ListenRule, regułę przypisaną do centrum powiadomień usługi ContosoInternalHub.</span><span class="sxs-lookup"><span data-stu-id="5d88e-115">This command gets the primary and secondary connection strings for the authorization rule ListenRule, a rule assigned to the ContosoInternalHub notification hub.</span></span>
-<span data-ttu-id="5d88e-116">Polecenie musi zawierać obszar nazw centrum i grupę zasobów.</span><span class="sxs-lookup"><span data-stu-id="5d88e-116">The command must include the hub namespace and resource group.</span></span>
+<span data-ttu-id="2da29-115">To polecenie pobiera podstawowe i pomocnicze parametry połączenia dla reguły autoryzacji ListenRule , reguły przypisanej do centrum powiadomień ContosoInternalHub.</span><span class="sxs-lookup"><span data-stu-id="2da29-115">This command gets the primary and secondary connection strings for the authorization rule ListenRule, a rule assigned to the ContosoInternalHub notification hub.</span></span>
+<span data-ttu-id="2da29-116">To polecenie musi zawierać przestrzeń nazw centrum i grupę zasobów.</span><span class="sxs-lookup"><span data-stu-id="2da29-116">The command must include the hub namespace and resource group.</span></span>
 
-## <span data-ttu-id="5d88e-117">PARAMETRÓW</span><span class="sxs-lookup"><span data-stu-id="5d88e-117">PARAMETERS</span></span>
+## <span data-ttu-id="2da29-117">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="2da29-117">PARAMETERS</span></span>
 
-### <span data-ttu-id="5d88e-118">-AuthorizationRule</span><span class="sxs-lookup"><span data-stu-id="5d88e-118">-AuthorizationRule</span></span>
-<span data-ttu-id="5d88e-119">Określa nazwę reguły uwierzytelniania w ramach udostępniania podpisu dostępu (SAS).</span><span class="sxs-lookup"><span data-stu-id="5d88e-119">Specifies the name of a Shared Access Signature (SAS) authentication rule.</span></span>
-<span data-ttu-id="5d88e-120">Te reguły określają typ dostępu do centrum powiadomień.</span><span class="sxs-lookup"><span data-stu-id="5d88e-120">These rules determine the type of access that users have to the notification hub.</span></span>
+### <span data-ttu-id="2da29-118">-AuthorizationRule</span><span class="sxs-lookup"><span data-stu-id="2da29-118">-AuthorizationRule</span></span>
+<span data-ttu-id="2da29-119">Określa nazwę reguły uwierzytelniania SAS (Shared Access Signature).</span><span class="sxs-lookup"><span data-stu-id="2da29-119">Specifies the name of a Shared Access Signature (SAS) authentication rule.</span></span>
+<span data-ttu-id="2da29-120">Te reguły określają typ dostępu użytkowników do Centrum powiadomień.</span><span class="sxs-lookup"><span data-stu-id="2da29-120">These rules determine the type of access that users have to the notification hub.</span></span>
 
 ```yaml
 Type: System.String
@@ -62,8 +62,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="5d88e-121">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="5d88e-121">-DefaultProfile</span></span>
-<span data-ttu-id="5d88e-122">Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure</span><span class="sxs-lookup"><span data-stu-id="5d88e-122">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="2da29-121">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="2da29-121">-DefaultProfile</span></span>
+<span data-ttu-id="2da29-122">Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure</span><span class="sxs-lookup"><span data-stu-id="2da29-122">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -77,9 +77,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="5d88e-123">-Namespace</span><span class="sxs-lookup"><span data-stu-id="5d88e-123">-Namespace</span></span>
-<span data-ttu-id="5d88e-124">Określa obszar nazw, do którego jest przypisany centrum powiadomień.</span><span class="sxs-lookup"><span data-stu-id="5d88e-124">Specifies the namespace to which the notification hub is assigned.</span></span>
-<span data-ttu-id="5d88e-125">Obszary nazw umożliwiają grupowanie i kategoryzowanie koncentratorów powiadomień.</span><span class="sxs-lookup"><span data-stu-id="5d88e-125">Namespaces provide a way to group and categorize notification hubs.</span></span>
+### <span data-ttu-id="2da29-123">—Przestrzeń nazw</span><span class="sxs-lookup"><span data-stu-id="2da29-123">-Namespace</span></span>
+<span data-ttu-id="2da29-124">Określa przestrzeń nazw, do której jest przypisane centrum powiadomień.</span><span class="sxs-lookup"><span data-stu-id="2da29-124">Specifies the namespace to which the notification hub is assigned.</span></span>
+<span data-ttu-id="2da29-125">Przestrzenie nazw zapewniają sposób grupowania i kategoryzowania centrum powiadomień.</span><span class="sxs-lookup"><span data-stu-id="2da29-125">Namespaces provide a way to group and categorize notification hubs.</span></span>
 
 ```yaml
 Type: System.String
@@ -93,9 +93,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="5d88e-126">-NotificationHub</span><span class="sxs-lookup"><span data-stu-id="5d88e-126">-NotificationHub</span></span>
-<span data-ttu-id="5d88e-127">Określa centrum powiadomień, do którego jest przypisywana reguła autoryzacji.</span><span class="sxs-lookup"><span data-stu-id="5d88e-127">Specifies the notification hub that this cmdlet assigns an authorization rule to.</span></span>
-<span data-ttu-id="5d88e-128">Centra powiadomień służą do wysyłania powiadomień wypychanych do wielu klientów niezależnie od platformy używanej przez tych klientów.</span><span class="sxs-lookup"><span data-stu-id="5d88e-128">Notification hubs are used to send push notifications to multiple clients regardless of the platform used by those clients.</span></span>
+### <span data-ttu-id="2da29-126">- NotificationHub</span><span class="sxs-lookup"><span data-stu-id="2da29-126">-NotificationHub</span></span>
+<span data-ttu-id="2da29-127">Określa centrum powiadomień, do których to polecenie cmdlet przypisuje regułę autoryzacji.</span><span class="sxs-lookup"><span data-stu-id="2da29-127">Specifies the notification hub that this cmdlet assigns an authorization rule to.</span></span>
+<span data-ttu-id="2da29-128">Centra powiadomień są używane do wysyłania powiadomień wypychanych do wielu klientów bez względu na platformę używaną przez tych klientów.</span><span class="sxs-lookup"><span data-stu-id="2da29-128">Notification hubs are used to send push notifications to multiple clients regardless of the platform used by those clients.</span></span>
 
 ```yaml
 Type: System.String
@@ -109,9 +109,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="5d88e-129">-ResourceName</span><span class="sxs-lookup"><span data-stu-id="5d88e-129">-ResourceGroup</span></span>
-<span data-ttu-id="5d88e-130">Określa grupę zasobów, do której jest przypisany centrum powiadomień.</span><span class="sxs-lookup"><span data-stu-id="5d88e-130">Specifies the resource group to which the notification hub is assigned.</span></span>
-<span data-ttu-id="5d88e-131">Grupy zasobów organizują elementy, takie jak obszary nazw, Centra powiadomień i reguły autoryzacji, w sposób umożliwiający łatwe zarządzanie zapasami i administrowanie systemem Azure.</span><span class="sxs-lookup"><span data-stu-id="5d88e-131">Resource groups organize items such as namespaces, notification hubs, and authorization rules in ways that help simply inventory management and Azure administration.</span></span>
+### <span data-ttu-id="2da29-129">- ResourceGroup</span><span class="sxs-lookup"><span data-stu-id="2da29-129">-ResourceGroup</span></span>
+<span data-ttu-id="2da29-130">Określa grupę zasobów, do której jest przypisane centrum powiadomień.</span><span class="sxs-lookup"><span data-stu-id="2da29-130">Specifies the resource group to which the notification hub is assigned.</span></span>
+<span data-ttu-id="2da29-131">Grupy zasobów organizują elementy, takie jak przestrzenie nazw, centra powiadomień i reguły autoryzacji, w sposób ułatwiający po prostu zarządzanie zapasami i administrowanie platformą Azure.</span><span class="sxs-lookup"><span data-stu-id="2da29-131">Resource groups organize items such as namespaces, notification hubs, and authorization rules in ways that help simply inventory management and Azure administration.</span></span>
 
 ```yaml
 Type: System.String
@@ -125,21 +125,20 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="5d88e-132">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="5d88e-132">CommonParameters</span></span>
-<span data-ttu-id="5d88e-133">To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="5d88e-133">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="5d88e-134">Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="5d88e-134">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="2da29-132">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="2da29-132">CommonParameters</span></span>
+<span data-ttu-id="2da29-133">To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="2da29-133">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="2da29-134">Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="2da29-134">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="5d88e-135">WEJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="5d88e-135">INPUTS</span></span>
+## <span data-ttu-id="2da29-135">DANE WEJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="2da29-135">INPUTS</span></span>
 
-### <span data-ttu-id="5d88e-136">System. String</span><span class="sxs-lookup"><span data-stu-id="5d88e-136">System.String</span></span>
+### <span data-ttu-id="2da29-136">System.String</span><span class="sxs-lookup"><span data-stu-id="2da29-136">System.String</span></span>
 
-## <span data-ttu-id="5d88e-137">WYSYŁA</span><span class="sxs-lookup"><span data-stu-id="5d88e-137">OUTPUTS</span></span>
+## <span data-ttu-id="2da29-137">OUTPUTS</span><span class="sxs-lookup"><span data-stu-id="2da29-137">OUTPUTS</span></span>
 
-### <span data-ttu-id="5d88e-138">Microsoft. Azure. Management. NotificationHubs. MODELES. ResourceListKeys</span><span class="sxs-lookup"><span data-stu-id="5d88e-138">Microsoft.Azure.Management.NotificationHubs.Models.ResourceListKeys</span></span>
+### <span data-ttu-id="2da29-138">Microsoft.Azure.Management.NotificationHubs.Models.ResourceListKeys</span><span class="sxs-lookup"><span data-stu-id="2da29-138">Microsoft.Azure.Management.NotificationHubs.Models.ResourceListKeys</span></span>
 
-## <span data-ttu-id="5d88e-139">INFORMACYJN</span><span class="sxs-lookup"><span data-stu-id="5d88e-139">NOTES</span></span>
+## <span data-ttu-id="2da29-139">NOTATKI</span><span class="sxs-lookup"><span data-stu-id="2da29-139">NOTES</span></span>
 
-## <span data-ttu-id="5d88e-140">LINKI POKREWNE</span><span class="sxs-lookup"><span data-stu-id="5d88e-140">RELATED LINKS</span></span>
+## <span data-ttu-id="2da29-140">LINKI POKREWNE</span><span class="sxs-lookup"><span data-stu-id="2da29-140">RELATED LINKS</span></span>
 
-[<span data-ttu-id="5d88e-141">Get-AzNotificationHubAuthorizationRules</span><span class="sxs-lookup"><span data-stu-id="5d88e-141">Get-AzNotificationHubAuthorizationRules</span></span>](./Get-AzNotificationHubAuthorizationRules.md)
 
 

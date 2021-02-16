@@ -1,0 +1,163 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices.Backup.dll-Help.xml
+Module Name: Az.RecoveryServices
+ms.assetid: BBF12B16-C5FD-4AE2-B5D7-AFDC29CEE4D3
+online version: https://docs.microsoft.com/en-us/powershell/module/az.recoveryservices/unregister-azrecoveryservicesbackupmanagementserver
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Unregister-AzRecoveryServicesBackupManagementServer.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Unregister-AzRecoveryServicesBackupManagementServer.md
+ms.openlocfilehash: cc52435ff0b288656e4a917620659737f33916ca
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100201995"
+---
+# <span data-ttu-id="80155-101">Unregister-AzRecoveryServicesBackupManagementServer</span><span class="sxs-lookup"><span data-stu-id="80155-101">Unregister-AzRecoveryServicesBackupManagementServer</span></span>
+
+## <span data-ttu-id="80155-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="80155-102">SYNOPSIS</span></span>
+<span data-ttu-id="80155-103">Wyrejestruje serwer SCDPM lub serwer kopii zapasowej z magazynu.</span><span class="sxs-lookup"><span data-stu-id="80155-103">Unregisters a SCDPM server or Backup server from the vault.</span></span>
+
+## <span data-ttu-id="80155-104">SKŁADNIA</span><span class="sxs-lookup"><span data-stu-id="80155-104">SYNTAX</span></span>
+
+```
+Unregister-AzRecoveryServicesBackupManagementServer [-AzureRmBackupManagementServer] <BackupEngineBase>
+ [-PassThru] [-VaultId <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+## <span data-ttu-id="80155-105">OPIS</span><span class="sxs-lookup"><span data-stu-id="80155-105">DESCRIPTION</span></span>
+<span data-ttu-id="80155-106">Polecenie cmdlet **Unregister-AzRecoveryServicesBackupManagementServer** wyrejestruje z magazynu serwer programu System Center Data Protection Manager (SCDPM) lub serwer kopii zapasowej azure.</span><span class="sxs-lookup"><span data-stu-id="80155-106">The **Unregister-AzRecoveryServicesBackupManagementServer** cmdlet unregisters a System Center Data Protection Manager (SCDPM) server or an Azure Backup server from the vault.</span></span>
+<span data-ttu-id="80155-107">To polecenie cmdlet usuwa odwołania do serwerów, które nie są wyrejestrowane z magazynu.</span><span class="sxs-lookup"><span data-stu-id="80155-107">This cmdlet removes references to the servers that are unregistered from the vault.</span></span>
+<span data-ttu-id="80155-108">Aby można było wyrejestrować kontener, należy usunąć wszystkie chronione dane skojarzone z tym kontenerem.</span><span class="sxs-lookup"><span data-stu-id="80155-108">Before you can unregister a container, you must delete any protected data associated with that container.</span></span>
+<span data-ttu-id="80155-109">Ustaw kontekst magazynu za pomocą Set-AzRecoveryServicesVaultContext cmdlet przed użyciem bieżącego polecenia cmdlet.</span><span class="sxs-lookup"><span data-stu-id="80155-109">Set the vault context by using the Set-AzRecoveryServicesVaultContext cmdlet before you use the current cmdlet.</span></span>
+
+## <span data-ttu-id="80155-110">PRZYKŁADY</span><span class="sxs-lookup"><span data-stu-id="80155-110">EXAMPLES</span></span>
+
+### <span data-ttu-id="80155-111">Przykład 1. Wyrejestrowanie serwera SCDPM z magazynu</span><span class="sxs-lookup"><span data-stu-id="80155-111">Example 1: Unregister an SCDPM server from the vault</span></span>
+```powershell
+PS C:\>$BMS = Get-AzRecoveryServicesBackupManagementServer -Name "dpmserver01.contoso.com"
+PS C:\> Unregister-AzRecoveryServicesBackupManagementServer -AzBackupManagementServer $BMS
+```
+
+<span data-ttu-id="80155-112">Pierwsze polecenie pobiera nazwę serwera zarządzania kopią zapasową dpmserver01.contoso.com, a następnie zapisuje go w $BMS danych.</span><span class="sxs-lookup"><span data-stu-id="80155-112">The first command gets the Backup management server named dpmserver01.contoso.com, and then stores it in the $BMS variable.</span></span>
+<span data-ttu-id="80155-113">Drugie polecenie wyrejestruje serwer SCDPM z magazynu.</span><span class="sxs-lookup"><span data-stu-id="80155-113">The second command unregisters the SCDPM server from the vault.</span></span>
+
+### <span data-ttu-id="80155-114">Przykład 2</span><span class="sxs-lookup"><span data-stu-id="80155-114">Example 2</span></span>
+
+<span data-ttu-id="80155-115">Wyrejestruje serwer SCDPM lub serwer kopii zapasowej z magazynu.</span><span class="sxs-lookup"><span data-stu-id="80155-115">Unregisters a SCDPM server or Backup server from the vault.</span></span> <span data-ttu-id="80155-116">(wygenerowane automatycznie)</span><span class="sxs-lookup"><span data-stu-id="80155-116">(autogenerated)</span></span>
+
+```powershell <!-- Aladdin Generated Example --> 
+Unregister-AzRecoveryServicesBackupManagementServer -AzureRmBackupManagementServer <BackupEngineBase> -VaultId $vault.ID
+```
+
+## <span data-ttu-id="80155-117">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="80155-117">PARAMETERS</span></span>
+
+### <span data-ttu-id="80155-118">-AzureRmBackupManagementServer</span><span class="sxs-lookup"><span data-stu-id="80155-118">-AzureRmBackupManagementServer</span></span>
+<span data-ttu-id="80155-119">Kontener kopii zapasowej usług odzyskiwania.</span><span class="sxs-lookup"><span data-stu-id="80155-119">The recovery services backup container.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models.BackupEngineBase
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="80155-120">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="80155-120">-DefaultProfile</span></span>
+<span data-ttu-id="80155-121">Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.</span><span class="sxs-lookup"><span data-stu-id="80155-121">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="80155-122">-PassThru</span><span class="sxs-lookup"><span data-stu-id="80155-122">-PassThru</span></span>
+<span data-ttu-id="80155-123">Zwróć serwer zarządzania kopią zapasową do usunięcia.</span><span class="sxs-lookup"><span data-stu-id="80155-123">Return the Backup Management Server to be deleted.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="80155-124">-VaultId</span><span class="sxs-lookup"><span data-stu-id="80155-124">-VaultId</span></span>
+<span data-ttu-id="80155-125">ARM identyfikatora magazynu usług odzyskiwania.</span><span class="sxs-lookup"><span data-stu-id="80155-125">ARM ID of the Recovery Services Vault.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="80155-126">— Potwierdź</span><span class="sxs-lookup"><span data-stu-id="80155-126">-Confirm</span></span>
+<span data-ttu-id="80155-127">Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.</span><span class="sxs-lookup"><span data-stu-id="80155-127">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="80155-128">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="80155-128">-WhatIf</span></span>
+<span data-ttu-id="80155-129">Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet.</span><span class="sxs-lookup"><span data-stu-id="80155-129">Shows what would happen if the cmdlet runs.</span></span> 
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="80155-130">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="80155-130">CommonParameters</span></span>
+<span data-ttu-id="80155-131">To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="80155-131">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="80155-132">Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="80155-132">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="80155-133">DANE WEJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="80155-133">INPUTS</span></span>
+
+### <span data-ttu-id="80155-134">System.String</span><span class="sxs-lookup"><span data-stu-id="80155-134">System.String</span></span>
+
+## <span data-ttu-id="80155-135">OUTPUTS</span><span class="sxs-lookup"><span data-stu-id="80155-135">OUTPUTS</span></span>
+
+### <span data-ttu-id="80155-136">Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlet.Models.BackupEngineBase</span><span class="sxs-lookup"><span data-stu-id="80155-136">Microsoft.Azure.Commands.RecoveryServices.Backup.Cmdlets.Models.BackupEngineBase</span></span>
+
+## <span data-ttu-id="80155-137">NOTATKI</span><span class="sxs-lookup"><span data-stu-id="80155-137">NOTES</span></span>
+
+## <span data-ttu-id="80155-138">LINKI POKREWNE</span><span class="sxs-lookup"><span data-stu-id="80155-138">RELATED LINKS</span></span>
+
+[<span data-ttu-id="80155-139">Get-AzRecoveryServicesBackupManagementServer</span><span class="sxs-lookup"><span data-stu-id="80155-139">Get-AzRecoveryServicesBackupManagementServer</span></span>](./Get-AzRecoveryServicesBackupManagementServer.md)
+
+
