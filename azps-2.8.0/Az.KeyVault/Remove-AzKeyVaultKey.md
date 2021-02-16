@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/r
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultKey.md
-ms.openlocfilehash: 2989a3b50eaf4e7c8993a407823b5a1c42c3503b
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: afa9f59520cba9f90f0f5d0a2edb6564b73245bf
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93705135"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100406149"
 ---
 # Remove-AzKeyVaultKey
 
-## STRESZCZENIe
-Usuwa klucz w magazynie kluczy.
+## SYNOPSIS
+Usuwa klucz z magazynu kluczy.
 
-## POLECENIA
+## SKŁADNIA
 
-### ByVaultName (domyślny)
+### ByVaultName (Domyślna)
 ```
 Remove-AzKeyVaultKey [-VaultName] <String> [-Name] <String> [-Force] [-PassThru] [-InRemovedState]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -32,14 +32,14 @@ Remove-AzKeyVaultKey [-InputObject] <PSKeyVaultKeyIdentityItem> [-Force] [-PassT
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet Remove-AzKeyVaultKey usuwa klucz w magazynie kluczy.
-Jeśli usunięto przypadkowo klucz, można go odzyskać przy użyciu Undo-AzKeyVaultKeyRemoval przez użytkownika ze specjalnymi uprawnieniami "Odzyskaj".
-To polecenie cmdlet ma wartość High dla właściwości **ConfirmImpact** .
+## OPIS
+Polecenie Remove-AzKeyVaultKey cmdlet usuwa klucz z magazynu kluczy.
+Jeśli klucz został przypadkowo usunięty, można go odzyskać za Undo-AzKeyVaultKeyRemoval użytkownika ze specjalnymi uprawnieniami do odzyskiwania.
+To polecenie cmdlet ma wartość wysoką dla **właściwości ConfirmImpact.**
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1: Usuwanie klucza z magazynu kluczy
+### Przykład 1. Usuwanie klucza z magazynu kluczy
 ```powershell
 PS C:\> Remove-AzKeyVaultKey -VaultName 'Contoso' -Name 'ITSoftware' -PassThru
 
@@ -57,37 +57,37 @@ Purge Disabled       : False
 Tags                 :
 ```
 
-To polecenie usuwa klucz o nazwie ITSoftware z magazynu kluczy o nazwie contoso.
+To polecenie usuwa klucz o nazwie ITSoftware z magazynu kluczy o nazwie Contoso.
 
-### Przykład 2: Usuwanie klucza bez potwierdzenia użytkownika
+### Przykład 2. Usuwanie klucza bez potwierdzenia użytkownika
 ```powershell
 PS C:\> Remove-AzKeyVaultKey -VaultName 'Contoso' -Name 'ITSoftware' -Force
 ```
 
-To polecenie usuwa klucz o nazwie ITSoftware z magazynu kluczy o nazwie contoso.
-Polecenie określa parametr *Force* , dlatego polecenie cmdlet nie monituje o potwierdzenie.
+To polecenie usuwa klucz o nazwie ITSoftware z magazynu kluczy o nazwie Contoso.
+Polecenie określa parametr *Force,* dlatego polecenie cmdlet nie monituje o potwierdzenie.
 
-### Przykład 3: trwałe przeczyszczanie usuniętego klucza z magazynu kluczy
+### Przykład 3. Trwałe przeczyszczanie usuniętego klucza z magazynu kluczy
 ```powershell
 PS C:\> Remove-AzKeyVaultKey -VaultName 'Contoso' -Name 'ITSoftware' -InRemovedState
 ```
 
-To polecenie usuwa klucz o nazwie ITSoftware z magazynu kluczy o nazwie contoso — trwałe.
-Wykonanie tego polecenia cmdlet wymaga uprawnienia "Wyczyść", które musi być wcześniej i wyraźnie udzielone użytkownikowi dla tego magazynu kluczy.
+To polecenie trwale usuwa klucz o nazwie ITSoftware z magazynu kluczy o nazwie Contoso.
+Wykonanie tego polecenia cmdlet wymaga uprawnienia "przeczyszczania", które musi być wcześniej i jawnie udzielone użytkownikowi dla tego magazynu kluczy.
 
-### Przykład 4: usuwanie kluczy za pomocą operatora potoku
+### Przykład 4. Usuwanie kluczy przy użyciu operatora potoku
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'Contoso' | Where-Object {$_.Attributes.Enabled -eq $False} | Remove-AzKeyVaultKey
 ```
 
-To polecenie pobiera wszystkie klucze w magazynie kluczy o nazwie Contoso i przekazuje je do polecenia cmdlet **WHERE-Object** przy użyciu operatora potoku.
-Polecenie cmdlet przekazuje klucze, których atrybut **Enabled** jest wartością $false dla bieżącego polecenia cmdlet.
-Te klucze są usuwane przez polecenie cmdlet.
+To polecenie pobiera wszystkie klucze z magazynu kluczy o nazwie Contoso i przekazuje je do polecenia cmdlet **Where-Object** przy użyciu operatora potoku.
+To polecenie cmdlet przekazuje do bieżącego polecenia cmdlet klawisze o wartości $False **atrybutu Enabled.**
+To polecenie cmdlet usuwa te klawisze.
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -101,8 +101,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Force
-Wymusza uruchomienie polecenia bez monitowania o potwierdzenie użytkownika.
+### — Wymuszanie
+Wymusza uruchomienie polecenia bez pytania o potwierdzenie przez użytkownika.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -116,8 +116,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Inputobject
-Obiekt pakietu
+### -InputObject
+Obiekt Key Przechowaj
 
 ```yaml
 Type: Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKeyIdentityItem
@@ -132,7 +132,7 @@ Accept wildcard characters: False
 ```
 
 ### -InRemovedState
-Trwałe usunięcie wcześniej usuniętego klucza.
+Usuń trwale usunięty wcześniej klucz.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -146,9 +146,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (nazwa)
-Określa nazwę klucza, który ma zostać usunięty.
-To polecenie cmdlet konstruuje w pełni kwalifikowaną nazwę domeny (FQDN) klucza na podstawie nazwy, jaką określa ten parametr, nazwy magazynu kluczy i bieżącego środowiska.
+### — Nazwa
+Określa nazwę klucza do usunięcia.
+To polecenie cmdlet konstruuje w pełni kwalifikowaną nazwę domeny (FQDN) klucza na podstawie nazwy, która jest określana przez ten parametr, nazwy magazynu kluczy i bieżącego środowiska.
 
 ```yaml
 Type: System.String
@@ -163,7 +163,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Wskazuje, że to polecenie cmdlet zwróci obiekt **Microsoft. Azure. Commands. DataModel. models. PSKeyVaultKey** .
+Wskazuje, że to polecenie cmdlet zwraca obiekt **Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKey.**
 Domyślnie to polecenie cmdlet nie generuje żadnych danych wyjściowych.
 
 ```yaml
@@ -178,9 +178,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Magazynname
-Określa nazwę magazynu kluczy, z którego należy usunąć klucz.
-To polecenie cmdlet konstruuje nazwę FQDN magazynu kluczy na podstawie nazwy, jaką ten parametr określa i bieżące środowisko.
+### -VaultName
+Określa nazwę magazynu kluczy, z którego ma być usuwany klucz.
+To polecenie cmdlet konstruuje nazwę FQDN magazynu kluczy na podstawie nazwy, która jest określana przez ten parametr i bieżącego środowiska.
 
 ```yaml
 Type: System.String
@@ -194,8 +194,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Potwierdź
-Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.
+### — Potwierdź
+Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -210,9 +210,9 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet.
-Polecenie cmdlet nie jest uruchamiane. Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet.
-Polecenie cmdlet nie jest uruchamiane.
+Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet.
+Polecenie cmdlet nie zostanie uruchomione. Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet.
+Polecenie cmdlet nie zostanie uruchomione.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -227,25 +227,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### Microsoft. Azure. Commands. platforming. models. PSKeyVaultKeyIdentityItem
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKeyIdentityItem
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
 ### Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultKey
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
-[Dodaj-AzKeyVaultKey](./Add-AzKeyVaultKey.md)
+[Add-AzKeyVaultKey](./Add-AzKeyVaultKey.md)
 
 [Get-AzKeyVaultKey](./Get-AzKeyVaultKey.md)
 
-[Set-AzKeyVaultKeyAttribute](./Set-AzKeyVaultKeyAttribute.md)
 
-[Cofanie — AzKeyVaultKeyRemoval](./Undo-AzKeyVaultKeyRemoval.md)
+[Undo-AzKeyVaultKeyRemoval](./Undo-AzKeyVaultKeyRemoval.md)
 

@@ -6,31 +6,31 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzAlertHistory.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzAlertHistory.md
-ms.openlocfilehash: 5d4b3be80602377a7eae378939e4bb10221de324
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 42f407235238cec0b7e298bce344e71c075cecfd
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94053970"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100406098"
 ---
 # Get-AzAlertHistory
 
-## STRESZCZENIe
+## SYNOPSIS
 Pobiera historię alertów.
 
-## POLECENIA
+## SKŁADNIA
 
 ```
 Get-AzAlertHistory [-ResourceId <String>] [-StartTime <DateTime>] [-EndTime <DateTime>] [-Status <String>]
  [-Caller <String>] [-DetailedOutput] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **Get-AzAlertHistory** umożliwia wyświetlenie historii alertów, które są włączone, wyłączone, uruchomione, rozwiązane itd.
+## OPIS
+Polecenie **cmdlet Get-AzAlertHistory** pobiera historię alertów w czasie ich działania, wyłączenia, zwolnienia, rozwiązania itp.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1: uzyskiwanie historii alertów
+### Przykład 1. Uzyskiwanie historii alertów
 ```
 PS C:\>Get-AzAlertHistory -StartTime 2015-02-11T11:00:00 -EndTime 2015-02-11T12:00:00 -DetailedOutput
 Authorization        : 
@@ -170,9 +170,9 @@ SubscriptionId       : b93fb07a-6f93-30be-bf3e-4f0deca15f4f
 SubStatus            :
 ```
 
-To polecenie pobiera historię alertów dla określonego przedziału czasu dla bieżącej subskrypcji.
+To polecenie pobiera historię alertów w określonym przedziale czasowym dla bieżącej subskrypcji.
 
-### Przykład 2: uzyskiwanie historii alertu dla określonego zasobu
+### Przykład 2. Uzyskiwanie historii alertów dla określonego zasobu
 ```
 PS C:\>Get-AzAlertHistory -StartTime 2015-02-11T11:00:00 -EndTime 2015-02-11T12:00:00 -ResourceId "/subscriptions/b93fb07a-6f93-30be-bf3e-4f0deca15f4f/resourceGroups/Default-Web-EastUS/providers/microsoft.insights/alertrules/checkrule3-4b135401-a30c-4224-ae21-fa53a5bd253d" -DetailedOutput
 
@@ -268,12 +268,12 @@ SubscriptionId       : b93fb07a-6f93-30be-bf3e-4f0deca15f4f
 SubStatus            :
 ```
 
-To polecenie pobiera zdarzenia związane z regułą alertów dla określonego zasobu.
+To polecenie pobiera zdarzenia związane z regułą alertu dla określonego zasobu.
 
-## PARAMETRÓW
+## PARAMETERS
 
-### — Rozmówca
-Określa rozmówcę.
+### — wywołujący
+Określa wywołującego.
 
 ```yaml
 Type: System.String
@@ -288,7 +288,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -303,7 +303,7 @@ Accept wildcard characters: False
 ```
 
 ### -DetailedOutput
-Wyświetla wszystkie szczegóły w wynikach.
+Wyświetla pełne szczegóły w wyniku.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -317,8 +317,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -EndTime
-Określa godzinę zakończenia kwerendy w czasie lokalnym.
+### - EndTime
+Określa czas zakończenia kwerendy w czasie lokalnym.
 Wartością domyślną jest bieżąca godzina.
 
 ```yaml
@@ -334,7 +334,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Określa identyfikator zasobu, z którym skojarzona jest reguła.
+Określa identyfikator zasobu, z który jest skojarzona reguła.
 
 ```yaml
 Type: System.String
@@ -348,9 +348,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -StartTime
-Określa godzinę rozpoczęcia kwerendy w czasie lokalnym.
-Domyślnie jest to bieżący czas lokalny minus jedna godzina.
+### — StartTime
+Określa czas rozpoczęcia zapytania w czasie lokalnym.
+Wartością domyślną jest bieżący czas lokalny minus jedna godzina.
 
 ```yaml
 Type: System.Nullable`1[System.DateTime]
@@ -364,7 +364,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Status
+### — Status
 Określa stan.
 
 ```yaml
@@ -380,29 +380,28 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### System. String
+### System.String
 
-### System. Nullable "1 [[System. DateTime, system. private. CoreLib, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.DateTime, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-### System. Management. Automation. SwitchParameter
+### System.Management.Automation.SwitchParameters
 
-## WYSYŁA
+## OUTPUTS
 
-### Microsoft. Azure. Commands. Insights. OutputClasses. PSEventData
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSEventData
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
-[Dodaj-AzLogAlertRule](./Add-AzLogAlertRule.md)
 
-[Dodaj-AzMetricAlertRule](./Add-AzMetricAlertRule.md)
+[Add-AzMetricAlertRule](./Add-AzMetricAlertRule.md)
 
-[Dodaj-AzWebtestAlertRule](./Add-AzWebtestAlertRule.md)
+[Add-AzWebtestAlertRule](./Add-AzWebtestAlertRule.md)
 
 [Get-AzAlertRule](./Get-AzAlertRule.md)
 
