@@ -5,50 +5,50 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.kusto/get-
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Kusto/Kusto/help/Get-AzKustoCluster.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Kusto/Kusto/help/Get-AzKustoCluster.md
-ms.openlocfilehash: 6e24eaee77e8965ea34cbfcd8c169d675bce56d8
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 5a5450629024dbca8433bee79bfe9d2fa7119025
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94050100"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398040"
 ---
-# <span data-ttu-id="d1aaf-101">Get-AzKustoCluster</span><span class="sxs-lookup"><span data-stu-id="d1aaf-101">Get-AzKustoCluster</span></span>
+# <span data-ttu-id="b6760-101">Get-AzKustoCluster</span><span class="sxs-lookup"><span data-stu-id="b6760-101">Get-AzKustoCluster</span></span>
 
-## <span data-ttu-id="d1aaf-102">STRESZCZENIe</span><span class="sxs-lookup"><span data-stu-id="d1aaf-102">SYNOPSIS</span></span>
-<span data-ttu-id="d1aaf-103">Wyświetlanie wszystkich klastrów Kusto w grupie zasobów lub uzyskiwanie określonego klastra Kusto.</span><span class="sxs-lookup"><span data-stu-id="d1aaf-103">List all Kusto clusters in a resource group or get a specific Kusto cluster.</span></span>
+## <span data-ttu-id="b6760-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="b6760-102">SYNOPSIS</span></span>
+<span data-ttu-id="b6760-103">Lista wszystkich klastrów Kusto w grupie zasobów lub uzyskiwanie określonego klastra Kusto.</span><span class="sxs-lookup"><span data-stu-id="b6760-103">List all Kusto clusters in a resource group or get a specific Kusto cluster.</span></span>
 
-## <span data-ttu-id="d1aaf-104">POLECENIA</span><span class="sxs-lookup"><span data-stu-id="d1aaf-104">SYNTAX</span></span>
+## <span data-ttu-id="b6760-104">SKŁADNIA</span><span class="sxs-lookup"><span data-stu-id="b6760-104">SYNTAX</span></span>
 
-### <span data-ttu-id="d1aaf-105">ByClusterOrResourceGroupOrSubscription (domyślny)</span><span class="sxs-lookup"><span data-stu-id="d1aaf-105">ByClusterOrResourceGroupOrSubscription (Default)</span></span>
+### <span data-ttu-id="b6760-105">ByClusterOrResourceGroupOrSubscription (Default)</span><span class="sxs-lookup"><span data-stu-id="b6760-105">ByClusterOrResourceGroupOrSubscription (Default)</span></span>
 ```
 Get-AzKustoCluster -ResourceGroupName <String> [-Name <String>] [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
 ```
 
-### <span data-ttu-id="d1aaf-106">ByResourceId</span><span class="sxs-lookup"><span data-stu-id="d1aaf-106">ByResourceId</span></span>
+### <span data-ttu-id="b6760-106">ByResourceId</span><span class="sxs-lookup"><span data-stu-id="b6760-106">ByResourceId</span></span>
 ```
 Get-AzKustoCluster -ResourceId <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="d1aaf-107">Opis</span><span class="sxs-lookup"><span data-stu-id="d1aaf-107">DESCRIPTION</span></span>
-<span data-ttu-id="d1aaf-108">Wyświetlanie wszystkich klastrów Kusto w grupie zasobów lub uzyskiwanie określonego klastra Kusto.</span><span class="sxs-lookup"><span data-stu-id="d1aaf-108">List all Kusto clusters in a resource group or get a specific Kusto cluster.</span></span>
+## <span data-ttu-id="b6760-107">OPIS</span><span class="sxs-lookup"><span data-stu-id="b6760-107">DESCRIPTION</span></span>
+<span data-ttu-id="b6760-108">Lista wszystkich klastrów Kusto w grupie zasobów lub uzyskiwanie określonego klastra Kusto.</span><span class="sxs-lookup"><span data-stu-id="b6760-108">List all Kusto clusters in a resource group or get a specific Kusto cluster.</span></span>
 
-## <span data-ttu-id="d1aaf-109">Przykłady</span><span class="sxs-lookup"><span data-stu-id="d1aaf-109">EXAMPLES</span></span>
+## <span data-ttu-id="b6760-109">PRZYKŁADY</span><span class="sxs-lookup"><span data-stu-id="b6760-109">EXAMPLES</span></span>
 
-### <span data-ttu-id="d1aaf-110">Przykład 1-Wyświetlanie wszystkich klastrów Kusto w grupie zasobów</span><span class="sxs-lookup"><span data-stu-id="d1aaf-110">Example 1 - List all Kusto clusters in a resource group</span></span>
+### <span data-ttu-id="b6760-110">Przykład 1. Lista wszystkich klastrów Kusto w grupie zasobów</span><span class="sxs-lookup"><span data-stu-id="b6760-110">Example 1 - List all Kusto clusters in a resource group</span></span>
 
-<span data-ttu-id="d1aaf-111">Typ: Microsoft. Kusto/klastry ID:/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testrg/providers/Microsoft.Kusto/Clusters/mykustocluster1 resourceName: testrg Name: mykustocluster1 lokalizacja: Centralna pojemność w Stanach Zjednoczonych: 3 SKU: D13_v2 ProvisioningState: powodzenie, stan: uruchomiony Tag: {} Identyfikator URI: https://mykustocluster1.centralus.kusto.windows.net DataIngestionUri: https://ingest-mykustocluster1.centralus.kusto.windows.net</span><span class="sxs-lookup"><span data-stu-id="d1aaf-111">Type              : Microsoft.Kusto/Clusters Id                : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testrg/providers/Microsoft.Kusto/Clusters/mykustocluster1 ResourceGroup     : testrg Name              : mykustocluster1 Location          : Central US Capacity          : 3 Sku               : D13_v2 ProvisioningState : Succeeded State             : Running Tag               : {} Uri               : https://mykustocluster1.centralus.kusto.windows.net DataIngestionUri  : https://ingest-mykustocluster1.centralus.kusto.windows.net</span></span>
+<span data-ttu-id="b6760-111">Typ: Microsoft.Kusto/Clusters Id: /subscriptions/xxxxxxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testrg/providers/Microsoft.Kusto/Clusters/mykustocluster1 ResourceGroup : testrg Name: mykustocluster1 Location: Central US Capacity : 3 SKU: D13_v2 ProvisioningState: Succeeded State: Running Tag: {} Uri: `https://mykustocluster1.centralus.kusto.windows.net` DataIngestionUri: `https://ingest-mykustocluster1.centralus.kusto.windows.net`</span><span class="sxs-lookup"><span data-stu-id="b6760-111">Type              : Microsoft.Kusto/Clusters Id                : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testrg/providers/Microsoft.Kusto/Clusters/mykustocluster1 ResourceGroup     : testrg Name              : mykustocluster1 Location          : Central US Capacity          : 3 Sku               : D13_v2 ProvisioningState : Succeeded State             : Running Tag               : {} Uri               : `https://mykustocluster1.centralus.kusto.windows.net` DataIngestionUri  : `https://ingest-mykustocluster1.centralus.kusto.windows.net`</span></span>
 
-<span data-ttu-id="d1aaf-112">Type: Microsoft. Kusto/klastrów ID:/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testrg/providers/Microsoft.Kusto/Clusters/mykustocluster2 resourceName: testrg Nazwa: mykustocluster2 lokalizacja: Centralna pojemność w Stanach Zjednoczonych: 5 SKU: D13_v2 ProvisioningState: stan zakończony pomyślnie: uruchomiony Tag: {} Identyfikator URI: https://mykustocluster2.centralus.kusto.windows.net DataIngestionUri: https://ingest-mykustocluster2.centralus.kusto.windows.net</span><span class="sxs-lookup"><span data-stu-id="d1aaf-112">Type              : Microsoft.Kusto/Clusters Id                : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testrg/providers/Microsoft.Kusto/Clusters/mykustocluster2 ResourceGroup     : testrg Name              : mykustocluster2 Location          : Central US Capacity          : 5 Sku               : D13_v2 ProvisioningState : Succeeded State             : Running Tag               : {} Uri               : https://mykustocluster2.centralus.kusto.windows.net DataIngestionUri  : https://ingest-mykustocluster2.centralus.kusto.windows.net</span></span>
+<span data-ttu-id="b6760-112">Typ: Microsoft.Kusto/Clusters Id: /subscriptions/xxxxxxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testrg/providers/Microsoft.Kusto/Clusters/mykustocluster2 ResourceGroup : testrg Name : mykustocluster2 Location: Central US Capacity : 5 SKU: D13_v2 ProvisioningState: Succeeded State: Running Tag: {} Uri: `https://mykustocluster2.centralus.kusto.windows.net` DataIngestionUri: `https://ingest-mykustocluster2.centralus.kusto.windows.net`</span><span class="sxs-lookup"><span data-stu-id="b6760-112">Type              : Microsoft.Kusto/Clusters Id                : /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testrg/providers/Microsoft.Kusto/Clusters/mykustocluster2 ResourceGroup     : testrg Name              : mykustocluster2 Location          : Central US Capacity          : 5 Sku               : D13_v2 ProvisioningState : Succeeded State             : Running Tag               : {} Uri               : `https://mykustocluster2.centralus.kusto.windows.net` DataIngestionUri  : `https://ingest-mykustocluster2.centralus.kusto.windows.net`</span></span>
 
 
 ```
 PS C:\> Get-AzKustoCluster -ResourceGroupName testrg
 ```
 
-<span data-ttu-id="d1aaf-113">Powyższe polecenie wyświetla listę wszystkich Kustoych klastrów w grupie zasobów "testrg".</span><span class="sxs-lookup"><span data-stu-id="d1aaf-113">The above command lists all Kusto clusters in the resource group "testrg".</span></span>
+<span data-ttu-id="b6760-113">Powyższe polecenie zawiera listę wszystkich klastrów Kusto w grupie zasobów "testrg".</span><span class="sxs-lookup"><span data-stu-id="b6760-113">The above command lists all Kusto clusters in the resource group "testrg".</span></span>
 
-### <span data-ttu-id="d1aaf-114">Przykład 2 — uzyskiwanie określonego klastra Kusto według nazwy</span><span class="sxs-lookup"><span data-stu-id="d1aaf-114">Example 2 - Get a specific Kusto cluster by name</span></span>
+### <span data-ttu-id="b6760-114">Przykład 2. Uzyskiwanie określonego klastru Kusto według nazwy</span><span class="sxs-lookup"><span data-stu-id="b6760-114">Example 2 - Get a specific Kusto cluster by name</span></span>
 
 ```
 PS C:\> Get-AzKustoCluster -ResourceGroupName testrg -Name mykustocluster
@@ -67,9 +67,9 @@ Uri               : https://mykustocluster.centralus.kusto.windows.net
 DataIngestionUri  : https://ingest-mykustocluster.centralus.kusto.windows.net
 ```
 
-<span data-ttu-id="d1aaf-115">Powyższe polecenie zwraca klaster Kusto o nazwie "mykustocluster" w grupie zasobów "testrg".</span><span class="sxs-lookup"><span data-stu-id="d1aaf-115">The above command returns the Kusto cluster named "mykustocluster" in the resource group "testrg".</span></span>
+<span data-ttu-id="b6760-115">Powyższe polecenie zwraca klaster Kusto o nazwie "mykustocluster" w grupie zasobów "testrg".</span><span class="sxs-lookup"><span data-stu-id="b6760-115">The above command returns the Kusto cluster named "mykustocluster" in the resource group "testrg".</span></span>
 
-### <span data-ttu-id="d1aaf-116">Przykład 3-uzyskiwanie określonego klastra Kusto według identyfikatora zasobu</span><span class="sxs-lookup"><span data-stu-id="d1aaf-116">Example 3 - Get a specific Kusto cluster by resource id</span></span>
+### <span data-ttu-id="b6760-116">Przykład 3. Uzyskiwanie określonego klastra Kusto według identyfikatora zasobu</span><span class="sxs-lookup"><span data-stu-id="b6760-116">Example 3 - Get a specific Kusto cluster by resource id</span></span>
 
 ```
 PS C:\> Get-AzKustoCluster -ResourceId /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testrg/providers/Microsoft.Kusto/clusters/mykustocluster
@@ -87,12 +87,12 @@ Uri               : https://mykustocluster.centralus.kusto.windows.net
 DataIngestionUri  : https://ingest-mykustocluster.centralus.kusto.windows.net
 ```
 
-<span data-ttu-id="d1aaf-117">Powyższe polecenie zwraca klaster Kusto o nazwie "mykustocluster" w grupie zasobów "testrg".</span><span class="sxs-lookup"><span data-stu-id="d1aaf-117">The above command returns the Kusto cluster named "mykustocluster" in the resource group "testrg".</span></span>
+<span data-ttu-id="b6760-117">Powyższe polecenie zwraca klaster Kusto o nazwie "mykustocluster" w grupie zasobów "testrg".</span><span class="sxs-lookup"><span data-stu-id="b6760-117">The above command returns the Kusto cluster named "mykustocluster" in the resource group "testrg".</span></span>
 
-## <span data-ttu-id="d1aaf-118">PARAMETRÓW</span><span class="sxs-lookup"><span data-stu-id="d1aaf-118">PARAMETERS</span></span>
+## <span data-ttu-id="b6760-118">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="b6760-118">PARAMETERS</span></span>
 
-### <span data-ttu-id="d1aaf-119">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="d1aaf-119">-DefaultProfile</span></span>
-<span data-ttu-id="d1aaf-120">Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.</span><span class="sxs-lookup"><span data-stu-id="d1aaf-120">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+### <span data-ttu-id="b6760-119">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="b6760-119">-DefaultProfile</span></span>
+<span data-ttu-id="b6760-120">Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.</span><span class="sxs-lookup"><span data-stu-id="b6760-120">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -106,8 +106,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="d1aaf-121">-Name (nazwa)</span><span class="sxs-lookup"><span data-stu-id="d1aaf-121">-Name</span></span>
-<span data-ttu-id="d1aaf-122">Nazwa określonego klastra.</span><span class="sxs-lookup"><span data-stu-id="d1aaf-122">Name of a specific cluster.</span></span>
+### <span data-ttu-id="b6760-121">— Nazwa</span><span class="sxs-lookup"><span data-stu-id="b6760-121">-Name</span></span>
+<span data-ttu-id="b6760-122">Nazwa określonego klastra.</span><span class="sxs-lookup"><span data-stu-id="b6760-122">Name of a specific cluster.</span></span>
 
 ```yaml
 Type: System.String
@@ -121,8 +121,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="d1aaf-123">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="d1aaf-123">-ResourceGroupName</span></span>
-<span data-ttu-id="d1aaf-124">Nazwa grupy zasobów, pod którą użytkownik chce pobrać klaster.</span><span class="sxs-lookup"><span data-stu-id="d1aaf-124">Name of resource group under which the user wants to retrieve the cluster.</span></span>
+### <span data-ttu-id="b6760-123">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="b6760-123">-ResourceGroupName</span></span>
+<span data-ttu-id="b6760-124">Nazwa grupy zasobów, w ramach której użytkownik chce pobrać klaster.</span><span class="sxs-lookup"><span data-stu-id="b6760-124">Name of resource group under which the user wants to retrieve the cluster.</span></span>
 
 ```yaml
 Type: System.String
@@ -136,8 +136,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="d1aaf-125">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="d1aaf-125">-ResourceId</span></span>
-<span data-ttu-id="d1aaf-126">Kusto identyfikator zasobu klastra.</span><span class="sxs-lookup"><span data-stu-id="d1aaf-126">Kusto cluster ResourceID.</span></span>
+### <span data-ttu-id="b6760-125">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="b6760-125">-ResourceId</span></span>
+<span data-ttu-id="b6760-126">Kusto cluster ResourceID.</span><span class="sxs-lookup"><span data-stu-id="b6760-126">Kusto cluster ResourceID.</span></span>
 
 ```yaml
 Type: System.String
@@ -151,17 +151,17 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="d1aaf-127">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="d1aaf-127">CommonParameters</span></span>
-<span data-ttu-id="d1aaf-128">To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="d1aaf-128">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="d1aaf-129">Aby uzyskać więcej informacji, zobacz about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="d1aaf-129">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="b6760-127">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="b6760-127">CommonParameters</span></span>
+<span data-ttu-id="b6760-128">To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="b6760-128">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="b6760-129">Aby uzyskać więcej informacji, zobacz about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="b6760-129">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="d1aaf-130">WEJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="d1aaf-130">INPUTS</span></span>
+## <span data-ttu-id="b6760-130">DANE WEJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="b6760-130">INPUTS</span></span>
 
-### <span data-ttu-id="d1aaf-131">System. String</span><span class="sxs-lookup"><span data-stu-id="d1aaf-131">System.String</span></span>
+### <span data-ttu-id="b6760-131">System.String</span><span class="sxs-lookup"><span data-stu-id="b6760-131">System.String</span></span>
 
-## <span data-ttu-id="d1aaf-132">WYSYŁA</span><span class="sxs-lookup"><span data-stu-id="d1aaf-132">OUTPUTS</span></span>
+## <span data-ttu-id="b6760-132">OUTPUTS</span><span class="sxs-lookup"><span data-stu-id="b6760-132">OUTPUTS</span></span>
 
-### <span data-ttu-id="d1aaf-133">Microsoft. Azure. Commands. Kusto. models. PSKustoCluster</span><span class="sxs-lookup"><span data-stu-id="d1aaf-133">Microsoft.Azure.Commands.Kusto.Models.PSKustoCluster</span></span>
+### <span data-ttu-id="b6760-133">Microsoft.Azure.Commands.Kusto.Models.PSKustoCluster</span><span class="sxs-lookup"><span data-stu-id="b6760-133">Microsoft.Azure.Commands.Kusto.Models.PSKustoCluster</span></span>
 
-## <span data-ttu-id="d1aaf-134">INFORMACYJN</span><span class="sxs-lookup"><span data-stu-id="d1aaf-134">NOTES</span></span>
+## <span data-ttu-id="b6760-134">NOTATKI</span><span class="sxs-lookup"><span data-stu-id="b6760-134">NOTES</span></span>
 
-## <span data-ttu-id="d1aaf-135">LINKI POKREWNE</span><span class="sxs-lookup"><span data-stu-id="d1aaf-135">RELATED LINKS</span></span>
+## <span data-ttu-id="b6760-135">LINKI POKREWNE</span><span class="sxs-lookup"><span data-stu-id="b6760-135">RELATED LINKS</span></span>
