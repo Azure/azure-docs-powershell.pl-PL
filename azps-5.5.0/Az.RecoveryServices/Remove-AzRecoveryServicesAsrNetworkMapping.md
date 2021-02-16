@@ -1,40 +1,40 @@
 ---
 external help file: Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices.SiteRecovery.dll-Help.xml
 Module Name: Az.RecoveryServices
-online version: https://docs.microsoft.com/en-us/powershell/module/az.recoveryservices/import-azrecoveryservicesasrvaultsettingsfile
+online version: https://docs.microsoft.com/en-us/powershell/module/az.recoveryservices/remove-azrecoveryservicesasrnetworkmapping
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Import-AzRecoveryServicesAsrVaultSettingsFile.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Import-AzRecoveryServicesAsrVaultSettingsFile.md
-ms.openlocfilehash: f71f7e37e4864de10c5387d63c101cd66ed9fd34
-ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Remove-AzRecoveryServicesAsrNetworkMapping.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Remove-AzRecoveryServicesAsrNetworkMapping.md
+ms.openlocfilehash: ef251bb9d1060e511658f9174cde2c04ab288ed7
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100398873"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100189275"
 ---
-# Import-AzRecoveryServicesAsrVaultSettingsFile
+# Remove-AzRecoveryServicesAsrNetworkMapping
 
 ## SYNOPSIS
-Importuje określony plik ustawień magazynu asr, aby ustawić kontekst magazynu (kontekst sesji programu PowerShell) dla kolejnych operacji ASR w sesji programu PowerShell. 
+Usuwa wskazane mapowanie sieci asr z magazynu usług odzyskiwania.
 
 ## SKŁADNIA
 
 ```
-Import-AzRecoveryServicesAsrVaultSettingsFile [-Path] <String> [-DefaultProfile <IAzureContextContainer>]
- [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-AzRecoveryServicesAsrNetworkMapping -InputObject <ASRNetworkMapping>
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## OPIS
-Polecenie **cmdlet Import-AzRecoveryServicesAsrVaultSettingsFile** importuje plik ustawień magazynu usługi Azure Site Recovery. Plik ustawień magazynu służy do ustawienia kontekstu magazynu dla kolejnych operacji Azure Site Recovery w bieżącej sesji.
+Polecenie **cmdlet Remove-AzRecoveryServicesAsrNetworkMapping** usuwa wskazane mapowanie sieci asr.
 
 ## PRZYKŁADY
 
 ### Przykład 1
 ```
-PS C:\> $VaultSettings = Import-AzRecoveryServicesAsrVaultSettingsFile -Path $FilePath
+PS C:\> $currentJob = Remove-AzRecoveryServicesAsrNetworkMapping -NetworkMapping $networkmapping
 ```
 
-Importowanie określonego pliku ustawień magazynu usług odzyskiwania i zwraca ustawienia importowanego magazynu.
+Rozpoczyna usuwanie określonego mapowania sieci asr i zwraca zadanie asr służące do śledzenia operacji.
 
 ## PARAMETERS
 
@@ -54,19 +54,18 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### — Ścieżka
-Określa ścieżkę folderu pliku ustawień magazynu ASR.
-Ten plik można pobrać z portalu magazynu usług odzyskiwania i przechowywać lokalnie.
+### -InputObject
+Obiekt wejściowy do polecenia cmdlet: Obiekt mapowania sieci ASR odpowiadający mapowaniu sieci asr do usunięcia.
 
 ```yaml
-Type: System.String
+Type: Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRNetworkMapping
 Parameter Sets: (All)
-Aliases:
+Aliases: NetworkMapping
 
 Required: True
-Position: 0
+Position: Named
 Default value: None
-Accept pipeline input: True (ByPropertyName)
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -105,13 +104,16 @@ To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVar
 
 ## DANE WEJŚCIOWE
 
-### System.String
+### Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRNetworkMapping
 
 ## OUTPUTS
 
-### Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRVaultSettings
+### Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRJob
 
 ## NOTATKI
 
 ## LINKI POKREWNE
 
+[Get-AzRecoveryServicesAsrNetworkMapping](./Get-AzRecoveryServicesAsrNetworkMapping.md)
+
+[New-AzRecoveryServicesAsrNetworkMapping](./New-AzRecoveryServicesAsrNetworkMapping.md)

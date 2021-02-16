@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.operationa
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/OperationalInsights/OperationalInsights/help/New-AzOperationalInsightsWorkspace.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/OperationalInsights/OperationalInsights/help/New-AzOperationalInsightsWorkspace.md
-ms.openlocfilehash: 50920451ca96d21875352ff2ef460a5dcc989a20
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: a2e0bc21546dad414ee8782acd0a1505ed1e5489
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100186722"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399128"
 ---
 # New-AzOperationalInsightsWorkspace
 
@@ -68,7 +68,7 @@ Accept wildcard characters: False
 ```
 
 ### — Wymuszanie
-Wymusza uruchomienie polecenia bez pytania o potwierdzenie przez użytkownika.
+Wymusza uruchomienie polecenia bez pytania o potwierdzenie użytkownika.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -254,7 +254,7 @@ To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVar
 
 ### System.Nullable'1[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-## DANE WYJŚCIOWE
+## OUTPUTS
 
 ### Microsoft.Azure.Commands.OperationalInsights.Models.PSWorkspace
 
@@ -266,6 +266,5 @@ Opublikowano nowy model cen. Jeśli jesteś programem CSP, oznacza to, że musis
 
 [Polecenia cmdlet usługi Azure Operational Insights](./Az.OperationalInsights.md)
 
-[Get-AzOperationalInsightsLinkTargets](./Get-AzOperationalInsightsLinkTargets.md)
 
 
