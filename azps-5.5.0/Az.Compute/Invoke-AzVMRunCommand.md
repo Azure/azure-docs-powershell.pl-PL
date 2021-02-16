@@ -1,0 +1,238 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Compute.dll-Help.xml
+Module Name: Az.Compute
+online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/invoke-azvmruncommand
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Invoke-AzVMRunCommand.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Compute/Compute/help/Invoke-AzVMRunCommand.md
+ms.openlocfilehash: 77ac953e1b67ea896f15b13a2695505aabc05bbb
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100195027"
+---
+# <span data-ttu-id="69410-101">Invoke-AzVMRunCommand</span><span class="sxs-lookup"><span data-stu-id="69410-101">Invoke-AzVMRunCommand</span></span>
+
+## <span data-ttu-id="69410-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="69410-102">SYNOPSIS</span></span>
+<span data-ttu-id="69410-103">Uruchom polecenie na maszyny wirtualnej.</span><span class="sxs-lookup"><span data-stu-id="69410-103">Run a command on the VM.</span></span>
+
+## <span data-ttu-id="69410-104">SKŁADNIA</span><span class="sxs-lookup"><span data-stu-id="69410-104">SYNTAX</span></span>
+
+### <span data-ttu-id="69410-105">DefaultParameters (domyślne)</span><span class="sxs-lookup"><span data-stu-id="69410-105">DefaultParameter (Default)</span></span>
+```
+Invoke-AzVMRunCommand [-ResourceGroupName] <String> [-VMName] <String> -CommandId <String>
+ [-ScriptPath <String>] [-Parameter <Hashtable>] [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="69410-106">ResourceIdParameters</span><span class="sxs-lookup"><span data-stu-id="69410-106">ResourceIdParameter</span></span>
+```
+Invoke-AzVMRunCommand -CommandId <String> [-ScriptPath <String>] [-Parameter <Hashtable>]
+ [-ResourceId] <String> [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+### <span data-ttu-id="69410-107">VMParameters</span><span class="sxs-lookup"><span data-stu-id="69410-107">VMParameter</span></span>
+```
+Invoke-AzVMRunCommand -CommandId <String> [-ScriptPath <String>] [-Parameter <Hashtable>]
+ [-VM] <PSVirtualMachine> [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+## <span data-ttu-id="69410-108">OPIS</span><span class="sxs-lookup"><span data-stu-id="69410-108">DESCRIPTION</span></span>
+<span data-ttu-id="69410-109">Wywołaj polecenie uruchomienia na maszyny wirtualnej.</span><span class="sxs-lookup"><span data-stu-id="69410-109">Invoke a run command on the VM.</span></span>
+
+## <span data-ttu-id="69410-110">PRZYKŁADY</span><span class="sxs-lookup"><span data-stu-id="69410-110">EXAMPLES</span></span>
+
+### <span data-ttu-id="69410-111">Przykład 1</span><span class="sxs-lookup"><span data-stu-id="69410-111">Example 1</span></span>
+```
+PS C:\> Invoke-AzVMRunCommand -ResourceGroupName 'rgname' -VMName 'vmname' -CommandId 'RunPowerShellScript' -ScriptPath 'sample.ps1' -Parameter @{param1 = "var1"; param2 = "var2"}
+```
+
+<span data-ttu-id="69410-112">Wywoływanie polecenia uruchom skrypt RunPowerShellScript z zastąpieniem skryptu "sample.ps1" i parametrów maszyny wirtualnej "nazwa_maszyny wirtualnej" w grupie zasobów "nazwa_maszyny wirtualnej".</span><span class="sxs-lookup"><span data-stu-id="69410-112">Invoke a run command of RunPowerShellScript with overriding the script 'sample.ps1' and the parameters on the VM of 'vmname' in resource group 'rgname'.</span></span>
+
+## <span data-ttu-id="69410-113">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="69410-113">PARAMETERS</span></span>
+
+### <span data-ttu-id="69410-114">— AsJob</span><span class="sxs-lookup"><span data-stu-id="69410-114">-AsJob</span></span>
+<span data-ttu-id="69410-115">Uruchom polecenie cmdlet w tle i zwróć obiekt zadania do śledzenia postępu.</span><span class="sxs-lookup"><span data-stu-id="69410-115">Run cmdlet in the background and return a job object to track progress.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="69410-116">- CommandId</span><span class="sxs-lookup"><span data-stu-id="69410-116">-CommandId</span></span>
+<span data-ttu-id="69410-117">Identyfikator polecenia Uruchom.</span><span class="sxs-lookup"><span data-stu-id="69410-117">The run command ID.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="69410-118">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="69410-118">-DefaultProfile</span></span>
+<span data-ttu-id="69410-119">Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.</span><span class="sxs-lookup"><span data-stu-id="69410-119">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="69410-120">- Parametr</span><span class="sxs-lookup"><span data-stu-id="69410-120">-Parameter</span></span>
+<span data-ttu-id="69410-121">Parametry polecenia Uruchom.</span><span class="sxs-lookup"><span data-stu-id="69410-121">The run command parameters.</span></span>
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="69410-122">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="69410-122">-ResourceGroupName</span></span>
+<span data-ttu-id="69410-123">Nazwa grupy zasobów.</span><span class="sxs-lookup"><span data-stu-id="69410-123">The name of the resource group.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: DefaultParameter
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="69410-124">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="69410-124">-ResourceId</span></span>
+<span data-ttu-id="69410-125">Identyfikator zasobu maszyny wirtualnej.</span><span class="sxs-lookup"><span data-stu-id="69410-125">The resource ID for the VM.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ResourceIdParameter
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="69410-126">- ScriptPath</span><span class="sxs-lookup"><span data-stu-id="69410-126">-ScriptPath</span></span>
+<span data-ttu-id="69410-127">Ścieżka skryptu do wykonania.</span><span class="sxs-lookup"><span data-stu-id="69410-127">Path of the script to be executed.</span></span>  <span data-ttu-id="69410-128">Gdy ta wartość zostanie podana, dany skrypt zastąpi domyślny skrypt polecenia.</span><span class="sxs-lookup"><span data-stu-id="69410-128">When this value is given, the given script will override the default script of the command.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="69410-129">- MASZYNY WIRTUALNEJ</span><span class="sxs-lookup"><span data-stu-id="69410-129">-VM</span></span>
+<span data-ttu-id="69410-130">Obiekt maszyny wirtualnej PS.</span><span class="sxs-lookup"><span data-stu-id="69410-130">The PS virtual machine object.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Compute.Models.PSVirtualMachine
+Parameter Sets: VMParameter
+Aliases: VMProfile
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="69410-131">-NAZWA.MASZYNY.WIRTUALNEJ</span><span class="sxs-lookup"><span data-stu-id="69410-131">-VMName</span></span>
+<span data-ttu-id="69410-132">Nazwa maszyny wirtualnej.</span><span class="sxs-lookup"><span data-stu-id="69410-132">The name of the virtual machine.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: DefaultParameter
+Aliases: Name
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="69410-133">— Potwierdź</span><span class="sxs-lookup"><span data-stu-id="69410-133">-Confirm</span></span>
+<span data-ttu-id="69410-134">Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.</span><span class="sxs-lookup"><span data-stu-id="69410-134">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="69410-135">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="69410-135">-WhatIf</span></span>
+<span data-ttu-id="69410-136">Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet.</span><span class="sxs-lookup"><span data-stu-id="69410-136">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="69410-137">Polecenie cmdlet nie zostanie uruchomione.</span><span class="sxs-lookup"><span data-stu-id="69410-137">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="69410-138">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="69410-138">CommonParameters</span></span>
+<span data-ttu-id="69410-139">To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="69410-139">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="69410-140">Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="69410-140">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="69410-141">DANE WEJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="69410-141">INPUTS</span></span>
+
+### <span data-ttu-id="69410-142">System.String</span><span class="sxs-lookup"><span data-stu-id="69410-142">System.String</span></span>
+
+### <span data-ttu-id="69410-143">Microsoft.Azure.Commands.Compute.Models.PSVirtualMachine</span><span class="sxs-lookup"><span data-stu-id="69410-143">Microsoft.Azure.Commands.Compute.Models.PSVirtualMachine</span></span>
+
+## <span data-ttu-id="69410-144">OUTPUTS</span><span class="sxs-lookup"><span data-stu-id="69410-144">OUTPUTS</span></span>
+
+### <span data-ttu-id="69410-145">Microsoft.Azure.Commands.Compute.Automation.Models.PSRunCommandResult</span><span class="sxs-lookup"><span data-stu-id="69410-145">Microsoft.Azure.Commands.Compute.Automation.Models.PSRunCommandResult</span></span>
+
+## <span data-ttu-id="69410-146">NOTATKI</span><span class="sxs-lookup"><span data-stu-id="69410-146">NOTES</span></span>
+
+## <span data-ttu-id="69410-147">LINKI POKREWNE</span><span class="sxs-lookup"><span data-stu-id="69410-147">RELATED LINKS</span></span>
