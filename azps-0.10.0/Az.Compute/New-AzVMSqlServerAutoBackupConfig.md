@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Compute/Compute/help/New-AzVMSqlServerAutoBackupConfig.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Compute/Compute/help/New-AzVMSqlServerAutoBackupConfig.md
-ms.openlocfilehash: 1ff53a29fa26ebe7ac78cac5140a9105b43bb27d
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: ecff02643dd6d0e017d56af01792a06dc7b8d998
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93893618"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398278"
 ---
 # New-AzVMSqlServerAutoBackupConfig
 
-## STRESZCZENIe
+## SYNOPSIS
 Tworzy obiekt konfiguracji dla automatycznej kopii zapasowej programu SQL Server.
 
-## POLECENIA
+## SKŁADNIA
 
-### StorageUriSqlServerAutoBackup (domyślny)
+### StorageUriSqlServerAutoBackup (domyślne)
 ```
 New-AzVMSqlServerAutoBackupConfig [-ResourceGroupName] <String> [-Enable]
  [[-RetentionPeriodInDays] <Int32>] [-EnableEncryption] [[-CertificatePassword] <SecureString>]
@@ -39,12 +39,12 @@ New-AzVMSqlServerAutoBackupConfig [-ResourceGroupName] <String> [-Enable]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **New-AzVMSqlServerAutoBackupConfig** tworzy obiekt konfiguracji dla automatycznej kopii zapasowej programu SQL Server.
+## OPIS
+Polecenie **cmdlet New-AzVMSqlServerAutoBackupConfig** tworzy obiekt konfiguracji dla automatycznej kopii zapasowej programu SQL Server.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1. Tworzenie automatycznej konfiguracji kopii zapasowej przy użyciu identyfikatora URI magazynu i klucza konta
+### Przykład 1. Tworzenie automatycznej konfiguracji kopii zapasowej przy użyciu URI magazynu i klucza konta
 ```
 PS C:\> $AutoBackupConfig = New-AzVMSqlServerAutoBackupConfig -Enable -RetentionPeriod 10 -StorageUri "\\contoso\StorageGeneral" -StorageKey "< Storage Key for ContosoGeneral >"
 Enable                : True
@@ -52,12 +52,12 @@ EnableEncryption      : False
 RetentionPeriodInDays : 10
 ```
 
-To polecenie tworzy obiekt automatycznej konfiguracji kopii zapasowej przez określenie identyfikatora URI miejsca do magazynowania i klucza konta.
-Automatyczna kopia zapasowa jest włączona, a automatyczne kopie zapasowe są zachowywane przez 10 dni.
-Polecenie zapisuje wyniki w zmiennej $AutoBackupConfig.
-Możesz określić ten element konfiguracji dla innych poleceń cmdlet, takich jak polecenie cmdlet Set-AzVMSqlServerExtension.
+To polecenie tworzy obiekt automatycznej konfiguracji kopii zapasowej, określając identyfikator URI magazynu i klucz konta.
+Automatyczne tworzenie kopii zapasowych jest włączone, a automatyczne kopie zapasowe są przechowywane przez 10 dni.
+Polecenie przechowuje wynik w $AutoBackupConfig zmienną.
+Ten element konfiguracji możesz określić dla innych pozycji cmdlet, takich jak polecenie cmdlet Set-AzVMSqlServerExtension cmdlet.
 
-### Przykład 2: Tworzenie automatycznej konfiguracji kopii zapasowej przy użyciu kontekstu magazynu
+### Przykład 2. Tworzenie automatycznej konfiguracji kopii zapasowej przy użyciu kontekstu magazynu
 ```
 PS C:\> $StorageContext = New-AzureStorageContext -StorageAccountName "ContosoGeneral" -StorageAccountKey "< Storage Key for ContosoGeneral >"
 PS C:\> $AutoBackupConfig = New-AzVMSqlServerAutoBackupConfig -StorageContext $StorageContext -Enable -RetentionPeriod 10
@@ -66,13 +66,13 @@ EnableEncryption      : False
 RetentionPeriodInDays : 10
 ```
 
-Pierwsze polecenie tworzy kontekst miejsca do magazynowania, a następnie zapisuje go w zmiennej $StorageContext.
-Aby uzyskać więcej informacji, zobacz Nowość-AzureStorageContext.
+Pierwsze polecenie tworzy kontekst magazynu, a następnie zapisuje go w $StorageContext danych.
+Aby uzyskać więcej informacji, zobacz New-AzureStorageContext.
 
-Drugie polecenie tworzy obiekt konfiguracji automatycznej kopii zapasowej, określając kontekst miejsca do magazynowania w $StorageContext.
-Automatyczna kopia zapasowa jest włączona, a automatyczne kopie zapasowe są zachowywane przez 10 dni.
+Drugie polecenie tworzy obiekt automatycznej konfiguracji kopii zapasowej, określając kontekst magazynu w $StorageContext.
+Automatyczne tworzenie kopii zapasowych jest włączone, a automatyczne kopie zapasowe są przechowywane przez 10 dni.
 
-### Przykład 3: Tworzenie automatycznej konfiguracji kopii zapasowej przy użyciu kontekstu magazynu z szyfrowaniem i hasłem
+### Przykład 3. Tworzenie automatycznej konfiguracji kopii zapasowej przy użyciu kontekstu magazynu z szyfrowaniem i hasłem
 ```
 PS C:\> $StorageContext = New-AzVMSqlServerAutoBackupConfig -StorageContext $StorageContext -Enable -RetentionPeriod 10 -EnableEncryption -CertificatePassword $CertificatePassword
 Enable                : True
@@ -80,21 +80,21 @@ EnableEncryption      : True
 RetentionPeriodInDays : 10
 ```
 
-To polecenie umożliwia utworzenie obiektu konfiguracji automatycznej kopii zapasowej i zapisanie go.
-Polecenie określa kontekst miejsca do magazynowania utworzony w poprzednim przykładzie.
-Polecenie włącza szyfrowanie przy użyciu hasła.
-W zmiennej $CertificatePassword hasło zostało wcześniej zapisane w postaci bezpiecznego ciągu.
-Aby utworzyć bezpieczny ciąg, użyj polecenia cmdlet ConvertTo-SecureString.
+To polecenie tworzy i przechowuje obiekt automatycznej konfiguracji kopii zapasowej.
+To polecenie określa kontekst magazynowania utworzony w poprzednim przykładzie.
+To polecenie umożliwia szyfrowanie przy użyciu hasła.
+Hasło było wcześniej przechowywane jako bezpieczny ciąg w $CertificatePassword danych.
+Aby utworzyć bezpieczny ciąg, użyj ConvertTo-SecureString cmdlet.
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -BackupScheduleType
-Typ harmonogramu kopii zapasowych, ręczny lub zautomatyzowany
+Typ harmonogramu kopii zapasowej, ręczny lub automatyczny
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Manual, Automated
 
 Required: False
@@ -105,12 +105,12 @@ Accept wildcard characters: False
 ```
 
 ### -BackupSystemDbs
-Tworzenie kopii zapasowych baz danych
+Bazy danych systemu kopii zapasowej
 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -125,7 +125,7 @@ Określa hasło do szyfrowania certyfikatu używanego do wykonywania zaszyfrowan
 ```yaml
 Type: SecureString
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 4
@@ -135,7 +135,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.
 
 ```yaml
 Type: IAzureContextContainer
@@ -149,15 +149,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Enable
-Wskazuje, że jest włączona automatyczna kopia zapasowa maszyny wirtualnej programu SQL Server.
-W przypadku określenia tego parametru funkcja automatycznego tworzenia kopii zapasowych ustawia Harmonogram kopii zapasowej dla wszystkich bieżących i nowych baz danych.
-Spowoduje to zaktualizowanie ustawień zarządzanych kopii zapasowych w celu obserwowania tego harmonogramu.
+### — Włącz
+Oznacza, że włączono automatyczną kopię zapasową maszyny wirtualnej programu SQL Server.
+Jeśli określisz ten parametr, automatyczna kopia zapasowa ustawia harmonogram kopii zapasowej dla wszystkich bieżących i nowych baz danych.
+To aktualizuje ustawienia zarządzanej kopii zapasowej, aby postępować zgodnie z tym harmonogramem.
 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 1
@@ -167,12 +167,12 @@ Accept wildcard characters: False
 ```
 
 ### -EnableEncryption
-Wskazuje, że to polecenie cmdlet włącza szyfrowanie.
+Wskazuje, że to polecenie cmdlet umożliwia szyfrowanie.
 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 3
@@ -182,12 +182,12 @@ Accept wildcard characters: False
 ```
 
 ### -FullBackupFrequency
-Częstotliwość pełnej kopii zapasowej programu SQL Server, codziennie lub co tydzień
+Częstotliwość wykonywania pełnej kopii zapasowej w programie Sql Server codziennie lub co tydzień
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Daily, Weekly
 
 Required: False
@@ -198,12 +198,12 @@ Accept wildcard characters: False
 ```
 
 ### -FullBackupStartHour
-Godzina dnia (0-23) po uruchomieniu pełnej kopii zapasowej programu SQL Server
+Godzina dnia (0–23), w którym powinna się rozpocząć pełna kopia zapasowa programu Sql Server
 
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -213,12 +213,12 @@ Accept wildcard characters: False
 ```
 
 ### -FullBackupWindowInHours
-Okno pełnej kopii zapasowej programu SQL Server w godzinach
+Okno Pełnej kopii zapasowej w programie Sql Server w godzinach
 
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -228,12 +228,12 @@ Accept wildcard characters: False
 ```
 
 ### -LogBackupFrequencyInMinutes
-Częstotliwość wykonywania kopii zapasowych dziennika programu SQL Server, co 1-60 minut
+Częstotliwość tworzenia kopii zapasowej dziennika programu Sql Server co 1–60 minut
 
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -248,7 +248,7 @@ Określa nazwę grupy zasobów maszyny wirtualnej.
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: True
 Position: 0
@@ -258,12 +258,12 @@ Accept wildcard characters: False
 ```
 
 ### -RetentionPeriodInDays
-Określa liczbę dni przechowywania kopii zapasowej.
+Określa liczbę dni, przez które ma być zachowywana kopia zapasowa.
 
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 2
@@ -272,15 +272,15 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -StorageContext
+### - StorageContext
 Określa konto magazynu, które będzie używane do przechowywania kopii zapasowych.
-Aby uzyskać obiekt **AzureStorageContext** , użyj polecenia cmdlet New-AzureStorageContext.
+Aby uzyskać obiekt **AzureStorageContext,** użyj New-AzureStorageContext cmdlet.
 Domyślnie jest to konto magazynu skojarzone z maszyną wirtualną programu SQL Server.
 
 ```yaml
 Type: IStorageContext
 Parameter Sets: StorageContextSqlServerAutoBackup
-Aliases: 
+Aliases:
 
 Required: False
 Position: 5
@@ -289,13 +289,13 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -StorageKey
-Określa klucz magazynu konta magazynu obiektów BLOB.
+### - KluczDazydzydów
+Określa klucz magazynu konta magazynu obiektów blob.
 
 ```yaml
 Type: SecureString
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 5
@@ -304,13 +304,13 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -StorageUri
-Określa identyfikator URI (Uniform Resource Identifier) konta magazynu obiektów BLOB.
+### — StorageUri
+Określa identyfikator URI konta magazynu obiektów blob.
 
 ```yaml
 Type: Uri
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: 4
@@ -320,22 +320,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### Znaleziono
+### Brak
 To polecenie cmdlet nie akceptuje żadnych danych wejściowych.
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### Microsoft. Azure. Commands. COMPUTE. AutoBackupSettings
+### Microsoft.Azure.Commands.Compute.AutoBackupSettings
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
-[Nowe — AzureVMSqlServerAutoPatchingConfig](./New-AzureVMSqlServerAutoPatchingConfig.md)
+[New-AzureVMSqlServerAutoPatchingConfig](./New-AzVMSqlServerAutoPatchingConfig.md)
 
 [Set-AzVMSqlServerExtension](./Set-AzVMSqlServerExtension.md)
 

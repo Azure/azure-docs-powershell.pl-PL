@@ -6,22 +6,22 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzResource.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzResource.md
-ms.openlocfilehash: e1748bb3dbb5c2bb86f02ef9ec58d0d1eec55ba9
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 2926aa351e7e9f1f9251c5a6e6a2292b27ef93b0
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94220913"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398193"
 ---
 # Get-AzResource
 
-## STRESZCZENIe
+## SYNOPSIS
 
 Pobiera zasoby.
 
-## POLECENIA
+## SKŁADNIA
 
-### ByTagNameValueParameterSet (domyślny)
+### ByTagNameValueParameterSet (Domyślne)
 ```
 Get-AzResource [-Name <String>] [-ResourceType <String>] [-ODataQuery <String>] [-ResourceGroupName <String>]
  [-TagName <String>] [-TagValue <String>] [-ExpandProperties] [-ApiVersion <String>] [-Pre]
@@ -41,13 +41,13 @@ Get-AzResource [-Name <String>] [-ResourceType <String>] [-ODataQuery <String>] 
  [<CommonParameters>]
 ```
 
-## Opis
+## OPIS
 
-Polecenie cmdlet **Get-AzResource** umożliwia pobieranie zasobów platformy Azure.
+Polecenie **cmdlet Get-AzResource** pobiera zasoby platformy Azure.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1. pobieranie wszystkich zasobów w bieżącej subskrypcji
+### Przykład 1. Uzyskiwanie wszystkich zasobów w bieżącej subskrypcji
 
 ```
 PS C:\> Get-AzResource | ft
@@ -65,9 +65,9 @@ storage otherResourceGroup Microsoft.Storage/storageAccounts       eastus
 testVM2 otherResourceGroup Microsoft.Compute/virtualMachines       eastus
 ```
 
-To polecenie umożliwia pobieranie wszystkich zasobów w bieżącej subskrypcji.
+To polecenie pobiera wszystkie zasoby w bieżącej subskrypcji.
 
-### Przykład 2: pobieranie wszystkich zasobów w grupie zasobów
+### Przykład 2. Uzyskiwanie wszystkich zasobów w grupie zasobów
 
 ```
 PS C:\> Get-AzResource -ResourceGroupName testRG | ft
@@ -82,9 +82,9 @@ ip     testRG            Microsoft.Network/publicIPAddresses     westus
 vnet   testRG            Microsoft.Network/virtualNetworks       westus
 ```
 
-To polecenie umożliwia pobieranie wszystkich zasobów z grupy zasobów "testRG".
+To polecenie pobiera wszystkie zasoby w grupie zasobów "testRG".
 
-### Przykład 3: pobieranie wszystkich zasobów, których Grupa zasobów odpowiada podanemu symbolowi wieloznacznemu
+### Przykład 3. Uzyskiwanie wszystkich zasobów, których grupa zasobów jest odpowiada podanej symbolowi wieloznaczne
 
 ```
 PS C:\> Get-AzResource -ResourceGroupName other* | ft
@@ -96,9 +96,9 @@ storage otherResourceGroup Microsoft.Storage/storageAccounts eastus
 testVM2 otherResourceGroup Microsoft.Compute/virtualMachines eastus
 ```
 
-To polecenie powoduje wyświetlenie wszystkich zasobów, w których Grupa zasobów należy do "innych".
+To polecenie pobiera wszystkie zasoby, których grupa zasobów należy jako istoty, z "innymi".
 
-### Przykład 4: pobieranie wszystkich zasobów o podanej nazwie
+### Przykład 4. Uzyskiwanie wszystkich zasobów o danej nazwie
 
 ```
 PS C:\> Get-AzResource -Name testVM | fl
@@ -118,7 +118,7 @@ Tags              :
 
 To polecenie pobiera wszystkie zasoby, których nazwa zasobu to "testVM".
 
-### Przykład 5: pobieranie wszystkich zasobów, których nazwa jest zgodna z podanym symbolem wieloznacznym
+### Przykład 5. Uzyskiwanie wszystkich zasobów o nazwie takiej jak podany symbol wieloznaczny
 
 ```
 PS C:\> Get-AzResource -Name test* | ft
@@ -130,9 +130,9 @@ testKV  otherRG            Microsoft.KeyVault/vaults         eastus
 testVM2 otherResourceGroup Microsoft.Compute/virtualMachines eastus
 ```
 
-To polecenie pobiera wszystkie zasoby, których nazwa zasobu zaczyna się od ciągu "test".
+To polecenie pobiera wszystkie zasoby, których nazwa zasobu rozpoczyna się od "testu".
 
-### Przykład 6: pobieranie wszystkich zasobów określonego typu zasobu
+### Przykład 6. Uzyskiwanie wszystkich zasobów danego typu zasobu
 
 ```
 PS C:\> Get-AzResource -ResourceType Microsoft.Compute/virtualMachines | ft
@@ -143,9 +143,9 @@ testVM  testRG             Microsoft.Compute/virtualMachines westus
 testVM2 otherResourceGroup Microsoft.Compute/virtualMachines eastus
 ```
 
-To polecenie umożliwia pobieranie wszystkich zasobów w bieżących abonamentach, które są maszynami wirtualnymi.
+To polecenie pobiera wszystkie zasoby z bieżących subskrypcji, które są maszynami wirtualnymi.
 
-### Przykład 7: Pobieranie zasobu według identyfikatora zasobu
+### Przykład 7. Uzyskiwanie zasobu według identyfikatora zasobu
 
 ```
 PS C:\> Get-AzResource -ResourceId /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testRG/providers/Microsoft.Compute/virtualMachines/testVM
@@ -163,9 +163,9 @@ Tags              :
                     Status  Approved
 ```
 
-To polecenie pobiera zasób z podanym identyfikatorem zasobu, który jest maszyną wirtualną o nazwie "testVM" w grupie zasobów "testRG".
+To polecenie pobiera zasób z dostarczonym identyfikatorem zasobu, czyli maszyną wirtualną o nazwie "testVM" w grupie zasobów "testRG".
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -ApiVersion
 
@@ -182,7 +182,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -197,7 +197,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExpandProperties
-Gdy ta właściwość jest określona, rozwija właściwości zasobu.
+Jeśli jest to określone, rozszerza właściwości zasobu.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -211,8 +211,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (nazwa)
-Nazwa zasobu, który ma zostać pobrany. Ten parametr obsługuje symbole wieloznaczne na początku i/lub końcu ciągu.
+### — Nazwa
+Nazwy zasobów do pobrania. Ten parametr obsługuje symbole wieloznaczne na początku i/lub na końcu ciągu.
 
 ```yaml
 Type: System.String
@@ -240,7 +240,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Pre
+### — Przed
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -255,7 +255,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Grupa zasobów, do której należy pobrany zasób. Ten parametr obsługuje symbole wieloznaczne na początku i/lub końcu ciągu.
+Grupa zasobów, do której są pobierane zasoby, należy. Ten parametr obsługuje symbole wieloznaczne na początku i/lub na końcu ciągu.
 
 ```yaml
 Type: System.String
@@ -270,7 +270,7 @@ Accept wildcard characters: True
 ```
 
 ### -ResourceId
-Określa w pełni kwalifikowany identyfikator zasobu, tak jak w poniższym przykładzie `/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/providers/Microsoft.Compute/virtualMachines`
+Określa w pełni kwalifikowany identyfikator zasobu, jak w poniższym przykładzie. `/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/providers/Microsoft.Compute/virtualMachines`
 
 ```yaml
 Type: System.String
@@ -285,7 +285,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceType
-Typ zasobu, który ma zostać pobrany. Na przykład Microsoft. COMPUTE/virtualMachines
+Typ zasobu do pobrania. Na przykład Microsoft.Compute/virtualMachines
 
 ```yaml
 Type: System.String
@@ -299,9 +299,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Tag
+### — Tag
 
-Pobiera zasoby, które mają określony tag platformy Azure. Wprowadź tabelę skrótów zawierającą klucz nazwy lub klucze Name oraz Value. Symbole wieloznaczne nie są obsługiwane. "Tag" to para nazwa-wartość, którą można stosować do zasobów i grup zasobów. Za pomocą znaczników można klasyfikować zasoby, na przykład według działów lub MPK, a także śledzić notatki i komentarze dotyczące zasobów. Aby dodać znacznik do zasobu, użyj parametru tag polecenia cmdlet New-AzResource lub Set-AzResource. Aby utworzyć wstępnie zdefiniowany znacznik, użyj polecenia cmdlet New-AzTag. Aby uzyskać pomoc dotyczącą tabel skrótów w programie Windows PowerShell, uruchom polecenie "Get-Help about_Hashtables".
+Pobiera zasoby, które mają określony tag platformy Azure. Wprowadź tabelę skrótów z klawiszem Name lub klawiszami Nazwa i Wartość. Symbole wieloznaczne nie są obsługiwane. "Tag" to para wartości nazwy, która można zastosować do zasobów i grup zasobów. Przy użyciu tagów można kategoryzować zasoby( na przykład według działu lub centrum kosztów) albo śledzić notatki lub komentarze dotyczące zasobów. Aby dodać tag do zasobu, użyj parametru Tag New-AzResource lub Set-AzResource cmdlet. Aby utworzyć wstępnie zdefiniowany tag, użyj New-AzTag cmdlet. Aby uzyskać pomoc na dotyczące skrótów tabel w programie Windows PowerShell, uruchom polecenia "Uzyskaj pomoc about_Hashtables".
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -316,7 +316,7 @@ Accept wildcard characters: False
 ```
 
 ### -TagName
-Klucz znacznika zasobów, które mają zostać pobrane.
+Klucz w tagach zasobów do pobrania.
 
 ```yaml
 Type: System.String
@@ -331,7 +331,7 @@ Accept wildcard characters: False
 ```
 
 ### -TagValue
-Wartość znacznika zasobów, które mają zostać pobrane.
+Wartość w tagach zasobów, które mają zostać pobrane.
 
 ```yaml
 Type: System.String
@@ -346,25 +346,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### System. String
+### System.String
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### Microsoft. Azure. Commands. resourceName. polecenia. cmdlet. SdkModels. PSResource
+### Microsoft.Azure.Commands.ResourceManager.Cmdlet.SdkModels.PSResource
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
-[Znajdź-AzResource](./Find-AzResource.md)
 
-[Przenieś — AzResource](./Move-AzResource.md)
+[Move-AzResource](./Move-AzResource.md)
 
-[Nowe — AzResource](./New-AzResource.md)
+[New-AzResource](./New-AzResource.md)
 
 [Remove-AzResource](./Remove-AzResource.md)
 

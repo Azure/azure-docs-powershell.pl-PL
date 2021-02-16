@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.compute/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Compute/Compute/help/New-AzVMSqlServerAutoPatchingConfig.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Compute/Compute/help/New-AzVMSqlServerAutoPatchingConfig.md
-ms.openlocfilehash: 0ce851373ac31aaef4c5664db7085f345e9b947d
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: 3ba7ab00076a3a0634a0d4394270fe4a83ec8ede
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93893609"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398261"
 ---
 # New-AzVMSqlServerAutoPatchingConfig
 
-## STRESZCZENIe
-Tworzy obiekt konfiguracji na potrzeby automatycznego poprawiania na maszynie wirtualnej.
+## SYNOPSIS
+Tworzy obiekt konfiguracji na celu automatyczne poprawianie poprawek na komputerze wirtualnym.
 
-## POLECENIA
+## SKŁADNIA
 
 ```
 New-AzVMSqlServerAutoPatchingConfig [-Enable] [-DayOfWeek <String>]
@@ -26,12 +26,12 @@ New-AzVMSqlServerAutoPatchingConfig [-Enable] [-DayOfWeek <String>]
  [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **New-AzVMSqlServerAutoPatchingConfig** tworzy obiekt konfiguracji na potrzeby automatycznego poprawiania na maszynie wirtualnej.
+## OPIS
+Polecenie **cmdlet New-AzVMSqlServerAutoPatchingConfig** tworzy obiekt konfiguracji do automatycznego poprawiania na komputerze wirtualnym.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1. Tworzenie obiektu konfiguracji w celu skonfigurowania automatycznej poprawki
+### Przykład 1. Tworzenie obiektu konfiguracji w celu skonfigurowania automatycznego poprawiania poprawek
 ```
 PS C:\> $AutoPatchingConfig = New-AzVMSqlServerAutoPatchingConfig -Enable -DayOfWeek "Thursday" -MaintenanceWindowStartingHour 11 -MaintenanceWindowDuration 120 -PatchCategory "Important"
 Enable                        : True
@@ -41,32 +41,32 @@ MaintenanceWindowDuration     : 120
 PatchCategory                 : Important
 ```
 
-To polecenie tworzy obiekt konfiguracji do tworzenia poprawek.
-Polecenie określa dzień tygodnia i definiuje okno obsługi.
-Ta konfiguracja umożliwia stosowanie poprawek korzystających z tych wartości.
-Polecenie zapisuje wyniki w zmiennej $AutoBackupConfig.
-Możesz określić ten element konfiguracji dla innych poleceń cmdlet, takich jak polecenie cmdlet Set-AzVMSqlServerExtension.
+To polecenie tworzy obiekt konfiguracji na celu tworzenie poprawek.
+To polecenie określa dzień tygodnia i definiuje okno konserwacji.
+Ta konfiguracja umożliwia tworzenie poprawek, w których są używane te wartości.
+Polecenie przechowuje wynik w $AutoBackupConfig zmienną.
+Ten element konfiguracji możesz określić dla innych pozycji cmdlet, takich jak polecenie cmdlet Set-AzVMSqlServerExtension cmdlet.
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -DayOfWeek
-Określa dzień tygodnia, w którym powinny być instalowane aktualizacje.
+Określa dzień tygodnia, w którym mają być instalowane aktualizacje.
 
-Dopuszczalne wartości tego parametru to:
+Dopuszczalne wartości dla tego parametru to:
 
-- Niedziele
+- Niedziela
 - Poniedziałek
-- Wtorku
+- Wtorek
 - Środa
 - Czwartek
-- Poniedziałek
+- Piątek
 - Sobota
-- Codzienne
+- Codzienne czynności
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Everyday
 
 Required: False
@@ -76,15 +76,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Enable
-Wskazuje, że automatyczne poprawianie maszyny wirtualnej jest włączone.
-Jeśli włączysz automatyczne poprawianie, polecenie cmdlet przełączy system Windows do trybu interakcyjnego.
-Jeśli wyłączysz automatyczne stosowanie, ustawienia Windows Update nie zmieniają się.
+### — Włącz
+Oznacza, że włączono automatyczne poprawianie poprawek dla maszyny wirtualnej.
+Włączenie automatycznego poprawiania za pomocą polecenia cmdlet włącza usługę Windows Update w tryb interakcyjny.
+Jeśli wyłączysz automatyczne poprawianie poprawek, ustawienia usługi Windows Update nie zmieniają się.
 
 ```yaml
 Type: SwitchParameter
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -94,14 +94,14 @@ Accept wildcard characters: False
 ```
 
 ### -MaintenanceWindowDuration
-Określa czas trwania okna konserwacji (w minutach).
-Automatyczne poprawianie nie pozwala na wykonywanie akcji, które mogą wpłynąć na dostępność maszyny wirtualnej poza tym oknem.
+Określa czas trwania (w minutach) okna konserwacji.
+Automatyczne poprawianie pozwala uniknąć wykonywania akcji, która może mieć wpływ na dostępność maszyny wirtualnej poza tym oknem.
 Określ wielokrotność 30 minut.
 
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -111,13 +111,13 @@ Accept wildcard characters: False
 ```
 
 ### -MaintenanceWindowStartingHour
-Określa godzinę dnia, kiedy zostanie uruchomione okno konserwacja.
-Ten czas określa, kiedy aktualizacje rozpoczną instalację.
+Określa godzinę dnia, w którym rozpoczyna się okno konserwacji.
+Ten czas określa, kiedy rozpocznie się instalowanie aktualizacji.
 
 ```yaml
 Type: Int32
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 
 Required: False
 Position: Named
@@ -126,13 +126,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -PatchCategory
-Określa, czy należy uwzględnić ważne aktualizacje.
+### - PatchCategory
+Określa, czy należy uwzględniać ważne aktualizacje.
 
 ```yaml
 Type: String
 Parameter Sets: (All)
-Aliases: 
+Aliases:
 Accepted values: Important
 
 Required: False
@@ -143,23 +143,23 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### Znaleziono
+### Brak
 To polecenie cmdlet nie akceptuje żadnych danych wejściowych.
 
-## WYSYŁA
+## OUTPUTS
 
 ### AutoPatchingSettings
-To polecenie cmdlet zwraca obiekt zawiera ustawienia automatycznej poprawki.
+To polecenie cmdlet zwraca obiekt zawierający ustawienia automatycznego poprawiania poprawek.
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
-[Nowe — AzureVMSqlServerAutoBackupConfig](./New-AzureVMSqlServerAutoBackupConfig.md)
+[New-AzureVMSqlServerAutoBackupConfig](./New-AzVMSqlServerAutoBackupConfig.md)
 
 [Set-AzVMSqlServerExtension](./Set-AzVMSqlServerExtension.md)
 

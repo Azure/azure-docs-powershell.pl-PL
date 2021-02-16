@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Resources/Resources/help/Remove-AzADUser.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Resources/Resources/help/Remove-AzADUser.md
-ms.openlocfilehash: 091f54b69cd713d93def4c727181f9c8e7d5b0d6
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: e16adfe6db006af0c1f49992d5aff39412d4d4d3
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93892425"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398210"
 ---
 # Remove-AzADUser
 
-## STRESZCZENIe
+## SYNOPSIS
 Usuwa użytkownika usługi Active Directory.
 
-## POLECENIA
+## SKŁADNIA
 
-### UPNOrObjectIdParameterSet (domyślny)
+### UPNOrObjectIdParameterSet (Domyślne)
 ```
 Remove-AzADUser -UPNOrObjectId <String> [-PassThru] [-Force] [-DefaultProfile <IAzureContextContainer>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -50,20 +50,20 @@ Remove-AzADUser -InputObject <PSADUser> [-PassThru] [-Force] [-DefaultProfile <I
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Opis
-Usuwa użytkownika usługi Active Directory (konto służbowe jest również popularnym znanym jako identyfikator organizacji).
+## OPIS
+Usuwa użytkownika usługi Active Directory (konto służbowe, które jest również popularne jako identyfikator organizacji).
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1 — Usuwanie użytkownika według głównej nazwy użytkownika
+### Przykład 1. Usuwanie użytkownika według głównej nazwy użytkownika
 
 ```
 PS C:\> Remove-AzADUser -UserPrincipalName foo@domain.com
 ```
 
-Usuwa użytkownika o nazwie głównej użytkownika " foo@domain.com " z dzierżawy.
+Usuwa użytkownika o głównej nazwie użytkownika " foo@domain.com " z dzierżawy.
 
-### Przykład 2 — Usuwanie użytkownika według identyfikatora obiektu
+### Przykład 2. Usuwanie użytkownika według identyfikatora obiektu
 
 ```
 PS C:\> Remove-AzADUser -ObjectId 7a9582cf-88c4-4319-842b-7a5d60967a69
@@ -71,18 +71,18 @@ PS C:\> Remove-AzADUser -ObjectId 7a9582cf-88c4-4319-842b-7a5d60967a69
 
 Usuwa użytkownika o identyfikatorze obiektu "7a9582cf-88c4-4319-842b-7a5d60967a69" z dzierżawy.
 
-### Przykład 3 — Usuwanie użytkownika przez rurociąg
+### Przykład 3. Usuwanie użytkownika za pomocą funkcji pipingu
 
 ```
 PS C:\> Get-AzADUser -ObjectId 7a9582cf-88c4-4319-842b-7a5d60967a69 | Remove-AzADUser
 ```
 
-Pobiera użytkownika o identyfikatorze obiektu "7a9582cf-88c4-4319-842b-7a5d60967a69" oraz potokach, które zostaną usunięte przez polecenie cmdlet Remove-AzADUser, aby usunąć użytkownika z dzierżawy.
+Pobiera użytkownika o identyfikatorze obiektu "7a9582cf-88c4-4319-842b-7a5d60967a69" i potoków, które do polecenia cmdlet Remove-AzADUser należy usunąć z dzierżawy.
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
@@ -96,7 +96,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DisplayName
+### — DisplayName
 Nazwa wyświetlana użytkownika, który ma zostać usunięty.
 
 ```yaml
@@ -111,8 +111,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Force
-Jeśli ta osoba jest określona, nie prosi o potwierdzenie usunięcia użytkownika.
+### — Wymuszanie
+Jeśli jest to określone, nie należy prosić o potwierdzenie usunięcia użytkownika.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -126,8 +126,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Inputobject
-Obiekt użytkownika, który ma zostać usunięty.
+### -InputObject
+Obiekt użytkownika do usunięcia.
 
 ```yaml
 Type: Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADUser
@@ -142,7 +142,7 @@ Accept wildcard characters: False
 ```
 
 ### -ObjectId
-Identyfikator obiektu użytkownika, który ma zostać usunięty.
+Identyfikator obiektu użytkownika do usunięcia.
 
 ```yaml
 Type: System.Guid
@@ -157,7 +157,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Określenie tej wartości zwróci wartość PRAWDA, jeśli polecenie zostało wykonane prawidłowo.
+Określenie tej wartości spowoduje zwrócenie wartości prawda, jeśli polecenie zostało pomyślnie określone.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -172,7 +172,7 @@ Accept wildcard characters: False
 ```
 
 ### -UPNOrObjectId
-Główna nazwa użytkownika lub identyfikator obiektu (objectId) użytkownika, który ma zostać usunięty.
+Główna nazwa użytkownika lub identyfikator obiektu użytkownika do usunięcia.
 
 ```yaml
 Type: System.String
@@ -187,7 +187,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserPrincipalName
-Główna nazwa użytkownika, który ma zostać usunięty.
+Główna nazwa użytkownika do usunięcia.
 
 ```yaml
 Type: System.String
@@ -201,8 +201,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Potwierdź
-Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.
+### — Potwierdź
+Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -217,8 +217,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet.
-Polecenie cmdlet nie jest uruchamiane.
+Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet.
+Polecenie cmdlet nie zostanie uruchomione.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -233,28 +233,27 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### System. String
+### System.String
 
-### System. GUID
+### System.Guid
 
-### Microsoft.Azure.Graph.RBAC.Version1_6. pozycji. PSADUser
-Parametry: Inputobject (ByValue)
+### Microsoft.Azure.Graph.RBAC.Version1_6.ActiveDirectory.PSADUser
+Parametry: InputObject (ByValue)
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### System. Boolean
+### System.Boolean
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
-[Nowe — AzADUser](./New-AzADUser.md)
+[New-AzadUser](./New-AzADUser.md)
 
-[Get-AzADUser](./Get-AzADUser.md)
+[Get-AzadUser](./Get-AzADUser.md)
 
-[Set-AzADUser](./Set-AzADUser.md)
 
