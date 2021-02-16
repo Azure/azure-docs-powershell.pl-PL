@@ -1,0 +1,224 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Advisor.dll-Help.xml
+Module Name: Az.Advisor
+online version: https://docs.microsoft.com/en-us/powershell/module/az.advisor/set-azadvisorConfiguration
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Advisor/Advisor/help/Set-AzAdvisorConfiguration.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Advisor/Advisor/help/Set-AzAdvisorConfiguration.md
+ms.openlocfilehash: bfd1677fa46a749b73206b02bb6585c4a529637f
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100190411"
+---
+# <span data-ttu-id="806ad-101">Set-AzAdvisorConfiguration</span><span class="sxs-lookup"><span data-stu-id="806ad-101">Set-AzAdvisorConfiguration</span></span>
+
+## <span data-ttu-id="806ad-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="806ad-102">SYNOPSIS</span></span>
+<span data-ttu-id="806ad-103">Aktualizuje lub tworzy konfigurację doradcy platformy Azure.</span><span class="sxs-lookup"><span data-stu-id="806ad-103">Updates or creates the Azure Advisor Configuration.</span></span>
+
+## <span data-ttu-id="806ad-104">SKŁADNIA</span><span class="sxs-lookup"><span data-stu-id="806ad-104">SYNTAX</span></span>
+
+### <span data-ttu-id="806ad-105">InputObjectRgExcludeParameterSet (Domyślne)</span><span class="sxs-lookup"><span data-stu-id="806ad-105">InputObjectRgExcludeParameterSet (Default)</span></span>
+```
+Set-AzAdvisorConfiguration [-Exclude] [[-ResourceGroupName] <String>]
+ [[-InputObject] <PsAzureAdvisorConfigurationData>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="806ad-106">InputObjectLowCpuExcludeParameterSet</span><span class="sxs-lookup"><span data-stu-id="806ad-106">InputObjectLowCpuExcludeParameterSet</span></span> 
+```
+Set-AzAdvisorConfiguration [-Exclude] [-LowCpuThreshold] <Int32>
+ [[-InputObject] <PsAzureAdvisorConfigurationData>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="806ad-107">OPIS</span><span class="sxs-lookup"><span data-stu-id="806ad-107">DESCRIPTION</span></span>
+<span data-ttu-id="806ad-108">Służy do aktualizowania konfiguracji doradcy platformy Azure.</span><span class="sxs-lookup"><span data-stu-id="806ad-108">Used to update the configuration of the Azure Advisor.</span></span> <span data-ttu-id="806ad-109">Istnieją dwa typy konfiguracji: konfiguracja na poziomie subskrypcji i konfiguracja na poziomie grupy zasobów.</span><span class="sxs-lookup"><span data-stu-id="806ad-109">Two types of Configuration are present: Subscription level configuration and ResourceGroup level configuration.</span></span> 
+
+<span data-ttu-id="806ad-110">Konfiguracja na poziomie subskrypcji: Dla subskrypcji może być tylko jedna konfiguracja tego typu.</span><span class="sxs-lookup"><span data-stu-id="806ad-110">Subscription level configuration: There can be only one Configuration for this type for a subscription.</span></span> <span data-ttu-id="806ad-111">Za pomocą tego polecenia cmdlet można aktualizować właściwości LowCpuThreshold i Exclude.</span><span class="sxs-lookup"><span data-stu-id="806ad-111">LowCpuThreshold and Exclude properties can be updated using this cmdlet.</span></span>
+<span data-ttu-id="806ad-112">Konfiguracja na poziomie grupy zasobów: dla każdej grupy zasobów może być tylko jedna konfiguracja.</span><span class="sxs-lookup"><span data-stu-id="806ad-112">ResourceGroup level configuration: There can be only one configuration for each ResourceGroup.</span></span> <span data-ttu-id="806ad-113">Za pomocą tego polecenia cmdlet można aktualizować tylko właściwość Exclude.</span><span class="sxs-lookup"><span data-stu-id="806ad-113">Only Exclude property can be updated using this cmdlet.</span></span>
+
+## <span data-ttu-id="806ad-114">PRZYKŁADY</span><span class="sxs-lookup"><span data-stu-id="806ad-114">EXAMPLES</span></span>
+
+###  <span data-ttu-id="806ad-115">Przykład 1</span><span class="sxs-lookup"><span data-stu-id="806ad-115">Example 1</span></span>
+```powershell
+PS C:\> Set-AzAdvisorConfiguration -LowCpuThreshold 10
+Id         : /subscriptions/{user_subscription}/resourceGroups/resourceGroupName1/providers/Microsoft.Advisor/configurations/{user_subscription}
+Name       : {user_subscription}
+Properties : additionalProperties : null
+             exclude :  False
+             lowCpuThreshold : 10
+
+Type       : Microsoft.Advisor/Configurations
+```
+
+<span data-ttu-id="806ad-116">Aktualizuje konfigurację (lowCpuThreshold) dla poziomu subskrypcji Configuration.</span><span class="sxs-lookup"><span data-stu-id="806ad-116">Updates the configuration(lowCpuThreshold) for subscription level Configuration.</span></span>
+
+### <span data-ttu-id="806ad-117">Przykład 2</span><span class="sxs-lookup"><span data-stu-id="806ad-117">Example 2</span></span>
+```powershell
+PS C:\> Set-AzAdvisorConfiguration -LowCpuThreshold 15 -Exclude 
+Id         : /subscriptions/{user_subscription}/resourceGroups/resourceGroupName1/providers/Microsoft.Advisor/configurations/{user_subscription}
+Name       : {user_subscription}
+Properties : additionalProperties : null
+             exclude :  True
+             lowCpuThreshold : 15
+
+Type       : Microsoft.Advisor/Configurations
+```
+
+<span data-ttu-id="806ad-118">Aktualizuje konfigurację(lowCpuThreshold, exclude) dla poziomu subskrypcji Konfiguracja i wyklucza z generowania rekomendacji.</span><span class="sxs-lookup"><span data-stu-id="806ad-118">Updates the configuration(lowCpuThreshold, exclude) for subscription level Configuration and excludes from the recommendation generation.</span></span>
+
+### <span data-ttu-id="806ad-119">Przykład 3</span><span class="sxs-lookup"><span data-stu-id="806ad-119">Example 3</span></span>
+```powershell
+PS C:\> Set-AzAdvisorConfiguration -ResourceGroupName resourceGroupName1 -Exclude
+
+Id         : /subscriptions/{user_subscription}/resourceGroups/resourceGroupName1/providers/Microsoft.Advisor/configurations/{user_subscription}-resourceGroupName1
+Name       : {user_subscription}-resourceGroupName1
+Properties : additionalProperties : null
+             exclude :  True
+             lowCpuThreshold : null
+
+Type       : Microsoft.Advisor/Configurations
+```
+
+<span data-ttu-id="806ad-120">Aktualizuje konfigurację(exclude) dla nazwa_grupy_zasobów1, która zostanie wykluczona w generowanie zalecenia.</span><span class="sxs-lookup"><span data-stu-id="806ad-120">Updates the configuration(exclude) for resourceGroupName1 to be excluded in the recommendation generation.</span></span>
+
+### <span data-ttu-id="806ad-121">Przykład 4</span><span class="sxs-lookup"><span data-stu-id="806ad-121">Example 4</span></span>
+```powershell
+PS C:\> Get-AzAdvisorConfiguration | Set-AzAdvisorConfiguration -LowCpuThreshold 20
+Id         : /subscriptions/{user_subscription}/resourceGroups/resourceGroupName1/providers/Microsoft.Advisor/configurations/{user_subscription}
+Name       : {user_subscription}
+Properties : additionalProperties : null
+             exclude :  False
+             lowCpuThreshold : 20
+
+Type       : Microsoft.Advisor/Configurations
+```
+
+<span data-ttu-id="806ad-122">Aktualizuje konfigurację dla danego zalecenia przekazywanego z potoku.</span><span class="sxs-lookup"><span data-stu-id="806ad-122">Updates the configuration for the given recommendation passed on from the pipeline.</span></span>
+
+## <span data-ttu-id="806ad-123">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="806ad-123">PARAMETERS</span></span>
+
+### <span data-ttu-id="806ad-124">— Potwierdź</span><span class="sxs-lookup"><span data-stu-id="806ad-124">-Confirm</span></span>
+<span data-ttu-id="806ad-125">Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.</span><span class="sxs-lookup"><span data-stu-id="806ad-125">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="806ad-126">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="806ad-126">-DefaultProfile</span></span>
+<span data-ttu-id="806ad-127">Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.</span><span class="sxs-lookup"><span data-stu-id="806ad-127">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="806ad-128">— Wyklucz</span><span class="sxs-lookup"><span data-stu-id="806ad-128">-Exclude</span></span>
+<span data-ttu-id="806ad-129">Wyklucz z generowanie rekomendacji.</span><span class="sxs-lookup"><span data-stu-id="806ad-129">Exclude from the recommendation generation.</span></span> <span data-ttu-id="806ad-130">Jeśli nie określono właściwości exclude, zostanie ustawiona wartość false.</span><span class="sxs-lookup"><span data-stu-id="806ad-130">If not specified exclude property will be set to false.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 2
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="806ad-131">-InputObject</span><span class="sxs-lookup"><span data-stu-id="806ad-131">-InputObject</span></span>
+<span data-ttu-id="806ad-132">Typ obiektu programu PowerShell PsAzureAdvisorConfigurationData zwrócony przez Get-AzAdvisorConfiguration połączenia.</span><span class="sxs-lookup"><span data-stu-id="806ad-132">The powershell object type PsAzureAdvisorConfigurationData returned by Get-AzAdvisorConfiguration call.</span></span>
+
+```yaml
+Type: PsAzureAdvisorConfigurationData
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="806ad-133">-LowCpuThreshold</span><span class="sxs-lookup"><span data-stu-id="806ad-133">-LowCpuThreshold</span></span>
+<span data-ttu-id="806ad-134">Wartość progu niskich procesorów.</span><span class="sxs-lookup"><span data-stu-id="806ad-134">Value for Low Cpu threshold.</span></span>
+
+```yaml
+Type: Int32
+Parameter Sets: InputObjectLowCpuExcludeParameterSet
+Aliases:
+Accepted values: 0, 5, 10, 15, 20
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="806ad-135">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="806ad-135">-ResourceGroupName</span></span>
+<span data-ttu-id="806ad-136">Nazwa grupy zasobów dla konfiguracji.</span><span class="sxs-lookup"><span data-stu-id="806ad-136">Resource Group name for the configuration.</span></span>
+
+```yaml
+Type: String
+Parameter Sets: InputObjectRgExcludeParameterSet
+Aliases:
+
+Required: False
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="806ad-137">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="806ad-137">-WhatIf</span></span>
+<span data-ttu-id="806ad-138">Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet.</span><span class="sxs-lookup"><span data-stu-id="806ad-138">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="806ad-139">Polecenie cmdlet nie zostanie uruchomione.</span><span class="sxs-lookup"><span data-stu-id="806ad-139">The cmdlet is not run.</span></span>
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="806ad-140">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="806ad-140">CommonParameters</span></span>
+<span data-ttu-id="806ad-141">To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="806ad-141">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span>
+<span data-ttu-id="806ad-142">Aby uzyskać więcej informacji, zobacz about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="806ad-142">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="806ad-143">DANE WEJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="806ad-143">INPUTS</span></span>
+
+### <span data-ttu-id="806ad-144">Microsoft.Azure.Commands.Advisor.Cmdlet.Models.PsAzureAdvisorConfigurationData</span><span class="sxs-lookup"><span data-stu-id="806ad-144">Microsoft.Azure.Commands.Advisor.Cmdlets.Models.PsAzureAdvisorConfigurationData</span></span>
+
+## <span data-ttu-id="806ad-145">DANE WYJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="806ad-145">OUTPUTS</span></span>
+
+### <span data-ttu-id="806ad-146">Microsoft.Azure.Commands.Advisor.Cmdlet.Models.PsAzureAdvisorConfigurationData</span><span class="sxs-lookup"><span data-stu-id="806ad-146">Microsoft.Azure.Commands.Advisor.Cmdlets.Models.PsAzureAdvisorConfigurationData</span></span>
+
+## <span data-ttu-id="806ad-147">NOTATKI</span><span class="sxs-lookup"><span data-stu-id="806ad-147">NOTES</span></span>
+
+## <span data-ttu-id="806ad-148">LINKI POKREWNE</span><span class="sxs-lookup"><span data-stu-id="806ad-148">RELATED LINKS</span></span>
