@@ -1,0 +1,379 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
+Module Name: Az.Network
+ms.assetid: F1522074-7EEA-4DCF-AC16-26FE8E654720
+online version: https://docs.microsoft.com/en-us/powershell/module/az.network/new-azloadbalancer
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzLoadBalancer.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzLoadBalancer.md
+ms.openlocfilehash: 558f7bb9937d52117f37cc4964d4dc925b0dca47
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100179691"
+---
+# <span data-ttu-id="ca1fc-101">New-AzLoadBalancer</span><span class="sxs-lookup"><span data-stu-id="ca1fc-101">New-AzLoadBalancer</span></span>
+
+## <span data-ttu-id="ca1fc-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="ca1fc-102">SYNOPSIS</span></span>
+<span data-ttu-id="ca1fc-103">Tworzy równoważenie obciążenia.</span><span class="sxs-lookup"><span data-stu-id="ca1fc-103">Creates a load balancer.</span></span>
+
+## <span data-ttu-id="ca1fc-104">SKŁADNIA</span><span class="sxs-lookup"><span data-stu-id="ca1fc-104">SYNTAX</span></span>
+
+```
+New-AzLoadBalancer -ResourceGroupName <String> -Name <String> -Location <String> [-Tag <Hashtable>]
+ [-Sku <String>] [-Tier <String>] [-FrontendIpConfiguration <PSFrontendIPConfiguration[]>]
+ [-BackendAddressPool <PSBackendAddressPool[]>] [-LoadBalancingRule <PSLoadBalancingRule[]>]
+ [-Probe <PSProbe[]>] [-InboundNatRule <PSInboundNatRule[]>] [-InboundNatPool <PSInboundNatPool[]>]
+ [-OutboundRule <PSOutboundRule[]>] [-Force] [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="ca1fc-105">OPIS</span><span class="sxs-lookup"><span data-stu-id="ca1fc-105">DESCRIPTION</span></span>
+<span data-ttu-id="ca1fc-106">Polecenie **cmdlet New-AzLoadBalancer** tworzy narzędzie do równoważenia obciążenia platformy Azure.</span><span class="sxs-lookup"><span data-stu-id="ca1fc-106">The **New-AzLoadBalancer** cmdlet creates an Azure load balancer.</span></span>
+
+## <span data-ttu-id="ca1fc-107">PRZYKŁADY</span><span class="sxs-lookup"><span data-stu-id="ca1fc-107">EXAMPLES</span></span>
+
+### <span data-ttu-id="ca1fc-108">Przykład 1. Tworzenie równoważenia obciążenia</span><span class="sxs-lookup"><span data-stu-id="ca1fc-108">Example 1: Create a load balancer</span></span>
+```
+PS C:\> $publicip = New-AzPublicIpAddress -ResourceGroupName "MyResourceGroup" -Name "MyPublicIp" -Location "West US" -AllocationMethod "Dynamic"
+PS C:\> $frontend = New-AzLoadBalancerFrontendIpConfig -Name "MyFrontEnd" -PublicIpAddress $publicip
+PS C:\> $backendAddressPool = New-AzLoadBalancerBackendAddressPoolConfig -Name "MyBackendAddPoolConfig02"
+PS C:\> $probe = New-AzLoadBalancerProbeConfig -Name "MyProbe" -Protocol "http" -Port 80 -IntervalInSeconds 15 -ProbeCount 2 -RequestPath "healthcheck.aspx"
+PS C:\> $inboundNatRule1 = New-AzLoadBalancerInboundNatRuleConfig -Name "MyinboundNatRule1" -FrontendIPConfiguration $frontend -Protocol "Tcp" -FrontendPort 3389 -BackendPort 3389 -IdleTimeoutInMinutes 15 -EnableFloatingIP
+PS C:\> $inboundNatRule2 = New-AzLoadBalancerInboundNatRuleConfig -Name "MyinboundNatRule2" -FrontendIPConfiguration $frontend -Protocol "Tcp" -FrontendPort 3391 -BackendPort 3392
+PS C:\> $lbrule = New-AzLoadBalancerRuleConfig -Name "MyLBruleName" -FrontendIPConfiguration $frontend -BackendAddressPool $backendAddressPool -Probe $probe -Protocol "Tcp" -FrontendPort 80 -BackendPort 80 -IdleTimeoutInMinutes 15 -EnableFloatingIP -LoadDistribution SourceIP
+PS C:\> $lb = New-AzLoadBalancer -Name "MyLoadBalancer" -ResourceGroupName "MyResourceGroup" -Location "West US" -FrontendIpConfiguration $frontend -BackendAddressPool $backendAddressPool -Probe $probe -InboundNatRule $inboundNatRule1,$inboundNatRule2 -LoadBalancingRule $lbrule
+PS C:\> Get-AzLoadBalancer -Name "MyLoadBalancer" -ResourceGroupName "MyResourceGroup"
+```
+
+<span data-ttu-id="ca1fc-109">Aby wdrożyć równoważenie obciążenia, należy najpierw utworzyć kilka obiektów, a pierwsze siedem poleceń pokazuje sposób ich tworzenia.</span><span class="sxs-lookup"><span data-stu-id="ca1fc-109">Deploying a load balancer requires that you first create several objects, and the first seven commands show how to create those objects.</span></span>
+<span data-ttu-id="ca1fc-110">Ósme polecenie tworzy w grupie zasobów o nazwie MyResourceGroup równoważenie obciążenia o nazwie MyLoadBalancer.</span><span class="sxs-lookup"><span data-stu-id="ca1fc-110">The eighth command creates a load balancer named MyLoadBalancer in the resource group named MyResourceGroup.</span></span>
+<span data-ttu-id="ca1fc-111">Trzynascie i ostatnie polecenie pobiera nowe polecenie równoważenia obciążenia, aby upewnić się, że zostało ono pomyślnie utworzone.</span><span class="sxs-lookup"><span data-stu-id="ca1fc-111">The ninth and last command gets the new load balancer to ensure it was successfully created.</span></span>
+<span data-ttu-id="ca1fc-112">Zwróć uwagę, że w tym przykładzie pokazano tylko, jak utworzyć równoważenie obciążenia.</span><span class="sxs-lookup"><span data-stu-id="ca1fc-112">Note that this example only shows how to create a load balancer.</span></span> <span data-ttu-id="ca1fc-113">Musisz również skonfigurować go przy użyciu Add-AzNetworkInterfaceIpConfig cmdlet, aby przypisać sieci NICs do różnych maszyn wirtualnych.</span><span class="sxs-lookup"><span data-stu-id="ca1fc-113">You must also configure it using the Add-AzNetworkInterfaceIpConfig cmdlet to assign the NICs to different virtual machines.</span></span>
+
+### <span data-ttu-id="ca1fc-114">Przykład 2. Tworzenie globalnego równoważenia obciążenia</span><span class="sxs-lookup"><span data-stu-id="ca1fc-114">Example 2: Create a global load balancer</span></span>
+```
+PS C:\> $publicip = New-AzPublicIpAddress -ResourceGroupName "MyResourceGroup" -name "MyPublicIp" -Location "West US" -AllocationMethod Static -DomainNameLabel $domainNameLabel -Sku Standard -Tier Global
+PS C:\> $frontend = New-AzLoadBalancerFrontendIpConfig -Name $frontendName -PublicIpAddress $publicip
+PS C:\> $backendAddressPool = New-AzLoadBalancerBackendAddressPoolConfig -Name "MyBackendAddPoolConfig01"
+PS C:\> $probe = New-AzLoadBalancerProbeConfig -Name "MyProbe" -RequestPath healthcheck.aspx -Protocol http -Port 80 -IntervalInSeconds 15 -ProbeCount 2
+PS C:\> $lbrule = New-AzLoadBalancerRuleConfig -Name "MyLBruleName" -FrontendIPConfiguration $frontend -BackendAddressPool $backendAddressPool -Probe $probe -Protocol Tcp -FrontendPort 80 -BackendPort 80 -IdleTimeoutInMinutes 15 -EnableFloatingIP -LoadDistribution SourceIP -DisableOutboundSNAT
+PS C:\> lb = New-AzLoadBalancer -Name "MyLoadBalancer" -ResourceGroupName "MyResourceGroup" -Location "West US" -FrontendIpConfiguration $frontend -BackendAddressPool $backendAddressPool -Probe $probe -LoadBalancingRule $lbrule -Sku Standard -Tier Global        
+PS C:\> Get-AzLoadBalancer -Name "MyLoadBalancer" -ResourceGroupName "MyResourceGroup"
+```
+
+<span data-ttu-id="ca1fc-115">Wdrożenie globalnego równoważenia obciążenia wymaga utworzenia najpierw kilku obiektów, a pierwsze pięć poleceń pokazuje sposób tworzenia tych obiektów.</span><span class="sxs-lookup"><span data-stu-id="ca1fc-115">Deploying a global load balancer requires that you first create several objects, and the first five commands show how to create those objects.</span></span>
+<span data-ttu-id="ca1fc-116">Szóste polecenie tworzy w grupie zasobów o nazwie MyResourceGroup równoważenie obciążenia o nazwie MyLoadBalancer.</span><span class="sxs-lookup"><span data-stu-id="ca1fc-116">The sixth command creates a load balancer named MyLoadBalancer in the resource group named MyResourceGroup.</span></span>
+<span data-ttu-id="ca1fc-117">Siódme i ostatnie polecenie pobiera nowe polecenie równoważenia obciążenia, aby upewnić się, że zostało ono pomyślnie utworzone.</span><span class="sxs-lookup"><span data-stu-id="ca1fc-117">The seventh and last command gets the new load balancer to ensure it was successfully created.</span></span>
+<span data-ttu-id="ca1fc-118">W tym przykładzie pokazano tylko, jak utworzyć globalne równoważenie obciążenia.</span><span class="sxs-lookup"><span data-stu-id="ca1fc-118">Note that this example only shows how to create a global load balancer.</span></span> <span data-ttu-id="ca1fc-119">Musisz również skonfigurować go przy użyciu polecenia cmdlet New-AzLoadBalancerBackendAddressConfig, aby przypisać identyfikatory frontendu ipconfig programu Regional Load Balancer do puli adresów zaplecza</span><span class="sxs-lookup"><span data-stu-id="ca1fc-119">You must also configure it using the New-AzLoadBalancerBackendAddressConfig cmdlet to assign regional load balancer frontend ipconfig ids to its backend address pool</span></span>
+
+## <span data-ttu-id="ca1fc-120">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="ca1fc-120">PARAMETERS</span></span>
+
+### <span data-ttu-id="ca1fc-121">— AsJob</span><span class="sxs-lookup"><span data-stu-id="ca1fc-121">-AsJob</span></span>
+<span data-ttu-id="ca1fc-122">Uruchamianie polecenia cmdlet w tle</span><span class="sxs-lookup"><span data-stu-id="ca1fc-122">Run cmdlet in the background</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ca1fc-123">-BackendAddressPool</span><span class="sxs-lookup"><span data-stu-id="ca1fc-123">-BackendAddressPool</span></span>
+<span data-ttu-id="ca1fc-124">Określa pulę adresów zaplecza do skojarzenia z równoważeniem obciążenia.</span><span class="sxs-lookup"><span data-stu-id="ca1fc-124">Specifies a backend address pool to associate with a load balancer.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSBackendAddressPool[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ca1fc-125">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="ca1fc-125">-DefaultProfile</span></span>
+<span data-ttu-id="ca1fc-126">Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.</span><span class="sxs-lookup"><span data-stu-id="ca1fc-126">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ca1fc-127">— Wymuszanie</span><span class="sxs-lookup"><span data-stu-id="ca1fc-127">-Force</span></span>
+<span data-ttu-id="ca1fc-128">Wskazuje, że to polecenie cmdlet tworzy równoważenie obciążenia, nawet jeśli już istnieje równoważenie obciążenia o tej samej nazwie.</span><span class="sxs-lookup"><span data-stu-id="ca1fc-128">Indicates that this cmdlet creates a load balancer even if a load balancer with the same name already exists.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ca1fc-129">- FrontendIpConfiguration</span><span class="sxs-lookup"><span data-stu-id="ca1fc-129">-FrontendIpConfiguration</span></span>
+<span data-ttu-id="ca1fc-130">Określa listę frontowych adresów IP do skojarzenia z równoważeniem obciążenia.</span><span class="sxs-lookup"><span data-stu-id="ca1fc-130">Specifies a list of front-end IP addresses to associate with a load balancer.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSFrontendIPConfiguration[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ca1fc-131">-InboundNatPool</span><span class="sxs-lookup"><span data-stu-id="ca1fc-131">-InboundNatPool</span></span>
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSInboundNatPool[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ca1fc-132">-InboundNatRule</span><span class="sxs-lookup"><span data-stu-id="ca1fc-132">-InboundNatRule</span></span>
+<span data-ttu-id="ca1fc-133">Określa listę przychodzących reguł translacji adresów sieciowych (NAT) do skojarzenia z równoważeniem obciążenia.</span><span class="sxs-lookup"><span data-stu-id="ca1fc-133">Specifies a list of inbound network address translation (NAT) rules to associate with a load balancer.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSInboundNatRule[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ca1fc-134">-LoadBalancingRule</span><span class="sxs-lookup"><span data-stu-id="ca1fc-134">-LoadBalancingRule</span></span>
+<span data-ttu-id="ca1fc-135">Określa listę reguł równoważenia obciążenia do skojarzenia z równoważeniem obciążenia.</span><span class="sxs-lookup"><span data-stu-id="ca1fc-135">Specifies a list of load balancing rules to associate with a load balancer.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSLoadBalancingRule[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ca1fc-136">— Lokalizacja</span><span class="sxs-lookup"><span data-stu-id="ca1fc-136">-Location</span></span>
+<span data-ttu-id="ca1fc-137">Określa region, w którym ma być tworzyć równoważenie obciążenia.</span><span class="sxs-lookup"><span data-stu-id="ca1fc-137">Specifies the region in which to create a load balancer.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ca1fc-138">— Nazwa</span><span class="sxs-lookup"><span data-stu-id="ca1fc-138">-Name</span></span>
+<span data-ttu-id="ca1fc-139">Określa nazwę tego urządzenia do równoważenia obciążenia.</span><span class="sxs-lookup"><span data-stu-id="ca1fc-139">Specifies the name of the load balancer that this creates.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: ResourceName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ca1fc-140">-OutboundRule</span><span class="sxs-lookup"><span data-stu-id="ca1fc-140">-OutboundRule</span></span>
+<span data-ttu-id="ca1fc-141">Reguły ruchu wychodzącego.</span><span class="sxs-lookup"><span data-stu-id="ca1fc-141">The outbound rules.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSOutboundRule[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ca1fc-142">— Dor.</span><span class="sxs-lookup"><span data-stu-id="ca1fc-142">-Probe</span></span>
+<span data-ttu-id="ca1fc-143">Określa listę kontaktów do skojarzenia z równoważeniem obciążenia.</span><span class="sxs-lookup"><span data-stu-id="ca1fc-143">Specifies a list of probes to associate with a load balancer.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSProbe[]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ca1fc-144">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="ca1fc-144">-ResourceGroupName</span></span>
+<span data-ttu-id="ca1fc-145">Określa nazwę grupy zasobów, w której ma być tworzyć równoważenie obciążenia.</span><span class="sxs-lookup"><span data-stu-id="ca1fc-145">Specifies the name of the resource group in which to create a load balancer.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ca1fc-146">- SKU</span><span class="sxs-lookup"><span data-stu-id="ca1fc-146">-Sku</span></span>
+<span data-ttu-id="ca1fc-147">Nazwa sku równoważenia obciążenia.</span><span class="sxs-lookup"><span data-stu-id="ca1fc-147">The load balancer Sku name.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ca1fc-148">— Tag</span><span class="sxs-lookup"><span data-stu-id="ca1fc-148">-Tag</span></span>
+<span data-ttu-id="ca1fc-149">Pary klucz-wartość w postaci tabeli skrótu.</span><span class="sxs-lookup"><span data-stu-id="ca1fc-149">Key-value pairs in the form of a hash table.</span></span> <span data-ttu-id="ca1fc-150">Na przykład: @{key0="value0";key1=$null;key2="wartość2"}</span><span class="sxs-lookup"><span data-stu-id="ca1fc-150">For example: @{key0="value0";key1=$null;key2="value2"}</span></span>
+
+```yaml
+Type: System.Collections.Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ca1fc-151">- Warstwa</span><span class="sxs-lookup"><span data-stu-id="ca1fc-151">-Tier</span></span>
+<span data-ttu-id="ca1fc-152">Warstwa SKU równoważenia obciążenia.</span><span class="sxs-lookup"><span data-stu-id="ca1fc-152">The load balancer Sku Tier.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ca1fc-153">— Potwierdź</span><span class="sxs-lookup"><span data-stu-id="ca1fc-153">-Confirm</span></span>
+<span data-ttu-id="ca1fc-154">Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.</span><span class="sxs-lookup"><span data-stu-id="ca1fc-154">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ca1fc-155">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="ca1fc-155">-WhatIf</span></span>
+<span data-ttu-id="ca1fc-156">Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet.</span><span class="sxs-lookup"><span data-stu-id="ca1fc-156">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="ca1fc-157">Polecenie cmdlet nie zostanie uruchomione.</span><span class="sxs-lookup"><span data-stu-id="ca1fc-157">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="ca1fc-158">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="ca1fc-158">CommonParameters</span></span>
+<span data-ttu-id="ca1fc-159">To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="ca1fc-159">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="ca1fc-160">Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="ca1fc-160">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="ca1fc-161">DANE WEJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="ca1fc-161">INPUTS</span></span>
+
+### <span data-ttu-id="ca1fc-162">System.String</span><span class="sxs-lookup"><span data-stu-id="ca1fc-162">System.String</span></span>
+
+### <span data-ttu-id="ca1fc-163">System.Collections.Hashtable</span><span class="sxs-lookup"><span data-stu-id="ca1fc-163">System.Collections.Hashtable</span></span>
+
+### <span data-ttu-id="ca1fc-164">Microsoft.Azure.Commands.Network.Models.PSFrontendIPConfiguration[]</span><span class="sxs-lookup"><span data-stu-id="ca1fc-164">Microsoft.Azure.Commands.Network.Models.PSFrontendIPConfiguration[]</span></span>
+
+### <span data-ttu-id="ca1fc-165">Microsoft.Azure.Commands.Network.Models.PSBackendAddressPool[]</span><span class="sxs-lookup"><span data-stu-id="ca1fc-165">Microsoft.Azure.Commands.Network.Models.PSBackendAddressPool[]</span></span>
+
+### <span data-ttu-id="ca1fc-166">Microsoft.Azure.Commands.Network.Models.PSLoadBalancingRule[]</span><span class="sxs-lookup"><span data-stu-id="ca1fc-166">Microsoft.Azure.Commands.Network.Models.PSLoadBalancingRule[]</span></span>
+
+### <span data-ttu-id="ca1fc-167">Microsoft.Azure.Commands.Network.Models.PSProbe[]</span><span class="sxs-lookup"><span data-stu-id="ca1fc-167">Microsoft.Azure.Commands.Network.Models.PSProbe[]</span></span>
+
+### <span data-ttu-id="ca1fc-168">Microsoft.Azure.Commands.Network.Models.PSInboundNatRule[]</span><span class="sxs-lookup"><span data-stu-id="ca1fc-168">Microsoft.Azure.Commands.Network.Models.PSInboundNatRule[]</span></span>
+
+### <span data-ttu-id="ca1fc-169">Microsoft.Azure.Commands.Network.Models.PSInboundNatPool[]</span><span class="sxs-lookup"><span data-stu-id="ca1fc-169">Microsoft.Azure.Commands.Network.Models.PSInboundNatPool[]</span></span>
+
+### <span data-ttu-id="ca1fc-170">Microsoft.Azure.Commands.Network.Models.PSOutboundRule[]</span><span class="sxs-lookup"><span data-stu-id="ca1fc-170">Microsoft.Azure.Commands.Network.Models.PSOutboundRule[]</span></span>
+
+## <span data-ttu-id="ca1fc-171">OUTPUTS</span><span class="sxs-lookup"><span data-stu-id="ca1fc-171">OUTPUTS</span></span>
+
+### <span data-ttu-id="ca1fc-172">Microsoft.Azure.Commands.Network.Models.PSLoadBalancer</span><span class="sxs-lookup"><span data-stu-id="ca1fc-172">Microsoft.Azure.Commands.Network.Models.PSLoadBalancer</span></span>
+
+## <span data-ttu-id="ca1fc-173">NOTATKI</span><span class="sxs-lookup"><span data-stu-id="ca1fc-173">NOTES</span></span>
+
+## <span data-ttu-id="ca1fc-174">LINKI POKREWNE</span><span class="sxs-lookup"><span data-stu-id="ca1fc-174">RELATED LINKS</span></span>
+
+[<span data-ttu-id="ca1fc-175">Add-AzNetworkInterfaceIpConfig</span><span class="sxs-lookup"><span data-stu-id="ca1fc-175">Add-AzNetworkInterfaceIpConfig</span></span>](./Add-AzNetworkInterfaceIpConfig.md)
+
+[<span data-ttu-id="ca1fc-176">Get-AzLoadBalancer</span><span class="sxs-lookup"><span data-stu-id="ca1fc-176">Get-AzLoadBalancer</span></span>](./Get-AzLoadBalancer.md)
+
+[<span data-ttu-id="ca1fc-177">Remove-AzLoadBalancer</span><span class="sxs-lookup"><span data-stu-id="ca1fc-177">Remove-AzLoadBalancer</span></span>](./Remove-AzLoadBalancer.md)
+
+[<span data-ttu-id="ca1fc-178">Set-AzLoadBalancer</span><span class="sxs-lookup"><span data-stu-id="ca1fc-178">Set-AzLoadBalancer</span></span>](./Set-AzLoadBalancer.md)
