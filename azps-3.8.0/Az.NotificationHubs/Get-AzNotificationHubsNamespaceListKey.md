@@ -6,45 +6,45 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.notificati
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Get-AzNotificationHubsNamespaceListKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Get-AzNotificationHubsNamespaceListKey.md
-ms.openlocfilehash: 90e617f35442470cef2d11c2de032679698ea167
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 5244602a6b6266ebabf02bbb927facda93e61d8b
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93895849"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100403803"
 ---
 # Get-AzNotificationHubsNamespaceListKey
 
-## STRESZCZENIe
-Pobiera parametry połączenia podstawowego i pomocniczego skojarzone z regułą autoryzacji obszaru nazw centrum powiadomień.
+## SYNOPSIS
+Pobiera podstawowe i pomocnicze parametry połączenia skojarzone z regułą autoryzacji przestrzeni nazw centrum powiadomień.
 
-## POLECENIA
+## SKŁADNIA
 
 ```
 Get-AzNotificationHubsNamespaceListKey [-ResourceGroup] <String> [-Namespace] <String>
  [-AuthorizationRule] <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **Get-AzNotificationHubsNamespaceListKey** zwraca podstawowe i pomocnicze ciągi połączeń dla reguły autoryzacji podpisu dostępu współużytkowanego (SAS) przypisanej do obszaru nazw centrum powiadomień.
-Reguły autoryzacji Zarządzaj prawami użytkownika w obszarze nazw centrum powiadomień.
-Każda reguła zawiera parametry połączenia podstawowego i pomocniczego.
+## OPIS
+Polecenie **cmdlet Get-AzNotificationHubsNamespaceListKey** zwraca podstawowe i pomocnicze parametry połączenia dla reguły autoryzacji sas (Shared Access Signature) przypisanej do przestrzeni nazw centrum powiadomień.
+Reguły autoryzacji zarządzają prawami użytkowników do przestrzeni nazw centrum powiadomień.
+Każda reguła zawiera podstawowy i pomocniczy ciąg połączenia.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1: uzyskiwanie ciągów połączenia podstawowego i pomocniczego dla reguły autoryzacji
+### Przykład 1. Uzyskiwanie podstawowych i pomocniczych ciągów połączenia dla reguły autoryzacji
 ```
 PS C:\>Get-AzNotificationHubsNamespaceListKey -Namespace "ContosoNamespace" -ResourceGroup "ContosoNotificationsGroup" -AuthorizationRule "ListenRule"
 ```
 
-To polecenie zwraca podstawowe i pomocnicze parametry połączenia dla reguły autoryzacji o nazwie ListenRule przypisanej do przestrzeni nazw ContosoNamespace.
-Po uruchomieniu tego polecenia musisz dołączyć nazwę grupy zasobów, do której jest przypisany obszar nazw.
+To polecenie zwraca podstawowe i pomocnicze ciągi połączeń reguły autoryzacji o nazwie ListenRule przypisanej do przestrzeni nazw ContosoNamespace.
+Po uruchomieniu tego polecenia musisz podać nazwę grupy zasobów, do których jest przypisana przestrzeń nazw.
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -AuthorizationRule
 Określa nazwę reguły uwierzytelniania SAS.
-Te reguły określają typ dostępu do centrum powiadomień.
+Te reguły określają typ dostępu użytkowników do Centrum powiadomień.
 
 ```yaml
 Type: System.String
@@ -59,7 +59,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -73,8 +73,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Namespace
-Określa obszar nazw zawierający parametry połączenia, które są pobierane przez to polecenie cmdlet.
+### —Przestrzeń nazw
+Określa przestrzeń nazw zawierającą ciągi połączeń, które otrzymuje to polecenie cmdlet.
 
 ```yaml
 Type: System.String
@@ -88,9 +88,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -ResourceName
-Określa grupę zasobów, do której przypisano obszar nazw.
-Grupy zasobów organizują elementy, takie jak obszary nazw, Centra powiadomień i reguły autoryzacji, w sposób umożliwiający łatwe zarządzanie zapasami i administrowanie systemem Azure.
+### -ResourceGroup
+Określa grupę zasobów, do której jest przypisana przestrzeń nazw.
+Grupy zasobów organizują elementy, takie jak przestrzenie nazw, centra powiadomień i reguły autoryzacji, w sposób ułatwiający po prostu zarządzanie zapasami i administrowanie platformą Azure.
 
 ```yaml
 Type: System.String
@@ -105,22 +105,21 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### System. String
+### System.String
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### Microsoft. Azure. Management. NotificationHubs. MODELES. ResourceListKeys
+### Microsoft.Azure.Management.NotificationHubs.Models.ResourceListKeys
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
 [Get-AzNotificationHubsNamespace](./Get-AzNotificationHubsNamespace.md)
 
-[Get-AzNotificationHubsNamespaceAuthorizationRules](./Get-AzNotificationHubsNamespaceAuthorizationRules.md)
 
 

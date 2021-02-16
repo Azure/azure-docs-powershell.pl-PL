@@ -1,54 +1,63 @@
 ---
 external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
 Module Name: Az.Network
-online version: https://docs.microsoft.com/en-us/powershell/module/az.network/remove-aznetworkwatcherpacketcapture
+online version: https://docs.microsoft.com/en-us/powershell/module/az.network/remove-aznetworkwatcherflowlog
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzNetworkWatcherPacketCapture.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzNetworkWatcherPacketCapture.md
-ms.openlocfilehash: d6d11590699b52bb7245222ddaa01fbc42938d22
-ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzNetworkWatcherFlowLog.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzNetworkWatcherFlowLog.md
+ms.openlocfilehash: 9906af7da12f76650ebbe45ff764da78c90ef340
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100414003"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100193482"
 ---
-# Remove-AzNetworkWatcherPacketCapture
+# Remove-AzNetworkWatcherFlowLog
 
 ## SYNOPSIS
-Usuwa zasób przechwytywania pakietów.
+Usuwa określony zasób dziennika przepływów.
 
 ## SKŁADNIA
 
-### SetByResource (Domyślne)
+### SetByName (Domyślna)
 ```
-Remove-AzNetworkWatcherPacketCapture -NetworkWatcher <PSNetworkWatcher> -PacketCaptureName <String> [-PassThru]
- [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Remove-AzNetworkWatcherFlowLog -NetworkWatcherName <String> -ResourceGroupName <String> -Name <String>
+ [-PassThru] [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### SetByName
+### SetByResource
 ```
-Remove-AzNetworkWatcherPacketCapture -NetworkWatcherName <String> -ResourceGroupName <String>
- -PacketCaptureName <String> [-PassThru] [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
- [-Confirm] [<CommonParameters>]
+Remove-AzNetworkWatcherFlowLog -NetworkWatcher <PSNetworkWatcher> -Name <String> [-PassThru] [-AsJob]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### SetByLocation
 ```
-Remove-AzNetworkWatcherPacketCapture -Location <String> -PacketCaptureName <String> [-PassThru] [-AsJob]
+Remove-AzNetworkWatcherFlowLog -Location <String> -Name <String> [-PassThru] [-AsJob]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### SetByResourceId
+```
+Remove-AzNetworkWatcherFlowLog -ResourceId <String> [-PassThru] [-AsJob]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### SetByInputObject
+```
+Remove-AzNetworkWatcherFlowLog -InputObject <PSFlowLogResource> [-PassThru] [-AsJob]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## OPIS
-Ta Remove-AzNetworkWatcherPacketCapture usuwa zasób przechwytywania pakietów. Zalecane jest dzwonienie do Stop-AzNetworkWatcherPacketCapture przed wywołaniem funkcji Remove-AzNetworkWatcherPacketCapture. Jeśli sesja przechwytywania pakietów jest uruchomiona, Remove-AzNetworkWatcherPacketCapture nazywana przechwytywanie pakietów może nie zostać zapisana. Jeśli sesja została zatrzymana przed usunięciem pliku cap zawierającego przechwycone dane, nie zostanie usunięty. 
+Usuwa określony zasób dziennika przepływów.
 
 ## PRZYKŁADY
 
-### Przykład 1. Usuwanie sesji przechwytywania pakietów
+### Przykład 1
+```powershell
+PS C:\> Remove-AzNetworkWatcherFlowLog -Location eastus -Name pstest
 ```
-Remove-AzNetworkWatcherPacketCapture -NetworkWatcher $networkWatcher -PacketCaptureName "PacketCaptureTest"
-```
-
-W tym przykładzie usuwamy istniejącą sesję przechwytywania pakietów o nazwie "PacketCaptureTest".
 
 ## PARAMETERS
 
@@ -56,7 +65,7 @@ W tym przykładzie usuwamy istniejącą sesję przechwytywania pakietów o nazwi
 Uruchamianie polecenia cmdlet w tle
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
@@ -71,7 +80,7 @@ Accept wildcard characters: False
 Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Type: IAzureContextContainer
 Parameter Sets: (All)
 Aliases: AzContext, AzureRmContext, AzureCredential
 
@@ -82,11 +91,26 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -InputObject
+Obiekt dziennika przepływu.
+
+```yaml
+Type: PSFlowLogResource
+Parameter Sets: SetByInputObject
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
 ### — Lokalizacja
 Lokalizacja czujki sieci.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: SetByLocation
 Aliases:
 
@@ -97,11 +121,26 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### — NetworkWatcher
+### — Nazwa
+Nazwa dziennika przepływów.
+
+```yaml
+Type: String
+Parameter Sets: SetByName, SetByResource, SetByLocation
+Aliases: FlowLogName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### - NetworkWatcher
 Zasób obserwowania sieci.
 
 ```yaml
-Type: Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
+Type: PSNetworkWatcher
 Parameter Sets: SetByResource
 Aliases:
 
@@ -116,43 +155,28 @@ Accept wildcard characters: False
 Nazwa osoby oglądacej sieć.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: SetByName
-Aliases: Name
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
-### -PacketCaptureName
-Nazwa przechwytywania pakietów.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: True (ByPropertyName)
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### -PassThru
-Zwraca obiekt reprezentujący element, z którym pracujesz.
+{{ Fill PassThru Description }}
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases:
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -161,8 +185,23 @@ Accept wildcard characters: False
 Nazwa grupy zasobów obserwowanych sieci.
 
 ```yaml
-Type: System.String
+Type: String
 Parameter Sets: SetByName
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceId
+Identyfikator zasobu.
+
+```yaml
+Type: String
+Parameter Sets: SetByResourceId
 Aliases:
 
 Required: True
@@ -176,13 +215,13 @@ Accept wildcard characters: False
 Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: cf
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -192,19 +231,19 @@ Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet.
 Polecenie cmdlet nie zostanie uruchomione.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
+Type: SwitchParameter
 Parameter Sets: (All)
 Aliases: wi
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## DANE WEJŚCIOWE
 
@@ -212,12 +251,13 @@ To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVar
 
 ### System.String
 
-## DANE WYJŚCIOWE
+### Microsoft.Azure.Commands.Network.Models.PSFlowLogResource
+
+## OUTPUTS
 
 ### System.Boolean
 
 ## NOTATKI
-Słowa kluczowe: azure, azurerm, arm, resource, management, manager, network, networking, network watcher, packet, capture, traffic, remove
 
 ## LINKI POKREWNE
 
@@ -273,4 +313,10 @@ Słowa kluczowe: azure, azurerm, arm, resource, management, manager, network, ne
 
 [Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+
+[New-AzNetworkWatcherFlowLog](./New-AzNetworkWatcherFlowLog.md)
+
+[Set-AzNetworkWatcherFlowLog](./Set-AzNetworkWatcherFlowLog.md)
+
+[Get-AzNetworkWatcherFlowLog](./Get-AzNetworkWatcherFlowLog)

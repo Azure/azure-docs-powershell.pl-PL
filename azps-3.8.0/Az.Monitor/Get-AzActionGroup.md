@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzActionGroup.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzActionGroup.md
-ms.openlocfilehash: c297198a1e49b93d498c136d1cb099d2068d24db
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 90bd9c7943e6e788d81f8ddec85513676afade23
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94053972"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100414037"
 ---
 # Get-AzActionGroup
 
-## STRESZCZENIe
+## SYNOPSIS
 Pobiera grupy akcji.
 
-## POLECENIA
+## SKŁADNIA
 
-### BySubscriptionOrResourceGroup (domyślny)
+### BySubscriptionOrResourceGroup (Domyślna)
 ```
 Get-AzActionGroup [-ResourceGroupName <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
@@ -31,36 +31,36 @@ Get-AzActionGroup -ResourceGroupName <String> -Name <String> [-DefaultProfile <I
  [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **Get-AzActionGroup umożliwia pobranie** co najmniej jednej grupy akcji.
+## OPIS
+Polecenie **cmdlet Get-AzActionGroup** pobiera jedną lub więcej grup akcji.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1: Uzyskiwanie grupy akcji według identyfikatora subskrypcji
+### Przykład 1. Uzyskiwanie grupy akcji według identyfikatora subskrypcji
 ```
 PS C:\>Get-AzActionGroup
 ```
 
-To polecenie umożliwia wyświetlenie listy wszystkich grup akcji dla bieżącej subskrypcji.
+To polecenie zawiera listę wszystkich grup akcji dla bieżącej subskrypcji.
 
-### Przykład 2: pobieranie grup akcji dla danej grupy zasobów
+### Przykład 2. Uzyskiwanie grup akcji dla danej grupy zasobów
 ```
 PS C:\>Get-AzActionGroup -ResourceGroup "Default-activityLogAlerts"
 ```
 
-To polecenie wyświetla listę grup akcji dla danej grupy zasobów.
+To polecenie zawiera listę grup akcji dla danej grupy zasobów.
 
-### Przykład 3: Uzyskiwanie grupy akcji.
+### Przykład 3. Uzyskiwanie grupy akcji.
 ```
 PS C:\>Get-AzActionGroup -ResourceGroup "Default-activityLogAlerts" -Name "actionGroup1"
 ```
 
-To polecenie wyświetla listę (listę z pojedynczym elementem) grupą akcji.
+To polecenie wyświetla jedną grupę akcji (listę z jednym elementem).
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -74,7 +74,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (nazwa)
+### — Nazwa
 Nazwa grupy akcji.
 
 ```yaml
@@ -117,20 +117,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### System. String
+### System.String
 
-## WYSYŁA
+## OUTPUTS
 
-### Microsoft. Azure. Commands. Insights. OutputClasses. PSActionGroupResource
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupResource
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
 [Set-AzActionGroup](./Set-AzActionGroup.md) 
  [Remove-AzActionGroup](./Remove-AzActionGroup.md) 
- [Nowe — AzActionGroupReceiver](./AzureRmActionGroupReceiver.md)
+ [New-AzActionGroupReceiver](./New-AzActionGroupReceiver.md)
