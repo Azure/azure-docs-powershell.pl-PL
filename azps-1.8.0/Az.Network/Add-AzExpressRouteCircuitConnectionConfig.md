@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ad
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Add-AzExpressRouteCircuitConnectionConfig.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Add-AzExpressRouteCircuitConnectionConfig.md
-ms.openlocfilehash: a3b5b20eac34076dd6a5490a5d9cf1a5e2c49684
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: bc08305d7aa604dd9c7540573ffb5a199e85b287
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93709686"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100402137"
 ---
 # Add-AzExpressRouteCircuitConnectionConfig
 
-## STRESZCZENIe
-Umożliwia dodanie konfiguracji połączenia obwodowego do prywatnych elementów równorzędnych obwodu usługi Express Route. 
+## SYNOPSIS
+Dodaje konfigurację połączenia obwodu do prywatnej komunikacji równorzędnej obwodu trasy expressowej. 
 
-## POLECENIA
+## SKŁADNIA
 
-### SetByResource (domyślny)
+### SetByResource (Default)
 ```
 Add-AzExpressRouteCircuitConnectionConfig [-Name] <String> [-ExpressRouteCircuit] <PSExpressRouteCircuit>
  [-AddressPrefix] <String> [-AuthorizationKey <String>] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
@@ -34,12 +34,12 @@ Add-AzExpressRouteCircuitConnectionConfig [-Name] <String> [-ExpressRouteCircuit
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **Add-AzExpressRouteCircuitConnectionConfig** umożliwia dodanie konfiguracji połączenia obwodowego do prywatnych elementów równorzędnych dla obwodu ExpressRoute. Umożliwia to komunikację równorzędną z dwiema drogami obwodowymi w różnych regionach lub abonamentach. Uwaga: po uruchomieniu polecenia **Add-AzExpressRouteCircuitPeeringConfig** musisz zadzwonić do apletu polecenia cmdlet Set-AzExpressRouteCircuit, aby aktywować konfigurację.
+## OPIS
+Polecenie **cmdlet Add-AzExpressRouteCircuitConnectionConfig** dodaje konfigurację połączenia obwodu do prywatnej komunikacji równorzędnej dla obwodu usługi ExpressRoute. Dzięki temu można komunikacji równorzędnej dwóch obwodów trasy expressowej w regionach lub subskrypcjach. Pamiętaj, że po uruchomieniu dodatku **AzExpressRouteCircuitPeeringConfig** musisz wywołać Set-AzExpressRouteCircuit cmdlet, aby aktywować konfigurację.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1: Dodawanie zasobu połączenia obwodowego do istniejącego obwodu ExpressRoute
+### Przykład 1. Dodawanie zasobu połączenia obwodu do istniejącego obwodu expressRoute
 ```
 $circuit_init = Get-AzExpressRouteCircuit -Name $initiatingCircuitName -ResourceGroupName $rg
 $circuit_peer = Get-AzExpressRouteCircuit -Name $peeringCircuitName -ResourceGroupName $rg
@@ -48,17 +48,17 @@ Add-AzExpressRouteCircuitConnectionConfig -Name $circuitConnectionName -ExpressR
 Set-AzExpressRouteCircuit -ExpressRouteCircuit $circuit_init
 ```
 
-### Przykład 2: Dodawanie konfiguracji połączenia obwodowego przy użyciu połączeń rurowych z istniejącym obwodem ExpressRoute
+### Przykład 2. Dodawanie konfiguracji połączenia obwodu za pomocą połączeń rurowych do istniejącego obwodu usługi ExpressRoute
 ```
 $circuit_peer = Get-AzExpressRouteCircuit -Name $peeringCircuitName -ResourceGroupName $rg
 $addressSpace = '60.0.0.0/29'
 Get-AzExpressRouteCircuit -Name $initiatingCircuitName -ResourceGroupName $rg|Add-AzExpressRouteCircuitConnectionConfig -Name $circuitConnectionName -PeerExpressRouteCircuitPeering $circuit_peer.Peerings[0].Id -AddressPrefix $addressSpace -AuthorizationKey $circuit_peer.Authorizations[0].AuthorizationKey |Set-AzExpressRouteCircuit
 ```
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -AddressPrefix
-Obszar adresów klienta minimum/29, który umożliwia tworzenie tuneli VxLan między drogami obwodowymi Express
+Minimalna /29 przestrzeń adresowa klienta do tworzenia obwodów VxLan między obwodami tras ekspresowych
 
 ```yaml
 Type: System.String
@@ -73,7 +73,7 @@ Accept wildcard characters: False
 ```
 
 ### -AuthorizationKey
-Klucz autoryzacji do obwodu trasy peer Express w innej subskrypcji. Autoryzacja na obwódze równorzędnym można utworzyć przy użyciu istniejących poleceń.
+Klucz autoryzacji do komunikacji równorzędnej obwodu trasy expressowej w innej subskrypcji. Autoryzację w obwodzie komunikacji równorzędnej można utworzyć przy użyciu istniejących poleceń.
 
 ```yaml
 Type: System.String
@@ -88,7 +88,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -103,7 +103,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExpressRouteCircuit
-Obwód ExpressRoute jest modyfikowany. To jest obiekt Azure zwrócony przez polecenie cmdlet **Get-AzExpressRouteCircuit** .
+Zmodyfikowany obwód expressroute. Jest to obiekt platformy Azure zwrócony przez polecenie cmdlet **Get-AzExpressRouteCircuit.**
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuit
@@ -117,8 +117,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Name (nazwa)
-Nazwa zasobu połączenia obwodowego, który ma zostać dodany.
+### — Nazwa
+Nazwa zasobu połączenia obwodu, który ma zostać dodany.
 
 ```yaml
 Type: System.String
@@ -133,7 +133,7 @@ Accept wildcard characters: False
 ```
 
 ### -PeerExpressRouteCircuitPeering
-Identyfikator zasobu dla prywatnego komunikacji równorzędnej obwodu zdalnego, który będzie równorzędny z bieżącym obwodem.
+Identyfikator zasobu dla prywatnej komunikacji równorzędnej obwodu zdalnego, który będzie równorzędny z bieżącym obwodem.
 
 ```yaml
 Type: System.String
@@ -147,8 +147,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Potwierdź
-Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.
+### — Potwierdź
+Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -163,7 +163,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet. Polecenie cmdlet nie jest uruchamiane.
+Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet. Polecenie cmdlet nie zostanie uruchomione.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -178,19 +178,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### Microsoft. Azure. Commands. Network. models. PSExpressRouteCircuit
+### Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuit
 
-### System. String
+### System.String
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### Microsoft. Azure. Commands. Network. models. PSExpressRouteCircuit
+### Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuit
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
@@ -200,9 +200,9 @@ To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariab
 
 [Remove-AzExpressRouteCircuitConnectionConfig](Remove-AzExpressRouteCircuitConnectionConfig.md)
 
-[Set-AzExpressRouteCircuitConnectionConfig](Set-AzExpressRouteCircuitConnectionConfig.md)
 
-[Nowe — AzExpressRouteCircuitConnectionConfig](New-AzExpressRouteCircuitConnectionConfig.md)
+
+
 
 [Set-AzExpressRouteCircuit](Set-AzExpressRouteCircuit.md)
 
