@@ -6,48 +6,48 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzAlertRuleWebhook.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzAlertRuleWebhook.md
-ms.openlocfilehash: aa287095405e48550153e58049f750d78a9ed877
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 1b8d58c6519084db5e679d3087c22adab7c2bef6
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93870412"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100404007"
 ---
 # New-AzAlertRuleWebhook
 
-## STRESZCZENIe
-Tworzy element webhook reguły alertu.
+## SYNOPSIS
+Tworzy webhook reguły alertu.
 
-## POLECENIA
+## SKŁADNIA
 
 ```
 New-AzAlertRuleWebhook [-ServiceUri] <String> [[-Property] <Hashtable>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **New-AzAlertRuleWebhook** tworzy element webhook reguły alertu.
+## OPIS
+Polecenie **cmdlet New-AzAlertRuleWebhook** tworzy webhook reguły alertu.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1: Tworzenie elementu webhook reguły alertu
+### Przykład 1. Tworzenie webhook reguły alertu
 ```
 PS C:\>New-AzAlertRuleWebhook -ServiceUri "http://contoso.com"
 ```
 
-To polecenie tworzy element webhook reguły alertu, określając tylko identyfikator URI usługi.
+To polecenie tworzy webhook reguły alertu przez określenie tylko URI usługi.
 
-### Przykład 2: Tworzenie elementu webhook o jednej właściwości
+### Przykład 2. Tworzenie webhook za pomocą jednej właściwości
 ```
 PS C:\>$Actual = New-AzAlertRuleWebhook -ServiceUri "http://contoso.com" -Property @{prop1 = 'value1'}
 ```
 
-To polecenie tworzy element webhook reguły alertu dla Contoso.com o jednej właściwości, a następnie zapisuje go w zmiennej $Actual.
+To polecenie tworzy webhook reguły alertu dla Contoso.com, który ma jedną właściwość, a następnie zapisuje go w zmiennej $Actual alertu.
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -61,8 +61,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Property
-Określa listę właściwości w formacie @ (Property1 = ' wartość1 ',....).
+### - Właściwość
+Określa listę właściwości w formacie @(właściwość1 = 'wartość1',....).
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -77,7 +77,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceUri
-Określa identyfikator URI usługi.
+Określa URI usługi.
 
 ```yaml
 Type: System.String
@@ -92,30 +92,29 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### System. String
+### System.String
 
-### System. Collections. Hashtable
+### System.Collections.Hashtable
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### Microsoft. Azure. Management. Monitor. Management. models. RuleWebhookAction
+### Microsoft.Azure.Management.Monitor.Management.Models.RuleWebhookAction
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
-[Dodaj-AzLogAlertRule](./Add-AzLogAlertRule.md)
 
-[Dodaj-AzMetricAlertRule](./Add-AzMetricAlertRule.md)
+[Add-AzMetricAlertRule](./Add-AzMetricAlertRule.md)
 
-[Dodaj-AzWebtestAlertRule](./Add-AzWebtestAlertRule.md)
+[Add-AzWebtestAlertRule](./Add-AzWebtestAlertRule.md)
 
-[Nowe — AzAlertRuleEmail](./New-AzAlertRuleEmail.md)
+[New-AzAlertRuleEmail](./New-AzAlertRuleEmail.md)
 
-[Nowe — AzAutoscaleWebhook](./New-AzAutoscaleWebhook.md)
+[New-AzAutoscaleWebhook](./New-AzAutoscaleWebhook.md)
 
 
