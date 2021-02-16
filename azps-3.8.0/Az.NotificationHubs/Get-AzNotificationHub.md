@@ -6,47 +6,47 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.notificati
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Get-AzNotificationHub.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Get-AzNotificationHub.md
-ms.openlocfilehash: 6fc2cfd47d9b03fc02d935245d1ec87d6831d173
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 85dd5d73d2f0f4ce15dcffb2733f803cf6e67c0a
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94053473"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100406285"
 ---
 # Get-AzNotificationHub
 
-## STRESZCZENIe
-Pobiera informacje o koncentratorach powiadomień.
+## SYNOPSIS
+Otrzymuje informacje o Twoich centrach powiadomień.
 
-## POLECENIA
+## SKŁADNIA
 
 ```
 Get-AzNotificationHub [-ResourceGroup] <String> [-Namespace] <String> [[-NotificationHub] <String>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **Get-AzNotificationHub** pobiera informacje o koncentratorach powiadomień w określonym obszarze nazw i przypisano do określonej grupy zasobów.
-Na przykład możesz uzyskać informacje o wszystkich koncentratorach powiadomień w obszarze nazw ContosoNamespace i przypisać je do grupy zasobów ContosoNotificationsGroup.
-Możesz też użyć parametru *NotificationHub* , aby ograniczyć zwracane dane do informacji dotyczących określonego centrum powiadomień.
-Centra powiadomień służą do wysyłania powiadomień wypychanych do wielu klientów niezależnie od platformy, takiej jak iOS, Android, Windows Phone 8 i Windows Store, używanych przez tych klientów.
-Te koncentratory są w przybliżeniu równoważne poszczególnym aplikacjom, a każda z Twoich aplikacji zazwyczaj ma własne centrum powiadomień.
-To polecenie cmdlet pobiera tylko informacje o koncentratorze.
-Potrzebne są inne polecenia cmdlet, takie jak Get-AzNotificationHubAuthorizationRules, get-AzNotificationHubListKeys i Get-AzNotificationHubPNSCredentials, aby uzyskać informacje na temat reguł autoryzacji koncentratora, ciągów połączeń i poświadczeń usługi powiadamiania o platformie.
+## OPIS
+Polecenie **cmdlet Get-AzNotificationHub** pobiera informacje o centrach powiadomień w określonej przestrzeni nazw i przypisuje je do określonej grupy zasobów.
+Możesz na przykład uzyskać informacje dla wszystkich centrum powiadomień w przestrzeni nazw ContosoNamespace i przypisać je do grupy zasobów ContosoNotificationsGroup.
+Możesz również użyć parametru *NotificationHub,* aby ograniczyć zwracane dane do informacji o określonym centrum powiadomień.
+Centra powiadomień są używane do wysyłania powiadomień wypychanych do wielu klientów, niezależnie od platformy, takiej jak systemy iOS, Android, Windows Phone 8 i Sklep Windows, używane przez tych klientów.
+Te centra są mniej więcej równoważne poszczególnym aplikacjom, a każda z nich ma zazwyczaj własne centrum powiadomień.
+To polecenie cmdlet pobiera tylko informacje o samym centrum.
+Inne polecenia cmdlet, takie jak Get-AzNotificationHubAuthorizationRules, Get-AzNotificationHubListKeys i Get-AzNotificationHubPNSCredentials, są potrzebne do uzyskania informacji o zasadach autoryzacji centrum, ciągach połączeń i poświadczeniach usługi powiadomień platformy.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1: uzyskiwanie informacji o wszystkich koncentratorach powiadomień w określonym obszarze nazw
+### Przykład 1. Uzyskiwanie informacji dla wszystkich centrum powiadomień w określonej przestrzeni nazw
 ```
 PS C:\>Get-AzNotificationHub -Namespace "ContosoNamespace" -ResourceGroup "ContosoNotificationsGroup"
 ```
 
-To polecenie pobiera informacje dotyczące wszystkich koncentratorów powiadomień w przestrzeni nazw o nazwie ContosoNamespace, które zostały przypisane do grupy zasobów ContosoNotificationsGroup.
+To polecenie pobiera informacje dla wszystkich centrum powiadomień w przestrzeni nazw o nazwie ContosoNamespace, które zostały przypisane do grupy zasobów ContosoNotificationsGroup.
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -60,9 +60,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Namespace
-Określa obszar nazw, do którego jest przypisany centrum powiadomień.
-Obszary nazw umożliwiają grupowanie i kategoryzowanie koncentratorów powiadomień.
+### —Przestrzeń nazw
+Określa przestrzeń nazw, do której jest przypisane centrum powiadomień.
+Przestrzenie nazw zapewniają sposób grupowania i kategoryzowania centrum powiadomień.
 
 ```yaml
 Type: System.String
@@ -76,9 +76,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -NotificationHub
-Określa nazwę centrum powiadomień, które ma być pobierane przez to polecenie cmdlet.
-Centra powiadomień służą do wysyłania powiadomień wypychanych do wielu klientów niezależnie od platformy używanej przez tych klientów.
+### - NotificationHub
+Określa nazwę centrum powiadomień, do których otrzymuje to polecenie cmdlet.
+Centra powiadomień są używane do wysyłania powiadomień wypychanych do wielu klientów bez względu na platformę używaną przez tych klientów.
 
 ```yaml
 Type: System.String
@@ -92,9 +92,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -ResourceName
-Określa grupę zasobów, do której jest przypisany centrum powiadomień.
-Grupy zasobów organizują elementy, takie jak obszary nazw, Centra powiadomień i reguły autoryzacji, w sposób umożliwiający łatwe zarządzanie zapasami i administrowanie systemem Azure.
+### - ResourceGroup
+Określa grupę zasobów, do której jest przypisane centrum powiadomień.
+Grupy zasobów organizują elementy, takie jak przestrzenie nazw, centra powiadomień i reguły autoryzacji, w sposób ułatwiający po prostu zarządzanie zapasami i administrowanie platformą Azure.
 
 ```yaml
 Type: System.String
@@ -109,27 +109,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### System. String
+### System.String
 
-## WYSYŁA
+## OUTPUTS
 
-### Microsoft. Azure. Commands. NotificationHubs. models. NotificationHubAttributes
+### Microsoft.Azure.Commands.NotificationHubs.Models.NotificationHubAttributes
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
-[Get-AzNotificationHubAuthorizationRules](./Get-AzNotificationHubAuthorizationRules.md)
 
-[Get-AzNotificationHubListKeys](./Get-AzNotificationHubListKeys.md)
 
-[Get-AzNotificationHubPNSCredentials](./Get-AzNotificationHubPNSCredentials.md)
 
-[Nowe — AzNotificationHub](./New-AzNotificationHub.md)
+[New-AzNotificationHub](./New-AzNotificationHub.md)
 
 [Remove-AzNotificationHub](./Remove-AzNotificationHub.md)
 
