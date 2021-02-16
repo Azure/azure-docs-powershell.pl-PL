@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.frontdoor/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/New-AzFrontDoorWafCustomRuleObject.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/FrontDoor/FrontDoor/help/New-AzFrontDoorWafCustomRuleObject.md
-ms.openlocfilehash: d352f70d28b9bfafae46697fb6d69dc50c739b19
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 4612f1ef1dac22d87b6794e35f9541a39f6312ea
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94052804"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100403990"
 ---
-# <span data-ttu-id="c12bd-101">New-AzFrontDoorWafCustomRuleObject</span><span class="sxs-lookup"><span data-stu-id="c12bd-101">New-AzFrontDoorWafCustomRuleObject</span></span>
+# <span data-ttu-id="e3588-101">New-AzFrontDoorWafCustomRuleObject</span><span class="sxs-lookup"><span data-stu-id="e3588-101">New-AzFrontDoorWafCustomRuleObject</span></span>
 
-## <span data-ttu-id="c12bd-102">STRESZCZENIe</span><span class="sxs-lookup"><span data-stu-id="c12bd-102">SYNOPSIS</span></span>
-<span data-ttu-id="c12bd-103">Tworzenie obiektu CustomRule do tworzenia zasad WAF</span><span class="sxs-lookup"><span data-stu-id="c12bd-103">Create CustomRule Object for WAF policy creation</span></span>
+## <span data-ttu-id="e3588-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="e3588-102">SYNOPSIS</span></span>
+<span data-ttu-id="e3588-103">Tworzenie obiektu CustomRule do tworzenia zasad WAF</span><span class="sxs-lookup"><span data-stu-id="e3588-103">Create CustomRule Object for WAF policy creation</span></span>
 
-## <span data-ttu-id="c12bd-104">POLECENIA</span><span class="sxs-lookup"><span data-stu-id="c12bd-104">SYNTAX</span></span>
+## <span data-ttu-id="e3588-104">SKŁADNIA</span><span class="sxs-lookup"><span data-stu-id="e3588-104">SYNTAX</span></span>
 
 ```
 New-AzFrontDoorWafCustomRuleObject -Name <String> -RuleType <String> -MatchCondition <PSMatchCondition[]>
@@ -25,12 +25,12 @@ New-AzFrontDoorWafCustomRuleObject -Name <String> -RuleType <String> -MatchCondi
  [-EnabledState <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="c12bd-105">Opis</span><span class="sxs-lookup"><span data-stu-id="c12bd-105">DESCRIPTION</span></span>
-<span data-ttu-id="c12bd-106">Tworzenie obiektu CustomRule do tworzenia zasad WAF</span><span class="sxs-lookup"><span data-stu-id="c12bd-106">Create CustomRule Object for WAF policy creation</span></span>
+## <span data-ttu-id="e3588-105">OPIS</span><span class="sxs-lookup"><span data-stu-id="e3588-105">DESCRIPTION</span></span>
+<span data-ttu-id="e3588-106">Tworzenie obiektu CustomRule do tworzenia zasad WAF</span><span class="sxs-lookup"><span data-stu-id="e3588-106">Create CustomRule Object for WAF policy creation</span></span>
 
-## <span data-ttu-id="c12bd-107">Przykłady</span><span class="sxs-lookup"><span data-stu-id="c12bd-107">EXAMPLES</span></span>
+## <span data-ttu-id="e3588-107">PRZYKŁADY</span><span class="sxs-lookup"><span data-stu-id="e3588-107">EXAMPLES</span></span>
 
-### <span data-ttu-id="c12bd-108">Przykład 1</span><span class="sxs-lookup"><span data-stu-id="c12bd-108">Example 1</span></span>
+### <span data-ttu-id="e3588-108">Przykład 1</span><span class="sxs-lookup"><span data-stu-id="e3588-108">Example 1</span></span>
 ```powershell
 PS C:\> New-AzFrontDoorWafCustomRuleObject -Name "Rule1" -RuleType MatchRule -MatchCondition $matchCondition1 -Action Block -Priority 2
 
@@ -39,13 +39,13 @@ Name   RuleType Action Priority RateLimitDurationInMinutes
 Rule1 MatchRule  Block        2                          1
 ```
 
-<span data-ttu-id="c12bd-109">Tworzenie obiektu CustomRule</span><span class="sxs-lookup"><span data-stu-id="c12bd-109">Create a CustomRule Object</span></span>
+<span data-ttu-id="e3588-109">Tworzenie obiektu CustomRule</span><span class="sxs-lookup"><span data-stu-id="e3588-109">Create a CustomRule Object</span></span>
 
-## <span data-ttu-id="c12bd-110">PARAMETRÓW</span><span class="sxs-lookup"><span data-stu-id="c12bd-110">PARAMETERS</span></span>
+## <span data-ttu-id="e3588-110">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="e3588-110">PARAMETERS</span></span>
 
-### <span data-ttu-id="c12bd-111">-Action</span><span class="sxs-lookup"><span data-stu-id="c12bd-111">-Action</span></span>
-<span data-ttu-id="c12bd-112">Typ akcji.</span><span class="sxs-lookup"><span data-stu-id="c12bd-112">Type of Actions.</span></span>
-<span data-ttu-id="c12bd-113">Możliwe wartości obejmują: "dozwolone", "Zablokuj", "log".</span><span class="sxs-lookup"><span data-stu-id="c12bd-113">Possible values include: 'Allow', 'Block', 'Log'</span></span>
+### <span data-ttu-id="e3588-111">— akcja</span><span class="sxs-lookup"><span data-stu-id="e3588-111">-Action</span></span>
+<span data-ttu-id="e3588-112">Typ akcji.</span><span class="sxs-lookup"><span data-stu-id="e3588-112">Type of Actions.</span></span>
+<span data-ttu-id="e3588-113">Możliwe wartości: "Zezwalaj", "Blok", "Dziennik"</span><span class="sxs-lookup"><span data-stu-id="e3588-113">Possible values include: 'Allow', 'Block', 'Log'</span></span>
 
 ```yaml
 Type: System.String
@@ -59,8 +59,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="c12bd-114">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="c12bd-114">-DefaultProfile</span></span>
-<span data-ttu-id="c12bd-115">Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.</span><span class="sxs-lookup"><span data-stu-id="c12bd-115">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+### <span data-ttu-id="e3588-114">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="e3588-114">-DefaultProfile</span></span>
+<span data-ttu-id="e3588-115">Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.</span><span class="sxs-lookup"><span data-stu-id="e3588-115">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -74,8 +74,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="c12bd-116">-EnabledState</span><span class="sxs-lookup"><span data-stu-id="c12bd-116">-EnabledState</span></span>
-<span data-ttu-id="c12bd-117">Stan włączenia.</span><span class="sxs-lookup"><span data-stu-id="c12bd-117">Enabled State.</span></span> <span data-ttu-id="c12bd-118">Możliwe wartości to: "włączone", "wyłączone".</span><span class="sxs-lookup"><span data-stu-id="c12bd-118">Possible values include: 'Enabled', 'Disabled'.</span></span>
+### <span data-ttu-id="e3588-116">-EnabledState</span><span class="sxs-lookup"><span data-stu-id="e3588-116">-EnabledState</span></span>
+<span data-ttu-id="e3588-117">Stan włączony.</span><span class="sxs-lookup"><span data-stu-id="e3588-117">Enabled State.</span></span> <span data-ttu-id="e3588-118">Możliwe wartości to: "Włączone", "Wyłączone".</span><span class="sxs-lookup"><span data-stu-id="e3588-118">Possible values include: 'Enabled', 'Disabled'.</span></span>
 
 ```yaml
 Type: System.String
@@ -89,8 +89,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="c12bd-119">-MatchCondition</span><span class="sxs-lookup"><span data-stu-id="c12bd-119">-MatchCondition</span></span>
-<span data-ttu-id="c12bd-120">Lista warunków zgodności.</span><span class="sxs-lookup"><span data-stu-id="c12bd-120">List of match conditions.</span></span>
+### <span data-ttu-id="e3588-119">- MatchCondition</span><span class="sxs-lookup"><span data-stu-id="e3588-119">-MatchCondition</span></span>
+<span data-ttu-id="e3588-120">Lista warunków dopasowania.</span><span class="sxs-lookup"><span data-stu-id="e3588-120">List of match conditions.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.FrontDoor.Models.PSMatchCondition[]
@@ -104,8 +104,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="c12bd-121">-Name (nazwa)</span><span class="sxs-lookup"><span data-stu-id="c12bd-121">-Name</span></span>
-<span data-ttu-id="c12bd-122">Nazwa reguły</span><span class="sxs-lookup"><span data-stu-id="c12bd-122">Name of the rule</span></span>
+### <span data-ttu-id="e3588-121">— Nazwa</span><span class="sxs-lookup"><span data-stu-id="e3588-121">-Name</span></span>
+<span data-ttu-id="e3588-122">Nazwa reguły</span><span class="sxs-lookup"><span data-stu-id="e3588-122">Name of the rule</span></span>
 
 ```yaml
 Type: System.String
@@ -119,8 +119,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="c12bd-123">-Priority (priorytet)</span><span class="sxs-lookup"><span data-stu-id="c12bd-123">-Priority</span></span>
-<span data-ttu-id="c12bd-124">Opisuje priorytet reguły.</span><span class="sxs-lookup"><span data-stu-id="c12bd-124">Describes priority of the rule.</span></span>
+### <span data-ttu-id="e3588-123">— Priority (Priorytet)</span><span class="sxs-lookup"><span data-stu-id="e3588-123">-Priority</span></span>
+<span data-ttu-id="e3588-124">W tym artykule opisano priorytet reguły.</span><span class="sxs-lookup"><span data-stu-id="e3588-124">Describes priority of the rule.</span></span>
 
 ```yaml
 Type: System.Int32
@@ -134,8 +134,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="c12bd-125">-RateLimitDurationInMinutes</span><span class="sxs-lookup"><span data-stu-id="c12bd-125">-RateLimitDurationInMinutes</span></span>
-<span data-ttu-id="c12bd-126">Limit szybkości.</span><span class="sxs-lookup"><span data-stu-id="c12bd-126">Rate limit duration.</span></span> <span data-ttu-id="c12bd-127">Domyślne — 1 minuta</span><span class="sxs-lookup"><span data-stu-id="c12bd-127">Default - 1 minute</span></span>
+### <span data-ttu-id="e3588-125">-RateLimitDurationInMinutes</span><span class="sxs-lookup"><span data-stu-id="e3588-125">-RateLimitDurationInMinutes</span></span>
+<span data-ttu-id="e3588-126">Czas trwania limitu stawek.</span><span class="sxs-lookup"><span data-stu-id="e3588-126">Rate limit duration.</span></span> <span data-ttu-id="e3588-127">Domyślne — 1 minuta</span><span class="sxs-lookup"><span data-stu-id="e3588-127">Default - 1 minute</span></span>
 
 ```yaml
 Type: System.Int32
@@ -149,8 +149,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="c12bd-128">-RateLimitThreshold</span><span class="sxs-lookup"><span data-stu-id="c12bd-128">-RateLimitThreshold</span></span>
-<span data-ttu-id="c12bd-129">Próg limitu szybkości</span><span class="sxs-lookup"><span data-stu-id="c12bd-129">Rate limit threshold</span></span>
+### <span data-ttu-id="e3588-128">-RateLimitThreshold</span><span class="sxs-lookup"><span data-stu-id="e3588-128">-RateLimitThreshold</span></span>
+<span data-ttu-id="e3588-129">Próg limitu stawek</span><span class="sxs-lookup"><span data-stu-id="e3588-129">Rate limit threshold</span></span>
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -164,9 +164,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="c12bd-130">-Ruletype</span><span class="sxs-lookup"><span data-stu-id="c12bd-130">-RuleType</span></span>
-<span data-ttu-id="c12bd-131">Typ reguły.</span><span class="sxs-lookup"><span data-stu-id="c12bd-131">Type of the rule.</span></span>
-<span data-ttu-id="c12bd-132">Możliwe wartości obejmują: "MatchRule", "RateLimitRule"</span><span class="sxs-lookup"><span data-stu-id="c12bd-132">Possible values include: 'MatchRule', 'RateLimitRule'</span></span>
+### <span data-ttu-id="e3588-130">-RuleType</span><span class="sxs-lookup"><span data-stu-id="e3588-130">-RuleType</span></span>
+<span data-ttu-id="e3588-131">Wpisz regułę.</span><span class="sxs-lookup"><span data-stu-id="e3588-131">Type of the rule.</span></span>
+<span data-ttu-id="e3588-132">Możliwe wartości to: 'MatchRule', 'RateLimitRule'</span><span class="sxs-lookup"><span data-stu-id="e3588-132">Possible values include: 'MatchRule', 'RateLimitRule'</span></span>
 
 ```yaml
 Type: System.String
@@ -180,21 +180,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="c12bd-133">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="c12bd-133">CommonParameters</span></span>
-<span data-ttu-id="c12bd-134">To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="c12bd-134">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="c12bd-135">Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="c12bd-135">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="e3588-133">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="e3588-133">CommonParameters</span></span>
+<span data-ttu-id="e3588-134">To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="e3588-134">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="e3588-135">Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="e3588-135">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="c12bd-136">WEJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="c12bd-136">INPUTS</span></span>
+## <span data-ttu-id="e3588-136">DANE WEJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="e3588-136">INPUTS</span></span>
 
-### <span data-ttu-id="c12bd-137">Znaleziono</span><span class="sxs-lookup"><span data-stu-id="c12bd-137">None</span></span>
+### <span data-ttu-id="e3588-137">Brak</span><span class="sxs-lookup"><span data-stu-id="e3588-137">None</span></span>
 
-## <span data-ttu-id="c12bd-138">WYSYŁA</span><span class="sxs-lookup"><span data-stu-id="c12bd-138">OUTPUTS</span></span>
+## <span data-ttu-id="e3588-138">OUTPUTS</span><span class="sxs-lookup"><span data-stu-id="e3588-138">OUTPUTS</span></span>
 
-### <span data-ttu-id="c12bd-139">Microsoft. Azure. Commands. FrontDoor. models. PSCustomRule</span><span class="sxs-lookup"><span data-stu-id="c12bd-139">Microsoft.Azure.Commands.FrontDoor.Models.PSCustomRule</span></span>
+### <span data-ttu-id="e3588-139">Microsoft.Azure.Commands.FrontDoor.Models.PSCustomRule</span><span class="sxs-lookup"><span data-stu-id="e3588-139">Microsoft.Azure.Commands.FrontDoor.Models.PSCustomRule</span></span>
 
-## <span data-ttu-id="c12bd-140">INFORMACYJN</span><span class="sxs-lookup"><span data-stu-id="c12bd-140">NOTES</span></span>
+## <span data-ttu-id="e3588-140">NOTATKI</span><span class="sxs-lookup"><span data-stu-id="e3588-140">NOTES</span></span>
 
-## <span data-ttu-id="c12bd-141">LINKI POKREWNE</span><span class="sxs-lookup"><span data-stu-id="c12bd-141">RELATED LINKS</span></span>
+## <span data-ttu-id="e3588-141">LINKI POKREWNE</span><span class="sxs-lookup"><span data-stu-id="e3588-141">RELATED LINKS</span></span>
 
-<span data-ttu-id="c12bd-142">[Nowe — AzFrontDoorWafPolicy](./New-AzFrontDoorWafPolicy.md) 
- [Set-AzFrontDoorWafPolicy](./Set-AzFrontDoorWafPolicy.md)</span><span class="sxs-lookup"><span data-stu-id="c12bd-142">[New-AzFrontDoorWafPolicy](./New-AzFrontDoorWafPolicy.md)
-[Set-AzFrontDoorWafPolicy](./Set-AzFrontDoorWafPolicy.md)</span></span>
+<span data-ttu-id="e3588-142">[New-AzFrontDoorWafPolicy](./New-AzFrontDoorWafPolicy.md) 
+ [Update-AzFrontDoorWafPolicy](./Update-AzFrontDoorWafPolicy.md)</span><span class="sxs-lookup"><span data-stu-id="e3588-142">[New-AzFrontDoorWafPolicy](./New-AzFrontDoorWafPolicy.md)
+[Update-AzFrontDoorWafPolicy](./Update-AzFrontDoorWafPolicy.md)</span></span>
