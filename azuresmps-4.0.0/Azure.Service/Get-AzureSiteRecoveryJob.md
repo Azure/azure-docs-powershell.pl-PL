@@ -3,21 +3,21 @@ external help file: Microsoft.Azure.Commands.RecoveryServicesRdfe.dll-Help.xml
 ms.assetid: 2957C0DE-3A2F-4337-A778-2B95654972E7
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: d0b272732cf6c1e1b2025c8e7f48b58e4807cdb3
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: 8a7c99e2ce307d700e43094ffa9be47e5449acc0
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "94054561"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100411657"
 ---
 # Get-AzureSiteRecoveryJob
 
-## STRESZCZENIe
+## SYNOPSIS
 Pobiera informacje o operacji dla magazynu odzyskiwania witryny.
 
-## POLECENIA
+## SKŁADNIA
 
-### ByParam (domyślny)
+### ByParam (domyślne)
 ```
 Get-AzureSiteRecoveryJob [-StartTime <DateTime>] [-EndTime <DateTime>] [-TargetObjectId <String>]
  [-State <String>] [-Profile <AzureSMProfile>] [<CommonParameters>]
@@ -33,13 +33,13 @@ Get-AzureSiteRecoveryJob -Id <String> [-Profile <AzureSMProfile>] [<CommonParame
 Get-AzureSiteRecoveryJob -Job <ASRJob> [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **Get-AzureSiteRecoveryJob** pobiera zadania odzyskiwania witryny Azure.
-Za pomocą tego polecenia cmdlet można wyświetlać informacje o operacjach dotyczących bieżącego magazynu odzyskiwania witryny.
+## OPIS
+Polecenie **cmdlet Get-AzureSiteRecoveryJob** pobiera zadania odzyskiwania witryny platformy Azure.
+To polecenie cmdlet umożliwia wyświetlenie informacji o operacji dla bieżącego magazynu odzyskiwania witryny.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1. Pobieranie zadania przez określenie identyfikatora
+### Przykład 1. Uzyskiwanie zadania przez podanie identyfikatora
 ```
 PS C:\> Get-AzureSiteRecoveryJob -Id "033785cc-9f72-4f07-8e78-e4d1e942a7ae" 
 Name             : SaveRecoveryPlan
@@ -57,9 +57,9 @@ Tasks            : {Save a recovery plan task}
 Errors           : {}
 ```
 
-To polecenie pobiera zadanie odzyskiwania witryny Azure z określonym IDENTYFIKATORem.
+To polecenie pobiera zadanie Odzyskiwanie witryny platformy Azure z określonym identyfikatorem.
 
-### Przykład 2: Pobiera zadanie na podstawie czasu
+### Przykład 2. Otrzymuje pracę na podstawie czasu
 ```
 PS C:\> Get-AzureSiteRecoveryJob -StartTime "20-02-2015 01:00:00" -EndTime "21-02-2015 01:00:00"
 Name             : SaveRecoveryPlan
@@ -77,15 +77,15 @@ Tasks            : {Save a recovery plan task}
 Errors           : {}
 ```
 
-To polecenie pobiera zadania odzyskiwania witryny przypadające pomiędzy określoną godziną rozpoczęcia a godziną zakończenia.
+To polecenie pobiera zadania odzyskiwania witryny, które należą do określonego czasu rozpoczęcia i zakończenia.
 
-## PARAMETRÓW
+## PARAMETERS
 
-### -EndTime
+### - EndTime
 Określa czas zakończenia zadań.
-To polecenie cmdlet umożliwia pobieranie wszystkich zadań rozpoczętych przed określonym terminem.
-Aby uzyskać obiekt **DateTime** , należy użyć polecenia cmdlet **Get-Date** .
-Aby uzyskać więcej informacji, wpisz tekst `Get-Help Get-Date` .
+To polecenie cmdlet pobiera wszystkie zadania, które zostały uruchomione przed określonym czasem.
+Aby uzyskać obiekt **DateTime,** użyj polecenia cmdlet **Get-Date.**
+Aby uzyskać więcej informacji, wpisz `Get-Help Get-Date` .
 
 ```yaml
 Type: DateTime
@@ -99,8 +99,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ID
-Określa identyfikator zadania do pobrania.
+### — Id
+Określa identyfikator zadania do uzyskania.
 
 ```yaml
 Type: String
@@ -115,7 +115,7 @@ Accept wildcard characters: False
 ```
 
 ### — Zadanie
-Określa zadanie do pobrania.
+Określa zadanie do uzyskania.
 
 ```yaml
 Type: ASRJob
@@ -129,9 +129,9 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Profile
-Określa Profil platformy Azure, na podstawie którego jest odczytywane to polecenie cmdlet.
-Jeśli nie podano profilu, to polecenie cmdlet odczytuje lokalny profil domyślny.
+### — Profil
+Określa profil platformy Azure, z którego będzie odczytywane to polecenie cmdlet.
+Jeśli nie określisz profilu, to polecenie cmdlet zostanie odczytane z lokalnego profilu domyślnego.
 
 ```yaml
 Type: AzureSMProfile
@@ -145,9 +145,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -StartTime
+### — StartTime
 Określa czas rozpoczęcia zadań.
-To polecenie cmdlet umożliwia pobieranie wszystkich zadań uruchomionych po określonym czasie.
+To polecenie cmdlet pobiera wszystkie zadania, które zostały uruchomione po określonym czasie.
 
 ```yaml
 Type: DateTime
@@ -161,18 +161,18 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -State
-Określa stan wejścia zadania odzyskiwania witryny.
-To polecenie cmdlet umożliwia pobieranie wszystkich zadań zgodnych z określonym stanem.
-Dopuszczalne wartości tego parametru to:
+### — województwo
+Określa stan wprowadzania dla zadania odzyskiwanie witryny.
+To polecenie cmdlet pobiera wszystkie zadania zgodne z określonym stanem.
+Dopuszczalne wartości dla tego parametru to:
 
 - NotStarted
-- W trakcie
-- Doszło
-- Pozostałe
-- Nie powiodło się
-- Anulowania
-- Zawiesin
+- InProgress
+- Udało się
+- Inne
+- Niepowodzenie
+- Anulowano
+- Wstrzymane
 
 ```yaml
 Type: String
@@ -187,7 +187,7 @@ Accept wildcard characters: False
 ```
 
 ### -TargetObjectId
-Określa identyfikator obiektu wskazywanego przez zadanie.
+Określa identyfikator obiektu docelowego zadania.
 
 ```yaml
 Type: String
@@ -202,22 +202,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
-[Polecenia cmdlet usług Azure Site Recovery](./Azure.SiteRecoveryServices.md)
+
 
 [Restart-AzureSiteRecoveryJob](./Restart-AzureSiteRecoveryJob.md)
 
-[Życiorys — AzureSiteRecoveryJob](./Resume-AzureSiteRecoveryJob.md)
+[Resume-AzureSiteRecoveryJob](./Resume-AzureSiteRecoveryJob.md)
 
-[Zatrzymaj — AzureSiteRecoveryJob](./Stop-AzureSiteRecoveryJob.md)
+[Stop-AzureSiteRecoveryJob](./Stop-AzureSiteRecoveryJob.md)
 
 

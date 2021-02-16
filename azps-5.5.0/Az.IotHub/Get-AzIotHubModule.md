@@ -1,0 +1,199 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.IotHub.dll-Help.xml
+Module Name: Az.IotHub
+online version: https://docs.microsoft.com/en-us/powershell/module/az.iothub/get-aziothubmodule
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/IotHub/IotHub/help/Get-AzIotHubModule.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/IotHub/IotHub/help/Get-AzIotHubModule.md
+ms.openlocfilehash: ca2381ecff9822bac7a4613566e2da42e79cc5b7
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100185683"
+---
+# Get-AzIotHubModule
+
+## SYNOPSIS
+Szczegółowe informacje na temat modułu lub modułów listy urządzeń IoT znajdujących się na urządzeniu IoT w centrum IoT.
+
+## SKŁADNIA
+
+### ResourceSet (Default)
+```
+Get-AzIotHubModule [-ResourceGroupName] <String> [-IotHubName] <String> [-DeviceId] <String>
+ [-ModuleId <String>] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### InputObjectSet
+```
+Get-AzIotHubModule [-InputObject] <PSIotHub> [-DeviceId] <String> [-ModuleId <String>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### ResourceIdSet
+```
+Get-AzIotHubModule [-ResourceId] <String> [-DeviceId] <String> [-ModuleId <String>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## OPIS
+Szczegółowe informacje na temat modułu urządzenia IoT lub modułów listy znajdujących się na urządzeniu IoT w centrum IoT.
+
+## PRZYKŁADY
+
+### Przykład 1
+```powershell
+PS C:\> Get-AzIotHubModule -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -DeviceId "myDevice1" -ModuleId "myModule1"
+
+ModuleId                   : myModule1
+DeviceId                   : myDevice1
+GenerationId               : 637148941292917073
+ETag                       : "NzIyMDI4MTk3"
+LastActivityTime           : 1/1/0001 12:00:00 AM
+ConnectionState            : Disconnected
+ConnectionStateUpdatedTime : 1/1/0001 12:00:00 AM
+CloudToDeviceMessageCount  : 0
+Authentication             : Sas
+ManagedBy                  :
+```
+
+Poznaj szczegóły modułu urządzenia IoT w Centrum IoT.
+
+### Przykład 2
+```powershell
+PS C:\> Get-AzIotHubModule -ResourceGroupName "myresourcegroup" -IotHubName "myiothub" -DeviceId "myDevice1" 
+
+Module Id Device Id Connection State Authentication Last Activity Time
+--------- --------- ---------------- -------------- ------------------
+module1   myDevice1 Disconnected     Sas            1/1/0001 12:00:00 AM
+module2   myDevice1 Disconnected     Sas            1/1/0001 12:00:00 AM
+```
+
+Pokaż wszystkie moduły znajdujące się na urządzeniu IoT w Centrum IoT.
+
+## PARAMETERS
+
+### -DefaultProfile
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### — DeviceId
+Identyfikator urządzenia docelowego.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -InputObject
+Obiekt IotHub
+
+```yaml
+Type: Microsoft.Azure.Commands.Management.IotHub.Models.PSIotHub
+Parameter Sets: InputObjectSet
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -IotHubName
+Nazwa Centrum Iot
+
+```yaml
+Type: System.String
+Parameter Sets: ResourceSet
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### - ModuleId
+Identyfikator modułu docelowego.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceGroupName
+Nazwa grupy zasobów
+
+```yaml
+Type: System.String
+Parameter Sets: ResourceSet
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceId
+Identyfikator zasobu w aplikacji IotHub
+
+```yaml
+Type: System.String
+Parameter Sets: ResourceIdSet
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### CommonParameters
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+
+## DANE WEJŚCIOWE
+
+### Microsoft.Azure.Commands.Management.IotHub.Models.PSIotHub
+
+### System.String
+
+## OUTPUTS
+
+### Microsoft.Azure.Commands.Management.IotHub.Models.PSModule
+
+### Microsoft.Azure.Commands.Management.IotHub.Models.PSModules[]
+
+## NOTATKI
+
+## LINKI POKREWNE

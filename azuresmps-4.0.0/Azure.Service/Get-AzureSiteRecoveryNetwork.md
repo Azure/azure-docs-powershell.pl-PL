@@ -3,30 +3,30 @@ external help file: Microsoft.Azure.Commands.RecoveryServicesRdfe.dll-Help.xml
 ms.assetid: 615D2C5D-AB31-45DB-9535-9B9C8E957322
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: 96b51b49d76093be96eeab26417f4a70f70c4627
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: 4a5701fc6308f1884bbf0237887a223a62a58669
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "94054558"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100411589"
 ---
 # Get-AzureSiteRecoveryNetwork
 
-## STRESZCZENIe
+## SYNOPSIS
 Pobiera informacje o sieciach zarządzanych przez odzyskiwanie witryny dla bieżącego magazynu.
 
-## POLECENIA
+## SKŁADNIA
 
 ```
 Get-AzureSiteRecoveryNetwork -Server <ASRServer> [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **Get-AzureSiteRecoveryNetwork** pobiera informacje o sieciach usługi Azure Site Recovery dla bieżącego magazynu odzyskiwania witryny.
+## OPIS
+Polecenie **cmdlet Get-AzureSiteRecoveryNetwork** pobiera informacje o sieciach Azure Site Recovery dla bieżącego magazynu odzyskiwania witryny.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1: pobieranie sieci odzyskiwania witryny
+### Przykład 1. Uzyskiwanie sieci odzyskiwania witryn
 ```
 PS C:\> $Servers = Get-AzureSiteRecoveryServer
 PS C:\> Get-AzureSiteRecoveryNetwork -Server $Servers[0]
@@ -47,16 +47,16 @@ FabricType          : VMM
 VmNetworkSubnetList : {}
 ```
 
-Pierwsze polecenie cmdlet pobiera serwery dla bieżącego magazynu usługi Azure Site Recovery, korzystając z polecenia cmdlet **Get-AzureSiteRecoveryServer** .
-Polecenie zapisuje serwery odzyskiwania witryny w zmiennej tablicy $Servers.
+Pierwsze polecenie cmdlet pobiera serwery dla bieżącego magazynu usługi Azure Site Recovery przy użyciu polecenia cmdlet **Get-AzureSiteRecoveryServer.**
+To polecenie przechowuje serwery odzyskiwania witryn w $Servers tablicowej.
 
-Drugie polecenie pobiera sieć odzyskiwania witryny dla pierwszego serwera w tablicy $Servers.
+Drugie polecenie pobiera sieć odzyskiwania witryny dla pierwszego serwera w $Servers tablicy.
 
-## PARAMETRÓW
+## PARAMETERS
 
-### -Profile
-Określa Profil platformy Azure, na podstawie którego jest odczytywane to polecenie cmdlet.
-Jeśli nie podano profilu, to polecenie cmdlet odczytuje lokalny profil domyślny.
+### — Profil
+Określa profil platformy Azure, z którego będzie odczytywane to polecenie cmdlet.
+Jeśli nie określisz profilu, to polecenie cmdlet zostanie odczytane z lokalnego profilu domyślnego.
 
 ```yaml
 Type: AzureSMProfile
@@ -70,7 +70,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Server
+### — Serwer
 Określa serwer odzyskiwania witryny.
 
 ```yaml
@@ -86,16 +86,16 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
-[Polecenia cmdlet usług Azure Site Recovery](./Azure.SiteRecoveryServices.md)
+
 
 
