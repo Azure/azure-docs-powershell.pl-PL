@@ -5,12 +5,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzNetworkWatcherPacketCapture.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzNetworkWatcherPacketCapture.md
-ms.openlocfilehash: f6762b074c9b185d12666fb8ea92fcaf15a46b05
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: 9825562ad5f0bec36da0efd14f2e06b93a3ad588
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100193619"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398057"
 ---
 # New-AzNetworkWatcherPacketCapture
 
@@ -19,7 +19,7 @@ Tworzy nowy zasób przechwytywania pakietów i rozpoczyna sesję przechwytywania
 
 ## SKŁADNIA
 
-### SetByResource (Default)
+### SetByResource (Domyślne)
 ```
 New-AzNetworkWatcherPacketCapture -NetworkWatcher <PSNetworkWatcher> -PacketCaptureName <String>
  -TargetVirtualMachineId <String> [-StorageAccountId <String>] [-StoragePath <String>]
@@ -49,11 +49,11 @@ New-AzNetworkWatcherPacketCapture -Location <String> -PacketCaptureName <String>
 ## OPIS
 Polecenie New-AzNetworkWatcherPacketCapture cmdlet tworzy nowy zasób przechwytywania pakietów i rozpoczyna sesję przechwytywania pakietów w maszyny wirtualnej.
 Długość sesji przechwytywania pakietów można skonfigurować za pośrednictwem ograniczenia czasowego lub ograniczenia rozmiaru. Można również skonfigurować ilość danych przechwyconych dla każdego pakietu.
-Filtry można stosować do danej sesji przechwytywania pakietów, co pozwala dostosowywać typ przechwyconych pakietów. Filtry mogą ograniczać liczbę pakietów w lokalnych i zdalnych adresach IP & zakresach adresów IP, portach lokalnych i zdalnych & zakresach portów i protokole na poziomie sesji do przechwycenia. Filtry można ująć i można zastosować wiele filtrów, aby zapewnić szczegółowość przechwytywania.
+Filtry można stosować do danej sesji przechwytywania pakietów, co pozwala dostosowywać typ przechwyconych pakietów. Filtry mogą ograniczać liczbę pakietów w lokalnych i zdalnych adresach IP & zakresach adresów, portach lokalnych i zdalnych & zakresach portów i protokole na poziomie sesji do przechwycenia. Filtry można ująć i można zastosować wiele filtrów, aby zapewnić szczegółowość przechwytywania.
 
 ## PRZYKŁADY
 
-### Przykład 1. Tworzenie przechwytywania pakietów przy użyciu wielu filtrów
+### Przykład 1. Tworzenie przechwytywania pakietów za pomocą wielu filtrów
 ```
 $nw = Get-AzResource | Where {$_.ResourceType -eq "Microsoft.Network/networkWatchers" -and $_.Location -eq "WestCentralUS" } 
 $networkWatcher = Get-AzNetworkWatcher -Name $nw.Name -ResourceGroupName $nw.ResourceGroupName 
@@ -129,7 +129,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -LocalFilePath
+### - LocalFilePath
 Ścieżka pliku lokalnego.
 
 ```yaml
@@ -159,7 +159,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### - NetworkWatcher
+### — NetworkWatcher
 Zasób obserwowania sieci.
 
 ```yaml
@@ -397,6 +397,6 @@ Słowa kluczowe: azure, azurerm, arm, resource, management, manager, network, ne
 
 [Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)
 
 

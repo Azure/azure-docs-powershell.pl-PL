@@ -5,21 +5,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.kusto/get-
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Kusto/Kusto/help/Get-AzKustoCluster.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Kusto/Kusto/help/Get-AzKustoCluster.md
-ms.openlocfilehash: 6e24eaee77e8965ea34cbfcd8c169d675bce56d8
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 5a5450629024dbca8433bee79bfe9d2fa7119025
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94050100"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398040"
 ---
 # Get-AzKustoCluster
 
-## STRESZCZENIe
-Wyświetlanie wszystkich klastrów Kusto w grupie zasobów lub uzyskiwanie określonego klastra Kusto.
+## SYNOPSIS
+Lista wszystkich klastrów Kusto w grupie zasobów lub uzyskiwanie określonego klastra Kusto.
 
-## POLECENIA
+## SKŁADNIA
 
-### ByClusterOrResourceGroupOrSubscription (domyślny)
+### ByClusterOrResourceGroupOrSubscription (Default)
 ```
 Get-AzKustoCluster -ResourceGroupName <String> [-Name <String>] [-DefaultProfile <IAzureContextContainer>]
  [<CommonParameters>]
@@ -30,25 +30,25 @@ Get-AzKustoCluster -ResourceGroupName <String> [-Name <String>] [-DefaultProfile
 Get-AzKustoCluster -ResourceId <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Opis
-Wyświetlanie wszystkich klastrów Kusto w grupie zasobów lub uzyskiwanie określonego klastra Kusto.
+## OPIS
+Lista wszystkich klastrów Kusto w grupie zasobów lub uzyskiwanie określonego klastra Kusto.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1-Wyświetlanie wszystkich klastrów Kusto w grupie zasobów
+### Przykład 1. Lista wszystkich klastrów Kusto w grupie zasobów
 
-Typ: Microsoft. Kusto/klastry ID:/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testrg/providers/Microsoft.Kusto/Clusters/mykustocluster1 resourceName: testrg Name: mykustocluster1 lokalizacja: Centralna pojemność w Stanach Zjednoczonych: 3 SKU: D13_v2 ProvisioningState: powodzenie, stan: uruchomiony Tag: {} Identyfikator URI: https://mykustocluster1.centralus.kusto.windows.net DataIngestionUri: https://ingest-mykustocluster1.centralus.kusto.windows.net
+Typ: Microsoft.Kusto/Clusters Id: /subscriptions/xxxxxxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testrg/providers/Microsoft.Kusto/Clusters/mykustocluster1 ResourceGroup : testrg Name: mykustocluster1 Location: Central US Capacity : 3 SKU: D13_v2 ProvisioningState: Succeeded State: Running Tag: {} Uri: `https://mykustocluster1.centralus.kusto.windows.net` DataIngestionUri: `https://ingest-mykustocluster1.centralus.kusto.windows.net`
 
-Type: Microsoft. Kusto/klastrów ID:/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testrg/providers/Microsoft.Kusto/Clusters/mykustocluster2 resourceName: testrg Nazwa: mykustocluster2 lokalizacja: Centralna pojemność w Stanach Zjednoczonych: 5 SKU: D13_v2 ProvisioningState: stan zakończony pomyślnie: uruchomiony Tag: {} Identyfikator URI: https://mykustocluster2.centralus.kusto.windows.net DataIngestionUri: https://ingest-mykustocluster2.centralus.kusto.windows.net
+Typ: Microsoft.Kusto/Clusters Id: /subscriptions/xxxxxxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testrg/providers/Microsoft.Kusto/Clusters/mykustocluster2 ResourceGroup : testrg Name : mykustocluster2 Location: Central US Capacity : 5 SKU: D13_v2 ProvisioningState: Succeeded State: Running Tag: {} Uri: `https://mykustocluster2.centralus.kusto.windows.net` DataIngestionUri: `https://ingest-mykustocluster2.centralus.kusto.windows.net`
 
 
 ```
 PS C:\> Get-AzKustoCluster -ResourceGroupName testrg
 ```
 
-Powyższe polecenie wyświetla listę wszystkich Kustoych klastrów w grupie zasobów "testrg".
+Powyższe polecenie zawiera listę wszystkich klastrów Kusto w grupie zasobów "testrg".
 
-### Przykład 2 — uzyskiwanie określonego klastra Kusto według nazwy
+### Przykład 2. Uzyskiwanie określonego klastru Kusto według nazwy
 
 ```
 PS C:\> Get-AzKustoCluster -ResourceGroupName testrg -Name mykustocluster
@@ -69,7 +69,7 @@ DataIngestionUri  : https://ingest-mykustocluster.centralus.kusto.windows.net
 
 Powyższe polecenie zwraca klaster Kusto o nazwie "mykustocluster" w grupie zasobów "testrg".
 
-### Przykład 3-uzyskiwanie określonego klastra Kusto według identyfikatora zasobu
+### Przykład 3. Uzyskiwanie określonego klastra Kusto według identyfikatora zasobu
 
 ```
 PS C:\> Get-AzKustoCluster -ResourceId /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/testrg/providers/Microsoft.Kusto/clusters/mykustocluster
@@ -89,10 +89,10 @@ DataIngestionUri  : https://ingest-mykustocluster.centralus.kusto.windows.net
 
 Powyższe polecenie zwraca klaster Kusto o nazwie "mykustocluster" w grupie zasobów "testrg".
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -106,7 +106,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (nazwa)
+### — Nazwa
 Nazwa określonego klastra.
 
 ```yaml
@@ -122,7 +122,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Nazwa grupy zasobów, pod którą użytkownik chce pobrać klaster.
+Nazwa grupy zasobów, w ramach której użytkownik chce pobrać klaster.
 
 ```yaml
 Type: System.String
@@ -137,7 +137,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Kusto identyfikator zasobu klastra.
+Kusto cluster ResourceID.
 
 ```yaml
 Type: System.String
@@ -152,16 +152,16 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### System. String
+### System.String
 
-## WYSYŁA
+## OUTPUTS
 
-### Microsoft. Azure. Commands. Kusto. models. PSKustoCluster
+### Microsoft.Azure.Commands.Kusto.Models.PSKustoCluster
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE

@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzApplicationGatewayPathRuleConfig.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzApplicationGatewayPathRuleConfig.md
-ms.openlocfilehash: a73233908f37463c591aeb2e3d6b00eeb3c511ed
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 94fbc1e9a4ae8b7befe6961a9648174770458583
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93709366"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400216"
 ---
 # New-AzApplicationGatewayPathRuleConfig
 
-## STRESZCZENIe
-Tworzy regułę ścieżki bramy Application Gateway.
+## SYNOPSIS
+Tworzy regułę ścieżki bramy aplikacji.
 
-## POLECENIA
+## SKŁADNIA
 
 ### SetByResourceId
 ```
@@ -37,12 +37,12 @@ New-AzApplicationGatewayPathRuleConfig -Name <String> -Paths <String[]>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **New-AzApplicationGatewayPathRuleConfig** tworzy regułę ścieżki bramy Application Gateway.
-Reguły utworzone przez to polecenie cmdlet można dodać do kolekcji ustawień konfiguracji mapowania ścieżki URL, a następnie przypisywać je do bramy.
-Ustawienia konfiguracji mapy ścieżki są używane w równoważeniu obciążenia bramy aplikacji.
+## OPIS
+Polecenie **cmdlet New-AzApplicationGatewayPathRuleConfig** tworzy regułę ścieżki bramy aplikacji.
+Reguły utworzone za pomocą tego polecenia cmdlet można dodać do zbioru ustawień konfiguracji mapy ścieżki adresu URL, a następnie przypisać do bramy.
+Ustawienia konfiguracji mapy ścieżki są używane do równoważenia obciążenia bramy aplikacji.
 
-## Przykłady
+## PRZYKŁADY
 
 ### Przykład 1
 ```
@@ -53,24 +53,24 @@ PS C:\> $PathRuleConfig = New-AzApplicationGatewayPathRuleConfig -Name "base" -P
 PS C:\> Add-AzApplicationGatewayUrlPathMapConfig -ApplicationGateway $Gateway -Name "ContosoUrlPathMap" -PathRules $PathRuleConfig -DefaultBackendAddressPool $AddressPool -DefaultBackendHttpSettings $HttpSettings
 ```
 
-Te polecenia umożliwiają utworzenie nowej reguły ścieżki bramy Application Gateway, a następnie użycie polecenia cmdlet **Add-AzApplicationGatewayUrlPathMapConfig** w celu przypisania tej reguły do bramy aplikacji.
+Te polecenia tworzą nową regułę ścieżki bramy aplikacji, a następnie przypisz ją do bramy aplikacji za pomocą polecenia cmdlet **Add-AzApplicationGatewayUrlPathMapConfig.**
 W tym celu pierwsze polecenie tworzy odwołanie do obiektu bramy ContosoApplicationGateway.
-Odwołanie do tego obiektu jest przechowywane w zmiennej o nazwie $Gateway.
-Następne dwa polecenia tworzą pulę adresów zaplecza i obiekt ustawienia HTTP zaplecza; te obiekty (przechowywane w zmiennych $AddressPool i $HttpSettings) są potrzebne w celu utworzenia obiektu reguły ścieżki.
-Czwarte polecenie tworzy obiekt reguły ścieżki i jest przechowywany w zmiennej o nazwie $PathRuleConfig.
-W piątym poleceniu użyto polecenia **Add-AzApplicationGatewayUrlPathMapConfig** w celu dodania ustawień konfiguracji i nowej reguły ścieżki zawartych w tych ustawieniach do ContosoApplicationGateway.
+To odwołanie do obiektu jest przechowywane w zmiennej o nazwie $Gateway.
+Następne dwa polecenia tworzą pulę adresów zaplecza i obiekt ustawień protokołu HTTP zaplecza. te obiekty (przechowywane w zmiennych $AddressPool i $HttpSettings) są potrzebne do utworzenia obiektu reguły ścieżki.
+Czwarte polecenie tworzy obiekt reguły ścieżki i jest przechowywane w zmiennej o nazwie $PathRuleConfig.
+Piąte polecenie korzysta z polecenia **Add-AzApplicationGatewayUrlPathMapConfig** w celu dodania ustawień konfiguracji i nowej reguły ścieżki zawartej w tych ustawieniach do aplikacji ContosoApplicationGateway.
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -BackendAddressPool
-Określa odwołanie obiektu do kolekcji ustawień puli adresów zaplecza, które mają zostać dodane do ustawień konfiguracji reguł ścieżki bramy.
-To odwołanie do obiektu można utworzyć przy użyciu New-AzApplicationGatewayBackendAddressPool polecenia cmdlet i składni podobnej do następującej: `$AddressPool = New-AzApplicationGatewayBackendAddressPool -Name "ContosoAddressPool" -BackendIPAddresses "192.168.1.1", "192.168.1.2"`
-W powyższym poleceniu są dodawane dwa adresy IP (192.16.1.1 i 192.168.1.2) do puli adresów.
-Należy zauważyć, że adres IP jest ujęty w cudzysłów i oddzielony średnikami.
-Zmienna wynikowa $AddressPool może być używana jako wartość parametru parametru *DefaultBackendAddressPool* .
+Określa odwołanie do obiektu do kolekcji ustawień puli adresów zaplecza, które mają zostać dodane do ustawień konfiguracji reguł ścieżki bramy.
+To odwołanie do obiektu można utworzyć przy użyciu polecenia cmdlet New-AzApplicationGatewayBackendAddressPool składni podobnej do tej: `$AddressPool = New-AzApplicationGatewayBackendAddressPool -Name "ContosoAddressPool" -BackendIPAddresses "192.168.1.1", "192.168.1.2"`
+Poprzednie polecenie dodaje dwa adresy IP (192.16.1.1 i 192.168.1.2) do puli adresów.
+Zwróć uwagę, że adres IP jest ujęty w cudzysłów i oddzielony przecinkami.
+Następnie można użyć $AddressPool jako wartości parametru *parametru DefaultBackendAddressPool.*
 Pula adresów zaplecza reprezentuje adresy IP na serwerach zaplecza.
 Te adresy IP powinny należeć do podsieci sieci wirtualnej lub powinny być publicznymi adresami IP.
-W przypadku użycia tego parametru nie można użyć parametru *DefaultBackendAddressPoolId* w tym samym poleceniu.
+W przypadku użycia tego parametru nie można użyć *parametru DefaultBackendAddressPoolId* w tym samym poleceniu.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendAddressPool
@@ -85,10 +85,10 @@ Accept wildcard characters: False
 ```
 
 ### -BackendAddressPoolId
-Określa identyfikator istniejącej puli adresów zaplecza, który można dodać do ustawień konfiguracji reguły ścieżki bramy.
-Identyfikatory puli adresów można zwracać przy użyciu polecenia cmdlet Get-AzApplicationGatewayBackendAddressPool.
-Po uzyskaniu identyfikatora możesz użyć parametru *DefaultBackendAddressPoolId* zamiast parametru *DefaultBackendAddressPool* .
-Na przykład:-DefaultBackendAddressPoolId "/subscriptions/39c54063-01d3-4abf-8f4c-234777bc1f10/resourceGroups/appgw-rg/providers/Microsoft.Network/applicationGateways/appgwtest/backendAddressPools/ContosoAddressPool" Pula adresów zaplecza reprezentuje adresy IP na serwerach zaplecza.
+Określa identyfikator istniejącej puli adresów zaplecza, którą można dodać do ustawień konfiguracji reguły ścieżki bramy.
+Identyfikatory puli adresów można zwrócić za pomocą Get-AzApplicationGatewayBackendAddressPool cmdlet.
+Po tym identyfikatorze można użyć parametru *DefaultBackendAddressPoolId zamiast* *parametru DefaultBackendAddressPool.*
+Na przykład: -DefaultBackendAddressPoolId "/subscriptions/39c54063-01d3-4abf-8f4c-234777bc1f10//resourceGroups/appgw-rg/providers/Microsoft.Network/applicationGateway/appgwtest/backendAddressPools/ContosoAddressPools" Pula adresów zaplecza reprezentuje adresy IP na serwerach zaplecza.
 Te adresy IP powinny należeć do podsieci sieci wirtualnej lub powinny być publicznymi adresami IP.
 
 ```yaml
@@ -104,9 +104,9 @@ Accept wildcard characters: False
 ```
 
 ### -BackendHttpSettings
-Określa odwołanie obiektu do kolekcji ustawień protokołu HTTP zaplecza, które mają zostać dodane do ustawień konfiguracji reguły ścieżki bramy.
-To odwołanie do obiektu można utworzyć przy użyciu New-AzApplicationGatewayBackendHttpSettings polecenia cmdlet i składni podobnej do następującej: $HttpSettings = New-AzApplicationGatewayBackendHttpSettings-Name "ContosoHttpSetings"-port 80-protokół "http"-CookieBasedAffinity "Disabled zmienna, $HttpSettings może być używana jako wartość parametru *DefaultBackendAddressPool* :-DefaultBackendHttpSettings $HttpSettings ustawień protokołu HTTP zaplecza Konfigurowanie właściwości, takich jak port, protokół i koligacja oparta na plikach cookie dla puli wewnętrznej.
-W przypadku użycia tego parametru nie można użyć parametru *DefaultBackendHttpSettingsId* w tym samym poleceniu.
+Określa odwołanie do obiektu do zbioru ustawień http zaplecza, które mają zostać dodane do ustawień konfiguracji reguły ścieżki bramy.
+To odwołanie do obiektu można utworzyć przy użyciu polecenia cmdlet New-AzApplicationGatewayBackendHttpSettings o składni podobnej do tej: $HttpSettings = New-AzApplicationGatewayBackendHttpSettings -Name "ContosoHttpSetings" -Port 80 -Protocol "Http" -CookieBasedAffinity "Disabled" Zmienna wynikowa. $HttpSettings następnie może być używana jako wartość parametru *parametru DefaultBackendAddressPool:* -DefaultBackendHttpSettings $HttpSettings Ustawienia protokołu HTTP zaplecza konfigurują właściwości, takie jak port, protokół i ffinity oparte na plikach cookie dla puli zaplecza.
+W przypadku użycia tego parametru nie można użyć *parametru DefaultBackendHttpSettingsId* w tym samym poleceniu.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendHttpSettings
@@ -122,10 +122,10 @@ Accept wildcard characters: False
 
 ### -BackendHttpSettingsId
 Określa identyfikator istniejącej kolekcji ustawień protokołu HTTP zaplecza, który można dodać do ustawień konfiguracji reguły ścieżki bramy.
-Identyfikatory ustawień HTTP można zwrócić przy użyciu Get-AzApplicationGatewayBackendHttpSettings polecenia cmdlet.
-Po uzyskaniu identyfikatora możesz użyć parametru *DefaultBackendHttpSettingsId* zamiast parametru *DefaultBackendHttpSettings* .
-Na przykład:-DefaultBackendSettings ID "/subscriptions/39c54063-01d3-4abf-8f4c-234777bc1f10/resourceGroups/appgw-rg/providers/Microsoft.Network/applicationGateways/appgwtest/backendHttpSettingsCollection/ContosoHttpSettings" Ustawienia protokołu HTTP zaplecza Konfigurowanie właściwości, takich jak port, protokół i koligacja oparta na plikach cookie dla puli wewnętrznej bazy danych.
-W przypadku użycia tego parametru nie można użyć parametru *DefaultBackendHttpSettings* w tym samym poleceniu.
+Identyfikatory ustawień protokołu HTTP można zwrócić za pomocą Get-AzApplicationGatewayBackendHttpSettings cmdlet.
+Po wytyczaniu identyfikatora można użyć parametru *DefaultBackendHttpSettingsId* zamiast *parametru DefaultBackendHttpSettings.*
+Na przykład: -DefaultBackendSettings Id "/subscriptions/39c54063-01d3-4abf-8f4c-234777bc1f10//resourceGroups/appgw-rg/providers/Microsoft.Network/applicationGateway/appgwtest/backendHttpSettingsCollection/ContosoHttpSettings" Ustawienia protokołu HTTP zaplecza konfigurują właściwości, takie jak port, protokół, i powiążność opartą na plikach cookie dla puli zaplecza.
+W przypadku użycia tego parametru nie można użyć *parametru DefaultBackendHttpSettings* w tym samym poleceniu.
 
 ```yaml
 Type: System.String
@@ -140,7 +140,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -154,8 +154,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (nazwa)
-Określa nazwę konfiguracji reguły ścieżki, którą to polecenie cmdlet tworzy.
+### — Nazwa
+Określa nazwę konfiguracji reguły ścieżki, którą tworzy to polecenie cmdlet.
 
 ```yaml
 Type: System.String
@@ -169,8 +169,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Ścieżki
-Określa co najmniej jeden Regulamin ścieżki bramy aplikacji.
+### — Ścieżki
+Określa co najmniej jedną regułę ścieżki bramy aplikacji.
 
 ```yaml
 Type: System.String[]
@@ -185,7 +185,7 @@ Accept wildcard characters: False
 ```
 
 ### -RedirectConfiguration
-Aplikacja Application Gateway RedirectConfiguration
+RedirectConfiguration bramy aplikacji
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRedirectConfiguration
@@ -200,7 +200,7 @@ Accept wildcard characters: False
 ```
 
 ### -RedirectConfigurationId
-Identyfikator bramy Application RedirectConfiguration
+Identyfikator konfiguracji przekierowywania przez bramę aplikacji
 
 ```yaml
 Type: System.String
@@ -215,7 +215,7 @@ Accept wildcard characters: False
 ```
 
 ### -RewriteRuleSet
-Aplikacja Application Gateway RewriteRuleSet
+Application gateway RewriteRuleSet
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRewriteRuleSet
@@ -230,7 +230,7 @@ Accept wildcard characters: False
 ```
 
 ### -RewriteRuleSetId
-Identyfikator bramy Application RewriteRuleSet
+Identyfikator bramy aplikacji RewriteRuleSet
 
 ```yaml
 Type: System.String
@@ -245,33 +245,32 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### Znaleziono
+### Brak
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### Microsoft. Azure. Commands. Network. models. PSApplicationGatewayPathRule
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayPathRule
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
-[Dodaj-AzApplicationGatewayUrlPathMapConfig](./Add-AzApplicationGatewayUrlPathMapConfig.md)
+[Add-AzApplicationGatewayUrlPathMapConfig](./Add-AzApplicationGatewayUrlPathMapConfig.md)
 
 [Get-AzApplicationGateway](./Get-AzApplicationGateway.md)
 
 [Get-AzApplicationGatewayUrlPathMapConfig](./Get-AzApplicationGatewayUrlPathMapConfig.md)
 
-[Nowe — AzApplicationGatewayBackendAddressPool](./New-AzApplicationGatewayBackendAddressPool.md)
+[New-AzApplicationGatewayBackendAddressPool](./New-AzApplicationGatewayBackendAddressPool.md)
 
-[Nowe — AzApplicationGatewayBackendHttpSettings](./New-AzApplicationGatewayBackendHttpSettings.md)
 
-[Nowe — AzApplicationGatewayPathRuleConfig](./New-AzApplicationGatewayPathRuleConfig.md)
+[New-AzApplicationGatewayPathRuleConfig](./New-AzApplicationGatewayPathRuleConfig.md)
 
-[Nowe — AzApplicationGatewayUrlPathMapConfig](./New-AzApplicationGatewayUrlPathMapConfig.md)
+[New-AzApplicationGatewayUrlPathMapConfig](./New-AzApplicationGatewayUrlPathMapConfig.md)
 
 [Remove-AzApplicationGatewayUrlPathMapConfig](./Remove-AzApplicationGatewayUrlPathMapConfig.md)
 
