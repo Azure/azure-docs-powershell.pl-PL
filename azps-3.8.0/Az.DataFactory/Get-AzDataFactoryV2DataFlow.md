@@ -5,21 +5,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.datafactor
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Get-AzDataFactoryV2DataFlow.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Get-AzDataFactoryV2DataFlow.md
-ms.openlocfilehash: b4af5eae61e47d8617eb270451f406f349162f50
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 7bd25d444a4277e2aa423026be551fab1c5f360e
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93896461"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398414"
 ---
 # Get-AzDataFactoryV2DataFlow
 
-## STRESZCZENIe
-Pobiera informacje o przepływach danych w fabryce danych.
+## SYNOPSIS
+Pobiera informacje o przepływach danych w układzie Data Factory.
 
-## POLECENIA
+## SKŁADNIA
 
-### ByFactoryName (domyślny)
+### ByFactoryName (Default)
 ```
 Get-AzDataFactoryV2DataFlow [[-Name] <String>] [-ResourceGroupName] <String> [-DataFactoryName] <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
@@ -37,13 +37,13 @@ Get-AzDataFactoryV2DataFlow [-ResourceId] <String> [-DefaultProfile <IAzureConte
  [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet Get-AzDataFactoryV2DataFlow pobiera informacje o przepływach danych w usłudze Azure Data Factory.
-Jeśli określisz nazwę przepływu danych, to polecenie cmdlet będzie pobierać informacje o przepływie danych.
-Jeśli nie określisz nazwy, to polecenie cmdlet będzie pobierać informacje o przepływach danych w fabryce danych.
+## OPIS
+Polecenie Get-AzDataFactoryV2DataFlow pobiera informacje o przepływach danych w usłudze Azure Data Factory.
+Jeśli określisz nazwę przepływu danych, to polecenie cmdlet pobiera informacje o tym przepływie danych.
+Jeśli nie określisz nazwy, to polecenie cmdlet pobiera informacje o wszystkich przepływach danych w zakładzie danych.
 
-## Przykłady
-### Przykład 1: uzyskiwanie informacji o przepływach danych
+## PRZYKŁADY
+### Przykład 1. Uzyskiwanie informacji o wszystkich przepływach danych
 ```powershell
 PS C:\> Get-AzDataFactoryV2DataFlow -ResourceGroupName "ADF" -DataFactoryName "WikiADF"
 
@@ -54,9 +54,9 @@ dataflow1                      WikiADF               adf Microsoft.Azure.Managem
 dataflow3                      WikiADF               adf Microsoft.Azure.Management.DataFactory.Models.MappingDataFlow
 ```
 
-To polecenie pobiera informacje dotyczące wszystkich przepływów danych w fabryce danych o nazwie WikiADF.
+To polecenie pobiera informacje o wszystkich przepływach danych w fabrycznej układzie danych o nazwie WikiADF.
 
-### Przykład 2: uzyskiwanie informacji o określonym przepływie danych
+### Przykład 2. Uzyskiwanie informacji o określonym przepływie danych
 ```powershell
 PS C:\> Get-AzDataFactoryV2DataFlow -ResourceGroupName "ADF" -DataFactoryName "WikiADF" -Name "dataflow1"
 
@@ -65,12 +65,12 @@ DataFlowName           DataFactoryName ResourceGroupName                        
 TaxiDemo1                      WikiADF               adf Microsoft.Azure.Management.DataFactory.Models.MappingDataFlow
 ```
 
-To polecenie pobiera informacje o przepływie danych o nazwie dataflow1 w fabryce danych o nazwie WikiADF.
+To polecenie pobiera informacje o przepływie danych o nazwie Przepływ danych1 w fabrycznej układzie danych o nazwie WikiADF.
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -DataFactory
-Obiekt fabryki danych.
+Obiekt data factory.
 
 ```yaml
 Type: Microsoft.Azure.Commands.DataFactoryV2.Models.PSDataFactory
@@ -84,8 +84,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Datafactoryname
-Nazwa fabryki danych.
+### -DataFactoryName
+Nazwa fabryczna danych.
 
 ```yaml
 Type: System.String
@@ -100,7 +100,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -114,7 +114,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (nazwa)
+### — Nazwa
 Nazwa przepływu danych.
 
 ```yaml
@@ -145,7 +145,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Identyfikator zasobu platformy Azure.
+Identyfikator zasobu Azure.
 
 ```yaml
 Type: System.String
@@ -160,23 +160,21 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### System. String
+### System.String
 
 ### Microsoft.Azure.Commands.DataFactoryV2.Models.PSDataFactory
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
 ### Microsoft.Azure.Commands.DataFactoryV2.Models.PSDataFlow
 
-## INFORMACYJN
-Słowa kluczowe: Azure, azurerm, ARM, Resource, Management, Manager, dane, fabryki
+## NOTATKI
+Słowa kluczowe: azure, azurerm, arm, resource, management, manager, dane, fabryki
 
 ## LINKI POKREWNE
 
-[Set-AzDataFactoryDataFlow](./Set-AzDataFactoryDataFlow.md)
 
-[Remove-AzDataFactoryDataFlow](./Remove-AzDataFactoryDataFlow.md)
