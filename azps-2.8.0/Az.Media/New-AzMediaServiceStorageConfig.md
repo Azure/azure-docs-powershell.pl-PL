@@ -6,31 +6,31 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.media/new-
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Media/Media/help/New-AzMediaServiceStorageConfig.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Media/Media/help/New-AzMediaServiceStorageConfig.md
-ms.openlocfilehash: 8fb6e4a683decc8b5615a7cf0c8088681578f8ec
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: ec411d7e1afd71849ec2d490ee70eeb0283303ca
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93704865"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100413816"
 ---
 # New-AzMediaServiceStorageConfig
 
-## STRESZCZENIe
-Utwórz konfigurację konta magazynu dla poleceń cmdlet usługi multimediów.
+## SYNOPSIS
+Utwórz konfigurację konta magazynu dla cmdlet usługi multimediów.
 
-## POLECENIA
+## SKŁADNIA
 
 ```
 New-AzMediaServiceStorageConfig [-DefaultProfile <IAzureContextContainer>] [-StorageAccountId] <String>
  [-IsPrimary] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **New-AzMediaServiceStorageConfig** umożliwia utworzenie konfiguracji konta magazynu dla poleceń cmdlet usługi multimediów.
+## OPIS
+Polecenie **cmdlet New-AzMediaServiceStorageConfig** tworzy konfigurację konta magazynu dla cmdlet usługi multimediów.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1. Tworzenie konfiguracji konta magazynu dla poleceń cmdlet usługi multimediów
+### Przykład 1. Tworzenie konfiguracji konta magazynu dla cmdlet usługi multimediów
 ```
 PS C:\>
 $StorageAccount = New-AzStorageAccount -ResourceGroupName $ResourceGroupName -Name "Storage1" -Location "East US" -Type "Standard_GRS"
@@ -38,14 +38,14 @@ $StorageAccount = New-AzStorageAccount -ResourceGroupName $ResourceGroupName -Na
 PS C:\> New-AzMediaServiceStorageConfig -StorageAccountId $StorageAccount.Id -IsPrimary
 ```
 
-Pierwsze polecenie tworzy obiekt konta magazynu przy użyciu polecenia cmdlet **New-AzStorageAccount** .
-Polecenie nadaje nazwę temu kontu Storage1, a typ ma nazwę Standard_GRS i zapisuje wynik w zmiennej o nazwie $StorageAccount.
-Drugie polecenie tworzy obiekt konfiguracji magazynu jako główne konto magazynu skojarzone z usługą multimediów, korzystając z informacji o IDENTYFIKATORze konta magazynu przechowywanych w zmiennej $StorageAccount.
+Pierwsze polecenie tworzy obiekt konta magazynu przy użyciu polecenia cmdlet **New-AzStorageAccount.**
+To konto magazynu ma nazwę Magazyn1, a typ nosi nazwę Standard_GRS i zapisuje wynik w zmiennej o nazwie $StorageAccount.
+Drugie polecenie tworzy obiekt konfiguracji magazynu jako podstawowe konto magazynu skojarzone z usługą multimediów przy użyciu informacji o identyfikatorze konta magazynu przechowywanych w $StorageAccount magazynu.
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -59,8 +59,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Isprimary
-Wskazuje, że polecenie cmdlet tworzy konto magazynu jako magazyn podstawowy dla usługi multimedialnej.
+### -IsPrimary
+Wskazuje, że polecenie cmdlet tworzy konto magazynu jako podstawowy magazyn dla usługi multimediów.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -74,7 +74,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -StorageAccountId
+### - StorageAccountId
 Określa identyfikator konta magazynu.
 
 ```yaml
@@ -89,8 +89,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Potwierdź
-Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.
+### — Potwierdź
+Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -105,8 +105,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet.
-Polecenie cmdlet nie jest uruchamiane.
+Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet.
+Polecenie cmdlet nie zostanie uruchomione.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -121,20 +121,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### System. String
+### System.String
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### Microsoft. Azure. Commands. Media. models. PSStorageAccount
+### Microsoft.Azure.Commands.Media.Models.PSStorageAccount
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
-[Sync-AzMediaServiceStorageKeys](./Sync-AzMediaServiceStorageKeys.md)
 
 
