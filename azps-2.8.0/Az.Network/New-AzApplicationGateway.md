@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzApplicationGateway.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzApplicationGateway.md
-ms.openlocfilehash: 1bde6608f5dd87c2c102f3f2957832a2eb41e50a
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 1c4a7f2a46968f82d53408f28a42290255de6411
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93870572"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100402273"
 ---
 # New-AzApplicationGateway
 
-## STRESZCZENIe
+## SYNOPSIS
 Tworzy bramę aplikacji.
 
-## POLECENIA
+## SKŁADNIA
 
-### IdentityByUserAssignedIdentityId (domyślny)
+### IdentityByUserAssignedIdentityId (domyślne)
 ```
 New-AzApplicationGateway -Name <String> -ResourceGroupName <String> -Location <String>
  -Sku <PSApplicationGatewaySku> [-SslPolicy <PSApplicationGatewaySslPolicy>]
@@ -113,21 +113,21 @@ New-AzApplicationGateway -Name <String> -ResourceGroupName <String> -Location <S
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **New-AzApplicationGateway** umożliwia utworzenie bramy aplikacji platformy Azure.
-Brama aplikacji wymaga wykonania następujących czynności:
+## OPIS
+Polecenie **cmdlet New-AzApplicationGateway** tworzy bramę aplikacji Azure.
+Brama aplikacji wymaga następujących czynności:
 - Grupa zasobów.
 - Sieć wirtualna.
-- Pula serwerów zaplecza zawierająca adresy IP serwerów zaplecza.
-- Ustawienia puli serwerów wewnętrznych. Każda pula ma takie ustawienia, jak port, protokół i koligacja oparta na plikach cookie, które są stosowane do wszystkich serwerów w puli.
-- Adresy IP frontonu, które są adresami IP otwartymi na bramie aplikacji. Adres IP frontonu może być publicznym adresem IP lub wewnętrznym adresem IP.
-- Porty frontonu, które są portami publicznymi otwartymi na bramie aplikacji. Ruch, który powoduje, że te porty są przekierowywane do serwerów zaplecza.
-- Reguła rozsyłania żądań wiążąca odbiornik i pulę serwerów zaplecza. Reguła określa pulę serwera zaplecza, do której ma być kierowany ruch, gdy trafi na określony detektor.
-Odbiornik ma port frontonu, adres IP frontonu, protokół (HTTP lub HTTPS) i nazwę certyfikatu protokołu SSL (Secure Sockets Layer) (Jeśli skonfigurowano odciążanie protokołu SSL).
+- Pula serwerów typu back-end zawierająca adresy IP serwerów back-end.
+- Ustawienia puli serwerów typu Back-end. Każda pula ma ustawienia, takie jak ffinity oparte na portach, protokołach i plikach cookie, które są stosowane do wszystkich serwerów w puli.
+- Front-end IP addresses, czyli adresy IP otwarte w bramie aplikacji. Adres IP frontoronu może być publicznym adresem IP lub wewnętrznym adresem IP.
+- Porty frontoronowe, czyli porty publiczne otwarte w bramie aplikacji. Ruch, który trafia do tych portów, jest przekierowywany na serwery back-end.
+- Reguła routingu żądania, która powiązywa słuchacza z pulą serwerów typu back-end. Reguła określa pulę serwerów końcowych, do której ruch ma być przekierowywowany, gdy trafi w określonego słuchacza.
+Słuchacz ma port frontoronowy, adres IP, protokół (HTTP lub HTTPS) i nazwę certyfikatu protokołu Secure Sockets Layer (SSL) (przy konfigurowaniu ładowania SSL).
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1: Tworzenie bramy aplikacji
+### Przykład 1. Tworzenie bramy aplikacji
 ```
 PS C:\> $ResourceGroup = New-AzResourceGroup -Name "ResourceGroup01" -Location "West US" -Tag @{Name = "Department"; Value = "Marketing"} 
 PS C:\> $Subnet = New-AzVirtualNetworkSubnetConfig -Name "Subnet01" -AddressPrefix 10.0.0.0/24
@@ -147,28 +147,28 @@ PS C:\> $Sku = New-AzApplicationGatewaySku -Name "Standard_Small" -Tier Standard
 PS C:\> $Gateway = New-AzApplicationGateway -Name "AppGateway01" -ResourceGroupName "ResourceGroup01" -Location "West US" -BackendAddressPools $Pool -BackendHttpSettingsCollection $PoolSetting -FrontendIpConfigurations $FrontEndIpConfig  -GatewayIpConfigurations $GatewayIpConfig -FrontendPorts $FrontEndPort -HttpListeners $Listener -RequestRoutingRules $Rule -Sku $Sku
 ```
 
-W poniższym przykładzie jest tworzona Brama Application Gateway po utworzeniu grupy zasobów i sieci wirtualnej oraz następujących danych:
-- Pula serwerów zaplecza
-- Ustawienia puli serwerów wewnętrznych
-- Porty frontonu
-- Adresy IP frontonu
-- Reguła rozsyłania żądań te cztery polecenia tworzą sieć wirtualną.
-Pierwsze polecenie powoduje utworzenie konfiguracji podsieci.
+Poniższy przykład tworzy bramę aplikacji, tworząc najpierw grupę zasobów i sieć wirtualną, a także następujące elementy:
+- Pula serwerów typu back-end
+- Ustawienia puli serwerów typu Back-end
+- Porty frontoronowe
+- Front-end IP addresses
+- Reguła routingu żądania Te cztery polecenia tworzą sieć wirtualną.
+Pierwsze polecenie tworzy konfigurację podsieci.
 Drugie polecenie tworzy sieć wirtualną.
-Trzecie polecenie weryfikuje konfigurację podsieci, a czwarte polecenie weryfikuje, że sieć wirtualna została utworzona pomyślnie.
-Poniższe polecenia tworzą bramkę Application Gateway.
-Pierwsze polecenie tworzy konfigurację adresu IP o nazwie GatewayIp01 dla podsieci utworzonej wcześniej.
-Drugie polecenie tworzy pulę serwerów zaplecza o nazwie Pool01 z listą wewnętrznych adresów IP i przechowuje pulę w zmiennej $Pool.
-Trzecie polecenie tworzy ustawienia puli serwerów zaplecza i zapisuje ustawienia w zmiennej $PoolSetting.
-Polecenie Dalej tworzy port frontonu na porcie 80, nazywa je FrontEndPort01 i przechowuje port w zmiennej $FrontEndPort.
-W piątym poleceniu jest tworzony publiczny adres IP przy użyciu polecenia New-AzPublicIpAddress.
-Szóste polecenie tworzy konfigurację adresu IP frontonu przy użyciu $PublicIp, nazywa ją FrontEndPortConfig01 i zapisuje ją w zmiennej $FrontEndIpConfig.
-Polecenie siódme powoduje utworzenie odbiornika przy użyciu $FrontEndPort utworzonych $FrontEndIpConfig.
-Polecenie ósmy powoduje utworzenie reguły dla odbiornika.
-Dziewiąte polecenie ustawia jednostkę SKU.
-Polecenie dziesiąte powoduje utworzenie bramy przy użyciu obiektów ustawionych za pomocą poprzednich poleceń.
+Trzecie polecenie sprawdza konfigurację podsieci, a czwarte polecenie pozwala sprawdzić, czy sieć wirtualna została utworzona pomyślnie.
+Poniższe polecenia tworzą bramę aplikacji.
+Pierwsze polecenie tworzy konfigurację protokołu IP o nazwie GatewayIp01 dla utworzonej wcześniej podsieci.
+Drugie polecenie tworzy pulę serwerów typu Back-end o nazwie Pool01 z listą adresów IP oraz przechowuje pulę w zmiennej $Pool danych.
+Trzecie polecenie tworzy ustawienia dla puli serwerów typu back-end i zapisuje ustawienia w $PoolSetting serwera.
+Polecenie Forth tworzy port frontonu na porcie 80, nadaje nazwę FrontEndPort01 i przechowuje port w $FrontEndPort zmienną.
+Piąte polecenie tworzy publiczny adres IP przy użyciu adresu New-AzPublicIpAddress.
+Szóste polecenie tworzy konfigurację frontonu ip przy użyciu protokołu $PublicIp, nadaje nazwę FrontEndPortConfig01 i zapisuje ją w $FrontEndIpConfig danych.
+Siódme polecenie tworzy słuchacza przy użyciu poprzednio utworzonego $FrontEndIpConfig $FrontEndPort.
+Ósme polecenie tworzy regułę dla słuchacza.
+Trzynastowe polecenie ustawia zestaw SKU.
+Dziesiąte polecenie tworzy bramę przy użyciu obiektów ustawionych w poprzednich poleceniach.
 
-### Przykład 2: Tworzenie bramy aplikacji przy użyciu tożsamości UserAssigned
+### Przykład 2. Tworzenie bramy aplikacji przy użyciu tożsamości z przypisaną tożsamością użytkownika
 ```
 PS C:\> $ResourceGroup = New-AzResourceGroup -Name "ResourceGroup01" -Location "West US" -Tag @{Name = "Department"; Value = "Marketing"} 
 PS C:\> $Subnet = New-AzVirtualNetworkSubnetConfig -Name "Subnet01" -AddressPrefix 10.0.0.0/24
@@ -190,10 +190,10 @@ PS C:\> $AppgwIdentity = New-AzApplicationGatewayIdentity -UserAssignedIdentity 
 PS C:\> $Gateway = New-AzApplicationGateway -Name "AppGateway01" -ResourceGroupName "ResourceGroup01" -Location "West US" -Identity $AppgwIdentity -BackendAddressPools $Pool -BackendHttpSettingsCollection $PoolSetting -FrontendIpConfigurations $FrontEndIpConfig  -GatewayIpConfigurations $GatewayIpConfig -FrontendPorts $FrontEndPort -HttpListeners $Listener -RequestRoutingRules $Rule -Sku $Sku
 ```
 
-## PARAMETRÓW
+## PARAMETERS
 
-### -AsJob
-Uruchom polecenie cmdlet w tle
+### — AsJob
+Uruchamianie polecenia cmdlet w tle
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -223,7 +223,7 @@ Accept wildcard characters: False
 ```
 
 ### -AutoscaleConfiguration
-Konfiguracja autoskalowania
+Konfiguracja skalowania automatycznego
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayAutoscaleConfiguration
@@ -238,7 +238,7 @@ Accept wildcard characters: False
 ```
 
 ### -BackendAddressPools
-Określa listę pul adresów zaplecza dla bramy aplikacji.
+Określa listę pul adresu końcowego dla bramy aplikacji.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendAddressPool[]
@@ -253,7 +253,7 @@ Accept wildcard characters: False
 ```
 
 ### -BackendHttpSettingsCollection
-Określa listę wewnętrznych ustawień HTTP dla bramy Application Gateway.
+Określa listę ustawień protokołu HTTP dla bramy aplikacji.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendHttpSettings[]
@@ -267,8 +267,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -CustomErrorConfiguration
-Błąd klienta bramy Application Gateway
+### - CustomErrorConfiguration
+Błąd klienta bramy aplikacji
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayCustomError[]
@@ -283,7 +283,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -297,8 +297,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -EnableFIPS
-Czy włączono opcję FIPS.
+### —EnableFIPS
+Czy jest włączona funkcja FIPS.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -312,8 +312,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -EnableHttp2
-Czy HTTP2 jest włączony.
+### —EnableHttp2
+Czy jest włączony protokół HTTP2.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -327,7 +327,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -FirewallPolicy
+### - FirewallPolicy
 Konfiguracja zapory
 
 ```yaml
@@ -342,7 +342,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -FirewallPolicyId
+### - FirewallPolicyId
 FirewallPolicyId
 
 ```yaml
@@ -357,8 +357,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Force
-Wymusza uruchomienie polecenia bez monitowania o potwierdzenie użytkownika.
+### — Wymuszanie
+Wymusza uruchomienie polecenia bez pytania o potwierdzenie przez użytkownika.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -372,8 +372,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -FrontendIPConfigurations
-Określa listę konfiguracji adresów IP frontonu dla bramy aplikacji.
+### - FrontendIPConfigurations
+Określa listę frontoronowych konfiguracji adresów IP dla bramy aplikacji.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayFrontendIPConfiguration[]
@@ -388,7 +388,7 @@ Accept wildcard characters: False
 ```
 
 ### -FrontendPorts
-Określa listę portów frontonu dla bramy aplikacji.
+Określa listę portów frontonie dla bramy aplikacji.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayFrontendPort[]
@@ -402,7 +402,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -GatewayIPConfigurations
+### - GatewayIPConfigurations
 Określa listę konfiguracji adresów IP dla bramy aplikacji.
 
 ```yaml
@@ -417,8 +417,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -HttpListeners
-Określa listę detektorów HTTP dla bramy aplikacji.
+### - HttpListeners
+Określa listę słuchaczy HTTP dla bramy aplikacji.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayHttpListener[]
@@ -432,8 +432,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Identity (tożsamość)
-Tożsamość bramy aplikacji, która ma być przypisana do bramy aplikacji.
+### — Tożsamość
+Tożsamość bramy aplikacji, która ma zostać przypisana do bramy aplikacji.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSManagedServiceIdentity
@@ -448,7 +448,7 @@ Accept wildcard characters: False
 ```
 
 ### — Lokalizacja
-Określa region, w którym ma zostać utworzona Brama aplikacji.
+Określa region, w którym ma być tworzyć bramę aplikacji.
 
 ```yaml
 Type: System.String
@@ -462,7 +462,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Name (nazwa)
+### — Nazwa
 Określa nazwę bramy aplikacji.
 
 ```yaml
@@ -477,8 +477,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Badania
-Określa sondy dla bramy aplikacji.
+### - Nasyć
+Określa sieci bramy aplikacji.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayProbe[]
@@ -493,7 +493,7 @@ Accept wildcard characters: False
 ```
 
 ### -RedirectConfigurations
-Lista konfiguracji przekierowania
+Lista konfiguracji przekierowywania
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRedirectConfiguration[]
@@ -508,7 +508,7 @@ Accept wildcard characters: False
 ```
 
 ### -RequestRoutingRules
-Określa listę reguł rozsyłania żądań dla bramy aplikacji.
+Określa listę reguł routingu żądań dla bramy aplikacji.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRequestRoutingRule[]
@@ -523,7 +523,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Określa nazwę grupy zasobów, w której ma zostać utworzona Brama aplikacji.
+Określa nazwę grupy zasobów, w której ma być tworzyć bramę aplikacji.
 
 ```yaml
 Type: System.String
@@ -538,7 +538,7 @@ Accept wildcard characters: False
 ```
 
 ### -RewriteRuleSet
-Lista RewriteRuleSet
+Lista zestawu rewriteRuleSet
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRewriteRuleSet[]
@@ -552,8 +552,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -SKU
-Określa jednostkę składowania zapasu (SKU) bramy aplikacji.
+### - SKU
+Określa jednostkę przechowywania zapasów (SKU) bramy aplikacji.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySku
@@ -568,7 +568,7 @@ Accept wildcard characters: False
 ```
 
 ### -SslCertificates
-Określa listę certyfikatów SSL (Secure Sockets Layer) dla bramy aplikacji.
+Określa listę certyfikatów Secure Sockets Layer (SSL) dla bramy aplikacji.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySslCertificate[]
@@ -582,8 +582,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -SslPolicy
-Określa zasady protokołu SSL dla bramy aplikacji.
+### - SslPolicy
+Określa zasady SSL dla bramy aplikacji.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySslPolicy
@@ -597,8 +597,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Tag
-Pary klucz-wartość w formie tabeli skrótów. Na przykład: @ {Key0 = "value0"; KEY1 = $null; key2 = "wartość2"}
+### — Tag
+Pary klucz-wartość w postaci tabeli skrótu. Na przykład: @{key0="value0";key1=$null;key2="wartość2"}
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -628,7 +628,7 @@ Accept wildcard characters: False
 ```
 
 ### -UrlPathMaps
-Określa mapowania ścieżek adresów URL dla bramy aplikacji.
+Określa mapy ścieżek adresu URL dla bramy aplikacji.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayUrlPathMap[]
@@ -643,7 +643,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserAssignedIdentityId
-Identyfikator ResourceId przypisanego użytkownikowi tożsamości, który ma zostać przypisany do bramy aplikacji.
+Identyfikator Zasobu przypisanej tożsamości użytkownika, który ma zostać przypisany do bramy aplikacji.
 
 ```yaml
 Type: System.String
@@ -658,7 +658,7 @@ Accept wildcard characters: False
 ```
 
 ### -WebApplicationFirewallConfiguration
-Określa konfigurację zapory aplikacji sieci Web (WAF). Możesz użyć polecenia cmdlet Get-AzApplicationGatewayWebApplicationFirewallConfiguration, aby uzyskać WAF.
+Określa konfigurację zapory aplikacji sieci Web (WAF). Aby uzyskać dostęp do Get-AzApplicationGatewayWebApplicationFirewallConfiguration WAF, możesz użyć tego polecenia cmdlet.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayWebApplicationFirewallConfiguration
@@ -672,8 +672,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Zone
-Lista stref dostępności oznaczająca lokalizację, z której musi pochodzić Brama aplikacji.
+### — Strefa
+Lista stref dostępności oznaczających, skąd musi pochodzić brama aplikacji.
 
 ```yaml
 Type: System.String[]
@@ -687,8 +687,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Potwierdź
-Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.
+### — Potwierdź
+Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -703,8 +703,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet.
-Polecenie cmdlet nie jest uruchamiane.
+Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet.
+Polecenie cmdlet nie zostanie uruchomione.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -719,74 +719,73 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### System. String
+### System.String
 
-### Microsoft. Azure. Commands. Network. models. PSApplicationGatewaySku
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySku
 
-### Microsoft. Azure. Commands. Network. models. PSApplicationGatewaySslPolicy
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySslPolicy
 
-### Microsoft. Azure. Commands. Network. models. PSApplicationGatewayIPConfiguration []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayIPConfiguration[]
 
-### Microsoft. Azure. Commands. Network. models. PSApplicationGatewaySslCertificate []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySslCertificate[]
 
-### Microsoft. Azure. Commands. Network. models. PSApplicationGatewayAuthenticationCertificate []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayAuthenticationCertificate[]
 
-### Microsoft. Azure. Commands. Network. models. PSApplicationGatewayTrustedRootCertificate []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayTrustedRootCertificate[]
 
-### Microsoft. Azure. Commands. Network. models. PSApplicationGatewayFrontendIPConfiguration []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayFrontendIPConfiguration[]
 
-### Microsoft. Azure. Commands. Network. models. PSApplicationGatewayFrontendPort []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayFrontendPort[]
 
-### Microsoft. Azure. Commands. Network. models. PSApplicationGatewayProbe []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayProbe[]
 
-### Microsoft. Azure. Commands. Network. models. PSApplicationGatewayBackendAddressPool []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendAddressPool[]
 
-### Microsoft. Azure. Commands. Network. models. PSApplicationGatewayBackendHttpSettings []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendHttpSettings[]
 
-### Microsoft. Azure. Commands. Network. models. PSApplicationGatewayHttpListener []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayHttpListener[]
 
-### Microsoft. Azure. Commands. Network. models. PSApplicationGatewayUrlPathMap []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayUrlPathMap[]
 
-### Microsoft. Azure. Commands. Network. models. PSApplicationGatewayRequestRoutingRule []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRequestRoutingRule[]
 
-### Microsoft. Azure. Commands. Network. models. PSApplicationGatewayRewriteRuleSet []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRewriteRuleSet[]
 
-### Microsoft. Azure. Commands. Network. models. PSApplicationGatewayRedirectConfiguration []
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayRedirectConfiguration[]
 
-### Microsoft. Azure. Commands. Network. models. PSApplicationGatewayWebApplicationFirewallConfiguration
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayWebApplicationFirewallConfiguration
 
-### Microsoft. Azure. Commands. Network. models. PSApplicationGatewayAutoscaleConfiguration
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayAutoscaleConfiguration
 
-### System. Collections. Hashtable
+### System.Collections.Hashtable
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### Microsoft. Azure. Commands. Network. models. PSApplicationGateway
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGateway
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
-[Nowe — AzApplicationGatewayBackendAddressPool](./New-AzApplicationGatewayBackendAddressPool.md)
+[New-AzApplicationGatewayBackendAddressPool](./New-AzApplicationGatewayBackendAddressPool.md)
 
-[Nowe — AzApplicationGatewayBackendHttpSettings](./New-AzApplicationGatewayBackendHttpSettings.md)
 
-[Nowe — AzApplicationGatewayFrontendIPConfig](./New-AzApplicationGatewayFrontendIPConfig.md)
+[New-AzApplicationGatewayFrontendIPConfig](./New-AzApplicationGatewayFrontendIPConfig.md)
 
-[Nowe — AzApplicationGatewayFrontendPort](./New-AzApplicationGatewayFrontendPort.md)
+[New-AzApplicationGatewayFrontendPort](./New-AzApplicationGatewayFrontendPort.md)
 
-[Nowe — AzApplicationGatewayHttpListener](./New-AzApplicationGatewayHttpListener.md)
+[New-AzApplicationGatewayHttpListener](./New-AzApplicationGatewayHttpListener.md)
 
-[Nowe — AzApplicationGatewayIPConfiguration](./New-AzApplicationGatewayIPConfiguration.md)
+[New-AzApplicationGatewayIPConfiguration](./New-AzApplicationGatewayIPConfiguration.md)
 
-[Nowe — AzApplicationGatewayRequestRoutingRule](./New-AzApplicationGatewayRequestRoutingRule.md)
+[New-AzApplicationGatewayRequestRoutingRule](./New-AzApplicationGatewayRequestRoutingRule.md)
 
-[Nowe — AzApplicationGatewaySku](./New-AzApplicationGatewaySku.md)
+[New-AzApplicationGatewaySku](./New-AzApplicationGatewaySku.md)
 
-[Nowe — AzVirtualNetwork](./New-AzVirtualNetwork.md)
+[New-AzVirtualNetwork](./New-AzVirtualNetwork.md)
 
-[Nowe — AzVirtualNetworkSubnetConfig](./New-AzVirtualNetworkSubnetConfig.md)
+[New-AzVirtualNetworkSubnetConfig](./New-AzVirtualNetworkSubnetConfig.md)
