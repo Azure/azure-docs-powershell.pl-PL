@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/a
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Add-AzKeyVaultKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Add-AzKeyVaultKey.md
-ms.openlocfilehash: 8583a078e12be5da3a6bcbbe16bc3349f51b9bdb
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: d2c153cf0ae2f5cffbf47656d3ae64a531cb780b
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94064070"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100413799"
 ---
 # Add-AzKeyVaultKey
 
-## STRESZCZENIe
+## SYNOPSIS
 Tworzy klucz w magazynie kluczy lub importuje klucz do magazynu kluczy.
 
-## POLECENIA
+## SKŁADNIA
 
-### InteractiveCreate (domyślny)
+### InteractiveCreate (Default)
 ```
 Add-AzKeyVaultKey [-VaultName] <String> [-Name] <String> -Destination <String> [-Disable] [-KeyOps <String[]>]
  [-Expires <DateTime>] [-NotBefore <DateTime>] [-Tag <Hashtable>] [-Size <Int32>]
@@ -65,20 +65,20 @@ Add-AzKeyVaultKey [-ResourceId] <String> [-Name] <String> -KeyFilePath <String>
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **Add-AzKeyVaultKey** tworzy klucz w magazynie kluczy w magazynie kluczy Azure lub importuje klucz do magazynu kluczy.
-Za pomocą tego polecenia cmdlet można dodawać klucze przy użyciu dowolnej z poniższych metod:
-- Utwórz klucz w sprzęcie sprzętowym modułu zabezpieczeń (HSM) w usłudze Magazyn kluczy.
-- Utwórz klucz w oprogramowaniu w usłudze Magazyn kluczy.
-- Zaimportuj klucz z własnego sprzętu sprzętowego modułu zabezpieczeń (HSM), aby HSMs w usłudze magazynu kluczy.
-- Importowanie klucza z pliku PFX na komputerze.
-- Zaimportuj klucz z pliku PFX na komputerze do modułów zabezpieczeń sprzętowych (HSMs) w usłudze Magazyn kluczy.
-W przypadku dowolnej z tych operacji możesz podać atrybuty klucza lub zaakceptować ustawienia domyślne.
-W przypadku utworzenia lub zaimportowania klucza o takiej samej nazwie jak istniejący klucz w magazynie kluczy oryginalny klucz zostanie zaktualizowany o wartości określone dla nowego klucza. Dostęp do poprzednich wartości można uzyskać przy użyciu identyfikatora URI specyficznego dla wersji dla tej wersji klucza. Aby uzyskać informacje na temat wersji kluczowych i struktury identyfikatora URI, zobacz [Informacje o kluczach i hasłach](http://go.microsoft.com/fwlink/?linkid=518560) w dokumentacji interfejsu API w magazynie kluczy.
-Uwaga: Aby zaimportować klucz z własnego sprzętowego modułu zabezpieczeń, musisz najpierw wygenerować pakiet BYOK (plik z rozszerzeniem nazwy pliku BYOK) przy użyciu narzędzia BYOK magazynu kluczy platformy Azure. Aby uzyskać więcej informacji, zobacz [sposób generowania i transferowania kluczy HSM-Protected dla magazynu kluczy platformy Azure](http://go.microsoft.com/fwlink/?LinkId=522252).
-Najlepszym rozwiązaniem jest wykonanie kopii zapasowej klucza po jego utworzeniu lub zaktualizowaniu za pomocą polecenia cmdlet Backup-AzKeyVaultKey. Nie ma żadnych funkcji usuwania zmian, więc jeśli przypadkowo usuniesz klucz lub usuniesz go, a następnie zmienisz zdanie, nie będzie można odzyskać klucza, chyba że masz kopię zapasową, którą możesz przywrócić.
+## OPIS
+Polecenie **cmdlet Add-AzKeyVaultKey** tworzy klucz w magazynie kluczy w magazynie kluczy platformy Azure lub importuje klucz do magazynu kluczy.
+Użyj tego polecenia cmdlet, aby dodać klucze przy użyciu dowolnej z następujących metod:
+- Tworzenie klucza w module zabezpieczeń sprzętu (HSM) w usłudze magazynu kluczy.
+- Utwórz klucz w oprogramowaniu w usłudze magazynu kluczy.
+- Importowanie klucza z własnego modułu zabezpieczeń sprzętu do hsm w usłudze magazynu kluczy.
+- Zaimportuj klucz z pliku pfx na komputerze.
+- Importowanie klucza z pliku pfx na komputerze do modułów zabezpieczeń sprzętu (HSM) w usłudze magazynu kluczy.
+W przypadku dowolnej z tych operacji można podać atrybuty klucza lub zaakceptować ustawienia domyślne.
+Jeśli utworzysz lub zaimportujesz klucz o takiej samej nazwie jak istniejący klucz w magazynie kluczy, klucz oryginalny zostanie zaktualizowany o wartości określone dla nowego klucza. Aby uzyskać dostęp do poprzednich wartości, można użyć specyficznego dla wersji URI dla tej wersji klucza. Aby dowiedzieć się więcej o kluczowych [](http://go.microsoft.com/fwlink/?linkid=518560) wersjach i strukturze URI, zobacz Informacje o kluczach i tajemnicach w dokumentacji interfejsu API REST magazynu kluczy.
+Uwaga: Aby zaimportować klucz z własnego modułu zabezpieczeń sprzętowych, musisz najpierw wygenerować pakiet BYOK (plik z rozszerzeniem nazwy pliku byok) przy użyciu zestawu narzędzi BYOK magazynu kluczy platformy Azure. Aby uzyskać więcej informacji, zobacz [generuj i przesyłaj klucze HSM-Protected dla magazynu](http://go.microsoft.com/fwlink/?LinkId=522252)kluczy platformy Azure.
+Najlepszym rozwiązaniem jest, aby po utworzeniu lub zaktualizowaniu klucza utworzyć jego kopię zapasową, używając polecenia cmdlet Backup-AzKeyVaultKey cmdlet. Nie ma funkcji przywracania, więc jeśli przypadkowo usuniesz klucz lub usuniesz go, a następnie zmienisz zdanie, nie będzie można go odzyskać, chyba że masz jego kopię zapasową, która będzie można przywrócić.
 
-## Przykłady
+## PRZYKŁADY
 
 ### Przykład 1. Tworzenie klucza
 ```powershell
@@ -97,9 +97,9 @@ Purge Disabled : False
 Tags           :
 ```
 
-To polecenie tworzy klucz chroniony oprogramowaniem o nazwie ITSoftware w magazynie kluczy o nazwie contoso.
+To polecenie tworzy klucz chroniony oprogramowaniem o nazwie ITSoftware w magazynie kluczy o nazwie Contoso.
 
-### Przykład 2: Tworzenie klucza chronionego przy użyciu modułu HSM
+### Przykład 2. Tworzenie klucza chronionego przez hsm
 ```powershell
 PS C:\> Add-AzKeyVaultKey -VaultName 'contoso' -Name 'ITHsm' -Destination 'HSM'
 
@@ -116,9 +116,9 @@ Purge Disabled : False
 Tags           :
 ```
 
-To polecenie tworzy klucz chroniony przez HSM w magazynie kluczy o nazwie contoso.
+To polecenie tworzy klucz chroniony modułem HSM w magazynie kluczy o nazwie Contoso.
 
-### Przykład 3: Tworzenie klucza z wartościami niedomyślnymi
+### Przykład 3. Tworzenie klucza z wartościami innymi niż domyślne
 ```powershell
 PS C:\> $KeyOperations = 'decrypt', 'verify'
 PS C:\> $Expires = (Get-Date).AddYears(2).ToUniversalTime()
@@ -141,13 +141,13 @@ Tags           : Name        Value
                  Accounting  true
 ```
 
-Pierwsze polecenie zapisuje wartości w postaci odszyfrowania i weryfikacji w zmiennej $KeyOperations.
-Drugie polecenie tworzy obiekt **DateTime** , zdefiniowany w formacie UTC, przy użyciu polecenia cmdlet **Get-Date** .
-Ten obiekt Określa godzinę w przyszłości w dwóch latach. Polecenie zapisuje tę datę w zmiennej $Expires. Aby uzyskać więcej informacji, wpisz tekst `Get-Help Get-Date` .
-Trzecie polecenie tworzy obiekt **DateTime** przy użyciu polecenia cmdlet **Get-Date** . Ten obiekt określa bieżący czas UTC. Polecenie zapisuje tę datę w zmiennej $NotBefore.
-Ostatnie polecenie tworzy klucz o nazwie ITHsmNonDefault, który jest kluczem chronionym przy użyciu modułu HSM. W poleceniu są określone wartości dozwolonych kluczowych operacji przechowywanych $KeyOperations. Polecenie określa czasy, w jakich parametry *Expires* i *NotBefore* zostały utworzone w poprzednich poleceniach, oraz znaczniki wysokiej wagi i. Nowy klucz jest wyłączony. Możesz ją włączyć za pomocą polecenia cmdlet **Set-AzKeyVaultKey** .
+Pierwsze polecenie przechowuje wartości do odszyfrowywania i weryfikowania w $KeyOperations danych.
+Drugie polecenie tworzy obiekt **DateTime** zdefiniowany w czasie UTC przy użyciu polecenia cmdlet **Get-Date.**
+Ten obiekt określa czas za dwa lata. Polecenie przechowuje datę w $Expires zmienną. Aby uzyskać więcej informacji, wpisz `Get-Help Get-Date` .
+Trzecie polecenie tworzy obiekt **DateTime** przy użyciu polecenia cmdlet **Get-Date.** Ten obiekt określa bieżący czas UTC. Polecenie przechowuje datę w $NotBefore zmienną.
+Ostatnie polecenie tworzy klucz o nazwie ITHsmNonDefault, który jest kluczem chronionym przez HSM. To polecenie określa wartości dozwolonych operacji na kluczach przechowywanych $KeyOperations. To polecenie określa godziny dla parametrów *Wygasa i* *NieBefore* utworzonych w poprzednich poleceniach oraz tagów o wysokim poziomie ważności i przez it. Nowy klucz zostanie wyłączony. Możesz ją włączyć przy użyciu polecenia cmdlet **Set-AzKeyVaultKey.**
 
-### Przykład 4: Importowanie klucza chronionego przez HSM
+### Przykład 4. Importowanie klucza chronionego przez HSM
 ```powershell
 PS C:\> Add-AzKeyVaultKey -VaultName 'contoso' -Name 'ITByok' -KeyFilePath 'C:\Contoso\ITByok.byok' -Destination 'HSM'
 
@@ -164,11 +164,11 @@ Purge Disabled : False
 Tags           :
 ```
 
-To polecenie importuje klucz o nazwie ITByok z lokalizacji, w której określono parametr Key *FilePath* . Importowany klucz jest kluczem chronionym przy użyciu modułu HSM.
-Aby zaimportować klucz z własnego sprzętowego modułu zabezpieczeń, musisz najpierw wygenerować pakiet BYOK (plik z rozszerzeniem nazwy pliku BYOK) przy użyciu przybornika kluczy usługi Azure BYOK.
-Aby uzyskać więcej informacji, zobacz [sposób generowania i transferowania kluczy HSM-Protected dla magazynu kluczy platformy Azure](http://go.microsoft.com/fwlink/?LinkId=522252).
+To polecenie importuje klucz o nazwie ITByok z lokalizacji, która jest określana przez parametr *KeyFilePath.* Importowany klucz jest kluczem chronionym przez hsm.
+Aby zaimportować klucz z własnego modułu zabezpieczeń sprzętowych, musisz najpierw wygenerować pakiet BYOK (plik z rozszerzeniem nazwy pliku byok) przy użyciu zestawu narzędzi BYOK magazynu kluczy platformy Azure.
+Aby uzyskać więcej informacji, zobacz [generuj i przesyłaj klucze HSM-Protected dla magazynu](http://go.microsoft.com/fwlink/?LinkId=522252)kluczy platformy Azure.
 
-### Przykład 5: Importowanie klucza chronionego oprogramowaniem
+### Przykład 5. Importowanie klucza chronionego oprogramowaniem
 ```powershell
 PS C:\> $Password = ConvertTo-SecureString -String 'Password' -AsPlainText -Force
 PS C:\> Add-AzKeyVaultKey -VaultName 'contoso' -Name 'ITPfx' -KeyFilePath 'C:\Contoso\ITPfx.pfx' -KeyFilePassword $Password
@@ -186,11 +186,11 @@ Purge Disabled : False
 Tags           :
 ```
 
-Pierwsze polecenie konwertuje ciąg na ciąg w bezpiecznym ciągu przy użyciu polecenia cmdlet **ConvertTo-SecureString** , a następnie zapisuje ten ciąg w zmiennej $Password. Aby uzyskać więcej informacji, wpisz tekst `Get-Help
+Pierwsze polecenie konwertuje ciąg na bezpieczny ciąg za pomocą polecenia cmdlet **ConvertTo-SecureString,** a następnie zapisuje ten ciąg w $Password danych. Aby uzyskać więcej informacji, wpisz `Get-Help
 ConvertTo-SecureString` .
-Drugie polecenie tworzy hasło oprogramowania w magazynie kluczy contoso. Polecenie określa lokalizację klucza i hasło przechowywane w $Password.
+Drugie polecenie tworzy hasło oprogramowania w magazynie kluczy Contoso. To polecenie określa lokalizację klucza i hasło przechowywane w programie $Password.
 
-### Przykład 6: Importowanie klucza i przypisywanie atrybutów
+### Przykład 6. Importowanie klucza i przypisywanie atrybutów
 ```powershell
 PS C:\> $Password = ConvertTo-SecureString -String 'password' -AsPlainText -Force
 PS C:\> $Expires = (Get-Date).AddYears(2).ToUniversalTime()
@@ -212,24 +212,24 @@ Tags           : Name        Value
                  Accounting  true
 ```
 
-Pierwsze polecenie konwertuje ciąg na ciąg w bezpiecznym ciągu przy użyciu polecenia cmdlet **ConvertTo-SecureString** , a następnie zapisuje ten ciąg w zmiennej $Password.
-Drugie polecenie tworzy obiekt **DateTime** przy użyciu polecenia cmdlet **Get-Date** , a następnie zapisuje ten obiekt w zmiennej $Expires.
-Trzecie polecenie tworzy zmienną $tags, aby ustawić znaczniki wysokiej wagi i je.
-Polecenie ostatnie importuje klucz jako klucz HSM z określonej lokalizacji. Polecenie określa czas wygaśnięcia przechowywany w $Expires i hasło przechowywane w $Password i stosuje Tagi przechowywane w $tags.
+Pierwsze polecenie konwertuje ciąg na bezpieczny ciąg za pomocą polecenia cmdlet **ConvertTo-SecureString,** a następnie zapisuje ten ciąg w $Password danych.
+Drugie polecenie tworzy obiekt **DateTime** przy użyciu polecenia cmdlet **Get-Date,** a następnie zapisuje ten obiekt w $Expires danych.
+Trzecie polecenie tworzy zmienną $tags, aby ustawiać tagi o wysokim poziomie ważności i it.
+Ostatnie polecenie importuje klucz jako klucz HSM z określonej lokalizacji. To polecenie określa czas wygaśnięcia przechowywany w programie $Expires hasło przechowywane w programie $Password i stosuje tagi przechowywane w $tags.
 
-### Przykład 7: generowanie klucza wymiany kluczy (KEK) dla funkcji "Dobierz własny klucz" (BYOK)
+### Przykład 7. Generowanie klucza programu Exchange (KEK) dla funkcji "bring your own key" (BYOK)
 
 ```powershell
 PS C:\> $key = Add-AzKeyVaultKey -VaultName $vaultName -Name $keyName -Destination HSM -Size 2048 -KeyOps "import"
 ```
 
-Generuje klucz (nazywany kluczem wymiany kluczy (KEK)). KEK musi być kluczem modułu RSA-HSM, który ma tylko operację importowania klucza. Tylko klucze modułu HSM RSA obsługują tylko Magazyn kluczy Premium.
-Więcej informacji znajdziesz w sekcji https://docs.microsoft.com/en-us/azure/key-vault/keys/hsm-protected-keys
+Generuje klucz (nazywany kluczem programu Exchange ). KEK musi być kluczem RSA-HSM, który ma tylko operację klucza importu. Tylko wersja SKU magazynu kluczy Premium obsługuje klucze RSA-HSM.
+Aby uzyskać więcej informacji, zobacz https://docs.microsoft.com/en-us/azure/key-vault/keys/hsm-protected-keys
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -243,13 +243,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Miejsce docelowe
-Określa, czy chcesz dodać ten klucz jako klucz chroniony oprogramowaniem, czy klucz chroniony HSM w usłudze magazynu kluczy.
+### — miejsce docelowe
+Określa, czy dodać klucz jako klucz chroniony oprogramowaniem, czy jako klucz chroniony przez HSM w usłudze magazynu kluczy.
 Prawidłowe wartości to: HSM i Software.
-Uwaga: Aby używać modułu HSM jako miejsca docelowego, musisz mieć kluczowy magazyn obsługujący HSMs. Aby uzyskać więcej informacji na temat warstw usług i funkcji magazynu kluczy platformy Azure, zobacz [witrynę sieci Web usługi Azure Key](http://go.microsoft.com/fwlink/?linkid=512521)about.
-Ten parametr jest wymagany podczas tworzenia nowego klucza. Jeśli importujesz klucz za pomocą parametru *FilePath* , ten parametr jest opcjonalny:
-- Jeśli ten parametr nie jest określony, a polecenie cmdlet powoduje zaimportowanie klucza z rozszerzeniem nazwy pliku BYOK, powoduje to zaimportowanie tego klucza jako klucza chronionego przy użyciu modułu HSM. Polecenie cmdlet nie może zaimportować tego klucza jako klucza chronionego oprogramowaniem.
-- Jeśli ten parametr nie jest określony, a polecenie cmdlet spowoduje zaimportowanie klucza o rozszerzeniu nazwy pliku PFX, program zaimportuje klucz jako klucz chroniony oprogramowaniem.
+Uwaga: Aby użyć funkcji HSM jako miejsca docelowego, należy mieć magazyn kluczy obsługujący hsm. Aby uzyskać więcej informacji na temat warstw usług i możliwości dla magazynu kluczy platformy Azure, zobacz witrynę internetową Ceny magazynu kluczy [platformy Azure.](http://go.microsoft.com/fwlink/?linkid=512521)
+Ten parametr jest wymagany podczas tworzenia nowego klucza. W przypadku importowania klucza za pomocą parametru *KeyFilePath* ten parametr jest opcjonalny:
+- Jeśli ten parametr nie zostanie określony, a to polecenie cmdlet importuje klucz z rozszerzeniem nazwy pliku byok, importuje ten klucz jako klucz chroniony przez moduł HSM. Polecenie cmdlet nie może zaimportować tego klucza jako klucza chronionego oprogramowaniem.
+- Jeśli nie określisz tego parametru, a to polecenie cmdlet zaimresuje klucz z rozszerzeniem nazwy pliku pfx, zaimresuje ten klucz jako klucz chroniony oprogramowaniem.
 
 ```yaml
 Type: System.String
@@ -277,8 +277,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Disable
-Wskazuje, że dodawany klawisz jest ustawiony na początkowy stan wyłączony. Każda próba użycia tego klawisza zakończy się niepowodzeniem. Tego parametru należy użyć, jeśli wstępnie załadowano klucze, które mają być później włączone.
+### - Wyłącz
+Wskazuje, że dodajeny klucz jest ustawiony na początkowy stan wyłączenia. Próba użycia klucza nie powiedzie się. Użyj tego parametru, jeśli zamierzasz włączyć wstępnie klucze później.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -292,8 +292,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Wygasa
-Określa czas wygaśnięcia jako obiekt **DateTime** dla klucza, który jest dodawany przez to polecenie cmdlet. W tym parametrze jest używany uniwersalny czas koordynowany (UTC). Aby uzyskać obiekt **DateTime** , należy użyć polecenia cmdlet **Get-Date** . Aby uzyskać więcej informacji, wpisz tekst `Get-Help Get-Date` . Jeśli nie określisz tego parametru, klucz nie wygasa.
+### — Wygasa
+Określa czas wygaśnięcia , jako obiekt **DateTime,** klucza, który dodaje to polecenie cmdlet. W tym parametrze jest używany uniwersalny czas koordynowany (UTC). Aby uzyskać obiekt **DateTime,** użyj polecenia cmdlet **Get-Date.** Aby uzyskać więcej informacji, wpisz `Get-Help Get-Date` . Jeśli nie określisz tego parametru, klucz nie wygaśnie.
 
 ```yaml
 Type: System.Nullable`1[System.DateTime]
@@ -307,7 +307,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Inputobject
+### -InputObject
 Obiekt magazynu.
 
 ```yaml
@@ -323,7 +323,7 @@ Accept wildcard characters: False
 ```
 
 ### -KeyFilePassword
-Określa hasło importowanego pliku jako obiekt **SecureString** . Aby uzyskać obiekt **SecureString** , użyj polecenia cmdlet **ConvertTo-SecureString** . Aby uzyskać więcej informacji, wpisz tekst `Get-Help ConvertTo-SecureString` . Musisz określić to hasło, aby zaimportować plik z rozszerzeniem nazwy pliku PFX.
+Określa hasło dla zaimportowanego pliku jako obiektu **SecureString.** Aby uzyskać obiekt **SecureString,** użyj polecenia cmdlet **ConvertTo-SecureString.** Aby uzyskać więcej informacji, wpisz `Get-Help ConvertTo-SecureString` . To hasło należy określić, aby zaimportować plik z rozszerzeniem nazwy pliku pfx.
 
 ```yaml
 Type: System.Security.SecureString
@@ -337,12 +337,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -FilePath
-Określa ścieżkę pliku lokalnego zawierającego kluczowe materiały importowane przez to polecenie.
-Prawidłowe rozszerzenia nazw plików to. BYOK i. pfx.
-- Jeśli plik jest plikiem BYOK, po zakończeniu importu klucz jest automatycznie chroniony przez HSMs i nie można zastąpić tego ustawienia domyślnego.
-- Jeśli plik jest plikiem pfx, po zakończeniu importowania klucz jest automatycznie chroniony przez oprogramowanie. Aby zastąpić to ustawienie domyślne, ustaw parametr *lokalizacja_docelowa* na HSM, tak aby klucz był chroniony za pomocą modułu HSM.
-Po określeniu tego parametru parametr *docelowy* jest opcjonalny.
+### -KeyFilePath
+Określa ścieżkę pliku lokalnego zawierającego klucz materiałów importowanych przez to polecenie cmdlet.
+Prawidłowe rozszerzenia nazw plików to byok i pfx.
+- Jeśli plik jest plikiem byok, klucz jest automatycznie chroniony przez moduły HSM po zakończeniu importowania i nie można zastąpić tego ustawienia domyślnego.
+- Jeśli plik jest plikiem pfx, klucz jest automatycznie chroniony przez oprogramowanie po zaimportowaniu. Aby zastąpić to ustawienie domyślne, ustaw dla *parametru Destination* wartość HSM tak, aby klucz był chroniony przez HSM.
+Określenie tego parametru ma wartość *parametru Destination* (Miejsce docelowe) jest opcjonalne.
 
 ```yaml
 Type: System.String
@@ -357,16 +357,16 @@ Accept wildcard characters: False
 ```
 
 ### -KeyOps
-Określa tablicę operacji, które można wykonać przy użyciu klucza, który jest dodawany przez to polecenie cmdlet.
-Jeśli nie podano tego parametru, można wykonać wszystkie operacje.
-Dopuszczalne wartości tego parametru to rozdzielana przecinkami lista podstawowych operacji, które zdefiniowano w [specyfikacji klucza internetowego JSON (JWK)](http://go.microsoft.com/fwlink/?LinkID=613300):
-- szyfrowane
-- Szyfruj
+Określa tablicę operacji, które można wykonać przy użyciu klucza, który dodaje to polecenie cmdlet.
+Jeśli nie określisz tego parametru, będzie można wykonywać wszystkie operacje.
+Dopuszczalne wartości dla tego parametru to rozdzielona przecinkami lista operacji klucza zgodnie ze specyfikacją klucza sieci [Web JSON (JWK):](http://go.microsoft.com/fwlink/?LinkID=613300)
+- szyfrowanie
+- odszyfrowywanie
 - wrapKey
 - unwrapKey
-- zapisywania
-- sprawdzić
-- Importowanie (tylko w przypadku KEK, zobacz przykład 7)
+- znak
+- weryfikuj
+- importowanie (tylko w przypadku KEK, zobacz przykład 7)
 
 ```yaml
 Type: System.String[]
@@ -380,8 +380,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (nazwa)
-Określa nazwę klucza, który ma zostać dodany do magazynu kluczy. To polecenie cmdlet konstruuje w pełni kwalifikowaną nazwę domeny (FQDN) klucza na podstawie nazwy, jaką określa ten parametr, nazwy magazynu kluczy i bieżącego środowiska. Nazwa musi zawierać ciąg od 1 do 63 znaków, który zawiera tylko 0-9, a-z, a-Z i-(symbol kreski).
+### — Nazwa
+Określa nazwę klucza do dodania do magazynu kluczy. To polecenie cmdlet konstruuje w pełni kwalifikowaną nazwę domeny (FQDN) klucza na podstawie nazwy, która jest określana przez ten parametr, nazwy magazynu kluczy i bieżącego środowiska. Nazwa musi być ciągiem o długości od 1 do 63 znaków, który zawiera tylko wartości 0-9, a-z, A-Z i - (symbol kreski).
 
 ```yaml
 Type: System.String
@@ -396,7 +396,7 @@ Accept wildcard characters: False
 ```
 
 ### -NotBefore
-Określa czas (w postaci obiektu **DateTime** ), przed którym nie można użyć klucza. Ten parametr używa czasu UTC. Aby uzyskać obiekt **DateTime** , należy użyć polecenia cmdlet **Get-Date** . Jeśli ten parametr nie jest określony, klucz może być natychmiast wykorzystany.
+Określa czas jako obiekt **DateTime,** przed którym nie można użyć klucza. Ten parametr używa czasu UTC. Aby uzyskać obiekt **DateTime,** użyj polecenia cmdlet **Get-Date.** Jeśli nie określisz tego parametru, klucz może zostać użyty natychmiast.
 
 ```yaml
 Type: System.Nullable`1[System.DateTime]
@@ -425,8 +425,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Size
-Rozmiar klucza RSA w bitach. Jeśli nie zostanie określona, usługa będzie dostarczać bezpieczne ustawienia domyślne.
+### — Rozmiar
+Rozmiar klucza RSA w bitach. Jeśli nie zostanie określona, usługa udostępni bezpieczne ustawienie domyślne.
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -440,8 +440,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Tag
-Pary klucz-wartość w formie tabeli skrótów. Na przykład: @ {Key0 = "value0"; KEY1 = $null; key2 = "wartość2"}
+### — Tag
+Pary klucz-wartość w postaci tabeli skrótu. Na przykład: @{key0="value0";key1=$null;key2="wartość2"}
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -455,8 +455,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Magazynname
-Określa nazwę magazynu kluczy, do którego jest dodawany klucz polecenia. To polecenie cmdlet konstruuje nazwę FQDN magazynu kluczy na podstawie nazwy, jaką ten parametr określa i bieżące środowisko.
+### -VaultName
+Określa nazwę magazynu kluczy, do którego to polecenie cmdlet dodaje klucz. To polecenie cmdlet konstruuje nazwę FQDN magazynu kluczy na podstawie nazwy, która jest określana przez ten parametr i bieżącego środowiska.
 
 ```yaml
 Type: System.String
@@ -470,8 +470,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Potwierdź
-Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.
+### — Potwierdź
+Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -486,8 +486,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet.
-Polecenie cmdlet nie jest uruchamiane.
+Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet.
+Polecenie cmdlet nie zostanie uruchomione.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -502,19 +502,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### Microsoft. Azure. Commands. platforming. models. PSKeyVault
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
 
-### System. String
+### System.String
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### Microsoft. Azure. Commands. platforming. models. PSKeyVaultKey
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKey
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
@@ -524,4 +524,3 @@ To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariab
 
 [Remove-AzKeyVaultKey](./Remove-AzKeyVaultKey.md)
 
-[Set-AzKeyVaultKeyAttribute](./Set-AzKeyVaultKeyAttribute.md)

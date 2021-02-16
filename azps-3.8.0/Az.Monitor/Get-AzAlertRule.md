@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzAlertRule.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzAlertRule.md
-ms.openlocfilehash: f515d7db58e75cc916478e07edb4e34233201a4d
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 61c50e59dfb02a454c9f513f4f5dac277a4ee28d
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94053969"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100404109"
 ---
 # Get-AzAlertRule
 
-## STRESZCZENIe
+## SYNOPSIS
 Pobiera reguły alertów.
 
-## POLECENIA
+## SKŁADNIA
 
 ### GetByResourceGroup
 ```
@@ -38,39 +38,39 @@ Get-AzAlertRule -ResourceGroupName <String> -TargetResourceId <String> [-Detaile
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **Get-AzAlertRule** pobiera regułę alertu przy użyciu jej nazwy lub identyfikatora URI lub wszystkich reguł alertów z określonej grupy zasobów.
+## OPIS
+Polecenie **cmdlet Get-AzAlertRule** pobiera regułę alertu według jej nazwy, URI lub wszystkich reguł alertów z określonej grupy zasobów.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1: uzyskiwanie reguł alertów dla grupy zasobów
+### Przykład 1. Uzyskiwanie reguł alertów dla grupy zasobów
 ```
 PS C:\>Get-AzAlertRule -ResourceGroup "Default-Web-CentralUS"
 ```
 
-To polecenie pobiera wszystkie reguły alertów dla grupy zasobów o nazwie Default-Web-Central.
-Dane wyjściowe nie zawierają szczegółów dotyczących reguł, ponieważ nie określono parametru *DetailedOutput* .
+To polecenie pobiera wszystkie reguły alertów dla grupy zasobów o nazwie Default-Web-CentralUS.
+Dane wyjściowe nie zawierają szczegółowych informacji o zasadach, ponieważ nie *określono parametru DetailedOutput.*
 
-### Przykład 2: uzyskiwanie reguły alertu według nazwy
+### Przykład 2. Uzyskiwanie reguły alertu według nazwy
 ```
 PS C:\>Get-AzAlertRule -ResourceGroup "Default-Web-CentralUS" -Name "myalert-7da64548-214d-42ca-b12b-b245bb8f0ac8"
 ```
 
-To polecenie pobiera regułę alertu o nazwie mój alert — 7da64548-214d-42ca-b12b-b245bb8f0ac8.
-Ponieważ parametr *DetailedOutput* nie jest określony, dane wyjściowe zawierają tylko podstawowe informacje na temat reguły alertu.
+To polecenie pobiera regułę alertu o nazwie myalert-7da64548-214d-42ca-b12b-b245bb8f0ac8.
+Ponieważ parametr *DetailedOutput* nie jest określony, dane wyjściowe zawierają tylko podstawowe informacje o regułę alertu.
 
-### Przykład 3: uzyskiwanie reguły alertu według nazwy z danymi szczegółowymi
+### Przykład 3. Uzyskiwanie reguły alertu według nazwy ze szczegółowymi informacjami wyjściowym
 ```
 PS C:\>Get-AzAlertRule -ResourceGroup "Default-Web-CentralUS" -Name "myalert-7da64548-214d-42ca-b12b-b245bb8f0ac8" -DetailedOutput
 ```
 
-To polecenie pobiera regułę alertu o nazwie mój alert — 7da64548-214d-42ca-b12b-b245bb8f0ac8.
-Określono parametr *DetailedOutput* , więc dane wyjściowe są szczegółowe.
+To polecenie pobiera regułę alertu o nazwie myalert-7da64548-214d-42ca-b12b-b245bb8f0ac8.
+Parametr *DetailedOutput* jest określony, więc dane wyjściowe są szczegółowe.
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -85,7 +85,7 @@ Accept wildcard characters: False
 ```
 
 ### -DetailedOutput
-Wyświetla wszystkie szczegóły w wynikach.
+Wyświetla pełne szczegóły w wyniku.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -99,8 +99,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Name (nazwa)
-Określa nazwę reguły alertu, którą należy uzyskać.
+### — Nazwa
+Określa nazwę reguły alertu do uzyskania.
 
 ```yaml
 Type: System.String
@@ -145,27 +145,26 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### System. String
+### System.String
 
-### System. Management. Automation. SwitchParameter
+### System.Management.Automation.SwitchParameters
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### Microsoft. Azure. Commands. Insights. OutputClasses. PSAlertRule
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSAlertRule
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
-[Dodaj-AzLogAlertRule](./Add-AzLogAlertRule.md)
 
-[Dodaj-AzMetricAlertRule](./Add-AzMetricAlertRule.md)
+[Add-AzMetricAlertRule](./Add-AzMetricAlertRule.md)
 
-[Dodaj-AzWebtestAlertRule](./Add-AzWebtestAlertRule.md)
+[Add-AzWebtestAlertRule](./Add-AzWebtestAlertRule.md)
 
 [Get-AzAlertHistory](./Get-AzAlertHistory.md)
 
