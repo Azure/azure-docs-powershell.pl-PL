@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/re
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzNetworkWatcher.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Remove-AzNetworkWatcher.md
-ms.openlocfilehash: 7723d717a35f4c5e3e693bc5ff115b484df5fa2c
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: fb2dfd74e4807aab76fb48a4593a8a46c4fe6f3f
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94053030"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398635"
 ---
 # Remove-AzNetworkWatcher
 
-## STRESZCZENIe
-Usuwa Monitor sieci.
+## SYNOPSIS
+Usuwa czujki sieci.
 
-## POLECENIA
+## SKŁADNIA
 
 ### SetByResource
 ```
@@ -37,25 +37,25 @@ Remove-AzNetworkWatcher -Location <String> [-PassThru] [-AsJob] [-DefaultProfile
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet Remove-AzNetworkWatcher usuwa zasób obserwatora sieci.
+## OPIS
+Polecenie Remove-AzNetworkWatcher cmdlet usuwa zasób usługi Network Watcher.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1. Tworzenie i usuwanie obserwatora sieci
+### Przykład 1. Tworzenie i usuwanie czujki sieci
 ```
 New-AzResourceGroup -Name NetworkWatcherRG -Location westcentralus
 New-AzNetworkWatcher -Name NetworkWatcher_westcentralus -ResourceGroup NetworkWatcherRG -Location westcentralus
 Remove-AzNetworkWatcher -Name NetworkWatcher_westcentralus -ResourceGroup NetworkWatcherRG
 ```
 
-W tym przykładzie przedstawiono tworzenie obserwatora sieci w grupie zasobów, a następnie natychmiastowe usunięcie go. Należy zauważyć, że dla każdego regionu można utworzyć tylko jeden Monitor sieci dla każdej subskrypcji.
-Aby zapobiec wyświetlaniu monitu podczas usuwania sieci wirtualnej, Użyj flagi-Force.
+W tym przykładzie w grupie zasobów jest kreślarz sieciowy, a następnie natychmiast usuwany. Pamiętaj, że w ramach jednej subskrypcji można utworzyć tylko jednego czujki sieci.
+Aby pominąć monit podczas usuwania sieci wirtualnej, użyj flagi -Force.
 
-## PARAMETRÓW
+## PARAMETERS
 
-### -AsJob
-Uruchom polecenie cmdlet w tle
+### — AsJob
+Uruchamianie polecenia cmdlet w tle
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -70,7 +70,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -85,7 +85,7 @@ Accept wildcard characters: False
 ```
 
 ### — Lokalizacja
-Lokalizacja obserwatora sieci.
+Lokalizacja czujki sieci.
 
 ```yaml
 Type: System.String
@@ -99,7 +99,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (nazwa)
+### — Nazwa
 Nazwa zasobu.
 
 ```yaml
@@ -114,8 +114,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -NetworkWatcher
-Zasób obserwatora sieci.
+### - NetworkWatcher
+Zasób obserwowania sieci.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
@@ -159,8 +159,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Potwierdź
-Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.
+### — Potwierdź
+Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -175,8 +175,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet.
-Polecenie cmdlet nie jest uruchamiane.
+Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet.
+Polecenie cmdlet nie zostanie uruchomione.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -191,24 +191,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### Microsoft. Azure. Commands. Network. models. PSNetworkWatcher
+### Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
 
-### System. String
+### System.String
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### System. Boolean
+### System.Boolean
 
-## INFORMACYJN
-Słowa kluczowe: Azure, azurerm, ARM, Resource, Management, Manager, Network, Networking, obserwator sieci
+## NOTATKI
+Słowa kluczowe: azure, azurerm, arm, resource, management, manager, network, networking, network watcher
 
 ## LINKI POKREWNE
 
-[Nowe — AzNetworkWatcher](./New-AzNetworkWatcher.md)
+[New-AzNetworkWatcher](./New-AzNetworkWatcher.md)
 
 [Get-AzNetworkWatcher](./Get-AzNetworkWatcher.md)
 
@@ -220,27 +220,27 @@ Słowa kluczowe: Azure, azurerm, ARM, Resource, Management, Manager, Network, Ne
 
 [Get-AzNetworkWatcherTopology](./Get-AzNetworkWatcherTopology.md)
 
-[Start — AzNetworkWatcherResourceTroubleshooting](./Start-AzNetworkWatcherResourceTroubleshooting.md)
+[Start-AzNetworkWatcherResourceTroubleshooting](./Start-AzNetworkWatcherResourceTroubleshooting.md)
 
-[Nowe — AzNetworkWatcherPacketCapture](./New-AzNetworkWatcherPacketCapture.md)
+[New-AzNetworkWatcherPacketCapture](./New-AzNetworkWatcherPacketCapture.md)
 
-[Nowe — AzPacketCaptureFilterConfig](./New-AzPacketCaptureFilterConfig.md)
+[New-AzPacketCaptureFilterConfig](./New-AzPacketCaptureFilterConfig.md)
 
 [Get-AzNetworkWatcherPacketCapture](./Get-AzNetworkWatcherPacketCapture.md)
 
 [Remove-AzNetworkWatcherPacketCapture](./Remove-AzNetworkWatcherPacketCapture.md)
 
-[Zatrzymaj — AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
+[Stop-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
 
-[Nowe — AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md)
+[New-AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md)
 
-[Test — AzNetworkWatcherIPFlow](./Test-AzNetworkWatcherIPFlow.md)
+[Test-AzNetworkWatcherIPFlow](./Test-AzNetworkWatcherIPFlow.md)
 
-[Test — AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md)
+[Test-AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md)
 
-[Zatrzymaj — AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
+[Stop-AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
 
-[Start — AzNetworkWatcherConnectionMonitor](./Start-AzNetworkWatcherConnectionMonitor.md)
+[Start-AzNetworkWatcherConnectionMonitor](./Start-AzNetworkWatcherConnectionMonitor.md)
 
 [Set-AzNetworkWatcherConnectionMonitor](./Set-AzNetworkWatcherConnectionMonitor.md)
 
@@ -248,7 +248,7 @@ Słowa kluczowe: Azure, azurerm, ARM, Resource, Management, Manager, Network, Ne
 
 [Remove-AzNetworkWatcherConnectionMonitor](./Remove-AzNetworkWatcherConnectionMonitor.md)
 
-[Nowe — AzNetworkWatcherConnectionMonitor](./New-AzNetworkWatcherConnectionMonitor.md)
+[New-AzNetworkWatcherConnectionMonitor](./New-AzNetworkWatcherConnectionMonitor.md)
 
 [Get-AzNetworkWatcherTroubleshootingResult](./Get-AzNetworkWatcherTroubleshootingResult.md)
 
@@ -258,6 +258,6 @@ Słowa kluczowe: Azure, azurerm, ARM, Resource, Management, Manager, Network, Ne
 
 [Get-AzNetworkWatcherFlowLogStatus](./Get-AzNetworkWatcherFlowLogStatus.md)
 
-[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport)
+[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)

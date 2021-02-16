@@ -5,21 +5,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzNetworkWatcherNextHop.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzNetworkWatcherNextHop.md
-ms.openlocfilehash: 51fea717c352f00b4f356e6bb07b730cdeb60966
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 8da7165a9bb9e67076d9ba68f59ffd3208d1f391
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93709487"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400420"
 ---
 # Get-AzNetworkWatcherNextHop
 
-## STRESZCZENIe
+## SYNOPSIS
 Pobiera następny przeskok z maszyny wirtualnej.
 
-## POLECENIA
+## SKŁADNIA
 
-### SetByResource (domyślny)
+### SetByResource (Default)
 ```
 Get-AzNetworkWatcherNextHop -NetworkWatcher <PSNetworkWatcher> -TargetVirtualMachineId <String>
  -DestinationIPAddress <String> -SourceIPAddress <String> [-TargetNetworkInterfaceId <String>] [-AsJob]
@@ -40,15 +40,16 @@ Get-AzNetworkWatcherNextHop -Location <String> -TargetVirtualMachineId <String> 
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet Get-AzNetworkWatcherNextHop pobiera następny przeskok z maszyny wirtualnej. Następny przeskok umożliwia wyświetlenie typu zasobu platformy Azure, skojarzonego adresu IP tego zasobu oraz reguły tabeli routingu odpowiedzialnej za trasę.
+## OPIS
+Polecenie Get-AzNetworkWatcherNextHop pobiera następny przeskok z maszyny wirtualnej.
+Następny przeskok umożliwia wyświetlenie typu zasobu Azure, skojarzonego adresu IP tego zasobu i reguły tabeli routingu, która jest odpowiedzialna za trasę.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1. Uzyskiwanie następnego przeskoku podczas komunikowania się z internetowym adresem IP
+### Przykład 1. Uzyskiwanie następnego przeskoku podczas komunikowania się za pomocą internetowego adresu IP
 ```
-$nw = Get-AzResource | Where {$_.ResourceType -eq "Microsoft.Network/networkWatchers" -and $_.Location -eq "WestCentralUS" } 
-$networkWatcher = Get-AzNetworkWatcher -Name $nw.Name -ResourceGroupName $nw.ResourceGroupName 
+$nw = Get-AzResource | Where {$_.ResourceType -eq "Microsoft.Network/networkWatchers" -and $_.Location -eq "WestCentralUS" }
+$networkWatcher = Get-AzNetworkWatcher -Name $nw.Name -ResourceGroupName $nw.ResourceGroupName
 $VM = Get-AzVM -ResourceGroupName ContosoResourceGroup -Name VM0
 $Nics = Get-AzNetworkInterface | Where {$_.Id -eq $vm.NetworkInterfaceIDs.ForEach({$_})}
 Get-AzNetworkWatcherNextHop -NetworkWatcher $networkWatcher -TargetVirtualMachineId $VM.Id -SourceIPAddress $nics[0].IpConfigurations[0].PrivateIpAddress  -DestinationIPAddress 204.79.197.200
@@ -59,12 +60,12 @@ NextHopIpAddress NextHopType RouteTableId
                  Internet    System Route
 ```
 
-Uzyskiwanie następnego przeskoku do komunikacji wychodzącej z podstawowego interfejsu sieciowego w określonym wirtualnym Vachine do 204.79.197.200 (www.bing.com)
+Pobierz następny przeskok na komunikację wychodzącą z podstawowego interfejsu sieciowego w określonym wirtualnym vachine do wersji 204.79.197.200 (www.bing.com)
 
-## PARAMETRÓW
+## PARAMETERS
 
-### -AsJob
-Uruchom polecenie cmdlet w tle
+### — AsJob
+Uruchamianie polecenia cmdlet w tle
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -79,7 +80,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -109,7 +110,7 @@ Accept wildcard characters: False
 ```
 
 ### — Lokalizacja
-Lokalizacja obserwatora sieci.
+Lokalizacja czujki sieci.
 
 ```yaml
 Type: System.String
@@ -123,8 +124,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -NetworkWatcher
-Zasób obserwatora sieci.
+### — NetworkWatcher
+Zasób obserwowania sieci.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
@@ -139,7 +140,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcherName
-Nazwa obserwatora sieci.
+Nazwa osoby oglądacej sieć.
 
 ```yaml
 Type: System.String
@@ -154,7 +155,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Nazwa grupy zasobów obserwatora sieci.
+Nazwa grupy zasobów obserwowanych sieci.
 
 ```yaml
 Type: System.String
@@ -184,7 +185,7 @@ Accept wildcard characters: False
 ```
 
 ### -TargetNetworkInterfaceId
-Identyfikator interfejsu sieci docelowej.
+Docelowy identyfikator interfejsu sieciowego.
 
 ```yaml
 Type: System.String
@@ -199,7 +200,7 @@ Accept wildcard characters: False
 ```
 
 ### -TargetVirtualMachineId
-Docelowy Identyfikator maszyny wirtualnej.
+Docelowy identyfikator maszyny wirtualnej.
 
 ```yaml
 Type: System.String
@@ -214,24 +215,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### Microsoft. Azure. Commands. Network. models. PSNetworkWatcher
+### Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
 
-### System. String
+### System.String
 
-## WYSYŁA
+## OUTPUTS
 
-### Microsoft. Azure. Commands. Network. models. PSNextHopResult
+### Microsoft.Azure.Commands.Network.Models.PSNextHopResult
 
-## INFORMACYJN
-Słowa kluczowe: Azure, azurerm, ARM, Resource, Management, Manager, Network, Networking, Monitor sieci, następny, przeskok 
+## NOTATKI
+Słowa kluczowe: azure, azurerm, arm, resource, management, manager, network, networking, network watcher, next, hop
 
 ## LINKI POKREWNE
 
-[Nowe — AzNetworkWatcher](./New-AzNetworkWatcher.md)
+[New-AzNetworkWatcher](./New-AzNetworkWatcher.md)
 
 [Get-AzNetworkWatcher](./Get-AzNetworkWatcher.md)
 
@@ -243,27 +244,27 @@ Słowa kluczowe: Azure, azurerm, ARM, Resource, Management, Manager, Network, Ne
 
 [Get-AzNetworkWatcherTopology](./Get-AzNetworkWatcherTopology.md)
 
-[Start — AzNetworkWatcherResourceTroubleshooting](./Start-AzNetworkWatcherResourceTroubleshooting.md)
+[Start-AzNetworkWatcherResourceTroubleshooting](./Start-AzNetworkWatcherResourceTroubleshooting.md)
 
-[Nowe — AzNetworkWatcherPacketCapture](./New-AzNetworkWatcherPacketCapture.md)
+[New-AzNetworkWatcherPacketCapture](./New-AzNetworkWatcherPacketCapture.md)
 
-[Nowe — AzPacketCaptureFilterConfig](./New-AzPacketCaptureFilterConfig.md)
+[New-AzPacketCaptureFilterConfig](./New-AzPacketCaptureFilterConfig.md)
 
 [Get-AzNetworkWatcherPacketCapture](./Get-AzNetworkWatcherPacketCapture.md)
 
 [Remove-AzNetworkWatcherPacketCapture](./Remove-AzNetworkWatcherPacketCapture.md)
 
-[Zatrzymaj — AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
+[Stop-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
 
-[Nowe — AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md)
+[New-AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md)
 
-[Test — AzNetworkWatcherIPFlow](./Test-AzNetworkWatcherIPFlow.md)
+[Test-AzNetworkWatcherIPFlow](./Test-AzNetworkWatcherIPFlow.md)
 
-[Test — AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md)
+[Test-AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md)
 
-[Zatrzymaj — AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
+[Stop-AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
 
-[Start — AzNetworkWatcherConnectionMonitor](./Start-AzNetworkWatcherConnectionMonitor.md)
+[Start-AzNetworkWatcherConnectionMonitor](./Start-AzNetworkWatcherConnectionMonitor.md)
 
 [Set-AzNetworkWatcherConnectionMonitor](./Set-AzNetworkWatcherConnectionMonitor.md)
 
@@ -271,7 +272,7 @@ Słowa kluczowe: Azure, azurerm, ARM, Resource, Management, Manager, Network, Ne
 
 [Remove-AzNetworkWatcherConnectionMonitor](./Remove-AzNetworkWatcherConnectionMonitor.md)
 
-[Nowe — AzNetworkWatcherConnectionMonitor](./New-AzNetworkWatcherConnectionMonitor.md)
+[New-AzNetworkWatcherConnectionMonitor](./New-AzNetworkWatcherConnectionMonitor.md)
 
 [Get-AzNetworkWatcherTroubleshootingResult](./Get-AzNetworkWatcherTroubleshootingResult.md)
 
@@ -281,6 +282,6 @@ Słowa kluczowe: Azure, azurerm, ARM, Resource, Management, Manager, Network, Ne
 
 [Get-AzNetworkWatcherFlowLogStatus](./Get-AzNetworkWatcherFlowLogStatus.md)
 
-[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport)
+[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)

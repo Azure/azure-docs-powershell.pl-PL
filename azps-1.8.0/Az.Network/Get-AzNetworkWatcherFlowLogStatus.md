@@ -5,21 +5,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzNetworkWatcherFlowLogStatus.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzNetworkWatcherFlowLogStatus.md
-ms.openlocfilehash: cdc97ff5e528e58aa088950f5272e7689f35b10e
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 8a2bde41d0e7e09acc1ad10a9901f0cf26334d02
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93709489"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400505"
 ---
 # Get-AzNetworkWatcherFlowLogStatus
 
-## STRESZCZENIe
+## SYNOPSIS
 Pobiera stan rejestrowania przepływu dla zasobu.
 
-## POLECENIA
+## SKŁADNIA
 
-### SetByResource (domyślny)
+### SetByResource (Domyślne)
 ```
 Get-AzNetworkWatcherFlowLogStatus -NetworkWatcher <PSNetworkWatcher> -TargetResourceId <String> [-AsJob]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
@@ -37,12 +37,14 @@ Get-AzNetworkWatcherFlowLogStatus -Location <String> -TargetResourceId <String> 
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet Get-AzNetworkWatcherFlowLogStatus Pobiera stan rejestrowania przepływu dla zasobu. Stan uwzględnia, czy w przypadku danego zasobu jest włączone rejestrowanie przepływu, skonfigurowane konto magazynu do wysyłania dzienników oraz zasady przechowywania dzienników. W przypadku rejestrowania przepływów są obsługiwane obecnie grupy zabezpieczeń sieci. 
+## OPIS
+Polecenie Get-AzNetworkWatcherFlowLogStatus cmdlet Pobiera stan rejestrowania przepływu dla zasobu.
+Ten stan określa, czy dla udostępnianego zasobu włączono rejestrowanie przepływu, skonfigurowane konto magazynu do wysyłania dzienników oraz zasady przechowywania dzienników.
+Obecnie grupy zabezpieczeń sieci są obsługiwane do rejestrowania przepływu.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1: uzyskiwanie stanu rejestrowania przepływu dla określonego NSG
+### Przykład 1. Uzyskiwanie stanu rejestrowania przepływu dla określonego NSG
 ```
 PS C:\> $NW = Get-AzNetworkWatcher -ResourceGroupName NetworkWatcherRg -Name NetworkWatcher_westcentralus
 PS C:\> $nsg = Get-AzNetworkSecurityGroup -ResourceGroupName NSGRG -Name appNSG
@@ -64,9 +66,9 @@ Properties       : {
                    }
 ```
 
-W tym przykładzie jest wyświetlany stan rejestrowania przepływu dla grupy zabezpieczeń sieci. Określony NSG ma włączone rejestrowanie przepływów, format domyślny i nie ustawiono zasad przechowywania.
+W tym przykładzie mamy stan rejestrowania przepływu dla grupy zabezpieczeń sieci. Określona funkcja NSG ma włączoną funkcję rejestrowania przepływu, domyślny format i nie ma żadnych ustawionych zasad przechowywania.
 
-### Przykład 2: uzyskiwanie rejestrowania przepływu i stanu analizy ruchu dla określonego NSG
+### Przykład 2. Uzyskiwanie stanu rejestrowania przepływu i analizy ruchu dla określonego NSG
 ```
 PS C:\> $NW = Get-AzNetworkWatcher -ResourceGroupName NetworkWatcherRg -Name NetworkWatcher_westcentralus
 PS C:\> $nsg = Get-AzNetworkSecurityGroup -ResourceGroupName NSGRG -Name appNSG
@@ -95,12 +97,12 @@ FlowAnalyticsConfiguration : {
           }
 ```
 
-W tym przykładzie jest wyświetlany stan rejestrowania przepływu i analizy ruchu dla grupy zabezpieczeń sieci. Określony NSG ma włączone rejestrowanie przepływów oraz Analiza ruchu, format domyślny i bez ustawionych zasad przechowywania.
+W tym przykładzie mamy stan rejestrowania przepływu i analizy ruchu dla grupy zabezpieczeń sieci. Określona funkcja NSG ma włączone rejestrowanie przepływu i analizę ruchu, domyślny format i nie są ustawione żadne zasady przechowywania.
 
-## PARAMETRÓW
+## PARAMETERS
 
-### -AsJob
-Uruchom polecenie cmdlet w tle
+### — AsJob
+Uruchamianie polecenia cmdlet w tle
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -115,7 +117,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -130,7 +132,7 @@ Accept wildcard characters: False
 ```
 
 ### — Lokalizacja
-Lokalizacja obserwatora sieci.
+Lokalizacja czujki sieci.
 
 ```yaml
 Type: System.String
@@ -144,8 +146,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -NetworkWatcher
-Zasób obserwatora sieci.
+### - NetworkWatcher
+Zasób obserwowania sieci.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
@@ -160,7 +162,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcherName
-Nazwa obserwatora sieci.
+Nazwa osoby oglądacej sieć.
 
 ```yaml
 Type: System.String
@@ -175,7 +177,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Nazwa grupy zasobów obserwatora sieci.
+Nazwa grupy zasobów obserwowanych sieci.
 
 ```yaml
 Type: System.String
@@ -205,24 +207,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### Microsoft. Azure. Commands. Network. models. PSNetworkWatcher
+### Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
 
-### System. String
+### System.String
 
-## WYSYŁA
+## OUTPUTS
 
-### Microsoft. Azure. Commands. Network. models. PSFlowLog
+### Microsoft.Azure.Commands.Network.Models.PSFlowLog
 
-## INFORMACYJN
-Słowa kluczowe: Azure, azurerm, ARM, Resource, Management, Manager, Network, Networking, monitor, przepływ, dzienniki, flowlog, rejestrowanie
+## NOTATKI
+Słowa kluczowe: azure, azurerm, arm, resource, management, manager, network, networking, watcher, flow, logs, flowlog, logging
 
 ## LINKI POKREWNE
 
-[Nowe — AzNetworkWatcher](./New-AzNetworkWatcher.md)
+[New-AzNetworkWatcher](./New-AzNetworkWatcher.md)
 
 [Get-AzNetworkWatcher](./Get-AzNetworkWatcher.md)
 
@@ -234,27 +236,27 @@ Słowa kluczowe: Azure, azurerm, ARM, Resource, Management, Manager, Network, Ne
 
 [Get-AzNetworkWatcherTopology](./Get-AzNetworkWatcherTopology.md)
 
-[Start — AzNetworkWatcherResourceTroubleshooting](./Start-AzNetworkWatcherResourceTroubleshooting.md)
+[Start-AzNetworkWatcherResourceTroubleshooting](./Start-AzNetworkWatcherResourceTroubleshooting.md)
 
-[Nowe — AzNetworkWatcherPacketCapture](./New-AzNetworkWatcherPacketCapture.md)
+[New-AzNetworkWatcherPacketCapture](./New-AzNetworkWatcherPacketCapture.md)
 
-[Nowe — AzPacketCaptureFilterConfig](./New-AzPacketCaptureFilterConfig.md)
+[New-AzPacketCaptureFilterConfig](./New-AzPacketCaptureFilterConfig.md)
 
 [Get-AzNetworkWatcherPacketCapture](./Get-AzNetworkWatcherPacketCapture.md)
 
 [Remove-AzNetworkWatcherPacketCapture](./Remove-AzNetworkWatcherPacketCapture.md)
 
-[Zatrzymaj — AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
+[Stop-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
 
-[Nowe — AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md)
+[New-AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md)
 
-[Test — AzNetworkWatcherIPFlow](./Test-AzNetworkWatcherIPFlow.md)
+[Test-AzNetworkWatcherIPFlow](./Test-AzNetworkWatcherIPFlow.md)
 
-[Test — AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md)
+[Test-AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md)
 
-[Zatrzymaj — AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
+[Stop-AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
 
-[Start — AzNetworkWatcherConnectionMonitor](./Start-AzNetworkWatcherConnectionMonitor.md)
+[Start-AzNetworkWatcherConnectionMonitor](./Start-AzNetworkWatcherConnectionMonitor.md)
 
 [Set-AzNetworkWatcherConnectionMonitor](./Set-AzNetworkWatcherConnectionMonitor.md)
 
@@ -262,7 +264,7 @@ Słowa kluczowe: Azure, azurerm, ARM, Resource, Management, Manager, Network, Ne
 
 [Remove-AzNetworkWatcherConnectionMonitor](./Remove-AzNetworkWatcherConnectionMonitor.md)
 
-[Nowe — AzNetworkWatcherConnectionMonitor](./New-AzNetworkWatcherConnectionMonitor.md)
+[New-AzNetworkWatcherConnectionMonitor](./New-AzNetworkWatcherConnectionMonitor.md)
 
 [Get-AzNetworkWatcherTroubleshootingResult](./Get-AzNetworkWatcherTroubleshootingResult.md)
 
@@ -272,6 +274,6 @@ Słowa kluczowe: Azure, azurerm, ARM, Resource, Management, Manager, Network, Ne
 
 [Get-AzNetworkWatcherFlowLogStatus](./Get-AzNetworkWatcherFlowLogStatus.md)
 
-[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport)
+[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)
