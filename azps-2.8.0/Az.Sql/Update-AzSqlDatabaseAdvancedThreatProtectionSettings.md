@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.sql/Update
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Update-AzSqlDatabaseAdvancedThreatProtectionSettings.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Update-AzSqlDatabaseAdvancedThreatProtectionSettings.md
-ms.openlocfilehash: 2bbbe4e2b553055e4643cff973941095e0a468f1
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 6474afa6b38cdefcd6c8b6fcb959f1f20d426ad9
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93887689"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100406132"
 ---
-# <span data-ttu-id="26228-101">Update-AzSqlDatabaseAdvancedThreatProtectionSettings</span><span class="sxs-lookup"><span data-stu-id="26228-101">Update-AzSqlDatabaseAdvancedThreatProtectionSettings</span></span>
+# <span data-ttu-id="02f3d-101">Update-AzSqlDatabaseAdvancedThreatProtectionSettings</span><span class="sxs-lookup"><span data-stu-id="02f3d-101">Update-AzSqlDatabaseAdvancedThreatProtectionSettings</span></span>
 
-## <span data-ttu-id="26228-102">STRESZCZENIe</span><span class="sxs-lookup"><span data-stu-id="26228-102">SYNOPSIS</span></span>
-<span data-ttu-id="26228-103">Ustawia zaawansowane ustawienia ochrony przed zagrożeniami w bazie danych.</span><span class="sxs-lookup"><span data-stu-id="26228-103">Sets a advanced threat protection settings on a database.</span></span>
+## <span data-ttu-id="02f3d-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="02f3d-102">SYNOPSIS</span></span>
+<span data-ttu-id="02f3d-103">Ustawia zaawansowane ustawienia ochrony przed zagrożeniami w bazie danych.</span><span class="sxs-lookup"><span data-stu-id="02f3d-103">Sets a advanced threat protection settings on a database.</span></span>
 
-## <span data-ttu-id="26228-104">POLECENIA</span><span class="sxs-lookup"><span data-stu-id="26228-104">SYNTAX</span></span>
+## <span data-ttu-id="02f3d-104">SKŁADNIA</span><span class="sxs-lookup"><span data-stu-id="02f3d-104">SYNTAX</span></span>
 
 ```
 Update-AzSqlDatabaseAdvancedThreatProtectionSettings [-PassThru] [-NotificationRecipientsEmails <String>]
@@ -27,25 +27,25 @@ Update-AzSqlDatabaseAdvancedThreatProtectionSettings [-PassThru] [-NotificationR
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="26228-105">Opis</span><span class="sxs-lookup"><span data-stu-id="26228-105">DESCRIPTION</span></span>
-<span data-ttu-id="26228-106">Polecenie cmdlet **Update-AzSqlDatabaseAdvancedThreatProtectionSettings** ustawia zaawansowane ustawienia ochrony przed zagrożeniami w bazie danych Azure SQL.</span><span class="sxs-lookup"><span data-stu-id="26228-106">The **Update-AzSqlDatabaseAdvancedThreatProtectionSettings** cmdlet sets a advanced threat protection settings on an Azure SQL database.</span></span>
-<span data-ttu-id="26228-107">Aby włączyć zaawansowaną ochronę przed zagrożeniami w bazie danych, muszą być włączone ustawienia inspekcji w tej bazie danych.</span><span class="sxs-lookup"><span data-stu-id="26228-107">In order to enable advanced threat protection on a database an auditing settings must be enabled on that database.</span></span>
-<span data-ttu-id="26228-108">Aby użyć tego polecenia cmdlet, określ parametry *ResourceGroupName* , *nazwa_serwera* i *DatabaseName* , które identyfikują bazę danych.</span><span class="sxs-lookup"><span data-stu-id="26228-108">To use this cmdlet, specify the *ResourceGroupName* , *ServerName* and *DatabaseName* parameters to identify the database.</span></span>
-<span data-ttu-id="26228-109">To polecenie cmdlet jest również obsługiwane przez usługę bazy danych SQL Server undatabase na platformie Azure.</span><span class="sxs-lookup"><span data-stu-id="26228-109">This cmdlet is also supported by the SQL Server Stretch Database service on Azure.</span></span>
+## <span data-ttu-id="02f3d-105">OPIS</span><span class="sxs-lookup"><span data-stu-id="02f3d-105">DESCRIPTION</span></span>
+<span data-ttu-id="02f3d-106">Polecenie **cmdlet Update-AzSqlDatabaseAdvancedThreatProtectionSettings** ustawia zaawansowane ustawienia ochrony przed zagrożeniami w bazie danych Azure SQL.</span><span class="sxs-lookup"><span data-stu-id="02f3d-106">The **Update-AzSqlDatabaseAdvancedThreatProtectionSettings** cmdlet sets a advanced threat protection settings on an Azure SQL database.</span></span>
+<span data-ttu-id="02f3d-107">Aby włączyć zaawansowaną ochronę przed zagrożeniami w bazie danych, ustawienia inspekcji muszą być włączone w tej bazie danych.</span><span class="sxs-lookup"><span data-stu-id="02f3d-107">In order to enable advanced threat protection on a database an auditing settings must be enabled on that database.</span></span>
+<span data-ttu-id="02f3d-108">Aby użyć tego polecenia cmdlet, określ parametry *ResourceGroupName,* *ServerName* i *DatabaseName* w celu zidentyfikowania bazy danych.</span><span class="sxs-lookup"><span data-stu-id="02f3d-108">To use this cmdlet, specify the *ResourceGroupName*, *ServerName* and *DatabaseName* parameters to identify the database.</span></span>
+<span data-ttu-id="02f3d-109">To polecenie cmdlet jest również obsługiwane przez usługę SQL Server Stretch Database na platformie Azure.</span><span class="sxs-lookup"><span data-stu-id="02f3d-109">This cmdlet is also supported by the SQL Server Stretch Database service on Azure.</span></span>
 
-## <span data-ttu-id="26228-110">Przykłady</span><span class="sxs-lookup"><span data-stu-id="26228-110">EXAMPLES</span></span>
+## <span data-ttu-id="02f3d-110">PRZYKŁADY</span><span class="sxs-lookup"><span data-stu-id="02f3d-110">EXAMPLES</span></span>
 
-### <span data-ttu-id="26228-111">Przykład 1: Ustawianie zaawansowanych ustawień ochrony przed zagrożeniami dla bazy danych</span><span class="sxs-lookup"><span data-stu-id="26228-111">Example 1: Set the advanced threat protection settings for a database</span></span>
+### <span data-ttu-id="02f3d-111">Przykład 1. Ustawianie zaawansowanych ustawień ochrony przed zagrożeniami dla bazy danych</span><span class="sxs-lookup"><span data-stu-id="02f3d-111">Example 1: Set the advanced threat protection settings for a database</span></span>
 ```
 PS C:\>Update-AzSqlDatabaseAdvancedThreatProtectionSettings -ResourceGroupName "ResourceGroup11" -ServerName "Server01" -DatabaseName "Database01" -NotificationRecipientsEmails "admin01@contoso.com;secadmin@contoso.com" -EmailAdmins $False -ExcludedDetectionType "Sql_Injection_Vulnerability", "SQL_Injection" -StorageAccountName "mystorageAccount"
 ```
 
-<span data-ttu-id="26228-112">To polecenie ustawia zaawansowane ustawienia ochrony przed zagrożeniami dla bazy danych o nazwie Database01 na serwerze o nazwie Server01.</span><span class="sxs-lookup"><span data-stu-id="26228-112">This command sets the advanced threat protection settings for a database named Database01 on the server named Server01.</span></span>
+<span data-ttu-id="02f3d-112">To polecenie określa zaawansowane ustawienia ochrony przed zagrożeniami dla bazy danych o nazwie Database01 na serwerze o nazwie Serwer01.</span><span class="sxs-lookup"><span data-stu-id="02f3d-112">This command sets the advanced threat protection settings for a database named Database01 on the server named Server01.</span></span>
 
-## <span data-ttu-id="26228-113">PARAMETRÓW</span><span class="sxs-lookup"><span data-stu-id="26228-113">PARAMETERS</span></span>
+## <span data-ttu-id="02f3d-113">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="02f3d-113">PARAMETERS</span></span>
 
-### <span data-ttu-id="26228-114">-DatabaseName</span><span class="sxs-lookup"><span data-stu-id="26228-114">-DatabaseName</span></span>
-<span data-ttu-id="26228-115">Określa nazwę bazy danych, w której ustawiono ustawienia.</span><span class="sxs-lookup"><span data-stu-id="26228-115">Specifies the name of the database where the settings is set.</span></span>
+### <span data-ttu-id="02f3d-114">-DatabaseName</span><span class="sxs-lookup"><span data-stu-id="02f3d-114">-DatabaseName</span></span>
+<span data-ttu-id="02f3d-115">Określa nazwę bazy danych, w której są ustawione ustawienia.</span><span class="sxs-lookup"><span data-stu-id="02f3d-115">Specifies the name of the database where the settings is set.</span></span>
 
 ```yaml
 Type: System.String
@@ -59,8 +59,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="26228-116">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="26228-116">-DefaultProfile</span></span>
-<span data-ttu-id="26228-117">Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure</span><span class="sxs-lookup"><span data-stu-id="26228-117">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="02f3d-116">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="02f3d-116">-DefaultProfile</span></span>
+<span data-ttu-id="02f3d-117">Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure</span><span class="sxs-lookup"><span data-stu-id="02f3d-117">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -74,8 +74,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="26228-118">-EmailAdmins</span><span class="sxs-lookup"><span data-stu-id="26228-118">-EmailAdmins</span></span>
-<span data-ttu-id="26228-119">Określa, czy ustawienia zaawansowanego ochrony przed zagrożeniami mają kontakt z administratorami za pomocą poczty e-mail.</span><span class="sxs-lookup"><span data-stu-id="26228-119">Specifies whether the advanced threat protection settings contacts administrators by using email.</span></span>
+### <span data-ttu-id="02f3d-118">- EmailAdmins</span><span class="sxs-lookup"><span data-stu-id="02f3d-118">-EmailAdmins</span></span>
+<span data-ttu-id="02f3d-119">Określa, czy administratorzy zaawansowanych ustawień ochrony przed zagrożeniami kontaktowali się przy użyciu poczty e-mail.</span><span class="sxs-lookup"><span data-stu-id="02f3d-119">Specifies whether the advanced threat protection settings contacts administrators by using email.</span></span>
 
 ```yaml
 Type: System.Nullable`1[System.Boolean]
@@ -89,13 +89,13 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="26228-120">-ExcludedDetectionType</span><span class="sxs-lookup"><span data-stu-id="26228-120">-ExcludedDetectionType</span></span>
-<span data-ttu-id="26228-121">Określa tablicę typów wykrywania, które należy wykluczyć z ustawień.</span><span class="sxs-lookup"><span data-stu-id="26228-121">Specifies an array of detection types to exclude from the settings.</span></span>
-<span data-ttu-id="26228-122">Dopuszczalne wartości tego parametru to:</span><span class="sxs-lookup"><span data-stu-id="26228-122">The acceptable values for this parameter are:</span></span>
-- <span data-ttu-id="26228-123">Sql_Injection</span><span class="sxs-lookup"><span data-stu-id="26228-123">Sql_Injection</span></span> 
-- <span data-ttu-id="26228-124">Sql_Injection_Vulnerability</span><span class="sxs-lookup"><span data-stu-id="26228-124">Sql_Injection_Vulnerability</span></span> 
-- <span data-ttu-id="26228-125">Access_Anomaly</span><span class="sxs-lookup"><span data-stu-id="26228-125">Access_Anomaly</span></span> 
-- <span data-ttu-id="26228-126">Znaleziono</span><span class="sxs-lookup"><span data-stu-id="26228-126">None</span></span>
+### <span data-ttu-id="02f3d-120">-ExcludedDetectionType</span><span class="sxs-lookup"><span data-stu-id="02f3d-120">-ExcludedDetectionType</span></span>
+<span data-ttu-id="02f3d-121">Określa tablicę typów wykrywania, które mają być wykluczone z ustawień.</span><span class="sxs-lookup"><span data-stu-id="02f3d-121">Specifies an array of detection types to exclude from the settings.</span></span>
+<span data-ttu-id="02f3d-122">Dopuszczalne wartości dla tego parametru to:</span><span class="sxs-lookup"><span data-stu-id="02f3d-122">The acceptable values for this parameter are:</span></span>
+- <span data-ttu-id="02f3d-123">Sql_Injection</span><span class="sxs-lookup"><span data-stu-id="02f3d-123">Sql_Injection</span></span>
+- <span data-ttu-id="02f3d-124">Sql_Injection_Vulnerability</span><span class="sxs-lookup"><span data-stu-id="02f3d-124">Sql_Injection_Vulnerability</span></span>
+- <span data-ttu-id="02f3d-125">Access_Anomaly</span><span class="sxs-lookup"><span data-stu-id="02f3d-125">Access_Anomaly</span></span>
+- <span data-ttu-id="02f3d-126">Brak</span><span class="sxs-lookup"><span data-stu-id="02f3d-126">None</span></span>
 
 ```yaml
 Type: System.String[]
@@ -109,8 +109,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="26228-127">-NotificationRecipientsEmails</span><span class="sxs-lookup"><span data-stu-id="26228-127">-NotificationRecipientsEmails</span></span>
-<span data-ttu-id="26228-128">Określa rozdzielaną średnikami listę adresów e-mail, do których mają być wysyłane powiadomienia o ustawieniach.</span><span class="sxs-lookup"><span data-stu-id="26228-128">Specifies a semicolon-separated list of email addresses to which the settings sends alerts.</span></span>
+### <span data-ttu-id="02f3d-127">-NotificationRecipientsEmails</span><span class="sxs-lookup"><span data-stu-id="02f3d-127">-NotificationRecipientsEmails</span></span>
+<span data-ttu-id="02f3d-128">Określa rozdzielaną średnikami listę adresów e-mail, do których ustawienia wysyłają alerty.</span><span class="sxs-lookup"><span data-stu-id="02f3d-128">Specifies a semicolon-separated list of email addresses to which the settings sends alerts.</span></span>
 
 ```yaml
 Type: System.String
@@ -124,9 +124,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="26228-129">-PassThru</span><span class="sxs-lookup"><span data-stu-id="26228-129">-PassThru</span></span>
-<span data-ttu-id="26228-130">Zwraca obiekt reprezentujący element, z którym pracujesz.</span><span class="sxs-lookup"><span data-stu-id="26228-130">Returns an object representing the item with which you are working.</span></span>
-<span data-ttu-id="26228-131">Domyślnie to polecenie cmdlet nie generuje żadnych danych wyjściowych.</span><span class="sxs-lookup"><span data-stu-id="26228-131">By default, this cmdlet does not generate any output.</span></span>
+### <span data-ttu-id="02f3d-129">-PassThru</span><span class="sxs-lookup"><span data-stu-id="02f3d-129">-PassThru</span></span>
+<span data-ttu-id="02f3d-130">Zwraca obiekt reprezentujący element, z którym pracujesz.</span><span class="sxs-lookup"><span data-stu-id="02f3d-130">Returns an object representing the item with which you are working.</span></span>
+<span data-ttu-id="02f3d-131">Domyślnie to polecenie cmdlet nie generuje żadnych danych wyjściowych.</span><span class="sxs-lookup"><span data-stu-id="02f3d-131">By default, this cmdlet does not generate any output.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -140,8 +140,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="26228-132">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="26228-132">-ResourceGroupName</span></span>
-<span data-ttu-id="26228-133">Określa nazwę grupy zasobów, do której jest przypisany serwer.</span><span class="sxs-lookup"><span data-stu-id="26228-133">Specifies the name of the resource group to which the server is assigned.</span></span>
+### <span data-ttu-id="02f3d-132">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="02f3d-132">-ResourceGroupName</span></span>
+<span data-ttu-id="02f3d-133">Określa nazwę grupy zasobów, do której jest przypisany serwer.</span><span class="sxs-lookup"><span data-stu-id="02f3d-133">Specifies the name of the resource group to which the server is assigned.</span></span>
 
 ```yaml
 Type: System.String
@@ -155,8 +155,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="26228-134">-RetentionInDays</span><span class="sxs-lookup"><span data-stu-id="26228-134">-RetentionInDays</span></span>
-<span data-ttu-id="26228-135">Liczba dni przechowywania dzienników inspekcji</span><span class="sxs-lookup"><span data-stu-id="26228-135">The number of retention days for the audit logs</span></span>
+### <span data-ttu-id="02f3d-134">-RetentionInDays</span><span class="sxs-lookup"><span data-stu-id="02f3d-134">-RetentionInDays</span></span>
+<span data-ttu-id="02f3d-135">Liczba dni przechowywania dzienników inspekcji</span><span class="sxs-lookup"><span data-stu-id="02f3d-135">The number of retention days for the audit logs</span></span>
 
 ```yaml
 Type: System.Nullable`1[System.UInt32]
@@ -170,8 +170,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="26228-136">-Nazwa_serwera</span><span class="sxs-lookup"><span data-stu-id="26228-136">-ServerName</span></span>
-<span data-ttu-id="26228-137">Określa nazwę serwera.</span><span class="sxs-lookup"><span data-stu-id="26228-137">Specifies the name of the server.</span></span>
+### <span data-ttu-id="02f3d-136">-ServerName</span><span class="sxs-lookup"><span data-stu-id="02f3d-136">-ServerName</span></span>
+<span data-ttu-id="02f3d-137">Określa nazwę serwera.</span><span class="sxs-lookup"><span data-stu-id="02f3d-137">Specifies the name of the server.</span></span>
 
 ```yaml
 Type: System.String
@@ -185,8 +185,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="26228-138">-StorageAccountName</span><span class="sxs-lookup"><span data-stu-id="26228-138">-StorageAccountName</span></span>
-<span data-ttu-id="26228-139">Określa nazwę konta magazynu, które ma być używane.</span><span class="sxs-lookup"><span data-stu-id="26228-139">Specifies the name of the storage account to be used.</span></span> <span data-ttu-id="26228-140">Używanie symboli wieloznacznych jest niedozwolone.</span><span class="sxs-lookup"><span data-stu-id="26228-140">Wildcards are not permitted.</span></span> <span data-ttu-id="26228-141">Ten parametr nie jest wymagany.</span><span class="sxs-lookup"><span data-stu-id="26228-141">This parameter is not required.</span></span> <span data-ttu-id="26228-142">Jeśli nie podano tego parametru, polecenie cmdlet będzie korzystać z konta magazynu, które zostało zdefiniowane wcześniej jako część zaawansowanego ustawienia ochrony przed zagrożeniami w bazie danych.</span><span class="sxs-lookup"><span data-stu-id="26228-142">When this parameter is not provided, the cmdlet will use the storage account that was defined previously as part of the advanced threat protection settings of the database.</span></span> <span data-ttu-id="26228-143">Jeśli jest to pierwsza definicja zaawansowanego ustawienia ochrony przed zagrożeniami dla bazy danych i nie zostanie podany ten parametr, polecenie cmdlet nie powiedzie się.</span><span class="sxs-lookup"><span data-stu-id="26228-143">If this is the first time a database advanced threat protection settings is defined and this parameter is not provided, the cmdlet will fail.</span></span>
+### <span data-ttu-id="02f3d-138">-StorageAccountName</span><span class="sxs-lookup"><span data-stu-id="02f3d-138">-StorageAccountName</span></span>
+<span data-ttu-id="02f3d-139">Określa nazwę używanego konta magazynu.</span><span class="sxs-lookup"><span data-stu-id="02f3d-139">Specifies the name of the storage account to be used.</span></span> <span data-ttu-id="02f3d-140">Symbole wieloznaczne są niedozwolone.</span><span class="sxs-lookup"><span data-stu-id="02f3d-140">Wildcards are not permitted.</span></span> <span data-ttu-id="02f3d-141">Ten parametr nie jest wymagany.</span><span class="sxs-lookup"><span data-stu-id="02f3d-141">This parameter is not required.</span></span> <span data-ttu-id="02f3d-142">Jeśli ten parametr nie zostanie podany, polecenie cmdlet będzie używać konta magazynu zdefiniowanego wcześniej jako część zaawansowanych ustawień ochrony przed zagrożeniami w bazie danych.</span><span class="sxs-lookup"><span data-stu-id="02f3d-142">When this parameter is not provided, the cmdlet will use the storage account that was defined previously as part of the advanced threat protection settings of the database.</span></span> <span data-ttu-id="02f3d-143">Jeśli po raz pierwszy zdefiniowano zaawansowane ustawienia ochrony przed zagrożeniami bazy danych, a ten parametr nie jest podany, polecenie cmdlet nie powiedzie się.</span><span class="sxs-lookup"><span data-stu-id="02f3d-143">If this is the first time a database advanced threat protection settings is defined and this parameter is not provided, the cmdlet will fail.</span></span>
 
 ```yaml
 Type: System.String
@@ -200,8 +200,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="26228-144">-Potwierdź</span><span class="sxs-lookup"><span data-stu-id="26228-144">-Confirm</span></span>
-<span data-ttu-id="26228-145">Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.</span><span class="sxs-lookup"><span data-stu-id="26228-145">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="02f3d-144">— Potwierdź</span><span class="sxs-lookup"><span data-stu-id="02f3d-144">-Confirm</span></span>
+<span data-ttu-id="02f3d-145">Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.</span><span class="sxs-lookup"><span data-stu-id="02f3d-145">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -215,9 +215,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="26228-146">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="26228-146">-WhatIf</span></span>
-<span data-ttu-id="26228-147">Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet.</span><span class="sxs-lookup"><span data-stu-id="26228-147">Shows what would happen if the cmdlet runs.</span></span>
-<span data-ttu-id="26228-148">Polecenie cmdlet nie jest uruchamiane.</span><span class="sxs-lookup"><span data-stu-id="26228-148">The cmdlet is not run.</span></span>
+### <span data-ttu-id="02f3d-146">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="02f3d-146">-WhatIf</span></span>
+<span data-ttu-id="02f3d-147">Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet.</span><span class="sxs-lookup"><span data-stu-id="02f3d-147">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="02f3d-148">Polecenie cmdlet nie zostanie uruchomione.</span><span class="sxs-lookup"><span data-stu-id="02f3d-148">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -231,31 +231,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="26228-149">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="26228-149">CommonParameters</span></span>
-<span data-ttu-id="26228-150">To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="26228-150">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="26228-151">Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="26228-151">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="02f3d-149">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="02f3d-149">CommonParameters</span></span>
+<span data-ttu-id="02f3d-150">To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="02f3d-150">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="02f3d-151">Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="02f3d-151">For more information, see about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="26228-152">WEJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="26228-152">INPUTS</span></span>
+## <span data-ttu-id="02f3d-152">DANE WEJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="02f3d-152">INPUTS</span></span>
 
-### <span data-ttu-id="26228-153">System. String</span><span class="sxs-lookup"><span data-stu-id="26228-153">System.String</span></span>
+### <span data-ttu-id="02f3d-153">System.String</span><span class="sxs-lookup"><span data-stu-id="02f3d-153">System.String</span></span>
 
-### <span data-ttu-id="26228-154">System. Nullable "1 [[System. Boolean, system. private. CoreLib, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = 7cec85d7bea7798e]]</span><span class="sxs-lookup"><span data-stu-id="26228-154">System.Nullable\`1[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span></span>
+### <span data-ttu-id="02f3d-154">System.Nullable'1[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span><span class="sxs-lookup"><span data-stu-id="02f3d-154">System.Nullable\`1[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span></span>
 
-### <span data-ttu-id="26228-155">Microsoft. Azure. Commands. SQL. ThreatDetection. model. Detecttype []</span><span class="sxs-lookup"><span data-stu-id="26228-155">Microsoft.Azure.Commands.Sql.ThreatDetection.Model.DetectionType[]</span></span>
+### <span data-ttu-id="02f3d-155">Microsoft.Azure.Commands.Sql.ThreatDetection.Model.DetectionType[]</span><span class="sxs-lookup"><span data-stu-id="02f3d-155">Microsoft.Azure.Commands.Sql.ThreatDetection.Model.DetectionType[]</span></span>
 
-### <span data-ttu-id="26228-156">System. Nullable ' 1 [[System. UInt32; system. private. CoreLib, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = 7cec85d7bea7798e]]</span><span class="sxs-lookup"><span data-stu-id="26228-156">System.Nullable\`1[[System.UInt32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span></span>
+### <span data-ttu-id="02f3d-156">System.Nullable'1[[System.UInt32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span><span class="sxs-lookup"><span data-stu-id="02f3d-156">System.Nullable\`1[[System.UInt32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span></span>
 
-## <span data-ttu-id="26228-157">WYSYŁA</span><span class="sxs-lookup"><span data-stu-id="26228-157">OUTPUTS</span></span>
+## <span data-ttu-id="02f3d-157">DANE WYJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="02f3d-157">OUTPUTS</span></span>
 
-### <span data-ttu-id="26228-158">Microsoft. Azure. Commands. SQL. ThreatDetection. model. DatabaseThreatDetectionsettingsModel</span><span class="sxs-lookup"><span data-stu-id="26228-158">Microsoft.Azure.Commands.Sql.ThreatDetection.Model.DatabaseThreatDetectionsettingsModel</span></span>
+### <span data-ttu-id="02f3d-158">Microsoft.Azure.Commands.Sql.ThreatDetection.Model.DatabaseThreatDetectionsettingsModel</span><span class="sxs-lookup"><span data-stu-id="02f3d-158">Microsoft.Azure.Commands.Sql.ThreatDetection.Model.DatabaseThreatDetectionsettingsModel</span></span>
 
-## <span data-ttu-id="26228-159">INFORMACYJN</span><span class="sxs-lookup"><span data-stu-id="26228-159">NOTES</span></span>
+## <span data-ttu-id="02f3d-159">NOTATKI</span><span class="sxs-lookup"><span data-stu-id="02f3d-159">NOTES</span></span>
 
-## <span data-ttu-id="26228-160">LINKI POKREWNE</span><span class="sxs-lookup"><span data-stu-id="26228-160">RELATED LINKS</span></span>
+## <span data-ttu-id="02f3d-160">LINKI POKREWNE</span><span class="sxs-lookup"><span data-stu-id="02f3d-160">RELATED LINKS</span></span>
 
-[<span data-ttu-id="26228-161">Get-AzSqlDatabaseThreatDetectionsettings</span><span class="sxs-lookup"><span data-stu-id="26228-161">Get-AzSqlDatabaseThreatDetectionsettings</span></span>](./Get-AzSqlServerThreatDetectionsettings.md)
-
-[<span data-ttu-id="26228-162">Remove-AzSqlDatabaseThreatDetectionsettings</span><span class="sxs-lookup"><span data-stu-id="26228-162">Remove-AzSqlDatabaseThreatDetectionsettings</span></span>](./Remove-AzSqlDatabaseThreatDetectionsettings.md)
-
-[<span data-ttu-id="26228-163">Dokumentacja bazy danych SQL</span><span class="sxs-lookup"><span data-stu-id="26228-163">SQL Database Documentation</span></span>](https://docs.microsoft.com/azure/sql-database/)
-
-
+[<span data-ttu-id="02f3d-161">Dokumentacja bazy danych SQL</span><span class="sxs-lookup"><span data-stu-id="02f3d-161">SQL Database Documentation</span></span>](https://docs.microsoft.com/azure/sql-database/)
