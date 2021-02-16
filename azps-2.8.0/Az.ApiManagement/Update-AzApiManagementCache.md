@@ -5,21 +5,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Update-AzApiManagementCache.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Update-AzApiManagementCache.md
-ms.openlocfilehash: c912bc82f579bdd099ec63d2e09c4e762684329c
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: c8c535168a86607daab27ab89340d231bb4e4bd3
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93706881"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100406897"
 ---
 # Update-AzApiManagementCache
 
-## STRESZCZENIe
-aktualizuje pamięć podręczną w usłudze zarządzania interfejsem API.
+## SYNOPSIS
+aktualizuje pamięć podręczną w usłudze zarządzania interfejsami API.
 
-## POLECENIA
+## SKŁADNIA
 
-### ExpandedParameter (domyślny)
+### ExpandedParameters (domyślne)
 ```
 Update-AzApiManagementCache -Context <PsApiManagementContext> -CacheId <String> [-ConnectionString <String>]
  [-AzureRedisResourceId <String>] [-Description <String>] [-PassThru]
@@ -40,12 +40,12 @@ Update-AzApiManagementCache -ResourceId <String> [-ConnectionString <String>] [-
  [<CommonParameters>]
 ```
 
-## Opis
-Aktualizacja polecenia cmdlet **-AzApiManagementCache** aktualizuje pamięć podręczną w usłudze ApiManagement.
+## OPIS
+Polecenie cmdlet **Update-AzApiManagementCache** aktualizuje pamięć podręczną w usłudze ApiManagement.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1: aktualizuje Opis pamięci podręcznej w centrum centralnym
+### Przykład 1. Aktualizacja opisu pamięci podręcznej w centralu
 ```powershell
 PS D:\github\azure-powershell> $context=New-AzApiManagementContext -ResourceGroupName Api-Default-Central-US -ServiceName contoso
 PS D:\github\azure-powershell> Update-AzApiManagementCache -Context $context -CacheId centralus -Description "Team new cache" -PassThru
@@ -61,12 +61,12 @@ ResourceGroupName    : Api-Default-Central-US
 ServiceName          : contoso
 ```
 
-Aktualizuje Opis pamięci podręcznej w obszarze Centrala amerykańska.
+Aktualizuje opis pamięci podręcznej w Środkowych Usach.
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -AzureRedisResourceId
-Identyfikator zasobu ARM w wystąpieniu pamięci podręcznej usługi Azure Redis.
+Arm ResourceId wystąpienia usługi Azure Redis Cache.
 Ten parametr jest opcjonalny.
 
 ```yaml
@@ -81,7 +81,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -CacheId
+### - CacheId
 Identyfikator nowej pamięci podręcznej.
 Ten parametr jest wymagany.
 
@@ -97,8 +97,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -ConnectionString
-Parametry połączenia Redis.
+### - ConnectionString
+Redis Connection String (Redis Connection String).
 Ten parametr jest opcjonalny.
 
 ```yaml
@@ -113,8 +113,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Context
-Wystąpienie PsApiManagementContext.
+### — kontekst
+Wystąpienie tekstu PsApiManagementContext.
 Ten parametr jest wymagany.
 
 ```yaml
@@ -130,7 +130,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -160,8 +160,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Inputobject
-Wystąpienie PsApiManagementCache.
+### -InputObject
+Wystąpienie usługi PsApiManagementCache.
 Ten parametr jest wymagany.
 
 ```yaml
@@ -177,7 +177,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Jeśli zostanie określone, wystąpienie systemu Microsoft. Azure. Commands. ApiManagement. servicemanagement. MODELES. PsApiManagementCache reprezentujące zmodyfikowaną pamięć podręczną zostanie zapisana w wyniku.
+Jeśli zostanie określone, wówczas wystąpienie właściwości Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementCache, która reprezentuje zmodyfikowaną pamięć podręczną, zostanie zapisane w wyniku.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -192,7 +192,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Identyfikator zasobu ARM w pamięci podręcznej.
+Arm ResourceId of Cache.
 Ten parametr jest wymagany.
 
 ```yaml
@@ -207,8 +207,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Potwierdź
-Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.
+### — Potwierdź
+Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -223,8 +223,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet.
-Polecenie cmdlet nie jest uruchamiane.
+Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet.
+Polecenie cmdlet nie zostanie uruchomione.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -239,27 +239,27 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### Microsoft. Azure. Commands. ApiManagement. servicemanagement. MODELES. PsApiManagementContext
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
 
-### System. String
+### System.String
 
-### Microsoft. Azure. Commands. ApiManagement. servicemanagement. MODELES. PsApiManagementCache
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementCache
 
-### System. Management. Automation. SwitchParameter
+### System.Management.Automation.SwitchParameters
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### Microsoft. Azure. Commands. ApiManagement. servicemanagement. MODELES. PsApiManagementCache
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementCache
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
-[Nowe — AzApiManagementCache](./New-AzApiManagementCache)
+[New-AzApiManagementCache](./New-AzApiManagementCache.md)
 
 [Get-AzApiManagementCache](./Get-AzApiManagementCache.md)
 

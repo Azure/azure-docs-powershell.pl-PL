@@ -6,45 +6,45 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzVpnClientPackage.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzVpnClientPackage.md
-ms.openlocfilehash: 8eba8d26bcac5de16be3e2cda5e8ca80356aea11
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: ec91fecd41138238bc4d89fa81d77bae4730c770
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94064395"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100406846"
 ---
 # Get-AzVpnClientPackage
 
-## STRESZCZENIe
-Pobiera informacje o pakiecie klienta sieci VPN.
+## SYNOPSIS
+Pobiera informacje o pakiecie klienta SIECI VPN.
 
-## POLECENIA
+## SKŁADNIA
 
 ```
 Get-AzVpnClientPackage -ResourceGroupName <String> -VirtualNetworkGatewayName <String>
  -ProcessorArchitecture <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **Get-AzVpnClientPackage** pobiera informacje o pakietach klienckich sieci VPN dostępnych w wirtualnej bramie sieci.
-Pakiety klienta zawierają dane konfiguracji umożliwiające komputerowi klienckiemu nawiązywania połączenia VPN z siecią wirtualną Azure. Aby nawiązać połączenie z siecią VPN, na komputerach klienckich musi być zainstalowany prawidłowy pakiet konfiguracji.
-Różne pakiety konfiguracyjne są dostępne na podstawie wersji systemu Windows komputera klienckiego (na przykład system Windows 7 lub Windows 10) oraz w architekturze procesora komputera klienckiego (AMD64 lub x86).
-Typ architektury należy określić podczas uruchamiania **Get-AzVpnClientPackage**.
+## OPIS
+Polecenie **cmdlet Get-AzVpnClientPackage** pobiera informacje o pakietach klienta VPN dostępnych z bramy sieci wirtualnej.
+Pakiety klientów zawierają dane konfiguracji, które umożliwiają klientowi nawiązaniu połączenia VPN z siecią wirtualną platformy Azure; komputery klienckie muszą mieć zainstalowany właściwy pakiet konfiguracji, aby można było nawiązaniu połączenia VPN.
+Różne pakiety konfiguracji są dostępne w zależności od wersji systemu Windows na komputerze klienckim (na przykład systemu Windows 7 lub Windows 10) i architektury procesora komputera klienckiego (AMD64 lub x86).
+Podczas uruchamiania usługi **Get-AzVpnClientPackage** musisz określić typ architektury.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1: uzyskiwanie informacji o pakiecie klienta sieci VPN architektura procesora
+### Przykład 1. Uzyskiwanie informacji o pakiecie klienta VPN architektury procesora
 ```
 PS C:\>Get-AzVpnClientPackage -ProcessorArchitecture -VirtualNetworkGatewayName "ContosoVirtualNetworkGateway" -ResourceGroupName "ContosoResourceGroup" -ProcessorArchitecture "Amd64"
 ```
 
-To polecenie pobiera informacje o pakietach klienckich sieci VPN AMD64 przechowywanych w bramy sieci wirtualnej o nazwie ContosoVirtualNetworkGateway.
-Aby uzyskać informacje o pakietach klienta x86, ustaw wartość parametru *processorArchitecture* na wartość x86.
+To polecenie pobiera informacje o pakietach klienckich SIECI VPN AMD64 przechowywanych w wirtualnej bramie sieciowej o nazwie ContosoVirtualNetworkGateway.
+Aby uzyskać informacje na temat pakietów klienta x86, ustaw wartość parametru *ProcessorArchitecture* na x86.
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -59,8 +59,8 @@ Accept wildcard characters: False
 ```
 
 ### -ProcessorArchitecture
-Określa typ architektury procesora, dla którego jest przeznaczony pakiet klienta.
-Prawidłowe wartości to amd64 i x86.
+Określa typ architektury procesora, dla których jest przeznaczony pakiet kliencki.
+Prawidłowe wartości to Amd64 i X86.
 
 ```yaml
 Type: System.String
@@ -76,8 +76,8 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Określa nazwę grupy zasobów, do której jest przypisana Brama sieci wirtualnej.
-Grupy zasobów umożliwiają Kategoryzowanie elementów w celu uproszczenia zarządzania zapasami i ogólnego administrowania usługą Azure.
+Określa nazwę grupy zasobów, do których przypisano bramę sieci wirtualnej.
+Grupy zasobów kategoryzowają elementy, aby uprościć zarządzanie zapasami i ogólną administrację azure.
 
 ```yaml
 Type: System.String
@@ -107,22 +107,21 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### System. String
+### System.String
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### System. String
+### System.String
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
-[Zmienianie rozmiaru — AzVirtualNetworkGateway](./Resize-AzVirtualNetworkGateway.md)
+[Resize-AzVirtualNetworkGateway](./Resize-AzVirtualNetworkGateway.md)
 
-[Set-AzVirtualNetworkGatewayVpnClientConfig](./Set-AzVirtualNetworkGatewayVpnClientConfig.md)
 
 

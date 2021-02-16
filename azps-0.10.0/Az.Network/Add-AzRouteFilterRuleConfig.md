@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ad
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Network/Network/help/Add-AzRouteFilterRuleConfig.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Network/Network/help/Add-AzRouteFilterRuleConfig.md
-ms.openlocfilehash: 910b432382eb24f6c5eaf77d3e0c7fe3dc547413
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: ded23a30c078cd1d474310d73d94717d050f6824
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93890949"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399281"
 ---
 # Add-AzRouteFilterRuleConfig
 
-## STRESZCZENIe
-Dodaje regułę filtru tras do filtru tras.
+## SYNOPSIS
+Dodaje regułę filtrowania trasy do filtru trasy.
 
-## POLECENIA
+## SKŁADNIA
 
 ```
 Add-AzRouteFilterRuleConfig -RouteFilter <PSRouteFilter> [-Force] -Name <String> -Access <String>
@@ -25,24 +25,24 @@ Add-AzRouteFilterRuleConfig -RouteFilter <PSRouteFilter> [-Force] -Name <String>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet Add-AzRouteFilterRuleConfig umożliwia dodanie reguły filtru tras do filtru tras platformy Azure.
+## OPIS
+Polecenie Add-AzRouteFilterRuleConfig cmdlet dodaje regułę filtru trasy do filtru trasy platformy Azure.
 
-## Przykłady
+## PRZYKŁADY
 
-### --------------------------Przykład 1: Dodawanie reguły filtru tras do filtru tras--------------------------
+### -------------------------- przykład 1. Dodawanie reguły filtrowania trasy do filtru trasy --------------------------
 ```
 PS C:\>$RouteFilter = Get-AzRouteFilter -ResourceGroupName "ResourceGroup11" -Name "routefilter01"
                       PS C:\> Add-AzRouteFilterRuleConfig -Name "rule13" -Access Allow -RouteFilterRuleType Community -RouteFilter $RouteFilter
 ```
 
-Pierwsze polecenie pobiera filtr trasy o nazwie routefilter01 przy użyciu polecenia cmdlet Get-AzRouteFilter.
-Polecenie zapisuje filtr w zmiennej $RouteFilter.
+Pierwsze polecenie pobiera filtr trasy o nazwie Filtr trasy01 przy użyciu Get-AzRouteFilter cmdlet.
+Polecenie zapisuje filtr w $RouteFilter zmienną.
 
-## PARAMETRÓW
+## PARAMETERS
 
-### — Dostęp
-Określa dostęp do reguły filtrowania tras, prawidłowe wartości to odmowę lub zezwolenie.
+### — Access
+Określa dostęp do reguły filtrowania trasy. Prawidłowe wartości to Deny (Odmów) lub Allow (Zezwalaj).
 
 ```yaml
 Type: String
@@ -58,7 +58,7 @@ Accept wildcard characters: False
 ```
 
 ### -CommunityList
-Lista wartości społeczności, według której filtr trasy będzie filtrować.
+Lista wartości społeczności, według których będzie filtrowany filtr trasy
 
 ```yaml
 Type: System.Collections.Generic.List`1[System.String]
@@ -73,7 +73,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.
 
 ```yaml
 Type: IAzureContextContainer
@@ -87,8 +87,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Force
-Nie pytaj o potwierdzenie, czy zachodzi konieczność przestania się zasobu
+### — Wymuszanie
+Nie należy prosić o potwierdzenie, jeśli chcesz zasób zostać zasypny
 
 ```yaml
 Type: SwitchParameter
@@ -102,8 +102,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (nazwa)
-Określa nazwę reguły filtru tras, którą należy dodać do filtru tras.
+### — Nazwa
+Określa nazwę reguły filtrowania trasy, która ma być dodawania do filtru trasy.
 
 ```yaml
 Type: String
@@ -118,7 +118,7 @@ Accept wildcard characters: False
 ```
 
 ### -RouteFilter
-Określa filtr trasy, do którego jest dodawana reguła filtru tras.
+Określa filtr trasy, do którego to polecenie cmdlet dodaje regułę filtrowania trasy.
 
 ```yaml
 Type: PSRouteFilter
@@ -133,8 +133,8 @@ Accept wildcard characters: False
 ```
 
 ### -RouteFilterRuleType
-Określa typ reguły filtrowania tras.
-Prawidłowe wartości: społeczność
+Określa typ reguły filtru trasy.
+Prawidłowe wartości to: Community
 
 ```yaml
 Type: String
@@ -149,8 +149,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Potwierdź
-Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.
+### — Potwierdź
+Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.
 
 ```yaml
 Type: SwitchParameter
@@ -165,7 +165,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet. Polecenie cmdlet nie jest uruchamiane.
+Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet. Polecenie cmdlet nie zostanie uruchomione.
 
 ```yaml
 Type: SwitchParameter
@@ -180,19 +180,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
 ### PSRouteFilter
-Parametr "RouteFilter" akceptuje wartość typu "PSRouteFilter" z rurociągu
+Parametr "RouteFilter" przyjmuje wartość typu "PSRouteFilter" z potoku
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### Microsoft. Azure. Commands. Network. models. PSRouteFilter
+### Microsoft.Azure.Commands.Network.Models.PSRouteFilter
 
-## INFORMACYJN
-Słowa kluczowe: Azure, azurerm, ARM, Resource, Management, Manager, Network, Networking
+## NOTATKI
+Słowa kluczowe: azure, azurerm, arm, resource, management, manager, network, networking
 
 ## LINKI POKREWNE
 
@@ -200,11 +200,8 @@ Słowa kluczowe: Azure, azurerm, ARM, Resource, Management, Manager, Network, Ne
 
 [Get-AzRouteFilter](./Get-AzRouteFilter.md)
 
-[Nowe — AzRouteFilterRuleConfigConfig](./New-AzRouteFilterRuleConfigConfig.md)
 
-[Remove-AzRouteFilterRuleConfigConfig](./Remove-AzRouteFilterRuleConfigConfig.md)
 
-[Set-AzRouteFilterRuleConfigConfig](./Set-AzRouteFilterRuleConfigConfig.md)
 
 [Set-AzRouteFilter](./Set-AzRouteFilter.md)
 
