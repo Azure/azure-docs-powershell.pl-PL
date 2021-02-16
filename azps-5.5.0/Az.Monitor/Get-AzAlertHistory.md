@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzAlertHistory.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzAlertHistory.md
-ms.openlocfilehash: 666d63d6b40e6b031d3439adde8f3f843c3cdd93
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: 762b0540c9e6483aebbc58bbe9fe71701fb390fa
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100203512"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398516"
 ---
 # Get-AzAlertHistory
 
@@ -170,7 +170,7 @@ SubscriptionId       : b93fb07a-6f93-30be-bf3e-4f0deca15f4f
 SubStatus            :
 ```
 
-To polecenie pobiera historię alertów dla określonego przedziale czasu dla bieżącej subskrypcji.
+To polecenie pobiera historię alertów w określonym przedziale czasowym dla bieżącej subskrypcji.
 
 ### Przykład 2. Uzyskiwanie historii alertów dla określonego zasobu
 ```
@@ -398,7 +398,6 @@ To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVar
 
 ## LINKI POKREWNE
 
-[Add-AzLogAlertRule](./Add-AzLogAlertRule.md)
 
 [Add-AzMetricAlertRule](./Add-AzMetricAlertRule.md)
 

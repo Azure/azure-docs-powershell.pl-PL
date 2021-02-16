@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzAlertRule.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzAlertRule.md
-ms.openlocfilehash: f515d7db58e75cc916478e07edb4e34233201a4d
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: 61c50e59dfb02a454c9f513f4f5dac277a4ee28d
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100203505"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398533"
 ---
 # Get-AzAlertRule
 
@@ -57,7 +57,7 @@ PS C:\>Get-AzAlertRule -ResourceGroup "Default-Web-CentralUS" -Name "myalert-7da
 ```
 
 To polecenie pobiera regułę alertu o nazwie myalert-7da64548-214d-42ca-b12b-b245bb8f0ac8.
-Ponieważ parametr *DetailedOutput* nie jest określony, dane wyjściowe zawierają tylko podstawowe informacje o regułę alertu.
+Parametr *DetailedOutput* nie jest określony, dlatego dane wyjściowe zawierają tylko podstawowe informacje na temat reguły alertu.
 
 ### Przykład 3. Uzyskiwanie reguły alertu według nazwy ze szczegółowymi informacjami wyjściowym
 ```
@@ -161,7 +161,6 @@ To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVar
 
 ## LINKI POKREWNE
 
-[Add-AzLogAlertRule](./Add-AzLogAlertRule.md)
 
 [Add-AzMetricAlertRule](./Add-AzMetricAlertRule.md)
 
