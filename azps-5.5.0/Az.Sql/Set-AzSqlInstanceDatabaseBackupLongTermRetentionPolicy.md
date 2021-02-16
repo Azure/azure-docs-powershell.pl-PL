@@ -1,0 +1,320 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Sql.dll-Help.xml
+Module Name: Az.Sql
+online version: https://docs.microsoft.com/en-us/powershell/module/az.sql/set-azsqlinstancedatabasebackuplongtermretentionpolicy
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Set-AzSqlInstanceDatabaseBackupLongTermRetentionPolicy.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Set-AzSqlInstanceDatabaseBackupLongTermRetentionPolicy.md
+ms.openlocfilehash: cf7cf1dcd91bc1c9f703e4fc5ca613ad6407e575
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100176746"
+---
+# <span data-ttu-id="5174f-101">Set-AzSqlInstanceDatabaseBackupLongTermRetentionPolicy</span><span class="sxs-lookup"><span data-stu-id="5174f-101">Set-AzSqlInstanceDatabaseBackupLongTermRetentionPolicy</span></span>
+
+## <span data-ttu-id="5174f-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="5174f-102">SYNOPSIS</span></span>
+<span data-ttu-id="5174f-103">Polecenie cmdlet **Set-AzSqlInstanceDatabaseLongTermRetentionBackup** ustawia długoterminowe zasady przechowywania zarządzanej bazy danych.</span><span class="sxs-lookup"><span data-stu-id="5174f-103">The **Set-AzSqlInstanceDatabaseLongTermRetentionBackup** cmdlet sets a managed database's long term retention policy.</span></span>
+
+## <span data-ttu-id="5174f-104">SKŁADNIA</span><span class="sxs-lookup"><span data-stu-id="5174f-104">SYNTAX</span></span>
+
+### <span data-ttu-id="5174f-105">WeeklyRetentionRequired (domyślne)</span><span class="sxs-lookup"><span data-stu-id="5174f-105">WeeklyRetentionRequired (Default)</span></span>
+```
+Set-AzSqlInstanceDatabaseBackupLongTermRetentionPolicy -WeeklyRetention <String> [-InstanceName] <String>
+ [-DatabaseName] <String> [-ResourceGroupName] <String> [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="5174f-106">RemovePolicy</span><span class="sxs-lookup"><span data-stu-id="5174f-106">RemovePolicy</span></span>
+```
+Set-AzSqlInstanceDatabaseBackupLongTermRetentionPolicy [-RemovePolicy] [-InstanceName] <String>
+ [-DatabaseName] <String> [-ResourceGroupName] <String> [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="5174f-107">MonthlyRetentionRequired</span><span class="sxs-lookup"><span data-stu-id="5174f-107">MonthlyRetentionRequired</span></span>
+```
+Set-AzSqlInstanceDatabaseBackupLongTermRetentionPolicy [-WeeklyRetention <String>] -MonthlyRetention <String>
+ [-InstanceName] <String> [-DatabaseName] <String> [-ResourceGroupName] <String>
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="5174f-108">YearlyRetentionRequired</span><span class="sxs-lookup"><span data-stu-id="5174f-108">YearlyRetentionRequired</span></span>
+```
+Set-AzSqlInstanceDatabaseBackupLongTermRetentionPolicy [-WeeklyRetention <String>] [-MonthlyRetention <String>]
+ -YearlyRetention <String> -WeekOfYear <Int32> [-InstanceName] <String> [-DatabaseName] <String>
+ [-ResourceGroupName] <String> [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+## <span data-ttu-id="5174f-109">OPIS</span><span class="sxs-lookup"><span data-stu-id="5174f-109">DESCRIPTION</span></span>
+<span data-ttu-id="5174f-110">Polecenie cmdlet **Set-AzSqlInstanceDatabaseBackupLongTermRetentionPolicy** ustawia długoterminowe zasady przechowywania dla tej zarządzanej bazy danych.</span><span class="sxs-lookup"><span data-stu-id="5174f-110">The **Set-AzSqlInstanceDatabaseBackupLongTermRetentionPolicy** cmdlet sets the long term retention policy for this managed database.</span></span>
+
+## <span data-ttu-id="5174f-111">PRZYKŁADY</span><span class="sxs-lookup"><span data-stu-id="5174f-111">EXAMPLES</span></span>
+
+### <span data-ttu-id="5174f-112">Przykład 1</span><span class="sxs-lookup"><span data-stu-id="5174f-112">Example 1</span></span>
+```powershell
+PS C:\> Set-AzSqlInstanceDatabaseBackupLongTermRetentionPolicy -ResourceGroupName testResourceGroup -InstanceName testInstance -DatabaseName test -WeeklyRetention "P1W"
+
+
+ResourceGroupName   : testResourceGroup
+ManagedInstanceName : testInstance
+DatabaseName        : test
+WeeklyRetention     : P1W
+MonthlyRetention    : PT0S
+YearlyRetention     : PT0S
+WeekOfYear          : 0
+Location            :
+```
+
+<span data-ttu-id="5174f-113">Konfiguruje tygodniowe zasady przechowywania długoterminowego bazy danych na jeden tydzień.</span><span class="sxs-lookup"><span data-stu-id="5174f-113">Configures the database's long term retention weekly policy to one week.</span></span>
+
+### <span data-ttu-id="5174f-114">Przykład 2</span><span class="sxs-lookup"><span data-stu-id="5174f-114">Example 2</span></span>
+```powershell
+PS C:\> Set-AzSqlInstanceDatabaseBackupLongTermRetentionPolicy -ResourceGroupName testResourceGroup -InstanceName testInstance -DatabaseName target1 -RemovePolicy
+
+
+ResourceGroupName   : testResourceGroup
+ManagedInstanceName : testInstance
+DatabaseName        : target1
+WeeklyRetention     : PT0S
+MonthlyRetention    : PT0S
+YearlyRetention     : PT0S
+WeekOfYear          : 0
+Location            :
+```
+
+<span data-ttu-id="5174f-115">To polecenie usuwa z bazy danych zasady przechowywania długoterminowych.</span><span class="sxs-lookup"><span data-stu-id="5174f-115">This command removes the long term retention policy from the database.</span></span>
+
+### <span data-ttu-id="5174f-116">Przykład 3</span><span class="sxs-lookup"><span data-stu-id="5174f-116">Example 3</span></span>
+
+<span data-ttu-id="5174f-117">Polecenie Set-AzSqlInstanceDatabaseLongTermRetentionBackup cmdlet ustawia długoterminowe zasady przechowywania zarządzanej bazy danych.</span><span class="sxs-lookup"><span data-stu-id="5174f-117">The Set-AzSqlInstanceDatabaseLongTermRetentionBackup cmdlet sets a managed database's long term retention policy.</span></span> <span data-ttu-id="5174f-118">(wygenerowane automatycznie)</span><span class="sxs-lookup"><span data-stu-id="5174f-118">(autogenerated)</span></span>
+
+```powershell
+<!-- Aladdin Generated Example --> 
+Set-AzSqlInstanceDatabaseBackupLongTermRetentionPolicy -DatabaseName target1 -InstanceName testInstance -MonthlyRetention P24W -ResourceGroupName testResourceGroup -WeekOfYear 26 -WeeklyRetention 'P1W' -YearlyRetention P10Y
+```
+
+## <span data-ttu-id="5174f-119">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="5174f-119">PARAMETERS</span></span>
+
+### <span data-ttu-id="5174f-120">-DatabaseName</span><span class="sxs-lookup"><span data-stu-id="5174f-120">-DatabaseName</span></span>
+<span data-ttu-id="5174f-121">Nazwa zarządzanej bazy danych Azure do użycia.</span><span class="sxs-lookup"><span data-stu-id="5174f-121">The name of the Azure Managed Database to use.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5174f-122">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="5174f-122">-DefaultProfile</span></span>
+<span data-ttu-id="5174f-123">Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.</span><span class="sxs-lookup"><span data-stu-id="5174f-123">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5174f-124">-InstanceName</span><span class="sxs-lookup"><span data-stu-id="5174f-124">-InstanceName</span></span>
+<span data-ttu-id="5174f-125">Nazwa zarządzanego wystąpienia platformy Azure, do którego należy baza danych.</span><span class="sxs-lookup"><span data-stu-id="5174f-125">The name of the Azure Managed Instance the database belongs to.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5174f-126">-MonthlyRetention</span><span class="sxs-lookup"><span data-stu-id="5174f-126">-MonthlyRetention</span></span>
+<span data-ttu-id="5174f-127">Miesięczne przechowywanie.</span><span class="sxs-lookup"><span data-stu-id="5174f-127">The Monthly Retention.</span></span>
+<span data-ttu-id="5174f-128">Jeśli zamiast ciągu ISO 8601 zostanie przekazana tylko liczba, jednostkami będą dni.</span><span class="sxs-lookup"><span data-stu-id="5174f-128">If just a number is passed instead of an ISO 8601 string, days will be assumed as the units.</span></span>
+<span data-ttu-id="5174f-129">Maksymalna długość wynosi 7 dni i maksymalnie 10 lat.</span><span class="sxs-lookup"><span data-stu-id="5174f-129">There is a minimum of 7 days and a maximum of 10 years.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: MonthlyRetentionRequired
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+```yaml
+Type: System.String
+Parameter Sets: YearlyRetentionRequired
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5174f-130">-RemovePolicy</span><span class="sxs-lookup"><span data-stu-id="5174f-130">-RemovePolicy</span></span>
+<span data-ttu-id="5174f-131">Jeśli zostanie to podane, zasady bazy danych zostaną wyczyszone.</span><span class="sxs-lookup"><span data-stu-id="5174f-131">If provided, the policy for the database will be cleared.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: RemovePolicy
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5174f-132">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="5174f-132">-ResourceGroupName</span></span>
+<span data-ttu-id="5174f-133">Nazwa grupy zasobów.</span><span class="sxs-lookup"><span data-stu-id="5174f-133">The name of the resource group.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5174f-134">-WeeklyRetention</span><span class="sxs-lookup"><span data-stu-id="5174f-134">-WeeklyRetention</span></span>
+<span data-ttu-id="5174f-135">Tygodniowe przechowywanie.</span><span class="sxs-lookup"><span data-stu-id="5174f-135">The Weekly Retention.</span></span>
+<span data-ttu-id="5174f-136">Jeśli zamiast ciągu ISO 8601 zostanie przekazana tylko liczba, jednostkami będą dni.</span><span class="sxs-lookup"><span data-stu-id="5174f-136">If just a number is passed instead of an ISO 8601 string, days will be assumed as the units.</span></span>
+<span data-ttu-id="5174f-137">Maksymalna długość wynosi 7 dni i maksymalnie 10 lat.</span><span class="sxs-lookup"><span data-stu-id="5174f-137">There is a minimum of 7 days and a maximum of 10 years.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: WeeklyRetentionRequired
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+```yaml
+Type: System.String
+Parameter Sets: MonthlyRetentionRequired, YearlyRetentionRequired
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5174f-138">- WeekOfYear</span><span class="sxs-lookup"><span data-stu-id="5174f-138">-WeekOfYear</span></span>
+<span data-ttu-id="5174f-139">Tydzień roku, od 1 do 52, aby zapisać na przechowywanie co rok.</span><span class="sxs-lookup"><span data-stu-id="5174f-139">The Week of Year, 1 to 52, to save for the Yearly Retention.</span></span>
+
+```yaml
+Type: System.Int32
+Parameter Sets: YearlyRetentionRequired
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5174f-140">- YearlyRetention</span><span class="sxs-lookup"><span data-stu-id="5174f-140">-YearlyRetention</span></span>
+<span data-ttu-id="5174f-141">Przechowywanie co rok.</span><span class="sxs-lookup"><span data-stu-id="5174f-141">The Yearly Retention.</span></span>
+<span data-ttu-id="5174f-142">Jeśli zamiast ciągu ISO 8601 zostanie przekazana tylko liczba, jednostkami będą dni.</span><span class="sxs-lookup"><span data-stu-id="5174f-142">If just a number is passed instead of an ISO 8601 string, days will be assumed as the units.</span></span>
+<span data-ttu-id="5174f-143">Maksymalna długość wynosi 7 dni i maksymalnie 10 lat.</span><span class="sxs-lookup"><span data-stu-id="5174f-143">There is a minimum of 7 days and a maximum of 10 years.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: YearlyRetentionRequired
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5174f-144">— Potwierdź</span><span class="sxs-lookup"><span data-stu-id="5174f-144">-Confirm</span></span>
+<span data-ttu-id="5174f-145">Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.</span><span class="sxs-lookup"><span data-stu-id="5174f-145">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5174f-146">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="5174f-146">-WhatIf</span></span>
+<span data-ttu-id="5174f-147">Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet.</span><span class="sxs-lookup"><span data-stu-id="5174f-147">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="5174f-148">Polecenie cmdlet nie zostanie uruchomione.</span><span class="sxs-lookup"><span data-stu-id="5174f-148">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5174f-149">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="5174f-149">CommonParameters</span></span>
+<span data-ttu-id="5174f-150">To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="5174f-150">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="5174f-151">Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="5174f-151">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="5174f-152">DANE WEJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="5174f-152">INPUTS</span></span>
+
+### <span data-ttu-id="5174f-153">System.String</span><span class="sxs-lookup"><span data-stu-id="5174f-153">System.String</span></span>
+
+### <span data-ttu-id="5174f-154">System.Int32</span><span class="sxs-lookup"><span data-stu-id="5174f-154">System.Int32</span></span>
+
+## <span data-ttu-id="5174f-155">DANE WYJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="5174f-155">OUTPUTS</span></span>
+
+### <span data-ttu-id="5174f-156">Microsoft.Azure.Commands.Sql.ManagedDatabaseBackup.Model.AzureSqlManagedDatabaseBackupLongTermRetentionPolicyModel</span><span class="sxs-lookup"><span data-stu-id="5174f-156">Microsoft.Azure.Commands.Sql.ManagedDatabaseBackup.Model.AzureSqlManagedDatabaseBackupLongTermRetentionPolicyModel</span></span>
+
+## <span data-ttu-id="5174f-157">NOTATKI</span><span class="sxs-lookup"><span data-stu-id="5174f-157">NOTES</span></span>
+
+## <span data-ttu-id="5174f-158">LINKI POKREWNE</span><span class="sxs-lookup"><span data-stu-id="5174f-158">RELATED LINKS</span></span>
+
+[<span data-ttu-id="5174f-159">Get-AzSqlInstanceDatabaseBackupLongTermRetentionPolicy</span><span class="sxs-lookup"><span data-stu-id="5174f-159">Get-AzSqlInstanceDatabaseBackupLongTermRetentionPolicy</span></span>](./Get-AzSqlInstanceDatabaseBackupLongTermRetentionPolicy.md)
+
+[<span data-ttu-id="5174f-160">Get-AzSqlInstanceDatabaseLongTermRetentionBackup</span><span class="sxs-lookup"><span data-stu-id="5174f-160">Get-AzSqlInstanceDatabaseLongTermRetentionBackup</span></span>](./Get-AzSqlInstanceDatabaseLongTermRetentionBackup.md)
+
+[<span data-ttu-id="5174f-161">Remove-AzSqlInstanceDatabaseLongTermRetentionBackup</span><span class="sxs-lookup"><span data-stu-id="5174f-161">Remove-AzSqlInstanceDatabaseLongTermRetentionBackup</span></span>](./Remove-AzSqlInstanceDatabaseLongTermRetentionBackup.md)
+
+[<span data-ttu-id="5174f-162">Dokumentacja bazy danych SQL</span><span class="sxs-lookup"><span data-stu-id="5174f-162">SQL Database Documentation</span></span>](https://docs.microsoft.com/azure/sql-database/)
