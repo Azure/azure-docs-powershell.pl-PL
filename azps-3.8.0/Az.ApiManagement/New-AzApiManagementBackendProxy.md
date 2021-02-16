@@ -5,31 +5,31 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementBackendProxy.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementBackendProxy.md
-ms.openlocfilehash: d7afe10975003dcc8c82156d03adc1aa022b505c
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: d7757e277c6465622279937f72c45a1bec07684a
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94051214"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100398159"
 ---
 # New-AzApiManagementBackendProxy
 
-## STRESZCZENIe
-Tworzy nowy obiekt pośredniczący zaplecza.
+## SYNOPSIS
+Tworzy nowy obiekt serwera proxy zaplecza.
 
-## POLECENIA
+## SKŁADNIA
 
 ```
 New-AzApiManagementBackendProxy -Url <String> [-ProxyCredential <PSCredential>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Opis
-Tworzy nowy obiekt pośredniczący zaplecza, który może zostać potokiem podczas tworzenia nowej jednostki wewnętrznej bazy danych.
+## OPIS
+Tworzy nowy obiekt serwera proxy zaplecza, który można tworzyć potokami podczas tworzenia nowej jednostki zaplecza.
 
-## Przykłady
+## PRZYKŁADY
 
-### Tworzenie obiektu pośredniczącego w wewnętrznej bazie danych In-Memory
+### Tworzenie obiektu serwera proxy zaplecza In-Memory proxy
 ```powershell
 PS C:\>$secpassword = ConvertTo-SecureString "PlainTextPassword" -AsPlainText -Force
 PS C:\>$proxyCreds = New-Object System.Management.Automation.PSCredential ("foo", $secpassword)
@@ -40,12 +40,12 @@ PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default
 PS C:\>$backend = New-AzApiManagementBackend -Context  $apimContext -BackendId 123 -Url 'https://contoso.com/awesomeapi' -Protocol http -Title "first backend" -SkipCertificateChainValidation $true -Proxy $credential -Description "backend with proxy server"
 ```
 
-Tworzy obiekt pośredniczący zaplecza i konfiguruje zaplecze
+Tworzy obiekt serwera proxy zaplecza i konfiguruje zaplecza
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -59,8 +59,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ProxyCredential
-Poświadczenia służące do nawiązywania połączenia z serwerem proxy zaplecza. Ten parametr jest opcjonalny.
+### - ProxyCredential
+Poświadczenia używane do łączenia się z serwerem proxy zaplecza. Ten parametr jest opcjonalny.
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -74,8 +74,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -URL
-Adres URL serwera proxy, który ma być używany podczas przekierowywania połączeń do zaplecza.
+### — adres URL
+Adres URL serwera proxy używanego podczas przekazywania połączeń do zaplecza.
 Ten parametr jest wymagany.
 
 ```yaml
@@ -91,25 +91,25 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### Znaleziono
+### Brak
 
-## WYSYŁA
+## OUTPUTS
 
-### Microsoft. Azure. Commands. ApiManagement. servicemanagement. MODELES. PsApiManagementBackendProxy
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackendProxy
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
-[Get-AzApiManagementBackend](./Get-AzApiManagementBackend)
+[Get-AzApiManagementBackend](./Get-AzApiManagementBackend.md)
 
-[Nowe — AzApiManagementBackend](./New-AzApiManagementBackend.md)
+[New-AzApiManagementBackend](./New-AzApiManagementBackend.md)
 
-[Nowe — AzApiManagementBackendCredential](./New-AzApiManagementBackendCredential.md)
+[New-AzApiManagementBackendCredential](./New-AzApiManagementBackendCredential.md)
 
 [Set-AzApiManagementBackend](./Set-AzApiManagementBackend.md)
 
