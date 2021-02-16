@@ -5,38 +5,38 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/u
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Undo-AzKeyVaultSecretRemoval.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Undo-AzKeyVaultSecretRemoval.md
-ms.openlocfilehash: 1eca5a380dc71a5bd801c21bb7e7f556fcff0d35
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 9513cba1532ec70acb77cdf97d19de25db36434f
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93895185"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100397938"
 ---
 # Undo-AzKeyVaultSecretRemoval
 
-## STRESZCZENIe
-Odkrycie usuniętego klucza tajnego w magazynie kluczy w stan aktywny.
+## SYNOPSIS
+Przywraca usunięty klucz tajny w magazynie kluczy do stanu aktywnego.
 
-## POLECENIA
+## SKŁADNIA
 
-### Domyślne (domyślnie)
+### Domyślne (domyślne)
 ```
 Undo-AzKeyVaultSecretRemoval [-VaultName] <String> [-Name] <String> [-DefaultProfile <IAzureContextContainer>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### Inputobject
+### InputObject
 ```
 Undo-AzKeyVaultSecretRemoval [-InputObject] <PSDeletedKeyVaultSecretIdentityItem>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **Undo-AzKeyVaultSecretRemoval** powoduje odzyskanie usuniętego wcześniej klucza tajnego.
-Odzyskany klucz tajny będzie aktywny i może być stosowany do wszystkich zwykłych działań tajnych.
-Aby można było wykonać tę operację, osoba dzwoniąca musi mieć uprawnienie "Odzyskaj".
+## OPIS
+Polecenie **cmdlet Undo-AzKeyVaultSecretRemoval** spowoduje odzyskanie poprzednio usuniętego klucza tajnego.
+Odzyskany klucz tajny będzie aktywny i będzie można go używać we wszystkich normalnych operacjach tajnych.
+Aby wykonać tę operację, dzwoniący musi mieć uprawnienie do odzyskiwania.
 
-## Przykłady
+## PRZYKŁADY
 
 ### Przykład 1
 ```powershell
@@ -55,12 +55,12 @@ Content Type :
 Tags         :
 ```
 
-To polecenie odzyska tajne hasło, które zostało wcześniej usunięte, w stanie aktywnym i zdatnym do użycia.
+To polecenie spowoduje odzyskanie poprzednio usuniętego stanu "MySecret", który był aktywny i użyteczny.
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -74,8 +74,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Inputobject
-Usunięto obiekt tajny
+### -InputObject
+Usunięto tajny obiekt
 
 ```yaml
 Type: Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultSecretIdentityItem
@@ -89,9 +89,9 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Name (nazwa)
-Nazwa tajna.
-Polecenie cmdlet tworzy nazwę FQDN wpisu tajnego na podstawie nazwy magazynu, obecnie wybranej nazwy środowiska i sekretu.
+### — Nazwa
+Tajna nazwa.
+Polecenie cmdlet konstruuje nazwę FQDN tajnych nazw magazynów, obecnie wybranego środowiska i nazwy tajnej.
 
 ```yaml
 Type: System.String
@@ -105,9 +105,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Magazynname
+### -VaultName
 Nazwa magazynu.
-Polecenie cmdlet tworzy nazwę FQDN magazynu na podstawie nazwy i obecnie wybranego środowiska.
+Polecenie cmdlet konstruuje nazwę FQDN magazynu na podstawie nazwy i obecnie wybranego środowiska.
 
 ```yaml
 Type: System.String
@@ -121,8 +121,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Potwierdź
-Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.
+### — Potwierdź
+Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -137,8 +137,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet.
-Polecenie cmdlet nie jest uruchamiane.
+Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet.
+Polecenie cmdlet nie zostanie uruchomione.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -153,22 +153,21 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
 ### Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultSecretIdentityItem
 
-## WYSYŁA
+## OUTPUTS
 
-### Microsoft. Azure. Commands. platforming. models. PSKeyVaultSecret
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultSecret
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
 [Remove-AzKeyVaultSecret](./Remove-AzKeyVaultSecret.md)
 
-[Dodaj-AzKeyVaultSecret](./Add-AzKeyVaultSecret.md)
 
 [Get-AzKeyVaultSecret](./Get-AzKeyVaultSecret.md)

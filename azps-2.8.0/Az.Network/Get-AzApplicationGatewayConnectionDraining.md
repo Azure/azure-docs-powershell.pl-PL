@@ -5,29 +5,29 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzApplicationGatewayConnectionDraining.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzApplicationGatewayConnectionDraining.md
-ms.openlocfilehash: e50917224ef791dbc85c24ceb79cfc7ce05f7d29
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 1630b0177efbccbf4d1cba674f0cf11ab457307e
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93870287"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100397921"
 ---
 # Get-AzApplicationGatewayConnectionDraining
 
-## STRESZCZENIe
-Pobiera konfigurację opróżniania połączenia obiektu ustawień HTTP zaplecza.
+## SYNOPSIS
+Pobiera konfigurację wyczerpania połączenia obiektu ustawień protokołu HTTP na zawczasu.
 
-## POLECENIA
+## SKŁADNIA
 
 ```
 Get-AzApplicationGatewayConnectionDraining -BackendHttpSettings <PSApplicationGatewayBackendHttpSettings>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **Get-AzApplicationGatewayConnectionDraining** Pobiera konfigurację opróżniania połączenia obiektu ustawień http zaplecza.
+## OPIS
+Polecenie **cmdlet Get-AzApplicationGatewayConnectionDraining** pobiera konfigurację opróżniania połączenia obiektu ustawień protokołu HTTP na zawczasu.
 
-## Przykłady
+## PRZYKŁADY
 
 ### Przykład 1
 ```
@@ -36,14 +36,14 @@ PS C:\> $Settings  = Get-AzApplicationGatewayBackendHttpSettings -Name "Settings
 PS C:\> $ConnectionDraining = Get-AzApplicationGatewayConnectionDraining -BackendHttpSettings $Settings
 ```
 
-Pierwsze polecenie uzyskuje bramkę Application Gateway o nazwie ApplicationGateway01 w grupie zasobów o nazwie ResourceGroup01 i zapisuje ją w zmiennej $AppGw.
-Drugie polecenie pobiera ustawienia HTTP back-end o nazwie Settings01 dla $AppGw i zapisuje ustawienia w zmiennej $Settings.
-Ostatnie polecenie powoduje wyświetlenie konfiguracji opróżniania połączenia na podstawie ustawień HTTP zaplecza $Settings i zapisanie jej w zmiennej $ConnectionDraining.
+Pierwsze polecenie pobiera bramę aplikacji o nazwie ApplicationGateway01 w grupie zasobów o nazwie ResourceGroup01 i zapisuje ją w zmiennej $AppGw zasobów.
+Drugie polecenie pobiera ustawienia protokołu HTTP z końca strony o nazwie Ustawienia01 dla protokołu $AppGw i zapisuje ustawienia w $Settings sieci.
+Ostatnie polecenie pobiera konfigurację rozładowania połączenia z ustawień protokołu HTTP na zawęzie oraz zapisuje je $Settings w $ConnectionDraining sieci.
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -BackendHttpSettings
-Ustawienia http zaplecza
+Ustawienia protokołu HTTP zaplecza
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendHttpSettings
@@ -58,7 +58,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -73,25 +73,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### Microsoft. Azure. Commands. Network. models. PSApplicationGatewayBackendHttpSettings
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayBackendHttpSettings
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### Microsoft. Azure. Commands. Network. models. PSApplicationGatewayConnectionDraining
+### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewayConnectionDraining
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
 [Get-AzApplicationGateway](./Get-AzApplicationGateway.md)
 
-[Get-AzApplicationGatewayBackendHttpSettings](./Get-AzApplicationGatewayBackendHttpSettings.md)
 
-[Nowe — AzApplicationGatewayConnectionDraining](./New-AzApplicationGatewayConnectionDraining.md)
+[New-AzApplicationGatewayConnectionDraining](./New-AzApplicationGatewayConnectionDraining.md)
 
 [Remove-AzApplicationGatewayConnectionDraining](./Remove-AzApplicationGatewayConnectionDraining.md)
 
