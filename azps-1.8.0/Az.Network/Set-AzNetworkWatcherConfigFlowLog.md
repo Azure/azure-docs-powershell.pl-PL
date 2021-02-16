@@ -5,21 +5,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/se
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzNetworkWatcherConfigFlowLog.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzNetworkWatcherConfigFlowLog.md
-ms.openlocfilehash: 4a64226f5445c77c262f1c0521a58d4f3f00ac99
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: bd921f855d95e729ebc2ff0fed32ef56bfe52110
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93708950"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400097"
 ---
 # Set-AzNetworkWatcherConfigFlowLog
 
-## STRESZCZENIe
+## SYNOPSIS
 Konfiguruje rejestrowanie przepływu dla zasobu docelowego.
 
-## POLECENIA
+## SKŁADNIA
 
-### SetFlowlogByResourceWithoutTA (domyślny)
+### SetFlowlogByResourceWithoutTA (domyślne)
 ```
 Set-AzNetworkWatcherConfigFlowLog -NetworkWatcher <PSNetworkWatcher> -TargetResourceId <String>
  -EnableFlowLog <Boolean> -StorageAccountId <String> [-EnableRetention <Boolean>] [-RetentionInDays <Int32>]
@@ -99,12 +99,12 @@ Set-AzNetworkWatcherConfigFlowLog -Location <String> -TargetResourceId <String> 
  [<CommonParameters>]
 ```
 
-## Opis
-Set-AzNetworkWatcherConfigFlowLog konfiguruje rejestrowanie przepływu dla zasobu docelowego. Właściwości do skonfigurowania: czy rejestrowanie przepływu jest włączone dla dostarczanego zasobu, skonfigurowane konto magazynu, w którym mają być wysyłane dzienniki, format rejestrowania przepływu oraz zasady przechowywania dzienników. W przypadku rejestrowania przepływów są obsługiwane obecnie grupy zabezpieczeń sieci. 
+## OPIS
+Ta Set-AzNetworkWatcherConfigFlowLog konfiguruje rejestrowanie przepływu dla zasobu docelowego. Do właściwości, które należy skonfigurować, należą: czy dla udostępnianego zasobu włączono rejestrowanie przepływu, skonfigurowane konto magazynu do wysyłania dzienników, format rejestrowania przepływu i zasady przechowywania dla dzienników. Obecnie grupy zabezpieczeń sieci są obsługiwane do rejestrowania przepływu. 
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1: Konfigurowanie rejestrowania przepływu dla określonego NSG
+### Przykład 1. Konfigurowanie rejestrowania przepływu dla określonego serwera NSG
 ```
 PS C:\> $NW = Get-AzNetworkWatcher -ResourceGroupName NetworkWatcherRg -Name NetworkWatcher_westcentralus
 PS C:\> $nsg = Get-AzNetworkSecurityGroup -ResourceGroupName NSGRG -Name appNSG
@@ -126,9 +126,9 @@ Format           : {
                    }
 ```
 
-W tym przykładzie skonfigurowano stan rejestrowania przepływu dla grupy zabezpieczeń sieci. W odpowiedzi widać, że określony NSG ma włączone rejestrowanie przepływu, format domyślny i nie ustawiono zasad przechowywania.
+W tym przykładzie konfigurujemy stan rejestrowania przepływu dla grupy zabezpieczeń sieci. W odpowiedzi widać, że określona funkcja NSG ma włączoną funkcję rejestrowania przepływu, domyślny format i nie ustawiono zasad przechowywania.
 
-### Przykład 2: Konfigurowanie rejestrowania przepływu dla określonego NSG i Ustawianie wersji rejestrowania przepływu na 2.
+### Przykład 2. Konfigurowanie rejestrowania przepływu dla określonego serwera NSG i ustawianie wersji rejestrowania przepływu na wartość 2.
 ```
 PS C:\> $NW = Get-AzNetworkWatcher -ResourceGroupName NetworkWatcherRg -Name NetworkWatcher_westcentralus
 PS C:\> $nsg = Get-AzNetworkSecurityGroup -ResourceGroupName NSGRG -Name appNSG
@@ -150,9 +150,9 @@ Format           : {
                    }
 ```
 
-W tym przykładzie skonfigurowano rejestrowanie przepływu w grupie zabezpieczeń sieci (NSG) z określonymi dziennikami w wersji 2. W odpowiedzi widać, że określony NSG ma włączone rejestrowanie przepływu, jest ustawiany format i nie skonfigurowano zasad przechowywania. Jeśli region nie obsługuje określonej wersji, obserwator sieci zapisze domyślną obsługiwaną wersję w regionie.
+W tym przykładzie konfigurujemy rejestrowanie przepływu w grupie zabezpieczeń sieci (NSG, Network Security Group) z określonymi dziennikami w wersji 2. W odpowiedzi widać, że dla określonego serwera NSG włączono rejestrowanie przepływu, ustawiono format i nie skonfigurowano żadnych zasad przechowywania. Jeśli region nie obsługuje wersji określonej przez Ciebie, aplikacja Network Watcher zapisze domyślną wersję obsługiwaną w tym regionie.
 
-### Przykład 3: Konfigurowanie rejestrowania przepływu i analizy ruchu dla określonego NSG
+### Przykład 3. Konfigurowanie rejestrowania przepływu i analizy ruchu dla określonego serwera NSG
 ```
 PS C:\> $NW = Get-AzNetworkWatcher -ResourceGroupName NetworkWatcherRg -Name NetworkWatcher_westcentralus
 PS C:\> $nsg = Get-AzNetworkSecurityGroup -ResourceGroupName NSGRG -Name appNSG
@@ -184,12 +184,12 @@ FlowAnalyticsConfiguration : {
           }
 ```
 
-W tym przykładzie skonfigurowano stan rejestrowania przepływu i analizy ruchu dla grupy zabezpieczeń sieci. W odpowiedzi widać, że określony NSG ma włączone rejestrowanie przepływów oraz Analiza ruchu, format domyślny i nie ustawiono zasad przechowywania.
+W tym przykładzie konfigurujemy stan rejestrowania przepływu i analizę ruchu dla grupy zabezpieczeń sieci. W odpowiedzi widać, że dla określonego serwera NSG włączono rejestrowanie przepływu i analizę ruchu, format domyślny i nie ustawiono zasad przechowywania.
 
-## PARAMETRÓW
+## PARAMETERS
 
-### -AsJob
-Uruchom polecenie cmdlet w tle
+### — AsJob
+Uruchamianie polecenia cmdlet w tle
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -204,7 +204,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -219,7 +219,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableFlowLog
-Flaga włączenia/wyłączenia rejestrowania przepływu.
+Oflaguj, aby włączyć/wyłączyć rejestrowanie przepływu.
 
 ```yaml
 Type: System.Boolean
@@ -234,7 +234,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableRetention
-Flaga włączenia/wyłączenia przechowywania.
+Oflaguj, aby włączyć/wyłączyć przechowywanie.
 
 ```yaml
 Type: System.Boolean
@@ -249,7 +249,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableTrafficAnalytics
-Flaga włączenia/wyłączenia przechowywania.
+Oflaguj, aby włączyć/wyłączyć przechowywanie.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -264,7 +264,7 @@ Accept wildcard characters: False
 ```
 
 ### -FormatType
-Typ dziennika przepływu.
+Typ formatu dziennika przepływów.
 
 ```yaml
 Type: System.String
@@ -279,7 +279,7 @@ Accept wildcard characters: False
 ```
 
 ### -FormatVersion
-Wersja formatu dziennika przepływu.
+Wersja formatu dziennika przepływów.
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -294,7 +294,7 @@ Accept wildcard characters: False
 ```
 
 ### — Lokalizacja
-Lokalizacja obserwatora sieci.
+Lokalizacja czujki sieci.
 
 ```yaml
 Type: System.String
@@ -308,8 +308,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -NetworkWatcher
-Zasób obserwatora sieci.
+### — NetworkWatcher
+Zasób obserwowania sieci.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
@@ -324,7 +324,7 @@ Accept wildcard characters: False
 ```
 
 ### -NetworkWatcherName
-Nazwa obserwatora sieci.
+Nazwa osoby oglądacej sieć.
 
 ```yaml
 Type: System.String
@@ -339,7 +339,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Nazwa grupy zasobów obserwatora sieci.
+Nazwa grupy zasobów obserwowanych sieci.
 
 ```yaml
 Type: System.String
@@ -354,7 +354,7 @@ Accept wildcard characters: False
 ```
 
 ### -RetentionInDays
-Liczba dni przechowywania rekordów dziennika przepływu.
+Liczba dni, przez które mają być zachowywane rekordy dziennika przepływów.
 
 ```yaml
 Type: System.Int32
@@ -368,8 +368,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -StorageAccountId
-Identyfikator konta magazynu, które służy do przechowywania dziennika przepływów.
+### - StorageAccountId
+Identyfikator konta magazynu służącego do przechowywania dziennika przepływów.
 
 ```yaml
 Type: System.String
@@ -398,8 +398,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -TrafficAnalyticsInterval
-Pobiera lub ustawia interwał (w minutach), który decyduje o tym, jak często usługa TA ma wykonywać analizy przepływu.
+### - TrafficAnalyticsInterval
+Pobiera lub ustawia interwał (w minutach), który określa, jak często usługa TA powinna wykonać analizę przepływu.
 
 ```yaml
 Type: System.Int32
@@ -413,8 +413,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Obszar roboczy
-Obiekt WS służący do przechowywania danych analizy ruchu.
+### — Obszar roboczy
+Obiekt WS używany do przechowywania danych analizy ruchu.
 
 ```yaml
 Type: Microsoft.Azure.Management.Internal.Network.Common.IOperationalInsightWorkspace
@@ -440,8 +440,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -WorkspaceGUID
-Identyfikator GUID protokołu WS służący do przechowywania danych analizy ruchu.
+### - WorkspaceGUID
+Identyfikator GUID WS używany do przechowywania danych analizy ruchu.
 
 ```yaml
 Type: System.String
@@ -456,7 +456,7 @@ Accept wildcard characters: False
 ```
 
 ### -WorkspaceLocation
-Obszar Azure w usłudze WS służący do przechowywania danych analizy ruchu.
+Azure Region WS, który jest używany do przechowywania danych analizy ruchu.
 
 ```yaml
 Type: System.String
@@ -471,7 +471,7 @@ Accept wildcard characters: False
 ```
 
 ### -WorkspaceResourceId
-Abonament protokołu WS służącego do przechowywania danych analizy ruchu.
+Subskrypcja WS, która jest używana do przechowywania danych analizy ruchu.
 
 ```yaml
 Type: System.String
@@ -485,8 +485,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Potwierdź
-Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.
+### — Potwierdź
+Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -501,7 +501,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet. Polecenie cmdlet nie jest uruchamiane.
+Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet. Polecenie cmdlet nie zostanie uruchomione.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -516,32 +516,32 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### Microsoft. Azure. Commands. Network. models. PSNetworkWatcher
+### Microsoft.Azure.Commands.Network.Models.PSNetworkWatcher
 
-### System. String
+### System.String
 
-### System. Boolean
+### System.Boolean
 
-### System. Int32
+### System.Int32
 
-### System. Nullable ' 1 [[System. Int32; system. private. CoreLib, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-### Microsoft. Azure. Management. Internal. Network. Common. IOperationalInsightWorkspace
+### Microsoft.Azure.Management.Internal.Network.Common.IOperationalInsightWorkspace
 
-## WYSYŁA
+## OUTPUTS
 
-### Microsoft. Azure. Commands. Network. models. PSFlowLog
+### Microsoft.Azure.Commands.Network.Models.PSFlowLog
 
-## INFORMACYJN
-Słowa kluczowe: Azure, azurerm, ARM, Resource, Management, Manager, Network, Networking, monitor, przepływ, dzienniki, flowlog, rejestrowanie
+## NOTATKI
+Słowa kluczowe: azure, azurerm, arm, resource, management, manager, network, networking, watcher, flow, logs, flowlog, logging
 
 ## LINKI POKREWNE
 
-[Nowe — AzNetworkWatcher](./New-AzNetworkWatcher.md)
+[New-AzNetworkWatcher](./New-AzNetworkWatcher.md)
 
 [Get-AzNetworkWatcher](./Get-AzNetworkWatcher.md)
 
@@ -553,27 +553,27 @@ Słowa kluczowe: Azure, azurerm, ARM, Resource, Management, Manager, Network, Ne
 
 [Get-AzNetworkWatcherTopology](./Get-AzNetworkWatcherTopology.md)
 
-[Start — AzNetworkWatcherResourceTroubleshooting](./Start-AzNetworkWatcherResourceTroubleshooting.md)
+[Start-AzNetworkWatcherResourceTroubleshooting](./Start-AzNetworkWatcherResourceTroubleshooting.md)
 
-[Nowe — AzNetworkWatcherPacketCapture](./New-AzNetworkWatcherPacketCapture.md)
+[New-AzNetworkWatcherPacketCapture](./New-AzNetworkWatcherPacketCapture.md)
 
-[Nowe — AzPacketCaptureFilterConfig](./New-AzPacketCaptureFilterConfig.md)
+[New-AzPacketCaptureFilterConfig](./New-AzPacketCaptureFilterConfig.md)
 
 [Get-AzNetworkWatcherPacketCapture](./Get-AzNetworkWatcherPacketCapture.md)
 
 [Remove-AzNetworkWatcherPacketCapture](./Remove-AzNetworkWatcherPacketCapture.md)
 
-[Zatrzymaj — AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
+[Stop-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
 
-[Nowe — AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md)
+[New-AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md)
 
-[Test — AzNetworkWatcherIPFlow](./Test-AzNetworkWatcherIPFlow.md)
+[Test-AzNetworkWatcherIPFlow](./Test-AzNetworkWatcherIPFlow.md)
 
-[Test — AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md)
+[Test-AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md)
 
-[Zatrzymaj — AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
+[Stop-AzNetworkWatcherConnectionMonitor](./Stop-AzNetworkWatcherConnectionMonitor.md)
 
-[Start — AzNetworkWatcherConnectionMonitor](./Start-AzNetworkWatcherConnectionMonitor.md)
+[Start-AzNetworkWatcherConnectionMonitor](./Start-AzNetworkWatcherConnectionMonitor.md)
 
 [Set-AzNetworkWatcherConnectionMonitor](./Set-AzNetworkWatcherConnectionMonitor.md)
 
@@ -581,7 +581,7 @@ Słowa kluczowe: Azure, azurerm, ARM, Resource, Management, Manager, Network, Ne
 
 [Remove-AzNetworkWatcherConnectionMonitor](./Remove-AzNetworkWatcherConnectionMonitor.md)
 
-[Nowe — AzNetworkWatcherConnectionMonitor](./New-AzNetworkWatcherConnectionMonitor.md)
+[New-AzNetworkWatcherConnectionMonitor](./New-AzNetworkWatcherConnectionMonitor.md)
 
 [Get-AzNetworkWatcherTroubleshootingResult](./Get-AzNetworkWatcherTroubleshootingResult.md)
 
@@ -591,6 +591,6 @@ Słowa kluczowe: Azure, azurerm, ARM, Resource, Management, Manager, Network, Ne
 
 [Get-AzNetworkWatcherFlowLogStatus](./Get-AzNetworkWatcherFlowLogStatus.md)
 
-[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport)
+[Get-AzNetworkWatcherConnectionMonitorReport](./Get-AzNetworkWatcherConnectionMonitorReport.md)
 
-[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor)
+[Get-AzNetworkWatcherConnectionMonitor](./Get-AzNetworkWatcherConnectionMonitor.md)
