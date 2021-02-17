@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementBackendServiceFabric.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementBackendServiceFabric.md
-ms.openlocfilehash: 193f8f64abee3514d94a0f825beb7190c8ea7fa6
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 8e78f50c7503f2fede223ba80c20474af02f84a4
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93704606"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400913"
 ---
 # New-AzApiManagementBackendServiceFabric
 
-## STRESZCZENIe
+## SYNOPSIS
 Tworzy obiekt `PsApiManagementServiceFabric`
 
-## POLECENIA
+## SKŁADNIA
 
 ```
 New-AzApiManagementBackendServiceFabric -ManagementEndpoint <String[]> -ClientCertificateThumbprint <String>
@@ -25,13 +25,13 @@ New-AzApiManagementBackendServiceFabric -ManagementEndpoint <String[]> -ClientCe
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Opis
+## OPIS
 
-Polecenie cmdlet **New-AzApiManagementBackendServiceFabric** tworzy obiekt, którego `PsApiManagementServiceFabric` należy użyć w polecenia cmdlet **New-AzApiManagementBackend** and **Set-AzApiManagementBackend**.
+Polecenie cmdlet **New-AzApiManagementBackendServiceFabric** tworzy obiekt, który ma być używany w `PsApiManagementServiceFabric` poleceniach cmdlet **New-AzApiManagementBackend** i **Set-AzApiManagementBackend.**
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1. Tworzenie obiektu In-Memory usługi sieci szkieletowej zaplecza
+### Przykład 1. Tworzenie struktury szkieletowej usługi zaplecza In-Memory obiektu
 ```powershell
 PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>$ManagementEndpoints = 'https://sfbackend-01.net:443', 'https://sfbackend-02.net:443'
@@ -41,12 +41,12 @@ PS C:\>$serviceFabric = New-AzApiManagementBackendServiceFabric -ManagementEndpo
 PS C:\>$backend = New-AzApiManagementBackend -Context  $apimContext -BackendId 123 -Url 'https://contoso.com/awesomeapi' -Protocol http -ServiceFabricCluster $serviceFabric -Description "service fabric backend" -PassThru
 ```
 
-Tworzenie kontraktu sieci szkieletowej usługi wewnętrznej bazy danych
+Tworzy umowę na szkielet usług zaplecza
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -ClientCertificateThumbprint
-Odcisk palca certyfikatu klienta dla punktu końcowego zarządzania.
+Thumbprint certyfikatu klienta dla punktu końcowego zarządzania.
 Ten parametr jest wymagany.
 
 ```yaml
@@ -62,7 +62,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -77,7 +77,7 @@ Accept wildcard characters: False
 ```
 
 ### -ManagementEndpoint
-Punkty końcowe zarządzania klastrem usługi Fabric.
+Punkty końcowe zarządzania klastrami szkieletów usług.
 Ten parametr jest wymagany.
 
 ```yaml
@@ -93,8 +93,8 @@ Accept wildcard characters: False
 ```
 
 ### -MaxPartitionResolutionRetry
-Maksymalna liczba ponownych prób podczas rozpoznawania partycji programu Service Fabric.
-Ten parametr jest opcjonalny i wartością domyślną jest 5.
+Maksymalna liczba ponownych prób podczas rozpoznawania partycji service Fabric.
+Ten parametr jest opcjonalny, a wartość domyślna to 5.
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -109,7 +109,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServerCertificateThumbprint
-Odcisk palca certyfikatów, które usługa zarządzania klastrami używa do komunikacji TLS. Ten parametr jest opcjonalny.
+Thumbprint of certificates cluster management service uses for tls communication. Ten parametr jest opcjonalny.
 
 ```yaml
 Type: System.String[]
@@ -124,7 +124,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServerX509Name
-Kolekcja nazw certyfikatów x509 serwera.
+Kolekcja nazw certyfikatów serwera X509.
 Ten parametr jest opcjonalny.
 
 ```yaml
@@ -140,25 +140,25 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### System. String
+### System.String
 
-## WYSYŁA
+## OUTPUTS
 
-### Microsoft. Azure. Commands. ApiManagement. servicemanagement. MODELES. PsApiManagementServiceFabric
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementServiceFabric
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
-[Get-AzApiManagementBackend](./Get-AzApiManagementBackend)
+[Get-AzApiManagementBackend](./Get-AzApiManagementBackend.md)
 
-[Nowe — AzApiManagementBackend](./New-AzApiManagementBackend.md)
+[New-AzApiManagementBackend](./New-AzApiManagementBackend.md)
 
-[Nowe — AzApiManagementBackendProxy](./New-AzApiManagementBackendProxy.md)
+[New-AzApiManagementBackendProxy](./New-AzApiManagementBackendProxy.md)
 
 [Set-AzApiManagementBackend](./Set-AzApiManagementBackend.md)
 

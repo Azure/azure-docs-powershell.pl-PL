@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.sql/Update
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Update-AzSqlServerAdvancedThreatProtectionSetting.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Update-AzSqlServerAdvancedThreatProtectionSetting.md
-ms.openlocfilehash: 3ec370f0e4865ed5695e4f0890f99b50709e9ad8
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 079a1254865821b77ca48a94256dbe1a9e4cb431
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93895598"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100415329"
 ---
 # Update-AzSqlServerAdvancedThreatProtectionSetting
 
-## STRESZCZENIe
+## SYNOPSIS
 Ustawia zaawansowane ustawienia ochrony przed zagrożeniami na serwerze.
 
-## POLECENIA
+## SKŁADNIA
 
 ```
 Update-AzSqlServerAdvancedThreatProtectionSetting [-PassThru] [-NotificationRecipientsEmails <String>]
@@ -27,24 +27,24 @@ Update-AzSqlServerAdvancedThreatProtectionSetting [-PassThru] [-NotificationReci
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **Update-AzSqlServerAdvancedThreatProtectionSetting** ustawia zaawansowane ustawienia ochrony przed zagrożeniami na platformie Azure SQL Server.
-Aby włączyć zaawansowaną ochronę przed zagrożeniami na serwerze, na tym serwerze muszą być włączone ustawienia inspekcji.
-Aby użyć tego polecenia cmdlet, określ parametry *ResourceGroupName* oraz nazwa_serwera identyfikujące serwer.
+## OPIS
+Polecenie cmdlet **Update-AzSqlServerAdvancedThreatProtectionSetting** ustawia zaawansowane ustawienia ochrony przed zagrożeniami na serwerze Azure SQL.
+Aby włączyć zaawansowaną ochronę przed zagrożeniami na serwerze, ustawienia inspekcji muszą być włączone na tym serwerze.
+Aby użyć tego polecenia cmdlet, określ parametry *ResourceGroupName* (Nazwa Grupy Zasobów) i ServerName (Nazwa Serwera) w celu zidentyfikowania serwera.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1: Ustawianie zaawansowanych ustawień ochrony przed zagrożeniami dla bazy danych
+### Przykład 1. Ustawianie zaawansowanych ustawień ochrony przed zagrożeniami dla bazy danych
 ```
 PS C:\>Update-AzSqlServerAdvancedThreatProtectionSetting -ResourceGroupName "ResourceGroup11" -ServerName "Server01" -NotificationRecipientsEmails "admin01@contoso.com;secadmin@contoso.com" -EmailAdmins $False -ExcludedDetectionType "Sql_Injection_Vulnerability","SQL_Injection" -StorageAccountName "mystorageAccount"
 ```
 
-To polecenie ustawia zaawansowane ustawienia ochrony przed zagrożeniami dla serwera o nazwie Server01.
+To polecenie określa zaawansowane ustawienia ochrony przed zagrożeniami dla serwera o nazwie Server01.
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -58,8 +58,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -EmailAdmins
-Określa, czy ustawienia zaawansowanego ochrony przed zagrożeniami mają kontakt z administratorami za pomocą poczty e-mail.
+### - EmailAdmins
+Określa, czy administratorzy zaawansowanych ustawień ochrony przed zagrożeniami kontaktowali się przy użyciu poczty e-mail.
 
 ```yaml
 Type: System.Nullable`1[System.Boolean]
@@ -74,12 +74,12 @@ Accept wildcard characters: False
 ```
 
 ### -ExcludedDetectionType
-Określa tablicę typów wykrywania, które należy wykluczyć z ustawień.
-Dopuszczalne wartości tego parametru to:
+Określa tablicę typów wykrywania, które mają być wykluczone z ustawień.
+Dopuszczalne wartości dla tego parametru to:
 - Sql_Injection
 - Sql_Injection_Vulnerability
 - Access_Anomaly
-- Znaleziono
+- Brak
 
 ```yaml
 Type: System.String[]
@@ -94,7 +94,7 @@ Accept wildcard characters: False
 ```
 
 ### -NotificationRecipientsEmails
-Określa rozdzielaną średnikami listę adresów e-mail, do których mają być wysyłane powiadomienia o ustawieniach.
+Określa rozdzielaną średnikami listę adresów e-mail, do których ustawienia wysyłają alerty.
 
 ```yaml
 Type: System.String
@@ -154,7 +154,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Nazwa_serwera
+### -ServerName
 Określa nazwę serwera.
 
 ```yaml
@@ -170,7 +170,7 @@ Accept wildcard characters: False
 ```
 
 ### -StorageAccountName
-Określa nazwę konta magazynu, które ma być używane. Używanie symboli wieloznacznych jest niedozwolone. Ten parametr nie jest wymagany. Jeśli nie podano tego parametru, polecenie cmdlet będzie korzystać z konta magazynu, które zostało zdefiniowane wcześniej jako część zaawansowanego ustawienia ochrony przed zagrożeniami w bazie danych. Jeśli po raz pierwszy jest zdefiniowane ustawienie wykrywania zagrożeń dla bazy danych i ten parametr nie zostanie podany, polecenie cmdlet nie powiedzie się.
+Określa nazwę używanego konta magazynu. Symbole wieloznaczne są niedozwolone. Ten parametr nie jest wymagany. Jeśli ten parametr nie zostanie podany, polecenie cmdlet będzie używać konta magazynu zdefiniowanego wcześniej jako część zaawansowanych ustawień ochrony przed zagrożeniami w bazie danych. Jeśli po raz pierwszy zdefiniowano ustawienia wykrywania zagrożeń bazy danych, a ten parametr nie jest podany, polecenie cmdlet nie powiedzie się.
 
 ```yaml
 Type: System.String
@@ -184,8 +184,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Potwierdź
-Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.
+### — Potwierdź
+Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -200,8 +200,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet.
-Polecenie cmdlet nie jest uruchamiane.
+Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet.
+Polecenie cmdlet nie zostanie uruchomione.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -216,28 +216,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### System. String
+### System.String
 
-### System. Nullable "1 [[System. Boolean, system. private. CoreLib, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-### Microsoft. Azure. Commands. SQL. ThreatDetection. model. Detecttype []
+### Microsoft.Azure.Commands.Sql.ThreatDetection.Model.DetectionType[]
 
-### System. Nullable ' 1 [[System. UInt32; system. private. CoreLib, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.UInt32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### Microsoft. Azure. Commands. SQL. ThreatDetection. model. ServerThreatDetectionsettingsModel
+### Microsoft.Azure.Commands.Sql.ThreatDetection.Model.ServerThreatDetectionsettingsModel
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
-
-[Get-AzSqlServerThreatDetectionsettings](./Get-AzSqlServerThreatDetectionsettings.md)
-
-[Remove-AzSqlServerThreatDetectionsettings](03e90cd1-6ae2-4134-bc5e-28cc080614c9)
 
 [Dokumentacja bazy danych SQL](https://docs.microsoft.com/azure/sql-database/)

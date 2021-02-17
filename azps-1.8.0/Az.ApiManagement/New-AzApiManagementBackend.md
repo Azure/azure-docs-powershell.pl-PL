@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementBackend.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementBackend.md
-ms.openlocfilehash: 4886e5e064276b73f571c81724b98a409930126a
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 1f78630f195fca7e08ed755dbaeb48e413c8f8d1
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93704608"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100401014"
 ---
 # New-AzApiManagementBackend
 
-## STRESZCZENIe
-Tworzy nową jednostkę zaplecza.
+## SYNOPSIS
+Tworzy nową encję zaplecza.
 
-## POLECENIA
+## SKŁADNIA
 
 ```
 New-AzApiManagementBackend -Context <PsApiManagementContext> [-BackendId <String>] -Protocol <String>
@@ -28,12 +28,12 @@ New-AzApiManagementBackend -Context <PsApiManagementContext> [-BackendId <String
  [-Confirm] [<CommonParameters>]
 ```
 
-## Opis
-Tworzy nową jednostkę zaplecza w zarządzaniu interfejsem API.
+## OPIS
+Tworzy nową jednostkę zaplecza w zarządzaniu interfejsami API.
 
-## Przykłady
+## PRZYKŁADY
 
-### Tworzenie bazy danych 123 przy użyciu podstawowego schematu autoryzacji
+### Tworzenie bazy danych Backend 123 przy użyciu podstawowego schematu autoryzacji
 ```powershell
 PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>$credential = New-AzApiManagementBackendCredential -AuthorizationHeaderScheme basic -AuthorizationHeaderParameter opensesame -Query @{"sv" = @('xx', 'bb'); "sr" = @('cc')} -Header @{"x-my-1" = @('val1', 'val2')}
@@ -41,14 +41,14 @@ PS C:\>$credential = New-AzApiManagementBackendCredential -AuthorizationHeaderSc
 PS C:\>$backend = New-AzApiManagementBackend -Context  $apimContext -BackendId 123 -Url 'https://contoso.com/awesomeapi' -Protocol http -Title "first backend" -SkipCertificateChainValidation $true -Credential $credential -Description "my backend"
 ```
 
-Tworzy nowy zaplecze
+Tworzy nową kopię zaplecza
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -BackendId
-Identyfikator nowej wewnętrznej bazy danych.
+Identyfikator nowej bazy danych.
 Ten parametr jest opcjonalny.
-Jeśli nie określono, zostanie wygenerowana.
+Jeśli nie określono, zostanie wygenerowany.
 
 ```yaml
 Type: System.String
@@ -62,8 +62,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Context
-Wystąpienie PsApiManagementContext.
+### — kontekst
+Wystąpienie tekstu PsApiManagementContext.
 Ten parametr jest wymagany.
 
 ```yaml
@@ -78,8 +78,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### — Poświadczenie
-Szczegóły poświadczeń, które powinny być używane podczas rozmowy z wewnętrzną zapleczem.
+### - Credential
+Szczegóły poświadczeń, których należy używać podczas rozmowy z zapleczam.
 Ten parametr jest opcjonalny.
 
 ```yaml
@@ -95,7 +95,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -125,10 +125,10 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Protocol (protokół)
-Protokół komunikacyjny zaplecza.
+### — Protokół
+Protokół komunikacji zaplecza.
 Ten parametr jest wymagany.
-Prawidłowe wartości to "http" i "SOAP".
+Prawidłowe wartości to "http" i "soap".
 
 ```yaml
 Type: System.String
@@ -143,8 +143,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Proxy
-Szczegóły serwera proxy do użycia podczas wysyłania żądania do wewnętrznej bazy danych.
+### — serwer proxy
+Szczegóły serwera proxy, które mają być używane podczas wysyłania żądania do zaplecza.
 Ten parametr jest opcjonalny.
 
 ```yaml
@@ -160,9 +160,9 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Identyfikator URI zarządzania zasobu w systemie zewnętrznym.
+Uri zarządzania zasobu w systemie zewnętrznym.
 Ten parametr jest opcjonalny.
-Ten adres URL może być identyfikatorem zasobu ARM aplikacji logicznych, aplikacjami funkcji lub aplikacjami interfejsu API.
+Ten adres URL może być identyfikatorem zasobu arm aplikacji logicznych, aplikacji funkcyjnych lub aplikacji api.
 
 ```yaml
 Type: System.String
@@ -177,7 +177,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceFabricCluster
-Dane zaplecza klastra usługi Fabric. Ten parametr jest opcjonalny.
+Szczegóły zaplecza klastrów szkieletowych usług. Ten parametr jest opcjonalny.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementServiceFabric
@@ -192,7 +192,7 @@ Accept wildcard characters: False
 ```
 
 ### -SkipCertificateChainValidation
-Określa, czy pominąć sprawdzanie poprawności łańcucha certyfikatu podczas rozmowy z wewnętrzną zapleczem.
+Czy należy pominąć sprawdzanie poprawności łańcucha certyfikatów podczas rozmowy z zapleczam.
 Ten parametr jest opcjonalny.
 
 ```yaml
@@ -208,7 +208,7 @@ Accept wildcard characters: False
 ```
 
 ### -SkipCertificateNameValidation
-Określa, czy należy pominąć weryfikację nazwy certyfikatu podczas rozmowy z wewnętrzną zapleczem.
+Czy pominąć sprawdzanie poprawności nazwy certyfikatu podczas mówienia z zapleczam.
 Ten parametr jest opcjonalny.
 
 ```yaml
@@ -224,7 +224,7 @@ Accept wildcard characters: False
 ```
 
 ### — Tytuł
-Tytuł wewnętrznej bazy danych.
+Tytuł zaplecza.
 Ten parametr jest opcjonalny.
 
 ```yaml
@@ -239,8 +239,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -URL
-Adres URL czasu wykonywania dla wewnętrznej bazy danych.
+### — adres URL
+Adres URL środowiska uruchomieniowego dla zaplecza.
 Ten parametr jest wymagany.
 
 ```yaml
@@ -255,8 +255,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Potwierdź
-Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.
+### — Potwierdź
+Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -271,7 +271,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet. Polecenie cmdlet nie jest uruchamiane.
+Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet. Polecenie cmdlet nie zostanie uruchomione.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -286,35 +286,35 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### Microsoft. Azure. Commands. ApiManagement. servicemanagement. MODELES. PsApiManagementContext
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
 
-### System. String
+### System.String
 
-### System. Nullable "1 [[System. Boolean, system. private. CoreLib, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.Boolean, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-### Microsoft. Azure. Commands. ApiManagement. servicemanagement. MODELES. PsApiManagementBackendCredential
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackendCredential
 
-### Microsoft. Azure. Commands. ApiManagement. servicemanagement. MODELES. PsApiManagementBackendProxy
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementBackendProxy
 
-### Microsoft. Azure. Commands. ApiManagement. servicemanagement. MODELES. PsApiManagementServiceFabric
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementServiceFabric
 
-## WYSYŁA
+## OUTPUTS
 
-### Microsoft. Azure. Commands. ApiManagement. servicemanagement. MODELES. PsApiManagementBackend
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.psApiManagementBackend
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
-[Get-AzApiManagementBackend](./Get-AzApiManagementBackend)
+[Get-AzApiManagementBackend](./Get-AzApiManagementBackend.md)
 
-[Nowe — AzApiManagementBackendCredential](./New-AzApiManagementBackendCredential.md)
+[New-AzApiManagementBackendCredential](./New-AzApiManagementBackendCredential.md)
 
-[Nowe — AzApiManagementBackendProxy](./New-AzApiManagementBackendProxy.md)
+[New-AzApiManagementBackendProxy](./New-AzApiManagementBackendProxy.md)
 
 [Set-AzApiManagementBackend](./Set-AzApiManagementBackend.md)
 

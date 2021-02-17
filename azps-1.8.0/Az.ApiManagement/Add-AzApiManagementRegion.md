@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Add-AzApiManagementRegion.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Add-AzApiManagementRegion.md
-ms.openlocfilehash: b180dabec976164eac70106b49378d832fb00db8
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: aebcb8be906811607aefee7dbdc2c7630b9e391e
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93704674"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100401185"
 ---
 # Add-AzApiManagementRegion
 
-## STRESZCZENIe
-Dodaje nowe regiony wdrażania do wystąpienia PsApiManagement.
+## SYNOPSIS
+Dodaje nowe regiony wdrażania do wystąpienia programu PsApiManagement.
 
-## POLECENIA
+## SKŁADNIA
 
 ```
 Add-AzApiManagementRegion -ApiManagement <PsApiManagement> -Location <String> [-Sku <PsApiManagementSku>]
@@ -26,31 +26,31 @@ Add-AzApiManagementRegion -ApiManagement <PsApiManagement> -Location <String> [-
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **Add-AzApiManagementRegion** dodaje nowe wystąpienie typu **PsApiManagementRegion** do kolekcji **AdditionalRegions** o podanym wystąpieniu typu **Microsoft. Azure. Commands. ApiManagement. models. PsApiManagement**.
-To polecenie cmdlet nie wdraża samych elementów, ale aktualizuje wystąpienie **PsApiManagement** w pamięci.
-W celu zaktualizowania wdrożenia funkcji zarządzania interfejsem API przeszedł zmodyfikowane wystąpienie **PsApiManagement** , aby zaktualizować-AzApiManagementDeployment.
+## OPIS
+Polecenie cmdlet **Add-AzApiManagementRegion** dodaje nowe wystąpienie typu **PsApiManagementRegion** do kolekcji **AdditionalRegions** podanego wystąpienia typu **Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement.**
+To polecenie cmdlet nie wdraża niczego samodzielnie, ale aktualizuje wystąpienie programu **PsApiManagement** w pamięci.
+Aby zaktualizować wdrożenie zarządzania interfejsem API pass the modified **PsApiManagement** Instance to Set-AzApiManagement.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1: Dodawanie nowych regionów wdrożenia do wystąpienia PsApiManagement
+### Przykład 1. Dodawanie nowych regionów wdrażania do wystąpienia programu PsApiManagement
 ```
 PS C:\>Add-AzApiManagementRegion -ApiManagement $ApiManagement -Location "East US" -Sku "Premium" -Capacity 2
 ```
 
-To polecenie dodaje dwie jednostki SKU Premium oraz region o nazwie wschód do **PsApiManagement** wystąpienia.
+To polecenie dodaje dwie jednostki SKU premium i region o nazwie Wschód USA do wystąpienia **PsApiManagement.**
 
-### Przykład 2: Dodawanie nowych regionów wdrażania do wystąpienia usługi PsApiManagement, a następnie aktualizowanie wdrożenia
+### Przykład 2. Dodawanie nowych regionów wdrażania do wystąpienia programu PsApiManagement, a następnie aktualizowanie wdrożenia
 ```
-PS C:\>Get-AzApiManagement -ResourceGroupName "Contoso" -Name "ContosoApi" | Add-AzApiManagementRegion -Location "East US" -Sku "Premium" -Capacity 2 | Update-AzApiManagementDeployment
+PS C:\>Get-AzApiManagement -ResourceGroupName "Contoso" -Name "ContosoApi" | Add-AzApiManagementRegion -Location "East US" -Sku "Premium" -Capacity 2 | Set-AzApiManagement
 ```
 
-To polecenie pobiera obiekt **PsApiManagement** , dodaje dwie jednostki SKU Premium dla regionu o nazwie wschód USA, a następnie aktualizuje wdrożenie.
+To polecenie pobiera **obiekt PsApiManagement,** dodaje dwie jednostki SKU premium dla regionu o nazwie Wschód USA, a następnie aktualizuje wdrożenie.
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -ApiManagement
-Określa wystąpienie **PsApiManagement** , do którego są dodawane dodatkowe regiony wdrażania.
+Określa wystąpienie **programu PsApiManagement,** do których to polecenie cmdlet dodaje dodatkowe regiony wdrożenia.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement
@@ -64,8 +64,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Pojemność
-Określa pojemność jednostki składowania zapasu w obszarze wdrożenia.
+### — Pojemność
+Określa pojemność sku w regionie wdrażania.
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -80,7 +80,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -95,8 +95,8 @@ Accept wildcard characters: False
 ```
 
 ### — Lokalizacja
-Określa lokalizację nowego obszaru wdrożenia w obsługiwanym regionie usługi zarządzania interfejsem API.
-Aby uzyskać prawidłowe lokalizacje, użyj polecenia cmdlet Get-AzResourceProvider-ProviderNamespace "Microsoft. ApiManagement" | gdzie {$ _. ResourceTypes [0]. ResourceTypeName-EQ "usługa"} | Lokalizacje Select-Object
+Określa lokalizację nowego regionu wdrażania pośród obsługiwanego regionu usługi zarządzania interfejsami API.
+Aby uzyskać prawidłowe lokalizacje, użyj polecenia cmdlet Get-AzResourceProvider -ProviderNamespace "Microsoft.ApiManagement" | gdzie {$_. ResourceTypes[0]. ResourceTypeName -eq "service"} | Select-Object lokalizacji
 
 ```yaml
 Type: System.String
@@ -110,12 +110,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -SKU
-Określa poziom obszaru wdrożenia.
-Prawidłowe wartości: 
+### - SKU
+Określa warstwę obszaru wdrażania.
+Prawidłowe wartości to:
 - Deweloper
-- Standard
-- Ubezpieczeni
+- Standardowe
+- Premium
 
 ```yaml
 Type: System.Nullable`1[Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagementSku]
@@ -130,7 +130,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -VirtualNetwork
+### — VirtualNetwork
 Określa konfigurację sieci wirtualnej.
 
 ```yaml
@@ -146,18 +146,18 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### Microsoft. Azure. Commands. ApiManagement. models. PsApiManagement
+### Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement
 
-## WYSYŁA
+## OUTPUTS
 
-### Microsoft. Azure. Commands. ApiManagement. models. PsApiManagement
+### Microsoft.Azure.Commands.ApiManagement.Models.PsApiManagement
 
-## INFORMACYJN
-* Polecenie cmdlet zapisuje zaktualizowaną instancję **PsApiManagement** w potoku.
+## NOTATKI
+* Polecenie cmdlet zapisuje w potoku zaktualizowane wystąpienie polecenia **PsApiManagement.**
 
 ## LINKI POKREWNE
 
@@ -165,6 +165,6 @@ To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariab
 
 [Update-AzApiManagementRegion](./Update-AzApiManagementRegion.md)
 
-[Update-AzApiManagementDeployment](./Update-AzApiManagementDeployment.md)
+[Set-AzApiManagement](./Set-AzApiManagement.md)
 
 
