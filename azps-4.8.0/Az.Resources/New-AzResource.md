@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/New-AzResource.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/New-AzResource.md
-ms.openlocfilehash: 0c4f351ca224991862e6b050462270fd64fd2a33
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: eea8d72285e478f9eecb0a34f80cae5787ecec83
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94063811"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100405299"
 ---
 # New-AzResource
 
-## STRESZCZENIe
+## SYNOPSIS
 Tworzy zasób.
 
-## POLECENIA
+## SKŁADNIA
 
-### ByResourceId (domyślny)
+### ByResourceId (Default)
 ```
 New-AzResource [-Location <String>] [-Kind <String>] [-Properties <PSObject>] [-Plan <Hashtable>]
  [-Sku <Hashtable>] [-Tag <Hashtable>] [-IsFullObject] [-AsJob] -ResourceId <String> [-ODataQuery <String>]
@@ -46,19 +46,19 @@ New-AzResource [-Location <String>] [-Kind <String>] [-Properties <PSObject>] [-
  [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **New-AzResource** umożliwia utworzenie zasobu platformy Azure, takiego jak witryna sieci Web, serwer bazy danych SQL Azure lub baza danych SQL Azure, w grupie zasobów.
+## OPIS
+Polecenie **cmdlet New-AzResource** tworzy zasób azure, taki jak witryna internetowa, serwer Azure SQL Database lub baza danych Azure SQL Database, w grupie zasobów.
 
-## Przykłady
+## PRZYKŁADY
 
 ### Przykład 1. Tworzenie zasobu
 ```
 PS> New-AzResource -Location "West US" -Properties @{test="test"} -ResourceName TestSite06 -ResourceType microsoft.web/sites -ResourceGroupName ResourceGroup11 -Force
 ```
 
-To polecenie tworzy zasób będący witryną sieci Web w programie ResourceGroup11.
+To polecenie tworzy zasób, który jest witryną sieci Web w grupie Zasobów11.
 
-### Przykład 2: Tworzenie zasobu przy użyciu splatting
+### Przykład 2. Tworzenie zasobu przy użyciu usługi Splatting
 ```
 PS> $prop = @{
     Location          = "West US" 
@@ -72,12 +72,12 @@ PS> $prop = @{
 PS> New-AzResource @prop
 ```
 
-To polecenie tworzy zasób będący witryną sieci Web w programie ResourceGroup11.
+To polecenie tworzy zasób, który jest witryną sieci Web w grupie Zasobów11.
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -ApiVersion
-Określa wersję interfejsu API dostawcy zasobów, który ma być używany. Jeśli nie określisz wersji, to polecenie cmdlet będzie korzystać z najnowszej dostępnej wersji.
+Określa wersję interfejsu API dostawcy zasobów do użycia. Jeśli nie określisz wersji, to polecenie cmdlet użyje najnowszej dostępnej wersji.
 
 ```yaml
 Type: System.String
@@ -91,8 +91,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -AsJob
-Uruchom polecenie cmdlet w tle
+### — AsJob
+Uruchamianie polecenia cmdlet w tle
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -107,7 +107,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -122,7 +122,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExtensionResourceName
-Określa nazwę zasobu rozszerzenia dla zasobu. Aby na przykład określić bazę danych, użyj następującego formatu: nazwa `/` bazy danych nazwy serwera
+Określa nazwę zasobu rozszerzenia dla tego zasobu. Aby na przykład określić bazę danych, użyj następującego formatu: nazwa bazy danych o `/` nazwie serwera
 
 ```yaml
 Type: System.String
@@ -152,8 +152,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Force
-Wymusza uruchomienie polecenia bez monitowania o potwierdzenie użytkownika.
+### — Wymuszanie
+Wymusza uruchomienie polecenia bez pytania o potwierdzenie przez użytkownika.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -167,8 +167,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Isfullobject
-Wskazuje, że obiekt, który określa parametr *Właściwości* , jest pełnym obiektem.
+### -IsFullObject
+Wskazuje, że obiekt, który parametr *Properties* określa, jest pełnym obiektem.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -182,8 +182,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Kind
-Określa rodzaj zasobu dla zasobu.
+### — Rodzaj
+Określa rodzaj zasobu.
 
 ```yaml
 Type: System.String
@@ -199,8 +199,8 @@ Accept wildcard characters: False
 
 ### — Lokalizacja
 Określa lokalizację zasobu.
-Określ lokalizację centrum danych, na przykład Centrala amerykańska lub Południowo-Wschodnia.
-Zasób można umieścić w dowolnej lokalizacji obsługującej zasoby tego typu. Grupy zasobów mogą zawierać zasoby z różnych lokalizacji. Aby określić, które lokalizacje obsługują poszczególne typy zasobów, użyj polecenia cmdlet Get-AzLocation.
+Określ lokalizację centrum danych, na przykład Środkowe Stanów Zjednoczonych lub Azji Południowo-Wschodniej.
+Zasób można umieścić w dowolnej lokalizacji obsługującej zasoby tego typu. Grupy zasobów mogą zawierać zasoby z różnych lokalizacji. Aby określić lokalizacje, które obsługują poszczególne typy zasobów, użyj Get-AzLocation cmdlet.
 
 ```yaml
 Type: System.String
@@ -215,7 +215,7 @@ Accept wildcard characters: False
 ```
 
 ### -ODataQuery
-Określa filtr stylu protokołu OData (Open Data Protocol). To polecenie cmdlet dołącza tę wartość do żądania oprócz innych filtrów.
+Określa filtr stylu protokołu Open Data (OData). To polecenie cmdlet dołącza tę wartość do żądania oprócz innych filtrów.
 
 ```yaml
 Type: System.String
@@ -229,7 +229,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Plan
+### — planowanie
 Tabela skrótów reprezentująca właściwości planu zasobów.
 
 ```yaml
@@ -244,8 +244,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Pre
-Wskazuje, że w tym poleceniu cmdlet są brane pod uwagę wersje interfejsu API w wersji wstępnej podczas automatycznego określania wersji, której należy użyć.
+### — Przed
+Wskazuje, że to polecenie cmdlet uwzględnia wersje przedpremierowe interfejsu API, gdy automatycznie określa, której wersji użyć.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -259,8 +259,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Properties
-Określa właściwości zasobu dla zasobu. Ten parametr służy do określania wartości właściwości specyficznych dla typu zasobu.
+### — Properties
+Określa właściwości zasobu. Ten parametr służy do określania wartości właściwości specyficznych dla typu zasobu.
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -290,7 +290,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Określa w pełni kwalifikowany identyfikator zasobu, łącznie z subskrypcją, jak w poniższym przykładzie: `/subscriptions/` Identyfikator subskrypcji`/providers/Microsoft.Sql/servers/ContosoServer/databases/ContosoDatabase`
+Określa w pełni kwalifikowany identyfikator zasobu, łącznie z subskrypcją, jak w poniższym `/subscriptions/` przykładzie: Identyfikator subskrypcji`/providers/Microsoft.Sql/servers/ContosoServer/databases/ContosoDatabase`
 
 ```yaml
 Type: System.String
@@ -335,8 +335,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -SKU
-Tabela skrótów reprezentująca właściwości jednostki SKU.
+### - SKU
+Tabela skrótów reprezentująca właściwości sKU.
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -350,8 +350,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Tag
-Pary klucz-wartość w formie tabeli skrótów. Na przykład: @ {Key0 = "value0"; KEY1 = $null; key2 = "wartość2"}
+### — Tag
+Pary klucz-wartość w postaci tabeli skrótu. Na przykład: @{key0="value0";key1=$null;key2="wartość2"}
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -366,7 +366,7 @@ Accept wildcard characters: False
 ```
 
 ### -TenantLevel
-Wskazuje, że ten aplet polecenia działa na poziomie dzierżawy.
+Wskazuje, że to polecenie cmdlet działa na poziomie dzierżawy.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -380,8 +380,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Potwierdź
-Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.
+### — Potwierdź
+Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -396,8 +396,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet.
-Polecenie cmdlet nie jest uruchamiane.
+Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet.
+Polecenie cmdlet nie zostanie uruchomione.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -412,27 +412,26 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### System. Collections. Hashtable
+### System.Collections.Hashtable
 
-### System. String
+### System.String
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### System. Management. Automation. PSObject
+### System.Management.Automation.PSObject
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
-[Znajdź-AzResource](./Find-AzResource.md)
 
 [Get-AzResource](./Get-AzResource.md)
 
-[Przenieś — AzResource](./Move-AzResource.md)
+[Move-AzResource](./Move-AzResource.md)
 
 [Remove-AzResource](./Remove-AzResource.md)
 
