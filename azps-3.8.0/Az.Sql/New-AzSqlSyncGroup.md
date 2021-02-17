@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.sql/new-az
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/New-AzSqlSyncGroup.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/New-AzSqlSyncGroup.md
-ms.openlocfilehash: 7dc408b757c2bce197fcc6dd366c4ef64484eccf
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 5d4f8daa123b0bf90283eb29407ee3a47459dd47
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93894334"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100413272"
 ---
-# <span data-ttu-id="7be37-101">New-AzSqlSyncGroup</span><span class="sxs-lookup"><span data-stu-id="7be37-101">New-AzSqlSyncGroup</span></span>
+# <span data-ttu-id="6295c-101">New-AzSqlSyncGroup</span><span class="sxs-lookup"><span data-stu-id="6295c-101">New-AzSqlSyncGroup</span></span>
 
-## <span data-ttu-id="7be37-102">STRESZCZENIe</span><span class="sxs-lookup"><span data-stu-id="7be37-102">SYNOPSIS</span></span>
-<span data-ttu-id="7be37-103">Tworzy grupę usługi Azure SQL Database Sync.</span><span class="sxs-lookup"><span data-stu-id="7be37-103">Creates an Azure SQL Database Sync Group.</span></span>
+## <span data-ttu-id="6295c-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="6295c-102">SYNOPSIS</span></span>
+<span data-ttu-id="6295c-103">Tworzy grupę synchronizacji usługi Azure SQL Database.</span><span class="sxs-lookup"><span data-stu-id="6295c-103">Creates an Azure SQL Database Sync Group.</span></span>
 
-## <span data-ttu-id="7be37-104">POLECENIA</span><span class="sxs-lookup"><span data-stu-id="7be37-104">SYNTAX</span></span>
+## <span data-ttu-id="6295c-104">SKŁADNIA</span><span class="sxs-lookup"><span data-stu-id="6295c-104">SYNTAX</span></span>
 
 ```
 New-AzSqlSyncGroup [-Name] <String> -SyncDatabaseName <String> -SyncDatabaseServerName <String>
@@ -27,12 +27,12 @@ New-AzSqlSyncGroup [-Name] <String> -SyncDatabaseName <String> -SyncDatabaseServ
  [<CommonParameters>]
 ```
 
-## <span data-ttu-id="7be37-105">Opis</span><span class="sxs-lookup"><span data-stu-id="7be37-105">DESCRIPTION</span></span>
-<span data-ttu-id="7be37-106">Polecenie cmdlet **New-AzSqlSyncGroup** umożliwia utworzenie grupy synchronizacji bazy danych Azure SQL Database.</span><span class="sxs-lookup"><span data-stu-id="7be37-106">The **New-AzSqlSyncGroup** cmdlet creates an Azure SQL Database Sync Group.</span></span>
+## <span data-ttu-id="6295c-105">OPIS</span><span class="sxs-lookup"><span data-stu-id="6295c-105">DESCRIPTION</span></span>
+<span data-ttu-id="6295c-106">Polecenie **cmdlet New-AzSqlSyncGroup** tworzy grupę synchronizacji usługi Azure SQL Database.</span><span class="sxs-lookup"><span data-stu-id="6295c-106">The **New-AzSqlSyncGroup** cmdlet creates an Azure SQL Database Sync Group.</span></span>
 
-## <span data-ttu-id="7be37-107">Przykłady</span><span class="sxs-lookup"><span data-stu-id="7be37-107">EXAMPLES</span></span>
+## <span data-ttu-id="6295c-107">PRZYKŁADY</span><span class="sxs-lookup"><span data-stu-id="6295c-107">EXAMPLES</span></span>
 
-### <span data-ttu-id="7be37-108">Przykład 1: Tworzenie grupy synchronizacji dla bazy danych SQL Azure.</span><span class="sxs-lookup"><span data-stu-id="7be37-108">Example 1: Create a sync group for an Azure SQL Database.</span></span>
+### <span data-ttu-id="6295c-108">Przykład 1. Tworzenie grupy synchronizacji dla usługi Azure SQL Database.</span><span class="sxs-lookup"><span data-stu-id="6295c-108">Example 1: Create a sync group for an Azure SQL Database.</span></span>
 ```
 PS C:\> $credential = Get-Credential
 PS C:\> New-AzSqlSyncGroup -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database01" -Name "SyncGroup01" -ConflictResolutionPolicy "HubWin"
@@ -53,12 +53,12 @@ LastSyncTime                : 1/1/0001 12:00:00 AM
 Schema                      :
 ```
 
-<span data-ttu-id="7be37-109">To polecenie tworzy grupę synchronizacji dla bazy danych SQL Azure.</span><span class="sxs-lookup"><span data-stu-id="7be37-109">This command creates a sync group for an Azure SQL Database.</span></span> <span data-ttu-id="7be37-110">"schema.json" to plik na dysku lokalnym.</span><span class="sxs-lookup"><span data-stu-id="7be37-110">"schema.json" is a file in the local disk.</span></span> <span data-ttu-id="7be37-111">Zawiera ładunek schematu w formacie JSON.</span><span class="sxs-lookup"><span data-stu-id="7be37-111">It contains the schema payload in json format.</span></span> <span data-ttu-id="7be37-112">Przykładem kodu JSON schematu jest: {"Tables": [{"kolumny": [{"cytowana": "b3ee3a7f-7614-4644-AD07-afa832620b4bManualTestsm4column1"}; {"cytowana": "b3ee3a7f-7614-4644-AD07-afa832620b4bManualTestsm4column2"}]; "cytowanie": "MayQuotedTable1"}, {"kolumny": [{"cytowana": "b3ee3a7f-7614-4644-AD07-afa832620b4bManualTestsm4column1"}, {"" b3ee3a7f-7614-4644-AD07-afa832620b4bManualTestsm4column2 "}]," pocytowana ":" MayQuotedTable2 "}]," MasterSyncMemberName ": null}</span><span class="sxs-lookup"><span data-stu-id="7be37-112">An example of the schema json is: {"Tables":  [{"Columns":  [{"QuotedName":  "b3ee3a7f-7614-4644-ad07-afa832620b4bManualTestsm4column1"}, {"QuotedName":  "b3ee3a7f-7614-4644-ad07-afa832620b4bManualTestsm4column2"}], "QuotedName":  "MayQuotedTable1"}, {"Columns":  [{"QuotedName":  "b3ee3a7f-7614-4644-ad07-afa832620b4bManualTestsm4column1"}, {"QuotedName":  "b3ee3a7f-7614-4644-ad07-afa832620b4bManualTestsm4column2"}], "QuotedName":  "MayQuotedTable2"}], "MasterSyncMemberName":  null }</span></span>
+<span data-ttu-id="6295c-109">To polecenie tworzy grupę synchronizacji dla usługi Azure SQL Database.</span><span class="sxs-lookup"><span data-stu-id="6295c-109">This command creates a sync group for an Azure SQL Database.</span></span> <span data-ttu-id="6295c-110">"schema.js" to plik na dysku lokalnym.</span><span class="sxs-lookup"><span data-stu-id="6295c-110">"schema.json" is a file in the local disk.</span></span> <span data-ttu-id="6295c-111">Zawiera ona ład w schemacie w formacie json.</span><span class="sxs-lookup"><span data-stu-id="6295c-111">It contains the schema payload in json format.</span></span> <span data-ttu-id="6295c-112">Przykład schematu json: {"Tables": [{"Columns": [{"QuotedName": "b3ee3a7f-7614-4644-ad07-afa832620b4bManualTestsm4column1"}, {"QuotedName": "b3ee3a7f-7614-4644-ad07-afa832620b4bManualTestsm4column2"}], "QuotedName": "MayQuotedTable1"}, {"Columns": [{"QuotedName": "b3ee3a7f-7614-4644-ad07-afa832620b4bManualTestsm4column1"}, {"QuotedName": "b3ee3a7f-7614-4644-ad07-afa832620b4bManualTestsm4column2"}], "QuotedName": "MayQuotedTable2"}], "MasterSyncMemberName": null }</span><span class="sxs-lookup"><span data-stu-id="6295c-112">An example of the schema json is: {"Tables":  [{"Columns":  [{"QuotedName":  "b3ee3a7f-7614-4644-ad07-afa832620b4bManualTestsm4column1"}, {"QuotedName":  "b3ee3a7f-7614-4644-ad07-afa832620b4bManualTestsm4column2"}], "QuotedName":  "MayQuotedTable1"}, {"Columns":  [{"QuotedName":  "b3ee3a7f-7614-4644-ad07-afa832620b4bManualTestsm4column1"}, {"QuotedName":  "b3ee3a7f-7614-4644-ad07-afa832620b4bManualTestsm4column2"}], "QuotedName":  "MayQuotedTable2"}], "MasterSyncMemberName":  null }</span></span>
 
-## <span data-ttu-id="7be37-113">PARAMETRÓW</span><span class="sxs-lookup"><span data-stu-id="7be37-113">PARAMETERS</span></span>
+## <span data-ttu-id="6295c-113">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="6295c-113">PARAMETERS</span></span>
 
-### <span data-ttu-id="7be37-114">-ConflictResolutionPolicy</span><span class="sxs-lookup"><span data-stu-id="7be37-114">-ConflictResolutionPolicy</span></span>
-<span data-ttu-id="7be37-115">Zasady rozwiązywania konfliktów między bazą danych w grupie synchronizacja.</span><span class="sxs-lookup"><span data-stu-id="7be37-115">The policy of resolving conflicts between hub and member database in the sync group.</span></span>
+### <span data-ttu-id="6295c-114">-ConflictResolutionPolicy</span><span class="sxs-lookup"><span data-stu-id="6295c-114">-ConflictResolutionPolicy</span></span>
+<span data-ttu-id="6295c-115">Zasady rozwiązywania konfliktów między centrum a bazą danych członków w grupie synchronizacji.</span><span class="sxs-lookup"><span data-stu-id="6295c-115">The policy of resolving conflicts between hub and member database in the sync group.</span></span>
 
 ```yaml
 Type: System.String
@@ -73,8 +73,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7be37-116">-DatabaseCredential</span><span class="sxs-lookup"><span data-stu-id="7be37-116">-DatabaseCredential</span></span>
-<span data-ttu-id="7be37-117">Poświadczenia uwierzytelniania SQL bazy danych centrum.</span><span class="sxs-lookup"><span data-stu-id="7be37-117">The SQL authentication credential of the hub database.</span></span>
+### <span data-ttu-id="6295c-116">- DatabaseCredential</span><span class="sxs-lookup"><span data-stu-id="6295c-116">-DatabaseCredential</span></span>
+<span data-ttu-id="6295c-117">Poświadczenia uwierzytelniania SQL bazy danych centrum.</span><span class="sxs-lookup"><span data-stu-id="6295c-117">The SQL authentication credential of the hub database.</span></span>
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -88,8 +88,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7be37-118">-DatabaseName</span><span class="sxs-lookup"><span data-stu-id="7be37-118">-DatabaseName</span></span>
-<span data-ttu-id="7be37-119">Nazwa bazy danych SQL Azure Database.</span><span class="sxs-lookup"><span data-stu-id="7be37-119">The name of the Azure SQL Database.</span></span>
+### <span data-ttu-id="6295c-118">-DatabaseName</span><span class="sxs-lookup"><span data-stu-id="6295c-118">-DatabaseName</span></span>
+<span data-ttu-id="6295c-119">Nazwa usługi Azure SQL Database.</span><span class="sxs-lookup"><span data-stu-id="6295c-119">The name of the Azure SQL Database.</span></span>
 
 ```yaml
 Type: System.String
@@ -103,8 +103,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7be37-120">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="7be37-120">-DefaultProfile</span></span>
-<span data-ttu-id="7be37-121">Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure</span><span class="sxs-lookup"><span data-stu-id="7be37-121">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+### <span data-ttu-id="6295c-120">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="6295c-120">-DefaultProfile</span></span>
+<span data-ttu-id="6295c-121">Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure</span><span class="sxs-lookup"><span data-stu-id="6295c-121">The credentials, account, tenant, and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -118,9 +118,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7be37-122">-IntervalInSeconds</span><span class="sxs-lookup"><span data-stu-id="7be37-122">-IntervalInSeconds</span></span>
-<span data-ttu-id="7be37-123">Częstotliwość (w sekundach) wykonywania synchronizacji danych.</span><span class="sxs-lookup"><span data-stu-id="7be37-123">The frequency (in seconds) of doing data synchronization.</span></span>
-<span data-ttu-id="7be37-124">Wartość domyślna to-1, co oznacza, że synchronizacja automatyczna nie jest włączona.</span><span class="sxs-lookup"><span data-stu-id="7be37-124">Default is -1, which means the auto synchronization is not enabled.</span></span>
+### <span data-ttu-id="6295c-122">-IntervalInSeconds</span><span class="sxs-lookup"><span data-stu-id="6295c-122">-IntervalInSeconds</span></span>
+<span data-ttu-id="6295c-123">Częstotliwość (w sekundach) wykonywania synchronizacji danych.</span><span class="sxs-lookup"><span data-stu-id="6295c-123">The frequency (in seconds) of doing data synchronization.</span></span>
+<span data-ttu-id="6295c-124">Wartość domyślna to -1, co oznacza, że synchronizacja automatyczna nie jest włączona.</span><span class="sxs-lookup"><span data-stu-id="6295c-124">Default is -1, which means the auto synchronization is not enabled.</span></span>
 
 ```yaml
 Type: System.Int32
@@ -134,8 +134,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7be37-125">-Name (nazwa)</span><span class="sxs-lookup"><span data-stu-id="7be37-125">-Name</span></span>
-<span data-ttu-id="7be37-126">Nazwa grupy synchronizacji.</span><span class="sxs-lookup"><span data-stu-id="7be37-126">The sync group name.</span></span>
+### <span data-ttu-id="6295c-125">— Nazwa</span><span class="sxs-lookup"><span data-stu-id="6295c-125">-Name</span></span>
+<span data-ttu-id="6295c-126">Nazwa grupy synchronizacji.</span><span class="sxs-lookup"><span data-stu-id="6295c-126">The sync group name.</span></span>
 
 ```yaml
 Type: System.String
@@ -149,8 +149,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7be37-127">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="7be37-127">-ResourceGroupName</span></span>
-<span data-ttu-id="7be37-128">Nazwa grupy zasobów.</span><span class="sxs-lookup"><span data-stu-id="7be37-128">The name of the resource group.</span></span>
+### <span data-ttu-id="6295c-127">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="6295c-127">-ResourceGroupName</span></span>
+<span data-ttu-id="6295c-128">Nazwa grupy zasobów.</span><span class="sxs-lookup"><span data-stu-id="6295c-128">The name of the resource group.</span></span>
 
 ```yaml
 Type: System.String
@@ -164,8 +164,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7be37-129">-SchemaFile</span><span class="sxs-lookup"><span data-stu-id="7be37-129">-SchemaFile</span></span>
-<span data-ttu-id="7be37-130">Ścieżka pliku schematu.</span><span class="sxs-lookup"><span data-stu-id="7be37-130">The path of the schema file.</span></span>
+### <span data-ttu-id="6295c-129">-SchemaFile</span><span class="sxs-lookup"><span data-stu-id="6295c-129">-SchemaFile</span></span>
+<span data-ttu-id="6295c-130">Ścieżka pliku schematu.</span><span class="sxs-lookup"><span data-stu-id="6295c-130">The path of the schema file.</span></span>
 
 ```yaml
 Type: System.String
@@ -179,8 +179,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7be37-131">-Nazwa_serwera</span><span class="sxs-lookup"><span data-stu-id="7be37-131">-ServerName</span></span>
-<span data-ttu-id="7be37-132">Nazwa serwera Azure SQL Server.</span><span class="sxs-lookup"><span data-stu-id="7be37-132">The name of the Azure SQL Server.</span></span>
+### <span data-ttu-id="6295c-131">-ServerName</span><span class="sxs-lookup"><span data-stu-id="6295c-131">-ServerName</span></span>
+<span data-ttu-id="6295c-132">Nazwa serwera Azure SQL Server.</span><span class="sxs-lookup"><span data-stu-id="6295c-132">The name of the Azure SQL Server.</span></span>
 
 ```yaml
 Type: System.String
@@ -194,8 +194,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7be37-133">-SyncDatabaseName</span><span class="sxs-lookup"><span data-stu-id="7be37-133">-SyncDatabaseName</span></span>
-<span data-ttu-id="7be37-134">Baza danych używana do przechowywania metadanych powiązanych z synchronizacją.</span><span class="sxs-lookup"><span data-stu-id="7be37-134">The database used to store sync related metadata.</span></span>
+### <span data-ttu-id="6295c-133">-SyncDatabaseName</span><span class="sxs-lookup"><span data-stu-id="6295c-133">-SyncDatabaseName</span></span>
+<span data-ttu-id="6295c-134">Baza danych używana do przechowywania powiązanych metadanych synchronizacji.</span><span class="sxs-lookup"><span data-stu-id="6295c-134">The database used to store sync related metadata.</span></span>
 
 ```yaml
 Type: System.String
@@ -209,8 +209,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7be37-135">-SyncDatabaseResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="7be37-135">-SyncDatabaseResourceGroupName</span></span>
-<span data-ttu-id="7be37-136">Grupa zasobów, do której należy baza danych synchronizacji metadanych.</span><span class="sxs-lookup"><span data-stu-id="7be37-136">The resource group the sync metadata database belongs to.</span></span>
+### <span data-ttu-id="6295c-135">-SyncDatabaseResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="6295c-135">-SyncDatabaseResourceGroupName</span></span>
+<span data-ttu-id="6295c-136">Grupa zasobów, do której baza metadanych należy.</span><span class="sxs-lookup"><span data-stu-id="6295c-136">The resource group the sync metadata database belongs to.</span></span>
 
 ```yaml
 Type: System.String
@@ -224,8 +224,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7be37-137">-SyncDatabaseServerName</span><span class="sxs-lookup"><span data-stu-id="7be37-137">-SyncDatabaseServerName</span></span>
-<span data-ttu-id="7be37-138">Serwer, na którym znajduje się baza danych metadanych synchronizacji.</span><span class="sxs-lookup"><span data-stu-id="7be37-138">The server on which the sync metadata database is hosted.</span></span>
+### <span data-ttu-id="6295c-137">-SyncDatabaseServerName</span><span class="sxs-lookup"><span data-stu-id="6295c-137">-SyncDatabaseServerName</span></span>
+<span data-ttu-id="6295c-138">Serwer, na którym jest hostowany baza metadanych synchronizacji.</span><span class="sxs-lookup"><span data-stu-id="6295c-138">The server on which the sync metadata database is hosted.</span></span>
 
 ```yaml
 Type: System.String
@@ -239,8 +239,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7be37-139">-Potwierdź</span><span class="sxs-lookup"><span data-stu-id="7be37-139">-Confirm</span></span>
-<span data-ttu-id="7be37-140">Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.</span><span class="sxs-lookup"><span data-stu-id="7be37-140">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="6295c-139">— Potwierdź</span><span class="sxs-lookup"><span data-stu-id="6295c-139">-Confirm</span></span>
+<span data-ttu-id="6295c-140">Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.</span><span class="sxs-lookup"><span data-stu-id="6295c-140">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -254,9 +254,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7be37-141">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="7be37-141">-WhatIf</span></span>
-<span data-ttu-id="7be37-142">Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet.</span><span class="sxs-lookup"><span data-stu-id="7be37-142">Shows what would happen if the cmdlet runs.</span></span>
-<span data-ttu-id="7be37-143">Polecenie cmdlet nie jest uruchamiane.</span><span class="sxs-lookup"><span data-stu-id="7be37-143">The cmdlet is not run.</span></span>
+### <span data-ttu-id="6295c-141">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="6295c-141">-WhatIf</span></span>
+<span data-ttu-id="6295c-142">Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet.</span><span class="sxs-lookup"><span data-stu-id="6295c-142">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="6295c-143">Polecenie cmdlet nie zostanie uruchomione.</span><span class="sxs-lookup"><span data-stu-id="6295c-143">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -270,24 +270,23 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="7be37-144">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="7be37-144">CommonParameters</span></span>
-<span data-ttu-id="7be37-145">To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="7be37-145">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="7be37-146">Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="7be37-146">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="6295c-144">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="6295c-144">CommonParameters</span></span>
+<span data-ttu-id="6295c-145">To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="6295c-145">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="6295c-146">Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="6295c-146">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="7be37-147">WEJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="7be37-147">INPUTS</span></span>
+## <span data-ttu-id="6295c-147">DANE WEJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="6295c-147">INPUTS</span></span>
 
-### <span data-ttu-id="7be37-148">System. String</span><span class="sxs-lookup"><span data-stu-id="7be37-148">System.String</span></span>
+### <span data-ttu-id="6295c-148">System.String</span><span class="sxs-lookup"><span data-stu-id="6295c-148">System.String</span></span>
 
-## <span data-ttu-id="7be37-149">WYSYŁA</span><span class="sxs-lookup"><span data-stu-id="7be37-149">OUTPUTS</span></span>
+## <span data-ttu-id="6295c-149">DANE WYJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="6295c-149">OUTPUTS</span></span>
 
-### <span data-ttu-id="7be37-150">Microsoft. Azure. Commands. SQL. DataSync. model. AzureSqlSyncGroupModel</span><span class="sxs-lookup"><span data-stu-id="7be37-150">Microsoft.Azure.Commands.Sql.DataSync.Model.AzureSqlSyncGroupModel</span></span>
+### <span data-ttu-id="6295c-150">Microsoft.Azure.Commands.Sql.DataSync.Model.AzureSqlSyncGroupModel</span><span class="sxs-lookup"><span data-stu-id="6295c-150">Microsoft.Azure.Commands.Sql.DataSync.Model.AzureSqlSyncGroupModel</span></span>
 
-## <span data-ttu-id="7be37-151">INFORMACYJN</span><span class="sxs-lookup"><span data-stu-id="7be37-151">NOTES</span></span>
+## <span data-ttu-id="6295c-151">NOTATKI</span><span class="sxs-lookup"><span data-stu-id="6295c-151">NOTES</span></span>
 
-## <span data-ttu-id="7be37-152">LINKI POKREWNE</span><span class="sxs-lookup"><span data-stu-id="7be37-152">RELATED LINKS</span></span>
+## <span data-ttu-id="6295c-152">LINKI POKREWNE</span><span class="sxs-lookup"><span data-stu-id="6295c-152">RELATED LINKS</span></span>
 
-[<span data-ttu-id="7be37-153">Set-AzSqlSyncGroup</span><span class="sxs-lookup"><span data-stu-id="7be37-153">Set-AzSqlSyncGroup</span></span>](./Set-AzSqlSyncGroup.md)
 
-[<span data-ttu-id="7be37-154">Remove-AzSqlSyncGroup</span><span class="sxs-lookup"><span data-stu-id="7be37-154">Remove-AzSqlSyncGroup</span></span>](./Remove-AzSqlSyncGroup.md)
+[<span data-ttu-id="6295c-153">Remove-AzSqlSyncGroup</span><span class="sxs-lookup"><span data-stu-id="6295c-153">Remove-AzSqlSyncGroup</span></span>](./Remove-AzSqlSyncGroup.md)
 
-[<span data-ttu-id="7be37-155">Get-AzSqlSyncGroup</span><span class="sxs-lookup"><span data-stu-id="7be37-155">Get-AzSqlSyncGroup</span></span>](./Get-AzSqlSyncGroup.md)
+[<span data-ttu-id="6295c-154">Get-AzSqlSyncGroup</span><span class="sxs-lookup"><span data-stu-id="6295c-154">Get-AzSqlSyncGroup</span></span>](./Get-AzSqlSyncGroup.md)
 
