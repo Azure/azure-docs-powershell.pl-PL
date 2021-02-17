@@ -6,49 +6,49 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.notificati
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Get-AzNotificationHubListKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/NotificationHubs/NotificationHubs/help/Get-AzNotificationHubListKey.md
-ms.openlocfilehash: 6b9aa676e00d137612908955e88558b4cefb0eb8
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 7ce6c3c08c1794e2bed794186203a5c6c0d1fdea
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93708875"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399893"
 ---
 # Get-AzNotificationHubListKey
 
-## STRESZCZENIe
-Pobiera parametry połączenia podstawowego i pomocniczego skojarzone z regułą autoryzacji centrum powiadomień.
+## SYNOPSIS
+Pobiera podstawowe i pomocnicze parametry połączenia skojarzone z regułą autoryzacji centrum powiadomień.
 
-## POLECENIA
+## SKŁADNIA
 
 ```
 Get-AzNotificationHubListKey [-ResourceGroup] <String> [-Namespace] <String> [-NotificationHub] <String>
  [-AuthorizationRule] <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **Get-AzNotificationHubListKey** zwraca podstawowe i pomocnicze ciągi połączeń dla reguły autoryzacji podpisu dostępu udostępnionego w centrum powiadomień.
-Reguły autoryzacji Zarządzaj prawami użytkowników do centrum.
-Każda reguła zawiera parametry połączenia podstawowego i pomocniczego.
-Te ciągi połączeń (identyfikatory URI) wykonują następujące czynności:
-- Wskazywanie użytkownikom zasobu.
-- Dołącz token zawierający parametry zapytania.
-Za pomocą jednego z tych parametrów podpis służy do uwierzytelniania użytkownika i zapewnia określony poziom dostępu.
+## OPIS
+Polecenie **cmdlet Get-AzNotificationHubListKey** zwraca podstawowe i pomocnicze parametry połączenia reguły autoryzacji podpisu dostępu udostępnionego (SAS) centrum powiadomień.
+Reguły autoryzacji zarządzają prawami użytkowników do centrum.
+Każda reguła zawiera podstawowy i pomocniczy ciąg połączenia.
+Te parametry połączenia ( URI) wykonują następujące czynności:
+- Wskaż użytkownikom zasób.
+- Uwzględnianie tokenu zawierającego parametry zapytania.
+Jeden z tych parametrów ( podpis) służy do uwierzytelniania użytkownika i zapewnienia określonego poziomu dostępu.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1: uzyskiwanie ciągów połączenia podstawowego i pomocniczego dla reguły autoryzacji
+### Przykład 1. Uzyskiwanie podstawowych i pomocniczych ciągów połączenia dla reguły autoryzacji
 ```
 PS C:\>Get-AzNotificationHubListKey -Namespace "ContosoNamespace" -NotificationHub "ContosoInternalHub" -ResourceGroup "ContosoNotificationsGroup" -AuthorizationRule "ListenRule"
 ```
 
-To polecenie pobiera podstawowe i pomocnicze ciągi połączeń dla reguły autoryzacji ListenRule, regułę przypisaną do centrum powiadomień usługi ContosoInternalHub.
-Polecenie musi zawierać obszar nazw centrum i grupę zasobów.
+To polecenie pobiera podstawowe i pomocnicze parametry połączenia reguły autoryzacji ListenRule — reguły przypisanej do centrum powiadomień aplikacji ContosoInternalHub.
+To polecenie musi zawierać przestrzeń nazw centrum i grupę zasobów.
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -AuthorizationRule
-Określa nazwę reguły uwierzytelniania w ramach udostępniania podpisu dostępu (SAS).
-Te reguły określają typ dostępu do centrum powiadomień.
+Określa nazwę reguły uwierzytelniania SAS (Shared Access Signature).
+Te reguły określają typ dostępu użytkowników do Centrum powiadomień.
 
 ```yaml
 Type: System.String
@@ -63,7 +63,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -77,9 +77,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Namespace
-Określa obszar nazw, do którego jest przypisany centrum powiadomień.
-Obszary nazw umożliwiają grupowanie i kategoryzowanie koncentratorów powiadomień.
+### —Przestrzeń nazw
+Określa przestrzeń nazw, do której jest przypisane centrum powiadomień.
+Przestrzenie nazw zapewniają sposób grupowania i kategoryzowania centrum powiadomień.
 
 ```yaml
 Type: System.String
@@ -93,9 +93,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -NotificationHub
-Określa centrum powiadomień, do którego jest przypisywana reguła autoryzacji.
-Centra powiadomień służą do wysyłania powiadomień wypychanych do wielu klientów niezależnie od platformy używanej przez tych klientów.
+### - NotificationHub
+Określa centrum powiadomień, do których to polecenie cmdlet przypisuje regułę autoryzacji.
+Centra powiadomień są używane do wysyłania powiadomień wypychanych do wielu klientów, niezależnie od platformy używanej przez tych klientów.
 
 ```yaml
 Type: System.String
@@ -109,9 +109,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -ResourceName
-Określa grupę zasobów, do której jest przypisany centrum powiadomień.
-Grupy zasobów organizują elementy, takie jak obszary nazw, Centra powiadomień i reguły autoryzacji, w sposób umożliwiający łatwe zarządzanie zapasami i administrowanie systemem Azure.
+### -ResourceGroup
+Określa grupę zasobów, do której jest przypisane centrum powiadomień.
+Grupy zasobów organizują elementy, takie jak przestrzenie nazw, centra powiadomień i reguły autoryzacji, w sposób ułatwiający po prostu zarządzanie zapasami i administrowanie platformą Azure.
 
 ```yaml
 Type: System.String
@@ -126,20 +126,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### System. String
+### System.String
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### Microsoft. Azure. Management. NotificationHubs. MODELES. ResourceListKeys
+### Microsoft.Azure.Management.NotificationHubs.Models.ResourceListKeys
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
-[Get-AzNotificationHubAuthorizationRules](./Get-AzNotificationHubAuthorizationRules.md)
 
 
