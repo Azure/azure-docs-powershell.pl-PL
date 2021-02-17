@@ -1,17 +1,17 @@
 ---
 title: Wprowadzenie do modułu Az programu Azure PowerShell
 description: Przedstawiamy nowy moduł programu Azure PowerShell — Az — który zastąpi moduł AzureRM.
-ms.date: 05/10/2019
+ms.date: 02/12/2021
 ms.devlang: powershell
 ms.topic: conceptual
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: 0856748290e2bdea79b9ef845f2c000e9fefcd62
-ms.sourcegitcommit: 2036538797dd088728aee5ac5021472454d82eb2
-ms.translationtype: HT
+ms.openlocfilehash: f6ffd66d20943541c3591d41db7c72861f44204c
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "93408381"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100415465"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>Wprowadzenie do nowego modułu Az programu Azure PowerShell
 
@@ -45,7 +45,7 @@ Aby uaktualnić istniejącą instalację modułu AzureRM:
 
 1. [Odinstaluj moduł AzureRM programu Azure PowerShell](/powershell/azure/uninstall-az-ps#uninstall-the-azurerm-module)
 2. [Zainstaluj moduł Az programu Azure PowerShell](install-az-ps.md)
-3. **OPCJONALNIE** : Za pomocą polecenia [Enable-AzureRMAlias](/powershell/module/az.accounts/enable-azurermalias) włącz tryb zgodności, aby dodać aliasy dla poleceń cmdlet modułu AzureRM na czas zapoznawania się z nowym zestawem poleceń. Więcej szczegółowych informacji znajduje się w następnej sekcji oraz artykule [Rozpoczynanie migracji z modułu AzureRM do modułu Az](migrate-from-azurerm-to-az.md).
+3. **OPCJONALNIE**: Za pomocą polecenia [Enable-AzureRMAlias](/powershell/module/az.accounts/enable-azurermalias) włącz tryb zgodności, aby dodać aliasy dla poleceń cmdlet modułu AzureRM na czas zapoznawania się z nowym zestawem poleceń. Więcej szczegółowych informacji znajduje się w następnej sekcji oraz artykule [Rozpoczynanie migracji z modułu AzureRM do modułu Az](migrate-from-azurerm-to-az.md).
 
 ## <a name="migrate-existing-scripts-to-az"></a>Migrowanie istniejących skryptów do modułu Az
 
@@ -63,6 +63,8 @@ Moduł Az oferuje tryb zgodności, który ułatwia korzystanie z istniejących s
 > [!IMPORTANT]
 > Chociaż dostępne są aliasy dla nazw poleceń cmdlet, w przypadku poleceń cmdlet modułu Az mogły zostać dodane (lub zmienione) parametry albo zmienione wartości zwracane. Nie oczekuj, że włączenie aliasów rozwiąże problem migracji za Ciebie. Zobacz [pełną listę zmian powodujących niezgodność](migrate-az-1.0.0.md), aby dowiedzieć się, w których miejscach skryptów trzeba wprowadzić aktualizacje.
 
-## <a name="continued-support-for-azurerm"></a>Dalsze wsparcie modułu AzureRM
+## <a name="support-for-azurerm"></a>Obsługa AzureRM
 
-W module AzureRM nie będą już wprowadzane nowe polecenia cmdlet ani funkcje. Jednak moduł AzureRM jest nadal oficjalnie obsługiwany i będą dla niego wydawane poprawki błędów do grudnia 2020 r.
+Ponieważ AZ PowerShell modules ma teraz wszystkie możliwości modułów AzureRM PowerShell i nie tylko, wycofamy moduły AzureRM PowerShell w dniu 29 lutego 2024.
+
+Aby uniknąć przerw w działaniu usługi, [zaktualizuj skrypty](https://aka.ms/azpsmigrate) używające modułów AzureRM PowerShell do używania polecenia AZ PowerShell modules do 29 lutego 2024. Aby automatycznie aktualizować skrypty, postępuj zgodnie z [przewodnikiem Szybki Start](/powershell/azure/quickstart-migrate-azurerm-to-az-automatically).
