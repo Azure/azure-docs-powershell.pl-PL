@@ -5,21 +5,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementCache.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementCache.md
-ms.openlocfilehash: 8fd29b7ecbfda5115973b038a6560ad38d22f376
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 7f1913b5debcbe3ebd5ae436c3c30529b1fdc9d5
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93707087"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100404738"
 ---
 # Get-AzApiManagementCache
 
-## STRESZCZENIe
-Zapoznaj się z informacjami na temat pamięci podręcznej.
+## SYNOPSIS
+Uzyskaj szczegółowe informacje dotyczące pamięci podręcznej.
 
-## POLECENIA
+## SKŁADNIA
 
-### ContextParameterSet (domyślny)
+### ContextParameterSet (Domyślne)
 ```
 Get-AzApiManagementCache -Context <PsApiManagementContext> [-CacheId <String>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
@@ -30,12 +30,12 @@ Get-AzApiManagementCache -Context <PsApiManagementContext> [-CacheId <String>]
 Get-AzApiManagementCache -ResourceId <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Opis
-Uzyskaj szczegółowe informacje o pamięci podręcznej skonfigurowanej w usłudze zarządzania interfejsem API.
+## OPIS
+Uzyskaj szczegółowe informacje dotyczące pamięci podręcznej skonfigurowanej w usłudze zarządzania interfejsami API.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1: pobieranie wszystkich pamięci podręcznych
+### Przykład 1. Pobierz wszystkie pamięci podręczne
 ```powershell
 PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>Get-AzApiManagementCache -Context $apimContext
@@ -51,9 +51,9 @@ ResourceGroupName : Api-Default-West-US
 ServiceName       : contoso
 ```
 
-Pobiera listę wszystkich buforów skonfigurowanych w usłudze zarządzania interfejsem API.
+Pobiera listę wszystkich pamięci podręcznych skonfigurowanych w usłudze zarządzania interfejsami API.
 
-### Przykład 2: uzyskiwanie pamięci podręcznej określonej przez identyfikator zachód
+### Przykład 2. Uzyskiwanie pamięci podręcznej określonej przez identyfikator westus
 ```powershell
 PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>Get-AzApiManagementCache -Context $apimContext -cacheId westus
@@ -69,13 +69,13 @@ ResourceGroupName : Api-Default-WestUS
 ServiceName       : contoso
 ```
 
-Uzyskiwanie szczegółowych informacji o określonej pamięci podręcznej skonfigurowanej dla zachodniego
+Uzyskiwanie szczegółów określonej pamięci podręcznej skonfigurowanej dla zachód
 
-## PARAMETRÓW
+## PARAMETERS
 
-### -CacheId
+### - CacheId
 Identyfikator pamięci podręcznej.
-Jeśli zostanie określona, spróbuje znaleźć pamięć podręczną przy użyciu identyfikatora.
+Jeśli zostanie określona, spróbuje znaleźć pamięć podręczną według identyfikatora.
 Ten parametr jest opcjonalny.
 
 ```yaml
@@ -90,8 +90,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Context
-Wystąpienie PsApiManagementContext.
+### — kontekst
+Wystąpienie tekstu PsApiManagementContext.
 Ten parametr jest wymagany.
 
 ```yaml
@@ -107,7 +107,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -122,7 +122,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Identyfikator zasobu ARM pamięci podręcznej. Jeśli zostanie określona, spróbuje znaleźć pamięć podręczną przy użyciu identyfikatora. Ten parametr jest wymagany.
+Identyfikator zasobu arm pamięci podręcznej. Jeśli zostanie określona, spróbuje znaleźć pamięć podręczną według identyfikatora. Ten parametr jest wymagany.
 
 ```yaml
 Type: System.String
@@ -137,24 +137,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### Microsoft. Azure. Commands. ApiManagement. servicemanagement. MODELES. PsApiManagementContext
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
 
-### System. String
+### System.String
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### Microsoft. Azure. Commands. ApiManagement. servicemanagement. MODELES. PsApiManagementCache
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementCache
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
-[Get-AzApiManagementCache](./Get-AzApiManagementCache)
-
-[Set-AzApiManagementCache](./Set-AzApiManagementCache.md)
+[New-AzApiManagementCache](./New-AzApiManagementCache.md)
 
 [Remove-AzApiManagementCache](./Remove-AzApiManagementCache.md)
+
+[Update-AzApiManagementCache](./Update-AzApiManagementCache.md)
