@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzActionGroup.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzActionGroup.md
-ms.openlocfilehash: 0f5112929e36edcac0ca45103ed8c02583be1eb3
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 5b4b71f3d108d78a15a5993556ab4e78f480170e
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93896649"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100409158"
 ---
 # New-AzActionGroup
 
-## STRESZCZENIe
-Tworzy obiekt odwołania do obiektu Actions w pamięci.
+## SYNOPSIS
+Tworzy obiekt odwołania ActionGroup w pamięci.
 
-## POLECENIA
+## SKŁADNIA
 
 ```
 New-AzActionGroup -ActionGroupId <String>
@@ -26,19 +26,19 @@ New-AzActionGroup -ActionGroupId <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **New-AzActionGroup** tworzy obiekt odwołania do grupy akcji w pamięci.
+## OPIS
+Polecenie **cmdlet New-AzActionGroup** tworzy w pamięci obiekt odwołania do grupy akcji.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1: Tworzenie obiektu odwołania do grupy akcji w pamięci
+### Przykład 1. Tworzenie w pamięci obiektu odwołania do grupy akcji
 ```
 PS C:\>$dict = New-Object "System.Collections.Generic.Dictionary``2[System.String,System.String]"
 PS C:\>$dict.Add('key1', 'value1')
 PS C:\>$actionGrp1 = New-AzActionGroup -ActionGroupId 'actiongr1' -WebhookProperty $dict
 ```
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -ActionGroupId
 Identyfikator/nazwa grupy akcji.
@@ -56,7 +56,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -71,7 +71,7 @@ Accept wildcard characters: False
 ```
 
 ### -WebhookProperty
-Właściwości elementu webhook grupy Actions
+Właściwości sieci Web grupy akcji
 
 ```yaml
 Type: System.Collections.Generic.Dictionary`2[System.String,System.String]
@@ -86,19 +86,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### System. String
+### System.String
 
-### System. Collections. Generic. dictionary ' 2 [[System. String, system. private. CoreLib, Version = 4.0.0.0, Culture = neutral; PublicKeyToken = 7cec85d7bea7798e], [System. String, system. private. CoreLib, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Collections.Generic.Dictionary'2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-## WYSYŁA
+## OUTPUTS
 
-### Microsoft. Azure. Management. Monitor. Management. models. ActivityLogAlertActionGroup
+### Microsoft.Azure.Management.Monitor.Management.Models.ActivityLogAlertActionGroup
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
@@ -112,5 +112,5 @@ To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariab
 
 [Remove-AzActivityLogAlert](./Remove-AzActivityLogAlert.md)
 
-[Nowe — AzActivityLogAlertCondition](./Get-AzActivityLogAlertCondition.md)
+
 

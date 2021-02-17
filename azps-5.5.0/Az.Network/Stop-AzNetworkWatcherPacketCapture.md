@@ -1,63 +1,71 @@
 ---
 external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
 Module Name: Az.Network
-online version: https://docs.microsoft.com/en-us/powershell/module/az.network/start-aznetworkwatcherresourcetroubleshooting
+online version: https://docs.microsoft.com/en-us/powershell/module/az.network/stop-aznetworkwatcherpacketcapture
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Start-AzNetworkWatcherResourceTroubleshooting.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Start-AzNetworkWatcherResourceTroubleshooting.md
-ms.openlocfilehash: 5f707b4e6a2610f8a62ce807c5549ee03e6697d8
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Stop-AzNetworkWatcherPacketCapture.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Stop-AzNetworkWatcherPacketCapture.md
+ms.openlocfilehash: 42067c978c7791740d10af4df88c51dde3096c0e
 ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
 ms.lasthandoff: 02/14/2021
-ms.locfileid: "100409090"
+ms.locfileid: "100409005"
 ---
-# Start-AzNetworkWatcherResourceTroubleshooting
+# Stop-AzNetworkWatcherPacketCapture
 
 ## SYNOPSIS
-Rozpoczyna rozwiązywanie problemów w zasobie sieci na platformie Azure.
+Zatrzymuje sesję przechwytywania uruchomionego pakietu
 
 ## SKŁADNIA
 
 ### SetByResource (Default)
 ```
-Start-AzNetworkWatcherResourceTroubleshooting -NetworkWatcher <PSNetworkWatcher> -TargetResourceId <String>
- -StorageId <String> -StoragePath <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+Stop-AzNetworkWatcherPacketCapture -NetworkWatcher <PSNetworkWatcher> -PacketCaptureName <String> [-PassThru]
+ [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### SetByName
 ```
-Start-AzNetworkWatcherResourceTroubleshooting -NetworkWatcherName <String> -ResourceGroupName <String>
- -TargetResourceId <String> -StorageId <String> -StoragePath <String>
- [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+Stop-AzNetworkWatcherPacketCapture -NetworkWatcherName <String> -ResourceGroupName <String>
+ -PacketCaptureName <String> [-PassThru] [-AsJob] [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
 ```
 
 ### SetByLocation
 ```
-Start-AzNetworkWatcherResourceTroubleshooting -Location <String> -TargetResourceId <String> -StorageId <String>
- -StoragePath <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+Stop-AzNetworkWatcherPacketCapture -Location <String> -PacketCaptureName <String> [-PassThru] [-AsJob]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## OPIS
-Polecenie Start-AzNetworkWatcherResourceTroubleshooting rozpoczyna rozwiązywanie problemów dla zasobu sieciowego na platformie Azure i zwraca informacje o potencjalnych problemach i środki zaradcze. Obecnie bramy i połączenia sieci wirtualnej są obsługiwane.
+Sesja Stop-AzNetworkWatcherPacketCapture zatrzyma sesję przechwytywania uruchomionego pakietu. Po zatrzymaniu sesji plik przechwytywania pakietów jest przekazywany do magazynu i/lub zapisywany lokalnie na maszyny wirtualnej w zależności od jej konfiguracji.
 
 ## PRZYKŁADY
 
-### Przykład 1. Rozpoczynanie rozwiązywania problemów z bramą sieci wirtualnej
+### Przykład 1. Zatrzymanie sesji przechwytywania pakietów
 ```
-$nw = Get-AzResource | Where {$_.ResourceType -eq "Microsoft.Network/networkWatchers" -and $_.Location -eq "WestCentralUS" } 
-$networkWatcher = Get-AzNetworkWatcher -Name $nw.Name -ResourceGroupName $nw.ResourceGroupName 
-
-$target = '/subscriptions/bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworkGateways/{vnetGatewayName}'
-$storageId = '/subscriptions/bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{storageAccountName}'
-$storagePath = 'https://{storageAccountName}.blob.core.windows.net/troubleshoot'
-
-Start-AzNetworkWatcherResourceTroubleshooting -NetworkWatcher $networkWatcher -TargetResourceId $target -StorageId $storageId -StoragePath $storagePath
+Stop-AzNetworkWatcherPacketCapture -NetworkWatcher $networkWatcher -PacketCaptureName "PacketCaptureTest"
 ```
 
-Powyższy przykład rozpoczyna rozwiązywanie problemów w wirtualnej bramie sieciowej. Operacja może potrwać kilka minut.
+W tym przykładzie zatrzymujemy uruchamianą sesję przechwytywania pakietów o nazwie "PacketCaptureTest". Po zatrzymaniu sesji plik przechwytywania pakietów jest przekazywany do magazynu i/lub zapisywany lokalnie na maszyny wirtualnej w zależności od jej konfiguracji.
 
 ## PARAMETERS
+
+### — AsJob
+Uruchamianie polecenia cmdlet w tle
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
 
 ### -DefaultProfile
 Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.
@@ -89,7 +97,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### - NetworkWatcher
+### — NetworkWatcher
 Zasób obserwowania sieci.
 
 ```yaml
@@ -119,6 +127,36 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
+### -PacketCaptureName
+Nazwa przechwytywania pakietów.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -PassThru
+Zwraca obiekt reprezentujący element, z którym pracujesz.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ResourceGroupName
 Nazwa grupy zasobów obserwowanych sieci.
 
@@ -134,48 +172,34 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### - StorageId
-Identyfikator magazynu.
+### — Potwierdź
+Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.
 
 ```yaml
-Type: System.String
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
-Aliases:
+Aliases: cf
 
-Required: True
+Required: False
 Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### — StoragePath
-Ścieżka magazynu.
+### -WhatIf
+Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet.
+Polecenie cmdlet nie zostanie uruchomione.
 
 ```yaml
-Type: System.String
+Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
-Aliases:
+Aliases: wi
 
-Required: True
+Required: False
 Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
-Accept wildcard characters: False
-```
-
-### -TargetResourceId
-Określa identyfikator zasobu, który ma być rozwiązywany. Przykładowy format: "/subscriptions/${subscriptionId}/resourceGroups/${resourceGroupName}/providers/Microsoft.Network/connections/${connectionName}"
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByPropertyName)
+Default value: False
+Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
@@ -188,28 +212,14 @@ To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVar
 
 ### System.String
 
-## DANE WYJŚCIOWE
+## OUTPUTS
 
-### Microsoft.Azure.Commands.Network.Models.PSTroubleshootingResult
+### System.Boolean
 
 ## NOTATKI
-Słowa kluczowe: azure, azurerm, arm, resource, management, manager, network, networking, network watcher, troubleshoot, VPN, connection
+Słowa kluczowe: azure, azurerm, arm, resource, management, manager, network, networking, network watcher, packet, capture, traffic
 
 ## LINKI POKREWNE
-
-[New-AzNetworkWatcher](./New-AzNetworkWatcher.md)
-
-[Get-AzNetworkWatcher](./Get-AzNetworkWatcher.md)
-
-[Remove-AzNetworkWatcher](./Remove-AzNetworkWatcher.md)
-
-[Get-AzNetworkWatcherNextHop](./Get-AzNetworkWatcherNextHop.md)
-
-[Get-AzNetworkWatcherSecurityGroupView](./Get-AzNetworkWatcherSecurityGroupView.md)
-
-[Get-AzNetworkWatcherTopology](./Get-AzNetworkWatcherTopology.md)
-
-[Start-AzNetworkWatcherResourceTroubleshooting](./Start-AzNetworkWatcherResourceTroubleshooting.md)
 
 [New-AzNetworkWatcherPacketCapture](./New-AzNetworkWatcherPacketCapture.md)
 
@@ -219,11 +229,27 @@ Słowa kluczowe: azure, azurerm, arm, resource, management, manager, network, ne
 
 [Remove-AzNetworkWatcherPacketCapture](./Remove-AzNetworkWatcherPacketCapture.md)
 
+[New-AzNetworkWatcher](./New-AzNetworkWatcher.md)
+
+[Get-AzNetworkWatcher](./Get-AzNetworkWatcher.md)
+
+[Remove-AzNetworkWatcher](./Remove-AzNetworkWatcher.md)
+
+[Test-AzNetworkWatcherIPFlow](./Test-AzNetworkWatcherIPFlow.md)
+
+[Get-AzNetworkWatcherNextHop](./Get-AzNetworkWatcherNextHop.md)
+
+[Get-AzNetworkWatcherSecurityGroupView](./Get-AzNetworkWatcherSecurityGroupView.md)
+
+[Get-AzNetworkWatcherTopology](./Get-AzNetworkWatcherTopology.md)
+
+[Start-AzNetworkWatcherResourceTroubleshooting](./Start-AzNetworkWatcherResourceTroubleshooting.md)
+
+[Get-AzNetworkWatcherTroubleshootingResult](./Get-AzNetworkWatcherTroubleshootingResult.md)
+
 [Stop-AzNetworkWatcherPacketCapture](./Stop-AzNetworkWatcherPacketCapture.md)
 
 [New-AzNetworkWatcherProtocolConfiguration](./New-AzNetworkWatcherProtocolConfiguration.md)
-
-[Test-AzNetworkWatcherIPFlow](./Test-AzNetworkWatcherIPFlow.md)
 
 [Test-AzNetworkWatcherConnectivity](./Test-AzNetworkWatcherConnectivity.md)
 
@@ -238,8 +264,6 @@ Słowa kluczowe: azure, azurerm, arm, resource, management, manager, network, ne
 [Remove-AzNetworkWatcherConnectionMonitor](./Remove-AzNetworkWatcherConnectionMonitor.md)
 
 [New-AzNetworkWatcherConnectionMonitor](./New-AzNetworkWatcherConnectionMonitor.md)
-
-[Get-AzNetworkWatcherTroubleshootingResult](./Get-AzNetworkWatcherTroubleshootingResult.md)
 
 [Get-AzNetworkWatcherReachabilityReport](./Get-AzNetworkWatcherReachabilityReport.md)
 
