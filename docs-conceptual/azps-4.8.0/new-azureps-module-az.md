@@ -1,17 +1,17 @@
 ---
 title: Wprowadzenie do modułu Az programu Azure PowerShell
 description: Przedstawiamy nowy moduł programu Azure PowerShell — Az — który zastąpi moduł AzureRM.
-ms.date: 05/20/2020
+ms.date: 02/12/2021
 ms.devlang: powershell
 ms.topic: conceptual
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: 4bf05058f576e7a4844f693384b4fa4aea08a042
-ms.sourcegitcommit: 071b8c40c837ed4b2d65ce778339110d9e0899ab
-ms.translationtype: HT
+ms.openlocfilehash: ffcc4d1e872d1a39e55b139c3ce712bed14fa0e9
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
+ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96427042"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100410960"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>Wprowadzenie do nowego modułu Az programu Azure PowerShell
 
@@ -66,6 +66,8 @@ Moduł Az oferuje tryb zgodności, który ułatwia korzystanie z istniejących s
 > [!IMPORTANT]
 > Chociaż dostępne są aliasy dla nazw poleceń cmdlet, w przypadku poleceń cmdlet modułu Az mogły zostać dodane (lub zmienione) parametry albo zmienione wartości zwracane. Nie oczekuj, że włączenie aliasów rozwiąże problem migracji za Ciebie. Zobacz [pełną listę zmian powodujących niezgodność](migrate-az-1.0.0.md), aby dowiedzieć się, w których miejscach skryptów trzeba wprowadzić aktualizacje.
 
-## <a name="continued-support-for-azurerm"></a>Dalsze wsparcie modułu AzureRM
+## <a name="support-for-azurerm"></a>Obsługa AzureRM
 
-W module AzureRM nie będą już wprowadzane nowe polecenia cmdlet ani funkcje. Jednak moduł AzureRM jest nadal oficjalnie obsługiwany i będą dla niego wydawane poprawki błędów do grudnia 2020 r.
+Ponieważ AZ PowerShell modules ma teraz wszystkie możliwości modułów AzureRM PowerShell i nie tylko, wycofamy moduły AzureRM PowerShell w dniu 29 lutego 2024.
+
+Aby uniknąć przerw w działaniu usługi, [zaktualizuj skrypty](https://aka.ms/azpsmigrate) używające modułów AzureRM PowerShell do używania polecenia AZ PowerShell modules do 29 lutego 2024. Aby automatycznie aktualizować skrypty, postępuj zgodnie z [przewodnikiem Szybki Start](/powershell/azure/quickstart-migrate-azurerm-to-az-automatically).

@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzADApplication.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzADApplication.md
-ms.openlocfilehash: eed437a235072972778925c0b94f2d22466399b3
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 7b66dff3f59e3ad186bfc559343aebf484ff2bc2
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93873328"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100413544"
 ---
 # Remove-AzADApplication
 
-## STRESZCZENIe
-Usuwa aplikację Azure Active Directory.
+## SYNOPSIS
+Usuwa aplikację usługi Azure Active Directory.
 
-## POLECENIA
+## SKŁADNIA
 
-### ObjectIdParameterSet (domyślny)
+### ObjectIdParameterSet (domyślne)
 ```
 Remove-AzADApplication -ObjectId <String> [-PassThru] [-Force] [-DefaultProfile <IAzureContextContainer>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -44,39 +44,39 @@ Remove-AzADApplication -InputObject <PSADApplication> [-PassThru] [-Force]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Opis
-Usuwa aplikację Azure Active Directory.
+## OPIS
+Usuwa aplikację usługi Azure Active Directory.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1 — Usuwanie aplikacji według identyfikatora obiektu
+### Przykład 1. Usuwanie aplikacji według identyfikatora obiektu
 
 ```
 PS C:\> Remove-AzADApplication -ObjectId b4cd1619-80b3-4cfb-9f8f-9f2333425738
 ```
 
-Usuwa aplikację z identyfikatorem obiektu "b4cd1619-80b3-4cfb-9f8f-9f2333425738" z dzierżawy.
+Usuwa aplikację z dzierżawy o identyfikatorze obiektu "b4cd1619-80b3-4cfb-9f8f-9f2333425738".
 
-### Przykład 2 — Usuwanie aplikacji według identyfikatora aplikacji
+### Przykład 2. Usuwanie aplikacji według identyfikatora aplikacji
 
 ```
 PS C:\> Remove-AzADApplication -ApplicationId f9c5ea4f-28f0-401a-a491-491a037fa346
 ```
 
-Usuwa aplikację z identyfikatorem aplikacji "f9c5ea4f-28f0-401A-a491-491a037fa346" z dzierżawy.
+Usuwa aplikację z dzierżawy o identyfikatorze aplikacji "f9c5ea4f-28f0-401a-a491-491a037fa346".
 
-### Przykład 3-usunięcie aplikacji przez potok rurociągowy
+### Przykład 3. Usuwanie aplikacji za pomocą rur
 
 ```
 PS C:\> Get-AzADApplication -ObjectId b4cd1619-80b3-4cfb-9f8f-9f2333425738 | Remove-AzADApplication
 ```
 
-Pobiera aplikację o identyfikatorze obiektu "b4cd1619-80b3-4cfb-9f8f-9f2333425738" i potokach, które zostaną usunięte przez polecenie cmdlet Remove-AzADApplication w celu usunięcia aplikacji z dzierżawy.
+Pobiera aplikację z identyfikatorem obiektu "b4cd1619-80b3-4cfb-9f8f-9f2333425738" i potokami, które są do polecenia cmdlet programu Remove-AzADApplication w celu usunięcia aplikacji z dzierżawy.
 
-## PARAMETRÓW
+## PARAMETERS
 
-### -Identyfikator aplikacji
-Identyfikator aplikacji, który ma zostać usunięty.
+### -ApplicationId
+Identyfikator aplikacji do usunięcia.
 
 ```yaml
 Type: System.Guid
@@ -91,7 +91,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -105,7 +105,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DisplayName
+### — DisplayName
 Nazwa wyświetlana aplikacji.
 
 ```yaml
@@ -120,8 +120,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Force
-Przełączanie w celu usunięcia aplikacji bez potwierdzenia.
+### — Wymuszanie
+Przełącz się, aby usunąć aplikację bez potwierdzenia.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -135,7 +135,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Inputobject
+### -InputObject
 Obiekt reprezentujący aplikację do usunięcia.
 
 ```yaml
@@ -151,7 +151,7 @@ Accept wildcard characters: False
 ```
 
 ### -ObjectId
-Identyfikator obiektu aplikacji, który ma zostać usunięty.
+Identyfikator obiektu aplikacji do usunięcia.
 
 ```yaml
 Type: System.String
@@ -166,7 +166,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Określenie tej wartości zwróci wartość PRAWDA, jeśli polecenie zostało wykonane prawidłowo.
+Określenie tej wartości spowoduje zwrócenie wartości prawda, jeśli polecenie zostało pomyślnie określone.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -180,8 +180,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Potwierdź
-Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.
+### — Potwierdź
+Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -196,8 +196,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet.
-Polecenie cmdlet nie jest uruchamiane.
+Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet.
+Polecenie cmdlet nie zostanie uruchomione.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -212,30 +212,29 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### System. String
+### System.String
 
-### System. GUID
+### System.Guid
 
-### Microsoft. Azure. Commands. pozycji. PSADApplication
+### Microsoft.Azure.Commands.ActiveDirectory.PSADApplication
 
-## WYSYŁA
+## OUTPUTS
 
-### System. Boolean
+### System.Boolean
 
-## INFORMACYJN
-Słowa kluczowe: Azure, azurerm, ramię, zasób, zarządzanie, Menedżer, zasób, Grupa, szablon, wdrożenie
+## NOTATKI
+Słowa kluczowe: azure, azurerm, arm, resource, management, manager, zasób, grupa, szablon, wdrożenie
 
 ## LINKI POKREWNE
 
-[Nowe — AzADApplication](./New-AzADApplication.md)
+[New-AzadApplication](./New-AzADApplication.md)
 
-[Get-AzADApplication](./Get-AzADApplication.md)
+[Get-AzadApplication](./Get-AzADApplication.md)
 
-[Set-AzADApplication](./Set-AzADApplication.md)
 
-[Remove-AzADAppCredential](./Remove-AzADAppCredential.md)
+[Remove-AzadAppCredential](./Remove-AzADAppCredential.md)
 

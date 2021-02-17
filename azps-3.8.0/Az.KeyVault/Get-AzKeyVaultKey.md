@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/g
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultKey.md
-ms.openlocfilehash: d14b695594d390edf880116d2ab3b5173faada7f
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: cab778247e6e3ae9db3549beae7fcd7495526757
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94049656"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100412099"
 ---
 # Get-AzKeyVaultKey
 
-## STRESZCZENIe
+## SYNOPSIS
 Pobiera klucze magazynu kluczy.
 
-## POLECENIA
+## SKŁADNIA
 
-### ByVaultName (domyślny)
+### ByVaultName (Domyślna)
 ```
 Get-AzKeyVaultKey [-VaultName] <String> [[-Name] <String>] [-InRemovedState]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
@@ -74,13 +74,13 @@ Get-AzKeyVaultKey [-ResourceId] <String> [-Name] <String> [-IncludeVersions]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **Get-AzKeyVaultKey** pobiera klucze magazynu kluczy platformy Azure.
-To polecenie cmdlet umożliwia pobieranie określonego pakietu **Microsoft. Azure. Commands. Key. MODELES** lub lista wszystkich obiektów **pakietu** kluczy w magazynie kluczy lub według wersji.
+## OPIS
+Polecenie **cmdlet Get-AzKeyVaultKey** pobiera klucze magazynu kluczy platformy Azure.
+To polecenie cmdlet pobiera określoną usługę **Microsoft.Azure.Commands.KeyVault.Models.KeySłudze lub** listę wszystkich obiektów **Key Jednakdle** w magazynie kluczy lub według wersji.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1. pobieranie wszystkich kluczy w magazynie kluczy
+### Przykład 1. Uzyskiwanie wszystkich kluczy w magazynie kluczy
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso'
 
@@ -109,9 +109,9 @@ Purge Disabled : False
 Tags           :
 ```
 
-To polecenie pobiera wszystkie klucze w magazynie kluczy o nazwie contoso.
+To polecenie pobiera wszystkie klucze z magazynu kluczy o nazwie Contoso.
 
-### Przykład 2: uzyskiwanie bieżącej wersji klucza
+### Przykład 2. Uzyskiwanie bieżącej wersji klucza
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName 'test1'
 
@@ -128,9 +128,9 @@ Purge Disabled : False
 Tags           :
 ```
 
-To polecenie pobiera aktualną wersję klucza o nazwie TEST1 w magazynie kluczy o nazwie contoso.
+To polecenie pobiera bieżącą wersję klucza o nazwie test1 w magazynie kluczy o nazwie Contoso.
 
-### Przykład 3: pobieranie wszystkich wersji klucza
+### Przykład 3. Uzyskiwanie wszystkich wersji klucza
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName 'test1' -IncludeVersions
 
@@ -159,9 +159,9 @@ Purge Disabled : False
 Tags           :
 ```
 
-To polecenie pobiera wszystkie wersje klucza o nazwie ITPfx w kluczu vaultnamed contoso.
+To polecenie pobiera wszystkie wersje klucza o nazwie ITPfx w magazynie kluczy o nazwie Contoso.
 
-### Przykład 4: uzyskiwanie określonej wersji klucza
+### Przykład 4. Uzyskiwanie określonej wersji klucza
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName 'test1' -Version 'e4e95940e669407fbdb4298bc21a3e1d'
 
@@ -178,10 +178,10 @@ Purge Disabled : False
 Tags           :
 ```
 
-To polecenie pobiera określoną wersję klucza o nazwie TEST1 w magazynie kluczy o nazwie contoso.
-Po uruchomieniu tego polecenia możesz sprawdzić różne właściwości klucza, przechodząc do obiektu $Key.
+To polecenie pobiera określoną wersję klucza o nazwie test1 w magazynie kluczy o nazwie Contoso.
+Po uruchomieniu tego polecenia możesz sprawdzać różne właściwości klucza, przechodząc między $Key obiektami.
 
-### Przykład 5: Uzyskaj wszystkie klucze, które zostały usunięte, ale nie zostały oczyszczone dla tego magazynu kluczy.
+### Przykład 5. Uzyskaj wszystkie klucze, które zostały usunięte, ale nie zostały wyczyszone dla tego magazynu kluczy.
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -InRemovedState
 
@@ -199,9 +199,9 @@ Purge Disabled       : False
 Tags                 :
 ```
 
-To polecenie pobiera wszystkie klucze, które zostały wcześniej usunięte, ale nie zostały oczyszczone w magazynie kluczy o nazwie contoso.
+To polecenie pobiera wszystkie klucze, które zostały wcześniej usunięte, ale nie przeczyszono, w magazynie kluczy o nazwie Contoso.
 
-### Przykład 6: Pobiera klucze ITPfx, które zostały usunięte, ale nie zostały oczyszczone dla tego magazynu kluczy.
+### Przykład 6. Pobiera klucz ITPfx, który został usunięty, ale nie został przeczyszony dla tego magazynu kluczy.
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName 'test3' -InRemovedState
 
@@ -219,10 +219,10 @@ Purge Disabled       : False
 Tags                 :
 ```
 
-To polecenie pobiera klucze test3, które zostały wcześniej usunięte, ale nie zostały oczyszczone w magazynie kluczy o nazwie contoso.
-To polecenie zwróci metadane, takie jak Data usunięcia, oraz zaplanowaną datę przeczyszczania tego usuniętego klucza.
+To polecenie pobiera test3 klucza, który został wcześniej usunięty, ale nie przeczyszczony, w magazynie kluczy o nazwie Contoso.
+To polecenie zwróci metadane, takie jak data usunięcia i zaplanowana data usunięcia tego usuniętego klucza.
 
-### Przykład 7: uzyskiwanie wszystkich kluczy w magazynie kluczy przy użyciu filtrowania
+### Przykład 7. Uzyskiwanie wszystkich kluczy w magazynie kluczy przy użyciu filtrowania
 ```powershell
 PS C:\> Get-AzKeyVaultKey -VaultName 'contoso' -KeyName "test*"
 
@@ -251,12 +251,12 @@ Purge Disabled : False
 Tags           :
 ```
 
-To polecenie pobiera wszystkie klucze w magazynie kluczy o nazwie contoso, które zaczynają się od tekstu "test".
+To polecenie pobiera wszystkie klucze w magazynie kluczy o nazwie Contoso, które zaczynają się od "testu".
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -272,9 +272,9 @@ Accept wildcard characters: False
 
 ### -IncludeVersions
 Wskazuje, że to polecenie cmdlet pobiera wszystkie wersje klucza.
-Bieżąca wersja klucza to pierwsza z nich na liście.
-W przypadku określenia tego parametru należy również określić *nazwę* i parametry *magazynu* .
-Jeśli nie określisz parametru *IncludeVersions* , to polecenie cmdlet pobiera bieżącą wersję klucza o określonej *nazwie*.
+Bieżąca wersja klucza jest pierwszą wersją na liście.
+Jeśli określisz ten parametr, musisz również określić parametry *Name (Nazwa) i* *VaultName (Nazwa magazynu).*
+Jeśli parametr *IncludeVersions* nie zostanie określony, to polecenie cmdlet pobiera bieżącą wersję klucza o określonej *nazwie.*
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -288,8 +288,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Inputobject
-Obiekt magazynu.
+### -InputObject
+Obiekt KeyVault.
 
 ```yaml
 Type: Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
@@ -304,7 +304,7 @@ Accept wildcard characters: False
 ```
 
 ### -InRemovedState
-Określa, czy w wyniku mają być pokazywane uprzednio usunięte klucze.
+Określa, czy poprzednio usunięte klucze mają być wyświetlane w wynikach
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -318,8 +318,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (nazwa)
-Określa nazwę pakietu kluczy, który ma zostać wyświetlony.
+### — Nazwa
+Określa nazwę pakietu kluczy do uzyskania.
 
 ```yaml
 Type: System.String
@@ -346,7 +346,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Identyfikator zasobu magazynu.
+Identyfikator zasobu KeyVault.
 
 ```yaml
 Type: System.String
@@ -360,9 +360,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Magazynname
+### -VaultName
 Określa nazwę magazynu kluczy, z którego to polecenie cmdlet pobiera klucze.
-To polecenie cmdlet konstruuje w pełni kwalifikowaną nazwę domeny (FQDN) magazynu kluczy na podstawie nazwy, jaką ten parametr określa i wybrane środowisko.
+To polecenie cmdlet konstruuje w pełni kwalifikowaną nazwę domeny (FQDN) magazynu kluczy na podstawie nazwy, która jest określana przez ten parametr i wybranego środowiska.
 
 ```yaml
 Type: System.String
@@ -376,7 +376,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Version
+### — Wersja
 Określa wersję klucza.
 To polecenie cmdlet konstruuje nazwę FQDN klucza na podstawie nazwy magazynu kluczy, obecnie wybranego środowiska, nazwy klucza i wersji klucza.
 
@@ -393,33 +393,32 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### Microsoft. Azure. Commands. platforming. models. PSKeyVault
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
 
-### System. String
+### System.String
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### Microsoft. Azure. Commands. platforming. models. PSKeyVaultKeyIdentityItem
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKeyIdentityItem
 
-### Microsoft. Azure. Commands. platforming. models. PSKeyVaultKey
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKey
 
 ### Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultKeyIdentityItem
 
 ### Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultKey
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
-[Dodaj-AzKeyVaultKey](./Add-AzKeyVaultKey.md)
+[Add-AzKeyVaultKey](./Add-AzKeyVaultKey.md)
 
 [Remove-AzKeyVaultKey](./Remove-AzKeyVaultKey.md)
 
-[Cofanie — AzKeyVaultKeyRemoval](./Undo-AzKeyVaultKeyRemoval.md)
+[Undo-AzKeyVaultKeyRemoval](./Undo-AzKeyVaultKeyRemoval.md)
 
-[Set-AzKeyVaultKeyAttribute](./Set-AzKeyVaultKeyAttribute.md)
 

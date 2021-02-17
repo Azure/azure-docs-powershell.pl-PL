@@ -5,21 +5,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.sql/new-az
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/New-AzSqlSyncMember.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/New-AzSqlSyncMember.md
-ms.openlocfilehash: 1decf3d7b179123a116bb570199840118115313f
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 793962db73fd053764a794b64bea8e68edadd73b
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93894957"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100413255"
 ---
 # New-AzSqlSyncMember
 
-## STRESZCZENIe
-Tworzy członka synchronizacji bazy danych Azure SQL Database.
+## SYNOPSIS
+Tworzy członka synchronizacji usługi Azure SQL Database.
 
-## POLECENIA
+## SKŁADNIA
 
-### AzureSqlDatabase (domyślny)
+### AzureSqlDatabase (domyślna)
 ```
 New-AzSqlSyncMember -Name <String> -MemberDatabaseType <String> -MemberServerName <String>
  -MemberDatabaseName <String> -MemberDatabaseCredential <PSCredential> [-SyncDirection <String>]
@@ -43,12 +43,12 @@ New-AzSqlSyncMember -Name <String> -MemberDatabaseType <String> -SqlServerDataba
  [-Confirm] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **New-AzSqlSyncMember** umożliwia utworzenie członka synchronizacji bazy danych Azure SQL Database.
+## OPIS
+Polecenie **cmdlet New-AzSqlSyncMember** tworzy członka synchronizacji usługi Azure SQL Database.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1. Utwórz element synchronizacji dla bazy danych Azure SQL Database.
+### Przykład 1. Tworzenie członka synchronizacji bazy danych Azure SQL Database.
 ```
 PS C:\> $credential = Get-Credential
 PS C:\> New-AzSqlSyncMember -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database01" -SyncGroupName "SyncGroup01" -Name "SyncMember01" -SyncDirection "OneWayMemberToHub"
@@ -70,9 +70,9 @@ MemberDatabasePassword      :
 SyncState                   : UnProvisioned
 ```
 
-To polecenie tworzy element synchronizacji dla bazy danych Azure SQL Database.
+To polecenie tworzy członka synchronizacji bazy danych Azure SQL Database.
 
-### Przykład 2: Tworzenie członka synchronizacji dla lokalnej bazy danych programu SQL Server
+### Przykład 2. Tworzenie członka synchronizacji dla lokalnej bazy danych programu SQL Server
 ```
 PS C:\> $credential = Get-Credential
 PS C:\> New-AzSqlSyncMember -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database01" -SyncGroupName "SyncGroup01" -Name "SyncMember01" -SyncDirection "OneWayMemberToHub"
@@ -95,12 +95,12 @@ MemberDatabasePassword      :
 SyncState                   : UnProvisioned
 ```
 
-To polecenie tworzy element synchronizacji dla lokalnej bazy danych SQL.
+To polecenie tworzy członka synchronizacji lokalnej bazy danych SQL.
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -DatabaseName
-Nazwa bazy danych SQL Azure Database.
+Nazwa usługi Azure SQL Database.
 
 ```yaml
 Type: System.String
@@ -115,7 +115,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -130,7 +130,7 @@ Accept wildcard characters: False
 ```
 
 ### -MemberDatabaseCredential
-Poświadczenia (nazwa użytkownika i hasło) bazy danych SQL Azure.
+Poświadczenia (nazwa użytkownika i hasło) bazy danych Azure SQL Database.
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -145,7 +145,7 @@ Accept wildcard characters: False
 ```
 
 ### -MemberDatabaseName
-Nazwa bazy danych usługi Azure SQL Database bazy danych członka.
+Nazwa bazy danych Azure SQL Database członka bazy danych.
 
 ```yaml
 Type: System.String
@@ -160,7 +160,7 @@ Accept wildcard characters: False
 ```
 
 ### -MemberDatabaseType
-Typ bazy danych członka.
+Typ bazy danych członka bazy danych.
 
 ```yaml
 Type: System.String
@@ -176,7 +176,7 @@ Accept wildcard characters: False
 ```
 
 ### -MemberServerName
-Nazwa programu Azure SQL Server bazy danych członka.
+Nazwa programu Azure SQL Server bazy danych członków.
 
 ```yaml
 Type: System.String
@@ -190,7 +190,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (nazwa)
+### — Nazwa
 Nazwa członka synchronizacji.
 
 ```yaml
@@ -220,7 +220,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Nazwa_serwera
+### -ServerName
 Nazwa serwera Azure SQL Server.
 
 ```yaml
@@ -236,7 +236,7 @@ Accept wildcard characters: False
 ```
 
 ### -SqlServerDatabaseId
-Identyfikator bazy danych programu SQL Server połączonej z agentem synchronizacji.
+Identyfikator bazy danych programu SQL Server, która jest połączona przez agenta synchronizacji.
 
 ```yaml
 Type: System.String
@@ -266,7 +266,7 @@ Accept wildcard characters: False
 ```
 
 ### -SyncAgentResourceGroupName
-Nazwa grupy zasobów, w której znajduje się Agent synchronizacji.
+Nazwa grupy zasobów, w której znajduje się agent synchronizacji.
 
 ```yaml
 Type: System.String
@@ -296,7 +296,7 @@ Accept wildcard characters: False
 ```
 
 ### -SyncAgentServerName
-Nazwa programu Azure SQL Server, w którym znajduje się Agent synchronizacji.
+Nazwa serwera Azure SQL Server, pod którym znajduje się agent synchronizacji.
 
 ```yaml
 Type: System.String
@@ -341,8 +341,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Potwierdź
-Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.
+### — Potwierdź
+Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -357,8 +357,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet.
-Polecenie cmdlet nie jest uruchamiane.
+Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet.
+Polecenie cmdlet nie zostanie uruchomione.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -373,23 +373,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### System. String
+### System.String
 
-## WYSYŁA
+## OUTPUTS
 
-### Microsoft. Azure. Commands. SQL. DataSync. model. AzureSqlSyncMemberModel
+### Microsoft.Azure.Commands.Sql.DataSync.Model.AzureSqlSyncMemberModel
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
 [Get-AzSqlSyncMember](./Get-AzSqlSyncMember.md)
 
-[Set-AzSqlSyncMember](./Set-AzSqlSyncMember.md)
 
 [Remove-AzSqlSyncMember](./Remove-AzSqlSyncMember.md)
 

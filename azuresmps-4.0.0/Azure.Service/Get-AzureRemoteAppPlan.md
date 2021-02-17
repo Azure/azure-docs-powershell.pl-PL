@@ -3,34 +3,34 @@ external help file: Microsoft.WindowsAzure.Commands.RemoteApp.dll-Help.xml
 ms.assetid: A1599617-FAB8-42AE-B066-2B4682F0BA21
 online version: ''
 schema: 2.0.0
-ms.openlocfilehash: 6b5c05a33ea14df95945d9539e53602db8abd79c
-ms.sourcegitcommit: 56ed085a868afa8263f8eb0f755b5822f5c29532
+ms.openlocfilehash: e453d8051e2be4ef72cc4d005c403ea051a6cdce
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "94055544"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100410943"
 ---
 # Get-AzureRemoteAppPlan
 
-## STRESZCZENIe
-Zawiera listę planów funkcji RemoteApp usługi Azure.
+## SYNOPSIS
+Lista planów usługi Azure RemoteApp.
 
-## POLECENIA
+## SKŁADNIA
 
 ```
 Get-AzureRemoteAppPlan [-Profile <AzureSMProfile>] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **Get-AzureRemoteAppPlan** zawiera listę planów funkcji RemoteApp usługi Azure.
+## OPIS
+Polecenie **cmdlet Get-AzureRemoteAppPlan** zawiera listę planów usługi Azure RemoteApp.
 
-## Przykłady
+## PRZYKŁADY
 
-## PARAMETRÓW
+## PARAMETERS
 
-### -Profile
-Określa Profil platformy Azure, na podstawie którego jest odczytywane to polecenie cmdlet.
-Jeśli nie podano profilu, to polecenie cmdlet odczytuje lokalny profil domyślny.
+### — Profil
+Określa profil platformy Azure, z którego będzie odczytywane to polecenie cmdlet.
+Jeśli nie określisz profilu, to polecenie cmdlet zostanie odczytane z lokalnego profilu domyślnego.
 
 ```yaml
 Type: AzureSMProfile
@@ -45,16 +45,16 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
-[Polecenia cmdlet usługi Azure RemoteApp](./Azure.RemoteApp.md)
+
 
 
