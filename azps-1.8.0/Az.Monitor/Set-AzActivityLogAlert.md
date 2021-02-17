@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/se
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Set-AzActivityLogAlert.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Set-AzActivityLogAlert.md
-ms.openlocfilehash: 0813f91a3d82a40bc5b8d02c0a1e3f9579e0067a
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 6c7b867add359edec8379f20e630c9aca5fed00e
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93709753"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100402885"
 ---
 # Set-AzActivityLogAlert
 
-## STRESZCZENIe
+## SYNOPSIS
 Tworzy nowy lub ustawia istniejący alert dziennika aktywności.
 
-## POLECENIA
+## SKŁADNIA
 
 ### SetByNameAndResourceGroup
 ```
@@ -51,15 +51,15 @@ Set-AzActivityLogAlert [-Scope <System.Collections.Generic.List`1[System.String]
  [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **Set-AzActivityLogAlert** tworzy nowy lub ustawia istniejący alert dziennika aktywności.
-W przypadku tagów, warunków i akcji obiekty muszą być utworzone z wyprzedzeniem i przenoszone jako parametry w tej rozmowie jako oddzielone przecinkami (Zobacz przykład poniżej).
-To polecenie cmdlet implementuje wzorzec ShouldProcess, tzn. może zażądać potwierdzenia od użytkownika przed faktycznym utworzeniem/zmodyfikowaniem zasobu.
-**Uwaga** : to polecenie cmdlet i powiązane z nim polecenia zastępują przestarzałe (listopad 2017) **Add-AzLogAlertRule**.
+## OPIS
+Polecenie **cmdlet Set-AzActivityLogAlert** tworzy nowy lub ustawia istniejący alert dziennika aktywności.
+W przypadku tagów, warunków i akcji obiekty muszą zostać utworzone z wyprzedzeniem i przekazane jako parametry w tym wywołaniu jako rozdzielone przecinkami (zobacz poniższy przykład).
+To polecenie cmdlet implementuje wzorzec ShouldProcess, czyli może wymagać potwierdzenia od użytkownika przed faktycznie utworzeniem/zmodyfikowaniem zasobu.
+**UWAGA:** To polecenie cmdlet i powiązane z nim polecenia cmdlet zastępują przestarzałe (listopad 2017) dodatek **AzLogAlertRule.**
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1: Tworzenie alertu dziennika aktywności
+### Przykład 1. Tworzenie alertu dziennika aktywności
 ```
 PS C:\>$location = 'Global'
 PS C:\>$alertName = 'myAlert'
@@ -73,9 +73,9 @@ PS C:\>Set-AzActivityLogAlert -Location $location -Name $alertName -ResourceGrou
 ```
 
 Pierwsze cztery polecenia tworzą warunek liścia i grupę akcji.
-Ostatnie polecenie tworzy alert dziennika aktywności przy użyciu warunku i grupy Actions.
+Ostatnie polecenie tworzy alert dziennika aktywności przy użyciu warunku i grupy akcji.
 
-### Przykład 2: wyłączono tworzenie alertu dziennika aktywności
+### Przykład 2. Wyłączono tworzenie alertu dziennika aktywności
 ```
 PS C:\>$location = 'Global'
 PS C:\>$alertName = 'myAlert'
@@ -89,9 +89,9 @@ PS C:\>Set-AzActivityLogAlert -Location $location -Name $alertName -ResourceGrou
 ```
 
 Pierwsze cztery polecenia tworzą warunek liścia i grupę akcji.
-Ostatnie polecenie tworzy alert dziennika aktywności przy użyciu warunku i grupy Actions, ale powoduje utworzenie alertu wyłączonego.
+Końcowe polecenie tworzy alert dziennika aktywności przy użyciu warunku i grupy akcji, ale powoduje utworzenie alertu wyłączonego.
 
-### Przykład 3: Ustawianie alertu dotyczącego dziennika aktywności opartego na wartości z parametru Pipe lub Inputobject
+### Przykład 3. Ustawianie alertu dziennika aktywności na podstawie wartości z potoku lub parametru InputObject
 ```
 PS C:\>Get-AzActivityLogAlert -Name $alertName -ResourceGroupName $resourceGroupName | Set-AzActivityLogAlert
 PS C:\>$alert = Get-AzActivityLogAlert -Name $alertName -ResourceGroupName $resourceGroupName
@@ -100,18 +100,18 @@ PS C:\>$alert.Enabled = $false
 PS C:\>Set-AzActivityLogAlert -InputObject $alert
 ```
 
-Pierwsze polecenie jest podobne do NOP, ale powoduje, że alert ma te same wartości, które zawierały pozostałe polecenia pobierając regułę alertu, zmieni opis i wyłącz go, a następnie użyj parametru Inputobject, aby zachować te zmiany
+Pierwsze polecenie jest podobne do nop, ustawia alert z tymi samymi wartościami, które zawierał już. Pozostałe polecenia pobierają regułę alertu, zmieniają opis i wyłączają je, a następnie używają parametru InputObject, aby utrzymać te zmiany.
 
-### Przykład 4: Ustawianie alertu dotyczącego dziennika aktywności opartego na wartości ResourceId z potoku
+### Przykład 4. Ustawianie alertu dziennika aktywności na podstawie wartości ResourceId z potoku
 ```
 PS C:\>Find-AzResource -ResourceGroupEquals "myResourceGroup" -ResourceNameEquals "myLogAlert" | Set-AzActivityLogAlert -DisableAlert
 ```
 
-Jeśli ta reguła alertu dziennika istnieje, to polecenie je wyłącza.
+Jeśli istnieje reguła alertu danego dziennika, to polecenie wyłącza tę regułę.
 
-## PARAMETRÓW
+## PARAMETERS
 
-### -Action
+### — akcja
 Lista grup akcji dla alertu dziennika aktywności.
 
 ```yaml
@@ -150,9 +150,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Warunek
-Lista warunków alertu dotyczącego dziennika aktywności.
-**Uwaga** : na liście warunków musi być co najmniej jedno pole równe "Kategoria". W przypadku nieobecności tego warunku wewnętrzna baza danych odpowiada za pomocą usługi 400 (BadRequest).
+### — Warunek
+Lista warunków alertu dziennika aktywności.
+**UWAGA:** na liście warunków musi znajdować się co najmniej jeden z polem "Kategoria". Jeśli ten warunek nie występuje, zaplecza odpowiada z 400 (BadRequest).
 
 ```yaml
 Type: System.Collections.Generic.List`1[Microsoft.Azure.Management.Monitor.Management.Models.ActivityLogAlertLeafCondition]
@@ -191,7 +191,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -233,7 +233,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisableAlert
-Umożliwia użytkownikowi utworzenie wyłączanego alertu dziennika aktywności. Jeśli nie podano, alerty są tworzone.
+Umożliwia użytkownikowi utworzenie wyłączonego alertu dziennika aktywności. Jeśli alerty nie zostaną podane, zostaną włączone.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -247,8 +247,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Inputobject
-Ustawia właściwość Inputobject dla połączenia, aby wyodrębnić nazwę wymaganą, oraz właściwości nazwy grupy zasobów.
+### -InputObject
+Ustawia właściwość tagów InputObject połączenia w celu wyodrębnienia wymaganej nazwy i właściwości nazwy grupy zasobów.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource
@@ -263,7 +263,7 @@ Accept wildcard characters: False
 ```
 
 ### — Lokalizacja
-Lokalizacja, w której będzie istnieć alert dziennika aktywności.
+Lokalizacja, w której będzie istniał alert dziennika aktywności.
 
 ```yaml
 Type: System.String
@@ -289,7 +289,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Name (nazwa)
+### — Nazwa
 Nazwa alertu dziennika aktywności.
 
 ```yaml
@@ -305,7 +305,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Nazwa grupy zasobów, w której ma się znajdować zasób alertu.
+Nazwa grupy zasobów, w której ma istnieć zasób alertu.
 
 ```yaml
 Type: System.String
@@ -320,7 +320,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Ustawia właściwość znaczniki ResourceId połączenia, aby wyodrębnić wymaganą nazwę, właściwości nazwy grupy zasobów.
+Ustawia właściwość tagów ResourceId połączenia w celu wyodrębnienia wymaganej nazwy, właściwości nazwy grupy zasobów.
 
 ```yaml
 Type: System.String
@@ -334,7 +334,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Zakres
+### — Zakres
 Lista zakresów alertu dziennika aktywności.
 
 ```yaml
@@ -373,8 +373,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Tag
-Ustawia właściwość Tagi dla zasobu alertu dziennika aktywności.
+### — Tag
+Ustawia właściwość tagów zasobu alertu dziennika aktywności.
 
 ```yaml
 Type: System.Collections.Generic.Dictionary`2[System.String,System.String]
@@ -400,8 +400,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Potwierdź
-Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.
+### — Potwierdź
+Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -416,7 +416,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet. Polecenie cmdlet nie jest uruchamiane.
+Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet. Polecenie cmdlet nie zostanie uruchomione.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -431,27 +431,27 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### System. String
+### System.String
 
-### System. Collections. Generic. list "1 [[System. String; system. private. CoreLib, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Collections.Generic.List'1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-### System. Collections. Generic. list "1 [[Microsoft. Azure. Management. Monitor. Management.. ActivityLogAlertLeafCondition; Microsoft. Azure. PowerShell. cmdlets.
+### System.Collections.generic.List'1[[Microsoft.Azure.Management.Monitor.Management.Models.ActivityLogAlertLeafCondition, Microsoft.Azure.PowerShell.Cmdlet.Monitor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 
-### System. Collections. Generic. list "1 [[Microsoft. Azure. Management. Monitor. Management.. ActivityLogAlertActionGroup; Microsoft. Azure. PowerShell. cmdlets.
+### System.Collections.Generic.List'1[[Microsoft.Azure.Management.Monitor.Management.Models.ActivityLogAlertActionGroup, Microsoft.Azure.PowerShell.Cmdlets.Monitor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
 
-### System. Collections. Generic. dictionary ' 2 [[System. String, system. private. CoreLib, Version = 4.0.0.0, Culture = neutral; PublicKeyToken = 7cec85d7bea7798e], [System. String, system. private. CoreLib, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Collections.Generic.Dictionary'2[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-### Microsoft. Azure. Commands. Insights. OutputClasses. PSActivityLogAlertResource
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### Microsoft. Azure. Commands. Insights. OutputClasses. PSActivityLogAlertResource
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
@@ -463,6 +463,4 @@ To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariab
 
 [Remove-AzActivityLogAlert](./Remove-AzActivityLogAlert.md)
 
-[Nowe — AzActionGroup](./New-AzActionGroup.md)
-
-[Nowe — AzActivityLogAlertCondition](./Get-AzActivityLogAlertCondition.md)
+[New-AzActionGroup](./New-AzActionGroup.md)

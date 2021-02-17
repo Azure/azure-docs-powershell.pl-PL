@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.operationa
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/OperationalInsights/OperationalInsights/help/New-AzOperationalInsightsWorkspace.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/OperationalInsights/OperationalInsights/help/New-AzOperationalInsightsWorkspace.md
-ms.openlocfilehash: feac2aa9c5dd92c0d76090c6fc28353d56f9647c
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 8515bf4085fcd03d87aa15c3da649fe318b94966
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94222999"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100405010"
 ---
 # New-AzOperationalInsightsWorkspace
 
-## STRESZCZENIe
-Umożliwia utworzenie obszaru roboczego.
+## SYNOPSIS
+Tworzy obszar roboczy.
 
-## POLECENIA
+## SKŁADNIA
 
 ```
 New-AzOperationalInsightsWorkspace [-ResourceGroupName] <String> [-Name] <String> [-Location] <String>
@@ -27,33 +27,33 @@ New-AzOperationalInsightsWorkspace [-ResourceGroupName] <String> [-Name] <String
  [[-PublicNetworkAccessForQuery] <String>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **New-AzOperationalInsightsWorkspace** umożliwia utworzenie obszaru roboczego w określonej grupie zasobów i lokalizacji.
+## OPIS
+Polecenie **cmdlet New-AzOperationalInsightsWorkspace** tworzy obszar roboczy w określonej grupie zasobów i lokalizacji.
 
-## Przykłady
+## PRZYKŁADY
 
 ### Przykład 1. Tworzenie obszaru roboczego według nazwy
 ```
 PS C:\>New-AzOperationalInsightsWorkspace -ResourceGroupName "ContosoResourceGroup" -Name "MyWorkspace" -Location "East US" -Sku "Standard"
 ```
 
-To polecenie tworzy standardową przestrzeń roboczą SKU o nazwie Moja przestrzeń robocza w grupie zasobów o nazwie ContosoResourceGroup.
+To polecenie tworzy standardowy obszar roboczy SKU o nazwie MyWorkspace w grupie zasobów o nazwie ContosoResourceGroup.
 
-### Przykład 2: Tworzenie obszaru roboczego i łączenie go z istniejącym kontem
+### Przykład 2. Tworzenie obszaru roboczego i łączenie go z istniejącym kontem
 ```
 PS C:\>$OILinkTargets = Get-AzOperationalInsightsLinkTargets
 
 PS C:\>$OILinkTargets[0] | New-AzOperationalInsightsWorkspace -ResourceGroupName "ContosoResourceGroup" -Name "MyWorkspace" -Sku "Standard"
 ```
 
-W pierwszym poleceniu użyto polecenia cmdlet Get-AzOperationalInsightsLinkTargets, aby uzyskać wartości docelowe linku do konta usługi Insights, a następnie przechowywać je w zmiennej $OILinkTargets.
-Drugie polecenie przekazuje pierwszemu elementowi docelowe łącze konta w $OILinkTargets do polecenia cmdlet **New-AzOperationalInsightsWorkspace** przy użyciu operatora potoku.
-To polecenie tworzy standardową przestrzeń roboczą SKU o nazwie Mój obszar roboczy, która jest połączona z pierwszym kontem usługi Insights w programie $OILinkTargets.
+Pierwsze polecenie używa polecenia cmdlet Get-AzOperationalInsightsLinkTargets w celu uzyskania celów docelowych linku do konta w szczegółowych informacjach operacyjnych, a następnie przechowuje je w $OILinkTargets danych.
+Drugie polecenie przekazuje pierwszy element docelowy linku do konta w $OILinkTargets do polecenia cmdlet **New-AzOperationalInsightsWorkspace** przy użyciu operatora potoku.
+Polecenie tworzy standardowy obszar roboczy SKU o nazwie MyWorkspace, który jest połączony z pierwszym kontem szczegółowych informacji operacyjnych w programie $OILinkTargets.
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -67,8 +67,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Force
-Wymusza uruchomienie polecenia bez monitowania o potwierdzenie użytkownika.
+### — Wymuszanie
+Wymusza uruchomienie polecenia bez pytania o potwierdzenie użytkownika.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -83,7 +83,7 @@ Accept wildcard characters: False
 ```
 
 ### — Lokalizacja
-Określa lokalizację, w której ma zostać utworzony obszar roboczy, na przykład Wschodnie USA lub Europa Zachodnia.
+Określa lokalizację, w której ma być tworzyć obszar roboczy, na przykład Wschód Stany Zjednoczone lub Europa Zachodnia.
 
 ```yaml
 Type: System.String
@@ -97,7 +97,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Name (nazwa)
+### — Nazwa
 Określa nazwę obszaru roboczego.
 
 ```yaml
@@ -113,7 +113,7 @@ Accept wildcard characters: False
 ```
 
 ### -PublicNetworkAccessForIngestion
-Typ dostępu do sieci umożliwiający dostęp do spożycia w obszarze roboczym. Wartość powinna być równa "Enabled" lub "Disabled"
+Typ dostępu sieciowego do uzyskiwania dostępu do obszaru roboczego ingestion. Wartość powinna być "Włączona" lub "Wyłączona"
 
 ```yaml
 Type: System.String
@@ -128,7 +128,7 @@ Accept wildcard characters: False
 ```
 
 ### -PublicNetworkAccessForQuery
-Typ dostępu do sieci w celu uzyskania dostępu do zapytania dotyczącego obszaru roboczego. Wartość powinna być równa "Enabled" lub "Disabled"
+Typ dostępu sieciowego do uzyskiwania dostępu do zapytania obszaru roboczego. Wartość powinna być "Włączona" lub "Wyłączona"
 
 ```yaml
 Type: System.String
@@ -159,7 +159,7 @@ Accept wildcard characters: False
 ```
 
 ### -RetentionInDays
-Dane obszaru roboczego zachowywane w ciągu dni. 730 dni to maksimum dozwolone dla wszystkich pozostałych wersji SKU
+Przechowywanie danych obszaru roboczego w dniach. 730 dni to maksimum dozwolone dla wszystkich pozostałych jednostki SKU.
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -173,15 +173,15 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -SKU
-Określa poziom usług obszaru roboczego. Aby uzyskać więcej informacji na temat wartości, którą należy użyć, sprawdź https://docs.microsoft.com/en-us/azure/azure-monitor/platform/manage-cost-storage#legacy-pricing-tiers .
-Prawidłowe wartości:
-- niezależnych
+### - SKU
+Określa warstwę usługi obszaru roboczego. Aby uzyskać więcej informacji dotyczących wartości, której należy użyć, https://docs.microsoft.com/en-us/azure/azure-monitor/platform/manage-cost-storage#legacy-pricing-tiers sprawdź.
+Prawidłowe wartości to:
+- bezpłatnie
 - pergb2018
 - pernode
-- ubezpieczeni
-- oddzielnie
-- Standard
+- premium
+- autonomiczny
+- standardowy
 
 ```yaml
 Type: System.String
@@ -195,8 +195,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Tag
-Znaczniki zasobów dla obszaru roboczego.
+### — Tag
+Tagi zasobów dla obszaru roboczego.
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -210,8 +210,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Potwierdź
-Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.
+### — Potwierdź
+Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -226,8 +226,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet.
-Polecenie cmdlet nie jest uruchamiane.
+Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet.
+Polecenie cmdlet nie zostanie uruchomione.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -242,30 +242,29 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### System. String
+### System.String
 
-### System. Nullable "1 [[System. GUID, system. private. CoreLib, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.Guid, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-### System. Collections. Hashtable
+### System.Collections.Hashtable
 
-### System. Nullable ' 1 [[System. Int32; system. private. CoreLib, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-## WYSYŁA
+## OUTPUTS
 
-### Microsoft. Azure. Commands. OperationalInsights. models. PSWorkspace
+### Microsoft.Azure.Commands.OperationalInsights.Models.PSWorkspace
 
-## INFORMACYJN
+## NOTATKI
 
-Nowy model cenowy został zwolniony. Jeśli jesteś dostawcą CSP, co oznacza, że musisz użyć "autonomicznej" dla jednostki SKU. W tle jednostka SKU zostanie zmieniona na pergb2018. Aby uzyskać więcej informacji, zobacz następujące tematy: https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-usage-and-estimated-costs#new-pricing-model
+Opublikowano nowy model cen. Jeśli jesteś programem CSP, oznacza to, że musisz używać "autonomicznej" jednostki SKU. W tle wersja SKU zostanie zmieniona na pergb2018. Aby uzyskać więcej informacji, zobacz następujące informacje: https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-usage-and-estimated-costs#new-pricing-model
 
 ## LINKI POKREWNE
 
-[Polecenia cmdlet usługi Azure Operations Insights](./Az.OperationalInsights.md)
+[Polecenia cmdlet usługi Azure Operational Insights](./Az.OperationalInsights.md)
 
-[Get-AzOperationalInsightsLinkTargets](./Get-AzOperationalInsightsLinkTargets.md)
 
 

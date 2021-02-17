@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzActivityLogAlert.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzActivityLogAlert.md
-ms.openlocfilehash: 26a1fbcc2016de2e6eca4cff2ee2442ef0111919
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 93112c8e7518ac23b23e5b1bb6c18109481495dc
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93867332"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100403157"
 ---
 # Get-AzActivityLogAlert
 
-## STRESZCZENIe
+## SYNOPSIS
 Pobiera jeden lub więcej zasobów alertów dziennika aktywności.
 
-## POLECENIA
+## SKŁADNIA
 
 ### GetByNameAndResourceGroup
 ```
@@ -32,36 +32,36 @@ Get-AzActivityLogAlert [[-ResourceGroupName] <String>] [-DefaultProfile <IAzureC
  [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **Get-AzActivityLogAlert** pobiera jeden lub więcej zasobów alertów dziennika aktywności.
+## OPIS
+Polecenie **cmdlet Get-AzActivityLogAlert** pobiera jeden lub więcej zasobów alertów dziennika aktywności.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1: uzyskiwanie alertów dziennika aktywności według identyfikatora subskrypcji
+### Przykład 1. Uzyskiwanie alertów dziennika aktywności według identyfikatora subskrypcji
 ```
 PS C:\>Get-AzActivityLogAlert
 ```
 
-To polecenie wyświetla listę wszystkich alertów dziennika aktywności dla bieżącej subskrypcji.
+To polecenie zawiera listę wszystkich alertów dziennika aktywności dla bieżącej subskrypcji.
 
-### Przykład 2: uzyskiwanie alertów dziennika aktywności dla danej grupy zasobów
+### Przykład 2. Uzyskiwanie alertów dziennika aktywności dla danej grupy zasobów
 ```
 PS C:\>Get-AzActivityLogAlert -ResourceGroupName "Default-activityLogAlerts"
 ```
 
-To polecenie wyświetla listę alertów dziennika aktywności dla danej grupy zasobów.
+To polecenie zawiera listę alertów dziennika aktywności dla danej grupy zasobów.
 
-### Przykład 3: uzyskiwanie alertu dziennika aktywności.
+### Przykład 3. Uzyskiwanie alertu dziennika aktywności.
 ```
 PS C:\>Get-AzActivityLogAlert -ResourceGroupName "Default-activityLogAlerts" -Name "alert1"
 ```
 
-To polecenie wyświetla listę (listę z jednym elementem) alertem dziennika aktywności.
+To polecenie wyświetla jeden alert (listę z jednym elementem) alertu dziennika aktywności.
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -75,7 +75,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (nazwa)
+### — Nazwa
 Nazwa alertu dziennika aktywności.
 
 ```yaml
@@ -92,7 +92,7 @@ Accept wildcard characters: False
 
 ### -ResourceGroupName
 Nazwa grupy zasobów, w której znajduje się zasób alertu.
-Jeśli nazwa nie ma wartości null lub jest pusta, ten parametr musi zawierać i nie być pustym ciągiem.
+Jeśli nazwa nie ma wartości null lub jest pusta, ten parametr musi zawierać ciąg niepusty.
 
 ```yaml
 Type: System.String
@@ -119,26 +119,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### System. String
+### System.String
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### Microsoft. Azure. Commands. Insights. OutputClasses. PSActivityLogAlertResource
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSActivityLogAlertResource
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
 [Set-AzActivityLogAlert](./Set-AzActivityLogAlert.md)
 
-[Update-AzActivityLogAlert](./Update-AzActivityLogAlert.md)
-
 [Remove-AzActivityLogAlert](./Remove-AzActivityLogAlert.md)
 
-[Nowe — AzActionGroup](./New-AzActionGroup.md)
-
-[Nowe — AzActivityLogAlertCondition](./Get-AzActivityLogAlertCondition.md)
+[New-AzActionGroup](./New-AzActionGroup.md)
