@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzADServicePrincipal.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzADServicePrincipal.md
-ms.openlocfilehash: 0fa6dde8584eb003bd479e9a73ec96176282d83c
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 2658e5ff70603cb9bbe3aa3a7ccd47713249c726
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93708321"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399604"
 ---
 # Remove-AzADServicePrincipal
 
-## STRESZCZENIe
+## SYNOPSIS
 Usuwa podmiot zabezpieczeń usługi Azure Active Directory.
 
-## POLECENIA
+## SKŁADNIA
 
-### ObjectIdParameterSet (domyślny)
+### ObjectIdParameterSet (domyślne)
 ```
 Remove-AzADServicePrincipal -ObjectId <String> [-PassThru] [-Force] [-DefaultProfile <IAzureContextContainer>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -56,55 +56,55 @@ Remove-AzADServicePrincipal -ApplicationObject <PSADApplication> [-PassThru] [-F
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Opis
+## OPIS
 Usuwa podmiot zabezpieczeń usługi Azure Active Directory.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1 — Usuwanie podmiotu zabezpieczeń usługi według identyfikatora obiektu
+### Przykład 1. Usuwanie podmiotu zabezpieczeń usługi według identyfikatora obiektu
 
 ```
 PS C:\> Remove-AzADServicePrincipal -ObjectId 61b5d8ea-fdc6-40a2-8d5b-ad447c678d45
 ```
 
-Usuwa podmiot zabezpieczeń usługi z identyfikatorem obiektu "61b5d8ea-fdc6-40a2-8d5b-ad447c678d45".
+Usuwa podmiot zabezpieczeń usługi z identyfikatorem obiektu '61b5d8ea-fdc6-40a2-8d5b-ad447c678d45'.
 
-### Przykład 2 — Usuwanie podmiotu zabezpieczeń usługi według identyfikatora aplikacji
+### Przykład 2. Usuwanie podmiotu zabezpieczeń usługi według identyfikatora aplikacji
 
 ```
 PS C:\> Remove-AzADServicePrincipal -ApplicationId 9263469e-d328-4321-8646-3e3e75d20e76
 ```
 
-Usuwa podmiot zabezpieczeń usługi z identyfikatorem aplikacji "9263469e-d328-4321-8646-3e3e75d20e76".
+Usuwa podmiot zabezpieczeń usługi z identyfikatorem aplikacji '9263469e-d328-4321-8646-3e3e75d20e76".
 
-### Przykład 3 — Usuwanie podmiotu zabezpieczeń usługi według nazwy SPN
+### Przykład 3. Usuwanie podmiotu zabezpieczeń usługi przez dodatek SPN
 
 ```
 PS C:\> Remove-AzADServicePrincipal -ServicePrincipalName MyServicePrincipal
 ```
 
-Usuwanie podmiotu usługi z nazwą główną usługi "MyServicePrincipal"
+Usuwanie podmiotu zabezpieczeń usługi przy użyciu nazwy głównej usługi "MyServicePrincipal"
 
-### Przykład 4 — Usuwanie podmiotu zabezpieczeń usługi według połączeń rurowych
+### Przykład 4. Usuwanie podmiotu zabezpieczeń usługi za pomocą funkcji pipingu
 
 ```
 PS C:\> Get-AzADServicePrincipal -ObjectId 61b5d8ea-fdc6-40a2-8d5b-ad447c678d45 | Remove-AzADServicePrincipal
 ```
 
-Pobiera podmiot zabezpieczeń usługi o identyfikatorze obiektu "61b5d8ea-fdc6-40a2-8d5b-ad447c678d45" i potokach, które zostaną usunięte przez polecenie cmdlet Remove-AzADServicePrincipal w celu usunięcia tego podmiotu usługi.
+Pobiera podmiot zabezpieczeń usługi z identyfikatorem obiektu "61b5d8ea-fdc6-40a2-8d5b-ad447c678d45" i potoki, które są do polecenia cmdlet programu Remove-AzADServicePrincipal w celu usunięcia tego podmiotu zabezpieczeń usługi.
 
-### Przykład 5 — Usuwanie podmiotu usługi przez potok aplikacji
+### Przykład 5. Usuwanie podmiotu zabezpieczeń usługi przez stosowanie rur
 
 ```
 PS C:\> Get-AzApplication -ApplicationId 9263469e-d328-4321-8646-3e3e75d20e76 | Remove-AzADServicePrincipal
 ```
 
-Pobiera aplikację o identyfikatorze aplikacji "9263469e-d328-4321-8646-3e3e75d20e76" i potokach, które zostaną usunięte przez polecenie cmdlet Remove-AzADServicePrincipal w celu usunięcia podmiotu usługi skojarzonego z tą aplikacją.
+Pobiera aplikację z identyfikatorem aplikacji "9263469e-d328-4321-8646-3e3e75d20e76" i potokami, które są przekierowywowane do polecenia cmdlet programu Remove-AzADServicePrincipal w celu usunięcia podmiotu zabezpieczeń usługi skojarzonego z tą aplikacją.
 
-## PARAMETRÓW
+## PARAMETERS
 
-### -Identyfikator aplikacji
-Identyfikator głównej aplikacji usługi.
+### -ApplicationId
+Identyfikator aplikacji podmiotu zabezpieczeń usługi.
 
 ```yaml
 Type: System.Guid
@@ -118,8 +118,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Applicationobject
-Obiekt aplikacji, którego podmiot usługi jest usuwany.
+### -ApplicationObject
+Obiekt aplikacji, którego podmiot zabezpieczeń usługi jest usuwany.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ActiveDirectory.PSADApplication
@@ -134,7 +134,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -148,8 +148,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DisplayName
-Nazwa wyświetlana podmiotu usługi.
+### — DisplayName
+Nazwa wyświetlana podmiotu zabezpieczeń usługi.
 
 ```yaml
 Type: System.String
@@ -163,8 +163,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Force
-Przełączanie do Usuń podmiot zabezpieczeń usługi bez potwierdzenia.
+### — Wymuszanie
+Przełączanie w celu usunięcia podmiotu zabezpieczeń usługi bez potwierdzenia.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -178,8 +178,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Inputobject
-Główny obiekt usługi.
+### -InputObject
+Obiekt podmiotu zabezpieczeń usługi.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ActiveDirectory.PSADServicePrincipal
@@ -194,7 +194,7 @@ Accept wildcard characters: False
 ```
 
 ### -ObjectId
-Identyfikator obiektu podmiotu usługi, który ma zostać usunięty.
+Identyfikator obiektu podmiotu zabezpieczeń usługi do usunięcia.
 
 ```yaml
 Type: System.String
@@ -209,7 +209,7 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Jeśli ta funkcja jest określona, zwraca usunięty podmiot zabezpieczeń usługi.
+Jeśli jest to określone, zwraca usunięty podmiot zabezpieczeń usługi.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -224,7 +224,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServicePrincipalName
-Nazwa główna usługi.
+Nazwa podmiotu zabezpieczeń usługi.
 
 ```yaml
 Type: System.String
@@ -238,8 +238,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Potwierdź
-Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.
+### — Potwierdź
+Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -254,8 +254,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet.
-Polecenie cmdlet nie jest uruchamiane.
+Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet.
+Polecenie cmdlet nie zostanie uruchomione.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -270,33 +270,32 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### System. String
+### System.String
 
-### System. GUID
+### System.Guid
 
-### Microsoft. Azure. Commands. pozycji. PSADServicePrincipal
+### Microsoft.Azure.Commands.ActiveDirectory.PSADServicePrincipal
 
-### Microsoft. Azure. Commands. pozycji. PSADApplication
+### Microsoft.Azure.Commands.ActiveDirectory.PSADApplication
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### Microsoft. Azure. Commands. pozycji. PSADServicePrincipal
+### Microsoft.Azure.Commands.ActiveDirectory.PSADServicePrincipal
 
-## INFORMACYJN
-Słowa kluczowe: Azure, azurerm, ramię, zasób, zarządzanie, Menedżer, zasób, Grupa, szablon, wdrożenie
+## NOTATKI
+Słowa kluczowe: azure, azurerm, arm, resource, management, manager, zasób, grupa, szablon, wdrożenie
 
 ## LINKI POKREWNE
 
-[Nowe — AzADServicePrincipal](./New-AzADServicePrincipal.md)
+[New-AzadServicePrincipal](./New-AzADServicePrincipal.md)
 
-[Get-AzADServicePrincipal](./Get-AzADServicePrincipal.md)
+[Get-AzadServicePrincipal](./Get-AzADServicePrincipal.md)
 
-[Set-AzADServicePrincipal](./Set-AzADServicePrincipal.md)
 
-[Remove-AzADApplication](./Remove-AzADApplication.md)
+[Remove-AzadApplication](./Remove-AzADApplication.md)
 
-[Remove-AzADAppCredential](./Remove-AzADAppCredential.md)
+[Remove-AzadAppCredential](./Remove-AzADAppCredential.md)

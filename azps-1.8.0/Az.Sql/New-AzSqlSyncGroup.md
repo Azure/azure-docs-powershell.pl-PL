@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.sql/new-az
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/New-AzSqlSyncGroup.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/New-AzSqlSyncGroup.md
-ms.openlocfilehash: 512ed43ac1770a7a1a026c5a64d20a25016d547e
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 7789bdc098ab7bb02414ffc39f38ba25f1c7e5ae
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93707837"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399570"
 ---
 # New-AzSqlSyncGroup
 
-## STRESZCZENIe
-Tworzy grupę usługi Azure SQL Database Sync.
+## SYNOPSIS
+Tworzy grupę synchronizacji usługi Azure SQL Database.
 
-## POLECENIA
+## SKŁADNIA
 
 ```
 New-AzSqlSyncGroup [-Name] <String> -SyncDatabaseName <String> -SyncDatabaseServerName <String>
@@ -27,12 +27,12 @@ New-AzSqlSyncGroup [-Name] <String> -SyncDatabaseName <String> -SyncDatabaseServ
  [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **New-AzSqlSyncGroup** umożliwia utworzenie grupy synchronizacji bazy danych Azure SQL Database.
+## OPIS
+Polecenie **cmdlet New-AzSqlSyncGroup** tworzy grupę synchronizacji usługi Azure SQL Database.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1: Tworzenie grupy synchronizacji dla bazy danych SQL Azure.
+### Przykład 1. Tworzenie grupy synchronizacji dla usługi Azure SQL Database.
 ```
 PS C:\> $credential = Get-Credential
 PS C:\> New-AzSqlSyncGroup -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -DatabaseName "Database01" -Name "SyncGroup01" -ConflictResolutionPolicy "HubWin"
@@ -53,12 +53,12 @@ LastSyncTime                : 1/1/0001 12:00:00 AM
 Schema                      :
 ```
 
-To polecenie tworzy grupę synchronizacji dla bazy danych SQL Azure. "schema.json" to plik na dysku lokalnym. Zawiera ładunek Shema w formacie JSON. Przykładem kodu JSON schematu jest: {"Tables": [{"kolumny": [{"cytowana": "b3ee3a7f-7614-4644-AD07-afa832620b4bManualTestsm4column1"}; {"cytowana": "b3ee3a7f-7614-4644-AD07-afa832620b4bManualTestsm4column2"}]; "cytowanie": "MayQuotedTable1"}, {"kolumny": [{"cytowana": "b3ee3a7f-7614-4644-AD07-afa832620b4bManualTestsm4column1"}, {"" b3ee3a7f-7614-4644-AD07-afa832620b4bManualTestsm4column2 "}]," pocytowana ":" MayQuotedTable2 "}]," MasterSyncMemberName ": null}
+To polecenie tworzy grupę synchronizacji dla usługi Azure SQL Database. "schema.js" to plik na dysku lokalnym. Zawiera ona ładład treści shema w formacie json. Przykład schematu json: {"Tables": [{"Columns": [{"QuotedName": "b3ee3a7f-7614-4644-ad07-afa832620b4bManualTestsm4column1"}, {"QuotedName": "b3ee3a7f-7614-4644-ad07-afa832620b4bManualTestsm4column2"}], "QuotedName": "MayQuotedTable1"}, {"Columns": [{"QuotedName": "b3ee3a7f-7614-4644-ad07-afa832620b4bManualTestsm4column1"}, {"QuotedName": "b3ee3a7f-7614-4644-ad07-afa832620b4bManualTestsm4column2"}], "QuotedName": "MayQuotedTable2"}], "MasterSyncMemberName": null }
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -ConflictResolutionPolicy
-Zasady rozwiązywania konfliktów między węzłem a bazą danych członków w grupie synchronizacja.
+Zasady rozwiązywania konfliktów między centrum a bazą danych członków w grupie synchronizacji.
 
 ```yaml
 Type: System.String
@@ -73,7 +73,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DatabaseCredential
+### - DatabaseCredential
 Poświadczenia uwierzytelniania SQL bazy danych centrum.
 
 ```yaml
@@ -89,7 +89,7 @@ Accept wildcard characters: False
 ```
 
 ### -DatabaseName
-Nazwa bazy danych SQL Azure Database.
+Nazwa usługi Azure SQL Database.
 
 ```yaml
 Type: System.String
@@ -104,7 +104,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -120,7 +120,7 @@ Accept wildcard characters: False
 
 ### -IntervalInSeconds
 Częstotliwość (w sekundach) wykonywania synchronizacji danych.
-Wartość domyślna to-1, co oznacza, że synchronizacja automatyczna nie jest włączona.
+Wartość domyślna to -1, co oznacza, że synchronizacja automatyczna nie jest włączona.
 
 ```yaml
 Type: System.Int32
@@ -134,7 +134,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (nazwa)
+### — Nazwa
 Nazwa grupy synchronizacji.
 
 ```yaml
@@ -179,7 +179,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Nazwa_serwera
+### -ServerName
 Nazwa serwera Azure SQL Server.
 
 ```yaml
@@ -195,7 +195,7 @@ Accept wildcard characters: False
 ```
 
 ### -SyncDatabaseName
-Baza danych używana do przechowywania metadanych powiązanych z synchronizacją.
+Baza danych używana do przechowywania powiązanych metadanych synchronizacji.
 
 ```yaml
 Type: System.String
@@ -210,7 +210,7 @@ Accept wildcard characters: False
 ```
 
 ### -SyncDatabaseResourceGroupName
-Grupa zasobów, do której należy baza danych synchronizacji metadanych.
+Grupa zasobów, do której baza metadanych należy.
 
 ```yaml
 Type: System.String
@@ -225,7 +225,7 @@ Accept wildcard characters: False
 ```
 
 ### -SyncDatabaseServerName
-Serwer, na którym znajduje się baza danych metadanych synchronizacji.
+Serwer, na którym jest hostowany baza metadanych synchronizacji.
 
 ```yaml
 Type: System.String
@@ -239,8 +239,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Potwierdź
-Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.
+### — Potwierdź
+Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -255,8 +255,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet.
-Polecenie cmdlet nie jest uruchamiane.
+Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet.
+Polecenie cmdlet nie zostanie uruchomione.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -271,21 +271,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### System. String
+### System.String
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### Microsoft. Azure. Commands. SQL. DataSync. model. AzureSqlSyncGroupModel
+### Microsoft.Azure.Commands.Sql.DataSync.Model.AzureSqlSyncGroupModel
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
-[Set-AzSqlSyncGroup](./Set-AzSqlSyncGroup.md)
 
 [Remove-AzSqlSyncGroup](./Remove-AzSqlSyncGroup.md)
 
