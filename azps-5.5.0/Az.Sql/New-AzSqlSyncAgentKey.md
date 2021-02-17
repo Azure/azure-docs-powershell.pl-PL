@@ -1,51 +1,41 @@
 ---
 external help file: Microsoft.Azure.PowerShell.Cmdlets.Sql.dll-Help.xml
 Module Name: Az.Sql
-ms.assetid: F26CB715-D66A-4672-AA47-F3B316957FC8
-online version: https://docs.microsoft.com/en-us/powershell/module/az.sql/get-azsqlserverAdvancedThreatProtectionSetting
+online version: https://docs.microsoft.com/en-us/powershell/module/az.sql/new-azsqlsyncagentkey
 schema: 2.0.0
-content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlServerAdvancedThreatProtectionSetting.md
-original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlServerAdvancedThreatProtectionSetting.md
-ms.openlocfilehash: a9d2d82ae9b35b79701d071fa7598cf40b185cd5
-ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/New-AzSqlSyncAgentKey.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/New-AzSqlSyncAgentKey.md
+ms.openlocfilehash: e6ccf84d2de6c64000a6663de5a5b696d9033eae
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100413204"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100243267"
 ---
-# Get-AzSqlServerAdvancedThreatProtectionSetting
+# New-AzSqlSyncAgentKey
 
 ## SYNOPSIS
-Pobiera zaawansowane ustawienia ochrony przed zagrożeniami dla serwera.
+Tworzy klucz agenta synchronizacji sql platformy Azure.
 
 ## SKŁADNIA
 
 ```
-Get-AzSqlServerAdvancedThreatProtectionSetting -ServerName <String> [-ResourceGroupName] <String>
+New-AzSqlSyncAgentKey [-ServerName] <String> [-SyncAgentName] <String> [-ResourceGroupName] <String>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## OPIS
-Polecenie **cmdlet Get-AzSqlServerAdvancedThreatProtectionSetting** pobiera zaawansowane ustawienia ochrony przed zagrożeniami serwera Azure SQL.
-Aby użyć tego polecenia cmdlet, określ parametry *ResourceGroupName* i *ServerName* w celu określenia serwera, na którym to polecenie cmdlet uzyskuje ustawienia.
+Polecenie **cmdlet New-AzSqlSyncAgentKey** tworzy klucz agenta azure SQL Sync Agent.
 
 ## PRZYKŁADY
 
-### Przykład 1. Uzyskiwanie zaawansowanych ustawień ochrony przed zagrożeniami dla serwera
+### Przykład 1. Tworzenie klucza agenta synchronizacji dla agenta synchronizacji azure SQL.
 ```
-PS C:\>Get-AzSqlServerAdvancedThreatProtectionSetting -ResourceGroupName "ResourceGroup11" -ServerName "Server01"
-ResourceGroupName            : ResourceGroup11
-ServerName                   : Server01
-ThreatDetectionState         : Enabled
-NotificationRecipientsEmails : admin@myCompany.com
-StorageAccountName           : mystorage
-EmailAdmins                  : True
-ExcludedDetectionTypes       : {}
-RetentionInDays              : 0
+PS C:\> New-AzSqlSyncAgentKey -ResourceGroupName "ResourceGroup01" -ServerName "Server01" -SyncAgentName "SyncAgent01"
+SyncAgentKey                  : Key
 ```
 
-To polecenie pobiera zaawansowane ustawienia ochrony przed zagrożeniami dla serwera o nazwie Server01.
-Serwer jest przypisany do grupy zasobów ResourceGroup11.
+To polecenie tworzy klucz agenta synchronizacji dla agenta azure SQL Sync Agent.
 
 ## PARAMETERS
 
@@ -65,7 +55,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Określa nazwę grupy zasobów, do której należy serwer.
+Nazwa grupy zasobów.
 
 ```yaml
 Type: System.String
@@ -80,7 +70,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServerName
-Określa nazwę serwera.
+Nazwa serwera Azure SQL Server, w którym znajduje się agent synchronizacji.
 
 ```yaml
 Type: System.String
@@ -88,7 +78,22 @@ Parameter Sets: (All)
 Aliases:
 
 Required: True
-Position: Named
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -SyncAgentName
+Nazwa agenta synchronizacji.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
 Default value: None
 Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
@@ -104,7 +109,7 @@ Aliases: cf
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -120,7 +125,7 @@ Aliases: wi
 
 Required: False
 Position: Named
-Default value: False
+Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -134,13 +139,8 @@ To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVar
 
 ## DANE WYJŚCIOWE
 
-### Microsoft.Azure.Commands.Sql.ThreatDetection.Model.ServerAdvancedThreatProtectionSettingsModel
+### Microsoft.Azure.Commands.Sql.DataSync.Model.AzureSqlSyncAgentKeyModel
 
 ## NOTATKI
 
 ## LINKI POKREWNE
-
-
-[Dokumentacja bazy danych SQL](https://docs.microsoft.com/azure/sql-database/)
-
-
