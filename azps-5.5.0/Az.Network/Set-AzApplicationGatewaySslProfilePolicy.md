@@ -5,12 +5,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/se
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzApplicationGatewaySslProfilePolicy.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Set-AzApplicationGatewaySslProfilePolicy.md
-ms.openlocfilehash: 344be8b71bc74f3620ca90dd60b61f9a59026ea0
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: 7d04d73905bde7ab008c6910cab708e209125316
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100193387"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100408002"
 ---
 # Set-AzApplicationGatewaySslProfilePolicy
 
@@ -27,7 +27,7 @@ Set-AzApplicationGatewaySslProfilePolicy -SslProfile <PSApplicationGatewaySslPro
 ```
 
 ## OPIS
-Polecenie cmdlet **Set-AzApplicationGatewaySslProfilePolicy** modyfikuje zasady SSL profilu SSL bramy aplikacji.
+Polecenie **cmdlet Set-AzApplicationGatewaySslProfilePolicy** modyfikuje zasady SSL profilu SSL bramy aplikacji.
 
 ## PRZYKŁADY
 
@@ -105,7 +105,7 @@ Accept wildcard characters: False
 ```
 
 ### -PolicyName
-Nazwa wstępnie zdefiniowanych zasad SSL
+Nazwa wstępnie zdefiniowanych zasad Ssl
 
 ```yaml
 Type: String
@@ -188,7 +188,7 @@ To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVar
 
 ### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySslProfile
 
-## DANE WYJŚCIOWE
+## OUTPUTS
 
 ### Microsoft.Azure.Commands.Network.Models.PSApplicationGatewaySslProfile
 
@@ -196,9 +196,7 @@ To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVar
 
 ## LINKI POKREWNE
 
-[Add-AzApplicationGatewaySslProfilePolicy](./Add-AzApplicationGatewaySslProfilePolicy.md)
 
-[New-AzApplicationGatewaySslProfilePolicy](./New-AzApplicationGatewaySslProfilePolicy.md)
 
 [Get-AzApplicationGatewaySslProfilePolicy](./Get-AzApplicationGatewaySslProfilePolicy.md)
 
