@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.recoveryse
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Start-AzRecoveryServicesAsrApplyRecoveryPoint.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Start-AzRecoveryServicesAsrApplyRecoveryPoint.md
-ms.openlocfilehash: 294af442998a49800f866ce1681365eae547ffd6
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 2e67ccc4fa97cc6cc5c9a212055118bbd14db785
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93708569"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399741"
 ---
 # Start-AzRecoveryServicesAsrApplyRecoveryPoint
 
-## STRESZCZENIe
-Zmienia punkt odzyskiwania dla uszkodzonego elementu chronionego przed zatwierdzeniem operacji przełączania awaryjnego.
+## SYNOPSIS
+Przed zatwierdzeniem operacji trybu failover zmienia punkt odzyskiwania dla elementu chronionego w trybie failover.
 
-## POLECENIA
+## SKŁADNIA
 
 ```
 Start-AzRecoveryServicesAsrApplyRecoveryPoint -RecoveryPoint <ASRRecoveryPoint>
@@ -26,22 +26,22 @@ Start-AzRecoveryServicesAsrApplyRecoveryPoint -RecoveryPoint <ASRRecoveryPoint>
  [<CommonParameters>]
 ```
 
-## Opis
-**Uruchomienie programu AzRecoveryServicesAsrApplyRecoveryPoint** powoduje zmianę punktu odzyskiwania dla elementu chronionego niepowodzeniem przed zatwierdzeniem operacji przełączania awaryjnego.
+## OPIS
+Przycisk **Start-AzRecoveryServicesAsrApplyRecoveryPoint** zmienia punkt odzyskiwania dla elementu, który został zabezpieczony niepowodzeniem, zanim zostanie on zatwierdzeniu operacji trybu failover.
 
-## Przykłady
+## PRZYKŁADY
 
 ### Przykład 1
 ```
 PS C:\> $currentJob = Start-AzRecoveryServicesAsrApplyRecoveryPoint -RecoveryPoint $RecoveryPoint -ReplicationProtectedItem $RPI
 ```
 
-Rozpoczyna stosowanie określonego punktu odzyskiwania do elementu chronionego replikacji i zwraca zadanie ASR używane do śledzenia operacji.
+Rozpoczyna stosowanie określonego punktu odzyskiwania do elementu chronionego replikacją i zwraca zadanie asr służące do śledzenia operacji.
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -DataEncryptionPrimaryCertFile
-Określa podstawowy plik certyfikatu, jeśli jest używane szyfrowanie danych.
+Określa plik certyfikatu podstawowego, jeśli jest używane szyfrowanie danych.
 
 ```yaml
 Type: System.String
@@ -56,7 +56,7 @@ Accept wildcard characters: False
 ```
 
 ### -DataEncryptionSecondaryCertFile
-Określa pomocniczy plik certyfikatu, jeśli jest używany szyfrowanie danych.
+Określa pomocniczy plik certyfikatu, jeśli jest używane szyfrowanie danych.
 
 ```yaml
 Type: System.String
@@ -71,7 +71,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.
 
 
 ```yaml
@@ -86,7 +86,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -RecoveryPoint
+### - RecoveryPoint
 Określa obiekt punktu odzyskiwania odpowiadający punktowi odzyskiwania, który ma zostać zastosowany.
 
 ```yaml
@@ -102,7 +102,7 @@ Accept wildcard characters: False
 ```
 
 ### -ReplicationProtectedItem
-Określa obiekt elementu chronionego replikacji ASR.
+Określa obiekt elementu chronionego replikacją asr.
 
 ```yaml
 Type: Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRReplicationProtectedItem
@@ -116,8 +116,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Potwierdź
-Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.
+### — Potwierdź
+Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -132,7 +132,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet. Polecenie cmdlet nie jest uruchamiane.
+Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet. Polecenie cmdlet nie zostanie uruchomione.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -147,18 +147,18 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### Microsoft. Azure. Commands. RecoveryServices. SiteRecovery. ASRReplicationProtectedItem
+### Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRReplicationProtectedItem
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### Microsoft. Azure. Commands. RecoveryServices. SiteRecovery. ASRJob
+### Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRJob
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
-[Polecenia cmdlet dotyczące odzyskiwania witryny Azure Site](./Az.SiteRecovery.md)
+

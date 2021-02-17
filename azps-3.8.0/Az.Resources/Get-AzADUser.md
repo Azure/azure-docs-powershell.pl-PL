@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzADUser.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzADUser.md
-ms.openlocfilehash: d0391b47e4060b2b93206c8e4d2722ca682a0db4
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 80df38532d5d5ce14b27f40bed04678e80752fca
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "93895945"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100406999"
 ---
 # Get-AzADUser
 
-## STRESZCZENIe
+## SYNOPSIS
 Umożliwia filtrowanie użytkowników usługi Active Directory.
 
-## POLECENIA
+## SKŁADNIA
 
-### EmptyParameterSet (domyślny)
+### EmptyParameterSet (domyślne)
 ```
 Get-AzADUser [-UserPrincipalName <String>] [-DefaultProfile <IAzureContextContainer>] [-IncludeTotalCount]
  [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
@@ -56,12 +56,12 @@ Get-AzADUser -Mail <String> [-DefaultProfile <IAzureContextContainer>] [-Include
  [-First <UInt64>] [<CommonParameters>]
 ```
 
-## Opis
+## OPIS
 Umożliwia filtrowanie użytkowników usługi Active Directory.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1-Lista wszystkich użytkowników
+### Przykład 1. Lista wszystkich użytkowników
 
 ```
 PS C:\> Get-AzADUser
@@ -69,7 +69,7 @@ PS C:\> Get-AzADUser
 
 Wyświetla listę wszystkich użytkowników usługi AD w dzierżawie.
 
-### Przykład 2 — Lista wszystkich użytkowników korzystających z stronicowania
+### Przykład 2. Lista wszystkich użytkowników używających stronicowania
 
 ```
 PS C:\> Get-AzADUser -First 100
@@ -77,26 +77,26 @@ PS C:\> Get-AzADUser -First 100
 
 Wyświetla listę pierwszych 100 użytkowników usługi AD w dzierżawie.
 
-### Przykład 3 — Uzyskaj użytkownika usługi AD według głównej nazwy użytkownika
+### Przykład 3. Uzyskiwanie użytkownika usługi AD według głównej nazwy użytkownika
 
 ```
 PS C:\> Get-AzADUser -UserPrincipalName foo@domain.com
 ```
 
-Pobiera użytkownika usługi AD przy użyciu głównej nazwy użytkownika " foo@domain.com ".
+Pobiera użytkownika usługi AD o głównej nazwie użytkownika" foo@domain.com ".
 
-### Przykład 4-listowy według ciągu wyszukiwania
+### Przykład 4. Lista według ciągu wyszukiwania
 
 ```
 PS C:\> Get-AzADUser -SearchString Joe
 ```
 
-Wyświetla listę wszystkich użytkowników usługi AD, których nazwa wyświetlana rozpoczyna się od "Janusz".
+Wyświetla listę wszystkich użytkowników usługi AD, których nazwa wyświetlana zaczyna się od "Jan".
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -110,7 +110,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DisplayName
+### — DisplayName
 Nazwa wyświetlana użytkownika.
 
 ```yaml
@@ -125,7 +125,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Mail
+### — Poczta
 Poczta użytkownika.
 
 ```yaml
@@ -155,8 +155,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -StartsWith
-Służy do znajdowania użytkowników zaczynających się od podanego ciągu.
+### —StartsWith
+Umożliwia znalezienie użytkowników, którzy zaczynają się od podanego ciągu.
 
 ```yaml
 Type: System.String
@@ -171,7 +171,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserPrincipalName
-UPN użytkownika.
+UpN użytkownika.
 
 ```yaml
 Type: System.String
@@ -197,8 +197,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -IncludeTotalCount
-Wyświetla liczbę obiektów w zbiorze danych. Obecnie ten parametr nie wykonuje żadnych działań.
+### - IncludeTotalCount
+Raportuje liczbę obiektów w zestawie danych. Obecnie ten parametr nie działa nic.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -212,8 +212,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Skip
-Ignoruje pierwsze N obiektów, a następnie pobiera pozostałe obiekty.
+### — Pomiń
+Ignoruje pierwsze obiekty N, a następnie pobiera pozostałe obiekty.
 
 ```yaml
 Type: System.UInt64
@@ -227,8 +227,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -First
-Maksymalna liczba obiektów do zwrócenia.
+### — Najpierw
+Maksymalna liczba obiektów, które mają być zwracane.
 
 ```yaml
 Type: System.UInt64
@@ -243,23 +243,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### System. String
+### System.String
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### Microsoft. Azure. Commands. pozycji. PSADUser
+### Microsoft.Azure.Commands.ActiveDirectory.PSADUser
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
-[Nowe — AzADUser](./New-AzADUser.md)
+[New-AzadUser](./New-AzADUser.md)
 
-[Set-AzADUser](./Set-AzADUser.md)
 
-[Remove-AzADUser](./Remove-AzADUser.md)
+[Remove-AzadUser](./Remove-AzADUser.md)
 
