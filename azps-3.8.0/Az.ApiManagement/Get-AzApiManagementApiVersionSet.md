@@ -5,21 +5,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementApiVersionSet.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementApiVersionSet.md
-ms.openlocfilehash: 2b87f3b0716c95f27a78c2a0f59168f133ade015
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 01950e8f12cdefb3bb68ab98ec8e11072c30562d
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94050913"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100407747"
 ---
 # Get-AzApiManagementApiVersionSet
 
-## STRESZCZENIe
+## SYNOPSIS
 Uzyskiwanie szczegółowych informacji o zestawach wersji interfejsu API
 
-## POLECENIA
+## SKŁADNIA
 
-### ContextParameterSet (domyślny)
+### ContextParameterSet (Domyślne)
 ```
 Get-AzApiManagementApiVersionSet -Context <PsApiManagementContext> [-ApiVersionSetId <String>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
@@ -31,14 +31,14 @@ Get-AzApiManagementApiVersionSet -Context <PsApiManagementContext> [-ApiVersionS
  -ResourceId <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **Get-AzApiManagementApiVersionSet** pobiera szczegóły zestawów wersji interfejsu API skonfigurowane w kontekście zarządzania interfejsem API.
+## OPIS
+Polecenie **cmdlet Get-AzApiManagementApiVersionSet** pobiera szczegółowe informacje o zestawach wersji interfejsu API skonfigurowanych w kontekście zarządzania interfejsem API.
 
-## Przykłady
+## PRZYKŁADY
 
 ### Przykład 1
 
-### Przykład 1: pobieranie wszystkich zestawów wersji interfejsu API
+### Przykład 1. Uzyskiwanie wszystkich zestawów wersji interfejsu API
 ```powershell
 PS C:\>$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>Get-AzApiManagementApiVersionSet -Context $ApiMgmtContext
@@ -77,7 +77,7 @@ ServiceName       : contoso
 
 To polecenie pobiera wszystkie zestawy wersji interfejsu API dla określonego kontekstu.
 
-### Przykład 2: uzyskiwanie wersji interfejsu API ustawionej na podstawie identyfikatora
+### Przykład 2. Uzyskiwanie zestawu wersji interfejsu API według identyfikatora
 ```powershell
 PS C:\>$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>Get-AzApiManagementApiVersionSet -Context $ApiMgmtContext -ApiVersionSetId $ApiVersionSetId
@@ -93,13 +93,13 @@ ResourceGroupName : Api-Default-WestUS
 ServiceName       : contoso
 ```
 
-To polecenie pobiera zestaw wersji interfejsu API z określonym IDENTYFIKATORem.
+To polecenie pobiera zestaw wersji interfejsu API z określonym identyfikatorem.
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -ApiVersionSetId
-Identyfikator API do wyszukania.
-Jeśli zostanie określona, spróbuje uzyskać interfejs API o identyfikatorze.
+Identyfikator API do wyszukiwania.
+Jeśli zostanie określona, spróbuje uzyskać interfejs API za pomocą identyfikatora.
 
 ```yaml
 Type: System.String
@@ -113,8 +113,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Context
-Wystąpienie PsApiManagementContext.
+### — kontekst
+Wystąpienie tekstu PsApiManagementContext.
 Ten parametr jest wymagany.
 
 ```yaml
@@ -130,7 +130,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -145,7 +145,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Identyfikator zasobu ARM ApiVersionSet. Jeśli zostanie określona, spróbuje znaleźć apiVersionSet za pomocą identyfikatora. Ten parametr jest wymagany.
+Identyfikator zasobu arm zestawu ApiVersionSet. Jeśli zostanie określona, spróbuje znaleźć zestaw apiVersionSet według identyfikatora. Ten parametr jest wymagany.
 
 ```yaml
 Type: System.String
@@ -160,24 +160,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### Microsoft. Azure. Commands. ApiManagement. servicemanagement. MODELES. PsApiManagementContext
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
 
-### System. String
+### System.String
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### Microsoft. Azure. Commands. ApiManagement. servicemanagement. MODELES. PsApiManagementApiVersionSet
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementApiVersionSet
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
-[Nowe — AzApiManagementApiVersionSet](./New-AzApiManagementApiVersionSet.md)
+[New-AzApiManagementApiVersionSet](./New-AzApiManagementApiVersionSet.md)
 
 [Remove-AzApiManagementApiSet](./Remove-AzApiManagementApiVersionSet.md)
 
-[Set-AzApiManagementApiVersionSet](./Set-AzApiManagementApiSet.md)
+[Set-AzApiManagementApiVersionSet](./Set-AzApiManagementApiVersionSet.md)

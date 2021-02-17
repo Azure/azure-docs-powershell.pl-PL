@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzVpnClientPackage.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzVpnClientPackage.md
-ms.openlocfilehash: 8eba8d26bcac5de16be3e2cda5e8ca80356aea11
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: ec91fecd41138238bc4d89fa81d77bae4730c770
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100191914"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100407611"
 ---
 # Get-AzVpnClientPackage
 
@@ -26,7 +26,7 @@ Get-AzVpnClientPackage -ResourceGroupName <String> -VirtualNetworkGatewayName <S
 ```
 
 ## OPIS
-Polecenie **cmdlet Get-AzVpnClientPackage** pobiera informacje o pakietach klienckich VPN dostępnych z bramy sieci wirtualnej.
+Polecenie **cmdlet Get-AzVpnClientPackage** pobiera informacje o pakietach klienta VPN dostępnych z bramy sieci wirtualnej.
 Pakiety klientów zawierają dane konfiguracji, które umożliwiają klientowi nawiązaniu połączenia VPN z siecią wirtualną platformy Azure; komputery klienckie muszą mieć zainstalowany właściwy pakiet konfiguracji, aby można było nawiązaniu połączenia VPN.
 Różne pakiety konfiguracji są dostępne w zależności od wersji systemu Windows na komputerze klienckim (na przykład systemu Windows 7 lub Windows 10) i architektury procesora komputera klienckiego (AMD64 lub x86).
 Podczas uruchamiania usługi **Get-AzVpnClientPackage** musisz określić typ architektury.
@@ -39,7 +39,7 @@ PS C:\>Get-AzVpnClientPackage -ProcessorArchitecture -VirtualNetworkGatewayName 
 ```
 
 To polecenie pobiera informacje o pakietach klienckich SIECI VPN AMD64 przechowywanych w wirtualnej bramie sieciowej o nazwie ContosoVirtualNetworkGateway.
-Aby uzyskać informacje na temat pakietów klienta x86, ustaw wartość parametru *ProcessorArchitecture* na wartość x86.
+Aby uzyskać informacje na temat pakietów klienta x86, ustaw wartość parametru *ProcessorArchitecture* na x86.
 
 ## PARAMETERS
 
@@ -123,6 +123,5 @@ To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVar
 
 [Resize-AzVirtualNetworkGateway](./Resize-AzVirtualNetworkGateway.md)
 
-[Set-AzVirtualNetworkGatewayVpnClientConfig](./Set-AzVirtualNetworkGatewayVpnClientConfig.md)
 
 

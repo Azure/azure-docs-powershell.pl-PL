@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzADApplication.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzADApplication.md
-ms.openlocfilehash: 18b5f64426b0a3c458ea489d27781f1a01336b52
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 545722e48095f8b77104bb6ff24b856bd76e3312
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93886461"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100407815"
 ---
 # Get-AzADApplication
 
-## STRESZCZENIe
-Wyświetla istniejące aplikacje usługi Azure Active Directory.
+## SYNOPSIS
+Lista istniejących aplikacji usługi Azure Active Directory.
 
-## POLECENIA
+## SKŁADNIA
 
-### EmptyParameterSet (domyślny)
+### EmptyParameterSet (Domyślne)
 ```
 Get-AzADApplication [-DefaultProfile <IAzureContextContainer>] [-IncludeTotalCount] [-Skip <UInt64>]
  [-First <UInt64>] [<CommonParameters>]
@@ -56,38 +56,38 @@ Get-AzADApplication -IdentifierUri <String> [-DefaultProfile <IAzureContextConta
  [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-## Opis
-Wyświetla istniejące aplikacje usługi Azure Active Directory.
-Wyszukiwanie aplikacji można przeprowadzić przez ObjectId, identyfikator aplikacji, IdentifierUri lub DisplayName.
-Jeśli nie podano parametru, pobiera wszystkie aplikacje w ramach dzierżawy.
+## OPIS
+Lista istniejących aplikacji usługi Azure Active Directory.
+Odnośnik aplikacji może być wykonywane przez obiekt ObjectId, ApplicationId, IdentyfikatorUri lub DisplayName.
+Jeśli nie podano parametru, pobiera on wszystkie aplikacje w ramach dzierżawy.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1-Lista wszystkich aplikacji
+### Przykład 1. Lista wszystkich aplikacji
 
 ```
 PS C:\> Get-AzADApplication
 ```
 
-Wyświetla listę wszystkich aplikacji w dzierżawie.
+Wyświetla listę wszystkich aplikacji w ramach dzierżawy.
 
-### Przykład 2-Lista aplikacji przy użyciu stronicowania
+### Przykład 2. Lista aplikacji używających stronicowania
 
 ```
 PS C:\> Get-AzADApplication -First 100
 ```
 
-Wyświetla listę pierwszych aplikacji 100 w ramach dzierżawy.
+Wyświetla listę pierwszych 100 aplikacji w ramach dzierżawy.
 
-### Przykład 3 — Uzyskaj identyfikator aplikacji według identyfikatora URI
+### Przykład 3. Uzyskiwanie aplikacji za pomocą identyfikatora URI
 
 ```
 PS C:\> Get-AzADApplication -IdentifierUri http://mySecretApp1
 ```
 
-Pobiera aplikację o identyfikatorze URI " http://mySecretApp1 ".
+Pobiera aplikację z identyfikatorem uri jako " http://mySecretApp1 ".
 
-### Przykład 4 — Pobierz aplikację według identyfikatora obiektu
+### Przykład 4. Uzyskiwanie aplikacji według identyfikatora obiektu
 
 ```
 PS C:\> Get-AzADApplication -ObjectId 39e64ec6-569b-4030-8e1c-c3c519a05d69
@@ -95,10 +95,10 @@ PS C:\> Get-AzADApplication -ObjectId 39e64ec6-569b-4030-8e1c-c3c519a05d69
 
 Pobiera aplikację o identyfikatorze obiektu "39e64ec6-569b-4030-8e1c-c3c519a05d69".
 
-## PARAMETRÓW
+## PARAMETERS
 
-### -Identyfikator aplikacji
-Identyfikator aplikacji, którą należy pobrać.
+### -ApplicationId
+Identyfikator aplikacji do pobrania.
 
 ```yaml
 Type: System.Guid
@@ -113,7 +113,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -127,7 +127,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DisplayName
+### — DisplayName
 Nazwa wyświetlana aplikacji.
 
 ```yaml
@@ -143,7 +143,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayNameStartWith
-Pobierz wszystkie aplikacje, rozpoczynając od nazwy wyświetlanej.
+Pobieraj wszystkie aplikacje, zaczynając od nazwy wyświetlanej.
 
 ```yaml
 Type: System.String
@@ -158,7 +158,7 @@ Accept wildcard characters: False
 ```
 
 ### -IdentifierUri
-Unikatowy identyfikator identyfikator URI aplikacji do pobrania.
+Unikatowy identyfikator Uri aplikacji w celu zdalnego dostępu.
 
 ```yaml
 Type: System.String
@@ -187,8 +187,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -IncludeTotalCount
-Wyświetla liczbę obiektów w zbiorze danych. Obecnie ten parametr nie wykonuje żadnych działań.
+### - IncludeTotalCount
+Raportuje liczbę obiektów w zestawie danych. Obecnie ten parametr nie działa nic.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -202,8 +202,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Skip
-Ignoruje pierwsze N obiektów, a następnie pobiera pozostałe obiekty.
+### — Pomiń
+Ignoruje pierwsze obiekty N, a następnie pobiera pozostałe obiekty.
 
 ```yaml
 Type: System.UInt64
@@ -217,8 +217,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -First
-Maksymalna liczba obiektów do zwrócenia.
+### — Najpierw
+Maksymalna liczba obiektów, które mają być zwracane.
 
 ```yaml
 Type: System.UInt64
@@ -233,31 +233,30 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### System. String
+### System.String
 
-### System. GUID
+### System.Guid
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### Microsoft. Azure. Commands. pozycji. PSADApplication
+### Microsoft.Azure.Commands.ActiveDirectory.PSADApplication
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
-[Remove-AzADAppCredential](./Remove-AzADAppCredential.md)
+[Remove-AzadAppCredential](./Remove-AzADAppCredential.md)
 
-[Nowe — AzADAppCredential](./New-AzADAppCredential.md)
+[New-AzadAppCredential](./New-AzADAppCredential.md)
 
-[Get-AzADAppCredential](./Get-AzADAppCredential.md)
+[Get-AzadAppCredential](./Get-AzADAppCredential.md)
 
-[Remove-AzADApplication](./Remove-AzADApplication.md)
+[Remove-AzadApplication](./Remove-AzADApplication.md)
 
-[Set-AzADApplication](./Set-AzADApplication.md)
 
-[Nowe — AzADApplication](./New-AzADApplication.md)
+[New-AzadApplication](./New-AzADApplication.md)
 
