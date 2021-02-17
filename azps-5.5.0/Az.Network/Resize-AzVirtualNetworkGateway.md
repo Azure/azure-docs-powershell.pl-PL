@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/re
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Resize-AzVirtualNetworkGateway.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Resize-AzVirtualNetworkGateway.md
-ms.openlocfilehash: dd48af6a0f20cafea5911adb629a83323faa94a6
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: 31ec0453b0ce64c27d1bb37d4bf6c0f100a8c760
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100184243"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100405146"
 ---
 # Resize-AzVirtualNetworkGateway
 
@@ -43,7 +43,7 @@ PS C:\> Resize-AzVirtualNetworkGateway -VirtualNetworkGateway $Gateway -GatewayS
 
 W tym przykładzie zmienia się rozmiar bramy sieci wirtualnej o nazwie ContosoVirtualGateway.
 Pierwsze polecenie tworzy odwołanie do obiektu ContosoVirtualGateway. to odwołanie do obiektu jest przechowywane w zmiennej o nazwie $Gateway.
-Drugie polecenie użyje polecenia cmdlet **Resize-AzVirtualNetworkGateway** w celu ustawienia właściwości *GatewaySku* na Wartość Podstawowa.
+Drugie polecenie używa następnie polecenia cmdlet **Resize-AzVirtualNetworkGateway** w celu ustawienia właściwości *GatewaySku* na Wartość Podstawowa.
 
 ## PARAMETERS
 
@@ -116,7 +116,7 @@ To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVar
 
 ### System.String
 
-## DANE WYJŚCIOWE
+## OUTPUTS
 
 ### Microsoft.Azure.Commands.Network.Models.PSVirtualNetworkGateway
 
@@ -137,4 +137,3 @@ Nie można zmienić rozmiaru z wersji Basic/Standard/HighPerformance na nowe jed
 
 [Get-AzVpnClientPackage](./Get-AzVpnClientPackage.md)
 
-[Set-AzVirtualNetworkGatewayVpnClientConfig](./Set-AzVirtualNetworkGatewayVpnClientConfig.md)
