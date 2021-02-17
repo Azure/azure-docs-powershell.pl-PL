@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/re
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Monitor/Monitor/help/Remove-AzActionGroup.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/Azs-tzl/src/Monitor/Monitor/help/Remove-AzActionGroup.md
-ms.openlocfilehash: 25185202bd0804960c6803b98955e62ab9410c76
-ms.sourcegitcommit: 4c61442a2df1cee633ce93cad9f6bc793803baa2
+ms.openlocfilehash: 2e7240f607d2c9ed426c35f9427452640ceec84f
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "93891089"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399349"
 ---
 # Remove-AzActionGroup
 
-## STRESZCZENIe
+## SYNOPSIS
 Usuwa grupę akcji.
 
-## POLECENIA
+## SKŁADNIA
 
-### ByPropertyName (domyślny)
+### ByPropertyName (Default)
 ```
 Remove-AzActionGroup -ResourceGroupName <String> -Name <String> [-DefaultProfile <IAzureContextContainer>]
  [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -38,12 +38,12 @@ Remove-AzActionGroup -InputObject <PSActionGroupResource> [-DefaultProfile <IAzu
  [-Confirm] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **Remove-AzActionGroup** usuwa grupę Actions.
+## OPIS
+Polecenie **cmdlet Remove-AzActionGroup** usuwa grupę akcji.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1. Usuń grupę akcji
+### Przykład 1. Usuwanie grupy akcji
 ```
 PS C:\>Remove-AzActionGroup -ResourceGroup "Default-Web-CentralUS" -Name "myActionGroup"
 RequestId                                                                                                    StatusCode
@@ -51,10 +51,10 @@ RequestId                                                                       
 2c6c159b-0e73-4a01-a67b-c32c1a0008a3                                                                                 OK
 ```
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -68,8 +68,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Inputobject
-Zasób grupa akcji
+### -InputObject
+Zasób grupy akcji
 
 ```yaml
 Type: Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupResource
@@ -83,7 +83,7 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Name (nazwa)
+### — Nazwa
 Nazwa grupy akcji.
 
 ```yaml
@@ -99,7 +99,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Grupa zasobów
+Nazwa grupy zasobów
 
 ```yaml
 Type: System.String
@@ -128,8 +128,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Potwierdź
-Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.
+### — Potwierdź
+Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -144,7 +144,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet. Polecenie cmdlet nie jest uruchamiane.
+Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet. Polecenie cmdlet nie zostanie uruchomione.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -159,22 +159,22 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### System. String
+### System.String
 
-### Microsoft. Azure. Commands. Insights. OutputClasses. PSActionGroupResource
+### Microsoft.Azure.Commands.Insights.OutputClasses.PSActionGroupResource
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### Microsoft. Azure. AzureOperationResponse
+### Microsoft.Azure.AzureOperationResponse
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
 [Set-AzActionGroup](./Set-AzActionGroup.md) 
- [Get-AzActionGroup](./Get-AzActionGroup.md) 
- [Nowe — AzActionGroupReceiver](./AzureRmActionGroupReceiver.md)
+ [Get-AzActionGroup](./Get-AzActionGroup.md)
+

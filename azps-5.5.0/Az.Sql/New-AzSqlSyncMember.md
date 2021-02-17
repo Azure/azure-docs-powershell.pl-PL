@@ -5,12 +5,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.sql/new-az
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/New-AzSqlSyncMember.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/New-AzSqlSyncMember.md
-ms.openlocfilehash: 5846435df4921e425e12e908539849fda0bd2472
-ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
+ms.openlocfilehash: f7fc860711c5037e6ce6390f9fb7d79ddfa7d6ce
+ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "100399536"
+ms.lasthandoff: 02/09/2021
+ms.locfileid: "100196091"
 ---
 # New-AzSqlSyncMember
 
@@ -23,7 +23,8 @@ Tworzy członka synchronizacji usługi Azure SQL Database.
 ```
 New-AzSqlSyncMember -Name <String> -MemberDatabaseType <String> -MemberServerName <String>
  -MemberDatabaseName <String> -MemberDatabaseCredential <PSCredential> [-SyncDirection <String>]
- [-SyncGroupName] <String> [-ServerName] <String> [-DatabaseName] <String> [-ResourceGroupName] <String>
+ [-UsePrivateLinkConnection] [-SyncMemberAzureDatabaseResourceId <String>] [-SyncGroupName] <String>
+ [-ServerName] <String> [-DatabaseName] <String> [-ResourceGroupName] <String>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
@@ -31,14 +32,16 @@ New-AzSqlSyncMember -Name <String> -MemberDatabaseType <String> -MemberServerNam
 ```
 New-AzSqlSyncMember -Name <String> -MemberDatabaseType <String> -SyncAgentResourceGroupName <String>
  -SyncAgentServerName <String> -SyncAgentName <String> -SqlServerDatabaseId <String> [-SyncDirection <String>]
- [-SyncGroupName] <String> [-ServerName] <String> [-DatabaseName] <String> [-ResourceGroupName] <String>
+ [-UsePrivateLinkConnection] [-SyncMemberAzureDatabaseResourceId <String>] [-SyncGroupName] <String>
+ [-ServerName] <String> [-DatabaseName] <String> [-ResourceGroupName] <String>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### OnPremisesDatabaseSyncAgentResourceID
 ```
 New-AzSqlSyncMember -Name <String> -MemberDatabaseType <String> -SqlServerDatabaseId <String>
- -SyncAgentResourceID <String> [-SyncDirection <String>] [-SyncGroupName] <String> [-ServerName] <String>
+ -SyncAgentResourceID <String> [-SyncDirection <String>] [-UsePrivateLinkConnection]
+ [-SyncMemberAzureDatabaseResourceId <String>] [-SyncGroupName] <String> [-ServerName] <String>
  [-DatabaseName] <String> [-ResourceGroupName] <String> [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
  [-Confirm] [<CommonParameters>]
 ```
@@ -341,6 +344,36 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
+### -SyncMemberAzureDatabaseResourceId
+Identyfikator zasobu dla bazy danych członka synchronizacji, używany w przypadku ustawienia UsePrivateLinkConnection na wartość True (Prawda).
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -UsePrivateLinkConnection
+Podczas nawiązywania połączenia z tym członkiem synchronizacji użyj prywatnego połączenia linku.
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### — Potwierdź
 Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.
 
@@ -373,7 +406,7 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
 ## DANE WEJŚCIOWE
 
@@ -389,6 +422,7 @@ To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVar
 
 [Get-AzSqlSyncMember](./Get-AzSqlSyncMember.md)
 
+[Update-AzSqlSyncMember](./Update-AzSqlSyncMember.md)
 
 [Remove-AzSqlSyncMember](./Remove-AzSqlSyncMember.md)
 

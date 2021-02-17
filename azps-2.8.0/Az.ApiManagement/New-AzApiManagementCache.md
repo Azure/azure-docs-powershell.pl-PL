@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementCache.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementCache.md
-ms.openlocfilehash: 90da707ce34c191a33a68473f41555a33c0e35b9
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: d4095c1a20c4cebc3fb5f9b58f6f696c9cf41dc7
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93707022"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100399417"
 ---
 # New-AzApiManagementCache
 
-## STRESZCZENIe
+## SYNOPSIS
 Tworzy nową jednostkę pamięci podręcznej
 
-## POLECENIA
+## SKŁADNIA
 
 ```
 New-AzApiManagementCache -Context <PsApiManagementContext> [-CacheId <String>] -ConnectionString <String>
@@ -25,10 +25,10 @@ New-AzApiManagementCache -Context <PsApiManagementContext> [-CacheId <String>] -
  [-Confirm] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **New-AzApiManagementCache** tworzy nową jednostkę pamięci podręcznej w usłudze zarządzania interfejsem API.
+## OPIS
+Polecenie cmdlet **New-AzApiManagementCache** tworzy nową jednostkę pamięci podręcznej w usłudze zarządzania interfejsami API.
 
-## Przykłady
+## PRZYKŁADY
 
 ### Przykład 1. Tworzenie nowej jednostki pamięci podręcznej
 ```powershell
@@ -44,12 +44,12 @@ ResourceGroupName : Api-Default-WestUS
 ServiceName       : contoso
 ```
 
-Polecenia cmdlet tworzą nową jednostkę pamięci podręcznej w lokalizacji głównej usługi zarządzania interfejsem API.
+Polecenia cmdlet tworzą nową jednostkę pamięci podręcznej w głównej lokalizacji usługi zarządzania interfejsami API.
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -AzureRedisResourceId
-Identyfikator zasobu ARM w wystąpieniu pamięci podręcznej usługi Azure Redis. Ten parametr jest opcjonalny.
+Arm ResourceId wystąpienia usługi Azure Redis Cache. Ten parametr jest opcjonalny.
 
 ```yaml
 Type: System.String
@@ -63,10 +63,10 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -CacheId
+### - CacheId
 Identyfikator nowej pamięci podręcznej.
 Ten parametr jest opcjonalny.
-Jeśli nie określono, zostanie wygenerowana.
+Jeśli nie określono, zostanie wygenerowany.
 
 ```yaml
 Type: System.String
@@ -80,8 +80,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -ConnectionString
-Parametry połączenia Redis.
+### - ConnectionString
+Redis Connection String (Redis Connection String).
 Ten parametr jest wymagany.
 
 ```yaml
@@ -96,8 +96,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Context
-Wystąpienie PsApiManagementContext.
+### — kontekst
+Wystąpienie tekstu PsApiManagementContext.
 Ten parametr jest wymagany.
 
 ```yaml
@@ -113,7 +113,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -143,8 +143,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Potwierdź
-Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.
+### — Potwierdź
+Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -159,8 +159,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet.
-Polecenie cmdlet nie jest uruchamiane.
+Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet.
+Polecenie cmdlet nie zostanie uruchomione.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -175,24 +175,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### Microsoft. Azure. Commands. ApiManagement. servicemanagement. MODELES. PsApiManagementContext
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
 
-### System. String
+### System.String
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### Microsoft. Azure. Commands. ApiManagement. servicemanagement. MODELES. PsApiManagementCache
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementCache
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
-[Get-AzApiManagementCache](./Get-AzApiManagementCache)
-
-[Set-AzApiManagementCache](./Set-AzApiManagementCache.md)
+[Get-AzApiManagementCache](./Get-AzApiManagementCache.md)
 
 [Remove-AzApiManagementCache](./Remove-AzApiManagementCache.md)
+
+[Update-AzApiManagementCache](./Update-AzApiManagementCache.md)

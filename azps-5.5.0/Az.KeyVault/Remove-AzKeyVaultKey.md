@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/r
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultKey.md
-ms.openlocfilehash: e78b6729061efe5a83f31bd25b9e542c09627ca3
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: 3c5435d1a472341d0447ead2f384fa892d6e1202
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100185538"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100404483"
 ---
 # Remove-AzKeyVaultKey
 
@@ -40,8 +40,8 @@ Remove-AzKeyVaultKey [-InputObject] <PSKeyVaultKeyIdentityItem> [-Force] [-PassT
 
 ## OPIS
 Polecenie Remove-AzKeyVaultKey cmdlet usuwa klucz z magazynu kluczy.
-Jeśli klucz został przypadkowo usunięty, można go odzyskać za Undo-AzKeyVaultKeyRemoval użytkownika ze specjalnymi uprawnieniami do odzyskiwania.
-To polecenie cmdlet ma wartość wysoką dla **właściwości ConfirmImpact.**
+Jeśli klucz został przypadkowo usunięty, może zostać odzyskany za Undo-AzKeyVaultKeyRemoval użytkownika ze specjalnymi uprawnieniami do odzyskiwania.
+To polecenie cmdlet ma wartość wysoką dla właściwości **ConfirmImpact.**
 
 ## PRZYKŁADY
 
@@ -71,7 +71,7 @@ PS C:\> Remove-AzKeyVaultKey -VaultName 'Contoso' -Name 'ITSoftware' -Force
 ```
 
 To polecenie usuwa klucz o nazwie ITSoftware z magazynu kluczy o nazwie Contoso.
-Polecenie określa parametr *Force,* dlatego polecenie cmdlet nie wyświetla monitu o potwierdzenie.
+Polecenie określa parametr *Force,* dlatego polecenie cmdlet nie monituje o potwierdzenie.
 
 ### Przykład 3. Trwałe przeczyszczanie usuniętego klucza z magazynu kluczy
 ```powershell
@@ -108,7 +108,7 @@ Accept wildcard characters: False
 ```
 
 ### — Wymuszanie
-Wymusza uruchomienie polecenia bez pytania o potwierdzenie przez użytkownika.
+Wymusza uruchomienie polecenia bez pytania o potwierdzenie użytkownika.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -254,7 +254,7 @@ To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVar
 
 ### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKeyIdentityItem
 
-## DANE WYJŚCIOWE
+## OUTPUTS
 
 ### Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultKey
 
@@ -266,7 +266,6 @@ To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVar
 
 [Get-AzKeyVaultKey](./Get-AzKeyVaultKey.md)
 
-[Set-AzKeyVaultKeyAttribute](./Set-AzKeyVaultKeyAttribute.md)
 
 [Undo-AzKeyVaultKeyRemoval](./Undo-AzKeyVaultKeyRemoval.md)
 
