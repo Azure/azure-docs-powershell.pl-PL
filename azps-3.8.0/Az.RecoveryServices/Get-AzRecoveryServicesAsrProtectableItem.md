@@ -5,51 +5,51 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.recoveryse
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Get-AzRecoveryServicesAsrProtectableItem.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Get-AzRecoveryServicesAsrProtectableItem.md
-ms.openlocfilehash: c9c50e26e99493fb693b8bded693bceb24f5a40f
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: da9dd3d7b1ed0a54a34fdf5c8a0c9d65b507a07b
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94049581"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100400607"
 ---
-# <span data-ttu-id="e2cb5-101">Get-AzRecoveryServicesAsrProtectableItem</span><span class="sxs-lookup"><span data-stu-id="e2cb5-101">Get-AzRecoveryServicesAsrProtectableItem</span></span>
+# <span data-ttu-id="8a3ec-101">Get-AzRecoveryServicesAsrProtectableItem</span><span class="sxs-lookup"><span data-stu-id="8a3ec-101">Get-AzRecoveryServicesAsrProtectableItem</span></span>
 
-## <span data-ttu-id="e2cb5-102">STRESZCZENIe</span><span class="sxs-lookup"><span data-stu-id="e2cb5-102">SYNOPSIS</span></span>
-<span data-ttu-id="e2cb5-103">Pobierz elementy do ochrony w kontenerze ochrona przed Autoodzyskiwaniem.</span><span class="sxs-lookup"><span data-stu-id="e2cb5-103">Get the protectable items in an ASR protection container.</span></span>
+## <span data-ttu-id="8a3ec-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="8a3ec-102">SYNOPSIS</span></span>
+<span data-ttu-id="8a3ec-103">Pobierz elementy, które można chronić, w kontenerze ochrony asr.</span><span class="sxs-lookup"><span data-stu-id="8a3ec-103">Get the protectable items in an ASR protection container.</span></span>
 
-## <span data-ttu-id="e2cb5-104">POLECENIA</span><span class="sxs-lookup"><span data-stu-id="e2cb5-104">SYNTAX</span></span>
+## <span data-ttu-id="8a3ec-104">SKŁADNIA</span><span class="sxs-lookup"><span data-stu-id="8a3ec-104">SYNTAX</span></span>
 
-### <span data-ttu-id="e2cb5-105">ByObject (domyślny)</span><span class="sxs-lookup"><span data-stu-id="e2cb5-105">ByObject (Default)</span></span>
+### <span data-ttu-id="8a3ec-105">ByObject (Domyślne)</span><span class="sxs-lookup"><span data-stu-id="8a3ec-105">ByObject (Default)</span></span>
 ```
 Get-AzRecoveryServicesAsrProtectableItem -ProtectionContainer <ASRProtectionContainer>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="e2cb5-106">ByObjectWithName</span><span class="sxs-lookup"><span data-stu-id="e2cb5-106">ByObjectWithName</span></span>
+### <span data-ttu-id="8a3ec-106">ByObjectWithName</span><span class="sxs-lookup"><span data-stu-id="8a3ec-106">ByObjectWithName</span></span>
 ```
 Get-AzRecoveryServicesAsrProtectableItem -Name <String> -ProtectionContainer <ASRProtectionContainer>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="e2cb5-107">ByObjectWithFriendlyName</span><span class="sxs-lookup"><span data-stu-id="e2cb5-107">ByObjectWithFriendlyName</span></span>
+### <span data-ttu-id="8a3ec-107">ByObjectWithFriendlyName</span><span class="sxs-lookup"><span data-stu-id="8a3ec-107">ByObjectWithFriendlyName</span></span>
 ```
 Get-AzRecoveryServicesAsrProtectableItem -FriendlyName <String> -ProtectionContainer <ASRProtectionContainer>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="e2cb5-108">Opis</span><span class="sxs-lookup"><span data-stu-id="e2cb5-108">DESCRIPTION</span></span>
-<span data-ttu-id="e2cb5-109">Polecenie cmdlet **Get-AzRecoveryServicesAsrProtectableItem** Pobiera elementy, które należy chronić w kontenerze ochrona odzyskiwania witryny platformy Azure.</span><span class="sxs-lookup"><span data-stu-id="e2cb5-109">The **Get-AzRecoveryServicesAsrProtectableItem** cmdlet gets the protectable items in an Azure Site Recovery Protection Container.</span></span>
+## <span data-ttu-id="8a3ec-108">OPIS</span><span class="sxs-lookup"><span data-stu-id="8a3ec-108">DESCRIPTION</span></span>
+<span data-ttu-id="8a3ec-109">Polecenie **cmdlet Get-AzRecoveryServicesAsrProtectableItem** pobiera elementy, które można chronić, w kontenerze Azure Site Recovery Protection Container.</span><span class="sxs-lookup"><span data-stu-id="8a3ec-109">The **Get-AzRecoveryServicesAsrProtectableItem** cmdlet gets the protectable items in an Azure Site Recovery Protection Container.</span></span>
 
-## <span data-ttu-id="e2cb5-110">Przykłady</span><span class="sxs-lookup"><span data-stu-id="e2cb5-110">EXAMPLES</span></span>
+## <span data-ttu-id="8a3ec-110">PRZYKŁADY</span><span class="sxs-lookup"><span data-stu-id="8a3ec-110">EXAMPLES</span></span>
 
-### <span data-ttu-id="e2cb5-111">Przykład 1</span><span class="sxs-lookup"><span data-stu-id="e2cb5-111">Example 1</span></span>
+### <span data-ttu-id="8a3ec-111">Przykład 1</span><span class="sxs-lookup"><span data-stu-id="8a3ec-111">Example 1</span></span>
 ```
 PS C:\> $ProtectableItems = Get-AzRecoveryServicesAsrProtectableItem -ProtectionContainer $Container
 ```
 
-<span data-ttu-id="e2cb5-112">Pobiera wszystkie elementy chronione w określonym kontenerze ochrony przed ASR.</span><span class="sxs-lookup"><span data-stu-id="e2cb5-112">Gets all the protectable items in specified ASR protection container.</span></span>
+<span data-ttu-id="8a3ec-112">Pobiera wszystkie elementy, które można chronić, w określonym kontenerze ochrony asr.</span><span class="sxs-lookup"><span data-stu-id="8a3ec-112">Gets all the protectable items in specified ASR protection container.</span></span>
 
-### <span data-ttu-id="e2cb5-113">Przykład 2</span><span class="sxs-lookup"><span data-stu-id="e2cb5-113">Example 2</span></span>
+### <span data-ttu-id="8a3ec-113">Przykład 2</span><span class="sxs-lookup"><span data-stu-id="8a3ec-113">Example 2</span></span>
 ```
 PS C:\> Get-ASRProtectableItem -ProtectionContainer $pc -FriendlyName $piFriendlyName
 
@@ -70,9 +70,9 @@ ReplicationProtectedItemId    :
 SupportedReplicationProviders : {InMage, InMageAzureV2}
 ```
 
-<span data-ttu-id="e2cb5-114">Pobierz elementy, które mają być chronione w określonym kontenerze ochrona przed ASR, i podano przyjazną nazwę.</span><span class="sxs-lookup"><span data-stu-id="e2cb5-114">Get the protectable items in specified ASR protection container and with given friendly name.</span></span>
+<span data-ttu-id="8a3ec-114">Pobierz elementy, które można chronić, w określonym kontenerze ochrony asr i nadaj im przyjazną nazwę.</span><span class="sxs-lookup"><span data-stu-id="8a3ec-114">Get the protectable items in specified ASR protection container and with given friendly name.</span></span>
 
-### <span data-ttu-id="e2cb5-115">Przykład 3</span><span class="sxs-lookup"><span data-stu-id="e2cb5-115">Example 3</span></span>
+### <span data-ttu-id="8a3ec-115">Przykład 3</span><span class="sxs-lookup"><span data-stu-id="8a3ec-115">Example 3</span></span>
 ```
 PS C:\> Get-ASRProtectableItem -ProtectionContainer $pc -Name $piName
 
@@ -93,12 +93,12 @@ ReplicationProtectedItemId    :
 SupportedReplicationProviders : {InMage, InMageAzureV2}
 ```
 
-<span data-ttu-id="e2cb5-116">Pobiera wszystkie elementy chronione w określonym kontenerze ochrony przed ASR.</span><span class="sxs-lookup"><span data-stu-id="e2cb5-116">Gets all the protectable items in specified ASR protection container.</span></span>
+<span data-ttu-id="8a3ec-116">Pobiera wszystkie elementy, które można chronić, w określonym kontenerze ochrony asr.</span><span class="sxs-lookup"><span data-stu-id="8a3ec-116">Gets all the protectable items in specified ASR protection container.</span></span>
 
-## <span data-ttu-id="e2cb5-117">PARAMETRÓW</span><span class="sxs-lookup"><span data-stu-id="e2cb5-117">PARAMETERS</span></span>
+## <span data-ttu-id="8a3ec-117">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="8a3ec-117">PARAMETERS</span></span>
 
-### <span data-ttu-id="e2cb5-118">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="e2cb5-118">-DefaultProfile</span></span>
-<span data-ttu-id="e2cb5-119">Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.</span><span class="sxs-lookup"><span data-stu-id="e2cb5-119">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+### <span data-ttu-id="8a3ec-118">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="8a3ec-118">-DefaultProfile</span></span>
+<span data-ttu-id="8a3ec-119">Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.</span><span class="sxs-lookup"><span data-stu-id="8a3ec-119">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
 
 
 ```yaml
@@ -113,8 +113,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="e2cb5-120">-FriendlyName</span><span class="sxs-lookup"><span data-stu-id="e2cb5-120">-FriendlyName</span></span>
-<span data-ttu-id="e2cb5-121">Określa przyjazną nazwę elementu z możliwością ochrony przed ASR.</span><span class="sxs-lookup"><span data-stu-id="e2cb5-121">Specifies the friendly name of the ASR protectable item.</span></span>
+### <span data-ttu-id="8a3ec-120">-FriendlyName</span><span class="sxs-lookup"><span data-stu-id="8a3ec-120">-FriendlyName</span></span>
+<span data-ttu-id="8a3ec-121">Określa przyjazną nazwę elementu, który można chronić przez asr.</span><span class="sxs-lookup"><span data-stu-id="8a3ec-121">Specifies the friendly name of the ASR protectable item.</span></span>
 
 ```yaml
 Type: System.String
@@ -128,8 +128,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="e2cb5-122">-Name (nazwa)</span><span class="sxs-lookup"><span data-stu-id="e2cb5-122">-Name</span></span>
-<span data-ttu-id="e2cb5-123">Określa nazwę elementu do ochrony przed ASR.</span><span class="sxs-lookup"><span data-stu-id="e2cb5-123">Specifies the name of the ASR protectable item.</span></span>
+### <span data-ttu-id="8a3ec-122">— Nazwa</span><span class="sxs-lookup"><span data-stu-id="8a3ec-122">-Name</span></span>
+<span data-ttu-id="8a3ec-123">Określa nazwę elementu, który można chronić przez asr.</span><span class="sxs-lookup"><span data-stu-id="8a3ec-123">Specifies the name of the ASR protectable item.</span></span>
 
 ```yaml
 Type: System.String
@@ -143,8 +143,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="e2cb5-124">-ProtectionContainer</span><span class="sxs-lookup"><span data-stu-id="e2cb5-124">-ProtectionContainer</span></span>
-<span data-ttu-id="e2cb5-125">Określa obiekt kontenera ochrony przed odzyskiwaniem witryny Azure.</span><span class="sxs-lookup"><span data-stu-id="e2cb5-125">Specifies the Azure Site Recovery Protection Container object.</span></span>
+### <span data-ttu-id="8a3ec-124">-ProtectionContainer</span><span class="sxs-lookup"><span data-stu-id="8a3ec-124">-ProtectionContainer</span></span>
+<span data-ttu-id="8a3ec-125">Określa obiekt Kontener ochrony przed odzyskiwaniem witryn platformy Azure.</span><span class="sxs-lookup"><span data-stu-id="8a3ec-125">Specifies the Azure Site Recovery Protection Container object.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProtectionContainer
@@ -158,21 +158,19 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="e2cb5-126">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="e2cb5-126">CommonParameters</span></span>
-<span data-ttu-id="e2cb5-127">To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="e2cb5-127">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="e2cb5-128">Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="e2cb5-128">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="8a3ec-126">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="8a3ec-126">CommonParameters</span></span>
+<span data-ttu-id="8a3ec-127">To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="8a3ec-127">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="8a3ec-128">Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="8a3ec-128">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="e2cb5-129">WEJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="e2cb5-129">INPUTS</span></span>
+## <span data-ttu-id="8a3ec-129">DANE WEJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="8a3ec-129">INPUTS</span></span>
 
-### <span data-ttu-id="e2cb5-130">Microsoft. Azure. Commands. RecoveryServices. SiteRecovery. ASRProtectionContainer</span><span class="sxs-lookup"><span data-stu-id="e2cb5-130">Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProtectionContainer</span></span>
+### <span data-ttu-id="8a3ec-130">Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProtectionContainer</span><span class="sxs-lookup"><span data-stu-id="8a3ec-130">Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProtectionContainer</span></span>
 
-## <span data-ttu-id="e2cb5-131">WYSYŁA</span><span class="sxs-lookup"><span data-stu-id="e2cb5-131">OUTPUTS</span></span>
+## <span data-ttu-id="8a3ec-131">DANE WYJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="8a3ec-131">OUTPUTS</span></span>
 
-### <span data-ttu-id="e2cb5-132">Microsoft. Azure. Commands. RecoveryServices. SiteRecovery. ASRProtectableItem</span><span class="sxs-lookup"><span data-stu-id="e2cb5-132">Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProtectableItem</span></span>
+### <span data-ttu-id="8a3ec-132">Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProtectableItem</span><span class="sxs-lookup"><span data-stu-id="8a3ec-132">Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRProtectableItem</span></span>
 
-## <span data-ttu-id="e2cb5-133">INFORMACYJN</span><span class="sxs-lookup"><span data-stu-id="e2cb5-133">NOTES</span></span>
+## <span data-ttu-id="8a3ec-133">NOTATKI</span><span class="sxs-lookup"><span data-stu-id="8a3ec-133">NOTES</span></span>
 
-## <span data-ttu-id="e2cb5-134">LINKI POKREWNE</span><span class="sxs-lookup"><span data-stu-id="e2cb5-134">RELATED LINKS</span></span>
+## <span data-ttu-id="8a3ec-134">LINKI POKREWNE</span><span class="sxs-lookup"><span data-stu-id="8a3ec-134">RELATED LINKS</span></span>
 
-[<span data-ttu-id="e2cb5-135">Get-AzRecoveryServicesAsrProtectionEntity</span><span class="sxs-lookup"><span data-stu-id="e2cb5-135">Get-AzRecoveryServicesAsrProtectionEntity</span></span>](./Get-AzRecoveryServicesAsrProtectionEntity.md)
 
-[<span data-ttu-id="e2cb5-136">Set-AzRecoveryServicesAsrProtectionEntity</span><span class="sxs-lookup"><span data-stu-id="e2cb5-136">Set-AzRecoveryServicesAsrProtectionEntity</span></span>](./Set-AzRecoveryServicesAsrProtectionEntity.md)
