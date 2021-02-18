@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/a
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Add-AzKeyVaultKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Add-AzKeyVaultKey.md
-ms.openlocfilehash: da6460bf0a1126a11345336e4d55c300728bbd66
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: 61125ae7d9fa78ec9f121cc9b60610258ad2c67c
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100203842"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100405401"
 ---
 # Add-AzKeyVaultKey
 
@@ -118,9 +118,9 @@ Użyj tego polecenia cmdlet, aby dodać klucze przy użyciu dowolnej z następuj
 - Zaimportuj klucz z pliku pfx na komputerze.
 - Importowanie klucza z pliku pfx na komputerze do modułów zabezpieczeń sprzętu (HSM) w usłudze magazynu kluczy.
 W przypadku dowolnej z tych operacji można podać atrybuty klucza lub zaakceptować ustawienia domyślne.
-Jeśli utworzysz lub zaimportujesz klucz o takiej samej nazwie jak istniejący klucz w magazynie kluczy, klucz oryginalny zostanie zaktualizowany o wartości określone dla nowego klucza. Aby uzyskać dostęp do poprzednich wartości, można użyć specyficznego dla wersji URI dla tej wersji klucza. Aby uzyskać informacje na temat kluczowych wersji i struktury URI, zobacz [Informacje](http://go.microsoft.com/fwlink/?linkid=518560) o kluczach i tajemnicach w dokumentacji interfejsu API REST magazynu kluczy.
+Jeśli utworzysz lub zaimportujesz klucz o takiej samej nazwie jak istniejący klucz w magazynie kluczy, klucz oryginalny zostanie zaktualizowany o wartości określone dla nowego klucza. Aby uzyskać dostęp do poprzednich wartości, można użyć specyficznego dla wersji URI dla tej wersji klucza. Aby dowiedzieć się więcej o kluczowych [](http://go.microsoft.com/fwlink/?linkid=518560) wersjach i strukturze URI, zobacz Informacje o kluczach i tajemnicach w dokumentacji interfejsu API REST magazynu kluczy.
 Uwaga: Aby zaimportować klucz z własnego modułu zabezpieczeń sprzętowych, musisz najpierw wygenerować pakiet BYOK (plik z rozszerzeniem nazwy pliku byok) przy użyciu zestawu narzędzi BYOK magazynu kluczy platformy Azure. Aby uzyskać więcej informacji, zobacz [generuj i przesyłaj klucze HSM-Protected dla magazynu](http://go.microsoft.com/fwlink/?LinkId=522252)kluczy platformy Azure.
-Najlepszym rozwiązaniem jest, aby po utworzeniu lub zaktualizowaniu klucza utworzyć jego kopię zapasową, używając polecenia cmdlet Backup-AzKeyVaultKey cmdlet. Nie ma funkcji przywracania, więc jeśli przypadkowo usuniesz klucz lub usuniesz go, a następnie zmienisz zdanie, nie będzie można go odzyskać, chyba że masz jego kopię zapasową, która będzie można przywrócić.
+Najlepszym rozwiązaniem jest, aby po utworzeniu lub zaktualizowaniu klucza utworzyć jego kopię zapasową, korzystając z Backup-AzKeyVaultKey cmdlet. Nie ma funkcji przywracania, więc jeśli przypadkowo usuniesz klucz lub usuniesz go, a następnie zmienisz zdanie, nie będzie można go odzyskać, chyba że masz jego kopię zapasową, która będzie można przywrócić.
 
 ## PRZYKŁADY
 
@@ -305,7 +305,7 @@ Accept wildcard characters: False
 ### — miejsce docelowe
 Określa, czy należy dodać klucz jako klucz chroniony oprogramowaniem, czy jako klucz chroniony przez HSM w usłudze magazynu kluczy.
 Prawidłowe wartości to: HSM i Software.
-Uwaga: Aby użyć funkcji HSM jako miejsca docelowego, należy mieć magazyn kluczy obsługujący hsm. Aby uzyskać więcej informacji o warstwach usług i możliwościach dla magazynu kluczy platformy Azure, zobacz witrynę internetową Ceny magazynu kluczy [platformy Azure.](http://go.microsoft.com/fwlink/?linkid=512521)
+Uwaga: Aby użyć funkcji HSM jako miejsca docelowego, należy mieć magazyn kluczy obsługujący hsm. Aby uzyskać więcej informacji na temat warstw usług i możliwości dla magazynu kluczy platformy Azure, zobacz witrynę internetową Ceny magazynu kluczy [platformy Azure.](http://go.microsoft.com/fwlink/?linkid=512521)
 Ten parametr jest wymagany podczas tworzenia nowego klucza. W przypadku importowania klucza za pomocą parametru *KeyFilePath* ten parametr jest opcjonalny:
 - Jeśli ten parametr nie zostanie określony, a to polecenie cmdlet importuje klucz z rozszerzeniem nazwy pliku byok, importuje ten klucz jako klucz chroniony przez moduł HSM. Polecenie cmdlet nie może zaimportować tego klucza jako klucza chronionego oprogramowaniem.
 - Jeśli nie określisz tego parametru, a to polecenie cmdlet zaimresuje klucz z rozszerzeniem nazwy pliku pfx, zaimresuje ten klucz jako klucz chroniony oprogramowaniem.
@@ -352,7 +352,7 @@ Accept wildcard characters: False
 ```
 
 ### — Wygasa
-Określa czas wygaśnięcia , jako obiekt **DateTime,** klucza, który dodaje to polecenie cmdlet. Ten parametr używa uniwersalnego czasu koordynowanej (UTC). Aby uzyskać obiekt **DateTime,** użyj polecenia cmdlet **Get-Date.** Aby uzyskać więcej informacji, wpisz `Get-Help Get-Date` . Jeśli nie określisz tego parametru, klucz nie wygaśnie.
+Określa czas wygaśnięcia , jako obiekt **DateTime,** dla klucza, który dodaje to polecenie cmdlet. Ten parametr używa uniwersalnego czasu koordynowanej (UTC). Aby uzyskać obiekt **DateTime,** użyj polecenia cmdlet **Get-Date.** Aby uzyskać więcej informacji, wpisz `Get-Help Get-Date` . Jeśli nie określisz tego parametru, klucz nie wygaśnie.
 
 ```yaml
 Type: System.Nullable`1[System.DateTime]
@@ -444,9 +444,9 @@ Accept wildcard characters: False
 ### -KeyFilePath
 Określa ścieżkę pliku lokalnego zawierającego klucz materiałów importowanych przez to polecenie cmdlet.
 Prawidłowe rozszerzenia nazw plików to byok i pfx.
-- Jeśli plik jest plikiem byok, klucz jest automatycznie chroniony przez moduły HSM po zakończeniu importowania i nie można zastąpić tego ustawienia domyślnego.
+- Jeśli plik jest plikiem byok, klucz jest automatycznie chroniony przez hsm po zaimportowaniu i nie można zastąpić tego ustawienia domyślnego.
 - Jeśli plik jest plikiem pfx, klucz jest automatycznie chroniony przez oprogramowanie po zaimportowaniu. Aby zastąpić to ustawienie domyślne, należy ustawić dla parametru *Destination* wartość HSM tak, aby klucz był chroniony przez hsm.
-Określenie tego parametru jest *parametrem docelowym* opcjonalnym.
+Określenie tego parametru ma wartość *parametru Destination* (Miejsce docelowe) jest opcjonalne.
 
 ```yaml
 Type: System.String
@@ -470,7 +470,7 @@ Dopuszczalne wartości dla tego parametru to rozdzielona przecinkami lista opera
 - unwrapKey
 - znak
 - weryfikuj
-- importowanie (dotyczy tylko KEK, zobacz przykład 7)
+- importowanie (tylko w przypadku KEK, zobacz przykład 7)
 
 ```yaml
 Type: System.String[]
@@ -557,7 +557,7 @@ Accept wildcard characters: False
 ```
 
 ### — Rozmiar
-Rozmiar klucza RSA w bitach. Jeśli nie zostanie określona, usługa udostępni bezpieczny domyślny standard.
+Rozmiar klucza RSA w bitach. Jeśli nie zostanie określona, usługa udostępni bezpieczne ustawienie domyślne.
 
 ```yaml
 Type: System.Nullable`1[System.Int32]
@@ -655,4 +655,3 @@ To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVar
 
 [Remove-AzKeyVaultKey](./Remove-AzKeyVaultKey.md)
 
-[Set-AzKeyVaultKeyAttribute](./Set-AzKeyVaultKeyAttribute.md)

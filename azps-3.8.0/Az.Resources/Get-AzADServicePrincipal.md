@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzADServicePrincipal.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Get-AzADServicePrincipal.md
-ms.openlocfilehash: c51740ef111c0efe2f05c71d55ab5d3f076ac9d2
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 45f355b0317d8db8f9f24b40d5161e38888c4bb3
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94050822"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100405588"
 ---
 # Get-AzADServicePrincipal
 
-## STRESZCZENIe
-Umożliwia filtrowanie podmiotów zabezpieczeń usługi Active Directory.
+## SYNOPSIS
+Filtruje podmioty zabezpieczeń usługi Active Directory.
 
-## POLECENIA
+## SKŁADNIA
 
-### EmptyParameterSet (domyślny)
+### EmptyParameterSet (domyślne)
 ```
 Get-AzADServicePrincipal [-DefaultProfile <IAzureContextContainer>] [-IncludeTotalCount] [-Skip <UInt64>]
  [-First <UInt64>] [<CommonParameters>]
@@ -62,55 +62,55 @@ Get-AzADServicePrincipal -ServicePrincipalName <String> [-DefaultProfile <IAzure
  [-IncludeTotalCount] [-Skip <UInt64>] [-First <UInt64>] [<CommonParameters>]
 ```
 
-## Opis
-Umożliwia filtrowanie podmiotów zabezpieczeń usługi Active Directory.
+## OPIS
+Filtruje podmioty zabezpieczeń usługi Active Directory.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1-list podmiotów usługi AD
+### Przykład 1. Lista głównych podmiotów usługi AD
 
 ```
 PS C:\> Get-AzADServicePrincipal
 ```
 
-Wyświetla listę wszystkich podmiotów zabezpieczeń usługi AD w dzierżawie.
+Wyświetla listę wszystkich głównych podmiotów usługi AD w dzierżawie.
 
-### Przykład 2 — Wyświetlanie listy podmiotów zabezpieczeń usługi AD przy użyciu stronicowania
+### Przykład 2. Lista głównych podmiotów usługi AD przy użyciu stronicowania
 
 ```
 PS C:\> Get-AzADServicePrincipal -First 100
 ```
 
-Wyświetla listę pierwszych 100 głównych usług REKLAMowych w dzierżawie.
+Wyświetla listę pierwszych 100 głównych podmiotów usługi AD w dzierżawie.
 
-### Przykład 3-Wyświetlanie listy podmiotów nazw usług według nazwy SPN
+### Przykład 3. Lista głównych podmiotów usługi według sieci SPN
 
 ```
 PS C:\> Get-AzADServicePrincipal -ServicePrincipalName 36f81fc3-b00f-48cd-8218-3879f51ff39f
 ```
 
-Wyświetla listę podmiotów usługi za pomocą nazwy SPN "36f81fc3-b00f-48cd-8218-3879f51ff39f".
+Wyświetla listę głównych podmiotów usługi ze spN '36f81fc3-b00f-48cd-8218-3879f51ff39f'.
 
-### Przykład 4-Wyświetlanie listy głównych podmiotów usługi według ciągu wyszukiwania
+### Przykład 4. Lista podmiotów zabezpieczeń usługi według ciągu wyszukiwania
 
 ```
 PS C:\> Get-AzADServicePrincipal -SearchString "Web"
 ```
 
-Wyświetla listę wszystkich podmiotów nazw usługi AD, których nazwa wyświetlana rozpoczyna się od "Web".
+Wyświetla listę wszystkich głównych podmiotów usługi AD, których nazwa wyświetlana zaczyna się od "sieci Web".
 
-### Przykład 5-Wyświetlanie listy głównych usług według połączeń rurowych
+### Przykład 5. Lista głównych podmiotów zabezpieczeń usług za pomocą rur
 
 ```
 PS C:\> Get-AzADApplication -ObjectId 39e64ec6-569b-4030-8e1c-c3c519a05d69 | Get-AzADServicePrincipal
 ```
 
-Pobiera aplikację reklamy o identyfikatorze obiektu "39e64ec6-569b-4030-8e1c-c3c519a05d69" i przekazuje ją do polecenia cmdlet Get-AzADServicePrincipal, aby wyświetlić listę wszystkich głównych usług dla tej aplikacji.
+Pobiera aplikację USŁUGI AD z identyfikatorem obiektu "39e64ec6-569b-4030-8e1c-c3c519a05d69" i potokuje ją do polecenia cmdlet programu Get-AzADServicePrincipal, aby wyświetlić listę wszystkich głównych podmiotów usługi dla tej aplikacji.
 
-## PARAMETRÓW
+## PARAMETERS
 
-### -Identyfikator aplikacji
-Identyfikator głównej aplikacji usługi.
+### -ApplicationId
+Identyfikator aplikacji podmiotu zabezpieczeń usługi.
 
 ```yaml
 Type: System.Guid
@@ -124,8 +124,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Applicationobject
-Obiekt aplikacji, którego główna usługa jest pobierana.
+### -ApplicationObject
+Obiekt aplikacji, którego podmiot zabezpieczeń usługi jest pobierany.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ActiveDirectory.PSADApplication
@@ -140,7 +140,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -154,8 +154,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DisplayName
-Nazwa wyświetlana głównej usługi.
+### — DisplayName
+Nazwa wyświetlana podmiotu zabezpieczeń usługi.
 
 ```yaml
 Type: System.String
@@ -170,7 +170,7 @@ Accept wildcard characters: False
 ```
 
 ### -DisplayNameBeginsWith
-Ciąg wyszukiwania głównego usługi.
+Ciąg wyszukiwania podmiotu zabezpieczeń usługi.
 
 ```yaml
 Type: System.String
@@ -185,7 +185,7 @@ Accept wildcard characters: False
 ```
 
 ### -ObjectId
-Identyfikator obiektu głównego usługi.
+Identyfikator obiektu podmiotu zabezpieczeń usługi.
 
 ```yaml
 Type: System.String
@@ -200,7 +200,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServicePrincipalName
-SPN usługi.
+SpN usługi.
 
 ```yaml
 Type: System.String
@@ -214,8 +214,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -IncludeTotalCount
-Wyświetla liczbę obiektów w zbiorze danych. Obecnie ten parametr nie wykonuje żadnych działań.
+### - IncludeTotalCount
+Raportuje liczbę obiektów w zestawie danych. Obecnie ten parametr nie działa nic.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -229,8 +229,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Skip
-Ignoruje pierwsze N obiektów, a następnie pobiera pozostałe obiekty.
+### — Pomiń
+Ignoruje pierwsze obiekty N, a następnie pobiera pozostałe obiekty.
 
 ```yaml
 Type: System.UInt64
@@ -244,8 +244,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -First
-Maksymalna liczba obiektów do zwrócenia.
+### — Najpierw
+Maksymalna liczba obiektów, które mają być zwracane.
 
 ```yaml
 Type: System.UInt64
@@ -260,31 +260,30 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### System. String
+### System.String
 
-### System. GUID
+### System.Guid
 
-### Microsoft. Azure. Commands. pozycji. PSADApplication
+### Microsoft.Azure.Commands.ActiveDirectory.PSADApplication
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### Microsoft. Azure. Commands. pozycji. PSADServicePrincipal
+### Microsoft.Azure.Commands.ActiveDirectory.PSADServicePrincipal
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
-[Nowe — AzADServicePrincipal](./New-AzADServicePrincipal.md)
+[New-AzadServicePrincipal](./New-AzADServicePrincipal.md)
 
-[Set-AzADServicePrincipal](./Set-AzADServicePrincipal.md)
 
 [Remove-AzADServicePrincipal](./Remove-AzADServicePrincipal.md)
 
-[Get-AzADApplication](./Get-AzADApplication.md)
+[Get-AzadApplication](./Get-AzADApplication.md)
 
 [Get-AzADSpCredential](./Get-AzADSpCredential.md)
 
