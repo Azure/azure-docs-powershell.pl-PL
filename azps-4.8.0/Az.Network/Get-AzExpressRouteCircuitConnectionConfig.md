@@ -6,45 +6,45 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/ge
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteCircuitConnectionConfig.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzExpressRouteCircuitConnectionConfig.md
-ms.openlocfilehash: f4aabb68fd1f508651406d7ccf7be91ff646d46c
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 0ef2870592411ce64847f8a4a58dabdebcc8235f
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94219547"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100410195"
 ---
 # Get-AzExpressRouteCircuitConnectionConfig
 
-## STRESZCZENIe
-Pobiera konfigurację połączenia obwodu ExpressRoute powiązaną z prywatnym elementem równorzędnym ExpressRouteCircuit.
+## SYNOPSIS
+Pobiera konfigurację połączenia obwodu usługi ExpressRoute skojarzoną z prywatną komunikacji równorzędnej usługi ExpressRouteCircuit.
 
-## POLECENIA
+## SKŁADNIA
 
 ```
 Get-AzExpressRouteCircuitConnectionConfig [[-Name] <String>] [-ExpressRouteCircuit] <PSExpressRouteCircuit>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **Get-AzExpressRouteCircuitConnectionConfig** Pobiera konfigurację połączenia obwodu powiązanego z prywatnym łączem równorzędnym na obwód ExpressRoute.
+## OPIS
+Polecenie **cmdlet Get-AzExpressRouteCircuitConnectionConfig** pobiera konfigurację połączenia obwodu skojarzonego z prywatną komunikacji równorzędnej dla obwodu usługi ExpressRoute.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1: Wyświetlanie konfiguracji połączenia obwodowego obwodu ExpressRoute
+### Przykład 1. Wyświetlanie konfiguracji połączenia obwodu dla obwodu usługi ExpressRoute
 ```
 $circuit_init = Get-AzExpressRouteCircuit -Name $initiatingCircuitName -ResourceGroupName $rg
 Get-AzExpressRouteCircuitConnectionConfig -Name $circuitConnectionName -ExpressRouteCircuit $circuit_init
 ```
 
-### Przykład 2: Pobieranie zasobu połączenia obwodowego skojarzonego ze obwodem ExpressRoute przy użyciu połączeń rurowych
+### Przykład 2. Uzyskiwanie zasobu połączenia obwodu skojarzonego z obwodem usługi ExpressRoute za pomocą połączeń rurowych
 ```
 Get-AzExpressRouteCircuit -Name $initiatingCircuitName -ResourceGroupName $rg|Get-AzExpressRouteCircuitConnectionConfig -Name $circuitConnectionName
 ```
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -59,7 +59,7 @@ Accept wildcard characters: False
 ```
 
 ### -ExpressRouteCircuit
-Obiekt obwodu ExpressRoute zawierający konfigurację połączenia obwodowego.
+Obiekt obwodu usługi ExpressRoute zawierający konfigurację połączenia obwodu.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuit
@@ -73,8 +73,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Name (nazwa)
-Nazwa konfiguracji połączenia obwodowego, którą należy pobrać.
+### — Nazwa
+Nazwa konfiguracji połączenia obwodu do pobrania.
 
 ```yaml
 Type: System.String
@@ -89,26 +89,26 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### Microsoft. Azure. Commands. Network. models. PSExpressRouteCircuit
+### Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuit
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### Microsoft. Azure. Commands. Network. models. PSExpressRouteCircuitConnection
+### Microsoft.Azure.Commands.Network.Models.PSExpressRouteCircuitConnection
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
 [Get-AzExpressRouteCircuit](Get-AzExpressRouteCircuit.md)
 
-[Dodaj-AzExpressRouteCircuitConnectionConfig](Add-AzExpressRouteCircuitConnectionConfig.md)
+[Add-AzExpressRouteCircuitConnectionConfig](Add-AzExpressRouteCircuitConnectionConfig.md)
 
 [Remove-AzExpressRouteCircuitConnectionConfig](Remove-AzExpressRouteCircuitConnectionConfig.md)
 
 [Set-AzExpressRouteCircuitConnectionConfig](Set-AzExpressRouteCircuitConnectionConfig.md)
 
-[Nowe — AzExpressRouteCircuitConnectionConfig](New-AzExpressRouteCircuitConnectionConfig.md)
+
