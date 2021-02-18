@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/s
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Set-AzKeyVaultAccessPolicy.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Set-AzKeyVaultAccessPolicy.md
-ms.openlocfilehash: 4ef8c131e0094928808e6479b2c5ffe40090c5d0
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 5f47237088808fe8966d239f9a0de7c892301db0
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94220675"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100410722"
 ---
 # Set-AzKeyVaultAccessPolicy
 
-## STRESZCZENIe
-Udziela lub modyfikuje istniejące uprawnienia dla użytkownika, aplikacji lub grupy zabezpieczeń w celu wykonania operacji za pomocą magazynu kluczy.
+## SYNOPSIS
+Udziela lub modyfikuje istniejące uprawnienia użytkownika, aplikacji lub grupy zabezpieczeń do wykonywania operacji z magazynem kluczy.
 
-## POLECENIA
+## SKŁADNIA
 
-### ByUserPrincipalName (domyślny)
+### ByUserPrincipalName (Domyślna)
 ```
 Set-AzKeyVaultAccessPolicy [-VaultName] <String> [[-ResourceGroupName] <String>] -UserPrincipalName <String>
  [-PermissionsToKeys <String[]>] [-PermissionsToSecrets <String[]>] [-PermissionsToCertificates <String[]>]
@@ -135,26 +135,26 @@ Set-AzKeyVaultAccessPolicy [-ResourceId] <String> [-EnabledForDeployment] [-Enab
  [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **Set-AzKeyVaultAccessPolicy** udziela lub modyfikuje istniejące uprawnienia dla użytkownika, aplikacji lub grupy zabezpieczeń w celu wykonania określonych operacji w magazynie kluczy. W magazynie kluczy nie są modyfikowane uprawnienia innych użytkowników, aplikacji ani grup zabezpieczeń.
-Jeśli ustawiasz uprawnienia dla grupy zabezpieczeń, ta operacja będzie miała wpływ tylko na użytkowników tej grupy zabezpieczeń.
-Wszystkie następujące katalogi muszą być tego samego katalogu platformy Azure: 
-- Katalog domyślny subskrypcji platformy Azure, w której znajduje się magazyn kluczy.
-- Katalog platformy Azure zawierający użytkownika lub grupę aplikacji, do których udzielasz uprawnień.
-Przykłady scenariuszy, w których te warunki nie są spełnione, a to polecenie cmdlet nie będzie działać: 
-- Autoryzowanie użytkownika od innej organizacji do zarządzania magazynem kluczy.
-Każda organizacja ma swój własny katalog. 
+## OPIS
+Polecenie **cmdlet Set-AzKeyVaultAccessPolicy** udziela lub modyfikuje istniejące uprawnienia użytkownika, aplikacji lub grupy zabezpieczeń do wykonywania określonych operacji za pomocą magazynu kluczy. Nie modyfikuje uprawnień innych użytkowników, aplikacji ani grup zabezpieczeń w magazynie kluczy.
+Jeśli ustawiasz uprawnienia dla grupy zabezpieczeń, ta operacja dotyczy tylko użytkowników w tej grupie zabezpieczeń.
+Wszystkie następujące katalogi muszą mieć ten sam katalog Azure:
+- Domyślny katalog subskrypcji platformy Azure, w którym znajduje się magazyn kluczy.
+- Katalog Azure zawierający użytkownika lub grupę aplikacji, do których chcesz przyznać uprawnienia.
+Przykłady scenariuszy, w których te warunki nie są spełnione i to polecenie cmdlet nie będzie działać:
+- Autoryzowanie użytkownika z innej organizacji w celu zarządzania Twoim magazynem kluczy.
+Każda organizacja ma własny katalog.
 - Twoje konto platformy Azure ma wiele katalogów.
-Jeśli zarejestrujesz aplikację w katalogu innym niż katalog domyślny, nie możesz autoryzować tej aplikacji do korzystania z Twojego magazynu kluczy.
+Jeśli zarejestrujesz aplikację w katalogu innym niż katalog domyślny, nie możesz autoryzować tej aplikacji do używania Twojego magazynu kluczy.
 Aplikacja musi znajdować się w katalogu domyślnym.
-Uwaga: chociaż określenie grupy zasobów jest opcjonalne dla tego polecenia cmdlet, należy to zrobić w celu uzyskania lepszej wydajności.
+Pamiętaj, że mimo że w przypadku tego polecenia cmdlet określenie grupy zasobów jest opcjonalne, należy to zrobić, aby uzyskać lepszą wydajność.
 
 > [!NOTE]
-> Używając podmiotu zabezpieczeń usługi do udzielania uprawnień zasad dostępu, należy użyć `-BypassObjectIdValidation` parametru.
+> Podczas udzielania uprawnień zasad dostępu za pomocą podmiotu zabezpieczeń usługi należy użyć `-BypassObjectIdValidation` parametru.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1: udzielanie uprawnień użytkownikowi dla magazynu kluczy i modyfikowanie uprawnień
+### Przykład 1. Udzielanie użytkownikowi uprawnień do magazynu kluczy i modyfikowanie uprawnień
 ```powershell
 PS C:\> Set-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -UserPrincipalName 'PattiFuller@contoso.com' -PermissionsToKeys create,import,delete,list -PermissionsToSecrets set,delete -PassThru
 
@@ -235,62 +235,63 @@ Access Policies                  :
 Tags                             :
 ```
 
-Pierwsze polecenie udziela uprawnień użytkownikowi w usłudze Azure Active Directory, PattiFuller@contoso.com Aby wykonywać operacje na kluczach i kluczach tajnych przy użyciu magazynu kluczy o nazwie Contoso03Vault. Parametr *PassThru* powoduje, że zaktualizowany obiekt jest zwracany przez polecenie cmdlet.
-Drugie polecenie modyfikuje uprawnienia udzielone PattiFuller@contoso.com w pierwszym poleceniu w celu umożliwienia natychmiastowego wprowadzenia kluczy tajnych oraz ich usunięcia. Uprawnienia do kluczowych operacji pozostają niezmienione po wykonaniu tego polecenia.
-Polecenie ostatnie modyfikuje istniejące uprawnienia w PattiFuller@contoso.com celu usunięcia wszystkich uprawnień do kluczowych operacji. Po wykonaniu tego polecenia uprawnienia do tajnych operacji pozostają niezmienione. 
+Pierwsze polecenie udziela użytkownikowi w usłudze Azure Active Directory uprawnień do wykonywania operacji na kluczach i tajemnicach związanych z magazynem kluczy o nazwie PattiFuller@contoso.com Contoso03Vault. Parametr *PassThru* powoduje zwrócenie zaktualizowanego obiektu przez polecenie cmdlet.
+Drugie polecenie modyfikuje uprawnienia, które zostały przyznane w pierwszym poleceniu, aby teraz zezwolić na uzyskiwanie sekretów oprócz ich ustawiania PattiFuller@contoso.com i usuwania. Po tym poleceniu uprawnienia do operacji na kluczach pozostaną niezmienione.
+Ostatnie polecenie dodatkowo zmodyfikuje istniejące uprawnienia do PattiFuller@contoso.com usuwania wszystkich uprawnień do kluczowych operacji. Uprawnienia do operacji tajnych pozostają niezmienione po tym poleceniu.
 
-### Przykład 2: udzielanie uprawnień głównemu usłudze aplikacji w celu odczytywania i zapisywania kluczy tajnych
+### Przykład 2. Udzielanie uprawnień podmiotu zabezpieczeń usługi aplikacji do odczytu i zapisu sekretów
 ```powershell
 PS C:\> Set-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -ServicePrincipalName 'http://payroll.contoso.com' -PermissionsToSecrets Get,Set
 ```
 
-To polecenie udziela uprawnień do aplikacji dla magazynu kluczy o nazwie Contoso03Vault. Parametr *ServicePrincipalName* określa aplikację. Aplikacja musi być zarejestrowana w usłudze Azure Active Directory. Wartość parametru *ServicePrincipalName* musi być nazwą główną usługi aplikacji lub identyfikatorem GUID identyfikatora aplikacji.
-W tym przykładzie określono nazwę główną usługi http://payroll.contoso.com , a polecenie przyznaje uprawnienia aplikacji do odczytu i zapisu kluczy tajnych.
+To polecenie udziela uprawnień aplikacji dla magazynu kluczy o nazwie Contoso03Vault.
+Parametr *ServicePrincipalName* określa aplikację. Aplikacja musi być zarejestrowana w usłudze Azure Active Directory. Wartość parametru *ServicePrincipalName* musi być główną nazwą usługi aplikacji lub identyfikatorem GUID aplikacji.
+W tym przykładzie określono nazwę podmiotu zabezpieczeń usługi, a polecenie przyznaje uprawnienia aplikacji `http://payroll.contoso.com` do odczytu i zapisu sekretów.
 
-### Przykład 3: udzielanie uprawnień do aplikacji przy użyciu jej identyfikatora obiektu
+### Przykład 3. Udzielanie uprawnień aplikacji przy użyciu identyfikatora obiektu
 ```powershell
 PS C:\> Set-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -ObjectId 34595082-9346-41b6-8d6b-295a2808b8db -PermissionsToSecrets Get,Set
 ```
 
-To polecenie udziela uprawnień aplikacji do odczytu i zapisu kluczy tajnych.
-W tym przykładzie określono aplikację przy użyciu identyfikatora obiektu głównego usługi aplikacji.
+To polecenie udziela uprawnień aplikacji do odczytu i zapisu sekretów.
+W tym przykładzie określono aplikację, używając identyfikatora obiektu podmiotu zabezpieczeń usługi aplikacji.
 
-### Przykład 4: udzielanie uprawnień dla głównej nazwy użytkownika
+### Przykład 4. Udzielanie uprawnień do głównej nazwy użytkownika
 ```powershell
 PS C:\> Set-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -UserPrincipalName 'PattiFuller@contoso.com' -PermissionsToSecrets Get,List,Set
 ```
 
-To polecenie udziela uprawnień Get, list i ustawia uprawnienia dla określonej nazwy głównej użytkownika w celu uzyskania dostępu do kluczy tajnych.
+To polecenie pozwala uzyskać, wyświetlić listę i ustawić uprawnienia dla określonej głównej nazwy użytkownika w celu uzyskania dostępu do tajemnic.
 
-### Przykład 5: Włączanie kluczy tajnych do pobrania z magazynu kluczy przez firmę Microsoft. Oblicz dostawcę zasobów
+### Przykład 5. Włączanie pobierania tajemnic z magazynu kluczy przez dostawcę zasobów Microsoft.Compute
 ```powershell
 PS C:\> Set-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -ResourceGroupName 'Group14' -EnabledForDeployment
 ```
 
-To polecenie udziela uprawnień do pobierania kluczy tajnych z magazynu kluczy Contoso03Vault przez dostawcę Microsoft. COMPUTE Resource.
+To polecenie udziela uprawnień dla tajemnic, które mają być pobierane z magazynu kluczy Contoso03Vault przez dostawcę zasobów Microsoft.Compute.
 
-### Przykład 6: udzielanie uprawnień grupie zabezpieczeń
+### Przykład 6. Udzielanie uprawnień grupie zabezpieczeń
 ```powershell
 PS C:\> Get-AzADGroup
 PS C:\> Set-AzKeyVaultAccessPolicy -VaultName 'myownvault' -ObjectId (Get-AzADGroup -SearchString 'group2')[0].Id -PermissionsToKeys get, set -PermissionsToSecrets get, set
 ```
 
-W pierwszym poleceniu jest używane polecenie cmdlet Get-AzADGroup, aby uzyskać dostęp do wszystkich grup usługi Active Directory. Na podstawie wyników są wyświetlane 3 grupy zwrócone, nazwane **grupa1** , **group2** oraz **Group3**. Wiele grup może mieć taką samą nazwę, ale zawsze mają unikatowy identyfikator ObjectId. Gdy jest zwracana więcej niż jedna grupa o takiej samej nazwie, użyj identyfikatora ObjectId w wynikach, aby zidentyfikować odpowiedni element.
-Następnie należy użyć tego polecenia z Set-AzKeyVaultAccessPolicy, aby udzielić uprawnień group2 dla magazynu kluczy o nazwie **myownvault**. W tym przykładzie są wyliczane grupy o nazwie "group2" w tym samym wierszu polecenia.
-Na zwróconej liście może być wiele grup o nazwie "group2".
-W tym przykładzie wybierany jest pierwszy z nich, wskazany indeksem \[ 0 \] na liście zwróconej.
+Pierwsze polecenie używa polecenia cmdlet Get-AzADGroup do uzyskania wszystkich grup usługi Active Directory. W wyniku widać 3 zwrócone grupy o nazwie **group1,** **group2** i **group3.** Wiele grup może mieć tę samą nazwę, ale zawsze ma unikatowy identyfikator ObjectId. Jeśli jest zwracana więcej niż jedna grupa o takiej samej nazwie, należy użyć w wynikach obiektu ObjectId, aby zidentyfikować tę, której chcesz użyć.
+Następnie użyj danych wyjściowych tego polecenia z Set-AzKeyVaultAccessPolicy, aby udzielić uprawnień do grupy Group2 dla Twojego magazynu kluczy o **nazwie myownvault.** W tym przykładzie wyliczane są grupy o nazwie "grupa2" w tym samym wierszu polecenia.
+Na liście zwróconej może być wiele grup o nazwie "grupa2".
+W tym przykładzie jest wybierany pierwszy indeks \[ 0 \] na liście zwróconej.
 
-### Przykład 7: udzielanie dostępu do usługi Azure Information Protection do klucza dzierżawy zarządzanego przez klienta (BYOK)
+### Przykład 7. Udzielanie usłudze Azure Information Protection dostępu do klucza dzierżawy zarządzanej przez klienta (BYOK)
 ```powershell
 PS C:\> Set-AzKeyVaultAccessPolicy -VaultName 'Contoso04Vault' -ServicePrincipalName 00000012-0000-0000-c000-000000000000 -PermissionsToKeys decrypt,sign,get
 ```
 
-To polecenie upoważnia ochronę informacji platformy Azure do korzystania z klucza zarządzanego przez klienta (w celu skorzystania z własnego klucza lub scenariusza "BYOK") jako klucza dzierżawy usługi Azure Information Protection.
-Po uruchomieniu tego polecenia określ własną nazwę magazynu kluczy, ale musisz określić parametr *ServicePrincipalName* z identyfikatorem GUID **00000012-0000-0000-C000-000000000000** i określ uprawnienia w przykładzie.
+To polecenie autoryzuje usługę Azure Information Protection do używania klucza zarządzanego przez klienta (czyli klucza własnego, czyli scenariusza "BYOK") jako klucza dzierżawy usługi Azure Information Protection.
+Po uruchomieniu tego polecenia określ własną nazwę magazynu kluczy, ale musisz określić parametr *ServicePrincipalName* z identyfikatorem GUID **00000012-0000-0000-c000-000000000000** oraz określić uprawnienia w przykładzie.
 
-## PARAMETRÓW
+## PARAMETERS
 
-### -Identyfikator aplikacji
+### -ApplicationId
 Do użytku w przyszłości.
 
 ```yaml
@@ -307,7 +308,7 @@ Accept wildcard characters: False
 
 ### -BypassObjectIdValidation
 Umożliwia określenie identyfikatora obiektu bez sprawdzania, czy obiekt istnieje w usłudze Azure Active Directory.
-Tego parametru należy używać tylko wtedy, gdy użytkownik chce udzielić dostępu do magazynu kluczy do identyfikatora obiektu, który odwołuje się do delegowanej grupy zabezpieczeń z innej dzierżawy platformy Azure.
+Użyj tego parametru tylko wtedy, gdy chcesz udzielić dostępu do twojego magazynu kluczy identyfikatorowi obiektu, który odwołuje się do grupy zabezpieczeń delegowanych z innej dzierżawy platformy Azure.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -322,7 +323,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -337,7 +338,7 @@ Accept wildcard characters: False
 ```
 
 ### -EmailAddress
-Określa adres e-mail użytkownika, któremu chcesz udzielić uprawnień.
+Określa adres e-mail użytkownika, któremu mają być udzielane uprawnienia.
 Ten adres e-mail musi znajdować się w katalogu skojarzonym z bieżącą subskrypcją i być unikatowy.
 
 ```yaml
@@ -353,7 +354,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnabledForDeployment
-Umożliwia dostawcy zasobów Microsoft. COMPUTE na pobieranie kluczy tajnych z tego magazynu kluczy, gdy do tego magazynu kluczy odwołuje się tworzenie zasobów, na przykład podczas tworzenia maszyny wirtualnej.
+Umożliwia dostawcy zasobów Microsoft.Compute pobieranie sekretów z tego magazynu kluczy, gdy do tego magazynu kluczy odwołuje się podczas tworzenia zasobów, na przykład podczas tworzenia maszyny wirtualnej.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -367,8 +368,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -EnabledForDiskEncryption
-Umożliwia usłudze szyfrowania dysków Azure uzyskiwanie kluczy tajnych i ich odwinięcie z tego magazynu kluczy.
+### -EnabledForScriptEncryption
+Umożliwia usłudze szyfrowania dysków Azure uzyskiwanie sekretów i odłącza klucze z tego magazynu kluczy.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -383,7 +384,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnabledForTemplateDeployment
-Umożliwia menedżerowi zasobów platformy Azure pobieranie kluczy tajnych z tego magazynu kluczy, gdy do tego magazynu kluczy odwołuje się wdrożenie szablonu.
+Umożliwia usłudze Azure Resource Manager uzyskiwanie sekretów z tego magazynu kluczy, gdy do tego magazynu kluczy odwołuje się we wdrożeniu szablonu.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -397,7 +398,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Inputobject
+### -InputObject
 Obiekt magazynu kluczy
 
 ```yaml
@@ -413,7 +414,7 @@ Accept wildcard characters: False
 ```
 
 ### -ObjectId
-Określa identyfikator obiektu podmiotu użytkownika lub usługi w usłudze Azure Active Directory, dla którego ma zostać udzielone uprawnienia.
+Określa identyfikator obiektu użytkownika lub podmiotu zabezpieczeń usługi w usłudze Azure Active Directory, dla którego mają być udzielane uprawnienia.
 
 ```yaml
 Type: System.String
@@ -444,24 +445,24 @@ Accept wildcard characters: False
 ```
 
 ### -PermissionsToCertificates
-Określa tablicę uprawnień certyfikatów, które mają zostać udzielone użytkownikowi lub podmiotowi zabezpieczeń usługi.
+Określa tablicę uprawnień certyfikatu, które mają być udzielane użytkownikowi lub podmiotowi zabezpieczeń usługi.
 Dopuszczalne wartości dla tego parametru:
 - Pobierz
 - Lista
-- Usuwać
-- Tworzonych
-- Przywoz
-- Aktualizowane
+- Usuń
+- Tworzenie
+- Importowanie
+- Aktualizacja
 - Managecontacts
-- Emitenci
+- Getissuers
 - Listissuers
-- Autoemitenci
+- Setissuers
 - Deleteissuers
-- Manageissuers
-- Odzyskiwanie
-- Wykonania
-- Przywrócenie
-- Wyczyścić
+- Zarządzanie usługami
+- Odzyskaj
+- Kopia zapasowa
+- Przywróć
+- Przeczyszczanie
 
 ```yaml
 Type: System.String[]
@@ -477,24 +478,24 @@ Accept wildcard characters: False
 ```
 
 ### -PermissionsToKeys
-Określa tablicę uprawnień kluczowych operacji, które mają zostać udzielone użytkownikowi lub podmiotowi zabezpieczeń usługi.
+Określa tablicę uprawnień do operacji klucza, które mają być udzielane użytkownikowi lub podmiotowi zabezpieczeń usługi.
 Dopuszczalne wartości dla tego parametru:
+- Odszyfrowywanie
 - Szyfruj
-- Szyfrowane
 - UnwrapKey
 - WrapKey
-- Sprawdzić
-- Zapisywania
+- Weryfikuj
+- Podpisz
 - Pobierz
 - Lista
-- Aktualizowane
-- Tworzonych
-- Przywoz
-- Usuwać
-- Wykonania
-- Przywrócenie
-- Odzyskiwanie
-- Wyczyścić
+- Aktualizacja
+- Tworzenie
+- Importowanie
+- Usuń
+- Kopia zapasowa
+- Przywróć
+- Odzyskaj
+- Przeczyszczanie
 
 ```yaml
 Type: System.String[]
@@ -510,16 +511,16 @@ Accept wildcard characters: False
 ```
 
 ### -PermissionsToSecrets
-Określa tablicę uprawnień do tajnego działania, które mają zostać udzielone użytkownikowi lub podmiotowi zabezpieczeń usługi.
+Określa tablicę uprawnień do tajnych operacji, które należy przyznać użytkownikowi lub podmiotowi zabezpieczeń usługi.
 Dopuszczalne wartości dla tego parametru:
 - Pobierz
 - Lista
-- Ustawić
-- Usuwać
-- Wykonania
-- Przywrócenie
-- Odzyskiwanie
-- Wyczyścić
+- Ustaw
+- Usuń
+- Kopia zapasowa
+- Przywróć
+- Odzyskaj
+- Przeczyszczanie
 
 ```yaml
 Type: System.String[]
@@ -535,7 +536,7 @@ Accept wildcard characters: False
 ```
 
 ### -PermissionsToStorage
-Określa zarządzane konto magazynu i uprawnienia operacji definicji SaS, które mają zostać udzielone użytkownikowi lub podmiotowi zabezpieczeń usługi.
+Określa uprawnienia do działania na koncie magazynu zarządzanego i operację SaS w celu udzielenia podmiotowi użytkownika lub podmiotu zabezpieczeń usługi.
 
 ```yaml
 Type: System.String[]
@@ -581,8 +582,8 @@ Accept wildcard characters: False
 ```
 
 ### -ServicePrincipalName
-Określa główną nazwę usługi aplikacji, do której mają być udzielane uprawnienia.
-Określ identyfikator aplikacji, określany także jako identyfikator klienta, zarejestrowany dla aplikacji w katalogu AzureActive. Aplikacja o głównej nazwie usługi, którą ten parametr określa, musi być zarejestrowana w katalogu platformy Azure, który zawiera bieżący abonament.
+Określa nazwę podmiotu zabezpieczeń usługi aplikacji, której uprawnienia mają być udzielane.
+Określ identyfikator aplikacji, nazywany również identyfikatorem klienta, zarejestrowany dla aplikacji w usłudze AzureActive Directory. Aplikacja o nazwie podmiotu zabezpieczeń usługi, która określa ten parametr, musi być zarejestrowana w usłudze Azure Directory zawierającej Bieżącą subskrypcję.
 
 ```yaml
 Type: System.String
@@ -597,8 +598,8 @@ Accept wildcard characters: False
 ```
 
 ### -UserPrincipalName
-Określa główną nazwę użytkownika, któremu chcesz udzielić uprawnień.
-Ta główna nazwa użytkownika musi istnieć w katalogu skojarzonym z bieżącą subskrypcją.
+Określa główną nazwę użytkownika, któremu mają być udzielane uprawnienia.
+Główna nazwa użytkownika musi istnieć w katalogu skojarzonym z bieżącą subskrypcją.
 
 ```yaml
 Type: System.String
@@ -612,9 +613,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Magazynname
+### -VaultName
 Określa nazwę magazynu kluczy.
-To polecenie cmdlet modyfikuje zasady dostępu dla magazynu kluczy określanego przez ten parametr.
+To polecenie cmdlet modyfikuje zasady dostępu dla magazynu kluczy, który określa ten parametr.
 
 ```yaml
 Type: System.String
@@ -628,8 +629,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Potwierdź
-Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.
+### — Potwierdź
+Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -644,7 +645,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet. Polecenie cmdlet nie jest uruchamiane.
+Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet. Polecenie cmdlet nie zostanie uruchomione.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -659,19 +660,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### Microsoft. Azure. Commands. platforming. models. PSKeyVaultIdentityItem
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultIdentityItem
 
-### System. String
+### System.String
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### Microsoft. Azure. Commands. platforming. models. PSKeyVault
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 

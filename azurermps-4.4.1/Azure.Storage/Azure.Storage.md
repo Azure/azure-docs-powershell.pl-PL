@@ -6,21 +6,20 @@ Help Version: ''
 Locale: en-US
 content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/Storage/Commands.Storage/help/Azure.Storage.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/Storage/Commands.Storage/help/Azure.Storage.md
-gitcommit: https://github.com/Azure/azure-powershell/blob/89262bc4144696c69376c3fb654c881de55b6450
-ms.openlocfilehash: 7579023c82863b943080553d2c741244b9ae9c0f
-ms.sourcegitcommit: 43f4bdf2a59dd82fd881512aa9761bf72eb5703c
+ms.openlocfilehash: 864398d8af8ac05d7bfad93c195bf0ecb2c5ba1a
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "93522742"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100410382"
 ---
-# Moduł Azure. Storage
+# Azure.Storage Module
 ## Opis
-Ten temat zawiera tematy pomocy dotyczące apletów poleceń usługi Azure Storage.
+W tym temacie są wyświetlane tematy pomocy dotyczące polecenia cmdlet magazynu platformy Azure.
 
-## Polecenia cmdlet usługi Azure. Storage
+## Polecenia cmdlet usługi Azure.Storage
 ### [Get-AzureStorageBlob](Get-AzureStorageBlob.md)
-Zawiera listę obiektów BLOB w kontenerze.
+Wyświetla listę obiektów blob w kontenerze.
 
 ### [Get-AzureStorageBlobContent](Get-AzureStorageBlobContent.md)
 Pobiera obiekt blob magazynu.
@@ -29,109 +28,109 @@ Pobiera obiekt blob magazynu.
 Pobiera stan kopii obiektu blob magazynu platformy Azure.
 
 ### [Get-AzureStorageContainer](Get-AzureStorageContainer.md)
-Zawiera listę kontenerów magazynu.
+Wyświetla listę kontenerów magazynu.
 
 ### [Get-AzureStorageContainerStoredAccessPolicy](Get-AzureStorageContainerStoredAccessPolicy.md)
-Pobiera zasady programu Access lub zasady dotyczące kontenera magazynu platformy Azure.
+Pobiera zasady lub zasady dostępu przechowywane dla kontenera magazynu platformy Azure.
 
 ### [Get-AzureStorageCORSRule](Get-AzureStorageCORSRule.md)
-Pobiera reguły specyfikacji CORS dla typu usługi magazynu.
+Pobiera reguły CORS dla typu usługi magazynu.
 
 ### [Get-AzureStorageFile](Get-AzureStorageFile.md)
-Wyświetla listę katalogów i plików ścieżki.
+Lista katalogów i plików dla ścieżki.
 
 ### [Get-AzureStorageFileContent](Get-AzureStorageFileContent.md)
-Umożliwia pobranie zawartości pliku.
+Pobiera zawartość pliku.
 
 ### [Get-AzureStorageFileCopyState](Get-AzureStorageFileCopyState.md)
 Pobiera stan operacji kopiowania.
 
 ### [Get-AzureStorageQueue](Get-AzureStorageQueue.md)
-Zawiera listę kolejek przechowywania.
+Lista kolejek magazynu.
 
 ### [Get-AzureStorageQueueStoredAccessPolicy](Get-AzureStorageQueueStoredAccessPolicy.md)
-Pobiera zasady lub zasady dostępu do kolejki magazynu platformy Azure.
+Pobiera zasady lub zasady dostępu przechowywane dla kolejki magazynu platformy Azure.
 
 ### [Get-AzureStorageServiceLoggingProperty](Get-AzureStorageServiceLoggingProperty.md)
-Pobiera właściwości rejestrowania usług Azure Storage Services.
+Pobiera właściwości rejestrowania dla usług magazynu platformy Azure.
 
 ### [Get-AzureStorageServiceMetricsProperty](Get-AzureStorageServiceMetricsProperty.md)
-Pobiera właściwości metryk dla usługi Azure Storage.
+Pobiera właściwości metryk dla usługi magazynu platformy Azure.
 
 ### [Get-AzureStorageShare](Get-AzureStorageShare.md)
 Pobiera listę udziałów plików.
 
 ### [Get-AzureStorageShareStoredAccessPolicy](Get-AzureStorageShareStoredAccessPolicy.md)
-Pobiera zasady dostępu do udziału w magazynie.
+Pobiera zasady dostępu przechowywane dla udziału magazynu.
 
 ### [Get-AzureStorageTable](Get-AzureStorageTable.md)
 Wyświetla listę tabel magazynu.
 
 ### [Get-AzureStorageTableStoredAccessPolicy](Get-AzureStorageTableStoredAccessPolicy.md)
-Pobiera zasady lub zasady dostępu do tabeli magazynu platformy Azure.
+Pobiera zasady lub zasady dostępu przechowywane dla tabeli magazynu platformy Azure.
 
-### [Nowe — AzureStorageAccountSASToken](New-AzureStorageAccountSASToken.md)
-Umożliwia utworzenie tokenu SAS na poziomie konta.
+### [New-AzureStorageAccountSASToken](New-AzureStorageAccountSASToken.md)
+Tworzy token SAS na poziomie konta.
 
-### [Nowe — AzureStorageBlobSASToken](New-AzureStorageBlobSASToken.md)
-Generuje token SAS dla obiektu BLOB usługi Azure Storage.
+### [New-AzureStorageBlobSASToken](New-AzureStorageBlobSASToken.md)
+Generuje token SAS dla obiektu blob magazynu platformy Azure.
 
-### [Nowe — AzureStorageContainer](New-AzureStorageContainer.md)
+### [New-AzureStorageContainer](New-AzureStorageContainer.md)
 Tworzy kontener magazynu platformy Azure.
 
-### [Nowe — AzureStorageContainerSASToken](New-AzureStorageContainerSASToken.md)
+### [New-AzureStorageContainerSASToken](New-AzureStorageContainerSASToken.md)
 Generuje token SAS dla kontenera magazynu platformy Azure.
 
-### [Nowe — AzureStorageContainerStoredAccessPolicy](New-AzureStorageContainerStoredAccessPolicy.md)
-Tworzy zapisane zasady dostępu dla kontenera magazynu platformy Azure.
+### [New-AzureStorageContainerStoredAccessPolicy](New-AzureStorageContainerStoredAccessPolicy.md)
+Tworzy przechowywane zasady dostępu dla kontenera magazynu platformy Azure.
 
-### [Nowe — AzureStorageContext](New-AzureStorageContext.md)
-Tworzy kontekst usługi Azure Storage.
+### [New-AzureStorageContext](New-AzureStorageContext.md)
+Tworzy kontekst magazynu platformy Azure.
 
-### [Nowe — AzureStorageDirectory](New-AzureStorageDirectory.md)
+### [New-AzureStorageDirectory](New-AzureStorageDirectory.md)
 Tworzy katalog.
 
-### [Nowe — AzureStorageFileSASToken](New-AzureStorageFileSASToken.md)
-Generuje token podpisu dostępu współdzielonego dla pliku magazynu.
+### [New-AzureStorageFileSASToken](New-AzureStorageFileSASToken.md)
+Generuje token podpisu dostępu udostępnionego dla pliku magazynu.
 
-### [Nowe — AzureStorageQueue](New-AzureStorageQueue.md)
-Umożliwia utworzenie kolejki magazynu.
+### [New-AzureStorageQueue](New-AzureStorageQueue.md)
+Tworzy kolejkę magazynu.
 
-### [Nowe — AzureStorageQueueSASToken](New-AzureStorageQueueSASToken.md)
-Generuje token podpisu dostępu współdzielonego dla kolejki magazynu platformy Azure.
+### [New-AzureStorageQueueSASToken](New-AzureStorageQueueSASToken.md)
+Generuje token podpisu dostępu udostępnionego dla kolejki magazynu platformy Azure.
 
-### [Nowe — AzureStorageQueueStoredAccessPolicy](New-AzureStorageQueueStoredAccessPolicy.md)
-Tworzy zapisane zasady dostępu dla kolejki magazynu platformy Azure.
+### [New-AzureStorageQueueStoredAccessPolicy](New-AzureStorageQueueStoredAccessPolicy.md)
+Tworzy przechowywane zasady dostępu dla kolejki magazynu platformy Azure.
 
-### [Nowe — AzureStorageShare](New-AzureStorageShare.md)
-Umożliwia utworzenie udziału plików.
+### [New-AzureStorageShare](New-AzureStorageShare.md)
+Tworzy udział plików.
 
-### [Nowe — AzureStorageShareSASToken](New-AzureStorageShareSASToken.md)
-Wygeneruj token podpisu dostępu współdzielonego dla udziału magazynu platformy Azure.
+### [New-AzureStorageShareSASToken](New-AzureStorageShareSASToken.md)
+Wygeneruj token podpisu dostępu udostępnionego dla udziału magazynu platformy Azure.
 
-### [Nowe — AzureStorageShareStoredAccessPolicy](New-AzureStorageShareStoredAccessPolicy.md)
-Tworzy zapisane zasady dostępu w udziale miejsca do magazynowania.
+### [New-AzureStorageShareStoredAccessPolicy](New-AzureStorageShareStoredAccessPolicy.md)
+Tworzy przechowywane zasady dostępu dla udziału magazynu.
 
-### [Nowe — AzureStorageTable](New-AzureStorageTable.md)
+### [New-AzureStorageTable](New-AzureStorageTable.md)
 Tworzy tabelę magazynu.
 
-### [Nowe — AzureStorageTableSASToken](New-AzureStorageTableSASToken.md)
+### [New-AzureStorageTableSASToken](New-AzureStorageTableSASToken.md)
 Generuje token SAS dla tabeli magazynu platformy Azure.
 
-### [Nowe — AzureStorageTableStoredAccessPolicy](New-AzureStorageTableStoredAccessPolicy.md)
-Tworzy zapisane zasady dostępu do tabeli magazynu platformy Azure.
+### [New-AzureStorageTableStoredAccessPolicy](New-AzureStorageTableStoredAccessPolicy.md)
+Tworzy przechowywane zasady dostępu dla tabeli magazynu platformy Azure.
 
 ### [Remove-AzureStorageBlob](Remove-AzureStorageBlob.md)
-Umożliwia usunięcie określonego obiektu blob magazynu.
+Usuwa określony obiekt blob magazynu.
 
 ### [Remove-AzureStorageContainer](Remove-AzureStorageContainer.md)
 Usuwa określony kontener magazynu.
 
 ### [Remove-AzureStorageContainerStoredAccessPolicy](Remove-AzureStorageContainerStoredAccessPolicy.md)
-Usuwa zapisane zasady dostępu z kontenera magazynu platformy Azure.
+Usuwa przechowywane zasady dostępu z kontenera magazynu platformy Azure.
 
 ### [Remove-AzureStorageCORSRule](Remove-AzureStorageCORSRule.md)
-Usuwa składnik CORS dla usługi magazynu.
+Usuwa cors dla usługi magazynu.
 
 ### [Remove-AzureStorageDirectory](Remove-AzureStorageDirectory.md)
 Usuwa katalog.
@@ -143,65 +142,65 @@ Usuwa plik.
 Usuwa kolejkę magazynu.
 
 ### [Remove-AzureStorageQueueStoredAccessPolicy](Remove-AzureStorageQueueStoredAccessPolicy.md)
-Usuwa zapisane zasady dostępu z kolejki usługi Azure Storage.
+Usuwa przechowywane zasady dostępu z kolejki magazynu platformy Azure.
 
 ### [Remove-AzureStorageShare](Remove-AzureStorageShare.md)
 Usuwa udział plików.
 
 ### [Remove-AzureStorageShareStoredAccessPolicy](Remove-AzureStorageShareStoredAccessPolicy.md)
-Usuwa zapisane zasady dostępu z udziału magazynu.
+Usuwa przechowywane zasady dostępu z udziału magazynu.
 
 ### [Remove-AzureStorageTable](Remove-AzureStorageTable.md)
 Usuwa tabelę magazynu.
 
 ### [Remove-AzureStorageTableStoredAccessPolicy](Remove-AzureStorageTableStoredAccessPolicy.md)
-Usuwa zapisane zasady dostępu z tabeli magazynu platformy Azure.
+Usuwa przechowywane zasady dostępu z tabeli magazynu platformy Azure.
 
 ### [Set-AzureStorageBlobContent](Set-AzureStorageBlobContent.md)
-Wysyła plik lokalny do obiektu BLOB usługi Azure Storage.
+Przekazanie pliku lokalnego do obiektu blob magazynu platformy Azure.
 
 ### [Set-AzureStorageContainerAcl](Set-AzureStorageContainerAcl.md)
 Ustawia uprawnienie dostępu publicznego do kontenera magazynu.
 
 ### [Set-AzureStorageContainerStoredAccessPolicy](Set-AzureStorageContainerStoredAccessPolicy.md)
-Ustawia zapisane zasady dostępu dla kontenera magazynu platformy Azure.
+Ustawia przechowywane zasady dostępu dla kontenera magazynu platformy Azure.
 
 ### [Set-AzureStorageCORSRule](Set-AzureStorageCORSRule.md)
 Ustawia reguły CORS dla typu usługi magazynu.
 
 ### [Set-AzureStorageFileContent](Set-AzureStorageFileContent.md)
-Umożliwia przekazywanie zawartości pliku.
+Przekazanie zawartości pliku.
 
 ### [Set-AzureStorageQueueStoredAccessPolicy](Set-AzureStorageQueueStoredAccessPolicy.md)
-Ustawia zapisane zasady dostępu dla kolejki magazynu platformy Azure.
+Ustawia zasady dostępu przechowywanego dla kolejki magazynu platformy Azure.
 
 ### [Set-AzureStorageServiceLoggingProperty](Set-AzureStorageServiceLoggingProperty.md)
-Modyfikuje rejestrowanie w usłudze Azure Storage Services.
+Modyfikuje rejestrowanie dla usług magazynu platformy Azure.
 
 ### [Set-AzureStorageServiceMetricsProperty](Set-AzureStorageServiceMetricsProperty.md)
-Modyfikuje właściwości metryk dla usługi Azure Storage.
+Modyfikuje właściwości metryk dla usługi magazynu platformy Azure.
 
 ### [Set-AzureStorageShareQuota](Set-AzureStorageShareQuota.md)
-Umożliwia ustawienie pojemności magazynowania dla udziału.
+Ustawia pojemność magazynu dla udziału.
 
 ### [Set-AzureStorageShareStoredAccessPolicy](Set-AzureStorageShareStoredAccessPolicy.md)
-Aktualizuje zapisane zasady dostępu w udziale magazynu.
+Aktualizuje przechowywane zasady dostępu dla udziału magazynu.
 
 ### [Set-AzureStorageTableStoredAccessPolicy](Set-AzureStorageTableStoredAccessPolicy.md)
-Ustawia zasady dostępu przechowywane dla tabeli magazynu platformy Azure.
+Ustawia zasady przechowywanego dostępu dla tabeli magazynu platformy Azure.
 
-### [Start — AzureStorageBlobCopy](Start-AzureStorageBlobCopy.md)
-Rozpoczyna Kopiowanie obiektu BLOB.
+### [Start-AzureStorageBlobCopy](Start-AzureStorageBlobCopy.md)
+Zaczyna kopiowanie obiektu blob.
 
-### [Start — AzureStorageBlobIncrementalCopy](Start-AzureStorageBlobIncrementalCopy.md)
-Rozpocznij operację przyrostowa kopiowania z migawki obiektu BLOB strony do określonego obiektu BLOB strony docelowej.
+### [Start-AzureStorageBlobIncrementalCopy](Start-AzureStorageBlobIncrementalCopy.md)
+Uruchamianie operacji kopiowania przyrostowego z migawki obiektu blob strony do określonego docelowego obiektu blob strony.
 
-### [Start — AzureStorageFileCopy](Start-AzureStorageFileCopy.md)
-Rozpoczyna kopiowanie pliku źródłowego.
+### [Start-AzureStorageFileCopy](Start-AzureStorageFileCopy.md)
+Zaczyna kopiowanie pliku źródłowego.
 
-### [Zatrzymaj — AzureStorageBlobCopy](Stop-AzureStorageBlobCopy.md)
+### [Stop-AzureStorageBlobCopy](Stop-AzureStorageBlobCopy.md)
 Zatrzymuje operację kopiowania.
 
-### [Zatrzymaj — AzureStorageFileCopy](Stop-AzureStorageFileCopy.md)
-Zatrzymuje operację kopiowania w określonym pliku docelowym.
+### [Stop-AzureStorageFileCopy](Stop-AzureStorageFileCopy.md)
+Zatrzymuje operację kopiowania do określonego pliku docelowego.
 

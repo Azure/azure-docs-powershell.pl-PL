@@ -6,34 +6,34 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.network/re
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Resize-AzVirtualNetworkGateway.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Resize-AzVirtualNetworkGateway.md
-ms.openlocfilehash: b3a468f06db6d75671049b08efcf7970553c5c79
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: e345d64a921d598e610f297a0508df58b45c99a6
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93869627"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100410551"
 ---
 # Resize-AzVirtualNetworkGateway
 
-## STRESZCZENIe
+## SYNOPSIS
 Zmienia rozmiar istniejącej bramy sieci wirtualnej.
 
-## POLECENIA
+## SKŁADNIA
 
 ```
 Resize-AzVirtualNetworkGateway -VirtualNetworkGateway <PSVirtualNetworkGateway> -GatewaySku <String>
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet Change **-AzVirtualNetworkGateway** umożliwia zmianę jednostki składowania zapasu (SKU) dla bramy sieci wirtualnej.
-Wersje SKU określają możliwości bramy, w tym takie jak przepływność i Maksymalna liczba dozwolonych tuneli IP.
-Platforma Azure obsługuje podstawowe, standardowe, High-Performance, VpnGw1, VpnGw2, VpnGw3, VpnGw1AZ, VpnGw2AZ, VpnGw3AZ, ErGw1AZ, ErGw2AZ, ErGw3AZ SKU (czasami nazywane małymi, średnimi i dużymi wersjami SKU).
-Aby uzyskać szczegółowe informacje o możliwościach poszczególnych typów SKU, zobacz temat https://azure.microsoft.com/en-us/documentation/articles/vpn-gateway-about-vpngateways/ .
-Pamiętaj, że jednostki SKU są różne w kalkulacji cen, a także możliwości.
+## OPIS
+Polecenie cmdlet **Resize-AzVirtualNetworkGateway** umożliwia zmianę jednostki magazynowej (SKU) dla bramy sieci wirtualnej.
+Jednostki SKU określają możliwości bramy, w tym przepływność i maksymalną dozwoloną liczbę adresów IP.
+Platforma Azure obsługuje jednostki SKU Basic, Standard, High-Performance, VpnGw1, VpnGw2, VpnGw3, VpnGw1AZ, VpnGw2AZ, VpnGw3AZ, ErGw1AZ, ErGw2AZ, ErGw3AZ (czasami określane mianem małych, średnich i dużych jednostki SKU).
+Aby uzyskać szczegółowe informacje na temat możliwości poszczególnych typów sKU, https://azure.microsoft.com/en-us/documentation/articles/vpn-gateway-about-vpngateways/ zobacz.
+Pamiętaj, że ceny i możliwości aplikacji różnią się w poszczególnych cenach.
 Aby uzyskać więcej informacji, zobacz https://azure.microsoft.com/en-us/pricing/details/vpn-gateway/ .
 
-## Przykłady
+## PRZYKŁADY
 
 ### Przykład 1. Zmienianie rozmiaru bramy sieci wirtualnej
 ```
@@ -41,14 +41,14 @@ PS C:\>$Gateway = Get-AzVirtualNetworkGateway -Name "ContosoVirtualGateway"
 PS C:\> Resize-AzVirtualNetworkGateway -VirtualNetworkGateway $Gateway -GatewaySku "Basic"
 ```
 
-W tym przykładzie jest zmieniany rozmiar bramy sieci wirtualnej o nazwie ContosoVirtualGateway.
-Pierwsze polecenie tworzy odwołanie do obiektu ContosoVirtualGateway; odwołanie do tego obiektu jest przechowywane w zmiennej o nazwie $Gateway.
-Drugie polecenie używa polecenia cmdlet **zmiany rozmiaru AzVirtualNetworkGateway** , aby ustawić właściwość *GatewaySku* na podstawową.
+W tym przykładzie zmienia się rozmiar bramy sieci wirtualnej o nazwie ContosoVirtualGateway.
+Pierwsze polecenie tworzy odwołanie do obiektu ContosoVirtualGateway. to odwołanie do obiektu jest przechowywane w zmiennej o nazwie $Gateway.
+Drugie polecenie użyje polecenia cmdlet **Resize-AzVirtualNetworkGateway** w celu ustawienia właściwości *GatewaySku* na Wartość Podstawowa.
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -63,10 +63,10 @@ Accept wildcard characters: False
 ```
 
 ### -GatewaySku
-Określa nowy typ jednostki SKU bramy.
-Dopuszczalne wartości tego parametru to:
-- Podstawowym
-- Standard
+Określa nowy typ sKU bramy.
+Dopuszczalne wartości dla tego parametru to:
+- Podstawowe
+- Standardowe
 - Wysoka wydajność
 - VpnGw1
 - VpnGw2
@@ -91,9 +91,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -VirtualNetworkGateway
-Określa odwołanie do obiektu bramy sieci wirtualnej, którego rozmiar ma zostać zmieniony.
-To odwołanie do obiektu można utworzyć przy użyciu Get-AzVirtualNetworkGateway i określając nazwę bramy.
+### — VirtualNetworkGateway
+Określa odwołanie do obiektu do bramy sieci wirtualnej, których rozmiar ma zostać zmieniony.
+To odwołanie do obiektu można utworzyć, używając Get-AzVirtualNetworkGateway i określając nazwę bramy.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Network.Models.PSVirtualNetworkGateway
@@ -108,33 +108,32 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### Microsoft. Azure. Commands. Network. models. PSVirtualNetworkGateway
+### Microsoft.Azure.Commands.Network.Models.PSVirtualNetworkGateway
 
-### System. String
+### System.String
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### Microsoft. Azure. Commands. Network. models. PSVirtualNetworkGateway
+### Microsoft.Azure.Commands.Network.Models.PSVirtualNetworkGateway
 
-## INFORMACYJN
-Nie można zmienić rozmiaru podstawowego/standardowego/HighPerformance SKU na nowy VpnGw1/VpnGw2/VpnGw3 SKU. Dalsze zmiany rozmiaru nie są dozwolone z poziomu/do VpnGw1AZ/VpnGw2AZ/VpnGw3AZ lub ErGw1AZ/ErGw2AZ/ErGw3AZ. Zmienianie rozmiaru jest dozwolone tylko w obrębie serii SKU, na przykład zmiany rozmiaru VpnGw1AZ/z VpnGw2AZ/VpnGw3AZ i ErGw1AZ można zmieniać do/z ErGw2AZ/ErGw3AZ. Zobacz https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways instrukcje.
+## NOTATKI
+Nie można zmienić rozmiaru z wersji Basic/Standard/HighPerformance na nowe jednostki SKU VpnGw1/VpnGw2/VpnGw3. Dalsze zmienianie rozmiaru nie jest dozwolone z/do VpnGw1AZ/VpnGw2AZ/VpnGw3AZ lub ErGw1AZ/ErGw2AZ/ErGw3AZ. Zmiana rozmiaru jest dozwolona tylko w "serii" SKU, np. VpnGw1AZ można zmienić na/z VpnGw2AZ/VpnGw3AZ i ErGw1AZ można zmienić na/z ErGw2AZ/ErGw3AZ. Zobacz https://docs.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-about-vpngateways instrukcje.
 
 ## LINKI POKREWNE
 
 [Get-AzVirtualNetworkGateway](./Get-AzVirtualNetworkGateway.md)
 
-[Nowe — AzVirtualNetworkGateway](./New-AzVirtualNetworkGateway.md)
+[New-AzVirtualNetworkGateway](./New-AzVirtualNetworkGateway.md)
 
 [Remove-AzVirtualNetworkGateway](./Remove-AzVirtualNetworkGateway.md)
 
-[Resetowanie — AzVirtualNetworkGateway](./Reset-AzVirtualNetworkGateway.md)
+[Reset-AzVirtualNetworkGateway](./Reset-AzVirtualNetworkGateway.md)
 
 [Set-AzVirtualNetworkGateway](./Set-AzVirtualNetworkGateway.md)
 
 [Get-AzVpnClientPackage](./Get-AzVpnClientPackage.md)
 
-[Set-AzVirtualNetworkGatewayVpnClientConfig](./Set-AzVirtualNetworkGatewayVpnClientConfig.md)
