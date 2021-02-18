@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/g
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultCertificate.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultCertificate.md
-ms.openlocfilehash: f4abc9a84f7b9b11bea4e0c7f44d888fc517aaf0
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: ed54239122026034dcae6b6114331e5dcae3d967
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94049669"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100405860"
 ---
 # Get-AzKeyVaultCertificate
 
-## STRESZCZENIe
+## SYNOPSIS
 Pobiera certyfikat z magazynu kluczy.
 
-## POLECENIA
+## SKŁADNIA
 
-### ByName (domyślny)
+### ByName (Default)
 ```
 Get-AzKeyVaultCertificate [-VaultName] <String> [[-Name] <String>] [-InRemovedState] [-IncludePending]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
@@ -74,12 +74,12 @@ Get-AzKeyVaultCertificate [-ResourceId] <String> [-Name] <String> [-IncludeVersi
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **Get-AzKeyVaultCertificate** Pobiera określony certyfikat lub wersje certyfikatu z magazynu kluczy w magazynie kluczy platformy Azure.
+## OPIS
+Polecenie **cmdlet Get-AzKeyVaultCertificate** pobiera określony certyfikat lub wersje certyfikatu z magazynu kluczy w magazynie kluczy platformy Azure.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1: uzyskiwanie certyfikatu
+### Przykład 1. Uzyskiwanie certyfikatu
 ```powershell
 PS C:\> Get-AzKeyVaultCertificate -VaultName "ContosoKV01" -Name "TestCert01"
 Name        : testCert01
@@ -110,8 +110,8 @@ Created     : 2/8/2016 11:21:45 PM
 Updated     : 2/8/2016 11:21:45 PM
 ```
 
-### Przykład 2: Uzyskaj certyfikat i Zapisz go jako PFX
-To polecenie pobiera certyfikat o nazwie TestCert01 z magazynu kluczy o nazwie ContosoKV01. Aby pobrać certyfikat jako plik PFX, uruchom następujące polecenie. Te polecenia uzyskują dostęp do SecretId, a następnie zapisują zawartość jako plik PFX.
+### Przykład 2. Uzyskiwanie certyfikatu i zapisywanie go jako pfx
+To polecenie pobiera certyfikat o nazwie TestCert01 z magazynu kluczy o nazwie ContosoKV01. Aby pobrać certyfikat jako plik pfx, uruchom następujące polecenie. Te polecenia uzyskają dostęp do secretid, a następnie zapisz zawartość jako plik pfx.
 
 ```powershell
 $cert = Get-AzKeyVaultCertificate -VaultName "ContosoKV01" -Name "TestCert01"
@@ -127,7 +127,7 @@ $pfxFileByte = $x509Cert.Export($type, $password)
 [System.IO.File]::WriteAllBytes("KeyValt.pfx", $pfxFileByte)
 ```
 
-### Przykład 3: Uzyskaj wszystkie certyfikaty, które zostały usunięte, ale nie zostały przeczyszczone dla tego magazynu kluczy.
+### Przykład 3. Pobierz wszystkie certyfikaty, które zostały usunięte, ale nie są czyszone dla tego magazynu kluczy.
 ```powershell
 PS C:\> Get-AzKeyVaultCertificate -VaultName 'contoso' -InRemovedState
 
@@ -157,9 +157,9 @@ Version            :
 Id                 : https://contoso.vault.azure.net:443/certificates/test2
 ```
 
-To polecenie pobiera wszystkie certyfikaty, które zostały wcześniej usunięte, ale nie są usuwane, w magazynie kluczy o nazwie contoso.
+To polecenie pobiera wszystkie certyfikaty, które zostały wcześniej usunięte, ale nie przeczyszono, w magazynie kluczy o nazwie Contoso.
 
-### Przykład 4: pobiera certyfikat servicecert, który został usunięty, ale nie został odczyszczony dla tego magazynu kluczy.
+### Przykład 4. Pobiera certyfikat MyCert, który został usunięty, ale nie przeczyszczony dla tego magazynu kluczy.
 ```powershell
 PS C:\> Get-AzKeyVaultCertificate -VaultName 'contoso' -Name 'test1' -InRemovedState
 
@@ -199,10 +199,10 @@ Version            : 7fe415d5518240c1a6fce89986b8d334
 Id                 : https://contoso.vault.azure.net:443/certificates/test1/7fe415d5518240c1a6fce89986b8d334
 ```
 
-To polecenie pobiera certyfikat o nazwie "Moje CERT", który został wcześniej usunięty, ale nie został przeczyszczony w magazynie kluczy o nazwie contoso.
-To polecenie zwróci metadane, takie jak Data usunięcia, oraz zaplanowaną datę przeczyszczania tego usuniętego certyfikatu.
+To polecenie pobiera certyfikat o nazwie "MyCert", który został wcześniej usunięty, ale nie przeczyszony, w magazynie kluczy o nazwie Contoso.
+To polecenie zwróci metadane, takie jak data usunięcia i zaplanowana data usunięcia tego usuniętego certyfikatu.
 
-### Przykład 5: Wyświetlanie certyfikatów przy użyciu funkcji filtrowania
+### Przykład 5. Lista certyfikatów przy użyciu filtrowania
 ```powershell
 PS C:\> Get-AzKeyVaultCertificate -VaultName "ContosoKV01" -Name "test*"
 
@@ -231,10 +231,10 @@ Id        : https://ContosoKV01.vault.azure.net:443/certificates/test2
 This command gets all certificates starting with "test" from the key vault named ContosoKV01.
 ```
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -248,8 +248,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -IncludePending
-Określa, czy mają być uwzględniane oczekujące certyfikaty w danych wyjściowych.
+### - IncludePending
+Określa, czy w danych wyjściowych mają być dołączane oczekujące certyfikaty
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -264,7 +264,7 @@ Accept wildcard characters: False
 ```
 
 ### -IncludeVersions
-Wskazuje, że ta operacja pobiera wszystkie wersje certyfikatu.
+Oznacza, że ta operacja pobiera wszystkie wersje certyfikatu.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -278,8 +278,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Inputobject
-Obiekt magazynu.
+### -InputObject
+Obiekt KeyVault.
 
 ```yaml
 Type: Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
@@ -294,7 +294,7 @@ Accept wildcard characters: False
 ```
 
 ### -InRemovedState
-Określa, czy w danych wyjściowych mają być uwzględniane uprzednio usunięte certyfikaty.
+Określa, czy do danych wyjściowych mają być dołączane usunięte wcześniej certyfikaty
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -308,8 +308,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (nazwa)
-Określa nazwę certyfikatu do pobrania.
+### — Nazwa
+Określa nazwę certyfikatu do uzyskania.
 
 ```yaml
 Type: System.String
@@ -336,7 +336,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Identyfikator zasobu magazynu.
+Identyfikator zasobu KeyVault.
 
 ```yaml
 Type: System.String
@@ -350,7 +350,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Magazynname
+### -VaultName
 Określa nazwę magazynu kluczy.
 
 ```yaml
@@ -365,7 +365,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Version
+### — Wersja
 Określa wersję certyfikatu.
 
 ```yaml
@@ -381,32 +381,31 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### Microsoft. Azure. Commands. platforming. models. PSKeyVault
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
 
-### System. String
+### System.String
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### Microsoft. Azure. Commands. platforming. models. PSKeyVaultCertificateIdentityItem
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultCertificateIdentityItem
 
-### Microsoft. Azure. Commands. platforming. models. PSKeyVaultCertificate
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultCertificate
 
 ### Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultCertificate
 
 ### Microsoft.Azure.Commands.KeyVault.Models.PSDeletedKeyVaultCertificateIdentityItem
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
-[Dodaj-AzKeyVaultCertificate](./Add-AzKeyVaultCertificate.md)
+[Add-AzKeyVaultCertificate](./Add-AzKeyVaultCertificate.md)
 
-[Import — AzKeyVaultCertificate](./Import-AzKeyVaultCertificate.md)
+[Import-AzKeyVaultCertificate](./Import-AzKeyVaultCertificate.md)
 
 [Remove-AzKeyVaultCertificate](./Remove-AzKeyVaultCertificate.md)
 
-[Cofanie — AzKeyVaultSecretCertificate](./Undo-AzKeyVaultSecretCertificate.md)

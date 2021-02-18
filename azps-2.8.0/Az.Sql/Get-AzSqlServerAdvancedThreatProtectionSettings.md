@@ -6,32 +6,32 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.sql/get-az
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlServerAdvancedThreatProtectionSettings.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlServerAdvancedThreatProtectionSettings.md
-ms.openlocfilehash: 1895fe45f51782cc1a3a54d8b2d0f2da752c2990
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: 38388f4a2d1d88ae668b8a6384ca228a9436ac68
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93886905"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100405911"
 ---
 # Get-AzSqlServerAdvancedThreatProtectionSettings
 
-## STRESZCZENIe
+## SYNOPSIS
 Pobiera zaawansowane ustawienia ochrony przed zagrożeniami dla serwera.
 
-## POLECENIA
+## SKŁADNIA
 
 ```
 Get-AzSqlServerAdvancedThreatProtectionSettings -ServerName <String> [-ResourceGroupName] <String>
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **Get-AzSqlServerAdvancedThreatProtectionSettings** pobiera zaawansowane ustawienia ochrony przed zagrożeniami dotyczące programu Azure SQL Server.
-Aby użyć tego polecenia cmdlet, określ parametry *ResourceGroupName* oraz *nazwa_serwera* w celu zidentyfikowania serwera, dla którego to polecenie cmdlet uzyska ustawienia.
+## OPIS
+Polecenie **cmdlet Get-AzSqlServerAdvancedThreatProtectionSettings** pobiera zaawansowane ustawienia ochrony przed zagrożeniami serwera Azure SQL.
+Aby użyć tego polecenia cmdlet, określ parametry *ResourceGroupName* i *ServerName* w celu określenia serwera, dla którego to polecenie cmdlet uzyskuje dostęp do ustawień.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1: uzyskiwanie zaawansowanych ustawień ochrony przed zagrożeniami dla serwera
+### Przykład 1. Uzyskiwanie zaawansowanych ustawień ochrony przed zagrożeniami dla serwera
 ```
 PS C:\>Get-AzSqlServerAdvancedThreatProtectionSettings -ResourceGroupName "ResourceGroup11" -ServerName "Server01"
 ResourceGroupName            : ResourceGroup11
@@ -47,10 +47,10 @@ RetentionInDays              : 0
 To polecenie pobiera zaawansowane ustawienia ochrony przed zagrożeniami dla serwera o nazwie Server01.
 Serwer jest przypisany do grupy zasobów ResourceGroup11.
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -79,7 +79,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Nazwa_serwera
+### -ServerName
 Określa nazwę serwera.
 
 ```yaml
@@ -94,8 +94,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Potwierdź
-Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.
+### — Potwierdź
+Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -110,8 +110,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet.
-Polecenie cmdlet nie jest uruchamiane.
+Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet.
+Polecenie cmdlet nie zostanie uruchomione.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -126,21 +126,20 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### System. String
+### System.String
 
-## WYSYŁA
+## OUTPUTS
 
-### Microsoft. Azure. Commands. SQL. ThreatDetection. model. ServerAdvancedThreatProtectionSettingsModel
+### Microsoft.Azure.Commands.Sql.ThreatDetection.Model.ServerAdvancedThreatProtectionSettingsModel
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
-[Remove-AzSqlDatabaseAdvancedThreatProtectionSettings](./Remove-AzSqlDatabaseAdvancedThreatProtectionSettings.md)
 
 [Dokumentacja bazy danych SQL](https://docs.microsoft.com/azure/sql-database/)
 

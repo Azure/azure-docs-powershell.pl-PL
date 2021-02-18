@@ -5,21 +5,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.accounts/a
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Accounts/Accounts/help/Add-AzEnvironment.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Accounts/Accounts/help/Add-AzEnvironment.md
-ms.openlocfilehash: ba5a398e21543bc4b19c09309884ceb11fed3197
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 2db2e90dc1292bdfe67907e5a180b08a09a54718
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94222735"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100406013"
 ---
 # Add-AzEnvironment
 
-## STRESZCZENIe
-Dodaje punkty końcowe i metadane wystąpienia Menedżera zasobów platformy Azure.
+## SYNOPSIS
+Dodaje punkty końcowe i metadane dla wystąpienia usługi Azure Resource Manager.
 
-## POLECENIA
+## SKŁADNIA
 
-### Nazwa (domyślnie)
+### Nazwa (domyślna)
 ```
 Add-AzEnvironment [-Name] <String> [[-PublishSettingsFileUrl] <String>] [[-ServiceEndpoint] <String>]
  [[-ManagementPortalUrl] <String>] [[-StorageEndpoint] <String>] [[-ActiveDirectoryEndpoint] <String>]
@@ -51,19 +51,19 @@ Add-AzEnvironment [-Name] <String> [[-StorageEndpoint] <String>] [-ARMEndpoint] 
  [<CommonParameters>]
 ```
 
-### Ujawnienie
+### Odnajdowanie
 ```
 Add-AzEnvironment -AutoDiscover [-Uri <Uri>] [-Scope {Process | CurrentUser}]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet Add-AzEnvironment umożliwia dodanie punktów końcowych i metadanych w celu włączenia poleceń cmdlet Menedżera zasobów platformy Azure w celu nawiązania połączenia z nowym wystąpieniem Menedżera zasobów platformy Azure.
-Wbudowane środowiska AzureCloud i AzureChinaCloud mają miejsce docelowe istniejące wystąpienia publiczne Menedżera zasobów platformy Azure.
+## OPIS
+Polecenie Add-AzEnvironment cmdlet dodaje punkty końcowe i metadane w celu umożliwienia polecenia cmdlet usługi Azure Resource Manager na łączenie się za pomocą nowego wystąpienia usługi Azure Resource Manager.
+Środowiska wbudowane AzureCloud i AzureChinaCloud są kierowane do istniejących wystąpień publicznych usługi Azure Resource Manager.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1: Tworzenie i modyfikowanie nowego środowiska
+### Przykład 1. Tworzenie i modyfikowanie nowego środowiska
 ```
 PS C:\> Add-AzEnvironment -Name TestEnvironment `
         -ActiveDirectoryEndpoint TestADEndpoint `
@@ -113,9 +113,9 @@ ExtendedProperties                                : {}
 BatchEndpointResourceId                           :
 ```
 
-W tym przykładzie tworzymy nowe środowisko platformy Azure z przykładowymi punktami końcowymi przy użyciu polecenia Add-AzEnvironment, a następnie zmieniamy wartość atrybutów ActiveDirectoryEndpoint i GraphEndpoint utworzonego środowiska za pomocą zestawu poleceń cmdlet Set-AzEnvironment.
+W tym przykładzie tworzymy nowe środowisko platformy Azure z przykładowymi punktami końcowymi przy użyciu dodatku AzEnvironment, a następnie zmieniamy wartość atrybutów ActiveDirectoryEndpoint i GraphEndpoint utworzonego środowiska przy użyciu polecenia cmdlet Set-AzEnvironment.
 
-### Przykład 2: odnajdowanie nowego środowiska za pomocą identyfikatora URI
+### Przykład 2. Odnajdowanie nowego środowiska za pośrednictwem Uri
 ```
 <#
 Uri https://configuredmetadata.net returns an array of environment metadata. The following example contains a payload for the AzureCloud default environment.
@@ -162,9 +162,9 @@ Name            Resource Manager Url ActiveDirectory Authority
 TestEnvironment TestRMEndpoint       TestADEndpoint/
 ```
 
-W tym przykładzie jest wykrywane nowe środowisko platformy Azure na podstawie https://configuredmetadata.net identyfikatora URI.
+W tym przykładzie odkrywamy nowe środowisko platformy Azure na stronie `https://configuredmetadata.net` Uri.
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -ActiveDirectoryEndpoint
 Określa podstawowy urząd uwierzytelniania usługi Azure Active Directory.
@@ -182,7 +182,7 @@ Accept wildcard characters: False
 ```
 
 ### -ActiveDirectoryServiceEndpointResourceId
-Określa odbiorców tokenów uwierzytelniających żądania do punktów końcowych Menedżera zasobów platformy Azure lub zarządzania usługami (REDDOG, Service Management Manager).
+Określa grupę odbiorców tokenów uwierzytelniania żądań do punktów końcowych usługi Azure Resource Manager lub zarządzania usługami (RDFE).
 
 ```yaml
 Type: System.String
@@ -196,7 +196,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -AdTenant
+### —AdTenant
 Określa domyślną dzierżawę usługi Active Directory.
 
 ```yaml
@@ -211,7 +211,7 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -ARMEndpoint
+### - ARMEndpoint
 Punkt końcowy usługi Azure Resource Manager
 
 ```yaml
@@ -226,8 +226,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Wykrywanie automatyczne
-Wykrywa środowiska przy użyciu domyślnego lub skonfigurowanego punktu końcowego.
+### — Autodiscover
+Wykrywa środowiska za pośrednictwem domyślnego lub skonfigurowanego punktu końcowego.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -242,7 +242,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureAnalysisServicesEndpointResourceId
-Identyfikator zasobu zasobu usługi Azure Analysis Services.
+Identyfikator zasobu zasobu usług Azure Analysis Services.
 
 ```yaml
 Type: System.String
@@ -257,7 +257,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureAnalysisServicesEndpointSuffix
-Punkt końcowy, który ma być używany podczas komunikowania się z interfejsem API analizy dzienników Azure.
+Punkt końcowy do użycia podczas komunikowania się z interfejsem API Azure Log Analytics.
 
 ```yaml
 Type: System.String
@@ -271,8 +271,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -AzureAttestationServiceEndpointResourceId
-Identyfikator zasobu usługi zaświadczeń na platformie Azure, który jest odbiorcą żądanego tokenu.
+### -AzureAttastationServiceEndpointResourceId
+Identyfikator zasobu usługi Azure Attestation, który jest adresatem żądanego tokenu.
 
 ```yaml
 Type: System.String
@@ -286,8 +286,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -AzureAttestationServiceEndpointSuffix
-Sufiks DNS usługi zaświadczeń na platformie Azure.
+### -AzureAttastationServiceEndpointSuffix
+Sufiks DNS usługi Azure Attestation.
 
 ```yaml
 Type: System.String
@@ -302,7 +302,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureDataLakeAnalyticsCatalogAndJobEndpointSuffix
-Sufiks DNS dla zadań usługi Azure Data Lake Analytics i usług wykazu
+Sufiks DNS zadania i usług wykazu usługi Azure Data Lake Analytics
 
 ```yaml
 Type: System.String
@@ -317,7 +317,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureDataLakeStoreFileSystemEndpointSuffix
-Sufiks DNS w systemie plików usługi Azure Data Lake Store. Przykład: azuredatalake.net
+Sufiks DNS systemu plików Azure Data Lake Store. Przykład: azuredatalake.net
 
 ```yaml
 Type: System.String
@@ -332,7 +332,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureKeyVaultDnsSuffix
-Sufiks DNS usługi magazynu kluczy platformy Azure. Przykład to vault-int.azure-int.net
+Sufiks DNS usługi magazynu kluczy platformy Azure. Przykład: vault-int.azure-int.net
 
 ```yaml
 Type: System.String
@@ -347,7 +347,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureKeyVaultServiceEndpointResourceId
-Identyfikator zasobu usługi danych magazynu kluczy platformy Azure, który jest odbiorcą żądanego tokenu.
+Identyfikator zasobu usługi danych magazynu kluczy platformy Azure, który jest adresatem żądanego tokenu.
 
 ```yaml
 Type: System.String
@@ -362,7 +362,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureOperationalInsightsEndpoint
-Punkt końcowy, który ma być używany podczas komunikowania się z interfejsem API analizy dzienników Azure.
+Punkt końcowy do użycia podczas komunikowania się z interfejsem API Azure Log Analytics.
 
 ```yaml
 Type: System.String
@@ -377,7 +377,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureOperationalInsightsEndpointResourceId
-Odbiorcy tokenów uwierzytelniających się przy użyciu interfejsu API analizy dzienników Azure.
+Odbiorcy tokenów uwierzytelniający za pomocą interfejsu API Azure Log Analytics.
 
 ```yaml
 Type: System.String
@@ -392,7 +392,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureSynapseAnalyticsEndpointResourceId
-Identyfikator zasobu analizy usługi Azure Synapse, który jest odbiorcą żądanego tokenu.
+Identyfikator zasobu usługi Azure Synapse Analytics, który jest adresatem żądanego tokenu.
 
 ```yaml
 Type: System.String
@@ -407,7 +407,7 @@ Accept wildcard characters: False
 ```
 
 ### -AzureSynapseAnalyticsEndpointSuffix
-Sufiks DNS na platformie Azure Synapse Analytics.
+Sufiks dns usługi Azure Synapse Analytics.
 
 ```yaml
 Type: System.String
@@ -422,7 +422,7 @@ Accept wildcard characters: False
 ```
 
 ### -BatchEndpointResourceId
-Identyfikator zasobu usługi Azure Batch, który jest odbiorcą żądanego tokenu
+Identyfikator zasobu usługi Azure Batch, który jest adresatem żądanego tokenu
 
 ```yaml
 Type: System.String
@@ -437,7 +437,7 @@ Accept wildcard characters: False
 ```
 
 ### -DataLakeAudience
-Odbiorca tokenów uwierzytelniających się za pomocą punktu końcowego usługi AD Data Lake Services.
+Odbiorcy tokenów uwierzytelniania za pomocą punktu końcowego usług AD Data Lake.
 
 ```yaml
 Type: System.String
@@ -452,7 +452,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, dzierżawca i subskrypcja używane do komunikacji z usługą Azure
+Poświadczenia, dzierżawa i subskrypcja używane do komunikacji z platformą Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -467,7 +467,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnableAdfsAuthentication
-Wskazuje, że dozwolone jest uwierzytelnianie lokalne usług federacyjnych Active Directory (ADFS).
+Wskazuje, że lokalne uwierzytelnianie usług federowych Active Directory (ADFS) jest dozwolone.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -497,7 +497,7 @@ Accept wildcard characters: False
 ```
 
 ### -GraphAudience
-Odbiorca tokenów uwierzytelniających się za pomocą punktu końcowego grafu AD.
+Grupa odbiorców tokenów uwierzytelniających się za pomocą punktu końcowego programu AD Graph.
 
 ```yaml
 Type: System.String
@@ -511,8 +511,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -GraphEndpoint
-Określa adres URL żądań wykresu (metadanych usługi Active Directory).
+### - GraphEndpoint
+Określa adres URL żądań usługi Graph (metadanych usługi Active Directory).
 
 ```yaml
 Type: System.String
@@ -541,8 +541,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Name (nazwa)
-Określa nazwę środowiska, które ma zostać dodane.
+### — Nazwa
+Określa nazwę środowiska do dodania.
 
 ```yaml
 Type: System.String
@@ -557,7 +557,7 @@ Accept wildcard characters: False
 ```
 
 ### -PublishSettingsFileUrl
-Określa adres URL, z którego można pobrać pliki publishsettings.
+Określa adres URL, z którego można pobierać pliki .publishsettings.
 
 ```yaml
 Type: System.String
@@ -586,8 +586,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Zakres
-Określa zakres zmian kontekstu, na przykład, czy zmiany są stosowane tylko do bieżącego procesu, czy do wszystkich sesji uruchomionych przez tego użytkownika.
+### — Zakres
+Określa zakres zmian kontekstu, na przykład tego, czy zmiany mają zastosowanie tylko do bieżącego procesu, czy do wszystkich sesji rozpoczętych przez tego użytkownika.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Profile.Common.ContextModificationScope
@@ -603,7 +603,7 @@ Accept wildcard characters: False
 ```
 
 ### -ServiceEndpoint
-Umożliwia określenie punktu końcowego dla żądań zarządzania usługami (REDDOG).
+Określa punkt końcowy żądań zarządzania usługami (RDFE).
 
 ```yaml
 Type: System.String
@@ -618,7 +618,7 @@ Accept wildcard characters: False
 ```
 
 ### -SqlDatabaseDnsSuffix
-Określa sufiks nazwy domeny dla serwerów bazy danych platformy Azure SQL.
+Określa sufiks nazwy domeny dla serwerów usługi Azure SQL Database.
 
 ```yaml
 Type: System.String
@@ -632,8 +632,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -StorageEndpoint
-Umożliwia określenie punktu końcowego dostępu (obiektu BLOB, tabeli, kolejki i pliku).
+### - StorageEndpoint
+Określa punkt końcowy dla dostępu do magazynu (obiektu blob, tabeli, kolejki i pliku).
 
 ```yaml
 Type: System.String
@@ -648,7 +648,7 @@ Accept wildcard characters: False
 ```
 
 ### -TrafficManagerDnsSuffix
-Określa sufiks nazwy domeny dla usług programu Azure Traffic Manager.
+Określa sufiks nazwy domeny dla usług Azure Traffic Manager.
 
 ```yaml
 Type: System.String
@@ -662,8 +662,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -URI
-Określa identyfikator URI zasobu internetowego, w którym należy pobrać środowiska.
+### -Uri
+Określa URI zasobu internetowego w celu zdalnego dostępu do środowisk.
 
 ```yaml
 Type: System.Uri
@@ -677,8 +677,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Potwierdź
-Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.
+### — Potwierdź
+Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -693,7 +693,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet. Polecenie cmdlet nie jest uruchamiane.
+Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet. Polecenie cmdlet nie zostanie uruchomione.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -708,19 +708,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### System. String
+### System.String
 
-### System. Management. Automation. SwitchParameter
+### System.Management.Automation.SwitchParameters
 
-## WYSYŁA
+## OUTPUTS
 
-### Microsoft. Azure. Commands. profile. PSAzureEnvironment
+### Microsoft.Azure.Commands.Profile.Models.PSAzureEnvironment
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
