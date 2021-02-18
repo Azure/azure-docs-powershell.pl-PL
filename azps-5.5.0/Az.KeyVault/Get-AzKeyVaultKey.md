@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/g
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultKey.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Get-AzKeyVaultKey.md
-ms.openlocfilehash: 842e571794fbf257473843ab824c1e6497f5c4a6
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: c01c000ff1171fdf63bd4bdd4c1548d7e61116f6
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100192371"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100415737"
 ---
 # Get-AzKeyVaultKey
 
@@ -130,7 +130,7 @@ Get-AzKeyVaultKey -HsmResourceId <String> [-Name] <String> [-IncludeVersions] [-
 
 ## OPIS
 Polecenie **cmdlet Get-AzKeyVaultKey** pobiera klucze magazynu kluczy platformy Azure.
-To polecenie cmdlet pobiera określoną usługę **Microsoft.Azure.Commands.KeyVault.Models.Key Jednakdle** lub listę wszystkich obiektów **Key Jednakdle** w magazynie kluczy lub według wersji.
+To polecenie cmdlet pobiera określoną usługę **Microsoft.Azure.Commands.KeyVault.Models.KeySłudze lub** listę wszystkich obiektów **Key Jednakdle** w magazynie kluczy lub według wersji.
 
 ## PRZYKŁADY
 
@@ -273,7 +273,7 @@ Purge Disabled       : False
 Tags                 :
 ```
 
-To polecenie pobiera test klucza3, który został wcześniej usunięty, ale nie przeczyszczony, w magazynie kluczy o nazwie Contoso.
+To polecenie pobiera test3 klucza, który został wcześniej usunięty, ale nie przeczyszczony, w magazynie kluczy o nazwie Contoso.
 To polecenie zwróci metadane, takie jak data usunięcia i zaplanowana data usunięcia tego usuniętego klucza.
 
 ### Przykład 7. Uzyskiwanie wszystkich kluczy w magazynie kluczy przy użyciu filtrowania
@@ -383,7 +383,7 @@ Accept wildcard characters: False
 Wskazuje, że to polecenie cmdlet pobiera wszystkie wersje klucza.
 Bieżąca wersja klucza jest pierwszą wersją na liście.
 Jeśli określisz ten parametr, musisz również określić parametry *Name (Nazwa) i* *VaultName (Nazwa magazynu).*
-Jeśli nie określisz *parametru IncludeVersions,* to polecenie cmdlet pobiera bieżącą wersję klucza o określonej *nazwie.*
+Jeśli parametr *IncludeVersions* nie zostanie określony, to polecenie cmdlet pobiera bieżącą wersję klucza o określonej *nazwie.*
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -525,7 +525,7 @@ To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVar
 
 ### System.String
 
-## OUTPUTS
+## DANE WYJŚCIOWE
 
 ### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultKeyIdentityItem
 
@@ -545,5 +545,4 @@ To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVar
 
 [Undo-AzKeyVaultKeyRemoval](./Undo-AzKeyVaultKeyRemoval.md)
 
-[Set-AzKeyVaultKeyAttribute](./Set-AzKeyVaultKeyAttribute.md)
 

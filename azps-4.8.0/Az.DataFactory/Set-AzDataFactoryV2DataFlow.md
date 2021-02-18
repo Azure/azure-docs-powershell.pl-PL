@@ -5,21 +5,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.datafactor
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Set-AzDataFactoryV2DataFlow.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Set-AzDataFactoryV2DataFlow.md
-ms.openlocfilehash: 42d9de3f23f1aca904aa0f42722217d0b9bf8a3a
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 44439d49fc89f00abaef904e80112d076121890f
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94220116"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100415958"
 ---
 # Set-AzDataFactoryV2DataFlow
 
-## STRESZCZENIe
-Umożliwia utworzenie przepływu danych w fabryce danych.
+## SYNOPSIS
+Tworzy przepływ danych w układzie Data Factory.
 
-## POLECENIA
+## SKŁADNIA
 
-### ByFactoryName (domyślny)
+### ByFactoryName (Default)
 ```
 Set-AzDataFactoryV2DataFlow [-Name] <String> [-DefinitionFile] <String> [-Force] [-ResourceGroupName] <String>
  [-DataFactoryName] <String> [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
@@ -32,10 +32,10 @@ Set-AzDataFactoryV2DataFlow [-DefinitionFile] <String> [-Force] [-ResourceId] <S
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet Set-AzDataFactoryV2DataFlow powoduje utworzenie przepływu danych lub zaktualizowanie istniejącego przepływu danych w usłudze Azure Data Factory.
+## OPIS
+Polecenie Set-AzDataFactoryV2DataFlow cmdlet tworzy przepływ danych lub aktualizuje istniejący przepływ danych w usłudze Azure Data Factory.
 
-## Przykłady
+## PRZYKŁADY
 
 ### Przykład 1. Tworzenie przepływu danych
 ```powershell
@@ -46,13 +46,13 @@ DataFlowName           DataFactoryName ResourceGroupName                        
 TaxiDemo1                      WikiADF               adf Microsoft.Azure.Management.DataFactory.Models.MappingDataFlow
 ```
 
-To polecenie tworzy przepływ danych o nazwie TaxiDemo1 w fabryce danych o nazwie WikiADF.
-Polecenie opiera się na przeniesieniu przepływu danych na informacjach w TaxiDemo1.jspliku.
+To polecenie tworzy przepływ danych o nazwie Naddemo1 w fabrycznej układzie danych o nazwie WikiADF.
+To polecenie bazuje na przepływie danych na podstawie informacji TaxiDemo1.jspliku.
 
-## PARAMETRÓW
+## PARAMETERS
 
-### -Datafactoryname
-Nazwa fabryki danych.
+### -DataFactoryName
+Nazwa fabryczna danych.
 
 ```yaml
 Type: System.String
@@ -67,7 +67,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -96,7 +96,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Force
+### — Wymuszanie
 Nie pytaj o potwierdzenie.
 
 ```yaml
@@ -111,7 +111,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Name (nazwa)
+### — Nazwa
 Nazwa przepływu danych.
 
 ```yaml
@@ -142,7 +142,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Identyfikator zasobu platformy Azure.
+Identyfikator zasobu Azure.
 
 ```yaml
 Type: System.String
@@ -156,8 +156,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Potwierdź
-Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.
+### — Potwierdź
+Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -172,8 +172,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet.
-Polecenie cmdlet nie jest uruchamiane.
+Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet.
+Polecenie cmdlet nie zostanie uruchomione.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -188,21 +188,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### System. String
+### System.String
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
 ### Microsoft.Azure.Commands.DataFactoryV2.Models.PSDataFlow
 
-## INFORMACYJN
-Słowa kluczowe: Azure, azurerm, ARM, Resource, Management, Manager, dane, fabryki
+## NOTATKI
+Słowa kluczowe: azure, azurerm, arm, resource, management, manager, dane, fabryki
 
 ## LINKI POKREWNE
 
-[Get-AzDataFactoryDataFlow](./Get-AzDataFactoryDataFlow.md)
 
-[Remove-AzDataFactoryDataFlow](./Remove-AzDataFactoryDataFlow.md)

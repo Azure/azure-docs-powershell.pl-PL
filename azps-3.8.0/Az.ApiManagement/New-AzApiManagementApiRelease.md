@@ -5,19 +5,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementApiRelease.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/New-AzApiManagementApiRelease.md
-ms.openlocfilehash: 9b2b94fbd6a308f9d927483e78e060a273354738
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 263e54adc39103a704dc4ea0bd30f396b5d00fc9
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94053964"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100413612"
 ---
 # New-AzApiManagementApiRelease
 
-## STRESZCZENIe
-Tworzenie wersji interfejsu API poprawki interfejsu API
+## SYNOPSIS
+Tworzy wersję interfejsu API poprawki interfejsu API
 
-## POLECENIA
+## SKŁADNIA
 
 ```
 New-AzApiManagementApiRelease -Context <PsApiManagementContext> -ApiId <String> -ApiRevision <String>
@@ -25,13 +25,13 @@ New-AzApiManagementApiRelease -Context <PsApiManagementContext> -ApiId <String> 
  [<CommonParameters>]
 ```
 
-## Opis
+## OPIS
 
-Polecenie cmdlet **New-AzApiManagementApiRelease** tworzy wersję API dla poprawki interfejsu API w kontekście zarządzania interfejsem API. Wersja jest używana w celu dokonania korekty interfejsu API jako bieżącej wersji.
+Polecenie **cmdlet New-AzApiManagementApiRelease** tworzy wersję interfejsu API dla poprawki interfejsu API w kontekście zarządzania interfejsem API. Wersja służy do zmiany poprawki interfejsu API jako bieżącej poprawki.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1: Tworzenie wersji interfejsu API dla wersji interfejsu API
+### Przykład 1. Tworzenie wersji interfejsu API dla poprawki interfejsu API
 ```powershell
 PS C:\>$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>New-AzApiManagementApiRelease -Context $context  -ApiId 5adf6fbf0faadf3ad8558065 -ApiRevision 6 -Note "Releasing version 6"
@@ -49,9 +49,9 @@ ResourceGroupName : Api-Default-WestUS
 ServiceName       : contoso
 ```
 
-To polecenie tworzy wersję API poprawki `2` `echo-api` .
+To polecenie tworzy wersję wersji poprawki interfejsu `2` `echo-api` API.
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -ApiId
 Identyfikator nowego interfejsu API.
@@ -83,8 +83,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Context
-Wystąpienie PsApiManagementContext.
+### — kontekst
+Wystąpienie tekstu PsApiManagementContext.
 Ten parametr jest wymagany.
 
 ```yaml
@@ -100,7 +100,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -114,7 +114,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Uwaga
+### — Uwaga
 Informacje o wersji interfejsu API. Ten parametr jest opcjonalny
 
 ```yaml
@@ -129,10 +129,10 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -ReleaseId
-Identyfikator wersji API.
+### - ReleaseId
+Identyfikator wydania interfejsu API.
 Ten parametr jest opcjonalny.
-Jeśli nie zostanie wygenerowany identyfikator.
+Jeśli nie zostanie określony identyfikator, zostanie wygenerowany.
 
 ```yaml
 Type: System.String
@@ -146,8 +146,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Potwierdź
-Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.
+### — Potwierdź
+Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -162,7 +162,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet. Polecenie cmdlet nie jest uruchamiane.
+Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet. Polecenie cmdlet nie zostanie uruchomione.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -177,19 +177,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### Microsoft. Azure. Commands. ApiManagement. servicemanagement. MODELES. PsApiManagementContext
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
 
-### System. String
+### System.String
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### Microsoft. Azure. Commands. ApiManagement. servicemanagement. MODELES. PsApiManagementApiRelease
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementApiRelease
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
@@ -197,4 +197,4 @@ To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariab
 
 [Remove-AzApiManagementApiRelease](./Remove-AzApiManagementApiRelease.md)
 
-[Set-AzApiManagementApiRelease](./Set-AzApiManagementApiRelease.md)
+[Update-AzApiManagementApiRelease](./Update-AzApiManagementApiRelease.md)

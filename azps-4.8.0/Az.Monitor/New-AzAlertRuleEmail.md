@@ -6,54 +6,54 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.monitor/ne
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzAlertRuleEmail.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzAlertRuleEmail.md
-ms.openlocfilehash: 592329ff0793fc99f8e5b0e7031a2248342102f9
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 7d9ed01346c04974fb43d7e3b233badb7a185dc2
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94220594"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100415924"
 ---
 # New-AzAlertRuleEmail
 
-## STRESZCZENIe
-Umożliwia utworzenie akcji poczty e-mail dla reguły alertu.
+## SYNOPSIS
+Tworzy akcję wiadomości e-mail dla reguły alertu.
 
-## POLECENIA
+## SKŁADNIA
 
 ```
 New-AzAlertRuleEmail [[-CustomEmail] <String[]>] [-SendToServiceOwner]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **New-AzAlertRuleEmail** umożliwia utworzenie akcji poczty e-mail dla reguły alertu.
+## OPIS
+Polecenie **cmdlet New-AzAlertRuleEmail** tworzy akcję poczty e-mail dla reguły alertu.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1: Tworzenie akcji e-mail z regułą alertów dla właścicieli usługi
+### Przykład 1. Tworzenie akcji wiadomości e-mail reguły alertu dla właścicieli usług
 ```
 PS C:\>New-AzAlertRuleEmail -SendToServiceOwners
 ```
 
-To polecenie umożliwia utworzenie akcji wiadomości e-mail z regułą alertu w celu wysłania jej właścicielom usług, gdy zostanie wygenerowane jej reguły alertu.
+To polecenie tworzy akcję poczty e-mail reguły alertu w celu wysłania jej właścicielom usługi po jej zwolniniu z alertu.
 
-### Przykład 2: Tworzenie akcji e-mail z regułą alertów dla właścicieli niebędących usługami
+### Przykład 2. Tworzenie akcji wiadomości e-mail reguły alertu dla właścicieli niebędące usługami
 ```
 PS C:\>New-AzAlertRuleEmail -CustomEmail pattif@contoso.com,davidchew@contoso.net
 ```
 
-To polecenie tworzy akcję e-mail dotyczącą reguły alertu dla określonych adresów e-mail, ale nie dla właścicieli usługi.
+To polecenie tworzy akcję poczty e-mail reguły alertu dla określonych adresów e-mail, ale nie dla właścicieli usługi.
 
-### Przykład 3: Tworzenie reguły alertu e-mail dla właścicieli usługi i właścicieli niebędących usługami
+### Przykład 3. Tworzenie akcji e-mail reguły alertu dla właścicieli usług i osób niebędących usługami
 ```
 PS C:\>New-AzAlertRuleEmail -CustomEmail pattif@contoso.net -SendToServiceOwners
 ```
 
-To polecenie umożliwia utworzenie akcji e-mail dotyczącej reguły alertu dla określonego adresu i jego właścicieli.
+To polecenie tworzy akcję poczty e-mail reguły alertu dla określonego adresu i dla jego właścicieli usługi.
 
-## PARAMETRÓW
+## PARAMETERS
 
-### -CustomEmail
+### - CustomEmail
 Określa listę adresów e-mail rozdzielanych przecinkami.
 
 ```yaml
@@ -69,7 +69,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -84,7 +84,7 @@ Accept wildcard characters: False
 ```
 
 ### -SendToServiceOwner
-Wskazuje, że ta operacja wysyła wiadomość e-mail do właścicieli usługi, gdy reguła jest uruchamiana.
+Wskazuje, że ta operacja wysyła wiadomość e-mail do właścicieli usług w momencie jej odpalowania.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -99,28 +99,27 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### System. String []
+### System.String[]
 
-### System. Management. Automation. SwitchParameter
+### System.Management.Automation.SwitchParameters
 
-## WYSYŁA
+## OUTPUTS
 
-### Microsoft. Azure. Management. Monitor. Management. models. RuleEmailAction
+### Microsoft.Azure.Management.Monitor.Management.Models.RuleEmailAction
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
-[Dodaj-AzLogAlertRule](./Add-AzLogAlertRule.md)
 
-[Dodaj-AzMetricAlertRule](./Add-AzMetricAlertRule.md)
+[Add-AzMetricAlertRule](./Add-AzMetricAlertRule.md)
 
-[Dodaj-AzWebtestAlertRule](./Add-AzWebtestAlertRule.md)
+[Add-AzWebtestAlertRule](./Add-AzWebtestAlertRule.md)
 
-[Nowe — AzAlertRuleWebhook](./New-AzAlertRuleWebhook.md)
+[New-AzAlertRuleWebhook](./New-AzAlertRuleWebhook.md)
 
 

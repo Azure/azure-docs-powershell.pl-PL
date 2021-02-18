@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Set-AzResource.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Set-AzResource.md
-ms.openlocfilehash: 7a4929ffff531bb11b19b44ca9c0914c71662c8d
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 82e06a4736a613111efac452eb1fced2713dc470
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94062116"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100415754"
 ---
 # Set-AzResource
 
-## STRESZCZENIe
+## SYNOPSIS
 Modyfikuje zasób.
 
-## POLECENIA
+## SKŁADNIA
 
-### ByResourceId (domyślny)
+### ByResourceId (Default)
 ```
 Set-AzResource [-Kind <String>] [-Properties <PSObject>] [-Plan <Hashtable>] [-Sku <Hashtable>]
  [-Tag <Hashtable>] [-UsePatchSemantics] [-AsJob] -ResourceId <String> [-ODataQuery <String>] [-Force]
@@ -54,11 +54,11 @@ Set-AzResource [-Kind <String>] [-Properties <PSObject>] [-Plan <Hashtable>] [-S
  [<CommonParameters>]
 ```
 
-## Opis
+## OPIS
 Polecenie cmdlet **Set-AzResource** modyfikuje istniejący zasób platformy Azure.
-Określ zasób do zmodyfikowania według nazwy i typu lub według identyfikatora.
+Określ zasób, który ma być modyfikowany według nazwy i typu lub identyfikatora.
 
-## Przykłady
+## PRZYKŁADY
 
 ### Przykład 1. Modyfikowanie zasobu
 ```
@@ -67,11 +67,11 @@ PS C:\> $Resource.Properties.Enabled = "False"
 PS C:\> $Resource | Set-AzResource -Force
 ```
 
-Pierwsze polecenie uzyskuje zasób o nazwie ContosoSite przy użyciu polecenia cmdlet Get-AzResource, a następnie zapisuje go w zmiennej $Resource.
-Drugie polecenie modyfikuje Właściwość $Resource.
-Polecenie ostatnie powoduje zaktualizowanie zasobu w celu dopasowania $Resource.
+Pierwsze polecenie pobiera zasób o nazwie ContosoSite za pomocą polecenia cmdlet Get-AzResource, a następnie zapisuje go w $Resource zmienną.
+Drugie polecenie modyfikuje właściwość $Resource.
+Ostatnie polecenie aktualizuje zasób tak, aby był $Resource.
 
-### Przykład 2: modyfikowanie wszystkich zasobów w danej grupie zasobów
+### Przykład 2. Modyfikowanie wszystkich zasobów w danej grupie zasobów
 ```
 PS C:\> $Resource = Get-AzResource -ResourceGroupName testrg
 PS C:\> $Resource | ForEach-Object { $_.Tags.Add("testkey", "testval") }
@@ -99,17 +99,17 @@ Properties        : @{key=value}
 Sku               : @{name=A0}
 ```
 
-Pierwsze polecenie uzyskuje zasoby w grupie zasobów testrg, a następnie zapisuje je w zmiennej $Resource.
+Pierwsze polecenie pobiera zasoby w grupie zasobów testrg, a następnie przechowuje je w $Resource zmienną.
 
-Drugie polecenie powtórzy wszystkie te zasoby w grupie zasobów i doda do nich nowy znacznik.
+Drugie polecenie będzie korzystać z iterowania każdego z tych zasobów w grupie zasobów i dodaje do nich nowy tag.
 
-Polecenie ostatnie umożliwia zaktualizowanie każdego z tych zasobów.
+Ostatnie polecenie aktualizuje każdy z tych zasobów.
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -ApiVersion
-Określa wersję interfejsu API dostawcy zasobów, który ma być używany.
-Jeśli nie określisz wersji, to polecenie cmdlet będzie korzystać z najnowszej dostępnej wersji.
+Określa wersję interfejsu API dostawcy zasobów do użycia.
+Jeśli nie określisz wersji, to polecenie cmdlet użyje najnowszej dostępnej wersji.
 
 ```yaml
 Type: System.String
@@ -123,8 +123,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -AsJob
-Uruchom polecenie cmdlet w tle
+### — AsJob
+Uruchamianie polecenia cmdlet w tle
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -139,7 +139,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -154,8 +154,8 @@ Accept wildcard characters: False
 ```
 
 ### -ExtensionResourceName
-Określa nazwę zasobu rozszerzenia dla zasobu.
-Aby na przykład określić bazę danych, użyj następującego formatu: nazwa `/` bazy danych nazwy serwera
+Określa nazwę zasobu rozszerzenia dla tego zasobu.
+Aby na przykład określić bazę danych, użyj następującego formatu: nazwa bazy danych o `/` nazwie serwera
 
 ```yaml
 Type: System.String
@@ -171,7 +171,7 @@ Accept wildcard characters: False
 
 ### -ExtensionResourceType
 Określa typ zasobu dla zasobu rozszerzenia.
-Jeśli na przykład zasób rozszerzenia jest bazą danych, określ następujące elementy: `Microsoft.Sql/Servers/Databases`
+Jeśli na przykład zasób rozszerzenia jest bazą danych, określ następujące informacje: `Microsoft.Sql/Servers/Databases`
 
 ```yaml
 Type: System.String
@@ -185,8 +185,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Force
-Wymusza uruchomienie polecenia bez monitowania o potwierdzenie użytkownika.
+### — Wymuszanie
+Wymusza uruchomienie polecenia bez pytania o potwierdzenie przez użytkownika.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -200,8 +200,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Inputobject
-Reprezentacja obiektu zasobu do zaktualizowania.
+### -InputObject
+Obiektowa reprezentacja zasobu do zaktualizowania.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels.PSResource
@@ -215,8 +215,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Kind
-Określa rodzaj zasobu dla zasobu.
+### — Rodzaj
+Określa rodzaj zasobu.
 
 ```yaml
 Type: System.String
@@ -231,7 +231,7 @@ Accept wildcard characters: False
 ```
 
 ### -ODataQuery
-Określa filtr stylu protokołu OData (Open Data Protocol).
+Określa filtr stylu protokołu Open Data (OData).
 To polecenie cmdlet dołącza tę wartość do żądania oprócz innych filtrów.
 
 ```yaml
@@ -246,7 +246,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Plan
+### — planowanie
 Określa właściwości planu zasobów jako tabelę skrótów dla zasobu.
 
 ```yaml
@@ -261,8 +261,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Pre
-Wskazuje, że w tym poleceniu cmdlet są brane pod uwagę wersje interfejsu API w wersji wstępnej podczas automatycznego określania wersji, której należy użyć.
+### — Przed
+Wskazuje, że to polecenie cmdlet uwzględnia wersje przedpremierowe interfejsu API, gdy automatycznie określa, której wersji użyć.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -276,8 +276,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Properties
-Określa właściwości zasobu dla zasobu.
+### — Properties
+Określa właściwości zasobu.
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -292,7 +292,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceGroupName
-Określa nazwę grupy zasobów, w której to polecenie cmdlet modyfikuje zasób.
+Określa nazwę grupy zasobów, dla której to polecenie cmdlet modyfikuje zasób.
 
 ```yaml
 Type: System.String
@@ -307,7 +307,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Określa w pełni kwalifikowany identyfikator zasobu, łącznie z subskrypcją, jak w poniższym przykładzie: `/subscriptions/` Identyfikator subskrypcji`/providers/Microsoft.Sql/servers/ContosoServer/databases/ContosoDatabase`
+Określa w pełni kwalifikowany identyfikator zasobu wraz z subskrypcją, jak w poniższym `/subscriptions/` przykładzie: Identyfikator subskrypcji`/providers/Microsoft.Sql/servers/ContosoServer/databases/ContosoDatabase`
 
 ```yaml
 Type: System.String
@@ -353,8 +353,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -SKU
-Określa obiekt SKU zasobu jako tablicę skrótów.
+### - SKU
+Określa obiekt SKU zasobu jako tabelę skrótu.
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -368,8 +368,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Tag
-Pary klucz-wartość w formie tabeli skrótów. Na przykład: @ {Key0 = "value0"; KEY1 = $null; key2 = "wartość2"}
+### — Tag
+Pary klucz-wartość w postaci tabeli skrótu. Na przykład: @{key0="value0";key1=$null;key2="wartość2"}
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -384,7 +384,7 @@ Accept wildcard characters: False
 ```
 
 ### -TenantLevel
-Wskazuje, że ten aplet polecenia działa na poziomie dzierżawy.
+Wskazuje, że to polecenie cmdlet działa na poziomie dzierżawy.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -398,8 +398,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -UsePatchSemantics
-Wskazuje, że w tym poleceniu cmdlet jest używana poprawka HTTP w celu zaktualizowania obiektu zamiast funkcji PUT HTTP.
+### —UsePatchSemantics
+Wskazuje, że to polecenie cmdlet używa poprawki HTTP w celu zaktualizowania obiektu zamiast protokołu HTTP PUT.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -413,8 +413,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Potwierdź
-Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.
+### — Potwierdź
+Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -429,8 +429,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet.
-Polecenie cmdlet nie jest uruchamiane.
+Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet.
+Polecenie cmdlet nie zostanie uruchomione.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -445,32 +445,31 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### Microsoft. Azure. Commands. resourceName. polecenia. cmdlet. SdkModels. PSResource
+### Microsoft.Azure.Commands.ResourceManager.Cmdlet.SdkModels.PSResource
 
-### System. String
+### System.String
 
-### System. Management. Automation. PSObject
+### System.Management.Automation.PSObject
 
-### System. Collections. Hashtable
+### System.Collections.Hashtable
 
-## WYSYŁA
+## OUTPUTS
 
-### System. Management. Automation. PSObject
+### System.Management.Automation.PSObject
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
-[Znajdź-AzResource](./Find-AzResource.md)
 
 [Get-AzResource](./Get-AzResource.md)
 
-[Przenieś — AzResource](./Move-AzResource.md)
+[Move-AzResource](./Move-AzResource.md)
 
-[Nowe — AzResource](./New-AzResource.md)
+[New-AzResource](./New-AzResource.md)
 
 [Remove-AzResource](./Remove-AzResource.md)
