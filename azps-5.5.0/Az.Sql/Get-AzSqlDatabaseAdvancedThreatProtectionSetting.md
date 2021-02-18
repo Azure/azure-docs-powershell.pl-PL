@@ -6,12 +6,12 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.sql/get-Az
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlDatabaseAdvancedThreatProtectionSetting.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlDatabaseAdvancedThreatProtectionSetting.md
-ms.openlocfilehash: 8090ee9cf6ec251668dbeadba6b18a7cde4898c4
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: 9035f2a03ac04a9bc99248c48675ab3c69b84207
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100176994"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100409617"
 ---
 # Get-AzSqlDatabaseAdvancedThreatProtectionSetting
 
@@ -47,7 +47,7 @@ RetentionInDays              : 0
 ```
 
 To polecenie pobiera zaawansowane ustawienia ochrony przed zagrożeniami dla bazy danych o nazwie Database01.
-Baza danych znajduje się na serwerze o nazwie Server01, który jest przypisany do grupy zasobów ResourceGroup11.
+Baza danych znajduje się na serwerze o nazwie Serwer01, który jest przypisany do grupy zasobów ResourceGroup11.
 
 ## PARAMETERS
 
@@ -149,7 +149,7 @@ To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVar
 
 ### System.String
 
-## DANE WYJŚCIOWE
+## OUTPUTS
 
 ### Microsoft.Azure.Commands.Sql.ThreatDetection.Model.DatabaseAdvancedThreatProtectionSettingsModel
 
@@ -157,7 +157,6 @@ To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVar
 
 ## LINKI POKREWNE
 
-[Remove-AzSqlDatabaseAdvancedThreatProtectionSetting](./Remove-AzSqlDatabaseAdvancedThreatProtectionSetting.md)
 
 
 

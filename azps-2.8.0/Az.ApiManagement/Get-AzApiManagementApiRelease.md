@@ -5,21 +5,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementApiRelease.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Get-AzApiManagementApiRelease.md
-ms.openlocfilehash: 19395960d3a0026b7a14c4ca8232c18d511af989
-ms.sourcegitcommit: 4d2c178cd6df9151877b08d54c1f4a228dbec9d1
+ms.openlocfilehash: bb27324c2c8524f36d9f3362dee8968fbfb0cc8c
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "93707093"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100409787"
 ---
 # Get-AzApiManagementApiRelease
 
-## STRESZCZENIe
+## SYNOPSIS
 Pobierz wersję interfejsu API.
 
-## POLECENIA
+## SKŁADNIA
 
-### ContextParameterSet (domyślny)
+### ContextParameterSet (Domyślne)
 ```
 Get-AzApiManagementApiRelease -Context <PsApiManagementContext> -ApiId <String> [-ReleaseId <String>]
  [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
@@ -31,12 +31,12 @@ Get-AzApiManagementApiRelease -ResourceId <String> [-DefaultProfile <IAzureConte
  [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **Get-AzApiManagementApiRelease umożliwia pobranie** co najmniej jednego wydania interfejsu API zarządzania interfejsem Azure API.
+## OPIS
+Polecenie **cmdlet Get-AzApiManagementApiRelease** otrzymuje jedną lub więcej wersji interfejsu API zarządzania interfejsem API platformy Azure.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1. Uzyskaj wszystkie wersje interfejsu API
+### Przykład 1. Uzyskiwanie wszystkich wersji interfejsu API
 ```powershell
 PS C:\>$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>Get-AzApiManagementApiRelease -Context $ApiMgmtContext -ApiId 5adf6fbf0faadf3ad8558065
@@ -50,9 +50,9 @@ ResourceGroupName : Api-Default-WestUS
 ServiceName       : contoso
 ```
 
-To polecenie pobiera wszystkie wersje `echo-api` interfejsu API dla określonego kontekstu.
+To polecenie pobiera wszystkie wersje interfejsu `echo-api` API dla określonego kontekstu.
 
-### Przykład 2: uzyskiwanie informacji o wersji konkretnego wydania interfejsu API
+### Przykład 2. Uzyskiwanie informacji o wersji określonej wersji interfejsu API
 ```powershell
 PS C:\>$ApiMgmtContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>Get-AzApiManagementApiRelease -Context $ApiMgmtContext -ApiId 5adf6fbf0faadf3ad8558065 -ReleaseId 5afccaf6b89fd067426d402e
@@ -68,13 +68,13 @@ ResourceGroupName : Api-Default-WestUS
 ServiceName       : contoso
 ```
 
-To polecenie uzyskuje informacje o wersjach określonego interfejsu API z określoną releaseId.
+To polecenie pobiera informacje o wersjach określonego interfejsu API z określonym releaseId.
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -ApiId
-Identyfikator API do wyszukania.
-Jeśli zostanie określona, spróbuje uzyskać interfejs API o identyfikatorze.
+Identyfikator API do wyszukiwania.
+Jeśli zostanie określona, spróbuje uzyskać interfejs API za pomocą identyfikatora.
 
 ```yaml
 Type: System.String
@@ -88,8 +88,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Context
-Wystąpienie PsApiManagementContext.
+### — kontekst
+Wystąpienie tekstu PsApiManagementContext.
 Ten parametr jest wymagany.
 
 ```yaml
@@ -105,7 +105,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -119,7 +119,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ReleaseId
+### - ReleaseId
 Identyfikator wydania.
 
 ```yaml
@@ -135,7 +135,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Identyfikator zasobu ARM w wersji API. Jeśli zostanie określona, spróbuje znaleźć zwolnienie interfejsu API o identyfikatorze. Ten parametr jest wymagany.
+Identyfikator zasobu arm wydania interfejsu API. Jeśli zostanie określona, spróbuje znaleźć zwolnienie interfejsu API za pomocą identyfikatora. Ten parametr jest wymagany.
 
 ```yaml
 Type: System.String
@@ -150,24 +150,24 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](https://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### Microsoft. Azure. Commands. ApiManagement. servicemanagement. MODELES. PsApiManagementContext
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
 
-### System. String
+### System.String
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### Microsoft. Azure. Commands. ApiManagement. servicemanagement. MODELES. PsApiManagementApiRelease
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementApiRelease
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
-[Nowe — AzApiManagementApiRelease](./Get-AzApiManagementApiRelease.md)
+[New-AzApiManagementApiRelease](./Get-AzApiManagementApiRelease.md)
 
 [Remove-AzApiManagementApiRelease](./Remove-AzApiManagementApiRelease.md)
 
-[Set-AzApiManagementApiRelease](./Set-AzApiManagementApiRelease.md)
+[Update-AzApiManagementApiRelease](./Update-AzApiManagementApiRelease.md)
