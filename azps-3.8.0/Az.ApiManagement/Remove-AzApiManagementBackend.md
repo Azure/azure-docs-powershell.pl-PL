@@ -5,40 +5,40 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.apimanagem
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementBackend.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ApiManagement/ApiManagement/help/Remove-AzApiManagementBackend.md
-ms.openlocfilehash: d1a353e9534cbfd2530bb67f5eeda92fbb6d72ff
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: 073b32936be1e1614e495ca680a250498742ba66
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "94051977"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100414598"
 ---
 # Remove-AzApiManagementBackend
 
-## STRESZCZENIe
-Usuwanie wewnętrznej bazy danych.
+## SYNOPSIS
+Usuwa zaplecza.
 
-## POLECENIA
+## SKŁADNIA
 
 ```
 Remove-AzApiManagementBackend -Context <PsApiManagementContext> -BackendId <String> [-PassThru]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Opis
-Umożliwia usunięcie wewnętrznej bazy danych określonej przez identyfikator z funkcji zarządzania interfejsem API.
+## OPIS
+Usuwa backend określony przez identyfikator z zarządzania interfejsami API.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1: usunięcie wewnętrznej bazy danych 123
+### Przykład 1. Usuwanie bazy danych Backend 123
 ```powershell
 PS C:\>$apimContext = New-AzApiManagementContext -ResourceGroupName "Api-Default-WestUS" -ServiceName "contoso"
 PS C:\>Remove-AzApiManagementBackend -Context $apimContext -BackendId 123 -PassThru
 ```
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -BackendId
-Identyfikator istniejącej wewnętrznej bazy danych.
+Identyfikator istniejącej bazy danych.
 Ten parametr jest wymagany.
 
 ```yaml
@@ -53,8 +53,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Context
-Wystąpienie PsApiManagementContext.
+### — kontekst
+Wystąpienie tekstu PsApiManagementContext.
 Ten parametr jest wymagany.
 
 ```yaml
@@ -70,7 +70,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -85,9 +85,9 @@ Accept wildcard characters: False
 ```
 
 ### -PassThru
-Jeśli ta wartość zostanie określona, operacja ta zostanie zapisana jako prawda w przypadku powodzenia operacji.
+Jeśli zostanie określona, na wypadek, gdyby operacja zakończyła się powodzeniem.
 Ten parametr jest opcjonalny.
-Wartość domyślna to false.
+Wartość domyślna to fałsz.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -101,8 +101,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Potwierdź
-Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.
+### — Potwierdź
+Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -117,7 +117,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet. Polecenie cmdlet nie jest uruchamiane.
+Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet. Polecenie cmdlet nie zostanie uruchomione.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -132,30 +132,30 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### Microsoft. Azure. Commands. ApiManagement. servicemanagement. MODELES. PsApiManagementContext
+### Microsoft.Azure.Commands.ApiManagement.ServiceManagement.Models.PsApiManagementContext
 
-### System. String
+### System.String
 
-### System. Management. Automation. SwitchParameter
+### System.Management.Automation.SwitchParameters
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### System. Boolean
+### System.Boolean
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
-[Get-AzApiManagementBackend](./Get-AzApiManagementBackend)
+[Get-AzApiManagementBackend](./Get-AzApiManagementBackend.md)
 
-[Nowe — AzApiManagementBackend](./New-AzApiManagementBackend.md)
+[New-AzApiManagementBackend](./New-AzApiManagementBackend.md)
 
-[Nowe — AzApiManagementBackendCredential](./New-AzApiManagementBackendCredential.md)
+[New-AzApiManagementBackendCredential](./New-AzApiManagementBackendCredential.md)
 
-[Nowe — AzApiManagementBackendProxy](./New-AzApiManagementBackendProxy.md)
+[New-AzApiManagementBackendProxy](./New-AzApiManagementBackendProxy.md)
 
 [Set-AzApiManagementBackend](./Set-AzApiManagementBackend.md)

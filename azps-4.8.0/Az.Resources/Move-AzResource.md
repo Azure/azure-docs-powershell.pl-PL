@@ -6,19 +6,19 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.resources/
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Move-AzResource.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Move-AzResource.md
-ms.openlocfilehash: 4f21ce7a14873d201fa18f45c96d508dcd38cb8e
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 561b19f7eb09d9addfda2b7f3c66c66f2d9f759d
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94223643"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100415601"
 ---
 # Move-AzResource
 
-## STRESZCZENIe
-Przenoszenie zasobu do innej grupy zasobów lub abonamentu.
+## SYNOPSIS
+Przenosi zasób do innej grupy zasobów lub innej subskrypcji.
 
-## POLECENIA
+## SKŁADNIA
 
 ```
 Move-AzResource -DestinationResourceGroupName <String> [-DestinationSubscriptionId <Guid>]
@@ -26,11 +26,11 @@ Move-AzResource -DestinationResourceGroupName <String> [-DestinationSubscription
  [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **Move-AzResource** przenosi istniejące zasoby do innej grupy zasobów.
-Ta grupa zasobów może być w innej subskrypcji.
+## OPIS
+Polecenie **cmdlet Move-AzResource** przenosi istniejące zasoby do innej grupy zasobów.
+Ta grupa zasobów może mieć inną subskrypcję.
 
-## Przykłady
+## PRZYKŁADY
 
 ### Przykład 1. Przenoszenie zasobu do grupy zasobów
 ```
@@ -38,15 +38,15 @@ PS C:\>$Resource = Get-AzResource -ResourceType "Microsoft.ClassicCompute/storag
 PS C:\> Move-AzResource -ResourceId $Resource.ResourceId -DestinationResourceGroupName "ResourceGroup14"
 ```
 
-Pierwsze polecenie uzyskuje zasób o nazwie ContosoStorageAccount przy użyciu polecenia cmdlet Get-AzResource, a następnie przechowuje ten zasób w zmiennej $Resource.
-Drugie polecenie przeniesie zasób do grupy zasobów o nazwie ResourceGroup14.
-To polecenie identyfikuje zasób do przeniesienia przy użyciu właściwości **ResourceId** $Resource.
+Pierwsze polecenie pobiera zasób o nazwie ContosoStorageAccount przy użyciu polecenia cmdlet Get-AzResource, a następnie przechowuje ten zasób w $Resource zmienną.
+Drugie polecenie przenosi ten zasób do grupy zasobów o nazwie Grupa Zasobów14.
+To polecenie identyfikuje zasób do przeniesienia przy użyciu właściwości **Identyfikator** Zasobu $Resource.
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -ApiVersion
-Określa wersję interfejsu API dostawcy zasobów, który ma być używany.
-Jeśli nie określisz wersji, to polecenie cmdlet będzie korzystać z najnowszej dostępnej wersji.
+Określa wersję interfejsu API dostawcy zasobów do użycia.
+Jeśli nie określisz wersji, to polecenie cmdlet użyje najnowszej dostępnej wersji.
 
 ```yaml
 Type: System.String
@@ -61,7 +61,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -76,7 +76,7 @@ Accept wildcard characters: False
 ```
 
 ### -DestinationResourceGroupName
-Określa nazwę grupy zasobów, do której to polecenie cmdlet powoduje przeniesienie zasobów.
+Określa nazwę grupy zasobów, do której to polecenie cmdlet przenosi zasoby.
 
 ```yaml
 Type: System.String
@@ -91,7 +91,7 @@ Accept wildcard characters: False
 ```
 
 ### -DestinationSubscriptionId
-Określa identyfikator subskrypcji, do której to polecenie cmdlet powoduje przeniesienie zasobów.
+Określa identyfikator subskrypcji, do której to polecenie cmdlet przenosi zasoby.
 
 ```yaml
 Type: System.Nullable`1[System.Guid]
@@ -105,8 +105,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -Force
-Wymusza uruchomienie polecenia bez monitowania o potwierdzenie użytkownika.
+### — Wymuszanie
+Wymusza uruchomienie polecenia bez pytania o potwierdzenie użytkownika.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -120,8 +120,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Pre
-Wskazuje, że w tym poleceniu cmdlet są brane pod uwagę wersje interfejsu API w wersji wstępnej podczas automatycznego określania wersji, której należy użyć.
+### — Przed
+Wskazuje, że to polecenie cmdlet uwzględnia wersje przedpremierowe interfejsu API, gdy automatycznie określa, której wersji użyć.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -136,7 +136,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Określa tablicę identyfikatorów zasobów przenoszonych przez to polecenie cmdlet.
+Określa tablicę identyfikatorów zasobów przeniesionych przez to polecenie cmdlet.
 
 ```yaml
 Type: System.String[]
@@ -150,8 +150,8 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### -Potwierdź
-Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.
+### — Potwierdź
+Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -166,8 +166,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet.
-Polecenie cmdlet nie jest uruchamiane.
+Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet.
+Polecenie cmdlet nie zostanie uruchomione.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -182,27 +182,26 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### System. Nullable "1 [[System. GUID, system. private. CoreLib, Version = 4.0.0.0, Culture = neutral, PublicKeyToken = 7cec85d7bea7798e]]
+### System.Nullable'1[[System.Guid, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]
 
-### System. String []
+### System.String[]
 
-## WYSYŁA
+## OUTPUTS
 
-### System. Boolean
+### System.Boolean
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
-[Znajdź-AzResource](./Find-AzResource.md)
 
 [Get-AzResource](./Get-AzResource.md)
 
-[Nowe — AzResource](./New-AzResource.md)
+[New-AzResource](./New-AzResource.md)
 
 [Remove-AzResource](./Remove-AzResource.md)
 
