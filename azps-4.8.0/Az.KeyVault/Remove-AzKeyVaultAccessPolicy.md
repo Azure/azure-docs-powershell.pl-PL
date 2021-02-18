@@ -6,21 +6,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.keyvault/r
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultAccessPolicy.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/KeyVault/KeyVault/help/Remove-AzKeyVaultAccessPolicy.md
-ms.openlocfilehash: e084894c26cee1a619f418437986593fe86876bb
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: e19565aa8ae249acf61fce67f0a2b54e20143758
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94064063"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100410161"
 ---
 # Remove-AzKeyVaultAccessPolicy
 
-## STRESZCZENIe
+## SYNOPSIS
 Usuwa wszystkie uprawnienia użytkownika lub aplikacji z magazynu kluczy.
 
-## POLECENIA
+## SKŁADNIA
 
-### ByUserPrincipalName (domyślny)
+### ByUserPrincipalName (Domyślna)
 ```
 Remove-AzKeyVaultAccessPolicy [-VaultName] <String> [[-ResourceGroupName] <String>] -UserPrincipalName <String>
  [-PassThru] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -115,14 +115,14 @@ Remove-AzKeyVaultAccessPolicy [-ResourceId] <String> [-EnabledForDeployment] [-E
  [<CommonParameters>]
 ```
 
-## Opis
-Polecenie cmdlet **Remove-AzKeyVaultAccessPolicy** usuwa wszystkie uprawnienia użytkownika lub aplikacji albo dla wszystkich użytkowników i aplikacji z magazynu kluczy.
-Nawet jeśli usuniesz wszystkie uprawnienia, właściciel subskrypcji platformy Azure zawierającej Magazyn kluczy może dodawać uprawnienia do magazynu kluczy.
-Uwaga: chociaż określenie grupy zasobów jest opcjonalne dla tego polecenia cmdlet, należy to zrobić w celu uzyskania lepszej wydajności.
+## OPIS
+Polecenie cmdlet **Remove-AzKeyVaultAccessPolicy** usuwa wszystkie uprawnienia użytkownika lub aplikacji albo wszystkich użytkowników i aplikacji z magazynu kluczy.
+Nawet jeśli usuniesz wszystkie uprawnienia, właściciel subskrypcji platformy Azure, która zawiera magazyn kluczy, może dodać uprawnienia do magazynu kluczy.
+Pamiętaj, że mimo że w przypadku tego polecenia cmdlet określenie grupy zasobów jest opcjonalne, należy to zrobić, aby uzyskać lepszą wydajność.
 
-## Przykłady
+## PRZYKŁADY
 
-### Przykład 1: usuwanie uprawnień użytkownika
+### Przykład 1. Usuwanie uprawnień użytkownika
 ```powershell
 PS C:\> Remove-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -UserPrincipalName 'PattiFuller@contoso.com' -PassThru
 
@@ -158,34 +158,34 @@ Network Rule Set                 :
 Tags                             :
 ```
 
-To polecenie usuwa wszystkie uprawnienia użytkownika PattiFuller@contoso.com w magazynie kluczy o nazwie Contoso03Vault.  Jeśli jest określony parametr-PassThru, zwracany jest obiekt magazynu.
+To polecenie usuwa wszystkie uprawnienia użytkownika w magazynie kluczy o nazwie PattiFuller@contoso.com Contoso03Vault.  Jeśli jest określona wartość -PassThru, jest zwracany obiekt KeyVault.
 
-### Przykład 2: usuwanie uprawnień do aplikacji
+### Przykład 2. Usuwanie uprawnień dla aplikacji
 ```powershell
 PS C:\> Remove-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -ServicePrincipalName 'http://payroll.contoso.com'
 ```
 
 To polecenie usuwa wszystkie uprawnienia aplikacji w magazynie kluczy o nazwie Contoso03Vault.
-W tym przykładzie zidentyfikowano aplikację przy użyciu nazwy głównej usługi zarejestrowanej w usłudze Azure Active Directory http://payroll.contoso.com .
+W tym przykładzie aplikacja jest identyfikowana przy użyciu nazwy podmiotu zabezpieczeń usługi zarejestrowanej w usłudze Azure Active `http://payroll.contoso.com` Directory.
 
-### Przykład 3: usuwanie uprawnień do aplikacji przy użyciu jej identyfikatora obiektu
+### Przykład 3. Usuwanie uprawnień aplikacji przy użyciu identyfikatora obiektu
 ```powershell
 PS C:\> Remove-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -ObjectID 34595082-9346-41b6-8d6b-295a2808b8db
 ```
 
 To polecenie usuwa wszystkie uprawnienia aplikacji w magazynie kluczy o nazwie Contoso03Vault.
-W tym przykładzie aplikacja została zidentyfikowana przez identyfikator obiektu podmiotu usługi.
+W tym przykładzie aplikacja jest identyfikowana za pomocą identyfikatora obiektu podmiotu zabezpieczeń usługi.
 
-### Przykład 4: usuwanie uprawnień dla dostawcy zasobów Microsoft. COMPUTE
+### Przykład 4. Usuwanie uprawnień dostawcy zasobów Microsoft.Compute
 ```powershell
 PS C:\> Remove-AzKeyVaultAccessPolicy -VaultName 'Contoso03Vault' -ResourceGroupName 'Group14' -EnabledForDeployment
 ```
 
-To polecenie powoduje usunięcie uprawnień dla dostawcy zasobów Microsoft. COMPUTE w celu uzyskania kluczy tajnych z Contoso03Vault.
+To polecenie usuwa uprawnienia dostawcy zasobów Microsoft.Compute w celu uzyskania sekretów z witryny Contoso03Vault.
 
-## PARAMETRÓW
+## PARAMETERS
 
-### -Identyfikator aplikacji
+### -ApplicationId
 Określa identyfikator aplikacji, której uprawnienia powinny zostać usunięte.
 
 ```yaml
@@ -201,7 +201,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -216,7 +216,7 @@ Accept wildcard characters: False
 ```
 
 ### -EmailAddress
-Określa adres e-mail użytkownika, którego dostęp należy usunąć.
+Określa adres e-mail użytkownika, którego dostęp chcesz usunąć.
 
 ```yaml
 Type: System.String
@@ -231,7 +231,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnabledForDeployment
-Jeśli ta funkcja jest określona, wyłącza możliwość pobierania kluczy tajnych z tego magazynu kluczy przez dostawcę Microsoft. COMPUTE Provider, gdy jest używany do tworzenia zasobów.
+Jeśli jest to określone, wyłącza pobieranie sekretów z tego magazynu kluczy przez dostawcę zasobów Microsoft.Compute podczas tworzenia zasobów.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -245,8 +245,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -EnabledForDiskEncryption
-Jeśli ta funkcja jest określona, wyłącza pobieranie kluczy tajnych z tego magazynu kluczy za pomocą szyfrowania dysków Azure.
+### -EnabledForScriptEncryption
+Jeśli jest to określone, wyłącza pobieranie sekretów z tego magazynu kluczy przez szyfrowanie dysków platformy Azure.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -261,7 +261,7 @@ Accept wildcard characters: False
 ```
 
 ### -EnabledForTemplateDeployment
-Jeśli ta funkcja jest określona, wyłącza pobieranie kluczy tajnych z tego magazynu kluczy za pomocą Menedżera zasobów Azure, gdy następuje odwołanie w szablonach.
+Jeśli jest to określone, wyłącza pobieranie sekretów z tego magazynu kluczy przez usługę Azure Resource Manager podczas tworzenia odwoływać się do nich w szablonach.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -275,7 +275,7 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Inputobject
+### -InputObject
 Obiekt magazynu kluczy.
 
 ```yaml
@@ -291,7 +291,7 @@ Accept wildcard characters: False
 ```
 
 ### -ObjectId
-Określa identyfikator obiektu podmiotu użytkownika lub usługi w usłudze Azure Active Directory, dla którego należy usunąć uprawnienia.
+Określa identyfikator obiektu użytkownika lub podmiotu zabezpieczeń usługi w usłudze Azure Active Directory, dla którego mają być usuwane uprawnienia.
 
 ```yaml
 Type: System.String
@@ -323,7 +323,7 @@ Accept wildcard characters: False
 
 ### -ResourceGroupName
 Określa nazwę grupy zasobów skojarzonej z magazynem kluczy, którego zasady dostępu są modyfikowane.
-Jeśli ta opcja nie jest określona, to polecenie cmdlet wyszukuje Magazyn kluczy w bieżącej subskrypcji.
+Jeśli nie zostanie określone, to polecenie cmdlet wyszukuje magazyn kluczy w bieżącej subskrypcji.
 
 ```yaml
 Type: System.String
@@ -338,7 +338,7 @@ Accept wildcard characters: False
 ```
 
 ### -ResourceId
-Identyfikator zasobu magazynu.
+Identyfikator zasobu KeyVault.
 
 ```yaml
 Type: System.String
@@ -353,8 +353,8 @@ Accept wildcard characters: False
 ```
 
 ### -ServicePrincipalName
-Określa główną nazwę usługi aplikacji, której uprawnienia należy usunąć.
-Określ identyfikator aplikacji, określany także jako identyfikator klienta, zarejestrowany dla aplikacji w usłudze Azure Active Directory.
+Określa nazwę podmiotu zabezpieczeń usługi aplikacji, której uprawnienia chcesz usunąć.
+Określ identyfikator aplikacji, nazywany również identyfikatorem klienta, zarejestrowanego dla aplikacji w usłudze Azure Active Directory.
 
 ```yaml
 Type: System.String
@@ -369,7 +369,7 @@ Accept wildcard characters: False
 ```
 
 ### -UserPrincipalName
-Określa główną nazwę użytkownika, którego dostęp należy usunąć.
+Określa główną nazwę użytkownika, którego dostęp chcesz usunąć.
 
 ```yaml
 Type: System.String
@@ -383,9 +383,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Magazynname
+### -VaultName
 Określa nazwę magazynu kluczy.
-To polecenie cmdlet umożliwia usunięcie uprawnień do magazynu kluczy określanego przez ten parametr.
+To polecenie cmdlet usuwa uprawnienia do magazynu kluczy, który określa ten parametr.
 
 ```yaml
 Type: System.String
@@ -399,8 +399,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Potwierdź
-Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.
+### — Potwierdź
+Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -415,8 +415,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet.
-Polecenie cmdlet nie jest uruchamiane.
+Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet.
+Polecenie cmdlet nie zostanie uruchomione.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -431,19 +431,19 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### Microsoft. Azure. Commands. platforming. models. PSKeyVault
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
 
-### System. String
+### System.String
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### Microsoft. Azure. Commands. platforming. models. PSKeyVault
+### Microsoft.Azure.Commands.KeyVault.Models.PSKeyVault
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 
