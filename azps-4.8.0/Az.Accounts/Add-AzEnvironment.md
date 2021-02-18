@@ -5,21 +5,21 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.accounts/a
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Accounts/Accounts/help/Add-AzEnvironment.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Accounts/Accounts/help/Add-AzEnvironment.md
-ms.openlocfilehash: ba5a398e21543bc4b19c09309884ceb11fed3197
-ms.sourcegitcommit: 1de2b6c3c99197958fa2101bc37680e7507f91ac
+ms.openlocfilehash: 2db2e90dc1292bdfe67907e5a180b08a09a54718
+ms.sourcegitcommit: 0c61b7f42dec507e576c92e0a516c6655e9f50fc
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "94222735"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "100406013"
 ---
-# <span data-ttu-id="298bd-101">Add-AzEnvironment</span><span class="sxs-lookup"><span data-stu-id="298bd-101">Add-AzEnvironment</span></span>
+# <span data-ttu-id="50286-101">Add-AzEnvironment</span><span class="sxs-lookup"><span data-stu-id="50286-101">Add-AzEnvironment</span></span>
 
-## <span data-ttu-id="298bd-102">STRESZCZENIe</span><span class="sxs-lookup"><span data-stu-id="298bd-102">SYNOPSIS</span></span>
-<span data-ttu-id="298bd-103">Dodaje punkty końcowe i metadane wystąpienia Menedżera zasobów platformy Azure.</span><span class="sxs-lookup"><span data-stu-id="298bd-103">Adds endpoints and metadata for an instance of Azure Resource Manager.</span></span>
+## <span data-ttu-id="50286-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="50286-102">SYNOPSIS</span></span>
+<span data-ttu-id="50286-103">Dodaje punkty końcowe i metadane dla wystąpienia usługi Azure Resource Manager.</span><span class="sxs-lookup"><span data-stu-id="50286-103">Adds endpoints and metadata for an instance of Azure Resource Manager.</span></span>
 
-## <span data-ttu-id="298bd-104">POLECENIA</span><span class="sxs-lookup"><span data-stu-id="298bd-104">SYNTAX</span></span>
+## <span data-ttu-id="50286-104">SKŁADNIA</span><span class="sxs-lookup"><span data-stu-id="50286-104">SYNTAX</span></span>
 
-### <span data-ttu-id="298bd-105">Nazwa (domyślnie)</span><span class="sxs-lookup"><span data-stu-id="298bd-105">Name (Default)</span></span>
+### <span data-ttu-id="50286-105">Nazwa (domyślna)</span><span class="sxs-lookup"><span data-stu-id="50286-105">Name (Default)</span></span>
 ```
 Add-AzEnvironment [-Name] <String> [[-PublishSettingsFileUrl] <String>] [[-ServiceEndpoint] <String>]
  [[-ManagementPortalUrl] <String>] [[-StorageEndpoint] <String>] [[-ActiveDirectoryEndpoint] <String>]
@@ -38,7 +38,7 @@ Add-AzEnvironment [-Name] <String> [[-PublishSettingsFileUrl] <String>] [[-Servi
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="298bd-106">ARMEndpoint</span><span class="sxs-lookup"><span data-stu-id="298bd-106">ARMEndpoint</span></span>
+### <span data-ttu-id="50286-106">ARMEndpoint</span><span class="sxs-lookup"><span data-stu-id="50286-106">ARMEndpoint</span></span>
 ```
 Add-AzEnvironment [-Name] <String> [[-StorageEndpoint] <String>] [-ARMEndpoint] <String>
  [[-AzureKeyVaultDnsSuffix] <String>] [[-AzureKeyVaultServiceEndpointResourceId] <String>]
@@ -51,19 +51,19 @@ Add-AzEnvironment [-Name] <String> [[-StorageEndpoint] <String>] [-ARMEndpoint] 
  [<CommonParameters>]
 ```
 
-### <span data-ttu-id="298bd-107">Ujawnienie</span><span class="sxs-lookup"><span data-stu-id="298bd-107">Discovery</span></span>
+### <span data-ttu-id="50286-107">Odnajdowanie</span><span class="sxs-lookup"><span data-stu-id="50286-107">Discovery</span></span>
 ```
 Add-AzEnvironment -AutoDiscover [-Uri <Uri>] [-Scope {Process | CurrentUser}]
  [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="298bd-108">Opis</span><span class="sxs-lookup"><span data-stu-id="298bd-108">DESCRIPTION</span></span>
-<span data-ttu-id="298bd-109">Polecenie cmdlet Add-AzEnvironment umożliwia dodanie punktów końcowych i metadanych w celu włączenia poleceń cmdlet Menedżera zasobów platformy Azure w celu nawiązania połączenia z nowym wystąpieniem Menedżera zasobów platformy Azure.</span><span class="sxs-lookup"><span data-stu-id="298bd-109">The Add-AzEnvironment cmdlet adds endpoints and metadata to enable Azure Resource Manager cmdlets to connect with a new instance of Azure Resource Manager.</span></span>
-<span data-ttu-id="298bd-110">Wbudowane środowiska AzureCloud i AzureChinaCloud mają miejsce docelowe istniejące wystąpienia publiczne Menedżera zasobów platformy Azure.</span><span class="sxs-lookup"><span data-stu-id="298bd-110">The built-in environments AzureCloud and AzureChinaCloud target existing public instances of Azure Resource Manager.</span></span>
+## <span data-ttu-id="50286-108">OPIS</span><span class="sxs-lookup"><span data-stu-id="50286-108">DESCRIPTION</span></span>
+<span data-ttu-id="50286-109">Polecenie Add-AzEnvironment cmdlet dodaje punkty końcowe i metadane w celu umożliwienia polecenia cmdlet usługi Azure Resource Manager na łączenie się za pomocą nowego wystąpienia usługi Azure Resource Manager.</span><span class="sxs-lookup"><span data-stu-id="50286-109">The Add-AzEnvironment cmdlet adds endpoints and metadata to enable Azure Resource Manager cmdlets to connect with a new instance of Azure Resource Manager.</span></span>
+<span data-ttu-id="50286-110">Środowiska wbudowane AzureCloud i AzureChinaCloud są kierowane do istniejących wystąpień publicznych usługi Azure Resource Manager.</span><span class="sxs-lookup"><span data-stu-id="50286-110">The built-in environments AzureCloud and AzureChinaCloud target existing public instances of Azure Resource Manager.</span></span>
 
-## <span data-ttu-id="298bd-111">Przykłady</span><span class="sxs-lookup"><span data-stu-id="298bd-111">EXAMPLES</span></span>
+## <span data-ttu-id="50286-111">PRZYKŁADY</span><span class="sxs-lookup"><span data-stu-id="50286-111">EXAMPLES</span></span>
 
-### <span data-ttu-id="298bd-112">Przykład 1: Tworzenie i modyfikowanie nowego środowiska</span><span class="sxs-lookup"><span data-stu-id="298bd-112">Example 1: Creating and modifying a new environment</span></span>
+### <span data-ttu-id="50286-112">Przykład 1. Tworzenie i modyfikowanie nowego środowiska</span><span class="sxs-lookup"><span data-stu-id="50286-112">Example 1: Creating and modifying a new environment</span></span>
 ```
 PS C:\> Add-AzEnvironment -Name TestEnvironment `
         -ActiveDirectoryEndpoint TestADEndpoint `
@@ -113,9 +113,9 @@ ExtendedProperties                                : {}
 BatchEndpointResourceId                           :
 ```
 
-<span data-ttu-id="298bd-113">W tym przykładzie tworzymy nowe środowisko platformy Azure z przykładowymi punktami końcowymi przy użyciu polecenia Add-AzEnvironment, a następnie zmieniamy wartość atrybutów ActiveDirectoryEndpoint i GraphEndpoint utworzonego środowiska za pomocą zestawu poleceń cmdlet Set-AzEnvironment.</span><span class="sxs-lookup"><span data-stu-id="298bd-113">In this example we are creating a new Azure environment with sample endpoints using Add-AzEnvironment, and then we are changing the value of the ActiveDirectoryEndpoint and GraphEndpoint attributes of the created environment using the cmdlet Set-AzEnvironment.</span></span>
+<span data-ttu-id="50286-113">W tym przykładzie tworzymy nowe środowisko platformy Azure z przykładowymi punktami końcowymi przy użyciu dodatku AzEnvironment, a następnie zmieniamy wartość atrybutów ActiveDirectoryEndpoint i GraphEndpoint utworzonego środowiska przy użyciu polecenia cmdlet Set-AzEnvironment.</span><span class="sxs-lookup"><span data-stu-id="50286-113">In this example we are creating a new Azure environment with sample endpoints using Add-AzEnvironment, and then we are changing the value of the ActiveDirectoryEndpoint and GraphEndpoint attributes of the created environment using the cmdlet Set-AzEnvironment.</span></span>
 
-### <span data-ttu-id="298bd-114">Przykład 2: odnajdowanie nowego środowiska za pomocą identyfikatora URI</span><span class="sxs-lookup"><span data-stu-id="298bd-114">Example 2: Discovering a new environment via Uri</span></span>
+### <span data-ttu-id="50286-114">Przykład 2. Odnajdowanie nowego środowiska za pośrednictwem Uri</span><span class="sxs-lookup"><span data-stu-id="50286-114">Example 2: Discovering a new environment via Uri</span></span>
 ```
 <#
 Uri https://configuredmetadata.net returns an array of environment metadata. The following example contains a payload for the AzureCloud default environment.
@@ -162,12 +162,12 @@ Name            Resource Manager Url ActiveDirectory Authority
 TestEnvironment TestRMEndpoint       TestADEndpoint/
 ```
 
-<span data-ttu-id="298bd-115">W tym przykładzie jest wykrywane nowe środowisko platformy Azure na podstawie https://configuredmetadata.net identyfikatora URI.</span><span class="sxs-lookup"><span data-stu-id="298bd-115">In this example, we are discovering a new Azure environment from the https://configuredmetadata.net Uri.</span></span>
+<span data-ttu-id="50286-115">W tym przykładzie odkrywamy nowe środowisko platformy Azure na stronie `https://configuredmetadata.net` Uri.</span><span class="sxs-lookup"><span data-stu-id="50286-115">In this example, we are discovering a new Azure environment from the `https://configuredmetadata.net` Uri.</span></span>
 
-## <span data-ttu-id="298bd-116">PARAMETRÓW</span><span class="sxs-lookup"><span data-stu-id="298bd-116">PARAMETERS</span></span>
+## <span data-ttu-id="50286-116">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="50286-116">PARAMETERS</span></span>
 
-### <span data-ttu-id="298bd-117">-ActiveDirectoryEndpoint</span><span class="sxs-lookup"><span data-stu-id="298bd-117">-ActiveDirectoryEndpoint</span></span>
-<span data-ttu-id="298bd-118">Określa podstawowy urząd uwierzytelniania usługi Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="298bd-118">Specifies the base authority for Azure Active Directory authentication.</span></span>
+### <span data-ttu-id="50286-117">-ActiveDirectoryEndpoint</span><span class="sxs-lookup"><span data-stu-id="50286-117">-ActiveDirectoryEndpoint</span></span>
+<span data-ttu-id="50286-118">Określa podstawowy urząd uwierzytelniania usługi Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="50286-118">Specifies the base authority for Azure Active Directory authentication.</span></span>
 
 ```yaml
 Type: System.String
@@ -181,8 +181,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="298bd-119">-ActiveDirectoryServiceEndpointResourceId</span><span class="sxs-lookup"><span data-stu-id="298bd-119">-ActiveDirectoryServiceEndpointResourceId</span></span>
-<span data-ttu-id="298bd-120">Określa odbiorców tokenów uwierzytelniających żądania do punktów końcowych Menedżera zasobów platformy Azure lub zarządzania usługami (REDDOG, Service Management Manager).</span><span class="sxs-lookup"><span data-stu-id="298bd-120">Specifies the audience for tokens that authenticate requests to Azure Resource Manager or Service Management (RDFE) endpoints.</span></span>
+### <span data-ttu-id="50286-119">-ActiveDirectoryServiceEndpointResourceId</span><span class="sxs-lookup"><span data-stu-id="50286-119">-ActiveDirectoryServiceEndpointResourceId</span></span>
+<span data-ttu-id="50286-120">Określa grupę odbiorców tokenów uwierzytelniania żądań do punktów końcowych usługi Azure Resource Manager lub zarządzania usługami (RDFE).</span><span class="sxs-lookup"><span data-stu-id="50286-120">Specifies the audience for tokens that authenticate requests to Azure Resource Manager or Service Management (RDFE) endpoints.</span></span>
 
 ```yaml
 Type: System.String
@@ -196,8 +196,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="298bd-121">-AdTenant</span><span class="sxs-lookup"><span data-stu-id="298bd-121">-AdTenant</span></span>
-<span data-ttu-id="298bd-122">Określa domyślną dzierżawę usługi Active Directory.</span><span class="sxs-lookup"><span data-stu-id="298bd-122">Specifies the default Active Directory tenant.</span></span>
+### <span data-ttu-id="50286-121">—AdTenant</span><span class="sxs-lookup"><span data-stu-id="50286-121">-AdTenant</span></span>
+<span data-ttu-id="50286-122">Określa domyślną dzierżawę usługi Active Directory.</span><span class="sxs-lookup"><span data-stu-id="50286-122">Specifies the default Active Directory tenant.</span></span>
 
 ```yaml
 Type: System.String
@@ -211,8 +211,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="298bd-123">-ARMEndpoint</span><span class="sxs-lookup"><span data-stu-id="298bd-123">-ARMEndpoint</span></span>
-<span data-ttu-id="298bd-124">Punkt końcowy usługi Azure Resource Manager</span><span class="sxs-lookup"><span data-stu-id="298bd-124">The Azure Resource Manager endpoint</span></span>
+### <span data-ttu-id="50286-123">- ARMEndpoint</span><span class="sxs-lookup"><span data-stu-id="50286-123">-ARMEndpoint</span></span>
+<span data-ttu-id="50286-124">Punkt końcowy usługi Azure Resource Manager</span><span class="sxs-lookup"><span data-stu-id="50286-124">The Azure Resource Manager endpoint</span></span>
 
 ```yaml
 Type: System.String
@@ -226,8 +226,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="298bd-125">-Wykrywanie automatyczne</span><span class="sxs-lookup"><span data-stu-id="298bd-125">-AutoDiscover</span></span>
-<span data-ttu-id="298bd-126">Wykrywa środowiska przy użyciu domyślnego lub skonfigurowanego punktu końcowego.</span><span class="sxs-lookup"><span data-stu-id="298bd-126">Discovers environments via default or configured endpoint.</span></span>
+### <span data-ttu-id="50286-125">— Autodiscover</span><span class="sxs-lookup"><span data-stu-id="50286-125">-AutoDiscover</span></span>
+<span data-ttu-id="50286-126">Wykrywa środowiska za pośrednictwem domyślnego lub skonfigurowanego punktu końcowego.</span><span class="sxs-lookup"><span data-stu-id="50286-126">Discovers environments via default or configured endpoint.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -241,8 +241,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="298bd-127">-AzureAnalysisServicesEndpointResourceId</span><span class="sxs-lookup"><span data-stu-id="298bd-127">-AzureAnalysisServicesEndpointResourceId</span></span>
-<span data-ttu-id="298bd-128">Identyfikator zasobu zasobu usługi Azure Analysis Services.</span><span class="sxs-lookup"><span data-stu-id="298bd-128">The resource identifier of the Azure Analysis Services resource.</span></span>
+### <span data-ttu-id="50286-127">-AzureAnalysisServicesEndpointResourceId</span><span class="sxs-lookup"><span data-stu-id="50286-127">-AzureAnalysisServicesEndpointResourceId</span></span>
+<span data-ttu-id="50286-128">Identyfikator zasobu zasobu usług Azure Analysis Services.</span><span class="sxs-lookup"><span data-stu-id="50286-128">The resource identifier of the Azure Analysis Services resource.</span></span>
 
 ```yaml
 Type: System.String
@@ -256,8 +256,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="298bd-129">-AzureAnalysisServicesEndpointSuffix</span><span class="sxs-lookup"><span data-stu-id="298bd-129">-AzureAnalysisServicesEndpointSuffix</span></span>
-<span data-ttu-id="298bd-130">Punkt końcowy, który ma być używany podczas komunikowania się z interfejsem API analizy dzienników Azure.</span><span class="sxs-lookup"><span data-stu-id="298bd-130">The endpoint to use when communicating with the Azure Log Analytics API.</span></span>
+### <span data-ttu-id="50286-129">-AzureAnalysisServicesEndpointSuffix</span><span class="sxs-lookup"><span data-stu-id="50286-129">-AzureAnalysisServicesEndpointSuffix</span></span>
+<span data-ttu-id="50286-130">Punkt końcowy do użycia podczas komunikowania się z interfejsem API Azure Log Analytics.</span><span class="sxs-lookup"><span data-stu-id="50286-130">The endpoint to use when communicating with the Azure Log Analytics API.</span></span>
 
 ```yaml
 Type: System.String
@@ -271,8 +271,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="298bd-131">-AzureAttestationServiceEndpointResourceId</span><span class="sxs-lookup"><span data-stu-id="298bd-131">-AzureAttestationServiceEndpointResourceId</span></span>
-<span data-ttu-id="298bd-132">Identyfikator zasobu usługi zaświadczeń na platformie Azure, który jest odbiorcą żądanego tokenu.</span><span class="sxs-lookup"><span data-stu-id="298bd-132">The The resource identifier of the Azure Attestation service that is the recipient of the requested token.</span></span>
+### <span data-ttu-id="50286-131">-AzureAttastationServiceEndpointResourceId</span><span class="sxs-lookup"><span data-stu-id="50286-131">-AzureAttestationServiceEndpointResourceId</span></span>
+<span data-ttu-id="50286-132">Identyfikator zasobu usługi Azure Attestation, który jest adresatem żądanego tokenu.</span><span class="sxs-lookup"><span data-stu-id="50286-132">The The resource identifier of the Azure Attestation service that is the recipient of the requested token.</span></span>
 
 ```yaml
 Type: System.String
@@ -286,8 +286,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="298bd-133">-AzureAttestationServiceEndpointSuffix</span><span class="sxs-lookup"><span data-stu-id="298bd-133">-AzureAttestationServiceEndpointSuffix</span></span>
-<span data-ttu-id="298bd-134">Sufiks DNS usługi zaświadczeń na platformie Azure.</span><span class="sxs-lookup"><span data-stu-id="298bd-134">Dns suffix of Azure Attestation service.</span></span>
+### <span data-ttu-id="50286-133">-AzureAttastationServiceEndpointSuffix</span><span class="sxs-lookup"><span data-stu-id="50286-133">-AzureAttestationServiceEndpointSuffix</span></span>
+<span data-ttu-id="50286-134">Sufiks DNS usługi Azure Attestation.</span><span class="sxs-lookup"><span data-stu-id="50286-134">Dns suffix of Azure Attestation service.</span></span>
 
 ```yaml
 Type: System.String
@@ -301,8 +301,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="298bd-135">-AzureDataLakeAnalyticsCatalogAndJobEndpointSuffix</span><span class="sxs-lookup"><span data-stu-id="298bd-135">-AzureDataLakeAnalyticsCatalogAndJobEndpointSuffix</span></span>
-<span data-ttu-id="298bd-136">Sufiks DNS dla zadań usługi Azure Data Lake Analytics i usług wykazu</span><span class="sxs-lookup"><span data-stu-id="298bd-136">Dns Suffix of Azure Data Lake Analytics job and catalog services</span></span>
+### <span data-ttu-id="50286-135">-AzureDataLakeAnalyticsCatalogAndJobEndpointSuffix</span><span class="sxs-lookup"><span data-stu-id="50286-135">-AzureDataLakeAnalyticsCatalogAndJobEndpointSuffix</span></span>
+<span data-ttu-id="50286-136">Sufiks DNS zadania i usług wykazu usługi Azure Data Lake Analytics</span><span class="sxs-lookup"><span data-stu-id="50286-136">Dns Suffix of Azure Data Lake Analytics job and catalog services</span></span>
 
 ```yaml
 Type: System.String
@@ -316,8 +316,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="298bd-137">-AzureDataLakeStoreFileSystemEndpointSuffix</span><span class="sxs-lookup"><span data-stu-id="298bd-137">-AzureDataLakeStoreFileSystemEndpointSuffix</span></span>
-<span data-ttu-id="298bd-138">Sufiks DNS w systemie plików usługi Azure Data Lake Store.</span><span class="sxs-lookup"><span data-stu-id="298bd-138">Dns Suffix of Azure Data Lake Store FileSystem.</span></span> <span data-ttu-id="298bd-139">Przykład: azuredatalake.net</span><span class="sxs-lookup"><span data-stu-id="298bd-139">Example: azuredatalake.net</span></span>
+### <span data-ttu-id="50286-137">-AzureDataLakeStoreFileSystemEndpointSuffix</span><span class="sxs-lookup"><span data-stu-id="50286-137">-AzureDataLakeStoreFileSystemEndpointSuffix</span></span>
+<span data-ttu-id="50286-138">Sufiks DNS systemu plików Azure Data Lake Store.</span><span class="sxs-lookup"><span data-stu-id="50286-138">Dns Suffix of Azure Data Lake Store FileSystem.</span></span> <span data-ttu-id="50286-139">Przykład: azuredatalake.net</span><span class="sxs-lookup"><span data-stu-id="50286-139">Example: azuredatalake.net</span></span>
 
 ```yaml
 Type: System.String
@@ -331,8 +331,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="298bd-140">-AzureKeyVaultDnsSuffix</span><span class="sxs-lookup"><span data-stu-id="298bd-140">-AzureKeyVaultDnsSuffix</span></span>
-<span data-ttu-id="298bd-141">Sufiks DNS usługi magazynu kluczy platformy Azure.</span><span class="sxs-lookup"><span data-stu-id="298bd-141">Dns suffix of Azure Key Vault service.</span></span> <span data-ttu-id="298bd-142">Przykład to vault-int.azure-int.net</span><span class="sxs-lookup"><span data-stu-id="298bd-142">Example is vault-int.azure-int.net</span></span>
+### <span data-ttu-id="50286-140">-AzureKeyVaultDnsSuffix</span><span class="sxs-lookup"><span data-stu-id="50286-140">-AzureKeyVaultDnsSuffix</span></span>
+<span data-ttu-id="50286-141">Sufiks DNS usługi magazynu kluczy platformy Azure.</span><span class="sxs-lookup"><span data-stu-id="50286-141">Dns suffix of Azure Key Vault service.</span></span> <span data-ttu-id="50286-142">Przykład: vault-int.azure-int.net</span><span class="sxs-lookup"><span data-stu-id="50286-142">Example is vault-int.azure-int.net</span></span>
 
 ```yaml
 Type: System.String
@@ -346,8 +346,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="298bd-143">-AzureKeyVaultServiceEndpointResourceId</span><span class="sxs-lookup"><span data-stu-id="298bd-143">-AzureKeyVaultServiceEndpointResourceId</span></span>
-<span data-ttu-id="298bd-144">Identyfikator zasobu usługi danych magazynu kluczy platformy Azure, który jest odbiorcą żądanego tokenu.</span><span class="sxs-lookup"><span data-stu-id="298bd-144">Resource identifier of Azure Key Vault data service that is the recipient of the requested token.</span></span>
+### <span data-ttu-id="50286-143">-AzureKeyVaultServiceEndpointResourceId</span><span class="sxs-lookup"><span data-stu-id="50286-143">-AzureKeyVaultServiceEndpointResourceId</span></span>
+<span data-ttu-id="50286-144">Identyfikator zasobu usługi danych magazynu kluczy platformy Azure, który jest adresatem żądanego tokenu.</span><span class="sxs-lookup"><span data-stu-id="50286-144">Resource identifier of Azure Key Vault data service that is the recipient of the requested token.</span></span>
 
 ```yaml
 Type: System.String
@@ -361,8 +361,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="298bd-145">-AzureOperationalInsightsEndpoint</span><span class="sxs-lookup"><span data-stu-id="298bd-145">-AzureOperationalInsightsEndpoint</span></span>
-<span data-ttu-id="298bd-146">Punkt końcowy, który ma być używany podczas komunikowania się z interfejsem API analizy dzienników Azure.</span><span class="sxs-lookup"><span data-stu-id="298bd-146">The endpoint to use when communicating with the Azure Log Analytics API.</span></span>
+### <span data-ttu-id="50286-145">-AzureOperationalInsightsEndpoint</span><span class="sxs-lookup"><span data-stu-id="50286-145">-AzureOperationalInsightsEndpoint</span></span>
+<span data-ttu-id="50286-146">Punkt końcowy do użycia podczas komunikowania się z interfejsem API Azure Log Analytics.</span><span class="sxs-lookup"><span data-stu-id="50286-146">The endpoint to use when communicating with the Azure Log Analytics API.</span></span>
 
 ```yaml
 Type: System.String
@@ -376,8 +376,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="298bd-147">-AzureOperationalInsightsEndpointResourceId</span><span class="sxs-lookup"><span data-stu-id="298bd-147">-AzureOperationalInsightsEndpointResourceId</span></span>
-<span data-ttu-id="298bd-148">Odbiorcy tokenów uwierzytelniających się przy użyciu interfejsu API analizy dzienników Azure.</span><span class="sxs-lookup"><span data-stu-id="298bd-148">The audience for tokens authenticating with the Azure Log Analytics API.</span></span>
+### <span data-ttu-id="50286-147">-AzureOperationalInsightsEndpointResourceId</span><span class="sxs-lookup"><span data-stu-id="50286-147">-AzureOperationalInsightsEndpointResourceId</span></span>
+<span data-ttu-id="50286-148">Odbiorcy tokenów uwierzytelniający za pomocą interfejsu API Azure Log Analytics.</span><span class="sxs-lookup"><span data-stu-id="50286-148">The audience for tokens authenticating with the Azure Log Analytics API.</span></span>
 
 ```yaml
 Type: System.String
@@ -391,8 +391,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="298bd-149">-AzureSynapseAnalyticsEndpointResourceId</span><span class="sxs-lookup"><span data-stu-id="298bd-149">-AzureSynapseAnalyticsEndpointResourceId</span></span>
-<span data-ttu-id="298bd-150">Identyfikator zasobu analizy usługi Azure Synapse, który jest odbiorcą żądanego tokenu.</span><span class="sxs-lookup"><span data-stu-id="298bd-150">The The resource identifier of the Azure Synapse Analytics that is the recipient of the requested token.</span></span>
+### <span data-ttu-id="50286-149">-AzureSynapseAnalyticsEndpointResourceId</span><span class="sxs-lookup"><span data-stu-id="50286-149">-AzureSynapseAnalyticsEndpointResourceId</span></span>
+<span data-ttu-id="50286-150">Identyfikator zasobu usługi Azure Synapse Analytics, który jest adresatem żądanego tokenu.</span><span class="sxs-lookup"><span data-stu-id="50286-150">The The resource identifier of the Azure Synapse Analytics that is the recipient of the requested token.</span></span>
 
 ```yaml
 Type: System.String
@@ -406,8 +406,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="298bd-151">-AzureSynapseAnalyticsEndpointSuffix</span><span class="sxs-lookup"><span data-stu-id="298bd-151">-AzureSynapseAnalyticsEndpointSuffix</span></span>
-<span data-ttu-id="298bd-152">Sufiks DNS na platformie Azure Synapse Analytics.</span><span class="sxs-lookup"><span data-stu-id="298bd-152">Dns suffix of Azure Synapse Analytics.</span></span>
+### <span data-ttu-id="50286-151">-AzureSynapseAnalyticsEndpointSuffix</span><span class="sxs-lookup"><span data-stu-id="50286-151">-AzureSynapseAnalyticsEndpointSuffix</span></span>
+<span data-ttu-id="50286-152">Sufiks dns usługi Azure Synapse Analytics.</span><span class="sxs-lookup"><span data-stu-id="50286-152">Dns suffix of Azure Synapse Analytics.</span></span>
 
 ```yaml
 Type: System.String
@@ -421,8 +421,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="298bd-153">-BatchEndpointResourceId</span><span class="sxs-lookup"><span data-stu-id="298bd-153">-BatchEndpointResourceId</span></span>
-<span data-ttu-id="298bd-154">Identyfikator zasobu usługi Azure Batch, który jest odbiorcą żądanego tokenu</span><span class="sxs-lookup"><span data-stu-id="298bd-154">The resource identifier of the Azure Batch service that is the recipient of the requested token</span></span>
+### <span data-ttu-id="50286-153">-BatchEndpointResourceId</span><span class="sxs-lookup"><span data-stu-id="50286-153">-BatchEndpointResourceId</span></span>
+<span data-ttu-id="50286-154">Identyfikator zasobu usługi Azure Batch, który jest adresatem żądanego tokenu</span><span class="sxs-lookup"><span data-stu-id="50286-154">The resource identifier of the Azure Batch service that is the recipient of the requested token</span></span>
 
 ```yaml
 Type: System.String
@@ -436,8 +436,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="298bd-155">-DataLakeAudience</span><span class="sxs-lookup"><span data-stu-id="298bd-155">-DataLakeAudience</span></span>
-<span data-ttu-id="298bd-156">Odbiorca tokenów uwierzytelniających się za pomocą punktu końcowego usługi AD Data Lake Services.</span><span class="sxs-lookup"><span data-stu-id="298bd-156">The audience for tokens authenticating with the AD Data Lake services Endpoint.</span></span>
+### <span data-ttu-id="50286-155">-DataLakeAudience</span><span class="sxs-lookup"><span data-stu-id="50286-155">-DataLakeAudience</span></span>
+<span data-ttu-id="50286-156">Odbiorcy tokenów uwierzytelniania za pomocą punktu końcowego usług AD Data Lake.</span><span class="sxs-lookup"><span data-stu-id="50286-156">The audience for tokens authenticating with the AD Data Lake services Endpoint.</span></span>
 
 ```yaml
 Type: System.String
@@ -451,8 +451,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="298bd-157">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="298bd-157">-DefaultProfile</span></span>
-<span data-ttu-id="298bd-158">Poświadczenia, dzierżawca i subskrypcja używane do komunikacji z usługą Azure</span><span class="sxs-lookup"><span data-stu-id="298bd-158">The credentials, tenant and subscription used for communication with azure</span></span>
+### <span data-ttu-id="50286-157">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="50286-157">-DefaultProfile</span></span>
+<span data-ttu-id="50286-158">Poświadczenia, dzierżawa i subskrypcja używane do komunikacji z platformą Azure</span><span class="sxs-lookup"><span data-stu-id="50286-158">The credentials, tenant and subscription used for communication with azure</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
@@ -466,8 +466,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="298bd-159">-EnableAdfsAuthentication</span><span class="sxs-lookup"><span data-stu-id="298bd-159">-EnableAdfsAuthentication</span></span>
-<span data-ttu-id="298bd-160">Wskazuje, że dozwolone jest uwierzytelnianie lokalne usług federacyjnych Active Directory (ADFS).</span><span class="sxs-lookup"><span data-stu-id="298bd-160">Indicates that Active Directory Federation Services (ADFS) on-premise authentication is allowed.</span></span>
+### <span data-ttu-id="50286-159">-EnableAdfsAuthentication</span><span class="sxs-lookup"><span data-stu-id="50286-159">-EnableAdfsAuthentication</span></span>
+<span data-ttu-id="50286-160">Wskazuje, że lokalne uwierzytelnianie usług federowych Active Directory (ADFS) jest dozwolone.</span><span class="sxs-lookup"><span data-stu-id="50286-160">Indicates that Active Directory Federation Services (ADFS) on-premise authentication is allowed.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -481,8 +481,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="298bd-161">-GalleryEndpoint</span><span class="sxs-lookup"><span data-stu-id="298bd-161">-GalleryEndpoint</span></span>
-<span data-ttu-id="298bd-162">Określa punkt końcowy galerii szablonów wdrażania usługi Azure Resource Manager.</span><span class="sxs-lookup"><span data-stu-id="298bd-162">Specifies the endpoint for the Azure Resource Manager gallery of deployment templates.</span></span>
+### <span data-ttu-id="50286-161">-GalleryEndpoint</span><span class="sxs-lookup"><span data-stu-id="50286-161">-GalleryEndpoint</span></span>
+<span data-ttu-id="50286-162">Określa punkt końcowy galerii szablonów wdrażania usługi Azure Resource Manager.</span><span class="sxs-lookup"><span data-stu-id="50286-162">Specifies the endpoint for the Azure Resource Manager gallery of deployment templates.</span></span>
 
 ```yaml
 Type: System.String
@@ -496,8 +496,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="298bd-163">-GraphAudience</span><span class="sxs-lookup"><span data-stu-id="298bd-163">-GraphAudience</span></span>
-<span data-ttu-id="298bd-164">Odbiorca tokenów uwierzytelniających się za pomocą punktu końcowego grafu AD.</span><span class="sxs-lookup"><span data-stu-id="298bd-164">The audience for tokens authenticating with the AD Graph Endpoint.</span></span>
+### <span data-ttu-id="50286-163">-GraphAudience</span><span class="sxs-lookup"><span data-stu-id="50286-163">-GraphAudience</span></span>
+<span data-ttu-id="50286-164">Grupa odbiorców tokenów uwierzytelniających się za pomocą punktu końcowego programu AD Graph.</span><span class="sxs-lookup"><span data-stu-id="50286-164">The audience for tokens authenticating with the AD Graph Endpoint.</span></span>
 
 ```yaml
 Type: System.String
@@ -511,8 +511,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="298bd-165">-GraphEndpoint</span><span class="sxs-lookup"><span data-stu-id="298bd-165">-GraphEndpoint</span></span>
-<span data-ttu-id="298bd-166">Określa adres URL żądań wykresu (metadanych usługi Active Directory).</span><span class="sxs-lookup"><span data-stu-id="298bd-166">Specifies the URL for Graph (Active Directory metadata) requests.</span></span>
+### <span data-ttu-id="50286-165">- GraphEndpoint</span><span class="sxs-lookup"><span data-stu-id="50286-165">-GraphEndpoint</span></span>
+<span data-ttu-id="50286-166">Określa adres URL żądań usługi Graph (metadanych usługi Active Directory).</span><span class="sxs-lookup"><span data-stu-id="50286-166">Specifies the URL for Graph (Active Directory metadata) requests.</span></span>
 
 ```yaml
 Type: System.String
@@ -526,8 +526,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="298bd-167">-ManagementPortalUrl</span><span class="sxs-lookup"><span data-stu-id="298bd-167">-ManagementPortalUrl</span></span>
-<span data-ttu-id="298bd-168">Określa adres URL portalu zarządzania.</span><span class="sxs-lookup"><span data-stu-id="298bd-168">Specifies the URL for the Management Portal.</span></span>
+### <span data-ttu-id="50286-167">-ManagementPortalUrl</span><span class="sxs-lookup"><span data-stu-id="50286-167">-ManagementPortalUrl</span></span>
+<span data-ttu-id="50286-168">Określa adres URL portalu zarządzania.</span><span class="sxs-lookup"><span data-stu-id="50286-168">Specifies the URL for the Management Portal.</span></span>
 
 ```yaml
 Type: System.String
@@ -541,8 +541,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="298bd-169">-Name (nazwa)</span><span class="sxs-lookup"><span data-stu-id="298bd-169">-Name</span></span>
-<span data-ttu-id="298bd-170">Określa nazwę środowiska, które ma zostać dodane.</span><span class="sxs-lookup"><span data-stu-id="298bd-170">Specifies the name of the environment to add.</span></span>
+### <span data-ttu-id="50286-169">— Nazwa</span><span class="sxs-lookup"><span data-stu-id="50286-169">-Name</span></span>
+<span data-ttu-id="50286-170">Określa nazwę środowiska do dodania.</span><span class="sxs-lookup"><span data-stu-id="50286-170">Specifies the name of the environment to add.</span></span>
 
 ```yaml
 Type: System.String
@@ -556,8 +556,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="298bd-171">-PublishSettingsFileUrl</span><span class="sxs-lookup"><span data-stu-id="298bd-171">-PublishSettingsFileUrl</span></span>
-<span data-ttu-id="298bd-172">Określa adres URL, z którego można pobrać pliki publishsettings.</span><span class="sxs-lookup"><span data-stu-id="298bd-172">Specifies the URL from which .publishsettings files can be downloaded.</span></span>
+### <span data-ttu-id="50286-171">-PublishSettingsFileUrl</span><span class="sxs-lookup"><span data-stu-id="50286-171">-PublishSettingsFileUrl</span></span>
+<span data-ttu-id="50286-172">Określa adres URL, z którego można pobierać pliki .publishsettings.</span><span class="sxs-lookup"><span data-stu-id="50286-172">Specifies the URL from which .publishsettings files can be downloaded.</span></span>
 
 ```yaml
 Type: System.String
@@ -571,8 +571,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="298bd-173">-ResourceManagerEndpoint</span><span class="sxs-lookup"><span data-stu-id="298bd-173">-ResourceManagerEndpoint</span></span>
-<span data-ttu-id="298bd-174">Określa adres URL żądań usługi Azure Resource Manager.</span><span class="sxs-lookup"><span data-stu-id="298bd-174">Specifies the URL for Azure Resource Manager requests.</span></span>
+### <span data-ttu-id="50286-173">-ResourceManagerEndpoint</span><span class="sxs-lookup"><span data-stu-id="50286-173">-ResourceManagerEndpoint</span></span>
+<span data-ttu-id="50286-174">Określa adres URL żądań usługi Azure Resource Manager.</span><span class="sxs-lookup"><span data-stu-id="50286-174">Specifies the URL for Azure Resource Manager requests.</span></span>
 
 ```yaml
 Type: System.String
@@ -586,8 +586,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="298bd-175">-Zakres</span><span class="sxs-lookup"><span data-stu-id="298bd-175">-Scope</span></span>
-<span data-ttu-id="298bd-176">Określa zakres zmian kontekstu, na przykład, czy zmiany są stosowane tylko do bieżącego procesu, czy do wszystkich sesji uruchomionych przez tego użytkownika.</span><span class="sxs-lookup"><span data-stu-id="298bd-176">Determines the scope of context changes, for example, whether changes apply only to the current process, or to all sessions started by this user.</span></span>
+### <span data-ttu-id="50286-175">— Zakres</span><span class="sxs-lookup"><span data-stu-id="50286-175">-Scope</span></span>
+<span data-ttu-id="50286-176">Określa zakres zmian kontekstu, na przykład tego, czy zmiany mają zastosowanie tylko do bieżącego procesu, czy do wszystkich sesji rozpoczętych przez tego użytkownika.</span><span class="sxs-lookup"><span data-stu-id="50286-176">Determines the scope of context changes, for example, whether changes apply only to the current process, or to all sessions started by this user.</span></span>
 
 ```yaml
 Type: Microsoft.Azure.Commands.Profile.Common.ContextModificationScope
@@ -602,8 +602,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="298bd-177">-ServiceEndpoint</span><span class="sxs-lookup"><span data-stu-id="298bd-177">-ServiceEndpoint</span></span>
-<span data-ttu-id="298bd-178">Umożliwia określenie punktu końcowego dla żądań zarządzania usługami (REDDOG).</span><span class="sxs-lookup"><span data-stu-id="298bd-178">Specifies the endpoint for Service Management (RDFE) requests.</span></span>
+### <span data-ttu-id="50286-177">-ServiceEndpoint</span><span class="sxs-lookup"><span data-stu-id="50286-177">-ServiceEndpoint</span></span>
+<span data-ttu-id="50286-178">Określa punkt końcowy żądań zarządzania usługami (RDFE).</span><span class="sxs-lookup"><span data-stu-id="50286-178">Specifies the endpoint for Service Management (RDFE) requests.</span></span>
 
 ```yaml
 Type: System.String
@@ -617,8 +617,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="298bd-179">-SqlDatabaseDnsSuffix</span><span class="sxs-lookup"><span data-stu-id="298bd-179">-SqlDatabaseDnsSuffix</span></span>
-<span data-ttu-id="298bd-180">Określa sufiks nazwy domeny dla serwerów bazy danych platformy Azure SQL.</span><span class="sxs-lookup"><span data-stu-id="298bd-180">Specifies the domain-name suffix for Azure SQL Database servers.</span></span>
+### <span data-ttu-id="50286-179">-SqlDatabaseDnsSuffix</span><span class="sxs-lookup"><span data-stu-id="50286-179">-SqlDatabaseDnsSuffix</span></span>
+<span data-ttu-id="50286-180">Określa sufiks nazwy domeny dla serwerów usługi Azure SQL Database.</span><span class="sxs-lookup"><span data-stu-id="50286-180">Specifies the domain-name suffix for Azure SQL Database servers.</span></span>
 
 ```yaml
 Type: System.String
@@ -632,8 +632,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="298bd-181">-StorageEndpoint</span><span class="sxs-lookup"><span data-stu-id="298bd-181">-StorageEndpoint</span></span>
-<span data-ttu-id="298bd-182">Umożliwia określenie punktu końcowego dostępu (obiektu BLOB, tabeli, kolejki i pliku).</span><span class="sxs-lookup"><span data-stu-id="298bd-182">Specifies the endpoint for storage (blob, table, queue, and file) access.</span></span>
+### <span data-ttu-id="50286-181">- StorageEndpoint</span><span class="sxs-lookup"><span data-stu-id="50286-181">-StorageEndpoint</span></span>
+<span data-ttu-id="50286-182">Określa punkt końcowy dla dostępu do magazynu (obiektu blob, tabeli, kolejki i pliku).</span><span class="sxs-lookup"><span data-stu-id="50286-182">Specifies the endpoint for storage (blob, table, queue, and file) access.</span></span>
 
 ```yaml
 Type: System.String
@@ -647,8 +647,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="298bd-183">-TrafficManagerDnsSuffix</span><span class="sxs-lookup"><span data-stu-id="298bd-183">-TrafficManagerDnsSuffix</span></span>
-<span data-ttu-id="298bd-184">Określa sufiks nazwy domeny dla usług programu Azure Traffic Manager.</span><span class="sxs-lookup"><span data-stu-id="298bd-184">Specifies the domain-name suffix for Azure Traffic Manager services.</span></span>
+### <span data-ttu-id="50286-183">-TrafficManagerDnsSuffix</span><span class="sxs-lookup"><span data-stu-id="50286-183">-TrafficManagerDnsSuffix</span></span>
+<span data-ttu-id="50286-184">Określa sufiks nazwy domeny dla usług Azure Traffic Manager.</span><span class="sxs-lookup"><span data-stu-id="50286-184">Specifies the domain-name suffix for Azure Traffic Manager services.</span></span>
 
 ```yaml
 Type: System.String
@@ -662,8 +662,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="298bd-185">-URI</span><span class="sxs-lookup"><span data-stu-id="298bd-185">-Uri</span></span>
-<span data-ttu-id="298bd-186">Określa identyfikator URI zasobu internetowego, w którym należy pobrać środowiska.</span><span class="sxs-lookup"><span data-stu-id="298bd-186">Specifies URI of the internet resource to fetch environments.</span></span>
+### <span data-ttu-id="50286-185">-Uri</span><span class="sxs-lookup"><span data-stu-id="50286-185">-Uri</span></span>
+<span data-ttu-id="50286-186">Określa URI zasobu internetowego w celu zdalnego dostępu do środowisk.</span><span class="sxs-lookup"><span data-stu-id="50286-186">Specifies URI of the internet resource to fetch environments.</span></span>
 
 ```yaml
 Type: System.Uri
@@ -677,8 +677,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="298bd-187">-Potwierdź</span><span class="sxs-lookup"><span data-stu-id="298bd-187">-Confirm</span></span>
-<span data-ttu-id="298bd-188">Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.</span><span class="sxs-lookup"><span data-stu-id="298bd-188">Prompts you for confirmation before running the cmdlet.</span></span>
+### <span data-ttu-id="50286-187">— Potwierdź</span><span class="sxs-lookup"><span data-stu-id="50286-187">-Confirm</span></span>
+<span data-ttu-id="50286-188">Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.</span><span class="sxs-lookup"><span data-stu-id="50286-188">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -692,8 +692,8 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="298bd-189">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="298bd-189">-WhatIf</span></span>
-<span data-ttu-id="298bd-190">Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet.</span><span class="sxs-lookup"><span data-stu-id="298bd-190">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="298bd-191">Polecenie cmdlet nie jest uruchamiane.</span><span class="sxs-lookup"><span data-stu-id="298bd-191">The cmdlet is not run.</span></span>
+### <span data-ttu-id="50286-189">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="50286-189">-WhatIf</span></span>
+<span data-ttu-id="50286-190">Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet.</span><span class="sxs-lookup"><span data-stu-id="50286-190">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="50286-191">Polecenie cmdlet nie zostanie uruchomione.</span><span class="sxs-lookup"><span data-stu-id="50286-191">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -707,26 +707,26 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="298bd-192">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="298bd-192">CommonParameters</span></span>
-<span data-ttu-id="298bd-193">To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="298bd-193">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="298bd-194">Aby uzyskać więcej informacji, zobacz [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span><span class="sxs-lookup"><span data-stu-id="298bd-194">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+### <span data-ttu-id="50286-192">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="50286-192">CommonParameters</span></span>
+<span data-ttu-id="50286-193">To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="50286-193">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="50286-194">Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="50286-194">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="298bd-195">WEJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="298bd-195">INPUTS</span></span>
+## <span data-ttu-id="50286-195">DANE WEJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="50286-195">INPUTS</span></span>
 
-### <span data-ttu-id="298bd-196">System. String</span><span class="sxs-lookup"><span data-stu-id="298bd-196">System.String</span></span>
+### <span data-ttu-id="50286-196">System.String</span><span class="sxs-lookup"><span data-stu-id="50286-196">System.String</span></span>
 
-### <span data-ttu-id="298bd-197">System. Management. Automation. SwitchParameter</span><span class="sxs-lookup"><span data-stu-id="298bd-197">System.Management.Automation.SwitchParameter</span></span>
+### <span data-ttu-id="50286-197">System.Management.Automation.SwitchParameters</span><span class="sxs-lookup"><span data-stu-id="50286-197">System.Management.Automation.SwitchParameter</span></span>
 
-## <span data-ttu-id="298bd-198">WYSYŁA</span><span class="sxs-lookup"><span data-stu-id="298bd-198">OUTPUTS</span></span>
+## <span data-ttu-id="50286-198">OUTPUTS</span><span class="sxs-lookup"><span data-stu-id="50286-198">OUTPUTS</span></span>
 
-### <span data-ttu-id="298bd-199">Microsoft. Azure. Commands. profile. PSAzureEnvironment</span><span class="sxs-lookup"><span data-stu-id="298bd-199">Microsoft.Azure.Commands.Profile.Models.PSAzureEnvironment</span></span>
+### <span data-ttu-id="50286-199">Microsoft.Azure.Commands.Profile.Models.PSAzureEnvironment</span><span class="sxs-lookup"><span data-stu-id="50286-199">Microsoft.Azure.Commands.Profile.Models.PSAzureEnvironment</span></span>
 
-## <span data-ttu-id="298bd-200">INFORMACYJN</span><span class="sxs-lookup"><span data-stu-id="298bd-200">NOTES</span></span>
+## <span data-ttu-id="50286-200">NOTATKI</span><span class="sxs-lookup"><span data-stu-id="50286-200">NOTES</span></span>
 
-## <span data-ttu-id="298bd-201">LINKI POKREWNE</span><span class="sxs-lookup"><span data-stu-id="298bd-201">RELATED LINKS</span></span>
+## <span data-ttu-id="50286-201">LINKI POKREWNE</span><span class="sxs-lookup"><span data-stu-id="50286-201">RELATED LINKS</span></span>
 
-[<span data-ttu-id="298bd-202">Get-AzEnvironment</span><span class="sxs-lookup"><span data-stu-id="298bd-202">Get-AzEnvironment</span></span>](./Get-AzEnvironment.md)
+[<span data-ttu-id="50286-202">Get-AzEnvironment</span><span class="sxs-lookup"><span data-stu-id="50286-202">Get-AzEnvironment</span></span>](./Get-AzEnvironment.md)
 
-[<span data-ttu-id="298bd-203">Remove-AzEnvironment</span><span class="sxs-lookup"><span data-stu-id="298bd-203">Remove-AzEnvironment</span></span>](./Remove-AzEnvironment.md)
+[<span data-ttu-id="50286-203">Remove-AzEnvironment</span><span class="sxs-lookup"><span data-stu-id="50286-203">Remove-AzEnvironment</span></span>](./Remove-AzEnvironment.md)
 
-[<span data-ttu-id="298bd-204">Set-AzEnvironment</span><span class="sxs-lookup"><span data-stu-id="298bd-204">Set-AzEnvironment</span></span>](./Set-AzEnvironment.md)
+[<span data-ttu-id="50286-204">Set-AzEnvironment</span><span class="sxs-lookup"><span data-stu-id="50286-204">Set-AzEnvironment</span></span>](./Set-AzEnvironment.md)
 
