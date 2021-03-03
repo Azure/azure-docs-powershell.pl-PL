@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 10/27/2020
 ms.custom: devx-track-azurepowershell
 ms.service: azure-powershell
-ms.openlocfilehash: 35d562db72e37a630fce8530d715e783412add2e
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: edfbe14ae3a42bb0b385fe9d6b5fa681a1aa2101
+ms.sourcegitcommit: 608289d079b819df2b8d1a2f7935cc500367a312
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100012844"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101684920"
 ---
 # <a name="migration-guide-for-az-500"></a>Przewodnik migracji dla modułu Az 5.0.0
 
@@ -239,7 +239,7 @@ Możliwość aktualizowania ustawienia usuwania nietrwałego jest przestarzała 
 
 ### <a name="get-azkeyvaultsecret"></a>Get-AzKeyVaultSecret
 
-Właściwość `SecretValueText` typu `Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultSecret` została usunięta. Właściwość `SecretValueText` została zastąpiona właściwością `SecretValue`.
+Właściwość `SecretValueText` typu `Microsoft.Azure.Commands.KeyVault.Models.PSKeyVaultSecret` została usunięta. Zastosuj `-AsPlainText` do wywołania, aby pobrać wpis tajny zwykłego tekstu lub użyć `$secret.SecretValue` typu `SecureString` w skrypcie.
 
 #### <a name="before"></a>Stary adres
 
@@ -251,13 +251,7 @@ $secretInPlainText = $secret.SecretValueText
 #### <a name="after"></a>Nowy adres
 
 ```powershell
-# PowerShell 7 or newer
-$secret = Get-AzKeyVaultSecret -VaultName myVault -Name mySecret
-$secretInPlainText = ConvertFrom-SecureString -SecureString $secret.SecretValue -AsPlainText
-
-# Prior to PowerShell 7, or Windows PowerShell
-$secret = Get-AzKeyVaultSecret -VaultName myVault -Name mySecret
-$secretInPlainText = [System.Runtime.InteropServices.Marshal]::PtrToStringBSTR([System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($secret.SecretValue))
+$secretInPlainText = Get-AzKeyVaultSecret -VaultName myVault -Name mySecret -AsPlainText
 ```
 
 ## <a name="azmanagedservices"></a>Az.ManagedServices

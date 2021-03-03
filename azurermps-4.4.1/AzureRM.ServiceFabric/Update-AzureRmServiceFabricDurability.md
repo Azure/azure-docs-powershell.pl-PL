@@ -5,21 +5,21 @@ online version: ''
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/ServiceFabric/Commands.ServiceFabric/help/Update-AzureRmServiceFabricDurability.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/preview/src/ResourceManager/ServiceFabric/Commands.ServiceFabric/help/Update-AzureRmServiceFabricDurability.md
-ms.openlocfilehash: 1c62c637324f19088dfffcfb4c8defae0a056b4c
-ms.sourcegitcommit: f599b50d5e980197d1fca769378df90a842b42a1
+ms.openlocfilehash: b056e5328c24270df6a95e33b079e7b907f29fa3
+ms.sourcegitcommit: 608289d079b819df2b8d1a2f7935cc500367a312
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "93542927"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101685028"
 ---
 # Update-AzureRmServiceFabricDurability
 
-## STRESZCZENIe
-Aktualizowanie warstwy trwałości lub VmSku typu węzła w klastrze.
+## SYNOPSIS
+Aktualizowanie warstwy niezawodności lub maszyny wirtualnej typu węzła w klastrze. Zaktualizuje także warstwę wytrzymałości w rozszerzeniu maszyny wirtualnej service Fabric na skojarzonym zestawie skal maszyny wirtualnej.
 
 [!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
-## POLECENIA
+## SKŁADNIA
 
 ```
 Update-AzureRmServiceFabricDurability [-ResourceGroupName] <String> [-Name] <String> -NodeType <String>
@@ -27,22 +27,22 @@ Update-AzureRmServiceFabricDurability [-ResourceGroupName] <String> [-Name] <Str
  [-Confirm] [<CommonParameters>]
 ```
 
-## Opis
-Użyj funkcji **Update-AzureRmServiceFabricDurability** , aby zaktualizować trwałość lub jednostkę SKU klastra.
+## OPIS
+Użyj **funkcji Update-AzureRmServiceFabricDurability, aby** zaktualizować niezawodność lub sKU klastru.
 
-## Przykłady
+## PRZYKŁADY
 
 ### Przykład 1
 ```
 PS c:> Update-AzureRmServiceFabricDurability -ResourceGroupName 'Group1' -Name 'Contoso01SFCluster' -DurabilityLevel Silver -NodeType nt1
 ```
 
-To polecenie zmienia poziom trwałości NodeType ' NT1 ' na srebrny.
+To polecenie zmienia warstwę właściwości NodeType 'nt1' na srebrną.
 
-## PARAMETRÓW
+## PARAMETERS
 
 ### -DurabilityLevel
-Określ poziom trwałości.
+Określ poziom niezawodności.
 
 ```yaml
 Type: Microsoft.Azure.Commands.ServiceFabric.Models.DurabilityLevel
@@ -57,7 +57,7 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Name (nazwa)
+### — Nazwa
 Określ nazwę klastra.
 
 ```yaml
@@ -73,7 +73,7 @@ Accept wildcard characters: False
 ```
 
 ### -NodeType
-Określ nazwę typu węzła sieci szkieletowej usługi.
+Określanie nazwy typu węzła Sieć szkieletowa usługi.
 
 ```yaml
 Type: System.String
@@ -102,8 +102,8 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### -SKU
-Określ jednostkę SKU typu węzła.
+### - SKU
+Określ sku typu węzła.
 
 ```yaml
 Type: System.String
@@ -117,8 +117,8 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Potwierdź
-Monituje o potwierdzenie przed uruchomieniem polecenia cmdlet.
+### — Potwierdź
+Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -133,7 +133,7 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-Pokazuje, co się stanie, jeśli jest uruchomione polecenie cmdlet. Polecenie cmdlet nie jest uruchamiane.
+Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet. Polecenie cmdlet nie zostanie uruchomione.
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -148,7 +148,7 @@ Accept wildcard characters: False
 ```
 
 ### -DefaultProfile
-Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z usługą Azure.
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.
 
 ```yaml
 Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.IAzureContextContainer
@@ -163,18 +163,18 @@ Accept wildcard characters: False
 ```
 
 ### CommonParameters
-To polecenie cmdlet obsługuje typowe parametry:-Debug,-ErrorAction,-ErrorVariable,-InformationAction,-InformationVariable,-unvariable,-subbuffer,-PipelineVariable,-verbose,-WarningAction i-WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz about_CommonParameters ( https://go.microsoft.com/fwlink/?LinkID=113216) .
 
-## WEJŚCIOWE
+## DANE WEJŚCIOWE
 
-### Microsoft. Azure. Commands. servicefabric. MODELES. DurabilityLevel
-System. String
+### Microsoft.Azure.Commands.ServiceFabric.Models.DurabilityLevel
+System.String
 
-## WYSYŁA
+## DANE WYJŚCIOWE
 
-### Microsoft. Azure. Commands. servicefabric. MODELES. PsCluster
+### Microsoft.Azure.Commands.ServiceFabric.Models.PsCluster
 
-## INFORMACYJN
+## NOTATKI
 
 ## LINKI POKREWNE
 

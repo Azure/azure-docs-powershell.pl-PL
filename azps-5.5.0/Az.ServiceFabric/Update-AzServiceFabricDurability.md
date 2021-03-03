@@ -5,17 +5,17 @@ online version: https://docs.microsoft.com/en-us/powershell/module/az.servicefab
 schema: 2.0.0
 content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ServiceFabric/ServiceFabric/help/Update-AzServiceFabricDurability.md
 original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/ServiceFabric/ServiceFabric/help/Update-AzServiceFabricDurability.md
-ms.openlocfilehash: 1a406ad937a545c9b2599966909809c7552ad7db
-ms.sourcegitcommit: c05d3d669b5631e526841f47b22513d78495350b
+ms.openlocfilehash: 1a0da9869ccfdc6b8344240a8367a4c8dfcd2350
+ms.sourcegitcommit: 608289d079b819df2b8d1a2f7935cc500367a312
 ms.translationtype: MT
 ms.contentlocale: pl-PL
-ms.lasthandoff: 02/09/2021
-ms.locfileid: "100189066"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "101684898"
 ---
 # Update-AzServiceFabricDurability
 
 ## SYNOPSIS
-Aktualizowanie warstwy niezawodności lub maszyny wirtualnej typu węzła w klastrze.
+Aktualizowanie warstwy niezawodności lub maszyny wirtualnej typu węzła w klastrze. Zaktualizuje także warstwę wytrzymałości w rozszerzeniu maszyny wirtualnej service Fabric na skojarzonym zestawie skal maszyny wirtualnej.
 
 ## SKŁADNIA
 
@@ -169,7 +169,7 @@ To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVar
 
 ### Microsoft.Azure.Commands.ServiceFabric.Models.DurabilityLevel
 
-## OUTPUTS
+## DANE WYJŚCIOWE
 
 ### Microsoft.Azure.Commands.ServiceFabric.Models.PSCluster
 
