@@ -1,0 +1,128 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
+Module Name: Az.Network
+online version: https://docs.microsoft.com/powershell/module/az.network/get-azrouteserver
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzRouteServer.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/Get-AzRouteServer.md
+ms.openlocfilehash: ef5609a34104ca8502b8e4ce96fe294a4714366d
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101954065"
+---
+# <span data-ttu-id="d0f95-101">Get-AzRouteServer</span><span class="sxs-lookup"><span data-stu-id="d0f95-101">Get-AzRouteServer</span></span>
+
+## <span data-ttu-id="d0f95-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="d0f95-102">SYNOPSIS</span></span>
+<span data-ttu-id="d0f95-103">Uzyskiwanie serwera usługi Azure RouteServer</span><span class="sxs-lookup"><span data-stu-id="d0f95-103">Get an Azure RouteServer</span></span>
+
+## <span data-ttu-id="d0f95-104">SKŁADNIA</span><span class="sxs-lookup"><span data-stu-id="d0f95-104">SYNTAX</span></span>
+
+### <span data-ttu-id="d0f95-105">RouteServerSubscriptionIdParameterSet (Domyślne)</span><span class="sxs-lookup"><span data-stu-id="d0f95-105">RouteServerSubscriptionIdParameterSet (Default)</span></span>
+```
+Get-AzRouteServer [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="d0f95-106">RouteServerNameParameterSet</span><span class="sxs-lookup"><span data-stu-id="d0f95-106">RouteServerNameParameterSet</span></span>
+```
+Get-AzRouteServer -ResourceGroupName <String> [-RouteServerName <String>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="d0f95-107">RouteServerResourceIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="d0f95-107">RouteServerResourceIdParameterSet</span></span>
+```
+Get-AzRouteServer -ResourceId <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="d0f95-108">OPIS</span><span class="sxs-lookup"><span data-stu-id="d0f95-108">DESCRIPTION</span></span>
+<span data-ttu-id="d0f95-109">Polecenie **cmdlet Get-AzRouteServer** otrzymuje serwer Azure RouteServer</span><span class="sxs-lookup"><span data-stu-id="d0f95-109">The **Get-AzRouteServer** cmdlet gets an Azure RouteServer</span></span>
+
+## <span data-ttu-id="d0f95-110">PRZYKŁADY</span><span class="sxs-lookup"><span data-stu-id="d0f95-110">EXAMPLES</span></span>
+
+### <span data-ttu-id="d0f95-111">Przykład 1</span><span class="sxs-lookup"><span data-stu-id="d0f95-111">Example 1</span></span>
+```powershell
+Get-AzRouteServer -ResourceGroupName routeServerRG -RouteServerName routeServer
+```
+
+### <span data-ttu-id="d0f95-112">Przykład 2</span><span class="sxs-lookup"><span data-stu-id="d0f95-112">Example 2</span></span>
+```powershell
+$routeServerId = '/subscriptions/8c992d64-fce9-426d-b278-85642dfeab03/resourceGroups/routeServerRG/providers/Microsoft.Network/virtualHubs/routeServer'
+Get-AzRouteServer -ResourceId $routeServerId
+```
+## <span data-ttu-id="d0f95-113">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="d0f95-113">PARAMETERS</span></span>
+
+### <span data-ttu-id="d0f95-114">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="d0f95-114">-DefaultProfile</span></span>
+<span data-ttu-id="d0f95-115">Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.</span><span class="sxs-lookup"><span data-stu-id="d0f95-115">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d0f95-116">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="d0f95-116">-ResourceGroupName</span></span>
+<span data-ttu-id="d0f95-117">Nazwa grupy zasobów serwera trasy.</span><span class="sxs-lookup"><span data-stu-id="d0f95-117">The resource group name of the route server.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: RouteServerNameParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d0f95-118">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="d0f95-118">-ResourceId</span></span>
+<span data-ttu-id="d0f95-119">ResourceId serwera trasy.</span><span class="sxs-lookup"><span data-stu-id="d0f95-119">ResourceId of the route server.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: RouteServerResourceIdParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d0f95-120">-RouteServerName</span><span class="sxs-lookup"><span data-stu-id="d0f95-120">-RouteServerName</span></span>
+<span data-ttu-id="d0f95-121">Nazwa serwera trasy.</span><span class="sxs-lookup"><span data-stu-id="d0f95-121">The name of the route server.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: RouteServerNameParameterSet
+Aliases: ResourceName
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="d0f95-122">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="d0f95-122">CommonParameters</span></span>
+<span data-ttu-id="d0f95-123">To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="d0f95-123">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="d0f95-124">Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="d0f95-124">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="d0f95-125">DANE WEJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="d0f95-125">INPUTS</span></span>
+
+### <span data-ttu-id="d0f95-126">System.String</span><span class="sxs-lookup"><span data-stu-id="d0f95-126">System.String</span></span>
+
+## <span data-ttu-id="d0f95-127">DANE WYJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="d0f95-127">OUTPUTS</span></span>
+
+### <span data-ttu-id="d0f95-128">Microsoft.Azure.Commands.Network.Models.PSRouteServer</span><span class="sxs-lookup"><span data-stu-id="d0f95-128">Microsoft.Azure.Commands.Network.Models.PSRouteServer</span></span>
+
+## <span data-ttu-id="d0f95-129">NOTATKI</span><span class="sxs-lookup"><span data-stu-id="d0f95-129">NOTES</span></span>
+
+## <span data-ttu-id="d0f95-130">LINKI POKREWNE</span><span class="sxs-lookup"><span data-stu-id="d0f95-130">RELATED LINKS</span></span>
