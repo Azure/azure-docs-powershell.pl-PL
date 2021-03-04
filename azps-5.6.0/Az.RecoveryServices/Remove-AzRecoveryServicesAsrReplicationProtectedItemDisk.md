@@ -1,0 +1,184 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.RecoveryServices.SiteRecovery.dll-Help.xml
+Module Name: Az.RecoveryServices
+online version: https://docs.microsoft.com/powershell/module/az.recoveryservices/remove-azrecoveryservicesasrreplicationprotecteditemDisk
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Remove-AzRecoveryServicesAsrReplicationProtectedItemDisk.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/RecoveryServices/RecoveryServices/help/Remove-AzRecoveryServicesAsrReplicationProtectedItemDisk.md
+ms.openlocfilehash: bee3d9ff2f3e13397afba0cc85ecbb148aedc0cc
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101953153"
+---
+# Remove-AzRecoveryServicesAsrReplicationProtectedItemDisk
+
+## SYNOPSIS
+Usuwa błędy dyskowe dla elementu chronionego replikacją.
+
+## SKŁADNIA
+
+### AzureToAzure (domyślne)
+```
+Remove-AzRecoveryServicesAsrReplicationProtectedItemDisk -InputObject <ASRReplicationProtectedItem>
+ -VhdUri <String[]> [-WaitForCompletion] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+### AzureToAzureManagedChat
+```
+Remove-AzRecoveryServicesAsrReplicationProtectedItemDisk -InputObject <ASRReplicationProtectedItem>
+ -DiskId <String[]> [-WaitForCompletion] [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+## OPIS
+Polecenie cmdlet **Remove-AzRecoveryServicesAsrReplicationProtectedItem Jednak** usuwa dysk z elementu chronionego replikacją asr.
+
+## PRZYKŁADY
+
+### Przykład 1
+```powershell
+PS C:\> Remove-AzRecoveryServicesAsrReplicationProtectedItemDisk -ReplicationProtectedItem $rpi -VhdUri $vhdUri
+```
+
+Uruchom operację, aby usunąć określony dysk z ochrony maszyny wirtualnej ochrony dla dysku niezamówień.
+
+### Przykład 2
+```powershell
+PS C:\> Remove-AzRecoveryServicesAsrReplicationProtectedItemDisk -ReplicationProtectedItem $rpi -DiskId $diskId
+```
+
+Uruchom operację, aby usunąć określony dysk z ochrony maszyny wirtualnej dla dysku zarządzanego.
+
+### Przykład 3
+```
+PS C:\>  $currentJob = Remove-AzRecoveryServicesAsrReplicationProtectedItemDisk -ReplicationProtectedItem $rpi -DiskId $diskId
+PS C:\>  Get-AzRecoveryServicesAsrJob -name $currentJob.id
+```
+
+Rozpoczyna operację usunięcia określonego dysku i zwraca zadanie asr służące do śledzenia operacji usuwania dysku chronionego.
+
+## PARAMETERS
+
+### — Potwierdź
+Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### - DiskId
+Określa listę identyfikatorów dysków zarządzanych.
+
+```yaml
+Type: String[]
+Parameter Sets: AzureToAzureManagedDisk
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -InputObject
+Obiekt wejściowy do polecenia cmdlet: obiekt elementu chronionego replikacją asr, odpowiadający dyskowi, który ma zostać usunięty.
+
+```yaml
+Type: ASRReplicationProtectedItem
+Parameter Sets: (All)
+Aliases: ReplicationProtectedItem
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### - VhdUri
+Określa listę vhd Uri.
+
+```yaml
+Type: String[]
+Parameter Sets: AzureToAzure
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### - WaitForCompletion
+Poczekaj na ukończenie
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet.
+Polecenie cmdlet nie zostanie uruchomione.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
+
+## DANE WEJŚCIOWE
+
+### Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRReplicationProtectedItem
+
+## DANE WYJŚCIOWE
+
+### Microsoft.Azure.Commands.RecoveryServices.SiteRecovery.ASRJob
+
+## NOTATKI
+
+## LINKI POKREWNE
