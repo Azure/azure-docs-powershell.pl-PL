@@ -1,0 +1,239 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Sql.dll-Help.xml
+Module Name: Az.Sql
+ms.assetid: C39ACCAC-2BFF-48D0-95EA-D5B402D74D46
+online version: https://docs.microsoft.com/powershell/module/az.sql/get-azsqlserver
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlServer.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Get-AzSqlServer.md
+ms.openlocfilehash: 26a1e7dab44f71aa14990fe4e46a2f79a24e9067
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101999258"
+---
+# <span data-ttu-id="64078-101">Get-AzSqlServer</span><span class="sxs-lookup"><span data-stu-id="64078-101">Get-AzSqlServer</span></span>
+
+## <span data-ttu-id="64078-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="64078-102">SYNOPSIS</span></span>
+<span data-ttu-id="64078-103">Zwraca informacje o serwerach usługi SQL Database.</span><span class="sxs-lookup"><span data-stu-id="64078-103">Returns information about SQL Database servers.</span></span>
+
+## <span data-ttu-id="64078-104">SKŁADNIA</span><span class="sxs-lookup"><span data-stu-id="64078-104">SYNTAX</span></span>
+
+```
+Get-AzSqlServer [[-ResourceGroupName] <String>] [[-ServerName] <String>]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="64078-105">OPIS</span><span class="sxs-lookup"><span data-stu-id="64078-105">DESCRIPTION</span></span>
+<span data-ttu-id="64078-106">Polecenie **cmdlet Get-AzSqlServer** zwraca informacje o jednym lub większej liczby serwerach usługi Azure SQL Database.</span><span class="sxs-lookup"><span data-stu-id="64078-106">The **Get-AzSqlServer** cmdlet returns information about one or more Azure SQL Database servers.</span></span>
+<span data-ttu-id="64078-107">Określ nazwę serwera, na którym mają być wyświetlanie informacje dotyczące tylko tego serwera.</span><span class="sxs-lookup"><span data-stu-id="64078-107">Specify the name of a server to see information for only that server.</span></span>
+
+## <span data-ttu-id="64078-108">PRZYKŁADY</span><span class="sxs-lookup"><span data-stu-id="64078-108">EXAMPLES</span></span>
+
+### <span data-ttu-id="64078-109">Przykład 1. Uzyskiwanie wszystkich wystąpień programu SQL Server przypisanych do grupy zasobów</span><span class="sxs-lookup"><span data-stu-id="64078-109">Example 1: Get all instances of SQL Server assigned to a resource group</span></span>
+```
+PS C:\>Get-AzSqlServer -ResourceGroupName "ResourceGroup01"
+ResourceGroupName        : resourcegroup01
+ServerName               : server01
+Location                 : Central US
+SqlAdministratorLogin    : adminLogin
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+Identity                 :
+FullyQualifiedDomainName : server01.database.windows.net
+
+ResourceGroupName        : resourcegroup01
+ServerName               : server02
+Location                 : West US
+SqlAdministratorLogin    : adminLogin
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+Identity                 :
+FullyQualifiedDomainName : server02.database.windows.net
+```
+
+<span data-ttu-id="64078-110">To polecenie pobiera informacje o wszystkich serwerach usługi Azure SQL Database przypisanych do grupy zasobów ResourceGroup01.</span><span class="sxs-lookup"><span data-stu-id="64078-110">This command gets information about all the Azure SQL Database servers assigned to the resource group ResourceGroup01.</span></span>
+
+### <span data-ttu-id="64078-111">Przykład 2. Uzyskiwanie informacji o serwerze usługi Azure SQL Database</span><span class="sxs-lookup"><span data-stu-id="64078-111">Example 2: Get information about an Azure SQL Database server</span></span>
+```
+PS C:\>Get-AzSqlServer -ResourceGroupName "ResourceGroup01" -ServerName "Server01"
+ResourceGroupName        : resourcegroup01
+ServerName               : server01
+Location                 : Central US
+SqlAdministratorLogin    : adminLogin
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+Identity                 :
+FullyQualifiedDomainName : server01.database.windows.net
+```
+
+<span data-ttu-id="64078-112">To polecenie pobiera informacje o serwerze azure SQL Database o nazwie Server01.</span><span class="sxs-lookup"><span data-stu-id="64078-112">This command gets information about the Azure SQL Database server named Server01.</span></span>
+
+### <span data-ttu-id="64078-113">Przykład 3. Uzyskiwanie wszystkich wystąpień programu SQL Server w subskrypcji</span><span class="sxs-lookup"><span data-stu-id="64078-113">Example 3: Get all instances of SQL Server in the subscription</span></span>
+```
+PS C:\>Get-AzResourceGroup | Get-AzSqlServer
+ResourceGroupName        : resourcegroup01
+ServerName               : server01
+Location                 : Central US
+SqlAdministratorLogin    : adminLogin
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+Identity                 :
+FullyQualifiedDomainName : server01.database.windows.net
+
+ResourceGroupName        : resourcegroup01
+ServerName               : server02
+Location                 : West US
+SqlAdministratorLogin    : adminLogin
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+Identity                 :
+FullyQualifiedDomainName : server02.database.windows.net
+
+ResourceGroupName        : resourcegroup02
+ServerName               : server03
+Location                 : East US
+SqlAdministratorLogin    : adminLogin
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+Identity                 :
+FullyQualifiedDomainName : server03.database.windows.net
+```
+
+<span data-ttu-id="64078-114">To polecenie pobiera informacje o wszystkich serwerach usługi Azure SQL Database w bieżącej subskrypcji.</span><span class="sxs-lookup"><span data-stu-id="64078-114">This command gets information about all the Azure SQL Database servers in the current subscription.</span></span>
+
+### <span data-ttu-id="64078-115">Przykład 4. Uzyskiwanie wszystkich wystąpień programu SQL Server przypisanych do grupy zasobów przy użyciu filtrowania</span><span class="sxs-lookup"><span data-stu-id="64078-115">Example 4: Get all instances of SQL Server assigned to a resource group using filtering</span></span>
+```
+PS C:\>Get-AzSqlServer -ResourceGroupName "ResourceGroup01" -ServerName "server*"
+ResourceGroupName        : resourcegroup01
+ServerName               : server01
+Location                 : Central US
+SqlAdministratorLogin    : adminLogin
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+Identity                 :
+FullyQualifiedDomainName : server01.database.windows.net
+
+ResourceGroupName        : resourcegroup01
+ServerName               : server02
+Location                 : West US
+SqlAdministratorLogin    : adminLogin
+SqlAdministratorPassword :
+ServerVersion            : 12.0
+Tags                     :
+Identity                 :
+FullyQualifiedDomainName : server02.database.windows.net
+```
+
+<span data-ttu-id="64078-116">To polecenie pobiera informacje o wszystkich serwerach usługi Azure SQL Database przypisanych do grupy zasobów ResourceGroup01, których nazwa rozpoczyna się od "serwera".</span><span class="sxs-lookup"><span data-stu-id="64078-116">This command gets information about all the Azure SQL Database servers assigned to the resource group ResourceGroup01 that start with "server".</span></span>
+
+## <span data-ttu-id="64078-117">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="64078-117">PARAMETERS</span></span>
+
+### <span data-ttu-id="64078-118">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="64078-118">-DefaultProfile</span></span>
+<span data-ttu-id="64078-119">Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure</span><span class="sxs-lookup"><span data-stu-id="64078-119">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="64078-120">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="64078-120">-ResourceGroupName</span></span>
+<span data-ttu-id="64078-121">Określa nazwę grupy zasobów, do której są przypisane serwery.</span><span class="sxs-lookup"><span data-stu-id="64078-121">Specifies the name of the resource group to which servers are assigned.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="64078-122">-ServerName</span><span class="sxs-lookup"><span data-stu-id="64078-122">-ServerName</span></span>
+<span data-ttu-id="64078-123">Określa nazwę serwera, na który ma być pobierane to polecenie cmdlet.</span><span class="sxs-lookup"><span data-stu-id="64078-123">Specifies the name of the server that this cmdlet gets.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: Name
+
+Required: False
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="64078-124">— Potwierdź</span><span class="sxs-lookup"><span data-stu-id="64078-124">-Confirm</span></span>
+<span data-ttu-id="64078-125">Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.</span><span class="sxs-lookup"><span data-stu-id="64078-125">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="64078-126">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="64078-126">-WhatIf</span></span>
+<span data-ttu-id="64078-127">Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet.</span><span class="sxs-lookup"><span data-stu-id="64078-127">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="64078-128">Polecenie cmdlet nie zostanie uruchomione.</span><span class="sxs-lookup"><span data-stu-id="64078-128">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="64078-129">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="64078-129">CommonParameters</span></span>
+<span data-ttu-id="64078-130">To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="64078-130">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="64078-131">Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="64078-131">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="64078-132">DANE WEJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="64078-132">INPUTS</span></span>
+
+### <span data-ttu-id="64078-133">System.String</span><span class="sxs-lookup"><span data-stu-id="64078-133">System.String</span></span>
+
+## <span data-ttu-id="64078-134">DANE WYJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="64078-134">OUTPUTS</span></span>
+
+### <span data-ttu-id="64078-135">Microsoft.Azure.Commands.Sql.Server.Model.AzureSqlServerModel</span><span class="sxs-lookup"><span data-stu-id="64078-135">Microsoft.Azure.Commands.Sql.Server.Model.AzureSqlServerModel</span></span>
+
+## <span data-ttu-id="64078-136">NOTATKI</span><span class="sxs-lookup"><span data-stu-id="64078-136">NOTES</span></span>
+
+## <span data-ttu-id="64078-137">LINKI POKREWNE</span><span class="sxs-lookup"><span data-stu-id="64078-137">RELATED LINKS</span></span>
+
+[<span data-ttu-id="64078-138">New-AzSqlServer</span><span class="sxs-lookup"><span data-stu-id="64078-138">New-AzSqlServer</span></span>](./New-AzSqlServer.md)
+
+[<span data-ttu-id="64078-139">Remove-AzSqlServer</span><span class="sxs-lookup"><span data-stu-id="64078-139">Remove-AzSqlServer</span></span>](./Remove-AzSqlServer.md)
+
+[<span data-ttu-id="64078-140">Set-AzSqlServer</span><span class="sxs-lookup"><span data-stu-id="64078-140">Set-AzSqlServer</span></span>](./Set-AzSqlServer.md)
+
+[<span data-ttu-id="64078-141">Dokumentacja bazy danych SQL</span><span class="sxs-lookup"><span data-stu-id="64078-141">SQL Database Documentation</span></span>](https://docs.microsoft.com/azure/sql-database/)
+
+
