@@ -1,0 +1,208 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.DataFactoryV2.dll-Help.xml
+Module Name: Az.DataFactory
+online version: https://docs.microsoft.com/powershell/module/az.datafactory/stop-azdatafactoryv2integrationruntime
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Stop-AzDataFactoryV2IntegrationRuntime.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/DataFactory/DataFactoryV2/help/Stop-AzDataFactoryV2IntegrationRuntime.md
+ms.openlocfilehash: 405754afec3ff62eb59d385646df43f699557d18
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101998488"
+---
+# <span data-ttu-id="672e9-101">Stop-AzDataFactoryV2IntegrationRuntime</span><span class="sxs-lookup"><span data-stu-id="672e9-101">Stop-AzDataFactoryV2IntegrationRuntime</span></span>
+
+## <span data-ttu-id="672e9-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="672e9-102">SYNOPSIS</span></span>
+<span data-ttu-id="672e9-103">Zatrzymuje zarządzane środowisko uruchomieniowe integracji dedykowanej.</span><span class="sxs-lookup"><span data-stu-id="672e9-103">Stops a managed dedicated integration runtime.</span></span>
+
+## <span data-ttu-id="672e9-104">SKŁADNIA</span><span class="sxs-lookup"><span data-stu-id="672e9-104">SYNTAX</span></span>
+
+### <span data-ttu-id="672e9-105">ByIntegrationRuntimeName (domyślna)</span><span class="sxs-lookup"><span data-stu-id="672e9-105">ByIntegrationRuntimeName (Default)</span></span>
+```
+Stop-AzDataFactoryV2IntegrationRuntime [-Force] [-Name] <String> [-ResourceGroupName] <String>
+ [-DataFactoryName] <String> [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
+```
+
+### <span data-ttu-id="672e9-106">ByResourceId</span><span class="sxs-lookup"><span data-stu-id="672e9-106">ByResourceId</span></span>
+```
+Stop-AzDataFactoryV2IntegrationRuntime [-Force] [-ResourceId] <String>
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="672e9-107">ByIntegrationRuntimeObject</span><span class="sxs-lookup"><span data-stu-id="672e9-107">ByIntegrationRuntimeObject</span></span>
+```
+Stop-AzDataFactoryV2IntegrationRuntime [-Force] [-InputObject] <PSIntegrationRuntime>
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="672e9-108">OPIS</span><span class="sxs-lookup"><span data-stu-id="672e9-108">DESCRIPTION</span></span>
+<span data-ttu-id="672e9-109">Polecenie **cmdlet Stop-AzDataFactoryV2IntegrationRuntime** zatrzymuje zarządzane dedykowane środowisko integracji w stanie "Uruchomiono", który został uruchomiony przez Start-AzDataFactoryV2IntegrationRuntime cmdlet.</span><span class="sxs-lookup"><span data-stu-id="672e9-109">The **Stop-AzDataFactoryV2IntegrationRuntime** cmdlet stops a managed dedicated integration runtime in 'Started' state, which was started by the Start-AzDataFactoryV2IntegrationRuntime cmdlet.</span></span> <span data-ttu-id="672e9-110">Zasoby zostaną wydane, a stan zostanie "zatrzymany".</span><span class="sxs-lookup"><span data-stu-id="672e9-110">The resources are released and the state transfers to 'Stopped'.</span></span>
+
+## <span data-ttu-id="672e9-111">PRZYKŁADY</span><span class="sxs-lookup"><span data-stu-id="672e9-111">EXAMPLES</span></span>
+
+### <span data-ttu-id="672e9-112">Przykład 1. Zatrzymanie zarządzanego środowiska uruchomieniowego integracji, które znajduje się w stanie "Uruchomiliśmy".</span><span class="sxs-lookup"><span data-stu-id="672e9-112">Example 1: Stop a managed integration runtime that is in 'Started' state.</span></span>
+```
+PS C:\> Stop-AzDataFactoryV2IntegrationRuntime -ResourceGroupName 'rg-test-dfv2' -DataFactoryName 'test-df' -Name 'test-reserlved-ir'
+```
+
+<span data-ttu-id="672e9-113">Środowisko uruchomieniowe integracji zarządzanej "test-reserlved-ir" ma stan "Uruchomiony".</span><span class="sxs-lookup"><span data-stu-id="672e9-113">The managed integration runtime 'test-reserlved-ir' is in 'Started' state.</span></span> <span data-ttu-id="672e9-114">Po uruchomieniu Stop-AzDataFactoryV2IntegrationRuntime cmdlet zasoby są zwalniane, a stan przenosi się do stanu "Zatrzymano".</span><span class="sxs-lookup"><span data-stu-id="672e9-114">After running Stop-AzDataFactoryV2IntegrationRuntime cmdlet, the resources are released and the state transfers to 'Stopped'.</span></span>
+
+## <span data-ttu-id="672e9-115">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="672e9-115">PARAMETERS</span></span>
+
+### <span data-ttu-id="672e9-116">-DataFactoryName</span><span class="sxs-lookup"><span data-stu-id="672e9-116">-DataFactoryName</span></span>
+<span data-ttu-id="672e9-117">Nazwa fabryczna danych.</span><span class="sxs-lookup"><span data-stu-id="672e9-117">The data factory name.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByIntegrationRuntimeName
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="672e9-118">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="672e9-118">-DefaultProfile</span></span>
+<span data-ttu-id="672e9-119">Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.</span><span class="sxs-lookup"><span data-stu-id="672e9-119">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="672e9-120">— Wymuszanie</span><span class="sxs-lookup"><span data-stu-id="672e9-120">-Force</span></span>
+<span data-ttu-id="672e9-121">Uruchamia polecenie cmdlet bez monitowania o potwierdzenie.</span><span class="sxs-lookup"><span data-stu-id="672e9-121">Runs the cmdlet without prompting for confirmation.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="672e9-122">-InputObject</span><span class="sxs-lookup"><span data-stu-id="672e9-122">-InputObject</span></span>
+<span data-ttu-id="672e9-123">Obiekt środowiska uruchomieniowego integracji.</span><span class="sxs-lookup"><span data-stu-id="672e9-123">The integration runtime object.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.DataFactoryV2.Models.PSIntegrationRuntime
+Parameter Sets: ByIntegrationRuntimeObject
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="672e9-124">— Nazwa</span><span class="sxs-lookup"><span data-stu-id="672e9-124">-Name</span></span>
+<span data-ttu-id="672e9-125">Nazwa środowiska uruchomieniowego integracji.</span><span class="sxs-lookup"><span data-stu-id="672e9-125">The integration runtime name.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByIntegrationRuntimeName
+Aliases: IntegrationRuntimeName
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="672e9-126">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="672e9-126">-ResourceGroupName</span></span>
+<span data-ttu-id="672e9-127">Nazwa grupy zasobów.</span><span class="sxs-lookup"><span data-stu-id="672e9-127">The resource group name.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByIntegrationRuntimeName
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="672e9-128">-ResourceId</span><span class="sxs-lookup"><span data-stu-id="672e9-128">-ResourceId</span></span>
+<span data-ttu-id="672e9-129">Identyfikator zasobu Azure.</span><span class="sxs-lookup"><span data-stu-id="672e9-129">The Azure resource ID.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByResourceId
+Aliases: Id
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="672e9-130">— Potwierdź</span><span class="sxs-lookup"><span data-stu-id="672e9-130">-Confirm</span></span>
+<span data-ttu-id="672e9-131">Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.</span><span class="sxs-lookup"><span data-stu-id="672e9-131">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="672e9-132">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="672e9-132">-WhatIf</span></span>
+<span data-ttu-id="672e9-133">Pokazuje, co się stanie, jeśli polecenie cmdlet zostanie uruchomione, ale nie uruchomi polecenia cmdlet.</span><span class="sxs-lookup"><span data-stu-id="672e9-133">Shows what happens if the cmdlet runs, but doesn't run the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="672e9-134">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="672e9-134">CommonParameters</span></span>
+<span data-ttu-id="672e9-135">To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="672e9-135">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="672e9-136">Aby uzyskać więcej informacji, zobacz about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="672e9-136">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="672e9-137">DANE WEJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="672e9-137">INPUTS</span></span>
+
+### <span data-ttu-id="672e9-138">System.String</span><span class="sxs-lookup"><span data-stu-id="672e9-138">System.String</span></span>
+
+### <span data-ttu-id="672e9-139">Microsoft.Azure.Commands.DataFactoryV2.Models.PSIntegrationRuntime</span><span class="sxs-lookup"><span data-stu-id="672e9-139">Microsoft.Azure.Commands.DataFactoryV2.Models.PSIntegrationRuntime</span></span>
+
+## <span data-ttu-id="672e9-140">DANE WYJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="672e9-140">OUTPUTS</span></span>
+
+### <span data-ttu-id="672e9-141">System.Void</span><span class="sxs-lookup"><span data-stu-id="672e9-141">System.Void</span></span>
+
+## <span data-ttu-id="672e9-142">NOTATKI</span><span class="sxs-lookup"><span data-stu-id="672e9-142">NOTES</span></span>
+<span data-ttu-id="672e9-143">Słowa kluczowe: azure, azurerm, arm, resource, management, manager, dane, fabryki, kopiowanie, działania, środowisko uruchomieniowe integracji</span><span class="sxs-lookup"><span data-stu-id="672e9-143">Keywords: azure, azurerm, arm, resource, management, manager, data, factories, copy, activities, integration runtime</span></span>
+
+## <span data-ttu-id="672e9-144">LINKI POKREWNE</span><span class="sxs-lookup"><span data-stu-id="672e9-144">RELATED LINKS</span></span>
+
+[<span data-ttu-id="672e9-145">Start-AzDataFactoryV2IntegrationRuntime</span><span class="sxs-lookup"><span data-stu-id="672e9-145">Start-AzDataFactoryV2IntegrationRuntime</span></span>]()
