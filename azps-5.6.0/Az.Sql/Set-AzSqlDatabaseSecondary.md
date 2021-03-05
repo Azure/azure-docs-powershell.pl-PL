@@ -1,0 +1,230 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Sql.dll-Help.xml
+Module Name: Az.Sql
+ms.assetid: F9703508-DD4D-4D25-A7CA-7E3432B5DCA9
+online version: https://docs.microsoft.com/powershell/module/az.sql/set-azsqldatabasesecondary
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Set-AzSqlDatabaseSecondary.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Sql/Sql/help/Set-AzSqlDatabaseSecondary.md
+ms.openlocfilehash: fc0a6bc7fa87a78fedd0416ea1578b9404168dce
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101967290"
+---
+# <span data-ttu-id="17939-101">Set-AzSqlDatabaseSecondary</span><span class="sxs-lookup"><span data-stu-id="17939-101">Set-AzSqlDatabaseSecondary</span></span>
+
+## <span data-ttu-id="17939-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="17939-102">SYNOPSIS</span></span>
+<span data-ttu-id="17939-103">Przełącza pomocniczą bazę danych jako podstawową w celu zainicjowania trybu failover.</span><span class="sxs-lookup"><span data-stu-id="17939-103">Switches a secondary database to be primary in order to initiate failover.</span></span>
+
+## <span data-ttu-id="17939-104">SKŁADNIA</span><span class="sxs-lookup"><span data-stu-id="17939-104">SYNTAX</span></span>
+
+### <span data-ttu-id="17939-105">NoOptionsSet (Domyślne)</span><span class="sxs-lookup"><span data-stu-id="17939-105">NoOptionsSet (Default)</span></span>
+```
+Set-AzSqlDatabaseSecondary [-DatabaseName] <String> -PartnerResourceGroupName <String> [-AsJob]
+ [-ServerName] <String> [-ResourceGroupName] <String> [-DefaultProfile <IAzureContextContainer>] [-WhatIf]
+ [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="17939-106">ByFailoverParams</span><span class="sxs-lookup"><span data-stu-id="17939-106">ByFailoverParams</span></span>
+```
+Set-AzSqlDatabaseSecondary [-DatabaseName] <String> -PartnerResourceGroupName <String> [-Failover]
+ [-AllowDataLoss] [-AsJob] [-ServerName] <String> [-ResourceGroupName] <String>
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="17939-107">OPIS</span><span class="sxs-lookup"><span data-stu-id="17939-107">DESCRIPTION</span></span>
+<span data-ttu-id="17939-108">Polecenie **cmdlet Set-AzSqlDatabaseSecondary** przełącza pomocniczą bazę danych jako podstawową w celu zainicjowania trybu failover.</span><span class="sxs-lookup"><span data-stu-id="17939-108">The **Set-AzSqlDatabaseSecondary** cmdlet switches a secondary database to be primary in order to initiate failover.</span></span>
+<span data-ttu-id="17939-109">To polecenie cmdlet jest zaprojektowane jako ogólne polecenie konfiguracji, ale obecnie jest ograniczone do inicjowania trybu failover.</span><span class="sxs-lookup"><span data-stu-id="17939-109">This cmdlet is designed as a general configuration command, but is currently limited to initiating failover.</span></span>
+<span data-ttu-id="17939-110">Określ parametr *AllowDataLoss,* aby zainicjować wymuszanie trybu failover podczas awarii.</span><span class="sxs-lookup"><span data-stu-id="17939-110">Specify the *AllowDataLoss* parameter to initiate a force failover during an outage.</span></span>
+<span data-ttu-id="17939-111">Nie musisz określać tego parametru podczas wykonywania planowanej operacji, takiej jak przechodzenie do szczegółów odzyskiwania.</span><span class="sxs-lookup"><span data-stu-id="17939-111">You do not have to specify this parameter when you perform a planned operation, such as recovery drill.</span></span>
+<span data-ttu-id="17939-112">W drugim przypadku pomocnicza baza danych jest synchronizowana z podstawową bazą danych przed jej przełączeniem.</span><span class="sxs-lookup"><span data-stu-id="17939-112">In the latter case, the secondary database is synchronized with the primary before it is switched.</span></span>
+
+## <span data-ttu-id="17939-113">PRZYKŁADY</span><span class="sxs-lookup"><span data-stu-id="17939-113">EXAMPLES</span></span>
+
+### <span data-ttu-id="17939-114">Przykład 1. Inicjowanie planowanej trybu failover</span><span class="sxs-lookup"><span data-stu-id="17939-114">Example 1: Initiate a planned failover</span></span>
+```powershell
+$database = Get-AzSqlDatabase -DatabaseName $databaseName -ResourceGroupName $secondaryResourceGroupName -ServerName $secondaryServerName
+$database | Set-AzSqlDatabaseSecondary -PartnerResourceGroupName $primaryResourceGroupName -Failover
+```
+
+### <span data-ttu-id="17939-115">Przykład 2. Zainicjowanie wymuszonego trybu failover (z potencjalną utratą danych)</span><span class="sxs-lookup"><span data-stu-id="17939-115">Example 2: Initiate a forced failover (with potential data loss)</span></span>
+```powershell
+$database = Get-AzSqlDatabase -DatabaseName $databaseName -ResourceGroupName $secondaryResourceGroupName -ServerName $secondaryServerName
+$database | Set-AzSqlDatabaseSecondary -PartnerResourceGroupName $primaryResourceGroupName -Failover -AllowDataLoss
+```
+
+## <span data-ttu-id="17939-116">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="17939-116">PARAMETERS</span></span>
+
+### <span data-ttu-id="17939-117">-AllowDataLoss</span><span class="sxs-lookup"><span data-stu-id="17939-117">-AllowDataLoss</span></span>
+<span data-ttu-id="17939-118">Wskazuje, że ta operacja trybu failover zezwala na utratę danych.</span><span class="sxs-lookup"><span data-stu-id="17939-118">Indicates that this failover operation permits data loss.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: ByFailoverParams
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="17939-119">— AsJob</span><span class="sxs-lookup"><span data-stu-id="17939-119">-AsJob</span></span>
+<span data-ttu-id="17939-120">Uruchamianie polecenia cmdlet w tle</span><span class="sxs-lookup"><span data-stu-id="17939-120">Run cmdlet in the background</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="17939-121">-DatabaseName</span><span class="sxs-lookup"><span data-stu-id="17939-121">-DatabaseName</span></span>
+<span data-ttu-id="17939-122">Określa nazwę pomocniczej bazy danych Azure SQL Database.</span><span class="sxs-lookup"><span data-stu-id="17939-122">Specifies the name of the Azure SQL Database Secondary.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 2
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="17939-123">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="17939-123">-DefaultProfile</span></span>
+<span data-ttu-id="17939-124">Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure</span><span class="sxs-lookup"><span data-stu-id="17939-124">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="17939-125">- Failover</span><span class="sxs-lookup"><span data-stu-id="17939-125">-Failover</span></span>
+<span data-ttu-id="17939-126">Oznacza, że ta operacja jest trybem failover.</span><span class="sxs-lookup"><span data-stu-id="17939-126">Indicates that this operation is a failover.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: ByFailoverParams
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="17939-127">-PartnerResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="17939-127">-PartnerResourceGroupName</span></span>
+<span data-ttu-id="17939-128">Określa nazwę grupy zasobów, do której jest przypisana usługa Azure SQL Database partnera.</span><span class="sxs-lookup"><span data-stu-id="17939-128">Specifies the name of the resource group to which the partner Azure SQL Database is assigned.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="17939-129">-ResourceGroupName</span><span class="sxs-lookup"><span data-stu-id="17939-129">-ResourceGroupName</span></span>
+<span data-ttu-id="17939-130">Określa nazwę grupy zasobów, do której jest przypisana usługa Azure SQL Database Secondary.</span><span class="sxs-lookup"><span data-stu-id="17939-130">Specifies the name of the resource group to which the Azure SQL Database Secondary is assigned.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 0
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="17939-131">-ServerName</span><span class="sxs-lookup"><span data-stu-id="17939-131">-ServerName</span></span>
+<span data-ttu-id="17939-132">Określa nazwę serwera SQL hostowego pomocniczego bazy danych Azure SQL Database.</span><span class="sxs-lookup"><span data-stu-id="17939-132">Specifies the name of the SQL Server that hosts the Azure SQL Database Secondary.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: 1
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="17939-133">— Potwierdź</span><span class="sxs-lookup"><span data-stu-id="17939-133">-Confirm</span></span>
+<span data-ttu-id="17939-134">Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.</span><span class="sxs-lookup"><span data-stu-id="17939-134">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="17939-135">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="17939-135">-WhatIf</span></span>
+<span data-ttu-id="17939-136">Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet.</span><span class="sxs-lookup"><span data-stu-id="17939-136">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="17939-137">Polecenie cmdlet nie zostanie uruchomione.</span><span class="sxs-lookup"><span data-stu-id="17939-137">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="17939-138">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="17939-138">CommonParameters</span></span>
+<span data-ttu-id="17939-139">To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="17939-139">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="17939-140">Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="17939-140">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="17939-141">DANE WEJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="17939-141">INPUTS</span></span>
+
+### <span data-ttu-id="17939-142">System.String</span><span class="sxs-lookup"><span data-stu-id="17939-142">System.String</span></span>
+
+## <span data-ttu-id="17939-143">DANE WYJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="17939-143">OUTPUTS</span></span>
+
+### <span data-ttu-id="17939-144">Microsoft.Azure.Commands.Sql.Replication.Model.AzureReplicationLinkModel</span><span class="sxs-lookup"><span data-stu-id="17939-144">Microsoft.Azure.Commands.Sql.Replication.Model.AzureReplicationLinkModel</span></span>
+
+## <span data-ttu-id="17939-145">NOTATKI</span><span class="sxs-lookup"><span data-stu-id="17939-145">NOTES</span></span>
+
+## <span data-ttu-id="17939-146">LINKI POKREWNE</span><span class="sxs-lookup"><span data-stu-id="17939-146">RELATED LINKS</span></span>
+
+[<span data-ttu-id="17939-147">New-AzSqlDatabaseSecondary</span><span class="sxs-lookup"><span data-stu-id="17939-147">New-AzSqlDatabaseSecondary</span></span>](./New-AzSqlDatabaseSecondary.md)
+
+[<span data-ttu-id="17939-148">Remove-AzSqlDatabaseSecondary</span><span class="sxs-lookup"><span data-stu-id="17939-148">Remove-AzSqlDatabaseSecondary</span></span>](./Remove-AzSqlDatabaseSecondary.md)
+
+[<span data-ttu-id="17939-149">Dokumentacja bazy danych SQL</span><span class="sxs-lookup"><span data-stu-id="17939-149">SQL Database Documentation</span></span>](https://docs.microsoft.com/azure/sql-database/)
