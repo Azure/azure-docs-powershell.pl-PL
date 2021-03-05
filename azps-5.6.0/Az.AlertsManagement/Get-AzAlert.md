@@ -1,0 +1,375 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.AlertsManagement.dll-Help.xml
+Module Name: Az.AlertsManagement
+online version: https://docs.microsoft.com/powershell/module/az.alertsmanagement/get-azalert
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/AlertsManagement/AlertsManagement/help/Get-AzAlert.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/AlertsManagement/AlertsManagement/help/Get-AzAlert.md
+ms.openlocfilehash: dc2fd6492e611e84ef3db5aba57bec204985c203
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101961034"
+---
+# <span data-ttu-id="bfced-101">Get-AzAlert</span><span class="sxs-lookup"><span data-stu-id="bfced-101">Get-AzAlert</span></span>
+
+## <span data-ttu-id="bfced-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="bfced-102">SYNOPSIS</span></span>
+<span data-ttu-id="bfced-103">Uzyskiwanie informacji o alertach</span><span class="sxs-lookup"><span data-stu-id="bfced-103">Get Alerts Information</span></span>
+
+## <span data-ttu-id="bfced-104">SKŁADNIA</span><span class="sxs-lookup"><span data-stu-id="bfced-104">SYNTAX</span></span>
+
+### <span data-ttu-id="bfced-105">AlertsListByFilter (domyślne)</span><span class="sxs-lookup"><span data-stu-id="bfced-105">AlertsListByFilter (Default)</span></span>
+```
+Get-AzAlert [-TargetResourceType <String>] [-TargetResourceGroup <String>] [-MonitorService <String>]
+ [-MonitorCondition <String>] [-Severity <String>] [-State <String>] [-AlertRuleId <String>]
+ [-SmartGroupId <String>] [-IncludeContext <Boolean>] [-IncludeEgressConfig <Boolean>] [-PageCount <Int32>]
+ [-SortBy <String>] [-SortOrder <String>] [-TimeRange <String>] [-CustomTimeRange <String>] [-Select <String>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="bfced-106">AlertById</span><span class="sxs-lookup"><span data-stu-id="bfced-106">AlertById</span></span>
+```
+Get-AzAlert -AlertId <String> [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+### <span data-ttu-id="bfced-107">AlertsListByTargetResourceIdFilter</span><span class="sxs-lookup"><span data-stu-id="bfced-107">AlertsListByTargetResourceIdFilter</span></span>
+```
+Get-AzAlert [-TargetResourceId <String>] [-MonitorService <String>] [-MonitorCondition <String>]
+ [-Severity <String>] [-State <String>] [-AlertRuleId <String>] [-SmartGroupId <String>]
+ [-IncludeContext <Boolean>] [-IncludeEgressConfig <Boolean>] [-PageCount <Int32>] [-SortBy <String>]
+ [-SortOrder <String>] [-TimeRange <String>] [-CustomTimeRange <String>] [-Select <String>]
+ [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+```
+
+## <span data-ttu-id="bfced-108">OPIS</span><span class="sxs-lookup"><span data-stu-id="bfced-108">DESCRIPTION</span></span>
+<span data-ttu-id="bfced-109">**Polecenie cmdlet Get-AzAlert** zostaje zwolnione w wystąpieniach alertów.</span><span class="sxs-lookup"><span data-stu-id="bfced-109">**Get-AzAlert** cmdlet gets fired alert instances.</span></span>
+
+## <span data-ttu-id="bfced-110">PRZYKŁADY</span><span class="sxs-lookup"><span data-stu-id="bfced-110">EXAMPLES</span></span>
+
+### <span data-ttu-id="bfced-111">Przykład 1</span><span class="sxs-lookup"><span data-stu-id="bfced-111">Example 1</span></span>
+```powershell
+PS C:\> Get-AzAlert -Severity "Sev2" -MonitorCondition "Fired" -IncludeContext true
+```
+
+<span data-ttu-id="bfced-112">Lista wszystkich alertów z poziomem ważności Sev2 i warunkiem monitorowania Odpalone.</span><span class="sxs-lookup"><span data-stu-id="bfced-112">List all alerts with Sev2 severity and Fired monitor condition.</span></span> <span data-ttu-id="bfced-113">Ustawienie wartości IncludeContext na prawda, uwzględnia niestandardowe obciążenie alertu.</span><span class="sxs-lookup"><span data-stu-id="bfced-113">Setting IncludeContext to true, include custom payload of alert.</span></span>
+<span data-ttu-id="bfced-114">Użyj Format-List, aby uzyskać pełne szczegóły poszczególnych alertów na liście.</span><span class="sxs-lookup"><span data-stu-id="bfced-114">Use Format-List to get the complete details of each alert in list.</span></span>
+
+### <span data-ttu-id="bfced-115">Przykład 2</span><span class="sxs-lookup"><span data-stu-id="bfced-115">Example 2</span></span>
+```powershell
+PS C:\> Get-AzAlert -AlertId "afbf1b3a-0a6c-4f19-9c9b-644ccd7b1529" | Format-List
+```
+
+<span data-ttu-id="bfced-116">Uzyskiwanie szczegółów alertu według identyfikatora (GUID) lub identyfikatora zasobu (identyfikator ARM danych)</span><span class="sxs-lookup"><span data-stu-id="bfced-116">Get Alert details by Id (GUID) or Resource Id (Complete ARM Id)</span></span>
+
+### <span data-ttu-id="bfced-117">Przykład 3</span><span class="sxs-lookup"><span data-stu-id="bfced-117">Example 3</span></span>
+
+<span data-ttu-id="bfced-118">Uzyskiwanie informacji o alertach.</span><span class="sxs-lookup"><span data-stu-id="bfced-118">Get Alerts Information.</span></span> <span data-ttu-id="bfced-119">(wygenerowane automatycznie)</span><span class="sxs-lookup"><span data-stu-id="bfced-119">(autogenerated)</span></span>
+
+<!-- Aladdin Generated Example -->
+```powershell
+Get-AzAlert -IncludeContext $true -TimeRange '1h'
+```
+
+## <span data-ttu-id="bfced-120">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="bfced-120">PARAMETERS</span></span>
+
+### <span data-ttu-id="bfced-121">- AlertId</span><span class="sxs-lookup"><span data-stu-id="bfced-121">-AlertId</span></span>
+<span data-ttu-id="bfced-122">Unikatowy identyfikator alertu/identyfikatora zasobu alertu.</span><span class="sxs-lookup"><span data-stu-id="bfced-122">Unique Identifier of Alert / ResourceId of alert.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: AlertById
+Aliases: ResourceId
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bfced-123">-AlertRuleId</span><span class="sxs-lookup"><span data-stu-id="bfced-123">-AlertRuleId</span></span>
+<span data-ttu-id="bfced-124">Filtruj według identyfikatora reguły alertu</span><span class="sxs-lookup"><span data-stu-id="bfced-124">Filter on Alert Rule Id</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: AlertsListByFilter, AlertsListByTargetResourceIdFilter
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bfced-125">- CustomTimeRange</span><span class="sxs-lookup"><span data-stu-id="bfced-125">-CustomTimeRange</span></span>
+<span data-ttu-id="bfced-126">Obsługiwany format — \<start-time\> / \<end-time\> tam, gdzie czas jest w formacie ISO-8601</span><span class="sxs-lookup"><span data-stu-id="bfced-126">Supported format - \<start-time\>/\<end-time\> where time is in ISO-8601 format</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: AlertsListByFilter, AlertsListByTargetResourceIdFilter
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bfced-127">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="bfced-127">-DefaultProfile</span></span>
+<span data-ttu-id="bfced-128">Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.</span><span class="sxs-lookup"><span data-stu-id="bfced-128">The credentials, account, tenant, and subscription used for communication with Azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bfced-129">- IncludeContext</span><span class="sxs-lookup"><span data-stu-id="bfced-129">-IncludeContext</span></span>
+<span data-ttu-id="bfced-130">Uwzględnianie kontekstu (niestandardowego obciążenia) alertu</span><span class="sxs-lookup"><span data-stu-id="bfced-130">Include context (custom payload) of alert</span></span>
+
+```yaml
+Type: System.Boolean
+Parameter Sets: AlertsListByFilter, AlertsListByTargetResourceIdFilter
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bfced-131">-IncludeEgressConfig</span><span class="sxs-lookup"><span data-stu-id="bfced-131">-IncludeEgressConfig</span></span>
+<span data-ttu-id="bfced-132">Uwzględnij konfigurację poczty wychodzącej</span><span class="sxs-lookup"><span data-stu-id="bfced-132">Include EgressConfig</span></span>
+
+```yaml
+Type: System.Boolean
+Parameter Sets: AlertsListByFilter, AlertsListByTargetResourceIdFilter
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bfced-133">- MonitorCondition</span><span class="sxs-lookup"><span data-stu-id="bfced-133">-MonitorCondition</span></span>
+<span data-ttu-id="bfced-134">Filtruj według warunku monitora</span><span class="sxs-lookup"><span data-stu-id="bfced-134">Filter on Monitor Condition</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: AlertsListByFilter, AlertsListByTargetResourceIdFilter
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bfced-135">-MonitorService</span><span class="sxs-lookup"><span data-stu-id="bfced-135">-MonitorService</span></span>
+<span data-ttu-id="bfced-136">Filtr w usłudze Moniter</span><span class="sxs-lookup"><span data-stu-id="bfced-136">Filter on Moniter Service</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: AlertsListByFilter, AlertsListByTargetResourceIdFilter
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bfced-137">-PageCount</span><span class="sxs-lookup"><span data-stu-id="bfced-137">-PageCount</span></span>
+<span data-ttu-id="bfced-138">Liczba alertów do pobrania na stronie.</span><span class="sxs-lookup"><span data-stu-id="bfced-138">Number of alerts to be fetched in a page.</span></span>
+
+```yaml
+Type: System.Int32
+Parameter Sets: AlertsListByFilter, AlertsListByTargetResourceIdFilter
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bfced-139">— Wybierz</span><span class="sxs-lookup"><span data-stu-id="bfced-139">-Select</span></span>
+<span data-ttu-id="bfced-140">Wyeks project the required fields out of essentials.</span><span class="sxs-lookup"><span data-stu-id="bfced-140">Project the required fields out of essentials.</span></span>
+<span data-ttu-id="bfced-141">Oczekiwane dane wejściowe są oddzielone przecinkami.</span><span class="sxs-lookup"><span data-stu-id="bfced-141">Expected input is comma-separated.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: AlertsListByFilter, AlertsListByTargetResourceIdFilter
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bfced-142">— Ważność</span><span class="sxs-lookup"><span data-stu-id="bfced-142">-Severity</span></span>
+<span data-ttu-id="bfced-143">Filtruj według ważności alertu</span><span class="sxs-lookup"><span data-stu-id="bfced-143">Filter on Severity of alert</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: AlertsListByFilter, AlertsListByTargetResourceIdFilter
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bfced-144">- SmartGroupId</span><span class="sxs-lookup"><span data-stu-id="bfced-144">-SmartGroupId</span></span>
+<span data-ttu-id="bfced-145">Filtrowanie wszystkich alertów z identyfikatorem grupy inteligentnej</span><span class="sxs-lookup"><span data-stu-id="bfced-145">Filter all the alerts having the Smart Group Id</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: AlertsListByFilter, AlertsListByTargetResourceIdFilter
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bfced-146">-SortBy</span><span class="sxs-lookup"><span data-stu-id="bfced-146">-SortBy</span></span>
+<span data-ttu-id="bfced-147">Właściwość alertu do użycia podczas sortowania</span><span class="sxs-lookup"><span data-stu-id="bfced-147">Alert property to use while sorting</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: AlertsListByFilter, AlertsListByTargetResourceIdFilter
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bfced-148">-SortOrder</span><span class="sxs-lookup"><span data-stu-id="bfced-148">-SortOrder</span></span>
+<span data-ttu-id="bfced-149">Porządek sortowania</span><span class="sxs-lookup"><span data-stu-id="bfced-149">Sort Order</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: AlertsListByFilter, AlertsListByTargetResourceIdFilter
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bfced-150">— województwo</span><span class="sxs-lookup"><span data-stu-id="bfced-150">-State</span></span>
+<span data-ttu-id="bfced-151">Filtrowanie według stanu alertu</span><span class="sxs-lookup"><span data-stu-id="bfced-151">Filter on State of alert</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: AlertsListByFilter, AlertsListByTargetResourceIdFilter
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bfced-152">-TargetResourceGroup</span><span class="sxs-lookup"><span data-stu-id="bfced-152">-TargetResourceGroup</span></span>
+<span data-ttu-id="bfced-153">Filtruj według nazwy grupy zasobów docelowego zasobu alertu.</span><span class="sxs-lookup"><span data-stu-id="bfced-153">Filter on Resource group name of the target resource of alert.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: AlertsListByFilter
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bfced-154">-TargetResourceId</span><span class="sxs-lookup"><span data-stu-id="bfced-154">-TargetResourceId</span></span>
+<span data-ttu-id="bfced-155">Filtruj według identyfikatora zasobu docelowego zasobu alertu.</span><span class="sxs-lookup"><span data-stu-id="bfced-155">Filter on Resource Id of the target resource of alert.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: AlertsListByTargetResourceIdFilter
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bfced-156">-TargetResourceType</span><span class="sxs-lookup"><span data-stu-id="bfced-156">-TargetResourceType</span></span>
+<span data-ttu-id="bfced-157">Filtruj według typu zasobu docelowego alertu.</span><span class="sxs-lookup"><span data-stu-id="bfced-157">Filter on Resource type of the target resource of alert.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: AlertsListByFilter
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bfced-158">- TimeRange</span><span class="sxs-lookup"><span data-stu-id="bfced-158">-TimeRange</span></span>
+<span data-ttu-id="bfced-159">Obsługiwane wartości zakresu czasu — 1h, 1d, 7d, 30d (wartość domyślna to 1d)</span><span class="sxs-lookup"><span data-stu-id="bfced-159">Supported time range values - 1h, 1d, 7d, 30d (Default is 1d)</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: AlertsListByFilter, AlertsListByTargetResourceIdFilter
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="bfced-160">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="bfced-160">CommonParameters</span></span>
+<span data-ttu-id="bfced-161">To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="bfced-161">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="bfced-162">Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="bfced-162">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="bfced-163">DANE WEJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="bfced-163">INPUTS</span></span>
+
+### <span data-ttu-id="bfced-164">Brak</span><span class="sxs-lookup"><span data-stu-id="bfced-164">None</span></span>
+
+## <span data-ttu-id="bfced-165">DANE WYJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="bfced-165">OUTPUTS</span></span>
+
+### <span data-ttu-id="bfced-166">Microsoft.Azure.Commands.AlertsManagement.OutputModels.PSAlert</span><span class="sxs-lookup"><span data-stu-id="bfced-166">Microsoft.Azure.Commands.AlertsManagement.OutputModels.PSAlert</span></span>
+
+## <span data-ttu-id="bfced-167">NOTATKI</span><span class="sxs-lookup"><span data-stu-id="bfced-167">NOTES</span></span>
+
+## <span data-ttu-id="bfced-168">LINKI POKREWNE</span><span class="sxs-lookup"><span data-stu-id="bfced-168">RELATED LINKS</span></span>
