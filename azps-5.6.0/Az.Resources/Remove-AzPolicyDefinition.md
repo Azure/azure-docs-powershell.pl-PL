@@ -1,0 +1,279 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.ResourceManager.dll-Help.xml
+Module Name: Az.Resources
+ms.assetid: DEC01722-EB1A-45CE-BD30-9DB861718573
+online version: https://docs.microsoft.com/powershell/module/az.resources/remove-azpolicydefinition
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzPolicyDefinition.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Resources/Resources/help/Remove-AzPolicyDefinition.md
+ms.openlocfilehash: a65892efce36490d256c99935f6cbe8a96f5ff98
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101988919"
+---
+# <span data-ttu-id="c3d1e-101">Remove-AzPolicyDefinition</span><span class="sxs-lookup"><span data-stu-id="c3d1e-101">Remove-AzPolicyDefinition</span></span>
+
+## <span data-ttu-id="c3d1e-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="c3d1e-102">SYNOPSIS</span></span>
+<span data-ttu-id="c3d1e-103">Usuwa definicję zasad.</span><span class="sxs-lookup"><span data-stu-id="c3d1e-103">Removes a policy definition.</span></span>
+
+## <span data-ttu-id="c3d1e-104">SKŁADNIA</span><span class="sxs-lookup"><span data-stu-id="c3d1e-104">SYNTAX</span></span>
+
+### <span data-ttu-id="c3d1e-105">NameParameterSet (Domyślne)</span><span class="sxs-lookup"><span data-stu-id="c3d1e-105">NameParameterSet (Default)</span></span>
+```
+Remove-AzPolicyDefinition -Name <String> [-Force] [-ApiVersion <String>] [-Pre]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="c3d1e-106">ManagementGroupNameParameterSet</span><span class="sxs-lookup"><span data-stu-id="c3d1e-106">ManagementGroupNameParameterSet</span></span>
+```
+Remove-AzPolicyDefinition -Name <String> [-Force] -ManagementGroupName <String> [-ApiVersion <String>] [-Pre]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="c3d1e-107">SubscriptionIdParameterSet</span><span class="sxs-lookup"><span data-stu-id="c3d1e-107">SubscriptionIdParameterSet</span></span>
+```
+Remove-AzPolicyDefinition -Name <String> [-Force] -SubscriptionId <Guid> [-ApiVersion <String>] [-Pre]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="c3d1e-108">IdParameterSet</span><span class="sxs-lookup"><span data-stu-id="c3d1e-108">IdParameterSet</span></span>
+```
+Remove-AzPolicyDefinition -Id <String> [-Force] [-ApiVersion <String>] [-Pre]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+### <span data-ttu-id="c3d1e-109">InputObjectParameterSet</span><span class="sxs-lookup"><span data-stu-id="c3d1e-109">InputObjectParameterSet</span></span>
+```
+Remove-AzPolicyDefinition [-Force] -InputObject <PsPolicyDefinition> [-ApiVersion <String>] [-Pre]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="c3d1e-110">OPIS</span><span class="sxs-lookup"><span data-stu-id="c3d1e-110">DESCRIPTION</span></span>
+<span data-ttu-id="c3d1e-111">Polecenie **cmdlet Remove-AzPolicyDefinition** usuwa definicję zasad.</span><span class="sxs-lookup"><span data-stu-id="c3d1e-111">The **Remove-AzPolicyDefinition** cmdlet removes a policy definition.</span></span>
+
+## <span data-ttu-id="c3d1e-112">PRZYKŁADY</span><span class="sxs-lookup"><span data-stu-id="c3d1e-112">EXAMPLES</span></span>
+
+### <span data-ttu-id="c3d1e-113">Przykład 1. Usuwanie definicji zasad według nazwy</span><span class="sxs-lookup"><span data-stu-id="c3d1e-113">Example 1: Remove the policy definition by name</span></span>
+```
+PS C:\> Remove-AzPolicyDefinition -Name 'VMPolicyDefinition'
+```
+
+<span data-ttu-id="c3d1e-114">To polecenie usuwa określoną definicję zasad.</span><span class="sxs-lookup"><span data-stu-id="c3d1e-114">This command removes the specified policy definition.</span></span>
+
+### <span data-ttu-id="c3d1e-115">Przykład 2. Usuwanie definicji zasad według identyfikatora zasobu</span><span class="sxs-lookup"><span data-stu-id="c3d1e-115">Example 2: Remove policy definition by resource ID</span></span>
+```
+PS C:\> $PolicyDefinition = Get-AzPolicyDefinition -Name 'VMPolicyDefinition' 
+PS C:\> Remove-AzPolicyDefinition -Id $PolicyDefinition.ResourceId -Force
+```
+
+<span data-ttu-id="c3d1e-116">Pierwsze polecenie otrzymuje definicję zasad o nazwie VMPolicyDefinition przy użyciu Get-AzPolicyDefinition cmdlet.</span><span class="sxs-lookup"><span data-stu-id="c3d1e-116">The first command gets a policy definition named VMPolicyDefinition by using the Get-AzPolicyDefinition cmdlet.</span></span>
+<span data-ttu-id="c3d1e-117">Polecenie przechowuje je w $PolicyDefinition zmienną.</span><span class="sxs-lookup"><span data-stu-id="c3d1e-117">The command stores it in the $PolicyDefinition variable.</span></span>
+<span data-ttu-id="c3d1e-118">Drugie polecenie usuwa definicję zasad zidentyfikowanych przez właściwość **ResourceId** $PolicyDefinition.</span><span class="sxs-lookup"><span data-stu-id="c3d1e-118">The second command removes the policy definition identified by the **ResourceId** property of $PolicyDefinition.</span></span>
+
+## <span data-ttu-id="c3d1e-119">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="c3d1e-119">PARAMETERS</span></span>
+
+### <span data-ttu-id="c3d1e-120">-ApiVersion</span><span class="sxs-lookup"><span data-stu-id="c3d1e-120">-ApiVersion</span></span>
+<span data-ttu-id="c3d1e-121">Określa wersję interfejsu API dostawcy zasobów do użycia.</span><span class="sxs-lookup"><span data-stu-id="c3d1e-121">Specifies the version of the resource provider API to use.</span></span>
+<span data-ttu-id="c3d1e-122">Jeśli nie określisz wersji, to polecenie cmdlet użyje najnowszej dostępnej wersji.</span><span class="sxs-lookup"><span data-stu-id="c3d1e-122">If you do not specify a version, this cmdlet uses the latest available version.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c3d1e-123">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="c3d1e-123">-DefaultProfile</span></span>
+<span data-ttu-id="c3d1e-124">Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure</span><span class="sxs-lookup"><span data-stu-id="c3d1e-124">The credentials, account, tenant, and subscription used for communication with azure</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c3d1e-125">— Wymuszanie</span><span class="sxs-lookup"><span data-stu-id="c3d1e-125">-Force</span></span>
+<span data-ttu-id="c3d1e-126">Wymusza uruchomienie polecenia bez pytania o potwierdzenie użytkownika.</span><span class="sxs-lookup"><span data-stu-id="c3d1e-126">Forces the command to run without asking for user confirmation.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c3d1e-127">— Identyfikator</span><span class="sxs-lookup"><span data-stu-id="c3d1e-127">-Id</span></span>
+<span data-ttu-id="c3d1e-128">Określa w pełni kwalifikowany identyfikator zasobu dla definicji zasad, która jest usuwana przez to polecenie cmdlet.</span><span class="sxs-lookup"><span data-stu-id="c3d1e-128">Specifies the fully qualified resource ID for the policy definition that this cmdlet removes.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: IdParameterSet
+Aliases: ResourceId
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c3d1e-129">-InputObject</span><span class="sxs-lookup"><span data-stu-id="c3d1e-129">-InputObject</span></span>
+<span data-ttu-id="c3d1e-130">Obiekt definicji zasad do usunięcia, który był wyprowadzony z innego polecenia cmdlet.</span><span class="sxs-lookup"><span data-stu-id="c3d1e-130">The policy definition object to remove that was output from another cmdlet.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation.Policy.PsPolicyDefinition
+Parameter Sets: InputObjectParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName, ByValue)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c3d1e-131">-ManagementGroupName</span><span class="sxs-lookup"><span data-stu-id="c3d1e-131">-ManagementGroupName</span></span>
+<span data-ttu-id="c3d1e-132">Nazwa grupy zarządzania definicji zasad do usunięcia.</span><span class="sxs-lookup"><span data-stu-id="c3d1e-132">The name of the management group of the policy definition to delete.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ManagementGroupNameParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c3d1e-133">— Nazwa</span><span class="sxs-lookup"><span data-stu-id="c3d1e-133">-Name</span></span>
+<span data-ttu-id="c3d1e-134">Określa nazwę definicji zasad, która jest usuwana przez to polecenie cmdlet.</span><span class="sxs-lookup"><span data-stu-id="c3d1e-134">Specifies the name of the policy definition that this cmdlet removes.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: NameParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+```yaml
+Type: System.String
+Parameter Sets: ManagementGroupNameParameterSet, SubscriptionIdParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c3d1e-135">— Przed</span><span class="sxs-lookup"><span data-stu-id="c3d1e-135">-Pre</span></span>
+<span data-ttu-id="c3d1e-136">Wskazuje, że to polecenie cmdlet uwzględnia wersje przedpremierowe interfejsu API, gdy automatycznie określa, której wersji użyć.</span><span class="sxs-lookup"><span data-stu-id="c3d1e-136">Indicates that this cmdlet considers pre-release API versions when it automatically determines which version to use.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c3d1e-137">- SubscriptionId</span><span class="sxs-lookup"><span data-stu-id="c3d1e-137">-SubscriptionId</span></span>
+<span data-ttu-id="c3d1e-138">Identyfikator subskrypcji definicji zasad do usunięcia.</span><span class="sxs-lookup"><span data-stu-id="c3d1e-138">The subscription ID of the policy definition to delete.</span></span>
+
+```yaml
+Type: System.Nullable`1[System.Guid]
+Parameter Sets: SubscriptionIdParameterSet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c3d1e-139">— Potwierdź</span><span class="sxs-lookup"><span data-stu-id="c3d1e-139">-Confirm</span></span>
+<span data-ttu-id="c3d1e-140">Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.</span><span class="sxs-lookup"><span data-stu-id="c3d1e-140">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c3d1e-141">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="c3d1e-141">-WhatIf</span></span>
+<span data-ttu-id="c3d1e-142">Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet.</span><span class="sxs-lookup"><span data-stu-id="c3d1e-142">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="c3d1e-143">Polecenie cmdlet nie zostanie uruchomione.</span><span class="sxs-lookup"><span data-stu-id="c3d1e-143">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="c3d1e-144">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="c3d1e-144">CommonParameters</span></span>
+<span data-ttu-id="c3d1e-145">To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="c3d1e-145">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="c3d1e-146">Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)</span><span class="sxs-lookup"><span data-stu-id="c3d1e-146">For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="c3d1e-147">DANE WEJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="c3d1e-147">INPUTS</span></span>
+
+### <span data-ttu-id="c3d1e-148">System.String</span><span class="sxs-lookup"><span data-stu-id="c3d1e-148">System.String</span></span>
+
+### <span data-ttu-id="c3d1e-149">System.Nullable'1[[System.Guid, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span><span class="sxs-lookup"><span data-stu-id="c3d1e-149">System.Nullable\`1[[System.Guid, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]</span></span>
+
+## <span data-ttu-id="c3d1e-150">DANE WYJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="c3d1e-150">OUTPUTS</span></span>
+
+### <span data-ttu-id="c3d1e-151">System.Boolean</span><span class="sxs-lookup"><span data-stu-id="c3d1e-151">System.Boolean</span></span>
+
+## <span data-ttu-id="c3d1e-152">NOTATKI</span><span class="sxs-lookup"><span data-stu-id="c3d1e-152">NOTES</span></span>
+
+## <span data-ttu-id="c3d1e-153">LINKI POKREWNE</span><span class="sxs-lookup"><span data-stu-id="c3d1e-153">RELATED LINKS</span></span>
+
+[<span data-ttu-id="c3d1e-154">Get-AzPolicyDefinition</span><span class="sxs-lookup"><span data-stu-id="c3d1e-154">Get-AzPolicyDefinition</span></span>](./Get-AzPolicyDefinition.md)
+
+[<span data-ttu-id="c3d1e-155">New-AzPolicyDefinition</span><span class="sxs-lookup"><span data-stu-id="c3d1e-155">New-AzPolicyDefinition</span></span>](./New-AzPolicyDefinition.md)
+
+[<span data-ttu-id="c3d1e-156">Set-AzPolicyDefinition</span><span class="sxs-lookup"><span data-stu-id="c3d1e-156">Set-AzPolicyDefinition</span></span>](./Set-AzPolicyDefinition.md)
+
+
