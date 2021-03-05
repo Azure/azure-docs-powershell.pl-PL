@@ -1,0 +1,238 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
+Module Name: Az.Network
+online version: https://docs.microsoft.com/powershell/module/az.network/new-azvirtualwan
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzVirtualWan.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzVirtualWan.md
+ms.openlocfilehash: 3bb2a2d7c8e53cc7ba336234e3c5b24ad58e2faa
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101995331"
+---
+# New-AzVirtualWan
+
+## SYNOPSIS
+Tworzy wirtualną sieć WAN platformy Azure.
+
+## SKŁADNIA
+
+```
+New-AzVirtualWan -ResourceGroupName <String> -Name <String> -Location <String> [-AllowVnetToVnetTraffic]
+ [-AllowBranchToBranchTraffic] [-Tag <Hashtable>] [-VirtualWANType <String>] [-AsJob]
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## OPIS
+Tworzy nowy zasób Azure VirtualWAN.
+
+## PRZYKŁADY
+
+### Przykład 1
+
+```powershell
+PS C:\> New-AzResourceGroup -Location "West US" -Name "testRG" 
+PS C:\> New-AzVirtualWan -ResourceGroupName "testRG" -Name "myVirtualWAN" -Location "West US" -AllowBranchToBranchTraffic
+
+Name                       : testRG
+Id                         : /subscriptions/{SubscriptionId}/resourceGroups/testRG/providers/Microsoft.Network/virtualWans/myVirtualWAN
+AllowVnetToVnetTraffic     : False
+AllowBranchToBranchTraffic : True
+Location                   : West US
+VirtualWANType             : Standard
+Type                       : Microsoft.Network/virtualWans
+ProvisioningState          : Succeeded
+```
+
+Powyższe spowoduje utworzenie grupy zasobów "testRG" w regionie "Zachód Stanów Zjednoczonych" i wirtualnej sieci WAN platformy Azure z ruchem rozgałęzieniowym dozwolonym w tej grupie zasobów na platformie Azure.
+
+## PARAMETERS
+
+### -AllowBranchToBranchTraffic
+Zezwalaj na ruch gałęzi dla VirtualWan.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -AllowVnetToVnetTraffic
+Zezwalaj na ruch w sieci vnet dla virtualWan.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### — AsJob
+Uruchamianie polecenia cmdlet w tle
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -DefaultProfile
+Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.
+
+```yaml
+Type: IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### — Lokalizacja
+Lokalizacja zasobu VirtualWAN.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### — Nazwa
+Nazwa zasobu.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases: ResourceName, VirtualWanName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ResourceGroupName
+Nazwa grupy zasobów.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### — Tag
+Tabela skrótów reprezentująca tagi zasobów.
+
+```yaml
+Type: Hashtable
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -VirtualWANType
+Typ wirtualnej sieci Wan.
+
+```yaml
+Type: String
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### — Potwierdź
+Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -WhatIf
+Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet.
+Polecenie cmdlet nie zostanie uruchomione.
+
+```yaml
+Type: SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### CommonParameters
+To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable. Aby uzyskać więcej informacji, zobacz [about_CommonParameters.](http://go.microsoft.com/fwlink/?LinkID=113216)
+
+## DANE WEJŚCIOWE
+
+### Brak
+
+## DANE WYJŚCIOWE
+
+### Microsoft.Azure.Commands.Network.Models.PSVirtualWan
+
+## NOTATKI
+
+## LINKI POKREWNE
+
+[Get-AzVirtualWan](./Get-AzVirtualWan.md)
+
+[Remove-AzVirtualWan](./Remove-AzVirtualWan.md)
+
+[Update-AzVirtualWan](./Update-AzVirtualWan.md)
