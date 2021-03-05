@@ -1,0 +1,184 @@
+---
+external help file: Microsoft.Azure.PowerShell.Cmdlets.Network.dll-Help.xml
+Module Name: Az.Network
+ms.assetid: A29E9921-C1B9-42C2-B816-5D4873AC6688
+online version: https://docs.microsoft.com/powershell/module/az.network/new-azfirewallnatrulecollection
+schema: 2.0.0
+content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzFirewallNatRuleCollection.md
+original_content_git_url: https://github.com/Azure/azure-powershell/blob/master/src/Network/Network/help/New-AzFirewallNatRuleCollection.md
+ms.openlocfilehash: d637767f21a34daf5afaf1f2a44e9ebc9b80934a
+ms.sourcegitcommit: 4dfb0cc533b83f77afdcfbe2618c1e6c8d221330
+ms.translationtype: MT
+ms.contentlocale: pl-PL
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "101995338"
+---
+# <span data-ttu-id="5f605-101">New-AzFirewallNatRuleCollection</span><span class="sxs-lookup"><span data-stu-id="5f605-101">New-AzFirewallNatRuleCollection</span></span>
+
+## <span data-ttu-id="5f605-102">SYNOPSIS</span><span class="sxs-lookup"><span data-stu-id="5f605-102">SYNOPSIS</span></span>
+<span data-ttu-id="5f605-103">Tworzy kolekcję reguł nat nat zapory.</span><span class="sxs-lookup"><span data-stu-id="5f605-103">Creates a collection of Firewall NAT rules.</span></span>
+
+## <span data-ttu-id="5f605-104">SKŁADNIA</span><span class="sxs-lookup"><span data-stu-id="5f605-104">SYNTAX</span></span>
+
+```
+New-AzFirewallNatRuleCollection -Name <String> -Priority <UInt32> -Rule <PSAzureFirewallNatRule[]>
+ [-DefaultProfile <IAzureContextContainer>] [-WhatIf] [-Confirm] [<CommonParameters>]
+```
+
+## <span data-ttu-id="5f605-105">OPIS</span><span class="sxs-lookup"><span data-stu-id="5f605-105">DESCRIPTION</span></span>
+<span data-ttu-id="5f605-106">Polecenie **cmdlet New-AzFirewallNatRuleCollection** tworzy kolekcję reguł NAT zapory.</span><span class="sxs-lookup"><span data-stu-id="5f605-106">The **New-AzFirewallNatRuleCollection** cmdlet creates a collection of Firewall NAT Rules.</span></span>
+
+## <span data-ttu-id="5f605-107">PRZYKŁADY</span><span class="sxs-lookup"><span data-stu-id="5f605-107">EXAMPLES</span></span>
+
+### <span data-ttu-id="5f605-108">Przykład 1. Tworzenie kolekcji przy użyciu jednej reguły</span><span class="sxs-lookup"><span data-stu-id="5f605-108">Example 1: Create a collection with one rule</span></span>
+```powershell
+$rule1 = New-AzFirewallNatRule -Name "natRule" -Protocol "TCP" -SourceAddress "*" -DestinationAddress "10.0.0.1" -DestinationPort "80" -TranslatedAddress "10.0.0.2" -TranslatedPort "8080"
+New-AzFirewallNatRuleCollection -Name "MyNatRuleCollection" -Priority 1000 -Rule $rule1
+```
+
+<span data-ttu-id="5f605-109">W tym przykładzie jest tworzyna kolekcja z jedną regułą.</span><span class="sxs-lookup"><span data-stu-id="5f605-109">This example creates a collection with one rule.</span></span> <span data-ttu-id="5f605-110">Cały ruch, który jest zgodne z warunkami wskazanymi w $rule 1, zostanie przetłumaczony na przetłumaczony adres i port.</span><span class="sxs-lookup"><span data-stu-id="5f605-110">All traffic that matches the conditions identified in $rule1 will be DNAT'ed to translated address and port.</span></span>
+
+### <span data-ttu-id="5f605-111">Przykład 2. Dodawanie reguły do kolekcji reguł</span><span class="sxs-lookup"><span data-stu-id="5f605-111">Example 2: Add a rule to a rule collection</span></span>
+```powershell
+$rule1 = New-AzFirewallNatRule -Name R1 -Protocol "UDP","TCP" -SourceAddress "*" -DestinationAddress "10.0.0.1" -DestinationPort "80" -TranslatedAddress "10.0.0.2" -TranslatedPort "8080"
+$ruleCollection = New-AzFirewallNatRuleCollection -Name "MyNatRuleCollection" -Priority 100 -Rule $rule1
+
+$rule2 = New-AzFirewallNatRule -Name R2 -Protocol "TCP" -SourceAddress "*" -DestinationAddress "10.0.0.1" -DestinationPort "443" -TranslatedAddress "10.0.0.2" -TranslatedPort "8443"
+$ruleCollection.AddRule($rule2)
+```
+
+<span data-ttu-id="5f605-112">W tym przykładzie jest tworzyna nowa kolekcja reguł NAT z jedną regułą, a następnie do kolekcji reguł jest dodawania drugiej reguły przy użyciu metody AddRule dla obiektu kolekcji reguł.</span><span class="sxs-lookup"><span data-stu-id="5f605-112">This example creates a new NAT rule collection with one rule and then adds a second rule to the rule collection using method AddRule on the rule collection object.</span></span> <span data-ttu-id="5f605-113">Każda nazwa reguły w danej kolekcji reguł musi mieć unikatową nazwę i jest bez uwzględniania liter.</span><span class="sxs-lookup"><span data-stu-id="5f605-113">Each rule name in a given rule collection must have an unique name and is case insensitive.</span></span>
+
+### <span data-ttu-id="5f605-114">Przykład 3. Pobieranie reguły z kolekcji reguł</span><span class="sxs-lookup"><span data-stu-id="5f605-114">Example 3: Get a rule from a rule collection</span></span>
+```powershell
+$rule1 = New-AzFirewallNatRule -Name R1 -Protocol "TCP" -SourceAddress "10.0.0.0/24" -DestinationAddress "10.0.1.0/24" -DestinationPort "443" -TranslatedAddress "10.0.0.2" -TranslatedPort "8443"
+$ruleCollection = New-AzFirewallNatRuleCollection -Name "MyNatRuleCollection" -Priority 100 -Rule $rule1
+
+$rule=$ruleCollection.GetRuleByName("r1")
+```
+
+<span data-ttu-id="5f605-115">W tym przykładzie jest tworzenie nowej kolekcji reguł NAT z jedną regułą, która następnie pobiera regułę według nazwy ( metody wywoływania GetRuleByName ) w obiekcie kolekcji reguł.</span><span class="sxs-lookup"><span data-stu-id="5f605-115">This example creates a new NAT rule collection with one rule and then gets the rule by name, calling method GetRuleByName on the rule collection object.</span></span> <span data-ttu-id="5f605-116">Nazwa reguły metody GetRuleByName jest bez uwzględniania liter.</span><span class="sxs-lookup"><span data-stu-id="5f605-116">The rule name for method GetRuleByName is case-insensitive.</span></span>
+
+### <span data-ttu-id="5f605-117">Przykład 4. Usuwanie reguły z kolekcji reguł</span><span class="sxs-lookup"><span data-stu-id="5f605-117">Example 4: Remove a rule from a rule collection</span></span>
+```powershell
+$rule1 = New-AzFirewallNatRule -Name R1 -Protocol "UDP","TCP" -SourceAddress "*" -DestinationAddress "10.0.0.1" -DestinationPort "80" -TranslatedAddress "10.0.0.2" -TranslatedPort "8080"
+$rule2 = New-AzFirewallNatRule -Name R2 -Protocol "TCP" -SourceAddress "*" -DestinationAddress "10.0.0.1" -DestinationPort "443" -TranslatedAddress "10.0.0.2" -TranslatedPort "8443"
+$ruleCollection = New-AzFirewallNatRuleCollection -Name "MyNatRuleCollection" -Priority 100 -Rule $rule1, $rule2
+$ruleCollection.RemoveRuleByName("r1")
+```
+
+<span data-ttu-id="5f605-118">W tym przykładzie jest tworzena nowa kolekcja reguł NAT z dwiema regułami, a następnie usuwa pierwszą regułę z kolekcji reguł, wywołując metodę RemoveRuleByName w obiekcie kolekcji reguł.</span><span class="sxs-lookup"><span data-stu-id="5f605-118">This example creates a new NAT rule collection with two rules and then removes the first rule from the rule collection by calling method RemoveRuleByName on the rule collection object.</span></span> <span data-ttu-id="5f605-119">Nazwa reguły metody RemoveRuleByName jest bez uwzględniania liter.</span><span class="sxs-lookup"><span data-stu-id="5f605-119">The rule name for method RemoveRuleByName is case-insensitive.</span></span>
+
+## <span data-ttu-id="5f605-120">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="5f605-120">PARAMETERS</span></span>
+
+### <span data-ttu-id="5f605-121">-DefaultProfile</span><span class="sxs-lookup"><span data-stu-id="5f605-121">-DefaultProfile</span></span>
+<span data-ttu-id="5f605-122">Poświadczenia, konto, dzierżawa i subskrypcja używane do komunikacji z platformą Azure.</span><span class="sxs-lookup"><span data-stu-id="5f605-122">The credentials, account, tenant, and subscription used for communication with azure.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Common.Authentication.Abstractions.Core.IAzureContextContainer
+Parameter Sets: (All)
+Aliases: AzContext, AzureRmContext, AzureCredential
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5f605-123">— Nazwa</span><span class="sxs-lookup"><span data-stu-id="5f605-123">-Name</span></span>
+<span data-ttu-id="5f605-124">Określa nazwę tej reguły NAT.</span><span class="sxs-lookup"><span data-stu-id="5f605-124">Specifies the name of this NAT rule.</span></span> <span data-ttu-id="5f605-125">Nazwa musi być unikatowa w zbiorze reguł.</span><span class="sxs-lookup"><span data-stu-id="5f605-125">The name must be unique inside a rule collection.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5f605-126">— Priority (Priorytet)</span><span class="sxs-lookup"><span data-stu-id="5f605-126">-Priority</span></span>
+<span data-ttu-id="5f605-127">Określa priorytet tej reguły.</span><span class="sxs-lookup"><span data-stu-id="5f605-127">Specifies the priority of this rule.</span></span> <span data-ttu-id="5f605-128">Priorytet to liczba od 100 do 65 000.</span><span class="sxs-lookup"><span data-stu-id="5f605-128">Priority is a number between 100 and 65000.</span></span> <span data-ttu-id="5f605-129">Im mniejsza jest liczba, tym większy priorytet.</span><span class="sxs-lookup"><span data-stu-id="5f605-129">The smaller the number, the bigger the priority.</span></span>
+
+```yaml
+Type: System.UInt32
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5f605-130">— reguła</span><span class="sxs-lookup"><span data-stu-id="5f605-130">-Rule</span></span>
+<span data-ttu-id="5f605-131">Określa listę reguł do zgrupowania w tej kolekcji.</span><span class="sxs-lookup"><span data-stu-id="5f605-131">Specifies the list of rules to be grouped under this collection.</span></span>
+
+```yaml
+Type: Microsoft.Azure.Commands.Network.Models.PSAzureFirewallNatRule[]
+Parameter Sets: (All)
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5f605-132">— Potwierdź</span><span class="sxs-lookup"><span data-stu-id="5f605-132">-Confirm</span></span>
+<span data-ttu-id="5f605-133">Przed uruchomieniem polecenia cmdlet zostanie wyświetlony monit o potwierdzenie.</span><span class="sxs-lookup"><span data-stu-id="5f605-133">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5f605-134">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="5f605-134">-WhatIf</span></span>
+<span data-ttu-id="5f605-135">Pokazuje, co się stanie, jeśli zostanie uruchamiane polecenie cmdlet.</span><span class="sxs-lookup"><span data-stu-id="5f605-135">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="5f605-136">Polecenie cmdlet nie zostanie uruchomione.</span><span class="sxs-lookup"><span data-stu-id="5f605-136">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="5f605-137">CommonParameters</span><span class="sxs-lookup"><span data-stu-id="5f605-137">CommonParameters</span></span>
+<span data-ttu-id="5f605-138">To polecenie cmdlet obsługuje typowe parametry: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction i -WarningVariable.</span><span class="sxs-lookup"><span data-stu-id="5f605-138">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="5f605-139">Aby uzyskać więcej informacji, zobacz about_CommonParameters ( http://go.microsoft.com/fwlink/?LinkID=113216) .</span><span class="sxs-lookup"><span data-stu-id="5f605-139">For more information, see about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="5f605-140">DANE WEJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="5f605-140">INPUTS</span></span>
+
+### <span data-ttu-id="5f605-141">Brak</span><span class="sxs-lookup"><span data-stu-id="5f605-141">None</span></span>
+
+## <span data-ttu-id="5f605-142">DANE WYJŚCIOWE</span><span class="sxs-lookup"><span data-stu-id="5f605-142">OUTPUTS</span></span>
+
+### <span data-ttu-id="5f605-143">Microsoft.Azure.Commands.Network.Models.PSAzureFirewallNatRuleCollection</span><span class="sxs-lookup"><span data-stu-id="5f605-143">Microsoft.Azure.Commands.Network.Models.PSAzureFirewallNatRuleCollection</span></span>
+
+## <span data-ttu-id="5f605-144">NOTATKI</span><span class="sxs-lookup"><span data-stu-id="5f605-144">NOTES</span></span>
+
+## <span data-ttu-id="5f605-145">LINKI POKREWNE</span><span class="sxs-lookup"><span data-stu-id="5f605-145">RELATED LINKS</span></span>
+
+[<span data-ttu-id="5f605-146">New-AzFirewallNatRule</span><span class="sxs-lookup"><span data-stu-id="5f605-146">New-AzFirewallNatRule</span></span>](./New-AzFirewallNatRule.md)
+
+[<span data-ttu-id="5f605-147">New-AzFirewall</span><span class="sxs-lookup"><span data-stu-id="5f605-147">New-AzFirewall</span></span>](./New-AzFirewall.md)
+
+[<span data-ttu-id="5f605-148">Get-AzFirewall</span><span class="sxs-lookup"><span data-stu-id="5f605-148">Get-AzFirewall</span></span>](./Get-AzFirewall.md)
